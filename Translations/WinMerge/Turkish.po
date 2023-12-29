@@ -3740,6 +3740,9 @@ msgstr "Y&akınlaştır"
 msgid "Zoom &Out"
 msgstr "&Uzaklaştır"
 
+msgid "Comparing..."
+msgstr ""
+
 msgid "Prettification"
 msgstr "Sadeleştirme"
 

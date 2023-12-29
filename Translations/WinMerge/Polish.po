@@ -3742,6 +3742,9 @@ msgstr "Powiększ"
 msgid "Zoom &Out"
 msgstr "Pomniejsz"
 
+msgid "Comparing..."
+msgstr ""
+
 msgid "Prettification"
 msgstr "Upiększanie"
 
