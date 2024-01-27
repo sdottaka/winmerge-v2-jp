@@ -80,7 +80,6 @@
 #define IDD_EDIT_FIND                   282
 #define IDD_EDIT_MARKER                 283
 #define IDD_EDIT_REPLACE                284
-#define IDD_WEBPAGEDIFF_BAR             285
 #define IDI_ROTATE2                     302
 #define IDR_LOGO                        307
 #define IDR_SPLASH                      308
@@ -1049,6 +1048,7 @@
 #define ID_IMG_VECTORIMAGESCALING_400   33723
 #define ID_IMG_VECTORIMAGESCALING_800   33724
 #define ID_IMG_COMPARE_EXTRACTED_TEXT   33725
+#define ID_WEB_VIEWDIFFERENCES          33749
 #define ID_WEB_SIZE_FIT_TO_WINDOW       33750
 #define ID_WEB_SIZE_320x512             33751
 #define ID_WEB_SIZE_375x600             33752
@@ -1661,6 +1661,7 @@
 #define IDS_PREVIEWBAR_ZOOMOUT          44537
 #define IDS_PREVIEWBAR_CLOSE            44538
 #define IDS_WEBPAGE_COMPARING           44539
+#define IDS_WEBPAGE_ZOOM                44540
 
 
 // Next default values for new objects

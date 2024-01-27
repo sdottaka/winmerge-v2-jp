@@ -272,8 +272,8 @@ msgstr "Méret"
 msgid "Fit to Window"
 msgstr "Ablakhoz igazít"
 
-msgid "&Event Synchronization"
-msgstr "&Esemény szinkronizálás"
+msgid "&Event Sync"
+msgstr ""
 
 msgid "&Enabled"
 msgstr "&Engedélyezve"
@@ -4803,6 +4803,9 @@ msgid "Zoom &Out"
 msgstr "K&icsinyítés"
 
 msgid "Comparing..."
+msgstr "Összehasonlítás..."
+
+msgid "Zoom:"
 msgstr ""
 
 msgid "Prettification"

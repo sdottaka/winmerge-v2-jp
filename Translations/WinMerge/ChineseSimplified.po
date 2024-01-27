@@ -248,7 +248,7 @@ msgstr "大小(&S)"
 msgid "Fit to Window"
 msgstr "适应窗口"
 
-msgid "&Event Synchronization"
+msgid "&Event Sync"
 msgstr "事件同步(&E)"
 
 msgid "&Enabled"
@@ -4175,7 +4175,10 @@ msgid "Zoom &Out"
 msgstr "缩小(&O)"
 
 msgid "Comparing..."
-msgstr ""
+msgstr "比较中..."
+
+msgid "Zoom:"
+msgstr "缩放："
 
 msgid "Prettification"
 msgstr "格式美化"
