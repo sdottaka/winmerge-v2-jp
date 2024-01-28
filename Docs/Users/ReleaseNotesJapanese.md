@@ -1,96 +1,89 @@
-# WinMerge 2.16.36 リリースノート
+# WinMerge 2.16.38 リリースノート
 
 - [このリリースについて](#about-this-release)
-- [2.16.36の新機能](#what-is-new-in-21636)
-- [2.16.35 beta の新機能](#what-is-new-in-21635-beta)
+- [2.16.38の新機能](#what-is-new-in-21638)
+- [2.16.37 beta の新機能](#what-is-new-in-21637-beta)
 - [既知の問題](#known-issues)
 
-2023年11月
+2024年1月
 
 ## このリリースについて
 
-WinMerge の 2.16.36 安定版リリースです。
+WinMerge の 2.16.38 安定版リリースです。
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。
 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。
 
-## <a name="what-is-new-in-21636"></a>2.16.36 の新機能
-
-### 画像比較
-
-- 不具合修正: 複数ページある画像ファイルが読み取り専用の場合、単一ページの画像として扱われる問題を修正した。 [(winmerge/winimerge#32)](https://github.com/winmerge/winimerge/issues/32))
-
-### Webページ比較
-
-- 差異が多い場合に極端に遅くなるのを改善
-
-### ファイルフィルター
-
-- 不具合修正: ファイルフィルター ダイアログで&lt;なし&gt;が選択されているとき等ボタンを押しても効果がないときにボタンが押せないようにした。 [(PR #2118)](https://github.com/WinMerge/winmerge/pull/2118)(PRをいただきました。ありがとうございます。)
-
-### 翻訳
-
-- 翻訳の更新:
-  - Corsican (PR #2123)
-  - Galician (PR #2120)
-  - Hungarian (PR #2122)
-  - Portuguese (PR #2119)
-  - Spanish (PR #2120)
-  - Slovenian
-  - Turkish (PR #2116)
-
-## <a name="what-is-new-in-21635-beta"></a>2.16.35 Beta の新機能
+## <a name="what-is-new-in-21638"></a>2.16.38 の新機能
 
 ### ファイル比較
 
-- 不具合修正: 3つのファイルを比較する際に、"左側/右側にコピーして次に進む"のクリックで、1つ差異をスキップすることがある問題を修正した。 [(#1234)](https://github.com/WinMerge/winmerge/issues/1234)
-- 不具合修正: 印刷プレビューのボタンが翻訳できない問題を修正した。 [(#2083)](https://github.com/WinMerge/winmerge/issues/2083), [(#2079)](https://github.com/WinMerge/winmerge/issues/2079)
-- 不具合修正: ウィンドウがリサイズされたときにヘッダーバーに設定されたキャプションが復元される問題を修正した。
-
-### バイナリ比較
-
-- 不具合修正: 32ビット版WinMergeで次の差異に移動するとファイルの末尾に移動してしまうことがあった。[(#2081)](https://github.com/WinMerge/winmerge/issues/2081))
-
-### 画像比較
-
-- 不具合修正: [MDI子ウィンドウが１つしかない場合、メインウインドウを閉じる]が選択されているにもかかわらず、'Esc' キーで子ウインドウのみが閉じるのを修正した。 [(#2084)](https://github.com/WinMerge/winmerge/issues/2084)
+- 不具合修正: コードページダイアログで右側のBOMを変更しても反映されない問題を修正した。
+- C++ シンタックスハイライトのキーワードを更新した。 [(PR#2166)](https://github.com/WinMerge/winmerge/pull/2166)(PRをいただきました。ありがとうございます。)
 
 ### Webページ比較
 
-- 不具合修正: [MDI子ウィンドウが１つしかない場合、メインウインドウを閉じる]が選択されているにもかかわらず、'Esc' キーで子ウインドウのみが閉じるのを修正した。 [(#2084)](https://github.com/WinMerge/winmerge/issues/2084)
-- 片方のペインでスクロールやクリック、入力をしたとき、他方のペインでも同様に行われるようにイベント同期機能を追加 [(PR #2111)](https://github.com/WinMerge/winmerge/pull/2111)
+- 比較中はステータスバーに「比較しています...」を表示するようにした。
+- ロケーションペインを追加した。 [(PR#2160)](https://github.com/WinMerge/winmerge/pull/2160)
 
-### フォルダ比較
+### フォルダー比較
 
-- 不具合修正: Diffアルゴリズムがdefaultの場合、「改行文字の違いを無視する」等の設定が無視されていた問題を修正した。 [(#2080)](https://github.com/WinMerge/winmerge/issues/2080), [(#2099)](https://github.com/WinMerge/winmerge/issues/2099)
+- [列の表示]ダイアログのボタンの活性/非活性制御の改善。 [(PR#2154)](https://github.com/WinMerge/winmerge/pull/2154)(PRをいただきました。ありがとうございます。)
 
-### ファイルフィルター
+### プラグイン
 
-- 不具合修正: フィルターダイアログでファイルフィルターが選択されていない場合に、"[F]" がファイルフィルターとして設定される問題を修正した。
-
-### インストーラ
-
-- 不具合修正: ユーザ毎インストーラ(WinMerge-x.x.x-x64-PerUser-Setup.exe)でインストールするとき、一部誤ったレジストリパスに書き込みが行われていたのを修正した [(PR #2086)](https://github.com/WinMerge/winmerge/pull/2086)(PRをいただきました。ありがとうございます。)
-- 不具合修正: インストール先フォルダ名にシングルクォーテーション(')が含まれると、Windows11用のシェルエクステンションの登録に失敗する問題を修正した。 [(#2109)](https://github.com/WinMerge/winmerge/issues/2109)
+- 不具合修正: 以下のように二重引用符を文字列が `/unpacker` コマンドライン引数に指定された場合に正しく解釈されない問題を修正した。
+    
+    `/unpacker "Replace ""a"" ""b"""`
 
 ### 翻訳
 
 - 翻訳の更新:
-  - Brazilian (PR #2088,#2112)
-  - Bulgarian (PR #2105)
-  - Chinese Simplified (PR #2091,#2113)
-  - French (PR #2106)
-  - Galician (PR #2085,#2107)
-  - Hungarian (PR #2093)
+  - Brazilian (PR#2151,#2178)
+  - Chinese Simplified (PR#2153,#2183)
+  - Corsican (PR#2180)
+  - Hungarian (PR#2156,#2157,#2158)
   - Japanese
-  - Korean (PR #2092)
-  - Lithuanian (PR #2090,#2114)
-  - Polish (PR #2087)
-  - Romanian (PR #2089,#2095)
-  - Slovenian (#2096)
-  - Spanish (PR #2085,#2107)
-  - Turkish (PR #2076)
+  - Korean (PR#2152)
+  - Lithuanian (PR#2155,#2177)
+  - Portuguese (PR#2185)
+
+## <a name="what-is-new-in-21637-beta"></a>2.16.37 Beta の新機能
+
+### ファイル比較
+
+- 不具合修正: 「行を右端で折り返す」が有効な場合、ロケーションペインをクリックしたときにスクロール位置が予期しない位置になる問題を修正した。
+- 不具合修正: ステータスバーをクリックしてもエンコーディング等のメニューが表示されない問題を修正した。  [(#2129)](https://github.com/WinMerge/winmerge/issues/2129)
+- 不具合修正: 正規表現検索で `\r` を使用してもCRを見つけられない問題を修正した。
+- 新しい C# のキーワードを追加した。 [(PR#2136)](https://github.com/WinMerge/winmerge/pull/2136)(PRをいただきました。ありがとうございます。)
+
+### フォルダー比較
+
+- 不具合修正: バイナリコンテンツ比較方法でフォルダ比較した場合、空のファイルがコピーできない問題を修正した。[(#2146)](https://github.com/WinMerge/winmerge/issues/2146)
+
+### バイナリ比較
+
+- 不具合修正: ファイルの末尾のデータが置換できない問題を修正した。
+
+### 画像比較
+
+- 不具合修正: 新規作成で表示されたペインのテキストを名前を付けて保存で保存してもヘッダーにファイル名が表示されない問題を修正した。
+
+### Webページ比較
+
+- 不具合修正: "他のアプリケーションがファイル ... を更新しました。ファイルを開きなおしますか?"というメッセージボックスが、`file://` 形式のURLを比較する際に表示される問題を修正した。
+- イベント同期機能の改善 [(winmerge/winwebdiff#4)](https://github.com/WinMerge/winwebdiff/pull/4)
+
+### 翻訳
+
+- 翻訳の更新:
+  - Bulgarian (PR #2124)
+  - French (PR #2135,#2140,#2141,#2142,winmerge/frhed#15)
+  - Italian (PR #2130)
+  - Korean (PR #2126,#2127,#2143)
+  - Polish (PR #2128)
+
 
 ## <a name="known-issues"></a>既知の問題
 
