@@ -2,7 +2,6 @@
 #include "MergeApp.h"
 #include "Merge.h"
 #include "VersionInfo.h"
-#include "paths.h"
 #include "Constants.h"
 #include "unicoder.h"
 
@@ -96,6 +95,11 @@ String tr(const char *msgctxt, const std::string &str)
 void AppErrorMessageBox(const String& msg)
 {
 	AppMsgBox::error(msg);
+}
+
+void* AppGetMainHWND()
+{
+	return AfxGetMainWnd()->GetSafeHwnd();
 }
 
 namespace AppMsgBox

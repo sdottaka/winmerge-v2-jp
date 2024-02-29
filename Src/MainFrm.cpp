@@ -60,9 +60,7 @@
 #include "JumpList.h"
 #include "DropHandler.h"
 #include "LanguageSelect.h"
-#include "VersionInfo.h"
 #include "Bitmap.h"
-#include "CCrystalTextMarkers.h"
 #include "utils/hqbitmap.h"
 #include "UniFile.h"
 #include "TFile.h"
@@ -2303,7 +2301,7 @@ LRESULT CMainFrame::OnCopyData(WPARAM wParam, LPARAM lParam)
 
 LRESULT CMainFrame::OnUser1(WPARAM wParam, LPARAM lParam)
 {
-	IMergeDoc* pMergeDoc = (wParam == 0) ? GetActiveIMergeDoc() : reinterpret_cast<IMergeDoc*>(wParam);
+	IMergeDoc* pMergeDoc = GetActiveIMergeDoc();
 	if (pMergeDoc)
 		pMergeDoc->CheckFileChanged();
 	return 0;
@@ -2467,7 +2465,7 @@ void CMainFrame::OnActivateApp(BOOL bActive, DWORD dwThreadID)
 	if (GetOptionsMgr()->GetInt(OPT_AUTO_RELOAD_MODIFIED_FILES) == AUTO_RELOAD_MODIFIED_FILES_ONWINDOWACTIVATED)
 	{
 		if (IMergeDoc* pMergeDoc = GetActiveIMergeDoc())
-			PostMessage(WM_USER + 1, reinterpret_cast<WPARAM>(pMergeDoc));
+			PostMessage(WM_USER + 1);
 	}
 }
 
@@ -3500,7 +3498,7 @@ void CMainFrame::WatchDocuments(IMergeDoc* pMergeDoc)
 					pMergeDoc->GetPath(pane),
 					[this, pMergeDoc](const String& path, DirWatcher::ACTION action)
 					{
-						PostMessage(WM_USER + 1, reinterpret_cast<WPARAM>(pMergeDoc));
+						PostMessage(WM_USER + 1);
 					});
 			}
 			else
