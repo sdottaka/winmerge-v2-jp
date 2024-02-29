@@ -417,6 +417,9 @@ msgstr "Not&e de versiune"
 msgid "&Translations"
 msgstr "&Traduceri"
 
+msgid "&Check For Updates"
+msgstr ""
+
 msgid "C&onfiguration"
 msgstr "C&onfigurare"
 

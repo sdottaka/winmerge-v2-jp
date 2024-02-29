@@ -69,6 +69,7 @@
 #include "ClipboardHistory.h"
 #include "locality.h"
 #include "DirWatcher.h"
+#include "VersionInfo.h"
 
 using std::vector;
 using boost::begin;

@@ -416,6 +416,9 @@ msgstr "குறிப்புகளை மறு&வெளியீடு"
 msgid "&Translations"
 msgstr "&மொழிபெயர்ப்புகள்"
 
+msgid "&Check For Updates"
+msgstr ""
+
 msgid "C&onfiguration"
 msgstr "C&onfiguration"
 
