@@ -844,6 +844,12 @@ msgstr "Käytä &ennakointia..."
 msgid "&Transform with editor script..."
 msgstr "&Muunna editoriskriptillä..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "J&aa"
 
@@ -1562,9 +1568,6 @@ msgstr "Muokkain"
 msgid "&Highlight syntax"
 msgstr "Korosta syntaksi"
 
-msgid "&Automatic rescan"
-msgstr "Automaattinen uusi haku"
-
 msgid "&Preserve original EOL chars"
 msgstr "Säilytä alkuperäiset EOL merkit"
 
@@ -1580,6 +1583,15 @@ msgstr "Lisää välilehtiä"
 msgid "Insert &Spaces"
 msgstr "Lisää välilyöntejä"
 
+msgid "&Rendering Mode:"
+msgstr "&Hahmonnustila:"
+
+msgid "&Automatic rescan"
+msgstr "Automaattinen uusi haku"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Rivierojen väritys"
 
@@ -1594,9 +1606,6 @@ msgstr "&Sanataso:"
 
 msgid "W&ord break characters:"
 msgstr "Sanakatk&on merkit:"
-
-msgid "&Rendering Mode:"
-msgstr "&Hahmonnustila:"
 
 msgid ""
 "WinMerge allows hiding some common message boxes. Press the Reset button to "
@@ -2232,6 +2241,9 @@ msgid "Don't display this &message again."
 msgstr "Älä näytä tätä ilmoitusta uudestaan."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
+msgstr ""
+
+msgid "Compare/Merge"
 msgstr ""
 
 msgid "Syntax"
@@ -4167,6 +4179,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Kaunistelu"
 
@@ -4326,20 +4350,16 @@ msgstr "Käänteiset sarakkeet"
 msgid "Reverse lines"
 msgstr "Käänteiset rivit"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Korvaa teksti toisella tekstillä.\r\n"
-"Käyttö: Korvaa [-i ] [-e] FIND REPLACE\r\n"
+"Käyttö: Replace [-i ] [-e] FIND REPLACE\r\n"
+"   or: Replace -s\r\n"
 "  FIND    - etsittävä teksti\r\n"
 "  REPLACE - korvattava teksti\r\n"
 "  -i - ohita kirjainkoko (vain -e:lle)\r\n"
-"  -e - käsittelee määritettyä tekstiä säännöllisenä lausekkeena"
+"  -e - käsittelee määritettyä tekstiä säännöllisenä lausekkeena\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

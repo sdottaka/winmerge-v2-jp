@@ -843,6 +843,12 @@ msgstr "Aplică pre&diferențiator..."
 msgid "&Transform with editor script..."
 msgstr "&Transformă cu script editor..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "Divide"
 
@@ -1562,9 +1568,6 @@ msgstr "Editor"
 msgid "&Highlight syntax"
 msgstr "E&vidențiere sintaxă"
 
-msgid "&Automatic rescan"
-msgstr "Rescanare &automată"
-
 msgid "&Preserve original EOL chars"
 msgstr "&Păstrează caracterele EOL originale"
 
@@ -1580,6 +1583,15 @@ msgstr "&Inserează file"
 msgid "Insert &Spaces"
 msgstr "In&serează blancuri"
 
+msgid "&Rendering Mode:"
+msgstr "Mod de &randare:"
+
+msgid "&Automatic rescan"
+msgstr "Rescanare &automată"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Colorarea diferențelor din rând"
 
@@ -1594,9 +1606,6 @@ msgstr "La nivel de cu&vânt:"
 
 msgid "W&ord break characters:"
 msgstr "Caractere de despărțire cuvinte:"
-
-msgid "&Rendering Mode:"
-msgstr "Mod de &randare:"
 
 msgid ""
 "WinMerge allows hiding some common message boxes. Press the Reset button to "
@@ -2242,6 +2251,9 @@ msgid ""
 msgstr ""
 "Pentru a face vizibilă din nou această fereastră de dialog, apăsați butonul "
 "Reinițializare din pagina Ferestre mesaj a dialogului Opțiuni."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "Sintaxă"
@@ -4224,6 +4236,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Înfrumusețare"
 
@@ -4383,20 +4407,16 @@ msgstr "Inversează coloanele"
 msgid "Reverse lines"
 msgstr "Inversează rânduri"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Înlocuiește textul cu alt text.\r\n"
 "Uz: Replace [-i] [-e] CAUTĂ ÎNLOCUIEȘTE\r\n"
+"   or: Replace -s\r\n"
 "  CAUTĂ    - textul de căutat\r\n"
 "  ÎNLOCUIEȘTE - textul de înlocuit\r\n"
 "  -i - ignoră minuscule/majuscule (doar pentru -e)\r\n"
-"  -e - tratează textul specificat ca expresie regulată"
+"  -e - tratează textul specificat ca expresie regulată\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

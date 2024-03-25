@@ -1,4 +1,9 @@
-﻿[CustomMessages]
+﻿[Messages]
+
+WizardInfoBefore=许可协议
+InfoBeforeLabel=GNU General Public License
+
+[CustomMessages]
 
 ;Things we can also localize
 OptionalFeatures=可选功能：

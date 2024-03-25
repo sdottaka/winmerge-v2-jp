@@ -1024,6 +1024,12 @@ msgstr ""
 msgid "&Transform with editor script..."
 msgstr ""
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 #, c-format
 msgid "Sp&lit"
 msgstr ""
@@ -1901,10 +1907,6 @@ msgid "&Highlight syntax"
 msgstr "&Fremhæv syntaksen"
 
 #, c-format
-msgid "&Automatic rescan"
-msgstr "Automatisk &opdatering"
-
-#, c-format
 msgid "&Preserve original EOL chars"
 msgstr "&Bevar originale EOL tegn"
 
@@ -1924,6 +1926,16 @@ msgstr "&Indsæt tabulatorer"
 msgid "Insert &Spaces"
 msgstr "Indsæt &mellemrum"
 
+msgid "&Rendering Mode:"
+msgstr ""
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "Automatisk &opdatering"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 #, c-format
 msgid "Line Difference Coloring"
 msgstr "Farver for linjeforskelle"
@@ -1942,9 +1954,6 @@ msgstr "&Ord niveau:"
 
 #, c-format
 msgid "W&ord break characters:"
-msgstr ""
-
-msgid "&Rendering Mode:"
 msgstr ""
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
@@ -2703,6 +2712,9 @@ msgid "Don't display this &message again."
 msgstr "Vis ikke denne &besked igen."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
+msgstr ""
+
+msgid "Compare/Merge"
 msgstr ""
 
 #, c-format
@@ -4707,6 +4719,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -4866,7 +4890,7 @@ msgstr ""
 msgid "Reverse lines"
 msgstr ""
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 
 #, c-format

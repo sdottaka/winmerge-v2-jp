@@ -847,6 +847,12 @@ msgstr "Aplicar precompara&dor..."
 msgid "&Transform with editor script..."
 msgstr "&Transformar con script de edición..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "&Dividir"
 
@@ -1560,9 +1566,6 @@ msgstr "Editor"
 msgid "&Highlight syntax"
 msgstr "Resaltar la sinta&xis"
 
-msgid "&Automatic rescan"
-msgstr "Reescaneo &automático"
-
 msgid "&Preserve original EOL chars"
 msgstr "&Preservar caracteres EOL originales"
 
@@ -1578,6 +1581,15 @@ msgstr "&Insertar tabulaciones"
 msgid "Insert &Spaces"
 msgstr "Insertar e&spacios"
 
+msgid "&Rendering Mode:"
+msgstr "Modo de &renderizado:"
+
+msgid "&Automatic rescan"
+msgstr "Reescaneo &automático"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Colorear la diferencia de líneas"
 
@@ -1592,9 +1604,6 @@ msgstr "A nivel de pa&labra:"
 
 msgid "W&ord break characters:"
 msgstr "Caracteres de salt&o de palabra:"
-
-msgid "&Rendering Mode:"
-msgstr "Modo de &renderizado:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge permite ocultar algunos mensajes de uso frecuente. Pulse 'Restablecer' para hacerlos visibles de nuevo."
@@ -2223,6 +2232,9 @@ msgstr "No mostrar este &mensaje de nuevo."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Para ver de nuevo este diálogo de mensaje, pulse el botón Restablecer en la opción Cuadros de mensajes de Configuración."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "Sintaxis"
@@ -4136,6 +4148,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Mejoras"
 
@@ -4295,20 +4319,16 @@ msgstr "Invertir columnas"
 msgid "Reverse lines"
 msgstr "Invertir líneas"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Sustituir un texto por otro.\r\n"
-"Uso: sustituir [-i] [-e] BUSCAR SUSTITUIR\r\n"
+"Uso: Replace [-i] [-e] BUSCAR SUSTITUIR\r\n"
+" or: Replace -s\r\n"
 "  BUSCAR    - Texto a buscar\r\n"
 "  SUSTITUIR - Texto a sustituir\r\n"
 "  -i - Ignora argumentos (solo para -e)\r\n"
-"  -e - Trata el texto especificado como una expresión regular"
+"  -e - Trata el texto especificado como una expresión regular\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

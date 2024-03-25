@@ -848,6 +848,12 @@ msgstr "Applicera förjämförelse/Prediffer..."
 msgid "&Transform with editor script..."
 msgstr "Transformera med redigeringsskript..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "Dela"
 
@@ -1566,9 +1572,6 @@ msgstr "Redigerare"
 msgid "&Highlight syntax"
 msgstr "Framhäv syntax"
 
-msgid "&Automatic rescan"
-msgstr "Automatisk omskanning"
-
 msgid "&Preserve original EOL chars"
 msgstr "Bevara ursprungliga tecken för radslut (EOL)"
 
@@ -1584,6 +1587,15 @@ msgstr "Använd tabbar"
 msgid "Insert &Spaces"
 msgstr "Använd mellanslag"
 
+msgid "&Rendering Mode:"
+msgstr "Alstringsläge:"
+
+msgid "&Automatic rescan"
+msgstr "Automatisk omskanning"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Radskillnadsfärger"
 
@@ -1598,9 +1610,6 @@ msgstr "Ordnivå:"
 
 msgid "W&ord break characters:"
 msgstr "Ordbrytningstecken:"
-
-msgid "&Rendering Mode:"
-msgstr "Alstringsläge:"
 
 msgid ""
 "WinMerge allows hiding some common message boxes. Press the Reset button to "
@@ -2243,6 +2252,9 @@ msgid ""
 msgstr ""
 "För att göra meddelanderutan synlig igen trycker du på knappen Återställ på "
 "sidan Meddelanderutor i dialogrutan Alternativ."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "Syntax"
@@ -4214,6 +4226,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Finputsning"
 
@@ -4373,20 +4397,16 @@ msgstr "Reversera kolumner"
 msgid "Reverse lines"
 msgstr "Reversera rader"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Ersätt text med annan text.\r\n"
 "Användning: Replace [-i] [-e] HITTA ERSÄTT\r\n"
+"   or: Replace -s\r\n"
 "  HITTA    - text att hitta\n"
 "  ERSÄTT - text att ersätta\n"
 "  -i - ignorera skiftläge (endast vid -e)\n"
-"  -e - behandla angiven text som reguljärt uttryck"
+"  -e - behandla angiven text som reguljärt uttryck\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

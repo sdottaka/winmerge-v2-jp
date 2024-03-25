@@ -2221,7 +2221,7 @@ bool CImgMergeFrame::GenerateReport(const String& sFileName) const
 bool CImgMergeFrame::GenerateReport(const String& sFileName, bool allPages) const
 {
 	String imgdir_full, imgdir, path, name, ext;
-	String imgfilepath[3];
+	String title[3];
 	std::vector<std::array<String, 3>> diffimg_filename;
 	paths::SplitFilename(sFileName, &path, &name, &ext);
 	imgdir_full = paths::ConcatPath(path, name) + _T(".files");
@@ -2239,7 +2239,7 @@ bool CImgMergeFrame::GenerateReport(const String& sFileName, bool allPages) cons
 			m_pImgMergeWindow->SetCurrentPageAll(page);
 			for (int pane = 0; pane < m_pImgMergeWindow->GetPaneCount(); ++pane)
 			{
-				imgfilepath[pane] = ucr::toTString(m_pImgMergeWindow->GetFileName(pane));
+				title[pane] = m_strDesc[pane].empty() ? ucr::toTString(m_pImgMergeWindow->GetFileName(pane)) : m_strDesc[pane];
 				const int curPage = m_pImgMergeWindow->GetCurrentPage(pane) + 1;
 				diffimg_filename[page][pane] = strutils::format(_T("%s/%d_%d.png"),
 					imgdir, pane + 1, curPage);
@@ -2254,7 +2254,7 @@ bool CImgMergeFrame::GenerateReport(const String& sFileName, bool allPages) cons
 		diffimg_filename.resize(1);
 		for (int pane = 0; pane < m_pImgMergeWindow->GetPaneCount(); ++pane)
 		{
-			imgfilepath[pane] = ucr::toTString(m_pImgMergeWindow->GetFileName(pane));
+			title[pane] = m_strDesc[pane].empty() ? ucr::toTString(m_pImgMergeWindow->GetFileName(pane)) : m_strDesc[pane];
 			const int curPage = m_pImgMergeWindow->GetCurrentPage(pane) + 1;
 			diffimg_filename[0][pane] = strutils::format(_T("%s/%d_%d.png"),
 				imgdir, pane + 1, curPage);
@@ -2288,7 +2288,7 @@ bool CImgMergeFrame::GenerateReport(const String& sFileName, bool allPages) cons
 		_T("table { table-layout: fixed; width: 100%; height: 100%; border-collapse: collapse; }\n")
 		_T("th {position: sticky; top: 0;}\n")
 		_T("td,th { border: solid 1px black; }\n")
-		_T(".title { color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}\n")
+		_T(".title { color: white; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}\n")
 		_T(".img   { overflow: scroll; text-align: center; }\n")
 		_T("</style>\n")
 		_T("</head>\n")
@@ -2296,7 +2296,7 @@ bool CImgMergeFrame::GenerateReport(const String& sFileName, bool allPages) cons
 		_T("<table>\n")
 		_T("<tr>\n"));
 	for (int pane = 0; pane < m_pImgMergeWindow->GetPaneCount(); ++pane)
-		file.WriteString(strutils::format(_T("<th class=\"title\">%s</th>\n"), imgfilepath[pane]));
+		file.WriteString(strutils::format(_T("<th class=\"title\">%s</th>\n"), title[pane]));
 	file.WriteString(_T("</tr>\n"));
 	for (const auto filenames: diffimg_filename)
 	{

@@ -841,6 +841,12 @@ msgstr ""
 msgid "&Transform with editor script..."
 msgstr ""
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "Ра&зделяне"
 
@@ -1554,9 +1560,6 @@ msgstr "Редактор"
 msgid "&Highlight syntax"
 msgstr "С&интактично оцветяване"
 
-msgid "&Automatic rescan"
-msgstr "&Автоматично сканиране"
-
 msgid "&Preserve original EOL chars"
 msgstr "&Запазване на изходните знаци за нов ред"
 
@@ -1572,6 +1575,15 @@ msgstr "&Вмъкване на табулатор"
 msgid "Insert &Spaces"
 msgstr "Вмъкване на &интервал"
 
+msgid "&Rendering Mode:"
+msgstr "&Режим на изчертаване:"
+
+msgid "&Automatic rescan"
+msgstr "&Автоматично сканиране"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Оцветяване на редове с различия"
 
@@ -1586,9 +1598,6 @@ msgstr "На ниво &дума:"
 
 msgid "W&ord break characters:"
 msgstr "Символ за пренасяне на &дума:"
-
-msgid "&Rendering Mode:"
-msgstr "&Режим на изчертаване:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge позволява някои съобщения да бъдат скрити. За да бъдат показани повторно, натиснете бутона Отменяне."
@@ -2216,6 +2225,9 @@ msgid "Don't display this &message again."
 msgstr "Без &повторно показване на това съобщение."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
+msgstr ""
+
+msgid "Compare/Merge"
 msgstr ""
 
 msgid "Syntax"
@@ -4126,6 +4138,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -4285,13 +4309,7 @@ msgstr ""
 msgid "Reverse lines"
 msgstr ""
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 
 #, c-format

@@ -273,7 +273,7 @@ msgid "Fit to Window"
 msgstr "Ablakhoz igazít"
 
 msgid "&Event Sync"
-msgstr ""
+msgstr "Szinkronizálás esemény"
 
 msgid "&Enabled"
 msgstr "&Engedélyezve"
@@ -1025,6 +1025,12 @@ msgstr "Elővizsgáló alkalmazása..."
 msgid "&Transform with editor script..."
 msgstr "Átalakítás a szerkesztő szkriptjével ..."
 
+msgid "Scripts for &copying"
+msgstr "Szkriptek &másoláshoz"
+
+msgid "Select &editor script..."
+msgstr "Válassz szerkesztő szkriptet..."
+
 #, c-format
 msgid "Sp&lit"
 msgstr "Felosztás"
@@ -1195,10 +1201,10 @@ msgid "Right Shell menu"
 msgstr "Jobb intéző menü"
 
 msgid "Both Shell menu"
-msgstr ""
+msgstr "Mindkét intéző menü"
 
 msgid "All Shell menu"
-msgstr ""
+msgstr "Összes intéző menü"
 
 #, c-format
 msgid "Copy"
@@ -1902,10 +1908,6 @@ msgid "&Highlight syntax"
 msgstr "&Szintaxis kiemelés"
 
 #, c-format
-msgid "&Automatic rescan"
-msgstr "&Automatikus újraolvasás"
-
-#, c-format
 msgid "&Preserve original EOL chars"
 msgstr "&Eredeti sorvég karakterek megőrzése"
 
@@ -1924,6 +1926,16 @@ msgstr "&Tabulátorok használata"
 #, c-format
 msgid "Insert &Spaces"
 msgstr "&Szóközök használata"
+
+msgid "&Rendering Mode:"
+msgstr "Renderelési mód:"
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "&Automatikus újraolvasás"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "Kiválasztott eltérések &részletességének másolása:"
 
 #, c-format
 msgid "Line Difference Coloring"
@@ -1944,9 +1956,6 @@ msgstr "Szóköz, írásjel szintű:"
 #, c-format
 msgid "W&ord break characters:"
 msgstr "Szótörés karakterek:"
-
-msgid "&Rendering Mode:"
-msgstr "Renderelési mód:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "A WinMerge lehetővé teszi általános üzenetablakok elrejtését. A Visszaállítás gombbal minden üzenetablak újra láthatóvá tehető."
@@ -2722,6 +2731,9 @@ msgstr "&Ne jelenjen meg többet ez az üzenet."
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Ahhoz, hogy ez az üzenetablak újra látható legyen, nyomja meg a Beállítások Üzenetablakok oldalán a visszaállítás gombot."
 
+msgid "Compare/Merge"
+msgstr "Összehasonlítás/egyesítés"
+
 #, c-format
 msgid "Syntax"
 msgstr "Kifejezéstípusok"
@@ -2785,14 +2797,8 @@ msgid "All message boxes are now displayed again."
 msgstr "Minden üzenet ezentúl újra megjelenik."
 
 #, c-format
-msgid ""
-"Value in Tab size -field is not in range WinMerge accepts.\n"
-"\n"
-"Please use values 1 - %1."
-msgstr ""
-"A tabulátorméret értéke nincs a megfelelő tartományban.\n"
-"\n"
-"1 és %1 közötti értéket használj."
+msgid "Value in Tab size -field is not in range WinMerge accepts.\n\nPlease use values 1 - %1."
+msgstr "A tabulátorméret értéke nincs a megfelelő tartományban.\n\n1 és %1 közötti értéket használj."
 
 #, c-format
 msgid "Open"
@@ -2806,7 +2812,6 @@ msgstr "Programok|*.exe;*.bat;*.cmd|Minden fájl (*.*)|*.*||"
 msgid "All Files (*.*)|*.*||"
 msgstr "Minden fájl (*.*)|*.*||"
 
-#, c-format
 msgid "WinMerge Project Files (*.WinMerge)|*.WinMerge||"
 msgstr "WinMerge Projekt fájlok (*.WinMerge)|*.WinMerge||"
 
@@ -4806,7 +4811,19 @@ msgid "Comparing..."
 msgstr "Összehasonlítás..."
 
 msgid "Zoom:"
-msgstr ""
+msgstr "Nagyítás:"
+
+msgid "Diff hunk"
+msgstr "Különb.nagyság"
+
+msgid "Inline diff"
+msgstr "Soron belüli kül."
+
+msgid "Line"
+msgstr "Sor"
+
+msgid "Character"
+msgstr "Karakter"
 
 msgid "Prettification"
 msgstr "Megjelenés optimalizálás"
@@ -4967,8 +4984,8 @@ msgstr "Oszlopok megfordítása"
 msgid "Reverse lines"
 msgstr "Sorok megfordítása"
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
-msgstr "Szöveg cseréje egy másikra.\r\nHasználata: Replace [-i] [-e] FIND REPLACE\r\n  ahol FIND    - keresendő szöveg\r\n  REPLACE - új szöveg\r\n  -i - kis/nagybetű nem számít (csak ez -e)\r\n  -e - a megadott szöveget reguláris kifejezésként kezeli"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
+msgstr "Szöveg cseréje egy másikra.\r\nHasználata: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  ahol FIND    - keresendő szöveg\r\n  REPLACE - új szöveg\r\n  -i - kis/nagybetű nem számít (csak ez -e)\r\n  -e - a megadott szöveget reguláris kifejezésként kezeli\r\n  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."

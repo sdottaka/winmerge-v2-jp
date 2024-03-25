@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2023-03-13 09:30-0300\n"
-"PO-Revision-Date: 2024-01-15 09:50-0300\n"
+"PO-Revision-Date: 2024-03-07 22:45-0300\n"
 "Last-Translator: Marcello <marcello.mco@gmail.com>\n"
 "Language-Team: Felipe\n"
 "Language: pt_BR\n"
@@ -844,6 +844,12 @@ msgstr "Aplicar pré&diferenciação..."
 msgid "&Transform with editor script..."
 msgstr "&Transformar com o script do editor..."
 
+msgid "Scripts for &copying"
+msgstr "Scripts para &copiar"
+
+msgid "Select &editor script..."
+msgstr "Selecionar script do &editor..."
+
 msgid "Sp&lit"
 msgstr "Di&vidir"
 
@@ -1557,9 +1563,6 @@ msgstr "Editor"
 msgid "&Highlight syntax"
 msgstr "&Destacar a sintaxe"
 
-msgid "&Automatic rescan"
-msgstr "&Re-escaneamento automático"
-
 msgid "&Preserve original EOL chars"
 msgstr "&Preservar os caracteres EOL originais"
 
@@ -1575,6 +1578,15 @@ msgstr "&Inserir Abas"
 msgid "Insert &Spaces"
 msgstr "Inserir &Espaços"
 
+msgid "&Rendering Mode:"
+msgstr "&Modo de Renderização:"
+
+msgid "&Automatic rescan"
+msgstr "&Re-escaneamento automático"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "Copiar &granularidade para diferenças selecionadas:"
+
 msgid "Line Difference Coloring"
 msgstr "Coloração das Diferenças das Linhas"
 
@@ -1589,9 +1601,6 @@ msgstr "&Nível das palavras:"
 
 msgid "W&ord break characters:"
 msgstr "C&aracteres da quebra de linha:"
-
-msgid "&Rendering Mode:"
-msgstr "&Modo de Renderização:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "O WinMerge permite esconder algumas caixas de mensagens comuns. Pressione o botão Resetar pra tornar todas as caixas de mensagens visíveis de novo."
@@ -2164,6 +2173,9 @@ msgstr "Não exibir esta &mensagem de novo."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Pra tornar esta caixa de mensagem visível de novo pressione o botão Resetar na página Caixas das Mensagens no diálogo das Opções."
+
+msgid "Compare/Merge"
+msgstr "Comparar/Unir"
 
 msgid "Syntax"
 msgstr "Sintaxe"
@@ -3747,6 +3759,18 @@ msgstr "Comparando..."
 msgid "Zoom:"
 msgstr "Zoom:"
 
+msgid "Diff hunk"
+msgstr "Trecho de diferença"
+
+msgid "Inline diff"
+msgstr "Diferença em linha"
+
+msgid "Line"
+msgstr "Linha"
+
+msgid "Character"
+msgstr "Caracter"
+
 msgid "Prettification"
 msgstr "Embelezamento"
 
@@ -3906,8 +3930,8 @@ msgstr "Reverter colunas"
 msgid "Reverse lines"
 msgstr "Reverter linhas"
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
-msgstr "Substituir texto por outro texto.\r\nUso: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - texto a procurar\r\n  REPLACE - texto para substituir\r\n  -i - ignorar maiúsculas/minúsculas (apenas para -e)\r\n  -e - trata o texto especificado como expressão regular"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
+msgstr "Substituir texto por outro texto.\r\nUso: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - texto a procurar\r\n  REPLACE - texto para substituir\r\n  -i - ignorar maiúsculas/minúsculas (apenas para -e)\r\n  -e - trata o texto especificado como expressão regular\r\n  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."

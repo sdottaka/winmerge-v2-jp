@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2019-05-19 10:55+0000\n"
-"PO-Revision-Date: 2023-12-12 12:10+0100\n"
+"PO-Revision-Date: 2024-03-20 10:01+0100\n"
 "Last-Translator: Lolo S. <slolo2000@hotmail.com>\n"
 "Language-Team: French <winmerge-translate@lists.sourceforge.net>\n"
 "Language: fr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../Src\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. LANGUAGE, SUBLANGUAGE
 #, c-format
@@ -279,7 +279,7 @@ msgid "Fit to Window"
 msgstr "Ajuster à la fenêtre"
 
 msgid "&Event Sync"
-msgstr ""
+msgstr "&Synchronisation des événements"
 
 msgid "&Enabled"
 msgstr "&Activée"
@@ -1030,6 +1030,12 @@ msgstr "Appliquer la Pré-comparaison..."
 
 msgid "&Transform with editor script..."
 msgstr "&Transformer avec le script de l'éditeur..."
+
+msgid "Scripts for &copying"
+msgstr "Scripts à &copier"
+
+msgid "Select &editor script..."
+msgstr "Choisir le script de l'&éditeur..."
 
 #, c-format
 msgid "Sp&lit"
@@ -1908,10 +1914,6 @@ msgid "&Highlight syntax"
 msgstr "&Surbrillance de la syntaxe"
 
 #, c-format
-msgid "&Automatic rescan"
-msgstr "&Actualiser automatiquement"
-
-#, c-format
 msgid "&Preserve original EOL chars"
 msgstr "&Préserver les caractères de fin de ligne (EOL) d'origine"
 
@@ -1930,6 +1932,16 @@ msgstr "Insérer des &tabulations"
 #, c-format
 msgid "Insert &Spaces"
 msgstr "Insérer des &espaces"
+
+msgid "&Rendering Mode:"
+msgstr "Mode de &rendu :"
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "&Actualiser automatiquement"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "Copie et granularité pour les différences sélectionnées :"
 
 #, c-format
 msgid "Line Difference Coloring"
@@ -1950,9 +1962,6 @@ msgstr "Précision au &mot :"
 #, c-format
 msgid "W&ord break characters:"
 msgstr "Caractères pour distinction de mot :"
-
-msgid "&Rendering Mode:"
-msgstr "Mode de &rendu :"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr ""
@@ -2729,6 +2738,9 @@ msgstr "Ne plus afficher ce &message."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Pour rendre cette boîte de message à nouveau visible, appuyer sur le bouton Réinitialiser sur la page Boîtes de message de la boîte de dialogue Options."
+
+msgid "Compare/Merge"
+msgstr "Comparer/Fusionner"
 
 #, c-format
 msgid "Syntax"
@@ -4854,10 +4866,22 @@ msgid "Zoom &Out"
 msgstr "Zoom a&rrière"
 
 msgid "Comparing..."
-msgstr ""
+msgstr "Comparaison..."
 
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom  :"
+
+msgid "Diff hunk"
+msgstr "Différence en bloc"
+
+msgid "Inline diff"
+msgstr "Différence en ligne"
+
+msgid "Line"
+msgstr "Ligne"
+
+msgid "Character"
+msgstr "Caractère"
 
 msgid "Prettification"
 msgstr "Embellissement"
@@ -5021,17 +5045,21 @@ msgstr "Inverser les lignes"
 msgid ""
 "Replace text with another text.\r\n"
 "Usage: Replace [-i] [-e] FIND REPLACE\r\n"
+"   or: Replace -s\r\n"
 "  FIND    - text to find\r\n"
 "  REPLACE - text to replace\r\n"
 "  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+"  -e - treat the specified text as a regular expression\r\n"
+"  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Remplacer le texte par un autre texte.\r\n"
 "Utilisation : Replace [-i] [-e] FIND REPLACE\r\n"
+"   or: Replace -s\r\n"
 "  FIND - texte à rechercher\r\n"
 "  REPLACE - texte à remplacer\r\n"
 "  -i - ignore la casse (uniquement pour -e)\r\n"
-"  -e - traite le texte spécifié comme une expression régulière"
+"  -e - traite le texte spécifié comme une expression régulière\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

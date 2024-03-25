@@ -647,7 +647,6 @@ void CWebPageDiffFrame::LoadOptions()
 
 void CWebPageDiffFrame::SaveOptions()
 {
-	//	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_DIFFCOLORALPHA, static_cast<int>(m_pWebDiffWindow->GetDiffColorAlpha() * 100.0));
 	SIZE size = m_pWebDiffWindow->GetSize();
 	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_VIEW_WIDTH, size.cx);
 	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_VIEW_HEIGHT, size.cy);
@@ -655,6 +654,8 @@ void CWebPageDiffFrame::SaveOptions()
 	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_SHOWDIFFERENCES, m_pWebDiffWindow->GetShowDifferences());
 	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_ZOOM, static_cast<int>(m_pWebDiffWindow->GetZoom() * 1000));
 	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_USER_AGENT, m_pWebDiffWindow->GetUserAgent());
+	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_SYNC_EVENTS, m_pWebDiffWindow->GetSyncEvents());
+	GetOptionsMgr()->SaveOption(OPT_CMP_WEB_SYNC_EVENT_FLAGS, m_pWebDiffWindow->GetSyncEventFlags());
 }
 
 /**
@@ -1574,7 +1575,7 @@ bool CWebPageDiffFrame::GenerateReport(const String& sFileName) const
 bool CWebPageDiffFrame::GenerateReport(const String& sFileName, std::function<void(bool)> callback) const
 {
 	String rptdir_full, rptdir, path, name, ext;
-	String url[3];
+	String title[3];
 	String diffrpt_filename[3];
 	String diffrpt_filename_full[3];
 	const wchar_t* pfilenames[3]{};
@@ -1585,7 +1586,7 @@ bool CWebPageDiffFrame::GenerateReport(const String& sFileName, std::function<vo
 
 	for (int pane = 0; pane < m_pWebDiffWindow->GetPaneCount(); ++pane)
 	{
-		url[pane] = ucr::toTString(m_pWebDiffWindow->GetCurrentUrl(pane));
+		title[pane] = m_strDesc[pane].empty() ? ucr::toTString(m_pWebDiffWindow->GetCurrentUrl(pane)) : m_strDesc[pane];
 		diffrpt_filename[pane] = strutils::format(_T("%s/%d.pdf"), rptdir, pane + 1);
 		diffrpt_filename_full[pane] = strutils::format(_T("%s/%d.pdf"), rptdir_full, pane + 1);
 		pfilenames[pane] = diffrpt_filename_full[pane].c_str();
@@ -1614,14 +1615,14 @@ bool CWebPageDiffFrame::GenerateReport(const String& sFileName, std::function<vo
 		_T("th {position: sticky; top: 0;}\n")
 		_T("td,th { border: solid 1px black; }\n")
 		_T("embed { width: 100%; height: calc(100vh - 56px) }\n")
-		_T(".title { color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}\n")
+		_T(".title { color: white; vertical-align: top; padding: 4px 4px; background: linear-gradient(mediumblue, darkblue);}\n")
 		_T("</style>\n")
 		_T("</head>\n")
 		_T("<body>\n")
 		_T("<table>\n")
 		_T("<tr>\n"));
 	for (int pane = 0; pane < m_pWebDiffWindow->GetPaneCount(); ++pane)
-		file.WriteString(strutils::format(_T("<th class=\"title\">%s</th>\n"), url[pane]));
+		file.WriteString(strutils::format(_T("<th class=\"title\">%s</th>\n"), title[pane]));
 	file.WriteString(_T("</tr>\n"));
 	file.WriteString(
 		_T("<tr>\n"));

@@ -842,6 +842,12 @@ msgstr "முன்&வேறுபடுத்து..."
 msgid "&Transform with editor script..."
 msgstr "&எடிட்டர் ஸ்கிரிப்ட் மூலம் மாற்றவும்..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "ஸ்பி&லிட்"
 
@@ -1555,9 +1561,6 @@ msgstr "எடிட்டர்"
 msgid "&Highlight syntax"
 msgstr "&ஹைலைட் தொடரியல்"
 
-msgid "&Automatic rescan"
-msgstr "&தானியங்கு மறு ஆய்வு"
-
 msgid "&Preserve original EOL chars"
 msgstr "&அசல் EOL எழுத்துகளை பாதுகாக்கவும்"
 
@@ -1573,6 +1576,15 @@ msgstr "&செருகு தாவல்கள்"
 msgid "Insert &Spaces"
 msgstr "&இடைவெளிகளை செருகு"
 
+msgid "&Rendering Mode:"
+msgstr "&ரெண்டரிங் பயன்முறை:"
+
+msgid "&Automatic rescan"
+msgstr "&தானியங்கு மறு ஆய்வு"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "கோடு வேறுபாடு வண்ணம்"
 
@@ -1587,9 +1599,6 @@ msgstr "&சொல்-நிலை:"
 
 msgid "W&ord break characters:"
 msgstr "W&ord முறிவு எழுத்துகள்:"
-
-msgid "&Rendering Mode:"
-msgstr "&ரெண்டரிங் பயன்முறை:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge சில பொதுவான செய்தி பெட்டிகளை மறைக்க அனுமதிக்கிறது. எல்லா செய்தி பெட்டிகளையும் மீண்டும் பார்க்க மீட்டமை பொத்தானை அழுத்தவும்."
@@ -2218,6 +2227,9 @@ msgstr "இந்த &செய்தியை மீண்டும் கா�
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "இந்த செய்தி பெட்டியை மீண்டும் பார்க்க, விருப்பங்கள் உரையாடலின் செய்தி பெட்டிகள் பக்கத்தில் மீட்டமை பொத்தானை அழுத்தவும்."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "தொடரியல்"
@@ -4131,6 +4143,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "அழகானமாக்கல்"
 
@@ -4290,20 +4314,16 @@ msgstr "தலைகீழ் நெடுவரிசைகள்"
 msgid "Reverse lines"
 msgstr "தலைகீழ் கோடுகள்"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "உரையை வேறொரு உரையுடன் மாற்றவும்.\r\n"
 "பயன்பாடு: [-i] மாற்றவும் [-e] மாற்றீட்டைக் கண்டுபிடி\r\n"
+"   or: Replace -s\r\n"
 "கண்டுபிடி - கண்டுபிடிக்க உரை\r\n"
 " REPLACE - பதிலாக உரை\r\n"
 " -i - புறக்கணிப்பு வழக்கை (-eக்கு மட்டும்)\r\n"
-" -e - குறிப்பிட்ட உரையை வழக்கமான வெளிப்பாடாகக் கருதுங்கள்"
+" -e - குறிப்பிட்ட உரையை வழக்கமான வெளிப்பாடாகக் கருதுங்கள்\r\n"
+" -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

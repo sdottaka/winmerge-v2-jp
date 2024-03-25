@@ -117,7 +117,7 @@ void Init(COptionsMgr *pOptions)
 
 	pOptions->InitOption(OPT_AUTOMATIC_RESCAN, false);
 	pOptions->InitOption(OPT_ALLOW_MIXED_EOL, false);
-	pOptions->InitOption(OPT_COPY_FULL_LINE, false);
+	pOptions->InitOption(OPT_COPY_GRANULARITY, 3/*Character*/);
 	pOptions->InitOption(OPT_TAB_SIZE, (int)4, 0, 64);
 	pOptions->InitOption(OPT_TAB_TYPE, (int)0, 0, 1);	// 0 means tabs inserted
 
@@ -138,7 +138,7 @@ void Init(COptionsMgr *pOptions)
 
 	pOptions->InitOption(OPT_CMP_METHOD, (int)CMP_CONTENT, 0, CMP_SIZE);
 	pOptions->InitOption(OPT_CMP_MOVED_BLOCKS, false);
-	pOptions->InitOption(OPT_CMP_MATCH_SIMILAR_LINES, false);
+	pOptions->InitOption(OPT_CMP_ALIGN_SIMILAR_LINES, false);
 	pOptions->InitOption(OPT_CMP_STOP_AFTER_FIRST, false);
 	pOptions->InitOption(OPT_CMP_QUICK_LIMIT, 4 * 1024 * 1024); // 4 Megs
 	pOptions->InitOption(OPT_CMP_BINARY_LIMIT, 64 * 1024 * 1024); // 64 Megs

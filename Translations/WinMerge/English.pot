@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2024-02-18 21:54+0000\n"
+"POT-Creation-Date: 2024-03-13 08:45+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: English <winmerge-translate@lists.sourceforge.net>\n"
@@ -838,6 +838,12 @@ msgstr ""
 msgid "&Transform with editor script..."
 msgstr ""
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr ""
 
@@ -1551,9 +1557,6 @@ msgstr ""
 msgid "&Highlight syntax"
 msgstr ""
 
-msgid "&Automatic rescan"
-msgstr ""
-
 msgid "&Preserve original EOL chars"
 msgstr ""
 
@@ -1569,6 +1572,15 @@ msgstr ""
 msgid "Insert &Spaces"
 msgstr ""
 
+msgid "&Rendering Mode:"
+msgstr ""
+
+msgid "&Automatic rescan"
+msgstr ""
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr ""
 
@@ -1582,9 +1594,6 @@ msgid "&Word-level:"
 msgstr ""
 
 msgid "W&ord break characters:"
-msgstr ""
-
-msgid "&Rendering Mode:"
 msgstr ""
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
@@ -2157,6 +2166,9 @@ msgid "Don't display this &message again."
 msgstr ""
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
+msgstr ""
+
+msgid "Compare/Merge"
 msgstr ""
 
 msgid "Syntax"
@@ -3742,6 +3754,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -3901,7 +3925,7 @@ msgstr ""
 msgid "Reverse lines"
 msgstr ""
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 
 #, c-format

@@ -816,10 +816,10 @@ msgid "Copy from Right\tAlt+Shift+Left"
 msgstr "从右侧复制\tAlt+Shift+Right"
 
 msgid "C&opy to Right and Advance\tCtrl+Alt+Right"
-msgstr "复制到右侧并前进\tCtrl+Alt+Right"
+msgstr "复制到右侧并前进(&O)\tCtrl+Alt+Right"
 
 msgid "Copy &to Left and Advance\tCtrl+Alt+Left"
-msgstr "复制到左侧并前进\tCtrl+Alt+Left"
+msgstr "复制到左侧并前进(&T)\tCtrl+Alt+Left"
 
 msgid "Copy &All to Right"
 msgstr "全部复制到右侧(&A)"
@@ -848,6 +848,12 @@ msgstr "使用预比较插件(&D)..."
 msgid "&Transform with editor script..."
 msgstr "用编辑器脚本转换(&T)..."
 
+msgid "Scripts for &copying"
+msgstr "用于复制的脚本(&C)"
+
+msgid "Select &editor script..."
+msgstr "选择编辑器脚本(&E)..."
+
 msgid "Sp&lit"
 msgstr "分隔(&L)"
 
@@ -864,16 +870,16 @@ msgid "Compare Non-hor&izontally"
 msgstr "非横向比较(&I)"
 
 msgid "First &left item with second left item"
-msgstr "第一个的左侧项目与第二个的左侧项目(&L)"
+msgstr "左侧第一个项目与左侧第二个项目(&L)"
 
 msgid "First &right item with second right item"
-msgstr "第一个的右侧项目与第二个的右侧项目(&R)"
+msgstr "右侧第一个项目与右侧第二个项目(&R)"
 
 msgid "&First left item with second right item"
-msgstr "第一个的左侧项目与第二个的右侧项目(&F)"
+msgstr "左侧第一个项目与右侧第二个项目(&F)"
 
 msgid "&Second left item with first right item"
-msgstr "第二个的左侧项目与第一个的右侧项目(&S)"
+msgstr "左侧第二个项目与右侧第一个项目(&S)"
 
 msgid "Co&mpare As"
 msgstr "重新比较(&M)"
@@ -1244,7 +1250,7 @@ msgid "Re&place with:"
 msgstr "替换为(&P):"
 
 msgid "&Don't wrap end of file"
-msgstr "至文件末尾不从头查找(&O)"
+msgstr "至文件末尾不从头查找(&D)"
 
 msgid "Replace in"
 msgstr "替换范围"
@@ -1563,9 +1569,6 @@ msgstr "编辑器"
 msgid "&Highlight syntax"
 msgstr "语法高亮(&H)"
 
-msgid "&Automatic rescan"
-msgstr "自动重新扫描(&A)"
-
 msgid "&Preserve original EOL chars"
 msgstr "保持换行符不变(&P)"
 
@@ -1581,6 +1584,15 @@ msgstr "插入制表符(&I)"
 msgid "Insert &Spaces"
 msgstr "插入空格(&S)"
 
+msgid "&Rendering Mode:"
+msgstr "渲染模式(&R)"
+
+msgid "&Automatic rescan"
+msgstr "自动重新扫描(&A)"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "选中差异的复制粒度(&G)："
+
 msgid "Line Difference Coloring"
 msgstr "行内差异着色"
 
@@ -1595,9 +1607,6 @@ msgstr "单词级别(&W):"
 
 msgid "W&ord break characters:"
 msgstr "单词分隔字符:"
-
-msgid "&Rendering Mode:"
-msgstr "渲染模式(&R)"
 
 msgid ""
 "WinMerge allows hiding some common message boxes. Press the Reset button to "
@@ -2236,6 +2245,9 @@ msgid ""
 "To make this message box visible again, press the Reset button on the "
 "Message Boxes page of the Options dialog."
 msgstr "要使此消息框再次可见，请点击“选项”对话框，“消息框”页面上的“重置”按钮。"
+
+msgid "Compare/Merge"
+msgstr "比较/合并"
 
 msgid "Syntax"
 msgstr "语法"
@@ -4061,7 +4073,7 @@ msgid "Word-by-word position and text"
 msgstr "逐字定位输入"
 
 msgid "AppData folder"
-msgstr "AppData文件夹"
+msgstr "AppData 文件夹"
 
 msgid "Install folder"
 msgstr "安装文件夹"
@@ -4179,6 +4191,18 @@ msgstr "比较中..."
 
 msgid "Zoom:"
 msgstr "缩放："
+
+msgid "Diff hunk"
+msgstr "整个差异块"
+
+msgid "Inline diff"
+msgstr "行内差异"
+
+msgid "Line"
+msgstr "整行"
+
+msgid "Character"
+msgstr "字符"
 
 msgid "Prettification"
 msgstr "格式美化"
@@ -4342,17 +4366,21 @@ msgstr "反转行"
 msgid ""
 "Replace text with another text.\r\n"
 "Usage: Replace [-i] [-e] FIND REPLACE\r\n"
+"   or: Replace -s\r\n"
 "  FIND    - text to find\r\n"
 "  REPLACE - text to replace\r\n"
 "  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+"  -e - treat the specified text as a regular expression\r\n"
+"  -s - replace using Substitution Filters patterns"
 msgstr ""
 "文本替换。\r\n"
-"用法： Replace [-i] [-e] FIND REPLACE\r\n"
+"用法：Replace [-i] [-e] FIND REPLACE\r\n"
+"   或者：Replace -s\r\n"
 "  FIND    - 查找的文本\r\n"
 "  REPLACE - 替换的文本\r\n"
 "  -i - 忽略大小写 (只用于 -e)\r\n"
-"  -e - 将指定文本视为正则表达式"
+"  -e - 将指定文本视为正则表达式\r\n"
+"  -s - 使用置换过滤器模式进行替换"
 
 #, c-format
 msgid ""

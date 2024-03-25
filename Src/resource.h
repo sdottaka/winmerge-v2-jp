@@ -71,16 +71,17 @@
 #define IDD_PROPPAGE_COMPARE_TABLE      273
 #define IDD_PROPPAGE_COMPARE_WEBPAGE    274
 #define IDD_PROPPAGE_EDITOR             275
-#define IDD_PROPPAGE_EDITOR_SYNTAX      276
-#define IDD_PROPPAGE_GENERAL            277
-#define IDD_PROPPAGE_SHELL              278
-#define IDD_PROPPAGE_SYSTEM             279
-#define IDD_PROPPAGE_MESSAGEBOXES       280
-#define IDD_PROPPAGE_PROJECT            281
-#define IDD_EDIT_FIND                   282
-#define IDD_EDIT_MARKER                 283
-#define IDD_EDIT_REPLACE                284
-#define IDD_INPUTBOX                    285
+#define IDD_PROPPAGE_EDITOR_COMPAREMERGE 276
+#define IDD_PROPPAGE_EDITOR_SYNTAX      277
+#define IDD_PROPPAGE_GENERAL            278
+#define IDD_PROPPAGE_SHELL              279
+#define IDD_PROPPAGE_SYSTEM             280
+#define IDD_PROPPAGE_MESSAGEBOXES       281
+#define IDD_PROPPAGE_PROJECT            282
+#define IDD_EDIT_FIND                   283
+#define IDD_EDIT_MARKER                 284
+#define IDD_EDIT_REPLACE                285
+#define IDD_INPUTBOX                    286
 #define IDI_ROTATE2                     302
 #define IDR_LOGO                        307
 #define IDR_SPLASH                      308
@@ -477,7 +478,7 @@
 #define IDC_FINDDLG_DONTWRAP            1302
 #define IDC_REPORT_COPYCLIPBOARD        1303
 #define IDC_FILTERFILE_INSTALL          1304
-#define IDC_MATCH_SIMILAR_LINES         1305
+#define IDC_ALIGN_SIMILAR_LINES         1305
 #define IDC_BACKUP_FILECMP              1306
 #define IDC_BACKUP_FOLDERCMP            1307
 #define IDC_BACKUP_ORIGFOLD             1308
@@ -620,6 +621,7 @@
 #define IDC_PROPS_LISTVIEW              1623
 #define IDC_INPUTBOX_PROMPT             1633
 #define IDC_INPUTBOX_EDIT               1634
+#define IDC_COPY_GRANULARITY            1635
 #define IDC_EDIT_WHOLE_WORD             8603
 #define IDC_EDIT_MATCH_CASE             8604
 #define IDC_EDIT_FINDTEXT               8605
@@ -798,6 +800,7 @@
 #define ID_NO_UNPACKER                  32887
 #define ID_APPLY_PREDIFFER              32888
 #define ID_TRANSFORM_WITH_SCRIPT        32889
+#define ID_SELECT_EDITOR_SCRIPT_FOR_COPYING 32890
 #define ID_WINDOW_CLOSEALL              32897
 #define ID_HELP_CONTENTS                32912
 #define ID_HELP_GETCONFIG               32913
@@ -809,6 +812,7 @@
 #define ID_UNPACKER_SETTINGS_AUTO       32924
 #define ID_UNPACKER_SETTINGS_SELECT     32925
 #define ID_NO_EDIT_SCRIPTS              32931
+#define ID_NO_EDIT_SCRIPTS_FOR_COPYING  32932
 #define ID_FILE_OPEN_REGISTERED         32944
 #define ID_FILE_OPEN_WITHEDITOR         32945
 #define ID_FILE_OPEN_WITH               32946
@@ -1094,6 +1098,9 @@
 #define ID_NO_MRU                       35451
 #define ID_MRU_FIRST                    35452
 #define ID_MRU_LAST                     35500
+#define ID_SCRIPT_FOR_COPYING_NONE      35501
+#define ID_SCRIPT_FOR_COPYING_FIRST     35501
+#define ID_SCRIPT_FOR_COPYING_LAST      35600
 #define IDS_SPLASH_GPLTEXT              38977
 #define IDS_MESSAGEBOX_OK               39001
 #define IDS_MESSAGEBOX_CANCEL           39002
@@ -1134,9 +1141,10 @@
 #define IDS_OPTIONSPG_DIRCOLORS         39061
 #define IDS_OPTIONSPG_COLOR_SCHEMES     39062
 #define IDS_OPTIONSPG_GENEDITOR         39063
-#define IDS_OPTIONSPG_EDITOR_SYNTAX     39064
-#define IDS_OPTIONSPG_MESSAGEBOXES      39065
-#define IDS_OPTIONSPG_PROJECT           39066
+#define IDS_OPTIONSPG_EDITOR_COMPAREMERGE 39064
+#define IDS_OPTIONSPG_EDITOR_SYNTAX     39065
+#define IDS_OPTIONSPG_MESSAGEBOXES      39066
+#define IDS_OPTIONSPG_PROJECT           39067
 #define IDS_TO                          40000
 #define IDS_FROM_LEFT                   40001
 #define IDS_TO_LEFT                     40002
@@ -1657,6 +1665,10 @@
 #define IDS_PREVIEWBAR_CLOSE            44538
 #define IDS_WEBPAGE_COMPARING           44539
 #define IDS_WEBPAGE_ZOOM                44540
+#define IDS_COPY_GRANULARITY_DIFFHUNK   44541
+#define IDS_COPY_GRANULARITY_INLINE     44542
+#define IDS_COPY_GRANULARITY_LINE       44543
+#define IDS_COPY_GRANULARITY_Character  44544
 
 // Next default values for new objects
 // 

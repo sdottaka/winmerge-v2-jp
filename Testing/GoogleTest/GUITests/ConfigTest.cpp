@@ -159,7 +159,7 @@ namespace
 		//  File compare
 		{ OPT_AUTOMATIC_RESCAN, varprop::VT_BOOL, {}, {} },
 		{ OPT_ALLOW_MIXED_EOL, varprop::VT_BOOL, {}, {} },
-		{ OPT_COPY_FULL_LINE, varprop::VT_BOOL, {}, {} },
+		{ OPT_COPY_GRANULARITY, varprop::VT_INT, {0, 1, 2, 3}, {} },
 		{ OPT_TAB_SIZE, varprop::VT_INT, {1, 2, 4, 8, 128}, {} },
 		{ OPT_TAB_TYPE, varprop::VT_INT, {0, 1}, {} },
 		{ OPT_WORDWRAP, varprop::VT_BOOL, {}, {} },
@@ -213,7 +213,7 @@ namespace
 		{ OPT_CMP_IGNORE_CODEPAGE, varprop::VT_BOOL, {}, {}},
 		{ OPT_CMP_METHOD, varprop::VT_INT, {0, 1, 2, 3, 4, 5}, {}},
 		{ OPT_CMP_MOVED_BLOCKS, varprop::VT_BOOL, {}, {}},
-		{ OPT_CMP_MATCH_SIMILAR_LINES, varprop::VT_BOOL, {}, {}},
+		{ OPT_CMP_ALIGN_SIMILAR_LINES, varprop::VT_BOOL, {}, {}},
 		{ OPT_CMP_STOP_AFTER_FIRST, varprop::VT_BOOL, {}, {}},
 		{ OPT_CMP_QUICK_LIMIT, varprop::VT_INT, {0, 1, 4, 1024}, {}},
 		{ OPT_CMP_BINARY_LIMIT, varprop::VT_INT, {0, 1, 4, 1024}, {}},

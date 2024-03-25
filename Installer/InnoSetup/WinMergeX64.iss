@@ -165,13 +165,6 @@ Name: Turkish; MessagesFile: compiler:Languages\Turkish.isl,..\..\Translations\I
 Name: Ukrainian; MessagesFile: compiler:Languages\Ukrainian.isl,..\..\Translations\InnoSetup\Ukrainian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Ukrainian.txt
 
 
-[Messages]
-English.FinishedLabel=Setup has finished installing WinMerge on your computer.
-English.SetupAppTitle=Setup - WinMerge {#AppVersion}
-English.WizardInfoBefore=License Agreement
-English.InfoBeforeLabel=GNU General Public License
-
-
 [Types]
 Name: typical; Description: {cm:TypicalInstallation}
 Name: full; Description: {cm:FullInstallation}

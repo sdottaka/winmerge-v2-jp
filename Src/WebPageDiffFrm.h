@@ -60,6 +60,7 @@ public:
 	const PackingInfo* GetUnpacker() const override { return &m_infoUnpacker; };
 	void SetUnpacker(const PackingInfo* infoUnpacker) override { if (infoUnpacker) m_infoUnpacker = *infoUnpacker; };
 	const PrediffingInfo* GetPrediffer() const override { return nullptr; };
+	const EditorScriptInfo* GetEditorScript() const override { return nullptr; };
 	int GetFileCount() const override { return m_filePaths.GetSize(); }
 	String GetPath(int pane) const override { return m_filePaths[pane]; }
 	bool GetReadOnly(int pane) const override { return m_bRO[pane]; }
@@ -122,7 +123,6 @@ private:
 	std::vector<std::shared_ptr<TempFolder>> m_tempFolders;
 	std::function<void()> m_callbackOnOpenCompleted;
 	bool m_bCompareCompleted;
-	bool m_bInUpdateWebPageDiffBar;
 
 // Generated message map functions
 protected:

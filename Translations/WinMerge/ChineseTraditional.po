@@ -1030,6 +1030,12 @@ msgstr "套用預先差異(&d)..."
 msgid "&Transform with editor script..."
 msgstr "使用編輯器指令腳本進行轉換(&T)..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 #, c-format
 msgid "Sp&lit"
 msgstr "分割 (&L)"
@@ -1910,10 +1916,6 @@ msgid "&Highlight syntax"
 msgstr "高亮度語法 (&H)"
 
 #, c-format
-msgid "&Automatic rescan"
-msgstr "自動重新掃描 (&A)"
-
-#, c-format
 msgid "&Preserve original EOL chars"
 msgstr "保留原始 EOL 字元 (&P)"
 
@@ -1932,6 +1934,16 @@ msgstr "插入跳格字元 (&I)"
 #, c-format
 msgid "Insert &Spaces"
 msgstr "插入空白 (&S)"
+
+msgid "&Rendering Mode:"
+msgstr "渲染模式 (&R)："
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "自動重新掃描 (&A)"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
 
 #, c-format
 msgid "Line Difference Coloring"
@@ -1952,9 +1964,6 @@ msgstr "字階層 (&W)："
 #, c-format
 msgid "W&ord break characters:"
 msgstr "斷句字元 (&O)："
-
-msgid "&Rendering Mode:"
-msgstr "渲染模式 (&R)："
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge 允許隱藏某些共同訊息盒。按重設鍵以再次顯示所有訊息盒。"
@@ -2730,6 +2739,9 @@ msgstr "不要再顯示此訊息 (&M)"
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "若要再次顯示此訊息方塊，請在「選項」對話框的「訊息方塊」頁面上按下重設按鈕。"
+
+msgid "Compare/Merge"
+msgstr ""
 
 #, c-format
 msgid "Syntax"
@@ -4829,6 +4841,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "美化"
 
@@ -4988,20 +5012,16 @@ msgstr "顛倒欄"
 msgid "Reverse lines"
 msgstr "顛倒行"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "替換文本為另一個文本。\r\n"
 "用法：Replace [-i] [-e] FIND REPLACE\r\n"
+"  or: Replace -s\r\n"
 "FIND - 要尋找的文本\r\n"
 "REPLACE - 要替換的文本\r\n"
 "-i - 忽略大小寫（僅適用於 -e）\r\n"
-"-e - 將指定的文本視為正則表示式"
+"-e - 將指定的文本視為正則表示式\r\n"
+"-s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""

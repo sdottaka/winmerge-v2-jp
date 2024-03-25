@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2023-12-30 17:35+0000\n"
-"PO-Revision-Date: 2024-01-15 07:15+0200\n"
+"POT-Creation-Date: 2024-03-06 21:04+0000\n"
+"PO-Revision-Date: 2024-03-08 15:15+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -844,6 +844,12 @@ msgstr "Taikyti paren&gėją..."
 msgid "&Transform with editor script..."
 msgstr "&Transformuoti su redaktoriaus skriptu..."
 
+msgid "Scripts for &copying"
+msgstr "Skriptai &kopijavimui..."
+
+msgid "Select &editor script..."
+msgstr "Parinkti r&edagavimo skriptą..."
+
 msgid "Sp&lit"
 msgstr "Pada&linti"
 
@@ -1557,9 +1563,6 @@ msgstr "Redaktoriaus"
 msgid "&Highlight syntax"
 msgstr "&Naudoti sintaksės paryškinimą"
 
-msgid "&Automatic rescan"
-msgstr "&Automatiškai perskanuoti"
-
 msgid "&Preserve original EOL chars"
 msgstr "Išsaugoti originalų eil. pabaigos formatą"
 
@@ -1575,6 +1578,15 @@ msgstr "Įterpt&i TAB simbolius"
 msgid "Insert &Spaces"
 msgstr "Įterpti tarpu&s"
 
+msgid "&Rendering Mode:"
+msgstr "Atvaizdavimo &režimas:"
+
+msgid "&Automatic rescan"
+msgstr "&Automatiškai perskanuoti"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "Kopijuoti pasirinktų skirtumų &granuliuotumą:"
+
 msgid "Line Difference Coloring"
 msgstr "Skirtumų eilutėse spalvinimas"
 
@@ -1589,9 +1601,6 @@ msgstr "Žo&džio lygyje:"
 
 msgid "W&ord break characters:"
 msgstr "Ž&odžių skirtukų simboliai:"
-
-msgid "&Rendering Mode:"
-msgstr "Atvaizdavimo &režimas:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "„WinMerge“ leidžia paslėpti kai kuriuos bendrus pranešimus. Paspauskite mygtuką „Atkurti“, kad visi pranešimai vėl būtų matomi."
@@ -2164,6 +2173,9 @@ msgstr "Daugiau nerodyti šio praneši&mo."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Kad šis pranešimas vėl būtų matomas, paspauskite „Nuostatų“ ekrano „Bendrų pranešimų“ dalyje esantį mygtuką „Atkurti“."
+
+msgid "Compare/Merge"
+msgstr "Lyginimo/Suliejimo"
 
 msgid "Syntax"
 msgstr "Sintaksės"
@@ -3747,6 +3759,18 @@ msgstr "Lygina..."
 msgid "Zoom:"
 msgstr "Mastelis:"
 
+msgid "Diff hunk"
+msgstr "Skirt. gabalas"
+
+msgid "Inline diff"
+msgstr "Skirt. eilutėje"
+
+msgid "Line"
+msgstr "Eilutė"
+
+msgid "Character"
+msgstr "Simbolis"
+
 msgid "Prettification"
 msgstr "Sutvarkymas"
 
@@ -3906,7 +3930,7 @@ msgstr "Sukeisti stulpelius"
 msgid "Reverse lines"
 msgstr "Sukeisti eilutes"
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 
 #, c-format

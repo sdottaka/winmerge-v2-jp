@@ -845,6 +845,12 @@ msgstr "Zastosuj porównane..."
 msgid "&Transform with editor script..."
 msgstr "Przekształć za pomocą edytora skryptu..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "Podzie&lone"
 
@@ -1558,9 +1564,6 @@ msgstr "Edytor"
 msgid "&Highlight syntax"
 msgstr "Podświetlaj składnię"
 
-msgid "&Automatic rescan"
-msgstr "Automatyczne powtórz skanowanie"
-
 msgid "&Preserve original EOL chars"
 msgstr "Zachowaj oryginalne znaki końca linii"
 
@@ -1576,6 +1579,15 @@ msgstr "Wstaw tabulatory"
 msgid "Insert &Spaces"
 msgstr "Wstaw spacje"
 
+msgid "&Rendering Mode:"
+msgstr "&Tryb renderowania:"
+
+msgid "&Automatic rescan"
+msgstr "Automatyczne powtórz skanowanie"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Kolorowanie różniących się wierszy"
 
@@ -1590,9 +1602,6 @@ msgstr "Z poziomu słowa:"
 
 msgid "W&ord break characters:"
 msgstr "Znak dzielenia wyrazów:"
-
-msgid "&Rendering Mode:"
-msgstr "&Tryb renderowania:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge pozwala ukryć niektóre komunikaty. Naciśnij przycisk Resetuj, aby ponownie wyświetlać wszystkie komunikaty."
@@ -2165,6 +2174,9 @@ msgstr "Nie wyświetlaj ponownie tego komunikatu."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Aby ponownie wyświetlić ten komunikat, przejdź do Opcji programu, a następnie w zakładce Komunikaty naciśnij przycisk Resetuj."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "Składnia"
@@ -3748,6 +3760,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Upiększanie"
 
@@ -3907,8 +3931,8 @@ msgstr "Odwróć kolumny"
 msgid "Reverse lines"
 msgstr "Odwróć wiersze"
 
-msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression"
-msgstr "Zastąp tekst innym tekstem.\r\nUżycie: Replace [-i] [-e] ZNAJDŹ ZASTĄP\r\n  ZNAJDŹ    - tekst do znalezienia\r\n  ZASTĄP - tekst do zastąpienia\r\n  -i - ignoruj wielkość liter (tylko dla -e)\r\n  -e - traktuj określony tekst jako wyrażenie regularne"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
+msgstr "Zastąp tekst innym tekstem.\r\nUżycie: Replace [-i] [-e] ZNAJDŹ ZASTĄP\r\n   or: Replace -s\r\n  ZNAJDŹ    - tekst do znalezienia\r\n  ZASTĄP - tekst do zastąpienia\r\n  -i - ignoruj wielkość liter (tylko dla -e)\r\n  -e - traktuj określony tekst jako wyrażenie regularne\r\n  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."

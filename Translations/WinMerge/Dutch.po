@@ -844,6 +844,12 @@ msgstr "Voorvergelijking toepassen."
 msgid "&Transform with editor script..."
 msgstr "Transformeren met editor-script..."
 
+msgid "Scripts for &copying"
+msgstr ""
+
+msgid "Select &editor script..."
+msgstr ""
+
 msgid "Sp&lit"
 msgstr "Splitsen"
 
@@ -1557,9 +1563,6 @@ msgstr "Editor"
 msgid "&Highlight syntax"
 msgstr "Syntax markeren"
 
-msgid "&Automatic rescan"
-msgstr "Automatisch opnieuw scannen"
-
 msgid "&Preserve original EOL chars"
 msgstr "Originele regeleinde-tekens bewaren"
 
@@ -1575,6 +1578,15 @@ msgstr "Tabs invoegen"
 msgid "Insert &Spaces"
 msgstr "Spaties invoegen"
 
+msgid "&Rendering Mode:"
+msgstr "Rendermodus:"
+
+msgid "&Automatic rescan"
+msgstr "Automatisch opnieuw scannen"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
 msgid "Line Difference Coloring"
 msgstr "Kleur van regelverschillen"
 
@@ -1589,9 +1601,6 @@ msgstr "Woordniveau:"
 
 msgid "W&ord break characters:"
 msgstr "Woordsplitsingstekens:"
-
-msgid "&Rendering Mode:"
-msgstr "Rendermodus:"
 
 msgid "WinMerge allows hiding some common message boxes. Press the Reset button to make all message boxes visible again."
 msgstr "WinMerge staat toe dat een aantal algemene berichtvensters verborgen worden. Druk op de herstellen-knop om alle berichtvensters terug zichtbaar te maken."
@@ -2220,6 +2229,9 @@ msgstr "Dit bericht niet meer weergeven."
 
 msgid "To make this message box visible again, press the Reset button on the Message Boxes page of the Options dialog."
 msgstr "Druk op de herstellen-knop op de pagina \"berichtvensters\" van het venster \"opties\" om dit berichtvenster opnieuw zichtbaar te maken."
+
+msgid "Compare/Merge"
+msgstr ""
 
 msgid "Syntax"
 msgstr "Syntax"
@@ -4130,6 +4142,18 @@ msgstr ""
 msgid "Zoom:"
 msgstr ""
 
+msgid "Diff hunk"
+msgstr ""
+
+msgid "Inline diff"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Character"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Mooi maken"
 
@@ -4289,20 +4313,16 @@ msgstr "Kolommen omkeren"
 msgid "Reverse lines"
 msgstr "Regels omkeren"
 
-msgid ""
-"Replace text with another text.\r\n"
-"Usage: Replace [-i] [-e] FIND REPLACE\r\n"
-"  FIND    - text to find\r\n"
-"  REPLACE - text to replace\r\n"
-"  -i - ignore case (only for -e)\r\n"
-"  -e - treat the specified text as a regular expression"
+msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 msgstr ""
 "Tekst door andere tekst vervangen.\r\n"
 "Gebruik: Replace [-i] [-e] ZOEKEN VERVANGEN\r\n"
+"   or: Replace -s\r\n"
 "  ZOEKEN    - te zoeken tekst\r\n"
 "  VERVANGEN - te vervangen tekst\r\n"
 "  -i - hoofdlettergebruik negeren (alleen voor -e)\r\n"
-"  -e - de opgegeven tekst als een reguliere expressie behandelen"
+"  -e - de opgegeven tekst als een reguliere expressie behandelen\r\n"
+"  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid ""
