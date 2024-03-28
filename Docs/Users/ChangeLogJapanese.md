@@ -36,7 +36,7 @@ title: 変更履歴
 
 - 不具合修正: 展開プラグインでエラーが発生したとき、クラッシュする問題を修正した。
 - VBScriptが非推奨となったため、プラグインをJScriptで書きなおした。 [(PR#2217)](https://github.com/WinMerge/winmerge/pull/2217)
-- 置換フィルターのパターンを使用して置換する機能を置換プラグインに追加した。 (Replace プラグインに -s オプションを指定します) [(PR#2252)](https://github.com/WinMerge/winmerge/pull/2252)(PRをいただきました。ありがとうございます。)
+- 置換フィルターのパターンを使用して置換する機能を置換プラグインに追加した。 (Replace プラグインに -s オプションを指定します) [(PR#2252)](https://github.com/WinMerge/winmerge/pull/2252)
 - PrediffLineFilter プラグイン正規表現の正常性チェックを追加した。
 
 #### インストーラー
