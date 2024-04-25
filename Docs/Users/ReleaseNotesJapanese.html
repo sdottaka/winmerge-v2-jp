@@ -20,85 +20,120 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="winmerge-21638-リリースノート">WinMerge 2.16.38 リリースノート</h1>
+<h1 id="winmerge-21640-リリースノート">WinMerge 2.16.40 リリースノート</h1>
 <ul>
 <li><a href="#about-this-release">このリリースについて</a></li>
-<li><a href="#what-is-new-in-21638">2.16.38の新機能</a></li>
-<li><a href="#what-is-new-in-21637-beta">2.16.37 beta の新機能</a></li>
+<li><a href="#what-is-new-in-21640">2.16.40 の新機能</a></li>
+<li><a href="#what-is-new-in-21639-beta">2.16.39 beta の新機能</a></li>
 <li><a href="#known-issues">既知の問題</a></li>
 </ul>
-<p>2024年1月</p>
+<p>2024年4月</p>
 <h2 id="このリリースについて">このリリースについて</h2>
-<p>WinMerge の 2.16.38 安定版リリースです。 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。</p>
+<p>WinMerge の 2.16.40 安定版リリースです。 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。</p>
 <p>不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。</p>
-<h2 id="21638-の新機能"><a name="what-is-new-in-21638"></a>2.16.38 の新機能</h2>
+<h2 id="21640-の新機能"><a name="what-is-new-in-21640"></a>2.16.40 の新機能</h2>
+<h3 id="全般">全般</h3>
+<ul>
+<li>不具合修正: Wine上で発生する不具合をいくつか修正した。</li>
+</ul>
 <h3 id="ファイル比較">ファイル比較</h3>
 <ul>
-<li>不具合修正: コードページダイアログで右側のBOMを変更しても反映されない問題を修正した。</li>
-<li>C++ シンタックスハイライトのキーワードを更新した。 <a href="https://github.com/WinMerge/winmerge/pull/2166">(PR#2166)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>不具合修正: テキストを選択状態にした後に置換すると正しく置換されないことがある問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2279">(#2279)</a></li>
 </ul>
-<h3 id="webページ比較">Webページ比較</h3>
+<h3 id="オプションダイアログ">オプションダイアログ</h3>
 <ul>
-<li>比較中はステータスバーに「比較しています...」を表示するようにした。</li>
-<li>ロケーションペインを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2160">(PR#2160)</a></li>
-</ul>
-<h3 id="フォルダー比較">フォルダー比較</h3>
-<ul>
-<li>[列の表示]ダイアログのボタンの活性/非活性制御の改善。 <a href="https://github.com/WinMerge/winmerge/pull/2154">(PR#2154)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>&quot;オプション (エディター &gt; 一般)&quot; ダイアログに &quot;デフォルト&quot; ボタンを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2283">(PR #2283)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>&quot;オプション &gt; 比較 &gt; テーブル&quot; 内の &quot;デフォルト&quot; ボタンの位置を調整した。 <a href="https://github.com/WinMerge/winmerge/pull/2295">(PR #2295)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="プラグイン">プラグイン</h3>
 <ul>
-<li><p>不具合修正: 以下のように二重引用符を文字列が <code>/unpacker</code> コマンドライン引数に指定された場合に正しく解釈されない問題を修正した。</p>
-<p><code>/unpacker &quot;Replace &quot;&quot;a&quot;&quot; &quot;&quot;b&quot;&quot;&quot;</code></p></li>
+<li>不具合修正: CompareMSExcelFiles.sct: &#39;ワークブックの情報を複数ファイルに展開する&#39; オプションが有効になっている場合、10枚以上のシートを含む .xlsx ファイルのすべてのシートが比較されない問題を修正した。（このバグはバージョン2.16.39 ベータで発生しました。)</li>
+<li>不具合修正: insert datetime.sct: 地域によっては正常に動作しなかった問題を修正した。（このバグはバージョン2.16.39 ベータで発生しました。）</li>
+<li>不具合修正: ファイルとフォルダーの選択ウィンドウが表示されているときにプラグインを再読み込みすると &quot;Catastrophic failure&quot; メッセージボックスが表示される可能性がある問題を修正した。</li>
+<li>GUI にプラグインパイプラインのエイリアスまたは単純なプラグインを登録できるようにした。 <a href="https://github.com/WinMerge/winmerge/pull/2257">(PR #2257)</a></li>
+</ul>
+<h3 id="インストーラー">インストーラー</h3>
+<ul>
+<li>不具合修正: 不具合修正: インストールの最後（最後のダイアログボックス）でのフランス語のエンコーディングの問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2272">(#2272)</a></li>
 </ul>
 <h3 id="翻訳">翻訳</h3>
 <ul>
 <li>翻訳の更新:
 <ul>
-<li>Brazilian (PR#2151,#2178)</li>
-<li>Chinese Simplified (PR#2153,#2183)</li>
-<li>Corsican (PR#2180)</li>
-<li>Hungarian (PR#2156,#2157,#2158)</li>
+<li>Brazilian (PR #2289)</li>
+<li>Catalan (PR #2270,#2274)</li>
+<li>Chinese Simplified (PR #2290)</li>
+<li>Corsican (PR #2288)</li>
+<li>French (PR #2271,#2275)</li>
+<li>Hungarian (PR #2291)</li>
 <li>Japanese</li>
-<li>Korean (PR#2152)</li>
-<li>Lithuanian (PR#2155,#2177)</li>
-<li>Portuguese (PR#2185)</li>
+<li>Polish (PR#2277)</li>
 </ul></li>
 </ul>
-<h2 id="21637-beta-の新機能"><a name="what-is-new-in-21637-beta"></a>2.16.37 Beta の新機能</h2>
+<h2 id="21639-beta-の新機能"><a name="what-is-new-in-21639-beta"></a>2.16.39 Beta の新機能</h2>
+<h3 id="全般-1">全般</h3>
+<ul>
+<li>不具合修正: ヘッダーバーに1文字だけを入力するとクラッシュすることがある問題を修正した。</li>
+</ul>
 <h3 id="ファイル比較-1">ファイル比較</h3>
 <ul>
-<li>不具合修正: 「行を右端で折り返す」が有効な場合、ロケーションペインをクリックしたときにスクロール位置が予期しない位置になる問題を修正した。</li>
-<li>不具合修正: ステータスバーをクリックしてもエンコーディング等のメニューが表示されない問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2129">(#2129)</a></li>
-<li>不具合修正: 正規表現検索で <code>\r</code> を使用してもCRを見つけられない問題を修正した。</li>
-<li>新しい C# のキーワードを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2136">(PR#2136)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>不具合修正: クラッシュする可能性がある箇所を修正した。</li>
+<li>不具合修正: 元のファイル名がドットで始まる場合、.bak ファイルの作成が失敗する問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2217">(#2217)</a></li>
+<li>Java シンタックスハイライトのキーワードを更新した。 <a href="https://github.com/WinMerge/winmerge/pull/2215">(PR#2215)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>&quot;Match similar lines&quot; を &quot;Align similar lines&quot; に修正。<a href="https://github.com/WinMerge/winmerge/pull/2230">(PR #2230)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>テキストを選択した状態で「右にコピー」等で別ペインにコピーする際の粒度を「差異ブロック」、「行内差異」、「行」、「文字」から選択できるようにした。 (オプションウインドウの[エディター/比較/マージ]カテゴリの[選択された差異のコピー粒度]で選択できます)<a href="https://github.com/WinMerge/winmerge/pull/2224">(PR#2224)</a></li>
+<li>「右側へコピー」または「左側へコピー」でコピーするテキストをプラグインで加工できるようにした。 ([プラグイン]→[コピー時適用エディタースクリプト]メニューでプラグインを選択できます) <a href="https://github.com/WinMerge/winmerge/pull/2238">(PR#2238)</a></li>
+<li>PHP シンタックスハイライトのキーワードを更新した。 <a href="https://github.com/WinMerge/winmerge/pull/2265">(PR#2265)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
-<h3 id="フォルダー比較-1">フォルダー比較</h3>
+<h3 id="webページ比較">Webページ比較</h3>
 <ul>
-<li>不具合修正: バイナリコンテンツ比較方法でフォルダ比較した場合、空のファイルがコピーできない問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2146">(#2146)</a></li>
+<li>不具合修正: ロケーションペインで[イベント同期]等の設定を変更しても、次回起動時に反映されない問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2248">(#2248)</a></li>
 </ul>
-<h3 id="バイナリ比較">バイナリ比較</h3>
+<h4 id="ファイルまたはフォルダーの選択ウインドウ">ファイルまたはフォルダーの選択ウインドウ</h4>
 <ul>
-<li>不具合修正: ファイルの末尾のデータが置換できない問題を修正した。</li>
+<li>アーカイブファイルと通常ファイルを指定した場合に比較ボタンが押せない問題を修正した。</li>
 </ul>
-<h3 id="画像比較">画像比較</h3>
+<h4 id="htmlレポート">HTMLレポート</h4>
 <ul>
-<li>不具合修正: 新規作成で表示されたペインのテキストを名前を付けて保存で保存してもヘッダーにファイル名が表示されない問題を修正した。</li>
+<li>不具合修正: HTML レポートの左ペインと右ペインの幅が等しくないことがある問題を修正した。</li>
+<li>不具合修正: ヘッダー バーに設定されたキャプションが HTML レポートに適用されない問題を修正した。</li>
 </ul>
-<h3 id="webページ比較-1">Webページ比較</h3>
+<h3 id="プラグイン-1">プラグイン</h3>
 <ul>
-<li>不具合修正: &quot;他のアプリケーションがファイル ... を更新しました。ファイルを開きなおしますか?&quot;というメッセージボックスが、<code>file://</code> 形式のURLを比較する際に表示される問題を修正した。</li>
-<li>イベント同期機能の改善 <a href="https://github.com/WinMerge/winwebdiff/pull/4">(winmerge/winwebdiff#4)</a></li>
+<li>不具合修正: 展開プラグインでエラーが発生したとき、クラッシュする問題を修正した。</li>
+<li>VBScriptが非推奨となったため、プラグインをJScriptで書きなおした。 <a href="https://github.com/WinMerge/winmerge/pull/2217">(PR #2217)</a></li>
+<li>置換フィルターのパターンを使用して置換する機能を置換プラグインに追加した。 (Replace プラグインに -s オプションを指定します) <a href="https://github.com/WinMerge/winmerge/pull/2252">(PR#2252)</a></li>
+<li>PrediffLineFilter プラグイン正規表現の正常性チェックを追加した。</li>
+</ul>
+<h3 id="インストーラー-1">インストーラー</h3>
+<ul>
+<li>不具合修正: 前回のインストールで /noicons オプションが指定されていた場合、次回のインストール時に以前のスタート メニューを削除するように求めるメッセージ ボックスが表示されてしまう問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2206">(#2206)</a></li>
+<li>一部の翻訳可能メッセージを .iss ファイルから .islu ファイル達に移動した。 <a href="https://github.com/WinMerge/winmerge/issues/2247">(#2247)</a></li>
+</ul>
+<h3 id="アーカイブサポート">アーカイブサポート</h3>
+<ul>
+<li>ファイル名を暗号化して圧縮した 7z ファイルを比較できない問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2225">(#2225)</a></li>
+</ul>
+<h3 id="その他">その他</h3>
+<ul>
+<li>codeql-analysis.yml をバージョン v2 から v3 に更新した。 <a href="https://github.com/WinMerge/winmerge/pull/2196">(PR #2196)</a></li>
 </ul>
 <h3 id="翻訳-1">翻訳</h3>
 <ul>
 <li>翻訳の更新:
 <ul>
-<li>Bulgarian (PR #2124)</li>
-<li>French (PR #2135,#2140,#2141,#2142,winmerge/frhed#15)</li>
-<li>Italian (PR #2130)</li>
-<li>Korean (PR #2126,#2127,#2143)</li>
-<li>Polish (PR #2128)</li>
+<li>Brazilian (PR #2234,#2243)</li>
+<li>Chinese Simplified (PR #2241,#2244,#2251,#2256,#2259)</li>
+<li>Corsican (PR #2266)</li>
+<li>French (PR #2237,#2264)</li>
+<li>Hungarian (PR #2232,#2250)</li>
+<li>Italian (PR #2245,#2249)</li>
+<li>Japanese</li>
+<li>Korean (PR #2239)</li>
+<li>Lithuanian (PR #2235,#2246)</li>
+<li>Portuguese (PR #2263)</li>
+<li>Russian (PR #2194,#2195,#2198,#2210,#2211,#2212)</li>
+<li>Slovenian (#2096)</li>
 </ul></li>
 </ul>
 <h2 id="既知の問題"><a name="known-issues"></a>既知の問題</h2>
