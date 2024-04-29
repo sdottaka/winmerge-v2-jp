@@ -24,7 +24,6 @@ title: 変更履歴
 - 不具合修正: insert datetime.sct: 地域によっては正常に動作しなかった問題を修正した。（このバグはバージョン2.16.39 ベータで発生しました。）
 - 不具合修正: ファイルとフォルダーの選択ウィンドウが表示されているときにプラグインを再読み込みすると "Catastrophic failure" メッセージボックスが表示される可能性がある問題を修正した。
 - GUI にプラグインパイプラインのエイリアスまたは単純なプラグインを登録できるようにした。 [(PR #2257)](https://github.com/WinMerge/winmerge/pull/2257)
-- 実験的なOpenAI API を使用したテキスト変換プラグイン(AIConvertText)を追加した。[(PR #2258)](https://github.com/WinMerge/winmerge/pull/2258)
 
 #### インストーラー
 
