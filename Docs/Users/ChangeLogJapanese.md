@@ -2,6 +2,48 @@
 title: 変更履歴
 ---
 
+### 2024/04/29 2.16.40-jp-2
+
+#### 全般
+
+- ファイルまたはフォルダーの選択ウインドウを表示した後、WinMergeを終了させてもプロセスが残りっぱなしになることがある問題を修正した。
+
+#### ファイル比較
+
+- TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2298)(PRをいただきました。ありがとうございます。)
+- F# シンタックスハイライトの改善。 [(PR#2303)](https://github.com/WinMerge/winmerge/pull/2303)[(PR#2309)](https://github.com/WinMerge/winmerge/pull/2309)(PRをいただきました。ありがとうございます。)
+
+#### テーブル比較
+
+- 行末近くの文字にカレットが移動できないことがある問題を修正した。
+
+#### フォルダー比較
+
+- ステータスバーをクリックするとファイル比較方法やファイルフィルターを変更できるようにした。
+
+#### HTMLレポート
+
+- 不具合修正: ファイル名に#を含む画像の比較レポートで画像が表示されない問題を修正した。[osdn#46082](https://osdn.net/projects/winmerge-jp/ticket/78171)
+
+#### プラグイン
+
+- AIConvertText プラグインを追加した。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2258) (OpenAI API を使用して、指示した通りテキストを変換します。利用には OpenAI API Key の取得が必要になります）
+- Apache Tika 2.9.2 に更新した。
+- PlantUML 1.2024.4 に更新した。
+- md4c 0.5.2 に更新した。
+- jq 1.7.1 に更新した。
+
+#### アーカイブサポート
+
+- 7-Zip 24.05 に更新した。
+
+#### その他
+
+- GitHub Actions CI の更新。 [(PR#2304)](https://github.com/WinMerge/winmerge/pull/2304)(PRをいただきました。ありがとうございます。)
+- Typo 修正。 [(PR#2305)](https://github.com/WinMerge/winmerge/pull/2305)(PRをいただきました。ありがとうございます。)
+- Boost 1.85 に更新。
+- POCO C++ Libraries 1.13.3 に更新。
+
 ### 2024/04/29 2.16.40-jp-1
 
 #### 全般
