@@ -231,7 +231,7 @@ private:
 class UnpackerGeneratedFromEditorScript : public WinMergePluginBase
 {
 public:
-	UnpackerGeneratedFromEditorScript(const PluginInfo& plugin, const std::wstring funcname, int id)
+	UnpackerGeneratedFromEditorScript(const PluginInfo& plugin, const std::wstring& funcname, int id)
 		: WinMergePluginBase(
 			L"FILE_PACK_UNPACK",
 			strutils::format_string1(_T("Unpacker to execute %1 script (automatically generated)"), funcname),
@@ -284,6 +284,12 @@ public:
 	{
 		*pbChanged = VARIANT_FALSE;
 		*pbSuccess = VARIANT_FALSE;
+		return S_OK;
+	}
+
+	HRESULT STDMETHODCALLTYPE ShowSettingsDialog(VARIANT_BOOL* pbHandled) override
+	{
+		*pbHandled = plugin::InvokeShowSettingsDialog(m_pDispatch) ? VARIANT_TRUE : VARIANT_FALSE;
 		return S_OK;
 	}
 
@@ -430,6 +436,21 @@ public:
 
 protected:
 
+	std::vector<String> getMacroNames(const String& cmd)
+	{
+		std::vector<String> result;
+		size_t start = 0;
+		while ((start = cmd.find(_T("${"), start)) != String::npos) {
+			start += 2;
+			size_t end = cmd.find(_T("}"), start);
+			if (end == std::string::npos)
+				break;
+			result.push_back(cmd.substr(start, end - start));
+			start = end + 1;
+		}
+		return result;
+	}
+
 	String replaceMacros(const String& cmd, const String & fileSrc, const String& fileDst)
 	{
 		String command = cmd;
@@ -451,14 +472,53 @@ protected:
 			strutils::replace(command, _T("${DST_URL_SUFFIX}"), 
 				parsedURL.pszSuffix ? parsedURL.pszSuffix : _T(""));
 		}
-		strutils::replace(command, _T("${SRC_FILE}"), fileSrc);
-		strutils::replace(command, _T("${DST_FILE}"), fileDst);
-		strutils::replace(command, _T("${SRC_FOLDER}"), fileSrc);
-		strutils::replace(command, _T("${DST_FOLDER}"), fileDst);
-		std::vector<StringView> vars = strutils::split(m_sVariables, '\0');
-		for (size_t i = 0; i < vars.size(); ++i)
-			strutils::replace(command, strutils::format(_T("${%d}"), i), strutils::to_str(vars[i]));
-		strutils::replace(command, _T("${*}"), m_sArguments);
+
+		std::vector<String> macroNames = getMacroNames(cmd);
+		for (const auto& name : macroNames)
+		{
+			if (name == _T("SRC_FILE"))
+				strutils::replace(command, _T("${SRC_FILE}"), fileSrc);
+			else if (name == _T("DST_FILE"))
+				strutils::replace(command, _T("${DST_FILE}"), fileDst);
+			else if (name == _T("SRC_FOLDER"))
+				strutils::replace(command, _T("${SRC_FOLDER}"), fileSrc);
+			else if (name == _T("DST_FOLDER"))
+				strutils::replace(command, _T("${DST_FOLDER}"), fileDst);
+			else if (name == _T("WINMERGE_HOME"))
+				strutils::replace(command, _T("${WINMERGE_HOME}"), env::GetProgPath());
+			else if (name.length() == 1 && tc::istdigit(name.front()))
+			{
+				std::vector<StringView> vars = strutils::split(m_sVariables, '\0');
+				for (size_t i = 0; i < vars.size(); ++i)
+					strutils::replace(command, strutils::format(_T("${%d}"), i), strutils::to_str(vars[i]));
+			}
+			else if (name == _T("*"))
+				strutils::replace(command, _T("${*}"), m_sArguments);
+			else if (name.find(_T("CFG:")) == 0)
+			{
+				std::vector<StringView> ary = strutils::split(name, ':');
+				String optionName = String(ary[1].data(), ary[1].size());
+				String defaultVal = ary.size() > 2 ? String(ary[2].data(), ary[2].size()) : _T("");
+				auto val = GetOptionsMgr()->Get(optionName);
+				switch (val.GetType())
+				{
+				case varprop::VT_STRING:
+					strutils::replace(command, _T("${") + name + _T("}"), val.GetString());
+					break;
+				case varprop::VT_INT:
+					strutils::replace(command, _T("${") + name + _T("}"), strutils::to_str(val.GetInt()));
+					break;
+				case varprop::VT_BOOL:
+					strutils::replace(command, _T("${") + name + _T("}"), strutils::to_str(val.GetBool()));
+					break;
+				case varprop::VT_NULL:
+					GetOptionsMgr()->InitOption(optionName, defaultVal);
+					val = GetOptionsMgr()->Get(optionName);
+					strutils::replace(command, _T("${") + name + _T("}"), val.GetString());
+					break;
+				}
+			}
+		}
 		return command;
 	}
 
@@ -472,10 +532,11 @@ protected:
 	{
 		TempFile stderrFile;
 		String sOutputFile = stderrFile.Create();
-		if (_wgetenv(L"WINMERGE_HOME") == nullptr)
+		size_t size = 0;
+		_wgetenv_s(&size, nullptr, 0, L"WINMERGE_HOME");
+		if (size == 0)
 			_wputenv_s(L"WINMERGE_HOME", env::GetProgPath().c_str());
 		String command = sCmd;
-		strutils::replace(command, _T("${WINMERGE_HOME}"), env::GetProgPath());
 		STARTUPINFO stInfo = { sizeof(STARTUPINFO) };
 		stInfo.dwFlags = STARTF_USESHOWWINDOW;
 		stInfo.wShowWindow = wShowWindow;
@@ -596,6 +657,12 @@ public:
 			return hr;
 		*pbstrResult = SysAllocStringLen(ucr::toUTF16(unpackedText).c_str(), 
 			static_cast<unsigned>(unpackedText.length()));
+		return S_OK;
+	}
+
+	HRESULT STDMETHODCALLTYPE ShowSettingsDialog(VARIANT_BOOL* pbHandled) override
+	{
+		*pbHandled = plugin::InvokeShowSettingsDialog(m_pDispatch) ? VARIANT_TRUE : VARIANT_FALSE;
 		return S_OK;
 	}
 
@@ -808,7 +875,7 @@ bool SaveToXML(const String& pluginsXMLPath, const std::list<Info>& internalPlug
 	try
 	{
 		paths::CreateIfNeeded(paths::GetPathOnly(pluginsXMLPath));
-		FileStream out(ucr::toUTF8(pluginsXMLPath), FileStream::trunc);
+		FileStream out(ucr::toUTF8(pluginsXMLPath), FileStream::out | FileStream::trunc);
 		XMLWriter writer(out, XMLWriter::WRITE_XML_DECLARATION | XMLWriter::PRETTY_PRINT);
 		writer.startDocument();
 		writer.startElement("", "", PluginsElement);

@@ -42,6 +42,7 @@
 var REGKEY_PATH = "Plugins\\editor addin.sct/";
 
 var wsh = new ActiveXObject("WScript.Shell");
+var fso = new ActiveXObject("Scripting.FileSystemObject");
 var pluginArguments = "";
 var variables = new Array();
 var mergeApp;
@@ -51,7 +52,7 @@ function get_PluginEvent() {
 }
 
 function get_PluginDescription() {
-  return "Basic text functions for the context menu";
+  return "Basic text functions";
 }
 
 function get_PluginFileFilters() {
@@ -166,7 +167,7 @@ function ReplaceVariables(str) {
         newstr = newstr + str.substr(pos, foundpos - pos + 1);
         pos = foundpos + 1;
       }
-  } else {
+    } else {
       newstr = newstr + str.substr(pos);
       break;
     }
@@ -472,7 +473,6 @@ function ExecFilterCommand(Text) {
   }
 
   var path = wsh.ExpandEnvironmentStrings("%TEMP%\\_winmerge_addin_temp_.txt");
-  var fso = new ActiveXObject("Scripting.FileSystemObject");
   try {
     var ts = fso.CreateTextFile(path, true, true);
     ts.Write(Text);

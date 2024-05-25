@@ -212,6 +212,7 @@ Localization:
   Afyonlu <afyonlu@users.sourceforge.net>
   Ozkan UNVER <turquaz37915@users.sourceforge.net>
   Kaya Zeren <kaya.zeren at zeron.net>
+  iLyax
 
 * Ukranian
   Vitaliy Stopchans'kyy <stopcha@gmail.com>
@@ -291,6 +292,7 @@ Other Contributors (code, ideas, testing..):
 * myss
 * vlakoff
 * Tuomas Hietanen
+* Dirk Stolle 
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)

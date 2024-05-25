@@ -1,4 +1,3 @@
-set DISTDIR=.\build\Releases
 set workdir=BuildTmp\Src
 if "%1" == "vs2017" (
   set vsversion=vs2017

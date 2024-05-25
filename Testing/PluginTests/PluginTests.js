@@ -216,6 +216,10 @@ function EditorAddinTest() {
 
   p.PluginOnEvent(0, MergeApp);
 
+  // AIConvertText
+  //p.PluginArguments = "Translate the given text into Japanese";
+  //WScript.Echo(p.AIConvertText("Hello World!"));
+
   // MakeUpper
   setTestName("MakeUpper");
   assertEquals("", p.MakeUpper(""));

@@ -140,7 +140,10 @@ static HGLOBAL ConvertToUTF16ForClipboard(HGLOBAL hMem, int codepage)
 	LPCSTR pstr = reinterpret_cast<LPCSTR>(GlobalLock(hMem));
 	LPWSTR pwstr = reinterpret_cast<LPWSTR>(GlobalLock(hMemW));
 	if (pstr == nullptr || pwstr == nullptr)
+	{
+		GlobalFree(hMemW);
 		return nullptr;
+	}
 	int wlen = MultiByteToWideChar(codepage, 0, pstr, static_cast<int>(len), pwstr, static_cast<int>(len + 1));
 	if (len > 0 && pstr[len - 1] != '\0')
 	{
@@ -213,6 +216,7 @@ bool DirCmpReport::GenerateReport(String &errStr)
 			}
 			CloseClipboard();
 			m_bIncludeFileCmpReport = savedIncludeFileCmpReport;
+			m_pFile = nullptr;
 		}
 		if (!m_sReportFile.empty())
 		{
@@ -227,6 +231,7 @@ bool DirCmpReport::GenerateReport(String &errStr)
 				CFile::modeWrite|CFile::modeCreate|CFile::shareDenyWrite);
 			m_pFile = &file;
 			GenerateReport(m_nReportType);
+			m_pFile = nullptr;
 		}
 		bRet = true;
 	}
@@ -509,9 +514,6 @@ void DirCmpReport::GenerateXmlHtmlContent(bool xml)
 		if (!xml && m_bIncludeFileCmpReport && m_pFileCmpReport != nullptr)
 			(*m_pFileCmpReport.get())(REPORT_TYPE_SIMPLEHTML, m_pList.get(), currRow, sDestDir, sLinkPath);
 
-		strutils::replace(sLinkPath, _T("%"), _T("%25"));
-		strutils::replace(sLinkPath, _T("#"), _T("%23"));
-
 		String rowEl = _T("tr");
 		if (xml)
 		{
@@ -548,7 +550,7 @@ void DirCmpReport::GenerateXmlHtmlContent(bool xml)
 				WriteString(_T("<a href=\""));
 				WriteString(sRelDestDir);
 				WriteString(_T("/"));
-				WriteString(sLinkPath);
+				WriteString(paths::urlEncodeFileName(sLinkPath));
 				WriteString(_T("\">"));
 				WriteStringEntityAware(m_pList->GetItemText(currRow, currCol));
 				WriteString(_T("</a>"));
