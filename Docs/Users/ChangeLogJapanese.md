@@ -2,7 +2,7 @@
 title: 変更履歴
 ---
 
-### 2024/04/29 2.16.40-jp-2
+### 2024/05/31 2.16.40-jp-2
 
 #### 全般
 
@@ -29,7 +29,6 @@ title: 変更履歴
 
 - AIConvertText プラグインを追加した。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2258) (OpenAI API を使用して、指示した通りテキストを変換します。利用には OpenAI API Key の取得が必要になります）
 - Apache Tika 2.9.2 に更新した。
-- PlantUML 1.2024.4 に更新した。
 - md4c 0.5.2 に更新した。
 - jq 1.7.1 に更新した。
 
