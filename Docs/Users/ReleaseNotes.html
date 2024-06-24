@@ -20,121 +20,81 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="winmerge-21640-release-notes">WinMerge 2.16.40 Release Notes</h1>
+<h1 id="winmerge-21641-beta-release-notes">WinMerge 2.16.41 Beta Release Notes</h1>
 <ul>
 <li><a href="#about-this-release">About This Release</a></li>
-<li><a href="#what-is-new-in-21640">What Is New in 2.16.40</a></li>
-<li><a href="#what-is-new-in-21639-beta">What Is New in 2.16.39 beta?</a></li>
+<li><a href="#what-is-new-in-21641-beta">What Is New in 2.16.41 beta?</a></li>
 <li><a href="#known-issues">Known issues</a></li>
 </ul>
-<p>April 2024</p>
+<p>June 2024</p>
 <h2 id="about-this-release">About This Release</h2>
-<p>This is a WinMerge 2.16.40 stable release. This release replaces earlier WinMerge stable releases as a recommended release.</p>
+<p>This is a WinMerge beta release which is meant for preview the current state of WinMerge development. This release is not recommended for the production.</p>
 <p>Please submit bug reports to our bug-tracker.</p>
-<h2 id="what-is-new-in-21640">What Is New in 2.16.40</h2>
+<h2 id="what-is-new-in-21641-beta">What Is New in 2.16.41 Beta</h2>
 <h3 id="general">General</h3>
 <ul>
-<li>BugFix: Fixed several Wine-related issues</li>
+<li>Made the tabs in the tab bar rounded like Firefox.</li>
 </ul>
 <h3 id="file-compare">File compare</h3>
 <ul>
-<li>BugFix: Replace text issue (#2279)</li>
+<li>Added support for F# (FSharp) language syntax highlight (PR #2298)</li>
+<li>Improved F# parsing, support for multi-line comments (PR #2301)</li>
+<li>Multi line comment fix (PR #2303)</li>
+<li>Multi line comment fix part 2 (PR #2309)</li>
+<li>Typescript files to use JavaScript highlighting as default (PR #2312)</li>
+</ul>
+<h3 id="folder-compare">Folder compare</h3>
+<ul>
+<li>BugFix: Refresh selected shows wrong file names being compared (#2338)</li>
+<li>BugFix: Selected files changes on expanding a folder that is upper on the tree (#2359)</li>
 </ul>
 <h3 id="options-dialog">Options dialog</h3>
 <ul>
-<li>Add a &quot;Defaults&quot; button to the &quot;Options (Editor &gt; General)&quot; dialog. (PR #2283)</li>
-<li>Adjust position of &quot;Defaults&quot; button in &quot;Options &gt; Compare &gt; Table&quot; (PR #2295)</li>
+<li>BugFix: Options - Syntax color settings get reverted when &quot;Customized text colors&quot; settings is touched. (#2355)</li>
+<li>Add a &quot;Defaults&quot; button to the &quot;Options (Editor &gt; Compare/Merge)&quot; dialog. (PR #2348)</li>
+<li>Add a &quot;Defaults&quot; button to the &quot;Options (Archive Support)&quot; dialog. (PR #2362)</li>
 </ul>
 <h3 id="plugins">Plugins</h3>
 <ul>
-<li>BugFix: CompareMSExcelFiles.sct: Fixed the issue where, when the &#39;Extract workbook data to multiple files&#39; option was enabled, all sheets of .xlsx files containing more than 10 sheets were not compared. (This bug was introduced in version 2.16.39 beta.)</li>
-<li>BugFix: insert datetime.sct: Fixed an issue where it didn&#39;t work properly depending on the locale. (This bug was introduced in version 2.16.39 beta.)</li>
-<li>BugFix: Fixed an issue where a &quot;Catastrophic failure&quot; message box might have appeared when reloading a plugin while the Select Files or Folders window was displayed.</li>
-<li>Allow plugin pipeline aliases or simple plugins to be registered in the GUI (PR #2257)</li>
+<li>BugFix: Fixed the plugin pipeline not being configured correctly in the Select Plugin dialog.</li>
+<li>Add a text conversion plugin using OpenAI API (PR #2258)</li>
+<li>Update jq to 1.7.1</li>
+<li>Update md4c to 0.5.2</li>
+</ul>
+<h3 id="archive-support">Archive support</h3>
+<ul>
+<li>Update 7-Zip to 24.05</li>
 </ul>
 <h3 id="installer">Installer</h3>
 <ul>
-<li>BugFix: French encoding problem on the end of installation (last dialog box) (#2272)</li>
+<li>BugFix; WinMerge 2.16.40 - Installer - Missing version and archicteure info (#2300)</li>
 </ul>
 <h3 id="translations">Translations</h3>
 <ul>
 <li>Translation updates:
 <ul>
-<li>Brazilian (PR #2289)</li>
-<li>Catalan (PR #2270,#2274)</li>
-<li>Chinese Simplified (PR #2290)</li>
-<li>Corsican (PR #2288)</li>
-<li>French (PR #2271,#2275,#2297)</li>
-<li>Hungarian (PR #2291)</li>
+<li>Brazilian (PR #2308)</li>
+<li>Chinese Simplified (PR #2306,#2310,#2314,#2352)</li>
+<li>Corsican (PR #2361)</li>
+<li>French (PR #2354)</li>
+<li>German (PR #2349)</li>
+<li>Hungarian (PR #2307)</li>
+<li>Italian (PR #2299)</li>
+<li>Lithuanian (PR #2318,#2320)</li>
 <li>Japanese</li>
-<li>Polish (PR#2277)</li>
+<li>Korean (PR #2333)</li>
+<li>Polish (PR #2313)</li>
+<li>Portuguese (PR #2321)</li>
+<li>Turkish (PR #2315)</li>
 </ul></li>
-</ul>
-<h2 id="what-is-new-in-21639-beta">What Is New in 2.16.39 Beta</h2>
-<h3 id="general-1">General</h3>
-<ul>
-<li>BugFix: Fixed an issue where typing only a single character in the header bar could cause a crash.</li>
-</ul>
-<h3 id="file-compare-1">File compare</h3>
-<ul>
-<li>BugFix: Fixed possible crash</li>
-<li>BugFix: Creation of .bak files fails when the original filename starts with a dot (#2217)</li>
-<li>Update Java syntax highlighting keyword list. (PR #2215)</li>
-<li>Replace &quot;Match similar lines&quot; with &quot;Align similar lines&quot; (PR #2230)</li>
-<li>Make it possible to select the behavior when copying to another pane with &quot;Copy to Right&quot; etc. while text is selected. (PR #2224)</li>
-<li>Make it possible to transform the text copied with &quot;Copy Right/Left&quot; using a plugin. (PR #2238)</li>
-<li>Update PHP syntax highlighting keyword list. (PR #2265)</li>
-</ul>
-<h3 id="webpage-compare">Webpage compare</h3>
-<ul>
-<li>BugFix: Make event sync settings persistent (#2248)</li>
-</ul>
-<h3 id="select-files-or-folders-dialog">Select Files or Folders dialog</h3>
-<ul>
-<li>BugFix: Fixed the issue when the compare button could not be clicked when specifying an archive file and a regular file.</li>
-</ul>
-<h3 id="reports">Reports</h3>
-<ul>
-<li>BugFix: Fixed an issue where the widths of the left and right panes in HTML reports are not equal.</li>
-<li>BugFix: Fixed an issue where the caption set in the header bar was not being applied to the HTML report.</li>
-</ul>
-<h3 id="plugins-1">Plugins</h3>
-<ul>
-<li>BugFix: Fixed crash when error occurs in Unpacker plugin</li>
-<li>Replace the source code written in VBScript with JScript (PR #2098)</li>
-<li>Add the ability to replace using patterns from Substitution Filters to the Replace plugin. (PR #2252)</li>
-<li>Added sanity check for regular expressions in PrediffLineFilter plugin.</li>
-</ul>
-<h3 id="installer-1">Installer</h3>
-<ul>
-<li>BugFix: If the /noicons option was specified in the previous installation, a message box asking you to delete the previous start menu will be displayed in the next installation. (#2206)</li>
-<li>Move custom messages in a separate iss file (#2247)</li>
-</ul>
-<h3 id="archive-support">Archive support</h3>
-<ul>
-<li>BugFix: 7zip encrypted archives with encrypted file names (#2225)</li>
 </ul>
 <h3 id="internals">Internals</h3>
 <ul>
-<li>Update codeql-analysis.yml - Version v2 to v3 (PR #2196)</li>
-</ul>
-<h3 id="translations-1">Translations</h3>
-<ul>
-<li>Translation updates:
-<ul>
-<li>Brazilian (PR #2234,#2243)</li>
-<li>Chinese Simplified (PR #2241,#2244,#2251,#2256,#2259)</li>
-<li>Corsican (PR #2266)</li>
-<li>French (PR #2237,#2264)</li>
-<li>Hungarian (PR #2232,#2250)</li>
-<li>Italian (PR #2245,#2249)</li>
-<li>Japanese</li>
-<li>Korean (PR #2239)</li>
-<li>Lithuanian (PR #2235,#2246)</li>
-<li>Portuguese (PR #2263)</li>
-<li>Russian (PR #2194,#2195,#2198,#2210,#2211,#2212)</li>
-<li>Slovenian (#2096)</li>
-</ul></li>
+<li>Update GitHub Actions CI (#2304)</li>
+<li>Fix some typos (#2305)</li>
+<li>Update POCO C++ Libraries to 1.13.3</li>
+<li>Update boost to 1.85.0</li>
+<li>Update Google C++ Testing Framework to 1.14.0</li>
 </ul>
 <h2 id="known-issues">Known issues</h2>
 <ul>
