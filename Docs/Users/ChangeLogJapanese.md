@@ -2,6 +2,23 @@
 title: 変更履歴
 ---
 
+### 2024/06/29 2.16.40-jp-3
+
+### 全般
+
+- タブバーのタブを、Firefox のように角丸にした。
+
+### フォルダー比較
+
+- 不具合修正: [選択項目を最新に更新]をクリックして再比較した際、比較進捗ウインドウに選択していないファイル名が表示される問題を修正した。 [(#2338)](https://github.com/WinMerge/winmerge/issues/2338)
+- 不具合修正: ファイルやフォルダ等を選択している状態でフォルダを展開すると別のファイルやフォルダが選択されることがある問題を修正した。[(#2359)](https://github.com/WinMerge/winmerge/issues/2359)
+
+### オプションダイアログ
+
+- 不具合修正: (色 > テキスト)カテゴリーの"テキストの色をカスタマイズする" を変更するとキャンセルしても(色 > シンタックス) カテゴリの設定がデフォルトに戻ってしまう問題を修正した。[(#2355)](https://github.com/WinMerge/winmerge/issues/2355)
+- (エディタ > 比較/マージ) カテゴリーに「デフォルト」ボタンを追加した。 [(PR #2348)](https://github.com/WinMerge/winmerge/pull/2348)(PRをいただきました。ありがとうございます。)
+- (アーカイブサポート)カテゴリーに「デフォルト」ボタンを追加した。[(PR #2362)](https://github.com/WinMerge/winmerge/pull/2362)(PRをいただきました。ありがとうございます。)
+
 ### 2024/05/31 2.16.40-jp-2
 
 #### 全般
@@ -10,7 +27,7 @@ title: 変更履歴
 
 #### ファイル比較
 
-- TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2298)(PRをいただきました。ありがとうございます。)
+- TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 [(PR#2312)](https://github.com/WinMerge/winmerge/pull/2312)(PRをいただきました。ありがとうございます。)
 - F# シンタックスハイライトの改善。 [(PR#2303)](https://github.com/WinMerge/winmerge/pull/2303)[(PR#2309)](https://github.com/WinMerge/winmerge/pull/2309)(PRをいただきました。ありがとうございます。)
 
 #### テーブル比較
@@ -41,6 +58,7 @@ title: 変更履歴
 - Typo 修正。 [(PR#2305)](https://github.com/WinMerge/winmerge/pull/2305)(PRをいただきました。ありがとうございます。)
 - Boost 1.85 に更新。
 - POCO C++ Libraries 1.13.3 に更新。
+- Google C++ Testing Framework 1.14.0 に更新。
 
 ### 2024/04/29 2.16.40-jp-1
 

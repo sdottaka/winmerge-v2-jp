@@ -23,21 +23,37 @@
 <header id="title-block-header">
 <h1 class="title">変更履歴</h1>
 </header>
+<h3 id="20240629-21640-jp-3">2024/06/29 2.16.40-jp-3</h3>
+<h3 id="全般">全般</h3>
+<ul>
+<li>タブバーのタブを、Firefox のように角丸にした。</li>
+</ul>
+<h3 id="フォルダー比較">フォルダー比較</h3>
+<ul>
+<li>不具合修正: [選択項目を最新に更新]をクリックして再比較した際、比較進捗ウインドウに選択していないファイル名が表示される問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2338">(#2338)</a></li>
+<li>不具合修正: ファイルやフォルダ等を選択している状態でフォルダを展開すると別のファイルやフォルダが選択されることがある問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2359">(#2359)</a></li>
+</ul>
+<h3 id="オプションダイアログ">オプションダイアログ</h3>
+<ul>
+<li>不具合修正: (色 &gt; テキスト)カテゴリーの&quot;テキストの色をカスタマイズする&quot; を変更するとキャンセルしても(色 &gt; シンタックス) カテゴリの設定がデフォルトに戻ってしまう問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2355">(#2355)</a></li>
+<li>(エディタ &gt; 比較/マージ) カテゴリーに「デフォルト」ボタンを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2348">(PR #2348)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>(アーカイブサポート)カテゴリーに「デフォルト」ボタンを追加した。<a href="https://github.com/WinMerge/winmerge/pull/2362">(PR #2362)</a>(PRをいただきました。ありがとうございます。)</li>
+</ul>
 <h3 id="20240531-21640-jp-2">2024/05/31 2.16.40-jp-2</h3>
-<h4 id="全般">全般</h4>
+<h4 id="全般-1">全般</h4>
 <ul>
 <li>ファイルまたはフォルダーの選択ウインドウを表示した後、WinMergeを終了させてもプロセスが残りっぱなしになることがある問題を修正した。</li>
 </ul>
 <h4 id="ファイル比較">ファイル比較</h4>
 <ul>
-<li>TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 <a href="https://github.com/WinMerge/winmerge/pull/2298">(PR#2298)</a>(PRをいただきました。ありがとうございます。)</li>
+<li>TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 <a href="https://github.com/WinMerge/winmerge/pull/2312">(PR#2312)</a>(PRをいただきました。ありがとうございます。)</li>
 <li>F# シンタックスハイライトの改善。 <a href="https://github.com/WinMerge/winmerge/pull/2303">(PR#2303)</a><a href="https://github.com/WinMerge/winmerge/pull/2309">(PR#2309)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
 <h4 id="テーブル比較">テーブル比較</h4>
 <ul>
 <li>行末近くの文字にカレットが移動できないことがある問題を修正した。</li>
 </ul>
-<h4 id="フォルダー比較">フォルダー比較</h4>
+<h4 id="フォルダー比較-1">フォルダー比較</h4>
 <ul>
 <li>ステータスバーをクリックするとファイル比較方法やファイルフィルターを変更できるようにした。</li>
 </ul>
@@ -61,9 +77,10 @@
 <li>Typo 修正。 <a href="https://github.com/WinMerge/winmerge/pull/2305">(PR#2305)</a>(PRをいただきました。ありがとうございます。)</li>
 <li>Boost 1.85 に更新。</li>
 <li>POCO C++ Libraries 1.13.3 に更新。</li>
+<li>Google C++ Testing Framework 1.14.0 に更新。</li>
 </ul>
 <h3 id="20240429-21640-jp-1">2024/04/29 2.16.40-jp-1</h3>
-<h4 id="全般-1">全般</h4>
+<h4 id="全般-2">全般</h4>
 <ul>
 <li>不具合修正: Wine上で発生する不具合をいくつか修正した。</li>
 </ul>
@@ -72,7 +89,7 @@
 <li>不具合修正: テキストを選択状態にした後に置換すると正しく置換されないことがある問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2279">(#2279)</a></li>
 <li>F# シンタックスハイライトを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2298">(PR#2298)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="オプションダイアログ">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-1">オプションダイアログ</h4>
 <ul>
 <li>&quot;オプション (エディター &gt; 一般)&quot; ダイアログに &quot;デフォルト&quot; ボタンを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2283">(PR #2283)</a>(PRをいただきました。ありがとうございます。)</li>
 <li>&quot;オプション &gt; 比較 &gt; テーブル&quot; 内の &quot;デフォルト&quot; ボタンの位置を調整した。 <a href="https://github.com/WinMerge/winmerge/pull/2295">(PR #2295)</a>(PRをいただきました。ありがとうございます。)</li>
@@ -89,7 +106,7 @@
 <li>不具合修正: 不具合修正: インストールの最後（最後のダイアログボックス）でのフランス語のエンコーディングの問題を修正した。 <a href="https://github.com/WinMerge/winmerge/issues/2272">(#2272)</a></li>
 </ul>
 <h3 id="20240329-21638-jp-3">2024/03/29 2.16.38-jp-3</h3>
-<h4 id="全般-2">全般</h4>
+<h4 id="全般-3">全般</h4>
 <ul>
 <li>不具合修正: ヘッダーバーに1文字だけを入力するとクラッシュすることがある問題を修正した。</li>
 </ul>
@@ -141,7 +158,7 @@
 <li>比較中はステータスバーに「比較しています...」を表示するようにした。</li>
 <li>ロケーションペインを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2160">(PR#2160)</a></li>
 </ul>
-<h4 id="フォルダー比較-1">フォルダー比較</h4>
+<h4 id="フォルダー比較-2">フォルダー比較</h4>
 <ul>
 <li>[列の表示]ダイアログのボタンの活性/非活性制御の改善。 <a href="https://github.com/WinMerge/winmerge/pull/2154">(PR#2154)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
@@ -158,7 +175,7 @@
 <li>不具合修正: 正規表現検索で <code>\r</code> を使用してもCRを見つけられない問題を修正した。</li>
 <li>新しい C# のキーワードを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2136">(PR#2136)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="フォルダー比較-2">フォルダー比較</h4>
+<h4 id="フォルダー比較-3">フォルダー比較</h4>
 <ul>
 <li>不具合修正: バイナリコンテンツ比較方法でフォルダ比較した場合、空のファイルがコピーできない問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/2146">(#2146)</a></li>
 </ul>
@@ -218,7 +235,7 @@
 <li>ツールバーアイコン[現在の行内差異]の説明に「(F4)」を追加した。 <a href="https://github.com/WinMerge/winmerge/issues/2050">(#2050)</a></li>
 <li>Diff アルゴリズムが default 以外に設定され、最終行の EOL が片方のファイルには存在するが他方のファイルには存在する場合にクラッシュすることがある問題を修正した。</li>
 </ul>
-<h4 id="フォルダー比較-3">フォルダー比較</h4>
+<h4 id="フォルダー比較-4">フォルダー比較</h4>
 <ul>
 <li>不具合修正: ツリーモードが無効の場合、片方しか存在しないフォルダが表示されないことがある。 <a href="https://github.com/WinMerge/winmerge/issues/2046">(#2046)</a></li>
 </ul>
@@ -268,7 +285,7 @@
 <li>CMDIChildWnd の処理の軽微な修正<a href="https://github.com/WinMerge/winmerge/pull/2049">(PR #2049)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20230829-21632-jp-2">2023/08/29 2.16.32-jp-2</h3>
-<h4 id="全般-3">全般</h4>
+<h4 id="全般-4">全般</h4>
 <ul>
 <li>起動直後のメモリ使用量とユーザオブジェクトの使用量を微量だが削減した。</li>
 </ul>
@@ -293,7 +310,7 @@
 <ul>
 <li>不具合修正: 空文字列にマッチするパターンを指定された場合、ハングアップしてしまう問題を修正した。</li>
 </ul>
-<h4 id="オプションダイアログ-1">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-2">オプションダイアログ</h4>
 <ul>
 <li>[シェル統合]カテゴリで[Windows 11 以降用シェル拡張を登録]ボタン押下で登録に失敗した場合、エラーメッセージを表示するウインドウを閉じないようにした。 (インターネットに接続されていない Windows 11 環境ではCertumのルート証明書がないため、登録に失敗することがあります。その場合は、Certum Trusted Network CA2 のルート証明書をインストールしてみてください。)</li>
 </ul>
@@ -302,7 +319,7 @@
 <li>不具合修正: プラグインウインドウで Apache Tikaプラグインを無効にしても無効にならない問題を修正した。</li>
 </ul>
 <h3 id="20230729-21632-jp-1">2023/07/29 2.16.32-jp-1</h3>
-<h4 id="全般-4">全般</h4>
+<h4 id="全般-5">全般</h4>
 <ul>
 <li>不具合修正: INIファイルをインポートしたとき置換フィルタなどが正しく復元されないことがある問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/1925">(#1925)</a></li>
 </ul>
@@ -322,7 +339,7 @@
 <li>比較結果をレポートに出力できるようにした。<a href="https://github.com/WinMerge/winmerge/pull/1941">(#1941)</a></li>
 </ul>
 <h3 id="20230629-21630-jp-4">2023/06/29 2.16.30-jp-4</h3>
-<h4 id="全般-5">全般</h4>
+<h4 id="全般-6">全般</h4>
 <ul>
 <li>HTMLレポートのタイトル部分をスクロールしても表示し続ける様にした。<a href="https://github.com/WinMerge/winmerge/pull/1892">(PR #1892)</a>(PRいただきました。ありがとうございます。)</li>
 </ul>
@@ -348,7 +365,7 @@
 <li><code>/r</code> コマンドラインオプションが指定されていなくても、オプションダイアログで「サブフォルダを含める」がチェックされていれば、フォルダを再帰的に比較するようにした。また、非再帰的なフォルダー比較のためのコマンドラインオプション <code>/r-</code> を追加した。<a href="https://github.com/WinMerge/winmerge/pull/1914">(#1914)</a></li>
 </ul>
 <h3 id="20230529-21630-jp-3">2023/05/29 2.16.30-jp-3</h3>
-<h4 id="全般-6">全般</h4>
+<h4 id="全般-7">全般</h4>
 <ul>
 <li>不具合修正: 置換フィルタの[置換後の文字列]に\rや\nを指定しても改行文字に置換されなかった。<a href="https://github.com/WinMerge/winmerge/issues/1861">(#1861)</a></li>
 <li>タスクバーのWinMergeアイコンのジャンプリストに[クリップボード比較]等のメニューを追加した。<a href="https://github.com/WinMerge/winmerge/pull/1828">(PR #1828)</a></li>
@@ -373,7 +390,7 @@
 <li>/noicons コマンドラインオプションを指定すると表示されることがあるメッセージボックスを抑制可能なメッセージボックスに変更した。<a href="https://github.com/WinMerge/winmerge/issues/1852">(#1852)</a></li>
 </ul>
 <h3 id="20230429-21630-jp-1">2023/04/29 2.16.30-jp-1</h3>
-<h4 id="全般-7">全般</h4>
+<h4 id="全般-8">全般</h4>
 <ul>
 <li>不具合修正: エクスポートされた ini ファイルを /inifile コマンドラインオプション等で使用する場合、差異等の色が黒になってしまう問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/1799">(#1799)</a></li>
 <li>32ビット版のWinMergeU.exeのファイルサイズを削減した。</li>
@@ -392,7 +409,7 @@
 <ul>
 <li>UTF-8で保存されているファイルフィルタでも機能するようにした。</li>
 </ul>
-<h4 id="オプションダイアログ-2">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-3">オプションダイアログ</h4>
 <ul>
 <li>不具合修正: エクスポートした設定情報にプラグインの設定も含められるようにした。</li>
 </ul>
@@ -505,7 +522,7 @@
 <li>不具合修正: オプションダイアログの単語の差異の削除の色が使われていなかったのを修正。</li>
 <li>[数字を無視する]オプションが機能するようにした。</li>
 </ul>
-<h4 id="オプションダイアログ-3">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-4">オプションダイアログ</h4>
 <ul>
 <li>オプションダイアログの[比較&gt;フォルダ]カテゴリの改善。<a href="https://github.com/WinMerge/winmerge/pull/1645">(PR #1645)</a>(PRいただきました。ありがとうございます。)</li>
 </ul>
@@ -533,7 +550,7 @@
 <ul>
 <li>不具合修正: 左右のファイルの内容の表示幅が同じにならないことがある。</li>
 </ul>
-<h4 id="オプションダイアログ-4">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-5">オプションダイアログ</h4>
 <ul>
 <li>不具合修正: エクスポートされた.iniファイルをインポートしても行フィルタや置換フィルタが復元されない問題を修正。(正常に行フィルタや置換フィルタを復元するには、最新バージョンでエクスポートした.iniファイルを使用する必要があります) <a href="https://github.com/WinMerge/winmerge/issues/1638">(#1638)</a></li>
 <li>変更されたファイルの自動再読み込みオプションを追加 <a href="https://github.com/WinMerge/winmerge/pull/1611">(PR #1611)</a></li>
@@ -583,7 +600,7 @@
 <li>markdown.cpp のリファクタリング。<a href="https://github.com/WinMerge/winmerge/pull/1590">(PR #1590)</a>(PRいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20221029-21624-jp-1">2022/10/29 2.16.24-jp-1</h3>
-<h4 id="全般-8">全般</h4>
+<h4 id="全般-9">全般</h4>
 <ul>
 <li>不具合修正: ジャンプリストに不正なタイトルが含まれる場合、ファイルメニュー表示でクラッシュする問題を修正。 <a href="https://osdn.net/projects/winmerge-jp/ticket/45916">(osdn.net #45916)</a></li>
 </ul>
@@ -599,7 +616,7 @@
 <ul>
 <li>不具合修正: PDFファイルが画像比較の対象となった場合、フォルダー比較でメモリリークするのを修正。</li>
 </ul>
-<h4 id="オプションダイアログ-5">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-6">オプションダイアログ</h4>
 <ul>
 <li>CPUコアに関する翻訳の改善。<a href="https://github.com/WinMerge/winmerge/pull/1513">(PR #1513)</a></li>
 </ul>
@@ -636,7 +653,7 @@
 <li>不具合修正: lwdisp.c のタイポ修正。 <a href="https://github.com/WinMerge/winmerge/pull/1515">(PR #1515)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20220929-21622-jp-2">2022/09/29 2.16.22-jp-2</h3>
-<h4 id="全般-9">全般</h4>
+<h4 id="全般-10">全般</h4>
 <ul>
 <li>不具合修正: タブバーのタブのタイトルに&quot;&amp;&quot;が含まれる場合に正しく表示されない問題を修正。<a href="https://github.com/WinMerge/winmerge/pull/1466">(PR #1466)</a> (PRいただきました。ありがとうございます。)</li>
 <li>不具合修正: ヘッダーバーのメニューのキーボードアクセラレータが機能しない問題を修正。</li>
@@ -674,7 +691,7 @@
 <li>7-Zip 22.01 に更新。 <a href="https://github.com/WinMerge/winmerge/issues/1425">(#1425)</a></li>
 </ul>
 <h3 id="20220729-21622-jp-1">2022/07/29 2.16.22-jp-1</h3>
-<h4 id="全般-10">全般</h4>
+<h4 id="全般-11">全般</h4>
 <ul>
 <li>ヘッダーバーのキャプションを変更できるようにした。<a href="https://github.com/WinMerge/winmerge/issues/1395">(#1395)</a></li>
 </ul>
@@ -691,7 +708,7 @@
 <li>不具合修正: フォルダ比較完了後ステータスバーに「経過時間」が表示されなくなっていたのを修正。</li>
 <li>不具合修正: フォルダ比較ウィンドウでフォルダの名前を変更した後、フォルダ内の項目のフォルダ列が更新されない問題を修正。<a href="https://github.com/WinMerge/winmerge/pull/1408">(PR #1408)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="オプションダイアログ-6">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-7">オプションダイアログ</h4>
 <ul>
 <li>プロジェクトカテゴリに非表示の項目を追加。<a href="https://github.com/WinMerge/winmerge/pull/1377">(PR #1377)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
@@ -751,7 +768,7 @@
 <li>SuperComboBox.cpp 内のタイポ修正。<a href="https://github.com/WinMerge/winmerge/pull/1379">(PR #1379)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20220529-21620-jp-2">2022/05/29 2.16.20-jp-2</h3>
-<h4 id="全般-11">全般</h4>
+<h4 id="全般-12">全般</h4>
 <ul>
 <li>不具合修正: Event ID 78 のサイドバイサイドエラーが発生する可能性があるのを修正。<a href="https://github.com/WinMerge/winmerge/issues/1312">(#1312)</a></li>
 </ul>
@@ -810,7 +827,7 @@
 <li>ソースコード内のコメントで「GNU General Public License」 が 「GNU DIFF General Public License」になっていたのを修正。<a href="https://github.com/WinMerge/winmerge/pull/1342">(PR #1342)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20220429-21620-jp-1">2022/04/29 2.16.20-jp-1</h3>
-<h4 id="全般-12">全般</h4>
+<h4 id="全般-13">全般</h4>
 <ul>
 <li>ファイル名が長いとタブの右側に表示される「(U)」、「(F)」が表示されなくなってしまうため、左側に表示するようにした。<a href="https://github.com/WinMerge/winmerge/issues/1281">(#1281 a))</a></li>
 </ul>
@@ -837,7 +854,7 @@
 <ul>
 <li>不具合修正: 3つのディレクトリを比較する場合にフォルダ比較ウィンドウで大文字と小文字が異なる項目が正しく表示されない不具合を修正。 <a href="https://github.com/WinMerge/winmerge/pull/1299">(PR #1299)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="オプションダイアログ-7">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-8">オプションダイアログ</h4>
 <ul>
 <li>オプションダイアログを縦方向にも広げられるようにした。<a href="https://github.com/WinMerge/winmerge/issues/1265">(#1265)</a></li>
 </ul>
@@ -861,7 +878,7 @@
 <li>Windows 10 SDK version 10.0.19041.0 以下でビルドするとリンクエラーが発生するのを修正。</li>
 </ul>
 <h3 id="20220329-21618-jp-3">2022/03/29 2.16.18-jp-3</h3>
-<h4 id="全般-13">全般</h4>
+<h4 id="全般-14">全般</h4>
 <ul>
 <li>タイポ修正、一部ショートカットキーの表示がないメニュー等の修正。<a href="https://github.com/WinMerge/winmerge/pull/1219">(PR #1219)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
@@ -892,7 +909,7 @@
 <li>HandleSchemeReg プラグイン (<code>reg:HKEY_CURRENT_USER\Software\Thingamahoochie\WinMerge</code> の様に指定すると<code>reg:</code>の後をレジストリーキーとみなしてレジストリデータを表示します。)</li>
 </ul></li>
 </ul>
-<h4 id="オプションダイアログ-8">オプションダイアログ</h4>
+<h4 id="オプションダイアログ-9">オプションダイアログ</h4>
 <ul>
 <li>不具合修正: 文字が欠けて表示される箇所を修正。<a href="https://github.com/WinMerge/winmerge/issues/1212">(#1212)</a></li>
 </ul>
@@ -902,7 +919,7 @@
 <li>最適化、リファクタリング。<a href="https://github.com/WinMerge/winmerge/pull/1258">(PR #1258)</a> (PRいただきました。ありがとうございます。)</li>
 </ul>
 <h3 id="20220228-21618-jp-2">2022/02/28 2.16.18-jp-2</h3>
-<h4 id="全般-14">全般</h4>
+<h4 id="全般-15">全般</h4>
 <ul>
 <li>不具合修正: [オプション]ウインドウの[メッセージボックス]カテゴリや[プラグイン]ウインドウのリストビューのツールチップが途中で切れることがあるのを修正。<a href="https://github.com/WinMerge/winmerge/issues/1210">(#1210)</a></li>
 <li>「すべてを右側にコピー」、「すべてを左側にコピー」メニューに対応するツールバーのアイコンのツールチップが「右側すべて」、「左側すべて」となっていたのをメニューと同じになるように修正。</li>
@@ -930,7 +947,7 @@
 <li>不具合修正: [プラグインの選択]ウインドウで[パイプを追加]ボタンを押すと指定したプラグイン引数が消えてしまうのを修正</li>
 </ul>
 <h3 id="20220129-21618-jp-1">2022/01/29 2.16.18-jp-1</h3>
-<h4 id="全般-15">全般</h4>
+<h4 id="全般-16">全般</h4>
 <ul>
 <li>不具合修正: Googleドライブのファイルを比較するとクラッシュすることがある。</li>
 <li>タブバーのツールチップにフルパス名、使用しているプラグイン、行フィルタ等で無視されている行があるかどうかを表示するようにした。 <a href="https://github.com/WinMerge/winmerge/issues/960">(#960)</a></li>
