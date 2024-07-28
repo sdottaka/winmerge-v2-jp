@@ -20,6 +20,7 @@
 #include "FileLocation.h"
 #include "MergeFrameCommon.h"
 #include "FileTransform.h"
+#include "BasicFlatStatusBar.h"
 
 struct IDirDoc;
 
@@ -80,7 +81,7 @@ public:
 // Attributes
 protected:
 	CEditorFilePathBar m_wndFilePathBar;
-	CStatusBar m_wndStatusBar[3];
+	CBasicFlatStatusBar m_wndStatusBar[3];
 // Overrides
 public:
 	// ClassWizard generated virtual function overrides
@@ -239,6 +240,10 @@ protected:
 	afx_msg void OnImgUseBackColor();
 	afx_msg void OnImgVectorImageScaling(UINT nId);
 	afx_msg void OnUpdateImgVectorImageScaling(CCmdUI* pCmdUI);
+	afx_msg void OnImgBlinkInterval(UINT nId);
+	afx_msg void OnUpdateImgBlinkInterval(CCmdUI* pCmdUI);
+	afx_msg void OnImgOverlayAnimationInterval(UINT nId);
+	afx_msg void OnUpdateImgOverlayAnimationInterval(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateImgUseBackColor(CCmdUI* pCmdUI);
 	afx_msg void OnImgCompareExtractedText();
 	afx_msg void OnToolsGenerateReport();
