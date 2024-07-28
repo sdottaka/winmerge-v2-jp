@@ -1,6 +1,7 @@
-# WinMerge 2.16.42 リリースノート
+# WinMerge 2.16.42.1 リリースノート
 
 - [このリリースについて](#about-this-release)
+- [2.16.42.1 の新機能](#what-is-new-in-216421)
 - [2.16.42 の新機能](#what-is-new-in-21642)
 - [2.16.41 beta の新機能](#what-is-new-in-21641-beta)
 - [既知の問題](#known-issues)
@@ -9,11 +10,23 @@
 
 ## このリリースについて
 
-WinMerge の 2.16.42 安定版リリースです。
+WinMerge の 2.16.42.1 安定版リリースです。
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。
 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。
+
+## <a name="what-is-new-in-21642"></a>2.16.42.1 の新機能
+
+### 全般
+
+- 不具合: バージョン 2.16.42 にデジタル署名がされていなかった。
+
+### 翻訳
+
+- 翻訳の更新:
+  - Chinese Simplified (PR #2394)
+  - Italian (PR #2393)
 
 ## <a name="what-is-new-in-21642"></a>2.16.42 の新機能
 
