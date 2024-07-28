@@ -20,28 +20,26 @@ WinMerge の 2.16.42 安定版リリースです。
 ### 全般
 
 - Windows11上でメニューが角丸になるようにした。[(PR #2364)](https://github.com/WinMerge/winmerge/pull/2364)
-- Introduce a flat status bar without separator lines. [(PR #2377)](https://github.com/WinMerge/winmerge/pull/2377)
+- ステータスバーの分割線を描画しないようにした。[(PR #2377)](https://github.com/WinMerge/winmerge/pull/2377)
 
 ### フォルダー比較
 
-- BugFix: Folder comparison status not accurately reflected in toolbar [(#2374)](https://github.com/WinMerge/winmerge/issues/2374)
-- BugFix: Status of folder comparison not correctly reflected by tab icon after
-    Refresh (F5) [(#2383)](https://github.com/WinMerge/winmerge/issues/2383)
+- 不具合修正: フォルダー比較のステータスがツールバーに正確に反映されていなかった問題を修正した。[(#2374)](https://github.com/WinMerge/winmerge/issues/2374)
+- 不具合修正: 再読み込み(F5)後にタブアイコンがフォルダー比較のステータスを正しく反映していなかった問題を修正した。[(#2383)](https://github.com/WinMerge/winmerge/issues/2383)
 
 ### ファイル比較
 
-- Replace - more intelligent choice of replace in (whole file vs selection) (#2368)(https://github.com/WinMerge/winmerge/issues/2368)
+- ファイル全体と選択範囲の置換をより賢く選択するように置換機能を変更した。[(#2368)](https://github.com/WinMerge/winmerge/issues/2368)
 
 ### 画像比較
 
-- BugFix: Image Comparison : In Alpha Animation, dialogs hang winmerge [(#2370)](https://github.com/WinMerge/winmerge/issues/2370)
-- BugFix: Fixed an issue where the right edge of the status bar appeared white.
-- Added the ability to change the blink interval and overlay animation interval.
+- 不具合修正: 画像比較でオーバーレイアニメーション中にダイアログがフリーズする問題を修正した。[(#2370)](https://github.com/WinMerge/winmerge/issues/2370)
+- ステータスバーの右端が白く表示される問題を修正した。
+- 点滅間隔やオーバーレイアニメーション間隔を変更できるようにした。
 
 ### プラグイン
 
-- Make the gpt4-o-mini model selectable in the AIConvertText plugin settings
-    window
+- AIConvertTextプラグイン設定ウィンドウでgpt4-o-miniモデルを選択可能にした。
 
 ### アーカイブサポート
 
@@ -64,9 +62,9 @@ WinMerge の 2.16.42 安定版リリースです。
 ### ファイル比較
 
 - F# シンタックスハイライトを追加した。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2298)(PRをいただきました。ありがとうございます。)
-- Improved F# parsing, support for multi-line comments (PR #2301)
+- F#のパーシングを改善し、複数行コメントをサポートした。[(PR#2301)](https://github.com/WinMerge/winmerge/pull/2301)(PRをいただきました。ありがとうございます。)
 - F# シンタックスハイライトの改善。 [(PR#2303)](https://github.com/WinMerge/winmerge/pull/2303)[(PR#2309)](https://github.com/WinMerge/winmerge/pull/2309)(PRをいただきました。ありがとうございます。)
-- Multi line comment fix part 2 (PR #2309)
+- マルチラインコメント修正その2(PR #2309)
 - TypeScript ファイルにJavaScriptシンタックスハイライトを適用するようにした。 [(PR#2312)](https://github.com/WinMerge/winmerge/pull/2312)(PRをいただきました。ありがとうございます。)
 
 ### フォルダー比較
@@ -82,7 +80,7 @@ WinMerge の 2.16.42 安定版リリースです。
 
 ### プラグイン
 
-- BugFix: Fixed the plugin pipeline not being configured correctly in the Select Plugin dialog.
+- プラグインの選択ダイアログ表示時、プラグインパイプラインの設定が正しく行われていなかった問題を修正した。
 - AIConvertText プラグインを追加した。 [(PR#2258)](https://github.com/WinMerge/winmerge/pull/2258) (OpenAI API を使用して、指示した通りテキストを変換します。利用には OpenAI API Key の取得が必要になります）
 - md4c 0.5.2 に更新した。
 - jq 1.7.1 に更新した。
