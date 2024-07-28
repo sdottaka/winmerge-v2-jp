@@ -45,7 +45,7 @@ title: 変更履歴
 
 #### プラグイン
 
-- AIConvertText プラグインを追加した。 [(PR#2298)](https://github.com/WinMerge/winmerge/pull/2258) (OpenAI API を使用して、指示した通りテキストを変換します。利用には OpenAI API Key の取得が必要になります）
+- AIConvertText プラグインを追加した。 [(PR#2258)](https://github.com/WinMerge/winmerge/pull/2258) (OpenAI API を使用して、指示した通りテキストを変換します。利用には OpenAI API Key の取得が必要になります）
 - md4c 0.5.2 に更新した。
 - jq 1.7.1 に更新した。
 
