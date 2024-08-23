@@ -221,6 +221,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	ON_MESSAGE(WM_COPYDATA, OnCopyData)
 	ON_MESSAGE(WM_USER+1, OnUser1)
 	ON_WM_ACTIVATEAPP()
+	ON_UPDATE_COMMAND_UI_RANGE(CMenuBar::FIRST_MENUID, CMenuBar::FIRST_MENUID + 10, OnUpdateMenuBarMenuItem)
 	// [File] menu
 	ON_COMMAND(ID_FILE_NEW, (OnFileNew<2, ID_MERGE_COMPARE_TEXT>))
 	ON_COMMAND(ID_FILE_NEW_TABLE, (OnFileNew<2, ID_MERGE_COMPARE_TABLE>))
@@ -291,6 +292,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	ON_COMMAND(ID_LASTFILE, OnLastFile)
 	ON_UPDATE_COMMAND_UI(ID_LASTFILE, OnUpdateLastFile)
 	// Tool bar drop-down menu
+	ON_NOTIFY(TBN_DROPDOWN, AFX_IDW_MENUBAR, OnMenubarButtonDropDown)
 	ON_NOTIFY(TBN_DROPDOWN, AFX_IDW_TOOLBAR, OnToolbarButtonDropDown)
 	ON_COMMAND_RANGE(ID_DIFF_OPTIONS_WHITESPACE_COMPARE, ID_DIFF_OPTIONS_WHITESPACE_IGNOREALL, OnDiffWhitespace)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_DIFF_OPTIONS_WHITESPACE_COMPARE, ID_DIFF_OPTIONS_WHITESPACE_IGNOREALL, OnUpdateDiffWhitespace)
@@ -447,6 +449,11 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndMDIClient.ModifyStyleEx(WS_EX_CLIENTEDGE, 0);
 
 	return 0;
+}
+
+void CMainFrame::OnUpdateMenuBarMenuItem(CCmdUI* pCmdUI)
+{
+	m_wndMenuBar.OnUpdateMenuBarMenuItem(pCmdUI);
 }
 
 void CMainFrame::OnTimer(UINT_PTR nIDEvent)
@@ -793,18 +800,20 @@ bool CMainFrame::ShowAutoMergeDoc(UINT nID, IDirDoc * pDirDoc,
 			nID = ID_MERGE_COMPARE_TEXT + preferredWindowType;
 	}
 	FileFilterHelper filterImg, filterBin;
+	const String& imgPatterns = GetOptionsMgr()->GetString(OPT_CMP_IMG_FILEPATTERNS);
 	filterImg.UseMask(true);
-	filterImg.SetMask(GetOptionsMgr()->GetString(OPT_CMP_IMG_FILEPATTERNS));
+	filterImg.SetMask(imgPatterns);
+	const String& binPatterns = GetOptionsMgr()->GetString(OPT_CMP_BIN_FILEPATTERNS);
 	filterBin.UseMask(true);
-	filterBin.SetMask(GetOptionsMgr()->GetString(OPT_CMP_BIN_FILEPATTERNS));
+	filterBin.SetMask(binPatterns);
 	for (int pane = 0; pane < nFiles; ++pane)
 	{
 		if (CWebPageDiffFrame::MatchURLPattern(ifileloc[pane].filepath))
 			return ShowWebDiffDoc(pDirDoc, nFiles, ifileloc, dwFlags, strDesc, sReportFile, infoUnpacker, infoPrediffer, dynamic_cast<const OpenWebPageParams*>(pOpenParams));
 		String filepath = ifileloc[pane].filepath + unpackedFileExtension;
-		if (filterImg.includeFile(filepath) && CImgMergeFrame::IsLoadable())
+		if (!imgPatterns.empty() && filterImg.includeFile(filepath) && CImgMergeFrame::IsLoadable())
 			return ShowImgMergeDoc(pDirDoc, nFiles, ifileloc, dwFlags, strDesc, sReportFile, infoUnpacker, infoPrediffer, dynamic_cast<const OpenImageFileParams *>(pOpenParams));
-		else if (filterBin.includeFile(filepath) && CHexMergeView::IsLoadable())
+		else if (!binPatterns.empty() && filterBin.includeFile(filepath) && CHexMergeView::IsLoadable())
 			return ShowHexMergeDoc(pDirDoc, nFiles, ifileloc, dwFlags, strDesc, sReportFile, infoUnpacker, infoPrediffer, dynamic_cast<const OpenBinaryFileParams *>(pOpenParams));
 	}
 	switch (std::abs(static_cast<int>(nID)))
@@ -1685,6 +1694,8 @@ void CMainFrame::OnClose()
 	theApp.WriteProfileInt(_T("Settings"), _T("MainBottom"),wp.rcNormalPosition.bottom);
 	theApp.WriteProfileInt(_T("Settings"), _T("MainMax"), (wp.showCmd == SW_MAXIMIZE));
 
+	GetOptionsMgr()->SaveOption(OPT_REBAR_STATE, m_wndReBar.GenerateStateString());
+
 	for (auto pFrame: GetAllImgMergeFrames())
 	{
 		if (!pFrame->CloseNow())
@@ -2170,6 +2181,8 @@ void CMainFrame::SelectFilter()
  */
 BOOL CMainFrame::PreTranslateMessage(MSG* pMsg)
 {
+	if (m_wndMenuBar.PreTranslateMessage(pMsg))
+		return TRUE;
 	// Check if we got 'ESC pressed' -message
 	if ((pMsg->message == WM_KEYDOWN) && (pMsg->wParam == VK_ESCAPE))
 	{
@@ -2473,26 +2486,30 @@ void CMainFrame::OnActivateApp(BOOL bActive, DWORD dwThreadID)
 
 BOOL CMainFrame::CreateToolbar()
 {
-	if (!m_wndToolBar.CreateEx(this) ||
+	if (!m_wndMenuBar.Create(this))
+	{
+		return FALSE;
+	}
+
+	if (!m_wndToolBar.CreateEx(this, TBSTYLE_FLAT | TBSTYLE_TRANSPARENT) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
 	{
 		return FALSE;
 	}
 
-	if (!m_wndReBar.Create(this, RBS_BANDBORDERS,
+	if (!m_wndReBar.Create(this, 0,
 		WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_ALIGN_TOP))
 	{
 		return FALSE;
 	}
-
-	VERIFY(m_wndToolBar.ModifyStyle(0, TBSTYLE_FLAT|TBSTYLE_TRANSPARENT));
 
 	// Remove this if you don't want tool tips or a resizable toolbar
 	m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle() |
 		CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC);
 	m_wndToolBar.GetToolBarCtrl().SetExtendedStyle(TBSTYLE_EX_DRAWDDARROWS);
 
-	m_wndReBar.AddBar(&m_wndToolBar);
+	m_wndReBar.AddBar(&m_wndMenuBar);
+	m_wndReBar.AddBar(&m_wndToolBar, nullptr, nullptr, RBBS_GRIPPERALWAYS | RBBS_FIXEDBMP | RBBS_BREAK);
 
 	LoadToolbarImages();
 
@@ -2510,6 +2527,10 @@ BOOL CMainFrame::CreateToolbar()
 	{
 		__super::ShowControlBar(&m_wndToolBar, false, 0);
 	}
+
+	__super::ShowControlBar(&m_wndMenuBar, true, 0);
+
+	m_wndReBar.LoadStateFromString(GetOptionsMgr()->GetString(OPT_REBAR_STATE).c_str());
 
 	return TRUE;
 }
@@ -2545,7 +2566,7 @@ void CMainFrame::LoadToolbarImages()
 	REBARBANDINFO rbbi = { sizeof REBARBANDINFO };
 	rbbi.fMask = RBBIM_CHILDSIZE;
 	rbbi.cyMinChild = sizeButton.cy;
-	m_wndReBar.GetReBarCtrl().SetBandInfo(0, &rbbi);
+	m_wndReBar.GetReBarCtrl().SetBandInfo(1, &rbbi);
 }
 
 
@@ -2977,6 +2998,12 @@ void CMainFrame::OnPluginsList()
 {
 	PluginsListDlg dlg;
 	dlg.DoModal();
+}
+
+void CMainFrame::OnMenubarButtonDropDown(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	m_wndMenuBar.OnMenuBarMenuItem(reinterpret_cast<LPNMTOOLBAR>(pNMHDR)->iItem);
+	*pResult = 0;
 }
 
 void CMainFrame::OnToolbarButtonDropDown(NMHDR* pNMHDR, LRESULT* pResult)

@@ -1788,6 +1788,10 @@ msgid "Br&owse..."
 msgstr "N&avega..."
 
 #, c-format
+msgid "Defaults"
+msgstr "Predeterminats"
+
+#, c-format
 msgid "Patch Generator"
 msgstr "Generador de pedaços"
 
@@ -1838,10 +1842,6 @@ msgstr "Inc&lou-hi la línia d'ordres"
 #, c-format
 msgid "Open to e&xternal editor"
 msgstr "Obre-ho en un &editor extern"
-
-#, c-format
-msgid "Defaults"
-msgstr "Predeterminats"
 
 #, c-format
 msgid "Display Columns"

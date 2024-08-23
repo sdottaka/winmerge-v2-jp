@@ -1479,6 +1479,9 @@ msgstr "&Mapa po meri:"
 msgid "Br&owse..."
 msgstr "Prebr&skaj..."
 
+msgid "Defaults"
+msgstr "Privzeto"
+
 msgid "Patch Generator"
 msgstr "Ustvarjalec popravkov"
 
@@ -1517,9 +1520,6 @@ msgstr "&Vključi ukazno vrstico"
 
 msgid "Open to e&xternal editor"
 msgstr "Odpri v zu&nanjem urejevalniku"
-
-msgid "Defaults"
-msgstr "Privzeto"
 
 msgid "Display Columns"
 msgstr "Prikaži stolpce"

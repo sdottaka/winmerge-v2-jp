@@ -1480,6 +1480,9 @@ msgstr "Carpeta &personalizada:"
 msgid "Br&owse..."
 msgstr "&Examinar..."
 
+msgid "Defaults"
+msgstr "Predeterminados"
+
 msgid "Patch Generator"
 msgstr "Xerar parche"
 
@@ -1518,9 +1521,6 @@ msgstr "Incluír liña de coman&dos"
 
 msgid "Open to e&xternal editor"
 msgstr "Abrir nun editor e&xterno"
-
-msgid "Defaults"
-msgstr "Predeterminados"
 
 msgid "Display Columns"
 msgstr "Mostrar columnas"

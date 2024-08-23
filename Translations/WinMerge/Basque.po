@@ -1790,6 +1790,10 @@ msgid "Br&owse..."
 msgstr "Bilat&u"
 
 #, c-format
+msgid "Defaults"
+msgstr "Berezkoak"
+
+#, c-format
 msgid "Patch Generator"
 msgstr "Eranskin Sortzailea"
 
@@ -1840,10 +1844,6 @@ msgstr "Ko&mando lerroa barne"
 #, c-format
 msgid "Open to e&xternal editor"
 msgstr "Ireki kan&poko editatzailean"
-
-#, c-format
-msgid "Defaults"
-msgstr "Berezkoak"
 
 #, c-format
 msgid "Display Columns"

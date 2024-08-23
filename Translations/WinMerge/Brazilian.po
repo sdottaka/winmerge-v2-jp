@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2023-03-13 09:30-0300\n"
-"PO-Revision-Date: 2024-07-24 15:10-0300\n"
+"PO-Revision-Date: 2024-07-30 23:00-0300\n"
 "Last-Translator: Marcello <marcello.mco@gmail.com>\n"
 "Language-Team: Felipe\n"
 "Language: pt_BR\n"
@@ -1156,7 +1156,7 @@ msgid "${DST_FILE} - Destination file"
 msgstr "${DST_FILE} - Arquivo destino"
 
 msgid "${DST_FOLDER} - Destination folder"
-msgstr "${DST_FOLDER} - Passta destino"
+msgstr "${DST_FOLDER} - Pasta destino"
 
 msgid "${DST_URL} - Destination URL"
 msgstr "${DST_URL} - URL destino"
@@ -1479,6 +1479,9 @@ msgstr "P&asta personalizada:"
 msgid "Br&owse..."
 msgstr "Pr&ocurar..."
 
+msgid "Defaults"
+msgstr "Padrões"
+
 msgid "Patch Generator"
 msgstr "Gerador de Patches"
 
@@ -1517,9 +1520,6 @@ msgstr "Inclu&ir a linha de comando"
 
 msgid "Open to e&xternal editor"
 msgstr "Abrir no e&ditor externo"
-
-msgid "Defaults"
-msgstr "Padrões"
 
 msgid "Display Columns"
 msgstr "Exibir Colunas"

@@ -1483,6 +1483,9 @@ msgstr "Mukautettu kansio:"
 msgid "Br&owse..."
 msgstr "Selaa..."
 
+msgid "Defaults"
+msgstr "Oletukset"
+
 msgid "Patch Generator"
 msgstr "Korjausgeneraattori"
 
@@ -1521,9 +1524,6 @@ msgstr "Sisällytä komentorivi"
 
 msgid "Open to e&xternal editor"
 msgstr "Avaa ulkoiseen editoriin"
-
-msgid "Defaults"
-msgstr "Oletukset"
 
 msgid "Display Columns"
 msgstr "Näytä sarakkeet"
