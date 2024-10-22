@@ -9,6 +9,7 @@
 - Add support for placing the tab bar on the title bar (PR #2428)
 - Add One-Hand mice wheel scroll diff and merge (PR #2435)
 - Add Support for Custom System Color Overrides (PR #2376)
+
 ### File compare
 
 - BugFix: Wrong syntax highlighting for TeX files (#2415)
@@ -22,6 +23,10 @@
 ### Folder compare
 
 - BugFix: ExitCode always 2 with /enableexitcode with no apparent issues (#2450)
+
+### Webpage compare
+
+- BugFix: Location pane may not render differences (winwebdiff#6)
 
 ### Options dialog
 
@@ -47,7 +52,7 @@
   - Dutch (PR #2474)
   - French (PR #2399,#2444)
   - Hungarian (PR #2433,#2440,#2458,#2472,#2482)
-  - Italian (PR #2393,#2438,#2446,#2447,#2457,#2467,#2470)
+  - Italian (PR #2393,#2438,#2446,#2447,#2457,#2467,#2470,#2487)
   - Japanese
   - Korean (PR #2426,#2459,#2473)
   - Lithuanian (PR #2436,#2443,#2462,#2471,#2483)
