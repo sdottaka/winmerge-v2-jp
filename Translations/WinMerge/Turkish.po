@@ -61,6 +61,18 @@ msgstr "Seçilmiş satır(lar)ı sola kopyala"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Seçilmiş satır(lar)ı soldan kopyala"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Satır &farkını seç\tF4"
 
@@ -345,6 +357,15 @@ msgstr "&Ayarlar..."
 msgid "&View"
 msgstr "&Görünüm"
 
+msgid "Ta&b Bar"
+msgstr "&Sekme çubuğu"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "&Araç çubuğu"
 
@@ -359,9 +380,6 @@ msgstr "Çok &büyük"
 
 msgid "&Status Bar"
 msgstr "&Durum çubuğu"
-
-msgid "Ta&b Bar"
-msgstr "&Sekme çubuğu"
 
 msgid "&Tools"
 msgstr "&Araçlar"
@@ -1292,6 +1310,9 @@ msgstr "Değiştirilen dosyalar &otomatik yenilensin:"
 msgid "Language:"
 msgstr "Dil:"
 
+msgid "Defaults"
+msgstr "Varsayılanlar"
+
 msgid "Find"
 msgstr "Bul"
 
@@ -1436,6 +1457,66 @@ msgstr "Sözcük farklılığı:"
 msgid "Selected Word Diff:"
 msgstr "Seçilmiş sözcük farklılığı:"
 
+msgid "Dialog"
+msgstr "Pencere"
+
+msgid "Keywords:"
+msgstr "Anahtar sözcükler:"
+
+msgid "Function names:"
+msgstr "İşlev adları:"
+
+msgid "Comments:"
+msgstr "Açıklamalar:"
+
+msgid "Numbers:"
+msgstr "Rakamlar:"
+
+msgid "Operators:"
+msgstr "İşlemler:"
+
+msgid "Strings:"
+msgstr "Dizgeler:"
+
+msgid "Preprocessor:"
+msgstr "Ön işleyici:"
+
+msgid "User 1:"
+msgstr "1. kullanıcı:"
+
+msgid "User 2:"
+msgstr "2. kullanıcı:"
+
+msgid "Bold"
+msgstr "Koyu"
+
+msgid "&Use customized text colors"
+msgstr "Özel metin renkleri k&ullanılsın"
+
+msgid "Whitespace:"
+msgstr "Beyaz boşluk:"
+
+msgid "Regular text:"
+msgstr "Normal metin:"
+
+msgid "Selection:"
+msgstr "Seçim:"
+
+msgid "Margin:"
+msgstr "Kenar boşluğu:"
+
+msgid "Search Marker:"
+msgstr "Arama işaretleyicisi:"
+
+msgid "User Defined Marker1:"
+msgstr "1. kullanıcı işaretleyicisi:"
+
+msgid "User Defined Marker2:"
+msgstr "2. kullanıcı işaretleyicisi:"
+
+msgid "User Defined Marker3:"
+msgstr "3. kullanıcı işaretleyicisi:"
+
 msgid "&Use folder compare colors"
 msgstr "Klasör karşılaştırma renkleri k&ullanılsın"
 
@@ -1451,8 +1532,8 @@ msgstr "Artık var olmayan ögeler:"
 msgid "Items filtered:"
 msgstr "Süzülmüş ögeler:"
 
-msgid "Margin:"
-msgstr "Kenar boşluğu:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Sistem"
@@ -1477,9 +1558,6 @@ msgstr "Ö&zel klasör:"
 
 msgid "Br&owse..."
 msgstr "Göz a&t..."
-
-msgid "Defaults"
-msgstr "Varsayılanlar"
 
 msgid "Patch Generator"
 msgstr "Yama oluşturucu"
@@ -1766,51 +1844,6 @@ msgstr "İçe aktar..."
 msgid "Export..."
 msgstr "Dışa aktar..."
 
-msgid "Dialog"
-msgstr "Pencere"
-
-msgid "Keywords:"
-msgstr "Anahtar sözcükler:"
-
-msgid "Function names:"
-msgstr "İşlev adları:"
-
-msgid "Comments:"
-msgstr "Açıklamalar:"
-
-msgid "Numbers:"
-msgstr "Rakamlar:"
-
-msgid "Operators:"
-msgstr "İşlemler:"
-
-msgid "Strings:"
-msgstr "Dizgeler:"
-
-msgid "Preprocessor:"
-msgstr "Ön işleyici:"
-
-msgid "User 1:"
-msgstr "1. kullanıcı:"
-
-msgid "User 2:"
-msgstr "2. kullanıcı:"
-
-msgid "Bold"
-msgstr "Koyu"
-
-msgid "Search Marker:"
-msgstr "Arama işaretleyicisi:"
-
-msgid "User Defined Marker1:"
-msgstr "1. kullanıcı işaretleyicisi:"
-
-msgid "User Defined Marker2:"
-msgstr "2. kullanıcı işaretleyicisi:"
-
-msgid "User Defined Marker3:"
-msgstr "3. kullanıcı işaretleyicisi:"
-
 msgid "Folder Compare Report"
 msgstr "Klasör Karşılaştırma Raporu"
 
@@ -1957,18 +1990,6 @@ msgstr "Tırnak içinde &yeni satır olabilsin"
 
 msgid "&Quote character:"
 msgstr "&Tırnak karakteri:"
-
-msgid "&Use customized text colors"
-msgstr "Özel metin renkleri k&ullanılsın"
-
-msgid "Whitespace:"
-msgstr "Beyaz boşluk:"
-
-msgid "Regular text:"
-msgstr "Normal metin:"
-
-msgid "Selection:"
-msgstr "Seçim:"
 
 msgid "Backup Files"
 msgstr "Yedekleme dosyaları"
@@ -3911,6 +3932,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Sadeleştirme"
 
@@ -3931,6 +3970,9 @@ msgstr "Kod çözme"
 
 msgid "URL Handling"
 msgstr "Adres işleme"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Büyük harflere dönüştür"
@@ -4047,6 +4089,9 @@ msgid "Disassemble Native Code"
 msgstr "Doğal kodu çözümle"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4186,6 +4231,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

@@ -61,6 +61,18 @@ msgstr "Copiază în stânga rândurile selectate"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Copiază din stânga rândurile selectate"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Selectează &diferențele din rând\tF4"
 
@@ -345,6 +357,15 @@ msgstr "&Opțiuni..."
 msgid "&View"
 msgstr "&Vizualizare"
 
+msgid "Ta&b Bar"
+msgstr "&Bara de file"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Bară de unel&te"
 
@@ -359,9 +380,6 @@ msgstr "Uriaș"
 
 msgid "&Status Bar"
 msgstr "Bară de &stare"
-
-msgid "Ta&b Bar"
-msgstr "&Bara de file"
 
 msgid "&Tools"
 msgstr "Unel&te"
@@ -1294,6 +1312,9 @@ msgstr "&Reîncarcă automat fișierele modificate:"
 msgid "Language:"
 msgstr "Limba:"
 
+msgid "Defaults"
+msgstr "Implicite"
+
 msgid "Find"
 msgstr "Găsește"
 
@@ -1442,6 +1463,66 @@ msgstr "Diferență cuvânt:"
 msgid "Selected Word Diff:"
 msgstr "Diferență cuvânt selectată:"
 
+msgid "Dialog"
+msgstr "Dialog"
+
+msgid "Keywords:"
+msgstr "Cuvinte cheie:"
+
+msgid "Function names:"
+msgstr "Nume de funcții:"
+
+msgid "Comments:"
+msgstr "Comentarii:"
+
+msgid "Numbers:"
+msgstr "Numere:"
+
+msgid "Operators:"
+msgstr "Operatori:"
+
+msgid "Strings:"
+msgstr "Șiruri de caractere:"
+
+msgid "Preprocessor:"
+msgstr "Preprocesor:"
+
+msgid "User 1:"
+msgstr "Utilizator 1:"
+
+msgid "User 2:"
+msgstr "Utilizator 2:"
+
+msgid "Bold"
+msgstr "Aldine"
+
+msgid "&Use customized text colors"
+msgstr "Folosește c&ulori ale textului personalizate"
+
+msgid "Whitespace:"
+msgstr "Blancuri:"
+
+msgid "Regular text:"
+msgstr "Text normal:"
+
+msgid "Selection:"
+msgstr "Selecție:"
+
+msgid "Margin:"
+msgstr "Margine:"
+
+msgid "Search Marker:"
+msgstr "Marcatorul de căutare:"
+
+msgid "User Defined Marker1:"
+msgstr "Marcatorul definit utilizator 1:"
+
+msgid "User Defined Marker2:"
+msgstr "Marcatorul definit utilizator 2:"
+
+msgid "User Defined Marker3:"
+msgstr "Marcatorul definit utilizator 3:"
+
 msgid "&Use folder compare colors"
 msgstr "&Utilizează culorile de comparare a directoarelor"
 
@@ -1457,8 +1538,8 @@ msgstr "Elemente nu există toate:"
 msgid "Items filtered:"
 msgstr "Elemente filtrate:"
 
-msgid "Margin:"
-msgstr "Margine:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Sistem"
@@ -1483,9 +1564,6 @@ msgstr "Director personali&zat:"
 
 msgid "Br&owse..."
 msgstr "Ră&sfoiește..."
-
-msgid "Defaults"
-msgstr "Implicite"
 
 msgid "Patch Generator"
 msgstr "Generator petice"
@@ -1787,51 +1865,6 @@ msgstr "Importă..."
 msgid "Export..."
 msgstr "Exportă..."
 
-msgid "Dialog"
-msgstr "Dialog"
-
-msgid "Keywords:"
-msgstr "Cuvinte cheie:"
-
-msgid "Function names:"
-msgstr "Nume de funcții:"
-
-msgid "Comments:"
-msgstr "Comentarii:"
-
-msgid "Numbers:"
-msgstr "Numere:"
-
-msgid "Operators:"
-msgstr "Operatori:"
-
-msgid "Strings:"
-msgstr "Șiruri de caractere:"
-
-msgid "Preprocessor:"
-msgstr "Preprocesor:"
-
-msgid "User 1:"
-msgstr "Utilizator 1:"
-
-msgid "User 2:"
-msgstr "Utilizator 2:"
-
-msgid "Bold"
-msgstr "Aldine"
-
-msgid "Search Marker:"
-msgstr "Marcatorul de căutare:"
-
-msgid "User Defined Marker1:"
-msgstr "Marcatorul definit utilizator 1:"
-
-msgid "User Defined Marker2:"
-msgstr "Marcatorul definit utilizator 2:"
-
-msgid "User Defined Marker3:"
-msgstr "Marcatorul definit utilizator 3:"
-
 msgid "Folder Compare Report"
 msgstr "Raport comparare directoare"
 
@@ -1978,18 +2011,6 @@ msgstr "Permite sfârșituri de rând în ghilimele"
 
 msgid "&Quote character:"
 msgstr "Caracterul de citare:"
-
-msgid "&Use customized text colors"
-msgstr "Folosește c&ulori ale textului personalizate"
-
-msgid "Whitespace:"
-msgstr "Blancuri:"
-
-msgid "Regular text:"
-msgstr "Text normal:"
-
-msgid "Selection:"
-msgstr "Selecție:"
 
 msgid "Backup Files"
 msgstr "Copii de siguranță"
@@ -4389,6 +4410,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Înfrumusețare"
 
@@ -4409,6 +4448,9 @@ msgstr "Decompilare"
 
 msgid "URL Handling"
 msgstr "Tratare URL-urile"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Transformă în majuscule"
@@ -4525,6 +4567,9 @@ msgid "Disassemble Native Code"
 msgstr "Dezasamblează cod nativ"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4812,6 +4857,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

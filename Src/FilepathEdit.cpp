@@ -34,6 +34,7 @@ BEGIN_MESSAGE_MAP(CFilepathEdit, CEdit)
 	ON_WM_SETCURSOR()
 	ON_WM_KILLFOCUS()
 	ON_WM_LBUTTONDOWN()
+	ON_WM_SYSCOLORCHANGE()
 	ON_COMMAND(ID_EDIT_COPY, OnEditCopy)
 	ON_COMMAND(ID_EDIT_PASTE, OnEditPaste)
 	ON_COMMAND(ID_EDIT_CUT, OnEditCut)
@@ -293,10 +294,12 @@ void CFilepathEdit::OnPaint()
 	{
 		CClientDC dc(this);
 		CFont *pFontOld = dc.SelectObject(GetFont());	
+		int oldTextColor = dc.SetTextColor(m_crText);
 		int oldBkMode = dc.SetBkMode(TRANSPARENT);
 		CRect rc = GetMenuCharRect(&dc);
 		dc.TextOutW(rc.left, 0, IsWin7_OrGreater() ? _T("\u2261") : _T("="));
 		dc.SetBkMode(oldBkMode);
+		dc.SetTextColor(oldTextColor);
 		dc.SelectObject(pFontOld);
 	}
 }
@@ -571,4 +574,9 @@ void CFilepathEdit::SetTextColor(COLORREF rgb)
 
 	//redraw
 	Invalidate(TRUE);
+}
+
+void CFilepathEdit::OnSysColorChange()
+{
+	SetActive(GetActive());
 }

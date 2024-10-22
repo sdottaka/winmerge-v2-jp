@@ -1,49 +1,49 @@
 # Translations Status
 
-Status from **2024-07-25**:
+Status from **2024-10-21**:
 
 ## WinMerge
 
 | Language             | Total | Translated | Fuzzy | Untranslated | Complete | Last Update |
 |:---------------------|------:|-----------:|------:|-------------:|---------:|:-----------:|
-| Arabic               |  1392 |        895 |     0 |          497 |     64 % |  2019-12-30 |
-| Basque               |  1392 |        638 |     0 |          754 |     45 % |  2013-02-03 |
-| Brazilian            |  1392 |       1392 |     0 |            0 |    100 % |  2024-07-24 |
-| Bulgarian            |  1392 |       1078 |     0 |          314 |     77 % |  2023-11-14 |
-| Catalan              |  1392 |       1328 |     0 |           64 |     95 % |             |
-| ChineseSimplified    |  1392 |       1392 |     0 |            0 |    100 % |             |
-| ChineseTraditional   |  1392 |       1293 |     0 |           99 |     92 % |  2022-02-19 |
-| Corsican             |  1392 |       1389 |     0 |            3 |     99 % |  2024-06-21 |
-| Croatian             |  1392 |        630 |     1 |          761 |     45 % |  2009-02-13 |
-| Czech                |  1392 |        605 |     0 |          787 |     43 % |             |
-| Danish               |  1392 |        639 |     0 |          753 |     45 % |  2013-01-13 |
-| Dutch                |  1392 |       1280 |     0 |          112 |     91 % |  2023-05-02 |
-| English              |  1392 |       1392 |     0 |            0 |    100 % |  2024-07-23 |
-| Finnish              |  1392 |       1185 |     0 |          207 |     85 % |             |
-| French               |  1392 |       1389 |     0 |            3 |     99 % |  2024-06-14 |
-| Galician             |  1392 |       1317 |     0 |           75 |     94 % |  2023-11-24 |
-| German               |  1392 |       1342 |     0 |           50 |     96 % |  2023-08-08 |
-| Greek                |  1392 |        605 |     0 |          787 |     43 % |             |
-| Hungarian            |  1392 |       1392 |     0 |            0 |    100 % |  2021-03-15 |
-| Italian              |  1392 |       1375 |     0 |           17 |     98 % |  2024-04-27 |
-| Japanese             |  1392 |       1392 |     0 |            0 |    100 % |  2024-06-22 |
-| Korean               |  1392 |       1389 |     0 |            3 |     99 % |  2024-05-22 |
-| Lithuanian           |  1392 |       1343 |     0 |           49 |     96 % |  2024-07-24 |
-| Norwegian            |  1392 |        730 |     0 |          662 |     52 % |             |
-| Persian              |  1392 |        641 |     0 |          751 |     46 % |  2013-08-15 |
-| Polish               |  1392 |       1355 |     0 |           37 |     97 % |  2023-11-28 |
-| Portuguese           |  1392 |       1389 |     0 |            3 |     99 % |  2024-05-10 |
-| Romanian             |  1392 |       1306 |     0 |           86 |     93 % |  2023-11-07 |
-| Russian              |  1392 |       1318 |     0 |           74 |     94 % |  2023-04-27 |
-| Serbian              |  1392 |        632 |     0 |          760 |     45 % |             |
-| Sinhala              |  1392 |        563 |    58 |          771 |     44 % |  2010-12-12 |
-| Slovak               |  1392 |       1184 |     0 |          208 |     85 % |  2022-02-17 |
-| Slovenian            |  1392 |       1320 |     0 |           72 |     94 % |  2024-01-28 |
-| Spanish              |  1392 |       1317 |     0 |           75 |     94 % |  2023-11-24 |
-| Swedish              |  1392 |       1232 |     2 |          158 |     88 % |  2023-02-08 |
-| Tamil                |  1392 |       1218 |     0 |          174 |     87 % |  2023-07-24 |
-| Turkish              |  1392 |       1326 |     0 |           66 |     95 % |  2023-10-28 |
-| Ukrainian            |  1392 |        708 |     0 |          684 |     50 % |  2009-06-13 |
+| Arabic               |  1408 |        895 |     0 |          513 |     63 % |  2019-12-30 |
+| Basque               |  1408 |        638 |     0 |          770 |     45 % |  2013-02-03 |
+| Brazilian            |  1408 |       1408 |     0 |            0 |    100 % |  2024-10-21 |
+| Bulgarian            |  1408 |       1078 |     0 |          330 |     76 % |  2023-11-14 |
+| Catalan              |  1408 |       1328 |     0 |           80 |     94 % |             |
+| ChineseSimplified    |  1408 |       1408 |     0 |            0 |    100 % |             |
+| ChineseTraditional   |  1408 |       1299 |     0 |          109 |     92 % |  2022-02-19 |
+| Corsican             |  1408 |       1389 |     0 |           19 |     98 % |  2024-06-21 |
+| Croatian             |  1408 |        630 |     1 |          777 |     44 % |  2009-02-13 |
+| Czech                |  1408 |        605 |     0 |          803 |     42 % |             |
+| Danish               |  1408 |        639 |     0 |          769 |     45 % |  2013-01-13 |
+| Dutch                |  1408 |       1407 |     0 |            1 |     99 % |  2018-09-06 |
+| English              |  1408 |       1408 |     0 |            0 |    100 % |  2024-10-16 |
+| Finnish              |  1408 |       1185 |     0 |          223 |     84 % |             |
+| French               |  1408 |       1402 |     0 |            6 |     99 % |  2024-09-19 |
+| Galician             |  1408 |       1317 |     0 |           91 |     93 % |  2023-11-24 |
+| German               |  1408 |       1342 |     0 |           66 |     95 % |  2023-08-08 |
+| Greek                |  1408 |        605 |     0 |          803 |     42 % |             |
+| Hungarian            |  1408 |       1407 |     0 |            1 |     99 % |  2021-03-15 |
+| Italian              |  1408 |       1407 |     0 |            1 |     99 % |  2024-10-07 |
+| Japanese             |  1408 |       1408 |     0 |            0 |    100 % |  2024-10-20 |
+| Korean               |  1408 |       1407 |     0 |            1 |     99 % |  2024-10-08 |
+| Lithuanian           |  1408 |       1365 |     0 |           43 |     96 % |  2024-10-21 |
+| Norwegian            |  1408 |        730 |     0 |          678 |     51 % |             |
+| Persian              |  1408 |        641 |     0 |          767 |     45 % |  2013-08-15 |
+| Polish               |  1408 |       1355 |     0 |           53 |     96 % |  2023-11-28 |
+| Portuguese           |  1408 |       1407 |     0 |            1 |     99 % |  2024-10-12 |
+| Romanian             |  1408 |       1306 |     0 |          102 |     92 % |  2023-11-07 |
+| Russian              |  1408 |       1318 |     0 |           90 |     93 % |  2023-04-27 |
+| Serbian              |  1408 |        632 |     0 |          776 |     44 % |             |
+| Sinhala              |  1408 |        563 |    58 |          787 |     44 % |  2010-12-12 |
+| Slovak               |  1408 |       1184 |     0 |          224 |     84 % |  2022-02-17 |
+| Slovenian            |  1408 |       1320 |     0 |           88 |     93 % |  2024-01-28 |
+| Spanish              |  1408 |       1317 |     0 |           91 |     93 % |  2023-11-24 |
+| Swedish              |  1408 |       1232 |     2 |          174 |     87 % |  2023-02-08 |
+| Tamil                |  1408 |       1218 |     0 |          190 |     86 % |  2023-07-24 |
+| Turkish              |  1408 |       1326 |     0 |           82 |     94 % |  2023-10-28 |
+| Ukrainian            |  1408 |        708 |     0 |          700 |     50 % |  2009-06-13 |
 
 ## ShellExtension
 
@@ -229,8 +229,7 @@ Status from **2024-07-25**:
    - [Rolf Egmose](mailto:R.Egmose%20at%20gmail.com)
 
  * Dutch
-   - Ronald Schaap
-   - Thomas De Rocker, 2023
+   - Thomas De Rocker, 2024
 
  * Finnish
    - Veikko
@@ -274,6 +273,7 @@ Status from **2024-07-25**:
    - [Rukoto Luther](mailto:rukotolucies%20at%20hotmail.com)
 
  * Korean
+   - [VenusGirl](mailto:VenusGirl%20at%20https://github.com/VenusGirl)
    - [Hwang Sukjoon](mailto:bbcool%20at%20gmail.com)
    - [Lee Jae-Hong](mailto:pyrasis%20at%20users.sourceforge.net)
    - [Sushizang](mailto:sushizang%20at%20empal.com)
@@ -282,7 +282,6 @@ Status from **2024-07-25**:
    - [BrainS](mailto:29201475+BraINstinct0%20at%20users.noreply.github.com)
    - [cynilyn](mailto:cynilyn%20at%20gmail.com)
    - [gro00](mailto:gheong.ro%20at%20gmail.com)
-   - [VenusGirl](mailto:VenusGirl%20at%20https://github.com/VenusGirl)
 
  * Lithuanian
    - [Dalius Guzauskas (aka Tichij)](mailto:tichij%20AT%20mail%20DOT%20com)
@@ -304,7 +303,7 @@ Status from **2024-07-25**:
  * Portuguese
    - Nelson Simão
    - Lippe35
-   - [Hugo Carvalho](mailto:hugokarvalho@hotmail.com)
+   - [Hugo Carvalho](mailto:hugokarvalho%20at%20hotmail.com)
 
  * Romanian
    - [Cristian Arghiroiu](mailto:cristi.arghiroiu%20at%20gmail.com)

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
 "POT-Creation-Date: 2020-12-05 22:07+0000\n"
-"PO-Revision-Date: 2024-08-25 18:18+0900\n"
+"PO-Revision-Date: 2024-10-20 14:08+0900\n"
 "Last-Translator: Takashi Sawanaka <sawanaka@d1.dion.ne.jp>\n"
 "Language-Team: Japanese <winmerge-translate@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -60,6 +60,18 @@ msgstr "選択した行を左側にコピー"
 
 msgid "Copy Selected Line(s) from Left"
 msgstr "選択した行を左側からコピー"
+
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr "選択した差異(左側)をクリップボードへコピー\tCtrl+1"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr "選択した差異(右側)をクリップボードへコピー\tCtrl+2"
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr "選択した差異(中央)をクリップボードへコピー\tCtrl+2"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr "選択した差異(右側)をクリップボードへコピー\tCtrl+3"
 
 msgid "Select Line &Difference\tF4"
 msgstr "行内差異を選択(&D)\tF4"
@@ -345,6 +357,15 @@ msgstr "設定(&O)..."
 msgid "&View"
 msgstr "表示(&V)"
 
+msgid "Ta&b Bar"
+msgstr "タブ バー(&B)"
+
+msgid "&View Tab Bar"
+msgstr "タブ バーを表示(&V)"
+
+msgid "&On Title Bar"
+msgstr "タイトルバー上に配置(&O)"
+
 msgid "&Toolbar"
 msgstr "ツールバー(&T)"
 
@@ -359,9 +380,6 @@ msgstr "特大(&H)"
 
 msgid "&Status Bar"
 msgstr "ステータス バー(&S)"
-
-msgid "Ta&b Bar"
-msgstr "タブ バー(&B)"
 
 msgid "&Tools"
 msgstr "ツール(&T)"
@@ -1292,6 +1310,9 @@ msgstr "変更されたファイルの自動再読み込み(&R):"
 msgid "Language:"
 msgstr "言語:"
 
+msgid "Defaults"
+msgstr "デフォルト"
+
 msgid "Find"
 msgstr "検索"
 
@@ -1440,6 +1461,66 @@ msgstr "単語の差異:"
 msgid "Selected Word Diff:"
 msgstr "選択された単語の差異:"
 
+msgid "Dialog"
+msgstr "ダイアログ"
+
+msgid "Keywords:"
+msgstr "キーワード:"
+
+msgid "Function names:"
+msgstr "関数名:"
+
+msgid "Comments:"
+msgstr "コメント:"
+
+msgid "Numbers:"
+msgstr "数値:"
+
+msgid "Operators:"
+msgstr "オペレーター:"
+
+msgid "Strings:"
+msgstr "文字列:"
+
+msgid "Preprocessor:"
+msgstr "プリプロセッサ:"
+
+msgid "User 1:"
+msgstr "ユーザー 1:"
+
+msgid "User 2:"
+msgstr "ユーザー 2:"
+
+msgid "Bold"
+msgstr "太字"
+
+msgid "&Use customized text colors"
+msgstr "テキストの色をカスタマイズする(&U)"
+
+msgid "Whitespace:"
+msgstr "空白:"
+
+msgid "Regular text:"
+msgstr "標準テキスト:"
+
+msgid "Selection:"
+msgstr "選択:"
+
+msgid "Margin:"
+msgstr "マージン:"
+
+msgid "Search Marker:"
+msgstr "検索マーカー:"
+
+msgid "User Defined Marker1:"
+msgstr "ユーザー定義マーカー 1:"
+
+msgid "User Defined Marker2:"
+msgstr "ユーザー定義マーカー 2:"
+
+msgid "User Defined Marker3:"
+msgstr "ユーザー定義マーカー 3:"
+
 msgid "&Use folder compare colors"
 msgstr "フォルダー比較用の色を使用する(&U)"
 
@@ -1455,8 +1536,8 @@ msgstr "すべて存在しない項目:"
 msgid "Items filtered:"
 msgstr "無視された項目:"
 
-msgid "Margin:"
-msgstr "マージン:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr "カスタムシステムカラーを使用する（一部のUI要素には適用されません）"
 
 msgid "System"
 msgstr "システム"
@@ -1481,9 +1562,6 @@ msgstr "指定したフォルダー(&U):"
 
 msgid "Br&owse..."
 msgstr "参照(&O)..."
-
-msgid "Defaults"
-msgstr "デフォルト"
 
 msgid "Patch Generator"
 msgstr "パッチ生成"
@@ -1778,51 +1856,6 @@ msgstr "インポート..."
 msgid "Export..."
 msgstr "エクスポート..."
 
-msgid "Dialog"
-msgstr "ダイアログ"
-
-msgid "Keywords:"
-msgstr "キーワード:"
-
-msgid "Function names:"
-msgstr "関数名:"
-
-msgid "Comments:"
-msgstr "コメント:"
-
-msgid "Numbers:"
-msgstr "数値:"
-
-msgid "Operators:"
-msgstr "オペレーター:"
-
-msgid "Strings:"
-msgstr "文字列:"
-
-msgid "Preprocessor:"
-msgstr "プリプロセッサ:"
-
-msgid "User 1:"
-msgstr "ユーザー 1:"
-
-msgid "User 2:"
-msgstr "ユーザー 2:"
-
-msgid "Bold"
-msgstr "太字"
-
-msgid "Search Marker:"
-msgstr "検索マーカー:"
-
-msgid "User Defined Marker1:"
-msgstr "ユーザー定義マーカー 1:"
-
-msgid "User Defined Marker2:"
-msgstr "ユーザー定義マーカー 2:"
-
-msgid "User Defined Marker3:"
-msgstr "ユーザー定義マーカー 3:"
-
 msgid "Folder Compare Report"
 msgstr "フォルダー比較レポート"
 
@@ -1969,18 +2002,6 @@ msgstr "引用符内の改行を値として扱う(&A)"
 
 msgid "&Quote character:"
 msgstr "引用符文字(&Q)"
-
-msgid "&Use customized text colors"
-msgstr "テキストの色をカスタマイズする(&U)"
-
-msgid "Whitespace:"
-msgstr "空白:"
-
-msgid "Regular text:"
-msgstr "標準テキスト:"
-
-msgid "Selection:"
-msgstr "選択:"
 
 msgid "Backup Files"
 msgstr "バックアップ ファイル"
@@ -4300,6 +4321,76 @@ msgstr "行"
 msgid "Character"
 msgstr "文字"
 
+msgid ""
+"\n"
+"Previous Difference (Alt+Up)\n"
+"(Right Button+Wheel Up)\n"
+"(Alt+Wheel Up)"
+msgstr ""
+"\n"
+"前の差異(&P)\tAlt+Up\n"
+"(Right Button+Wheel Up)\n"
+"(Alt+Wheel Up)"
+
+msgid ""
+"\n"
+"Next Difference (Alt+Down)\n"
+"(Right Button+Wheel Down)\n"
+"(Alt+Wheel Down)"
+msgstr ""
+"\n"
+"次の差異 (Alt+Down)\n"
+"(Right Button+Wheel Down)\n"
+"(Alt+Wheel Down)"
+
+msgid ""
+"\n"
+"Copy to Right (Alt+Right)\n"
+"(Right Button+Wheel Right)\n"
+"(Alt+Wheel Right)\n"
+"(Alt+Shift+Wheel Down)"
+msgstr ""
+"\n"
+"右側にコピー (Alt+Right)\n"
+"(Right Button+Wheel Right)\n"
+"(Alt+Wheel Right)\n"
+"(Alt+Shift+Wheel Down)"
+
+msgid ""
+"\n"
+"Copy to Left (Alt+Left)\n"
+"(Right Button+Wheel Left)\n"
+"(Alt+Wheel Left)\n"
+"(Alt+Shift+Wheel Up)"
+msgstr ""
+"\n"
+"左側へコピー (Alt+Left)\n"
+"(Right Button+Wheel Left)\n"
+"(Alt+Wheel Left)\n"
+"(Alt+Shift+Wheel Up)"
+
+msgid ""
+"\n"
+"Copy to Right and Advance (Ctrl+Alt+Right)\n"
+"(Ctrl+Alt+Wheel Right)\n"
+"(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+"\n"
+"右側へコピーし次へ (Ctrl+Alt+Right)\n"
+"(Ctrl+Alt+Wheel Right)\n"
+"(Ctrl+Alt+Shift+Wheel Down)"
+
+msgid ""
+"\n"
+"Copy to Left and Advance (Ctrl+Alt+Left)\n"
+"(Ctrl+Alt+Wheel Left)\n"
+"(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+"\n"
+"左側へコピーし次へ (Ctrl+Alt+Left)\n"
+"(Ctrl+Alt+Wheel Left)\n"
+"(Ctrl+Alt+Shift+Wheel Up)"
+
 msgid "Prettification"
 msgstr "整形"
 
@@ -4320,6 +4411,9 @@ msgstr "逆コンパイル"
 
 msgid "URL Handling"
 msgstr "URL 処理"
+
+msgid "Decoding / Encoding"
+msgstr "デコード / エンコード"
 
 msgid "Make Uppercase"
 msgstr "大文字に変換"
@@ -4437,6 +4531,9 @@ msgstr "ネイティブ コード逆アセンブル"
 
 msgid "Convert Text with AI..."
 msgstr "AIテキスト変換..."
+
+msgid "Unescape Java properties files"
+msgstr "Java プロパティファイルをアンエスケープ"
 
 msgid "Make characters uppercase"
 msgstr "テキストを大文字に変換します"
@@ -4714,6 +4811,9 @@ msgid ""
 msgstr ""
 "OpenAI APIを使用してテキストを変換します。\r\n"
 "使い方: AIConvertText PROMPT"
+
+msgid "Unescape and display escaped Java properties files."
+msgstr "エスケープされたJavaプロパティファイルをエスケープ解除して表示します。"
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles.sct WinMerge プラグインオプション"

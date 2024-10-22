@@ -64,6 +64,18 @@ msgstr "Копировать выбранные строки влево"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Копировать выбранные строки слева"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Выбрать &отличие\tF4"
 
@@ -348,6 +360,15 @@ msgstr "&Настройки..."
 msgid "&View"
 msgstr "&Вид"
 
+msgid "Ta&b Bar"
+msgstr "Панель вкладок"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Па&нель инструментов"
 
@@ -362,9 +383,6 @@ msgstr "&Огромные значки"
 
 msgid "&Status Bar"
 msgstr "&Строка состояния"
-
-msgid "Ta&b Bar"
-msgstr "Панель вкладок"
 
 msgid "&Tools"
 msgstr "&Инструменты"
@@ -1295,6 +1313,9 @@ msgstr "Авто&перезагрузка измененных файлов:"
 msgid "Language:"
 msgstr "Язык:"
 
+msgid "Defaults"
+msgstr "По умолчанию"
+
 msgid "Find"
 msgstr "Найти"
 
@@ -1439,6 +1460,66 @@ msgstr "Словарное отличие:"
 msgid "Selected Word Diff:"
 msgstr "Выбранное словарное отличие:"
 
+msgid "Dialog"
+msgstr "Диалог"
+
+msgid "Keywords:"
+msgstr "Ключевые слова:"
+
+msgid "Function names:"
+msgstr "Имена функций:"
+
+msgid "Comments:"
+msgstr "Комментарии:"
+
+msgid "Numbers:"
+msgstr "Числа:"
+
+msgid "Operators:"
+msgstr "Операторы:"
+
+msgid "Strings:"
+msgstr "Строки:"
+
+msgid "Preprocessor:"
+msgstr "Препроцессор:"
+
+msgid "User 1:"
+msgstr "Пользователь 1:"
+
+msgid "User 2:"
+msgstr "Пользователь 2:"
+
+msgid "Bold"
+msgstr "Жирный"
+
+msgid "&Use customized text colors"
+msgstr "Использовать особые цвета"
+
+msgid "Whitespace:"
+msgstr "Невидимые:"
+
+msgid "Regular text:"
+msgstr "Обычный текст:"
+
+msgid "Selection:"
+msgstr "Выбранный текст:"
+
+msgid "Margin:"
+msgstr "Поле:"
+
+msgid "Search Marker:"
+msgstr "Маркер поиска:"
+
+msgid "User Defined Marker1:"
+msgstr "Пользоват. маркер1:"
+
+msgid "User Defined Marker2:"
+msgstr "Пользоват. маркер2:"
+
+msgid "User Defined Marker3:"
+msgstr "Пользоват. маркер3:"
+
 msgid "&Use folder compare colors"
 msgstr "Использовать цвета сравнения папок"
 
@@ -1454,8 +1535,8 @@ msgstr "Элементы существуют не все:"
 msgid "Items filtered:"
 msgstr "Элементы отфильтрованы:"
 
-msgid "Margin:"
-msgstr "Поле:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Система"
@@ -1480,9 +1561,6 @@ msgstr "Указанная папка:"
 
 msgid "Br&owse..."
 msgstr "Обзор..."
-
-msgid "Defaults"
-msgstr "По умолчанию"
 
 msgid "Patch Generator"
 msgstr "Генератор патчей"
@@ -1769,51 +1847,6 @@ msgstr "Импорт..."
 msgid "Export..."
 msgstr "Экспорт..."
 
-msgid "Dialog"
-msgstr "Диалог"
-
-msgid "Keywords:"
-msgstr "Ключевые слова:"
-
-msgid "Function names:"
-msgstr "Имена функций:"
-
-msgid "Comments:"
-msgstr "Комментарии:"
-
-msgid "Numbers:"
-msgstr "Числа:"
-
-msgid "Operators:"
-msgstr "Операторы:"
-
-msgid "Strings:"
-msgstr "Строки:"
-
-msgid "Preprocessor:"
-msgstr "Препроцессор:"
-
-msgid "User 1:"
-msgstr "Пользователь 1:"
-
-msgid "User 2:"
-msgstr "Пользователь 2:"
-
-msgid "Bold"
-msgstr "Жирный"
-
-msgid "Search Marker:"
-msgstr "Маркер поиска:"
-
-msgid "User Defined Marker1:"
-msgstr "Пользоват. маркер1:"
-
-msgid "User Defined Marker2:"
-msgstr "Пользоват. маркер2:"
-
-msgid "User Defined Marker3:"
-msgstr "Пользоват. маркер3:"
-
 msgid "Folder Compare Report"
 msgstr "Отчет сравнения папок"
 
@@ -1960,18 +1993,6 @@ msgstr "Разрешить новые строки в кавычках"
 
 msgid "&Quote character:"
 msgstr "Символ кавычки:"
-
-msgid "&Use customized text colors"
-msgstr "Использовать особые цвета"
-
-msgid "Whitespace:"
-msgstr "Невидимые:"
-
-msgid "Regular text:"
-msgstr "Обычный текст:"
-
-msgid "Selection:"
-msgstr "Выбранный текст:"
 
 msgid "Backup Files"
 msgstr "Резервные копии"
@@ -2138,7 +2159,7 @@ msgid "&Enable image compare in folder compare"
 msgstr "Сравнивать изображения в папках сравнения"
 
 msgid "OCR result:"
-msgstr "Результат OCR"
+msgstr "Результат OCR:"
 
 msgid "Webpage"
 msgstr "Веб-страница"
@@ -3900,7 +3921,7 @@ msgid "Comparing..."
 msgstr "Сравнение..."
 
 msgid "Zoom:"
-msgstr "Масштаб"
+msgstr "Масштаб:"
 
 msgid "Diff hunk"
 msgstr ""
@@ -3912,6 +3933,24 @@ msgid "Line"
 msgstr ""
 
 msgid "Character"
+msgstr ""
+
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
 msgstr ""
 
 msgid "Prettification"
@@ -3934,6 +3973,9 @@ msgstr "Декомпиляция"
 
 msgid "URL Handling"
 msgstr "Обработка URL"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Сделать прописными"
@@ -4052,6 +4094,9 @@ msgstr "Разбор нативного кода"
 msgid "Convert Text with AI..."
 msgstr ""
 
+msgid "Unescape Java properties files"
+msgstr ""
+
 msgid "Make characters uppercase"
 msgstr "В верхний регистр"
 
@@ -4081,7 +4126,7 @@ msgstr "Заменить текст.\r\n• : Replace [-i] [-e] FIND REPLACE\r\n
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."
-msgstr "Применить фильтрацию. \r\n• : ExecFilterCommand COMMAND\r\n COMMAND - команда для выполнения. %1 в команде заменяется именем файла"
+msgstr "Применить фильтрацию. \r\n• : ExecFilterCommand COMMAND\r\n COMMAND - команда для выполнения. %1 в команде заменяется именем файла."
 
 msgid "Tokenize selection. \r\nUsage: Tokenize PATTERNS\r\n  PATTERNS - regular expression for tokenizing. (e.g. [^\\w]+)"
 msgstr "Токенизировать выбранное. \r\n• : Tokenize PATTERNS\r\n PATTERNS - регулярное выражение токенизации. (например. [^\\w]+)"
@@ -4111,7 +4156,7 @@ msgid "Graphviz Previewer. \r\nArguments: Command line options passed to the dot
 msgstr "Предпросмотр Graphviz. \r\nАргументы: Параметры командной строки, передаваемые команде dot."
 
 msgid "Markdown Previewer. \r\nArguments: Command line options passed to the md2html command."
-msgstr "Предпросмотр Markdown. \r\nАргументы: Параметры командной строки, передаваемые команде md2html"
+msgstr "Предпросмотр Markdown. \r\nАргументы: Параметры командной строки, передаваемые команде md2html."
 
 msgid "PlantUML Previewer. \r\nArguments: Command line options passed to the plantuml.jar command."
 msgstr "Предпросмотр PlantUML. \r\nАргументы: Параметры командной строки, передаваемые команде plantuml.jar."
@@ -4189,6 +4234,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
@@ -4288,13 +4336,13 @@ msgid "Find what"
 msgstr "Найди что"
 
 msgid "Replace with"
-msgstr "Заменить на:"
+msgstr "Заменить на"
 
 msgid "Settings"
 msgstr "Параметры"
 
 msgid "Column Ranges To Ignore:\ne.g.)  3,10-20,32-33\n"
-msgstr "Игнорируемые диапазоны столбцов:\nнапример, 3, 32-33"
+msgstr "Игнорируемые диапазоны столбцов:\nнапример, 3, 32-33\n"
 
 #, c-format
 msgid "Enter the name of the file to which the patch '%1' will be applied"

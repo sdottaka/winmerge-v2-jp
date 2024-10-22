@@ -63,6 +63,18 @@ msgstr ""
 msgid "Copy Selected Line(s) from Left"
 msgstr ""
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "تحديد الاختلاف في السطر"
 
@@ -347,6 +359,15 @@ msgstr "خ&يارات..."
 msgid "&View"
 msgstr "&عرض"
 
+msgid "Ta&b Bar"
+msgstr "شريط الت&بويب"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "&شريط الأدوات"
 
@@ -361,9 +382,6 @@ msgstr "&ضخم"
 
 msgid "&Status Bar"
 msgstr "شريط ال&حالة"
-
-msgid "Ta&b Bar"
-msgstr "شريط الت&بويب"
 
 msgid "&Tools"
 msgstr "أ&دوات"
@@ -1296,6 +1314,9 @@ msgstr ""
 msgid "Language:"
 msgstr "اللغة:"
 
+msgid "Defaults"
+msgstr "الإعدادات الافتراضية"
+
 msgid "Find"
 msgstr "البحث"
 
@@ -1440,6 +1461,66 @@ msgstr "الاختلافات على مستوى الكلمة:"
 msgid "Selected Word Diff:"
 msgstr "المقارنة على مستوى الكلمة المحددة:"
 
+msgid "Dialog"
+msgstr "حوار"
+
+msgid "Keywords:"
+msgstr "الكلمات المفتاحية:"
+
+msgid "Function names:"
+msgstr "اسماء الدوال:"
+
+msgid "Comments:"
+msgstr "التعليقات:"
+
+msgid "Numbers:"
+msgstr "الأرقام:"
+
+msgid "Operators:"
+msgstr "العوامل:"
+
+msgid "Strings:"
+msgstr "الإعدادات:"
+
+msgid "Preprocessor:"
+msgstr "المعالج التمهيدي:"
+
+msgid "User 1:"
+msgstr "المستخدم 1:"
+
+msgid "User 2:"
+msgstr "المستخدم 2:"
+
+msgid "Bold"
+msgstr "الخط العريض"
+
+msgid "&Use customized text colors"
+msgstr "ا&ستخدام ألوان مخصصة للنص"
+
+msgid "Whitespace:"
+msgstr "مساحة بيضاء (فارغة):"
+
+msgid "Regular text:"
+msgstr "نص عادي:"
+
+msgid "Selection:"
+msgstr "التحديد:"
+
+msgid "Margin:"
+msgstr "الهامش:"
+
+msgid "Search Marker:"
+msgstr "علامات البحث:"
+
+msgid "User Defined Marker1:"
+msgstr "العلامات المعرفة من قبل المستخدم 1:"
+
+msgid "User Defined Marker2:"
+msgstr "العلامات المعرفة من قبل المستخدم 2:"
+
+msgid "User Defined Marker3:"
+msgstr "العلامات المعرفة من قبل المستخدم 3:"
+
 msgid "&Use folder compare colors"
 msgstr "استخدم الألوان في مقارنة المجلدات"
 
@@ -1455,8 +1536,8 @@ msgstr "العناصر غير مكتملة:"
 msgid "Items filtered:"
 msgstr "العناصر التي تمت حصرها بالمرشح:"
 
-msgid "Margin:"
-msgstr "الهامش:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "النظام"
@@ -1481,9 +1562,6 @@ msgstr "م&جلد مخصص:"
 
 msgid "Br&owse..."
 msgstr "&بحث..."
-
-msgid "Defaults"
-msgstr "الإعدادات الافتراضية"
 
 msgid "Patch Generator"
 msgstr "أداة توليد التصحيح"
@@ -1776,51 +1854,6 @@ msgstr "استيراد..."
 msgid "Export..."
 msgstr "تصدير..."
 
-msgid "Dialog"
-msgstr "حوار"
-
-msgid "Keywords:"
-msgstr "الكلمات المفتاحية:"
-
-msgid "Function names:"
-msgstr "اسماء الدوال:"
-
-msgid "Comments:"
-msgstr "التعليقات:"
-
-msgid "Numbers:"
-msgstr "الأرقام:"
-
-msgid "Operators:"
-msgstr "العوامل:"
-
-msgid "Strings:"
-msgstr "الإعدادات:"
-
-msgid "Preprocessor:"
-msgstr "المعالج التمهيدي:"
-
-msgid "User 1:"
-msgstr "المستخدم 1:"
-
-msgid "User 2:"
-msgstr "المستخدم 2:"
-
-msgid "Bold"
-msgstr "الخط العريض"
-
-msgid "Search Marker:"
-msgstr "علامات البحث:"
-
-msgid "User Defined Marker1:"
-msgstr "العلامات المعرفة من قبل المستخدم 1:"
-
-msgid "User Defined Marker2:"
-msgstr "العلامات المعرفة من قبل المستخدم 2:"
-
-msgid "User Defined Marker3:"
-msgstr "العلامات المعرفة من قبل المستخدم 3:"
-
 msgid "Folder Compare Report"
 msgstr "تقرير مقارنة المجلدات"
 
@@ -1967,18 +2000,6 @@ msgstr ""
 
 msgid "&Quote character:"
 msgstr ""
-
-msgid "&Use customized text colors"
-msgstr "ا&ستخدام ألوان مخصصة للنص"
-
-msgid "Whitespace:"
-msgstr "مساحة بيضاء (فارغة):"
-
-msgid "Regular text:"
-msgstr "نص عادي:"
-
-msgid "Selection:"
-msgstr "التحديد:"
 
 msgid "Backup Files"
 msgstr "ملفات النسخ الاحتياطي"
@@ -4230,6 +4251,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -4249,6 +4288,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "URL Handling"
+msgstr ""
+
+msgid "Decoding / Encoding"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4366,6 +4408,9 @@ msgid "Disassemble Native Code"
 msgstr ""
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4505,6 +4550,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

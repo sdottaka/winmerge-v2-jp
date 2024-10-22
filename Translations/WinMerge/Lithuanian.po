@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2024-07-23 21:46+0000\n"
-"PO-Revision-Date: 2024-07-24 07:40+0200\n"
+"POT-Creation-Date: 2024-10-16 08:43+0000\n"
+"PO-Revision-Date: 2024-10-21 07:49+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../Src/\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5.1\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -61,6 +61,18 @@ msgstr "Kopijuoti pažymėtą eilutę (-es) į kairę"
 
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopijuoti pažymėtą eilutę (-es) iš kairės"
+
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr "Kopijuoti pažymėta skirtumą (Kairėje) į mainų sritį\tCtrl+1"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr "Kopijuoti pažymėta skirtumą (Dešinėje) į mainų sritį\tCtrl+2"
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr "Kopijuoti pažymėta skirtumą (Viduryje) į mainų sritį\tCtrl+2"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr "Kopijuoti pažymėta skirtumą (Dešinėje) į mainų sritį\tCtrl+3"
 
 msgid "Select Line &Difference\tF4"
 msgstr "Pažymėti &skirtumą"
@@ -260,16 +272,16 @@ msgid "&Enabled"
 msgstr "Į&jungta"
 
 msgid "&Scroll"
-msgstr ""
+msgstr "&Slinkti"
 
 msgid "&Click"
-msgstr ""
+msgstr "&Paspausti"
 
 msgid "&Input"
-msgstr ""
+msgstr "Įvest&i"
 
 msgid "&GoBack/Forward"
-msgstr ""
+msgstr "&Eiti atgal/Pirmyn"
 
 msgid "Clear &Browsing Data"
 msgstr "Išvalyti &Naršymo duomenis"
@@ -346,6 +358,15 @@ msgstr "Nu&ostatos..."
 msgid "&View"
 msgstr "&Vaizdas"
 
+msgid "Ta&b Bar"
+msgstr "&Kortelių juosta"
+
+msgid "&View Tab Bar"
+msgstr "&Rodyti kortelių juostą"
+
+msgid "&On Title Bar"
+msgstr "Ant pavadinim&o juostos"
+
 msgid "&Toolbar"
 msgstr "Mygtukų juos&ta"
 
@@ -360,9 +381,6 @@ msgstr "&Milžiniški mygtukai"
 
 msgid "&Status Bar"
 msgstr "Bū&senos juosta"
-
-msgid "Ta&b Bar"
-msgstr "&Kortelių juosta"
 
 msgid "&Tools"
 msgstr "Į&rankiai"
@@ -1293,6 +1311,9 @@ msgstr "Automatiškais &įkelti iš naujo pakeistus failus:"
 msgid "Language:"
 msgstr "Kalba:"
 
+msgid "Defaults"
+msgstr "Numat. reikšmės"
+
 msgid "Find"
 msgstr "Rasti"
 
@@ -1437,6 +1458,66 @@ msgstr "Žodžio skirtumas:"
 msgid "Selected Word Diff:"
 msgstr "Pažym. žodžio skirtumas:"
 
+msgid "Dialog"
+msgstr "Dialogas"
+
+msgid "Keywords:"
+msgstr "Raktažodžiai:"
+
+msgid "Function names:"
+msgstr "Funkcijų vardai:"
+
+msgid "Comments:"
+msgstr "Komentarai:"
+
+msgid "Numbers:"
+msgstr "Skaičiai:"
+
+msgid "Operators:"
+msgstr "Operatoriai:"
+
+msgid "Strings:"
+msgstr "Eilutės:"
+
+msgid "Preprocessor:"
+msgstr "Preprocessorius:"
+
+msgid "User 1:"
+msgstr "Naudotojas 1:"
+
+msgid "User 2:"
+msgstr "Naudotojas 2:"
+
+msgid "Bold"
+msgstr "Pastorintas"
+
+msgid "&Use customized text colors"
+msgstr "Na&udoti pasirinkt. teksto spalvas"
+
+msgid "Whitespace:"
+msgstr "Tarpas:"
+
+msgid "Regular text:"
+msgstr "Paprastas tekstas:"
+
+msgid "Selection:"
+msgstr "Pažymėtas fragmentas:"
+
+msgid "Margin:"
+msgstr "Paraštė:"
+
+msgid "Search Marker:"
+msgstr "Paieškos žymeklis:"
+
+msgid "User Defined Marker1:"
+msgstr "Naudotojo žymeklis1:"
+
+msgid "User Defined Marker2:"
+msgstr "Naudotojo žymeklis2:"
+
+msgid "User Defined Marker3:"
+msgstr "Naudotojo žymeklis3:"
+
 msgid "&Use folder compare colors"
 msgstr "Na&udoti katalogų lyginimo spalvas"
 
@@ -1452,8 +1533,8 @@ msgstr "Elementų visai nėra:"
 msgid "Items filtered:"
 msgstr "Elementai filtruoti:"
 
-msgid "Margin:"
-msgstr "Paraštė:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr "Na&udokite pasirinktines sistemos spalvas (gali būti netaikoma kai kuriems sąsajos elementams)"
 
 msgid "System"
 msgstr "Sistemos"
@@ -1478,9 +1559,6 @@ msgstr "P&asirinktinis katalogas:"
 
 msgid "Br&owse..."
 msgstr "Ra&sti..."
-
-msgid "Defaults"
-msgstr "Numat. reikšmės"
 
 msgid "Patch Generator"
 msgstr "Pataisos generatorius"
@@ -1767,51 +1845,6 @@ msgstr "Importuoti..."
 msgid "Export..."
 msgstr "Eksportuoti..."
 
-msgid "Dialog"
-msgstr "Dialogas"
-
-msgid "Keywords:"
-msgstr "Raktažodžiai:"
-
-msgid "Function names:"
-msgstr "Funkcijų vardai:"
-
-msgid "Comments:"
-msgstr "Komentarai:"
-
-msgid "Numbers:"
-msgstr "Skaičiai:"
-
-msgid "Operators:"
-msgstr "Operatoriai:"
-
-msgid "Strings:"
-msgstr "Eilutės:"
-
-msgid "Preprocessor:"
-msgstr "Preprocessorius:"
-
-msgid "User 1:"
-msgstr "Naudotojas 1:"
-
-msgid "User 2:"
-msgstr "Naudotojas 2:"
-
-msgid "Bold"
-msgstr "Pastorintas"
-
-msgid "Search Marker:"
-msgstr "Paieškos žymeklis:"
-
-msgid "User Defined Marker1:"
-msgstr "Naudotojo žymeklis1:"
-
-msgid "User Defined Marker2:"
-msgstr "Naudotojo žymeklis2:"
-
-msgid "User Defined Marker3:"
-msgstr "Naudotojo žymeklis3:"
-
 msgid "Folder Compare Report"
 msgstr "Katalogų lyginimo ataskaita"
 
@@ -1958,18 +1991,6 @@ msgstr "Leisti n&aujas eilutes kabutėse"
 
 msgid "&Quote character:"
 msgstr "&Kabučių simbolis:"
-
-msgid "&Use customized text colors"
-msgstr "Na&udoti pasirinkt. teksto spalvas"
-
-msgid "Whitespace:"
-msgstr "Tarpas:"
-
-msgid "Regular text:"
-msgstr "Paprastas tekstas:"
-
-msgid "Selection:"
-msgstr "Pažymėtas fragmentas:"
 
 msgid "Backup Files"
 msgstr "Rezervinių failų kurimo"
@@ -3912,6 +3933,24 @@ msgstr "Eilutė"
 msgid "Character"
 msgstr "Simbolis"
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr "\nPraeitas skirtumas (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr "\nKitas skirtumas (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr "\nKopijuoti į dešinę (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr "\nKopijuoti į kairę (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr "\nKopijuoti į dešinę ir Daugiau (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr "\nKopijuoti į kairę ir Daugiau (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+
 msgid "Prettification"
 msgstr "Sutvarkymas"
 
@@ -3932,6 +3971,9 @@ msgstr "Dekompiliavimas"
 
 msgid "URL Handling"
 msgstr "URL apdorojimas"
+
+msgid "Decoding / Encoding"
+msgstr "Dekodavimas / Kodavimas"
 
 msgid "Make Uppercase"
 msgstr "Pakeisti didžiosiomis raidėmis"
@@ -4048,7 +4090,10 @@ msgid "Disassemble Native Code"
 msgstr "Dekompiliuoti savajį kodą"
 
 msgid "Convert Text with AI..."
-msgstr "KOnvertuoti tekstus su AI..."
+msgstr "Konvertuoti tekstus su AI..."
+
+msgid "Unescape Java properties files"
+msgstr "Gražinti praleistus „Java“ savybių failus"
 
 msgid "Make characters uppercase"
 msgstr "Konvertuoti į didžiąsias raides"
@@ -4075,11 +4120,11 @@ msgid "Reverse lines"
 msgstr "Sukeisti eilutes"
 
 msgid "Replace text with another text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
-msgstr ""
+msgstr "Pakeisti tekstą kitu tekstu.\r\nNaudojimas: Replace [-i] [-e] FIND REPLACE\r\n   or: Replace -s\r\n  FIND    - text to find\r\n  REPLACE - text to replace\r\n  -i - ignore case (only for -e)\r\n  -e - treat the specified text as a regular expression\r\n  -s - replace using Substitution Filters patterns"
 
 #, c-format
 msgid "Apply filter command. \r\nUsage: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."
-msgstr ""
+msgstr "Taikyti filtro komandą. \r\nNaudojimas: ExecFilterCommand COMMAND\r\n  COMMAND - command to execute. %1 in the command is replaced with the filename."
 
 msgid "Tokenize selection. \r\nUsage: Tokenize PATTERNS\r\n  PATTERNS - regular expression for tokenizing. (e.g. [^\\w]+)"
 msgstr ""
@@ -4188,6 +4233,9 @@ msgstr "Teksto konvertavimo su AI pagalba funkcijos"
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
 msgstr "Teksto keitiklis, naudojant „OpenAI“ API.\r\nNaudojimas: AIConvertText PROMPT"
+
+msgid "Unescape and display escaped Java properties files."
+msgstr "Gražinti ir rodyti praleistus „Java“ savybių failus."
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles.sct „WinMerge“ papildinio nuostatos"

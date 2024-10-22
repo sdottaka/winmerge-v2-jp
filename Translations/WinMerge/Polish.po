@@ -63,6 +63,18 @@ msgstr "Kopiuj zaznaczone wiersze do lewej"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopiuj zaznaczone wiersze z lewej"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Zaznacz różniące się wiersze\tF4"
 
@@ -347,6 +359,15 @@ msgstr "Opcje..."
 msgid "&View"
 msgstr "Widok"
 
+msgid "Ta&b Bar"
+msgstr "Pasek kart"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Pasek narzędzi"
 
@@ -361,9 +382,6 @@ msgstr "Ogromny"
 
 msgid "&Status Bar"
 msgstr "Pasek stanu"
-
-msgid "Ta&b Bar"
-msgstr "Pasek kart"
 
 msgid "&Tools"
 msgstr "Narzędzia"
@@ -1294,6 +1312,9 @@ msgstr "Automatycznie przeładuj zmodyfikowane pliki:"
 msgid "Language:"
 msgstr "Język:"
 
+msgid "Defaults"
+msgstr "Domyślne"
+
 msgid "Find"
 msgstr "Znajdź"
 
@@ -1438,6 +1459,66 @@ msgstr "Różniące się słowa:"
 msgid "Selected Word Diff:"
 msgstr "Zaznaczone różniące się słowa:"
 
+msgid "Dialog"
+msgstr "Okno dialogowe"
+
+msgid "Keywords:"
+msgstr "Słowa kluczowe:"
+
+msgid "Function names:"
+msgstr "Nazwy funkcji:"
+
+msgid "Comments:"
+msgstr "Komentarze:"
+
+msgid "Numbers:"
+msgstr "Liczby:"
+
+msgid "Operators:"
+msgstr "Operatory:"
+
+msgid "Strings:"
+msgstr "Ciągi znaków:"
+
+msgid "Preprocessor:"
+msgstr "Preprocesor:"
+
+msgid "User 1:"
+msgstr "Użytkownik 1:"
+
+msgid "User 2:"
+msgstr "Użytkownik 2:"
+
+msgid "Bold"
+msgstr "Pogrubienie"
+
+msgid "&Use customized text colors"
+msgstr "Użyj niestandardowych kolorów tekstu"
+
+msgid "Whitespace:"
+msgstr "Odstęp:"
+
+msgid "Regular text:"
+msgstr "Czcionka regularna:"
+
+msgid "Selection:"
+msgstr "Zaznaczenie:"
+
+msgid "Margin:"
+msgstr "Margines:"
+
+msgid "Search Marker:"
+msgstr "Znaleziony marker:"
+
+msgid "User Defined Marker1:"
+msgstr "Zdefiniowany przez użytkownika Marker1:"
+
+msgid "User Defined Marker2:"
+msgstr "Zdefiniowany przez użytkownika Marker2:"
+
+msgid "User Defined Marker3:"
+msgstr "Zdefiniowany przez użytkownika Marker3:"
+
 msgid "&Use folder compare colors"
 msgstr "Użyj kolorów do porównania folderów"
 
@@ -1453,8 +1534,8 @@ msgstr "Wszystkie nieistniejące elementy:"
 msgid "Items filtered:"
 msgstr "Przefiltrowane elementy:"
 
-msgid "Margin:"
-msgstr "Margines:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "System"
@@ -1479,9 +1560,6 @@ msgstr "Folder niestandardowy:"
 
 msgid "Br&owse..."
 msgstr "Przeglądaj..."
-
-msgid "Defaults"
-msgstr "Domyślne"
 
 msgid "Patch Generator"
 msgstr "Generuj łatkę"
@@ -1768,51 +1846,6 @@ msgstr "Importuj..."
 msgid "Export..."
 msgstr "Eksportuj..."
 
-msgid "Dialog"
-msgstr "Okno dialogowe"
-
-msgid "Keywords:"
-msgstr "Słowa kluczowe:"
-
-msgid "Function names:"
-msgstr "Nazwy funkcji:"
-
-msgid "Comments:"
-msgstr "Komentarze:"
-
-msgid "Numbers:"
-msgstr "Liczby:"
-
-msgid "Operators:"
-msgstr "Operatory:"
-
-msgid "Strings:"
-msgstr "Ciągi znaków:"
-
-msgid "Preprocessor:"
-msgstr "Preprocesor:"
-
-msgid "User 1:"
-msgstr "Użytkownik 1:"
-
-msgid "User 2:"
-msgstr "Użytkownik 2:"
-
-msgid "Bold"
-msgstr "Pogrubienie"
-
-msgid "Search Marker:"
-msgstr "Znaleziony marker:"
-
-msgid "User Defined Marker1:"
-msgstr "Zdefiniowany przez użytkownika Marker1:"
-
-msgid "User Defined Marker2:"
-msgstr "Zdefiniowany przez użytkownika Marker2:"
-
-msgid "User Defined Marker3:"
-msgstr "Zdefiniowany przez użytkownika Marker3:"
-
 msgid "Folder Compare Report"
 msgstr "Raport porównania folderów"
 
@@ -1959,18 +1992,6 @@ msgstr "Zezwalaj na nowe wiersze w cudzysłowie"
 
 msgid "&Quote character:"
 msgstr "Znak cudzysłowu:"
-
-msgid "&Use customized text colors"
-msgstr "Użyj niestandardowych kolorów tekstu"
-
-msgid "Whitespace:"
-msgstr "Odstęp:"
-
-msgid "Regular text:"
-msgstr "Czcionka regularna:"
-
-msgid "Selection:"
-msgstr "Zaznaczenie:"
 
 msgid "Backup Files"
 msgstr "Pliki kopii zapasowej"
@@ -3913,6 +3934,24 @@ msgstr "Wiersz"
 msgid "Character"
 msgstr "Znak"
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Upiększanie"
 
@@ -3933,6 +3972,9 @@ msgstr "Dekompilacja"
 
 msgid "URL Handling"
 msgstr "Obsługa adresów URL"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Zrób duże litery"
@@ -4050,6 +4092,9 @@ msgstr "Dezasembluj kod natywny"
 
 msgid "Convert Text with AI..."
 msgstr "Konwertuj tekst za pomocą AI..."
+
+msgid "Unescape Java properties files"
+msgstr ""
 
 msgid "Make characters uppercase"
 msgstr "Zrób duże litery"
@@ -4189,6 +4234,9 @@ msgstr "Funkcje konwersji tekstu wspomagane AI"
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
 msgstr "Konwerter tekstu wykorzystujący API OpenAI.\r\nUżycie: AIConvertText PROMPT"
+
+msgid "Unescape and display escaped Java properties files."
+msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "Opcje wtyczki WinMerge CompareMSExcelFiles.sct"

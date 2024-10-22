@@ -118,6 +118,10 @@ inline const String OPT_FILE_SIZE_THRESHOLD {_T("Settings/OPT_FILE_SIZE_THRESHOL
 inline const String OPT_AUTO_RELOAD_MODIFIED_FILES {_T("Settings/AutoReloadModifiedFiles"s)};
 
 // Color options
+// SysColor hook
+inline const String OPT_SYSCOLOR_HOOK_ENABLED {_T("Settings/SysColorHookEnabled"s)};
+inline const String OPT_SYSCOLOR_HOOK_COLORS {_T("Settings/SysColorHookColors"s)};
+
 // The difference color
 inline const String OPT_CLR_DIFF {_T("Settings/DifferenceColor"s)};
 // The selected difference color
@@ -301,6 +305,7 @@ inline const String OPT_PLUGINS_OPEN_IN_SAME_FRAME_TYPE {_T("Plugins/OpenInSameF
 inline const String OPT_SHOW_SELECT_FILES_AT_STARTUP {_T("Settings/ShowFileDialog"s)};
 
 // MDI Tab Bar
+inline const String OPT_TABBAR_ON_TITLEBAR {_T("Settings/TabBarOnTitleBar"s)};
 inline const String OPT_TABBAR_AUTO_MAXWIDTH {_T("Settings/TabBarAutoMaxWidth"s)};
 
 // MRU

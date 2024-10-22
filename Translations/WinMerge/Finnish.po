@@ -61,6 +61,18 @@ msgstr "Kopioi valittu(t) rivi(t) vasemmalle"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopioi valittu(t) rivi(t) vasemmalta"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Valitse riviero\tF4"
 
@@ -346,6 +358,15 @@ msgstr "Asetukset..."
 msgid "&View"
 msgstr "Näkymä"
 
+msgid "Ta&b Bar"
+msgstr "Välilehdet"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Työkalurivi"
 
@@ -360,9 +381,6 @@ msgstr "&Valtava"
 
 msgid "&Status Bar"
 msgstr "Tilarivi"
-
-msgid "Ta&b Bar"
-msgstr "Välilehdet"
 
 msgid "&Tools"
 msgstr "Työkalut"
@@ -1293,6 +1311,9 @@ msgstr ""
 msgid "Language:"
 msgstr "Kieli:"
 
+msgid "Defaults"
+msgstr "Oletukset"
+
 msgid "Find"
 msgstr "Etsi"
 
@@ -1441,6 +1462,66 @@ msgstr "Sanaero:"
 msgid "Selected Word Diff:"
 msgstr "Valittu sanaero:"
 
+msgid "Dialog"
+msgstr "Valintaikkuna"
+
+msgid "Keywords:"
+msgstr "Avainsanat:"
+
+msgid "Function names:"
+msgstr "Funktionimet:"
+
+msgid "Comments:"
+msgstr "Kommentit:"
+
+msgid "Numbers:"
+msgstr "Numerot:"
+
+msgid "Operators:"
+msgstr "Operaattorit:"
+
+msgid "Strings:"
+msgstr "Merkkijonot:"
+
+msgid "Preprocessor:"
+msgstr "Esikäsittelijä:"
+
+msgid "User 1:"
+msgstr "Käyttäjä 1:"
+
+msgid "User 2:"
+msgstr "Käyttäjä 2:"
+
+msgid "Bold"
+msgstr "Lihavoitu"
+
+msgid "&Use customized text colors"
+msgstr "Käytä mukautettuja tekstivärejä"
+
+msgid "Whitespace:"
+msgstr "Välilyönti:"
+
+msgid "Regular text:"
+msgstr "Normaali teksti:"
+
+msgid "Selection:"
+msgstr "Valinta:"
+
+msgid "Margin:"
+msgstr "Marginaali:"
+
+msgid "Search Marker:"
+msgstr "Hakumerkki:"
+
+msgid "User Defined Marker1:"
+msgstr "Käyttäjän määrittämä merkintä1:"
+
+msgid "User Defined Marker2:"
+msgstr "Käyttäjän määrittämä merkintä2:"
+
+msgid "User Defined Marker3:"
+msgstr "Käyttäjän määrittämä merkintä3:"
+
 msgid "&Use folder compare colors"
 msgstr "Käytä kansiovertailun värejä"
 
@@ -1456,8 +1537,8 @@ msgstr "Kaikki kohteet, joita ei ole:"
 msgid "Items filtered:"
 msgstr "Suodatetut kohteet:"
 
-msgid "Margin:"
-msgstr "Marginaali:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Järjestelmä"
@@ -1482,9 +1563,6 @@ msgstr "Mukautettu kansio:"
 
 msgid "Br&owse..."
 msgstr "Selaa..."
-
-msgid "Defaults"
-msgstr "Oletukset"
 
 msgid "Patch Generator"
 msgstr "Korjausgeneraattori"
@@ -1776,51 +1854,6 @@ msgstr "Tuo..."
 msgid "Export..."
 msgstr "Vie..."
 
-msgid "Dialog"
-msgstr "Valintaikkuna"
-
-msgid "Keywords:"
-msgstr "Avainsanat:"
-
-msgid "Function names:"
-msgstr "Funktionimet:"
-
-msgid "Comments:"
-msgstr "Kommentit:"
-
-msgid "Numbers:"
-msgstr "Numerot:"
-
-msgid "Operators:"
-msgstr "Operaattorit:"
-
-msgid "Strings:"
-msgstr "Merkkijonot:"
-
-msgid "Preprocessor:"
-msgstr "Esikäsittelijä:"
-
-msgid "User 1:"
-msgstr "Käyttäjä 1:"
-
-msgid "User 2:"
-msgstr "Käyttäjä 2:"
-
-msgid "Bold"
-msgstr "Lihavoitu"
-
-msgid "Search Marker:"
-msgstr "Hakumerkki:"
-
-msgid "User Defined Marker1:"
-msgstr "Käyttäjän määrittämä merkintä1:"
-
-msgid "User Defined Marker2:"
-msgstr "Käyttäjän määrittämä merkintä2:"
-
-msgid "User Defined Marker3:"
-msgstr "Käyttäjän määrittämä merkintä3:"
-
 msgid "Folder Compare Report"
 msgstr "Kansiovertailun raportti"
 
@@ -1967,18 +2000,6 @@ msgstr "&Salli uudet rivit lainauksissa"
 
 msgid "&Quote character:"
 msgstr "&Lainausmerkki:"
-
-msgid "&Use customized text colors"
-msgstr "Käytä mukautettuja tekstivärejä"
-
-msgid "Whitespace:"
-msgstr "Välilyönti:"
-
-msgid "Regular text:"
-msgstr "Normaali teksti:"
-
-msgid "Selection:"
-msgstr "Valinta:"
 
 msgid "Backup Files"
 msgstr "Varmuuskopiot"
@@ -4332,6 +4353,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Kaunistelu"
 
@@ -4352,6 +4391,9 @@ msgstr "Purkaminen"
 
 msgid "URL Handling"
 msgstr "URL käsittely"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Isot kirjaimet"
@@ -4468,6 +4510,9 @@ msgid "Disassemble Native Code"
 msgstr "Pura natiivikoodi"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4740,6 +4785,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

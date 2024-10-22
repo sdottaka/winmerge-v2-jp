@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://bugs.winmerge.org/\n"
-"POT-Creation-Date: 2024-08-10 20:44+0000\n"
+"POT-Creation-Date: 2024-10-16 08:43+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: English <winmerge-translate@lists.sourceforge.net>\n"
@@ -54,6 +54,18 @@ msgid "Copy Selected Line(s) to Left"
 msgstr ""
 
 msgid "Copy Selected Line(s) from Left"
+msgstr ""
+
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
 msgstr ""
 
 msgid "Select Line &Difference\tF4"
@@ -340,6 +352,15 @@ msgstr ""
 msgid "&View"
 msgstr ""
 
+msgid "Ta&b Bar"
+msgstr ""
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr ""
 
@@ -353,9 +374,6 @@ msgid "&Huge"
 msgstr ""
 
 msgid "&Status Bar"
-msgstr ""
-
-msgid "Ta&b Bar"
 msgstr ""
 
 msgid "&Tools"
@@ -1287,6 +1305,9 @@ msgstr ""
 msgid "Language:"
 msgstr ""
 
+msgid "Defaults"
+msgstr ""
+
 msgid "Find"
 msgstr ""
 
@@ -1431,6 +1452,66 @@ msgstr ""
 msgid "Selected Word Diff:"
 msgstr ""
 
+msgid "Dialog"
+msgstr ""
+
+msgid "Keywords:"
+msgstr ""
+
+msgid "Function names:"
+msgstr ""
+
+msgid "Comments:"
+msgstr ""
+
+msgid "Numbers:"
+msgstr ""
+
+msgid "Operators:"
+msgstr ""
+
+msgid "Strings:"
+msgstr ""
+
+msgid "Preprocessor:"
+msgstr ""
+
+msgid "User 1:"
+msgstr ""
+
+msgid "User 2:"
+msgstr ""
+
+msgid "Bold"
+msgstr ""
+
+msgid "&Use customized text colors"
+msgstr ""
+
+msgid "Whitespace:"
+msgstr ""
+
+msgid "Regular text:"
+msgstr ""
+
+msgid "Selection:"
+msgstr ""
+
+msgid "Margin:"
+msgstr ""
+
+msgid "Search Marker:"
+msgstr ""
+
+msgid "User Defined Marker1:"
+msgstr ""
+
+msgid "User Defined Marker2:"
+msgstr ""
+
+msgid "User Defined Marker3:"
+msgstr ""
+
 msgid "&Use folder compare colors"
 msgstr ""
 
@@ -1446,7 +1527,7 @@ msgstr ""
 msgid "Items filtered:"
 msgstr ""
 
-msgid "Margin:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
 msgstr ""
 
 msgid "System"
@@ -1471,9 +1552,6 @@ msgid "C&ustom folder:"
 msgstr ""
 
 msgid "Br&owse..."
-msgstr ""
-
-msgid "Defaults"
 msgstr ""
 
 msgid "Patch Generator"
@@ -1761,51 +1839,6 @@ msgstr ""
 msgid "Export..."
 msgstr ""
 
-msgid "Dialog"
-msgstr ""
-
-msgid "Keywords:"
-msgstr ""
-
-msgid "Function names:"
-msgstr ""
-
-msgid "Comments:"
-msgstr ""
-
-msgid "Numbers:"
-msgstr ""
-
-msgid "Operators:"
-msgstr ""
-
-msgid "Strings:"
-msgstr ""
-
-msgid "Preprocessor:"
-msgstr ""
-
-msgid "User 1:"
-msgstr ""
-
-msgid "User 2:"
-msgstr ""
-
-msgid "Bold"
-msgstr ""
-
-msgid "Search Marker:"
-msgstr ""
-
-msgid "User Defined Marker1:"
-msgstr ""
-
-msgid "User Defined Marker2:"
-msgstr ""
-
-msgid "User Defined Marker3:"
-msgstr ""
-
 msgid "Folder Compare Report"
 msgstr ""
 
@@ -1951,18 +1984,6 @@ msgid "&Allow newlines in quotes"
 msgstr ""
 
 msgid "&Quote character:"
-msgstr ""
-
-msgid "&Use customized text colors"
-msgstr ""
-
-msgid "Whitespace:"
-msgstr ""
-
-msgid "Regular text:"
-msgstr ""
-
-msgid "Selection:"
 msgstr ""
 
 msgid "Backup Files"
@@ -3907,6 +3928,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -3926,6 +3965,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "URL Handling"
+msgstr ""
+
+msgid "Decoding / Encoding"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4043,6 +4085,9 @@ msgid "Disassemble Native Code"
 msgstr ""
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4182,6 +4227,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

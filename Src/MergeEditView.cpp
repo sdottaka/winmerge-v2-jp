@@ -33,6 +33,7 @@
 #include "Shell.h"
 #include "SelectPluginDlg.h"
 #include "Constants.h"
+#include "MouseHook.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -205,6 +206,14 @@ BEGIN_MESSAGE_MAP(CMergeEditView, CCrystalEditViewEx)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_COPY_TO_MIDDLE_L, ID_COPY_FROM_LEFT_R, OnUpdateX2Y)
 	ON_COMMAND_RANGE(ID_COPY_LINES_TO_MIDDLE_L, ID_COPY_LINES_FROM_LEFT_R, OnCopyLinesX2Y)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_COPY_LINES_TO_MIDDLE_L, ID_COPY_LINES_FROM_LEFT_R, OnUpdateX2Y)
+	ON_COMMAND(ID_SEL_DIFF_COPY_1ST, OnSelDiffCopyFirst)
+	ON_UPDATE_COMMAND_UI(ID_SEL_DIFF_COPY_1ST, OnUpdateSelDiffCopyFirst)
+	ON_COMMAND(ID_SEL_DIFF_COPY_2ND, OnSelDiffCopySecond)
+	ON_UPDATE_COMMAND_UI(ID_SEL_DIFF_COPY_2ND, OnUpdateSelDiffCopySecond)
+	ON_COMMAND(ID_SEL_DIFF_COPY_2ND_3WAY, OnSelDiffCopySecond)
+	ON_UPDATE_COMMAND_UI(ID_SEL_DIFF_COPY_2ND_3WAY, OnUpdateSelDiffCopySecond)
+	ON_COMMAND(ID_SEL_DIFF_COPY_3RD, OnSelDiffCopyThird)
+	ON_UPDATE_COMMAND_UI(ID_SEL_DIFF_COPY_3RD, OnUpdateSelDiffCopyThird)
 	// [Plugins] menu
 	ON_COMMAND_RANGE(ID_SCRIPT_FIRST, ID_SCRIPT_LAST, OnScripts)
 	ON_COMMAND(ID_TRANSFORM_WITH_SCRIPT, OnTransformWithScript)
@@ -2083,6 +2092,66 @@ void CMergeEditView::OnCopyLinesX2Y(UINT nID)
 		OnX2Y(srcPane, dstPane, true);
 }
 
+void CMergeEditView::SelDiffCopy(int actPane)
+{
+	CMergeDoc* pDoc = GetDocument();
+	const auto cntPane = pDoc->m_nBuffers;
+
+	// Check
+	if (actPane < 0 || actPane >= cntPane)
+		return;
+
+	auto currentDiff = pDoc->GetCurrentDiff();
+	if (currentDiff == -1 && m_bCurrentLineIsDiff)
+	{
+		CEPoint pt = GetCursorPos();
+		currentDiff = pDoc->m_diffList.LineToDiff(pt.y);
+	}
+
+	DIFFRANGE di;
+	if (!pDoc->m_diffList.GetDiff(currentDiff, di))
+		return;
+	const auto beginidx = di.dbegin;
+	const auto endidx = di.dend;
+	if (beginidx > endidx)
+		return;
+	String dfLines;
+	CDiffTextBuffer& buf = *(pDoc->m_ptBuf[actPane]);
+	const auto endlen = buf.GetLineLength(endidx);
+	buf.GetTextWithoutEmptys(beginidx, 0, endidx, endlen, dfLines);
+	dfLines += buf.GetLineEol(endidx);
+	PutToClipboard(dfLines.c_str(), static_cast<int>(dfLines.length()));
+}
+
+void CMergeEditView::OnSelDiffCopyFirst()
+{
+	SelDiffCopy(0);
+}
+void CMergeEditView::OnUpdateSelDiffCopyFirst(CCmdUI* pCmdUI)
+{
+	pCmdUI->Enable((GetDocument()->GetCurrentDiff() >= 0 || m_bCurrentLineIsDiff) && GetDocument()->m_nBuffers > 0);
+}
+
+void CMergeEditView::OnSelDiffCopySecond()
+{
+	SelDiffCopy(1);
+}
+
+void CMergeEditView::OnUpdateSelDiffCopySecond(CCmdUI* pCmdUI)
+{
+	pCmdUI->Enable((GetDocument()->GetCurrentDiff() >= 0 || m_bCurrentLineIsDiff) && GetDocument()->m_nBuffers > 1);
+}
+
+void CMergeEditView::OnSelDiffCopyThird()
+{
+	SelDiffCopy(GetDocument()->m_nBuffers - 1);
+}
+
+void CMergeEditView::OnUpdateSelDiffCopyThird(CCmdUI* pCmdUI)
+{
+	pCmdUI->Enable((GetDocument()->GetCurrentDiff() >= 0 || m_bCurrentLineIsDiff) && GetDocument()->m_nBuffers > 2);
+}
+
 /**
  * @brief Copy diff from left pane to right pane
  *
@@ -2800,6 +2869,9 @@ void CMergeEditView::OnUpdateEditReplace(CCmdUI* pCmdUI)
  */
 void CMergeEditView::OnContextMenu(CWnd* pWnd, CPoint point)
 {
+	if (CMouseHook::IsRightWheelScrolling())
+		return;
+
 	CRect rect;
 	GetClientRect(rect);
 	ClientToScreen(rect);
@@ -2890,6 +2962,16 @@ void CMergeEditView::OnContextMenu(CWnd* pWnd, CPoint point)
 		menu.RemoveMenu(ID_GOTO_MOVED_LINE_MR, MF_BYCOMMAND);
 	else if (nBuffers == 3 && m_nThisPane == 2)
 		menu.RemoveMenu(ID_GOTO_MOVED_LINE_LM, MF_BYCOMMAND);
+
+	if (nBuffers == 2)
+	{
+		menu.RemoveMenu(ID_SEL_DIFF_COPY_2ND_3WAY, MF_BYCOMMAND);
+		menu.RemoveMenu(ID_SEL_DIFF_COPY_3RD, MF_BYCOMMAND);
+	}
+	else
+	{
+		menu.RemoveMenu(ID_SEL_DIFF_COPY_2ND, MF_BYCOMMAND);
+	}
 
 	VERIFY(menu.LoadToolbar(IDR_MAINFRAME, GetMainFrame()->GetToolbar()));
 

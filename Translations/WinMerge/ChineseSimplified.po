@@ -66,6 +66,18 @@ msgstr "复制选中行到左侧"
 msgid "Copy Selected Line(s) from Left"
 msgstr "从左侧复制选中行"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr "复制选中差异(左)到剪贴板\tCtrl+1"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr "复制选中差异(右)到剪贴板\tCtrl+2"
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr "复制选中差异(中)到剪贴板\tCtrl+2"
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr "复制选中差异(右)到剪贴板\tCtrl+3"
+
 msgid "Select Line &Difference\tF4"
 msgstr "选中行内差异(&D)\tF4"
 
@@ -350,6 +362,15 @@ msgstr "选项(&O)..."
 msgid "&View"
 msgstr "视图(&V)"
 
+msgid "Ta&b Bar"
+msgstr "标签栏(&B)"
+
+msgid "&View Tab Bar"
+msgstr "查看标签栏(&V)"
+
+msgid "&On Title Bar"
+msgstr "在标题栏之上(&O)"
+
 msgid "&Toolbar"
 msgstr "工具栏(&T)"
 
@@ -364,9 +385,6 @@ msgstr "特大(&H)"
 
 msgid "&Status Bar"
 msgstr "状态栏(&S)"
-
-msgid "Ta&b Bar"
-msgstr "标签栏(&B)"
 
 msgid "&Tools"
 msgstr "工具(&T)"
@@ -1297,6 +1315,9 @@ msgstr "自动重新加载修改过的文件(&R)："
 msgid "Language:"
 msgstr "语言："
 
+msgid "Defaults"
+msgstr "默认"
+
 msgid "Find"
 msgstr "查找"
 
@@ -1443,6 +1464,66 @@ msgstr "单词差异："
 msgid "Selected Word Diff:"
 msgstr "选中的单词差异："
 
+msgid "Dialog"
+msgstr "对话框"
+
+msgid "Keywords:"
+msgstr "关键字："
+
+msgid "Function names:"
+msgstr "函数名："
+
+msgid "Comments:"
+msgstr "注释："
+
+msgid "Numbers:"
+msgstr "数字："
+
+msgid "Operators:"
+msgstr "操作符："
+
+msgid "Strings:"
+msgstr "字符串："
+
+msgid "Preprocessor:"
+msgstr "预处理指令："
+
+msgid "User 1:"
+msgstr "用户定义 1："
+
+msgid "User 2:"
+msgstr "用户定义 2："
+
+msgid "Bold"
+msgstr "加粗"
+
+msgid "&Use customized text colors"
+msgstr "使用自定义的文字颜色(&U)"
+
+msgid "Whitespace:"
+msgstr "空白："
+
+msgid "Regular text:"
+msgstr "普通文本："
+
+msgid "Selection:"
+msgstr "选中区域："
+
+msgid "Margin:"
+msgstr "边缘："
+
+msgid "Search Marker:"
+msgstr "搜索标记："
+
+msgid "User Defined Marker1:"
+msgstr "用户定义的标记1："
+
+msgid "User Defined Marker2:"
+msgstr "用户定义的标记2："
+
+msgid "User Defined Marker3:"
+msgstr "用户定义的标记3："
+
 msgid "&Use folder compare colors"
 msgstr "使用文件夹比较颜色(&U)"
 
@@ -1458,8 +1539,8 @@ msgstr "并非都存在的项目："
 msgid "Items filtered:"
 msgstr "过滤的项目："
 
-msgid "Margin:"
-msgstr "边缘："
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr "使用自定义系统颜色（某些用户界面元素可能不适用）(&U)"
 
 msgid "System"
 msgstr "系统"
@@ -1484,9 +1565,6 @@ msgstr "自定义文件夹(&U)："
 
 msgid "Br&owse..."
 msgstr "浏览(&O)..."
-
-msgid "Defaults"
-msgstr "默认"
 
 msgid "Patch Generator"
 msgstr "补丁生成器"
@@ -1784,51 +1862,6 @@ msgstr "导入..."
 msgid "Export..."
 msgstr "导出..."
 
-msgid "Dialog"
-msgstr "对话框"
-
-msgid "Keywords:"
-msgstr "关键字："
-
-msgid "Function names:"
-msgstr "函数名："
-
-msgid "Comments:"
-msgstr "注释："
-
-msgid "Numbers:"
-msgstr "数字："
-
-msgid "Operators:"
-msgstr "操作符："
-
-msgid "Strings:"
-msgstr "字符串："
-
-msgid "Preprocessor:"
-msgstr "预处理指令："
-
-msgid "User 1:"
-msgstr "用户定义 1："
-
-msgid "User 2:"
-msgstr "用户定义 2："
-
-msgid "Bold"
-msgstr "加粗"
-
-msgid "Search Marker:"
-msgstr "搜索标记："
-
-msgid "User Defined Marker1:"
-msgstr "用户定义的标记1："
-
-msgid "User Defined Marker2:"
-msgstr "用户定义的标记2："
-
-msgid "User Defined Marker3:"
-msgstr "用户定义的标记3："
-
 msgid "Folder Compare Report"
 msgstr "文件夹比较报告"
 
@@ -1975,18 +2008,6 @@ msgstr "允许引号内换行(&A)"
 
 msgid "&Quote character:"
 msgstr "引号字符(&Q)："
-
-msgid "&Use customized text colors"
-msgstr "使用自定义的文字颜色(&U)"
-
-msgid "Whitespace:"
-msgstr "空白："
-
-msgid "Regular text:"
-msgstr "普通文本："
-
-msgid "Selection:"
-msgstr "选中区域："
 
 msgid "Backup Files"
 msgstr "备份文件"
@@ -4345,6 +4366,76 @@ msgstr "整行"
 msgid "Character"
 msgstr "字符"
 
+msgid ""
+"\n"
+"Previous Difference (Alt+Up)\n"
+"(Right Button+Wheel Up)\n"
+"(Alt+Wheel Up)"
+msgstr ""
+"\n"
+"上一处差异 (Alt+Up)\n"
+"(鼠标右键+滚轮上滚)\n"
+"(Alt+滚轮上滚)"
+
+msgid ""
+"\n"
+"Next Difference (Alt+Down)\n"
+"(Right Button+Wheel Down)\n"
+"(Alt+Wheel Down)"
+msgstr ""
+"\n"
+"下一处差异 (Alt+Down)\n"
+"(鼠标右键+滚轮下滚)\n"
+"(Alt+滚轮下滚)"
+
+msgid ""
+"\n"
+"Copy to Right (Alt+Right)\n"
+"(Right Button+Wheel Right)\n"
+"(Alt+Wheel Right)\n"
+"(Alt+Shift+Wheel Down)"
+msgstr ""
+"\n"
+"复制到右侧 (Alt+Right)\n"
+"(鼠标右键+滚轮右滚)\n"
+"(Alt+滚轮右滚)\n"
+"(Alt+Shift+滚轮下滚)"
+
+msgid ""
+"\n"
+"Copy to Left (Alt+Left)\n"
+"(Right Button+Wheel Left)\n"
+"(Alt+Wheel Left)\n"
+"(Alt+Shift+Wheel Up)"
+msgstr ""
+"\n"
+"复制到左侧 (Alt+Left)\n"
+"(鼠标右键+滚轮左滚)\n"
+"(Alt+滚轮左滚)\n"
+"(Alt+Shift+滚轮上滚)"
+
+msgid ""
+"\n"
+"Copy to Right and Advance (Ctrl+Alt+Right)\n"
+"(Ctrl+Alt+Wheel Right)\n"
+"(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+"\n"
+"复制到右侧再到下一处差异 (Ctrl+Alt+Right)\n"
+"(Ctrl+Alt+滚轮右滚)\n"
+"(Ctrl+Alt+Shift+滚轮下滚)"
+
+msgid ""
+"\n"
+"Copy to Left and Advance (Ctrl+Alt+Left)\n"
+"(Ctrl+Alt+Wheel Left)\n"
+"(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+"\n"
+"复制到左侧再到下一处差异 (Ctrl+Alt+Left)\n"
+"(Ctrl+Alt+滚轮左滚)\n"
+"(Ctrl+Alt+Shift+滚轮上滚)"
+
 msgid "Prettification"
 msgstr "格式美化"
 
@@ -4365,6 +4456,9 @@ msgstr "反编译"
 
 msgid "URL Handling"
 msgstr "网址处理"
+
+msgid "Decoding / Encoding"
+msgstr "解码/编码"
 
 msgid "Make Uppercase"
 msgstr "变大写"
@@ -4482,6 +4576,9 @@ msgstr "反汇编本地代码"
 
 msgid "Convert Text with AI..."
 msgstr "用 AI 转换文本..."
+
+msgid "Unescape Java properties files"
+msgstr "去转义 Java 属性文件"
 
 msgid "Make characters uppercase"
 msgstr "变大写"
@@ -4770,6 +4867,9 @@ msgid ""
 msgstr ""
 "使用 OpenAI API 的文本转换器。\r\n"
 "用法：ALConvertText PROMPT"
+
+msgid "Unescape and display escaped Java properties files."
+msgstr "去转义并显示转义的 Java 属性文件。"
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles 插件选项"

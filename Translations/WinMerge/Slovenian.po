@@ -62,6 +62,18 @@ msgstr "Kopiraj izbrane vrstice na levo"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopiraj izbrane vrstice z leve"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Izberi &razliko vrstice\tF4"
 
@@ -346,6 +358,15 @@ msgstr "&Možnosti..."
 msgid "&View"
 msgstr "&Prikaz"
 
+msgid "Ta&b Bar"
+msgstr "Ta&bulatorska vrstica"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "&Orodna vrstica"
 
@@ -360,9 +381,6 @@ msgstr "O&gromne"
 
 msgid "&Status Bar"
 msgstr "&Statusna vrstica"
-
-msgid "Ta&b Bar"
-msgstr "Ta&bulatorska vrstica"
 
 msgid "&Tools"
 msgstr "&Orodja"
@@ -1293,6 +1311,9 @@ msgstr "Samodejno &znova naloži spremenjene datoteke:"
 msgid "Language:"
 msgstr "Jezik:"
 
+msgid "Defaults"
+msgstr "Privzeto"
+
 msgid "Find"
 msgstr "Najdi"
 
@@ -1437,6 +1458,66 @@ msgstr "Besedne razlike:"
 msgid "Selected Word Diff:"
 msgstr "Izbrane razlike besed:"
 
+msgid "Dialog"
+msgstr "Pogovorno okno"
+
+msgid "Keywords:"
+msgstr "Ključne besede:"
+
+msgid "Function names:"
+msgstr "Imena funkcij:"
+
+msgid "Comments:"
+msgstr "Komentarji:"
+
+msgid "Numbers:"
+msgstr "Številke:"
+
+msgid "Operators:"
+msgstr "Operatorji:"
+
+msgid "Strings:"
+msgstr "Nizi:"
+
+msgid "Preprocessor:"
+msgstr "Predobdelano:"
+
+msgid "User 1:"
+msgstr "Uporabnik 1:"
+
+msgid "User 2:"
+msgstr "Uporabnik 2:"
+
+msgid "Bold"
+msgstr "Krepko"
+
+msgid "&Use customized text colors"
+msgstr "&Uporabi prilagojene barve besedila"
+
+msgid "Whitespace:"
+msgstr "Prazen znak:"
+
+msgid "Regular text:"
+msgstr "Redno besedilo:"
+
+msgid "Selection:"
+msgstr "Izbor:"
+
+msgid "Margin:"
+msgstr "Rob:"
+
+msgid "Search Marker:"
+msgstr "Iskalni označev.:"
+
+msgid "User Defined Marker1:"
+msgstr "Uporabn. določen1:"
+
+msgid "User Defined Marker2:"
+msgstr "Uporabn. določen2:"
+
+msgid "User Defined Marker3:"
+msgstr "Uporabn. določen3:"
+
 msgid "&Use folder compare colors"
 msgstr "&Uporabi barve primerjav map"
 
@@ -1452,8 +1533,8 @@ msgstr "Vseh neobstoječih vnosov:"
 msgid "Items filtered:"
 msgstr "Filtriranih vnosov:"
 
-msgid "Margin:"
-msgstr "Rob:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Sistem"
@@ -1478,9 +1559,6 @@ msgstr "&Mapa po meri:"
 
 msgid "Br&owse..."
 msgstr "Prebr&skaj..."
-
-msgid "Defaults"
-msgstr "Privzeto"
 
 msgid "Patch Generator"
 msgstr "Ustvarjalec popravkov"
@@ -1775,51 +1853,6 @@ msgstr "Uvozi..."
 msgid "Export..."
 msgstr "Izvozi..."
 
-msgid "Dialog"
-msgstr "Pogovorno okno"
-
-msgid "Keywords:"
-msgstr "Ključne besede:"
-
-msgid "Function names:"
-msgstr "Imena funkcij:"
-
-msgid "Comments:"
-msgstr "Komentarji:"
-
-msgid "Numbers:"
-msgstr "Številke:"
-
-msgid "Operators:"
-msgstr "Operatorji:"
-
-msgid "Strings:"
-msgstr "Nizi:"
-
-msgid "Preprocessor:"
-msgstr "Predobdelano:"
-
-msgid "User 1:"
-msgstr "Uporabnik 1:"
-
-msgid "User 2:"
-msgstr "Uporabnik 2:"
-
-msgid "Bold"
-msgstr "Krepko"
-
-msgid "Search Marker:"
-msgstr "Iskalni označev.:"
-
-msgid "User Defined Marker1:"
-msgstr "Uporabn. določen1:"
-
-msgid "User Defined Marker2:"
-msgstr "Uporabn. določen2:"
-
-msgid "User Defined Marker3:"
-msgstr "Uporabn. določen3:"
-
 msgid "Folder Compare Report"
 msgstr "Poročilo primerjanja datotek"
 
@@ -1966,18 +1999,6 @@ msgstr "&Dovoli nove vrstice v narekovajih"
 
 msgid "&Quote character:"
 msgstr "Z&nak narekovaja:"
-
-msgid "&Use customized text colors"
-msgstr "&Uporabi prilagojene barve besedila"
-
-msgid "Whitespace:"
-msgstr "Prazen znak:"
-
-msgid "Regular text:"
-msgstr "Redno besedilo:"
-
-msgid "Selection:"
-msgstr "Izbor:"
 
 msgid "Backup Files"
 msgstr "Datoteke varnostnih kopij"
@@ -4297,6 +4318,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Polepšanje"
 
@@ -4317,6 +4356,9 @@ msgstr "Decompilation"
 
 msgid "URL Handling"
 msgstr "Upravljanje URL-jev"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "VELIKE ČRKE"
@@ -4433,6 +4475,9 @@ msgid "Disassemble Native Code"
 msgstr "Razstavi naravno kodo"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4698,6 +4743,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

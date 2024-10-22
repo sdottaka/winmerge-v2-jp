@@ -293,7 +293,10 @@ Other Contributors (code, ideas, testing..):
 * myss
 * vlakoff
 * Tuomas Hietanen
-* Dirk Stolle 
+* Dirk Stolle
+* lededev
+* petacreepers23
+* libraplanet
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)

@@ -187,6 +187,7 @@ protected:
 	void OnPrev3wayDiff(int type);
 	void OnUpdatePrev3wayDiff(CCmdUI* pCmdUI, int type);
 	void OnDropFiles(const std::vector<String>& files);
+	void SelDiffCopy(int actPane);
 
 	// Generated message map functions
 protected:
@@ -265,6 +266,12 @@ protected:
 	afx_msg void OnUpdateCopyFromRight(CCmdUI* pCmdUI);
 	afx_msg void OnCopyLinesFromRight();
 	afx_msg void OnUpdateCopyLinesFromRight(CCmdUI* pCmdUI);
+	afx_msg void OnSelDiffCopyFirst();
+	afx_msg void OnUpdateSelDiffCopyFirst(CCmdUI* pCmdUI);
+	afx_msg void OnSelDiffCopySecond();
+	afx_msg void OnUpdateSelDiffCopySecond(CCmdUI* pCmdUI);
+	afx_msg void OnSelDiffCopyThird();
+	afx_msg void OnUpdateSelDiffCopyThird(CCmdUI* pCmdUI);
 	afx_msg void OnAddSyncPoint();
 	afx_msg void OnClearSyncPoints();
 	afx_msg void OnUpdateClearSyncPoints(CCmdUI* pCmdUI);

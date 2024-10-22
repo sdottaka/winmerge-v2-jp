@@ -64,6 +64,18 @@ msgstr ""
 msgid "Copy Selected Line(s) from Left"
 msgstr ""
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 #, c-format
 msgid "Select Line &Difference\tF4"
 msgstr "Hautatu Lerro &Ezberdintasunak\tF4"
@@ -391,6 +403,16 @@ msgid "&View"
 msgstr "&Ikusi"
 
 #, c-format
+msgid "Ta&b Bar"
+msgstr "&Fitxa Barra"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
+#, c-format
 msgid "&Toolbar"
 msgstr "Tre&snabarra"
 
@@ -409,10 +431,6 @@ msgstr ""
 #, c-format
 msgid "&Status Bar"
 msgstr "&Egoera Barra"
-
-#, c-format
-msgid "Ta&b Bar"
-msgstr "&Fitxa Barra"
 
 #, c-format
 msgid "&Tools"
@@ -1555,6 +1573,10 @@ msgid "Language:"
 msgstr ""
 
 #, c-format
+msgid "Defaults"
+msgstr "Berezkoak"
+
+#, c-format
 msgid "Find"
 msgstr "Bilatu"
 
@@ -1738,6 +1760,86 @@ msgstr "Hitz Ezberdintasuna:"
 msgid "Selected Word Diff:"
 msgstr "Hautatutako Hitz Ezberd:"
 
+#, c-format
+msgid "Dialog"
+msgstr "Elkarrizketa"
+
+#, c-format
+msgid "Keywords:"
+msgstr "Lasterteklak:"
+
+#, c-format
+msgid "Function names:"
+msgstr "Eginkizun izenak:"
+
+#, c-format
+msgid "Comments:"
+msgstr "Aipamenak:"
+
+#, c-format
+msgid "Numbers:"
+msgstr "Zenbakiak:"
+
+#, c-format
+msgid "Operators:"
+msgstr "Eragileak:"
+
+#, c-format
+msgid "Strings:"
+msgstr "Kateak:"
+
+#, c-format
+msgid "Preprocessor:"
+msgstr "Aurreprozesapena:"
+
+#, c-format
+msgid "User 1:"
+msgstr "1 Erabiltzailea:"
+
+#, c-format
+msgid "User 2:"
+msgstr "2 Erabiltzailea:"
+
+#, c-format
+msgid "Bold"
+msgstr "Lodia"
+
+#, c-format
+msgid "&Use customized text colors"
+msgstr "&Erabili norbere idazki margoak"
+
+#, c-format
+msgid "Whitespace:"
+msgstr "Zurigunea:"
+
+#, c-format
+msgid "Regular text:"
+msgstr "Idazki arrunta:"
+
+#, c-format
+msgid "Selection:"
+msgstr "Hautapena:"
+
+#, c-format
+msgid "Margin:"
+msgstr ""
+
+#, c-format
+msgid "Search Marker:"
+msgstr ""
+
+#, c-format
+msgid "User Defined Marker1:"
+msgstr ""
+
+#, c-format
+msgid "User Defined Marker2:"
+msgstr ""
+
+#, c-format
+msgid "User Defined Marker3:"
+msgstr ""
+
 msgid "&Use folder compare colors"
 msgstr ""
 
@@ -1753,8 +1855,7 @@ msgstr ""
 msgid "Items filtered:"
 msgstr ""
 
-#, c-format
-msgid "Margin:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
 msgstr ""
 
 #, c-format
@@ -1788,10 +1889,6 @@ msgstr "&Egile agiritegia:"
 #, c-format
 msgid "Br&owse..."
 msgstr "Bilat&u"
-
-#, c-format
-msgid "Defaults"
-msgstr "Berezkoak"
 
 #, c-format
 msgid "Patch Generator"
@@ -2150,66 +2247,6 @@ msgid "Export..."
 msgstr "Esportatu..."
 
 #, c-format
-msgid "Dialog"
-msgstr "Elkarrizketa"
-
-#, c-format
-msgid "Keywords:"
-msgstr "Lasterteklak:"
-
-#, c-format
-msgid "Function names:"
-msgstr "Eginkizun izenak:"
-
-#, c-format
-msgid "Comments:"
-msgstr "Aipamenak:"
-
-#, c-format
-msgid "Numbers:"
-msgstr "Zenbakiak:"
-
-#, c-format
-msgid "Operators:"
-msgstr "Eragileak:"
-
-#, c-format
-msgid "Strings:"
-msgstr "Kateak:"
-
-#, c-format
-msgid "Preprocessor:"
-msgstr "Aurreprozesapena:"
-
-#, c-format
-msgid "User 1:"
-msgstr "1 Erabiltzailea:"
-
-#, c-format
-msgid "User 2:"
-msgstr "2 Erabiltzailea:"
-
-#, c-format
-msgid "Bold"
-msgstr "Lodia"
-
-#, c-format
-msgid "Search Marker:"
-msgstr ""
-
-#, c-format
-msgid "User Defined Marker1:"
-msgstr ""
-
-#, c-format
-msgid "User Defined Marker2:"
-msgstr ""
-
-#, c-format
-msgid "User Defined Marker3:"
-msgstr ""
-
-#, c-format
 msgid "Folder Compare Report"
 msgstr "Agiritegi Alderaketa Jakinarazpena"
 
@@ -2394,22 +2431,6 @@ msgstr ""
 
 msgid "&Quote character:"
 msgstr ""
-
-#, c-format
-msgid "&Use customized text colors"
-msgstr "&Erabili norbere idazki margoak"
-
-#, c-format
-msgid "Whitespace:"
-msgstr "Zurigunea:"
-
-#, c-format
-msgid "Regular text:"
-msgstr "Idazki arrunta:"
-
-#, c-format
-msgid "Selection:"
-msgstr "Hautapena:"
 
 #, c-format
 msgid "Backup Files"
@@ -4835,6 +4856,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -4854,6 +4893,9 @@ msgid "Decompilation"
 msgstr ""
 
 msgid "URL Handling"
+msgstr ""
+
+msgid "Decoding / Encoding"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4971,6 +5013,9 @@ msgid "Disassemble Native Code"
 msgstr ""
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -5110,6 +5155,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

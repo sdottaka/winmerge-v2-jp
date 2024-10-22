@@ -64,6 +64,18 @@ msgstr "Kopiera valda rader till vänster"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopiera valda rader från vänster"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Markera radskillnad\tF4"
 
@@ -348,6 +360,15 @@ msgstr "Alternativ..."
 msgid "&View"
 msgstr "Visa"
 
+msgid "Ta&b Bar"
+msgstr "Flikrad"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Verktygsrad"
 
@@ -362,9 +383,6 @@ msgstr "Enorm"
 
 msgid "&Status Bar"
 msgstr "Statusfält"
-
-msgid "Ta&b Bar"
-msgstr "Flikrad"
 
 msgid "&Tools"
 msgstr "Verktyg"
@@ -1298,6 +1316,9 @@ msgstr "Läs in ändrade filer på nytt automatiskt:"
 msgid "Language:"
 msgstr "Språk:"
 
+msgid "Defaults"
+msgstr "Förval"
+
 msgid "Find"
 msgstr "Sök"
 
@@ -1446,6 +1467,66 @@ msgstr "Ordskillnad:"
 msgid "Selected Word Diff:"
 msgstr "Vald skillnad i ord:"
 
+msgid "Dialog"
+msgstr "Dialog"
+
+msgid "Keywords:"
+msgstr "Nyckelord:"
+
+msgid "Function names:"
+msgstr "Funktionsnamn:"
+
+msgid "Comments:"
+msgstr "Kommentarer:"
+
+msgid "Numbers:"
+msgstr "Nummer:"
+
+msgid "Operators:"
+msgstr "Operatörer:"
+
+msgid "Strings:"
+msgstr "Strängar:"
+
+msgid "Preprocessor:"
+msgstr "Förbehandlare:"
+
+msgid "User 1:"
+msgstr "Användare 1:"
+
+msgid "User 2:"
+msgstr "Användare 2:"
+
+msgid "Bold"
+msgstr "Fet"
+
+msgid "&Use customized text colors"
+msgstr "Använd anpassade textfärger"
+
+msgid "Whitespace:"
+msgstr "Blankutrymme:"
+
+msgid "Regular text:"
+msgstr "Vanlig text:"
+
+msgid "Selection:"
+msgstr "Markering:"
+
+msgid "Margin:"
+msgstr "Marginal:"
+
+msgid "Search Marker:"
+msgstr "Sökmarkör:"
+
+msgid "User Defined Marker1:"
+msgstr "Användardefinierad markör 1:"
+
+msgid "User Defined Marker2:"
+msgstr "Användardefinierad markör 2:"
+
+msgid "User Defined Marker3:"
+msgstr "Användardefinierad markör 3:"
+
 msgid "&Use folder compare colors"
 msgstr "Använd färger för mappjämförelse"
 
@@ -1461,8 +1542,8 @@ msgstr "Objekt som ej finns:"
 msgid "Items filtered:"
 msgstr "Objekt filtrerade:"
 
-msgid "Margin:"
-msgstr "Marginal:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "System"
@@ -1487,9 +1568,6 @@ msgstr "Egen katalog:"
 
 msgid "Br&owse..."
 msgstr "Bläddra..."
-
-msgid "Defaults"
-msgstr "Förval"
 
 msgid "Patch Generator"
 msgstr "Patchgenererare"
@@ -1788,51 +1866,6 @@ msgstr "Importera..."
 msgid "Export..."
 msgstr "Exportera..."
 
-msgid "Dialog"
-msgstr "Dialog"
-
-msgid "Keywords:"
-msgstr "Nyckelord:"
-
-msgid "Function names:"
-msgstr "Funktionsnamn:"
-
-msgid "Comments:"
-msgstr "Kommentarer:"
-
-msgid "Numbers:"
-msgstr "Nummer:"
-
-msgid "Operators:"
-msgstr "Operatörer:"
-
-msgid "Strings:"
-msgstr "Strängar:"
-
-msgid "Preprocessor:"
-msgstr "Förbehandlare:"
-
-msgid "User 1:"
-msgstr "Användare 1:"
-
-msgid "User 2:"
-msgstr "Användare 2:"
-
-msgid "Bold"
-msgstr "Fet"
-
-msgid "Search Marker:"
-msgstr "Sökmarkör:"
-
-msgid "User Defined Marker1:"
-msgstr "Användardefinierad markör 1:"
-
-msgid "User Defined Marker2:"
-msgstr "Användardefinierad markör 2:"
-
-msgid "User Defined Marker3:"
-msgstr "Användardefinierad markör 3:"
-
 msgid "Folder Compare Report"
 msgstr "Rapport för katalogjämförelse"
 
@@ -1979,18 +2012,6 @@ msgstr "Tillåt nya rader i citat"
 
 msgid "&Quote character:"
 msgstr "Tecken för omkapsling:"
-
-msgid "&Use customized text colors"
-msgstr "Använd anpassade textfärger"
-
-msgid "Whitespace:"
-msgstr "Blankutrymme:"
-
-msgid "Regular text:"
-msgstr "Vanlig text:"
-
-msgid "Selection:"
-msgstr "Markering:"
 
 msgid "Backup Files"
 msgstr "Säkerhetskopierade filer"
@@ -4379,6 +4400,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Finputsning"
 
@@ -4399,6 +4438,9 @@ msgstr "Dekompilering"
 
 msgid "URL Handling"
 msgstr "URL-hantering"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Gör till VERSALER"
@@ -4515,6 +4557,9 @@ msgid "Disassemble Native Code"
 msgstr "Nedmontera ursprunglig kod"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4796,6 +4841,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

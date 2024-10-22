@@ -62,6 +62,18 @@ msgstr "Kopíruje vybrané riadky doľava"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Kopíruje vybrané riadky zľava"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 msgid "Select Line &Difference\tF4"
 msgstr "Vybrať riadky roz&dielov\tF4"
 
@@ -346,6 +358,15 @@ msgstr "&Nastavenia..."
 msgid "&View"
 msgstr "&Zobraziť"
 
+msgid "Ta&b Bar"
+msgstr "Lišta &záložiek"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
 msgid "&Toolbar"
 msgstr "Lišta &nástrojov"
 
@@ -360,9 +381,6 @@ msgstr "&Obrovská"
 
 msgid "&Status Bar"
 msgstr "&Stavový riadok"
-
-msgid "Ta&b Bar"
-msgstr "Lišta &záložiek"
 
 msgid "&Tools"
 msgstr "&Nástroje"
@@ -1293,6 +1311,9 @@ msgstr ""
 msgid "Language:"
 msgstr "Jazyk:"
 
+msgid "Defaults"
+msgstr "Predvolené"
+
 msgid "Find"
 msgstr "Hľadať"
 
@@ -1437,6 +1458,66 @@ msgstr "Rozdiel slova:"
 msgid "Selected Word Diff:"
 msgstr "Rozdiel vybraného slova:"
 
+msgid "Dialog"
+msgstr "Dialóg"
+
+msgid "Keywords:"
+msgstr "Kľúčové slová:"
+
+msgid "Function names:"
+msgstr "Názvy funkcií:"
+
+msgid "Comments:"
+msgstr "Komentáre:"
+
+msgid "Numbers:"
+msgstr "Čísla:"
+
+msgid "Operators:"
+msgstr "Operátory:"
+
+msgid "Strings:"
+msgstr "Reťazce:"
+
+msgid "Preprocessor:"
+msgstr "Preprocesor:"
+
+msgid "User 1:"
+msgstr "Užívateľ 1:"
+
+msgid "User 2:"
+msgstr "Užívateľ 2:"
+
+msgid "Bold"
+msgstr "Tučné"
+
+msgid "&Use customized text colors"
+msgstr "&Použiť prispôsobené farby textu"
+
+msgid "Whitespace:"
+msgstr "Netlačiteľné znaky:"
+
+msgid "Regular text:"
+msgstr "Bežný text:"
+
+msgid "Selection:"
+msgstr "Výber:"
+
+msgid "Margin:"
+msgstr "Okraj:"
+
+msgid "Search Marker:"
+msgstr "Značka hľadania:"
+
+msgid "User Defined Marker1:"
+msgstr "Užívateľom definovaná značka1:"
+
+msgid "User Defined Marker2:"
+msgstr "Užívateľom definovaná značka2:"
+
+msgid "User Defined Marker3:"
+msgstr "Užívateľom definovaná značka3:"
+
 msgid "&Use folder compare colors"
 msgstr "&Použiť priečinky porovnania farieb"
 
@@ -1452,8 +1533,8 @@ msgstr "Všetky neexistujúce položky:"
 msgid "Items filtered:"
 msgstr "Filtrované položky:"
 
-msgid "Margin:"
-msgstr "Okraj:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 msgid "System"
 msgstr "Systém"
@@ -1478,9 +1559,6 @@ msgstr "&Vlastný priečinok:"
 
 msgid "Br&owse..."
 msgstr "Pre&hľadávať..."
-
-msgid "Defaults"
-msgstr "Predvolené"
 
 msgid "Patch Generator"
 msgstr "Generátor opravných záplat"
@@ -1775,51 +1853,6 @@ msgstr "Importovať..."
 msgid "Export..."
 msgstr "Exportovať..."
 
-msgid "Dialog"
-msgstr "Dialóg"
-
-msgid "Keywords:"
-msgstr "Kľúčové slová:"
-
-msgid "Function names:"
-msgstr "Názvy funkcií:"
-
-msgid "Comments:"
-msgstr "Komentáre:"
-
-msgid "Numbers:"
-msgstr "Čísla:"
-
-msgid "Operators:"
-msgstr "Operátory:"
-
-msgid "Strings:"
-msgstr "Reťazce:"
-
-msgid "Preprocessor:"
-msgstr "Preprocesor:"
-
-msgid "User 1:"
-msgstr "Užívateľ 1:"
-
-msgid "User 2:"
-msgstr "Užívateľ 2:"
-
-msgid "Bold"
-msgstr "Tučné"
-
-msgid "Search Marker:"
-msgstr "Značka hľadania:"
-
-msgid "User Defined Marker1:"
-msgstr "Užívateľom definovaná značka1:"
-
-msgid "User Defined Marker2:"
-msgstr "Užívateľom definovaná značka2:"
-
-msgid "User Defined Marker3:"
-msgstr "Užívateľom definovaná značka3:"
-
 msgid "Folder Compare Report"
 msgstr "Správa o porovnaní priečinkov"
 
@@ -1966,18 +1999,6 @@ msgstr "&Povoliť nové riadky v úvodzovkách"
 
 msgid "&Quote character:"
 msgstr "Znak ú&vodzovky:"
-
-msgid "&Use customized text colors"
-msgstr "&Použiť prispôsobené farby textu"
-
-msgid "Whitespace:"
-msgstr "Netlačiteľné znaky:"
-
-msgid "Regular text:"
-msgstr "Bežný text:"
-
-msgid "Selection:"
-msgstr "Výber:"
 
 msgid "Backup Files"
 msgstr "Záložné súbory"
@@ -4274,6 +4295,24 @@ msgstr ""
 msgid "Character"
 msgstr ""
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Prikrášlenie"
 
@@ -4293,6 +4332,9 @@ msgid "Decompilation"
 msgstr "Dekompilácia"
 
 msgid "URL Handling"
+msgstr ""
+
+msgid "Decoding / Encoding"
 msgstr ""
 
 msgid "Make Uppercase"
@@ -4410,6 +4452,9 @@ msgid "Disassemble Native Code"
 msgstr "Rozloženie pôvodného kódu"
 
 msgid "Convert Text with AI..."
+msgstr ""
+
+msgid "Unescape Java properties files"
 msgstr ""
 
 msgid "Make characters uppercase"
@@ -4655,6 +4700,9 @@ msgid "AI-assisted text conversion functions"
 msgstr ""
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
+msgstr ""
+
+msgid "Unescape and display escaped Java properties files."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

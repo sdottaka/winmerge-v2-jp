@@ -64,6 +64,18 @@ msgstr "Ausgewählte Zeile(n) nach links kopieren"
 msgid "Copy Selected Line(s) from Left"
 msgstr "Ausgewählte Zeile(n) von links kopieren"
 
+msgid "Copy Selected Diff (Left) to Clipboard\tCtrl+1"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Middle) to Clipboard\tCtrl+2"
+msgstr ""
+
+msgid "Copy Selected Diff (Right) to Clipboard\tCtrl+3"
+msgstr ""
+
 #, c-format
 msgid "Select Line &Difference\tF4"
 msgstr "Zeilen&unterschied markieren\tF4"
@@ -391,6 +403,16 @@ msgid "&View"
 msgstr "&Ansicht"
 
 #, c-format
+msgid "Ta&b Bar"
+msgstr "Ta&b-Leiste"
+
+msgid "&View Tab Bar"
+msgstr ""
+
+msgid "&On Title Bar"
+msgstr ""
+
+#, c-format
 msgid "&Toolbar"
 msgstr "&Symbolleiste"
 
@@ -409,10 +431,6 @@ msgstr "&Riesig"
 #, c-format
 msgid "&Status Bar"
 msgstr "S&tatusleiste"
-
-#, c-format
-msgid "Ta&b Bar"
-msgstr "Ta&b-Leiste"
 
 #, c-format
 msgid "&Tools"
@@ -1556,6 +1574,10 @@ msgid "Language:"
 msgstr "&Sprache:"
 
 #, c-format
+msgid "Defaults"
+msgstr "Vorgaben"
+
+#, c-format
 msgid "Find"
 msgstr "Suchen"
 
@@ -1739,6 +1761,86 @@ msgstr "Wortunterschied:"
 msgid "Selected Word Diff:"
 msgstr "Markierter Wortunterschied:"
 
+#, c-format
+msgid "Dialog"
+msgstr "Dialog"
+
+#, c-format
+msgid "Keywords:"
+msgstr "Schlüsselwörter:"
+
+#, c-format
+msgid "Function names:"
+msgstr "Funktionsnamen:"
+
+#, c-format
+msgid "Comments:"
+msgstr "Kommentare:"
+
+#, c-format
+msgid "Numbers:"
+msgstr "Nummern:"
+
+#, c-format
+msgid "Operators:"
+msgstr "Operatoren:"
+
+#, c-format
+msgid "Strings:"
+msgstr "Zeichenketten:"
+
+#, c-format
+msgid "Preprocessor:"
+msgstr "Präprozessor:"
+
+#, c-format
+msgid "User 1:"
+msgstr "Benutzer 1:"
+
+#, c-format
+msgid "User 2:"
+msgstr "Benutzer 2:"
+
+#, c-format
+msgid "Bold"
+msgstr "Fett"
+
+#, c-format
+msgid "&Use customized text colors"
+msgstr "&Benutzerdefinierte Textfarben verwenden"
+
+#, c-format
+msgid "Whitespace:"
+msgstr "Leerzeichen:"
+
+#, c-format
+msgid "Regular text:"
+msgstr "Normaler Text:"
+
+#, c-format
+msgid "Selection:"
+msgstr "Auswahl:"
+
+#, c-format
+msgid "Margin:"
+msgstr "Rand:"
+
+#, c-format
+msgid "Search Marker:"
+msgstr "Suchmarkierung:"
+
+#, c-format
+msgid "User Defined Marker1:"
+msgstr "Benutzerdefiniert 1:"
+
+#, c-format
+msgid "User Defined Marker2:"
+msgstr "Benutzerdefiniert 2:"
+
+#, c-format
+msgid "User Defined Marker3:"
+msgstr "Benutzerdefiniert 3:"
+
 msgid "&Use folder compare colors"
 msgstr "&Ordnervergleichsfarben verwenden"
 
@@ -1754,9 +1856,8 @@ msgstr "Nicht existierende Objekte:"
 msgid "Items filtered:"
 msgstr "Gefilterte Objekte:"
 
-#, c-format
-msgid "Margin:"
-msgstr "Rand:"
+msgid "&Use custom system colors (Some UI elements may not apply)"
+msgstr ""
 
 #, c-format
 msgid "System"
@@ -1789,10 +1890,6 @@ msgstr "&Benutzerdefinierter Ordner:"
 #, c-format
 msgid "Br&owse..."
 msgstr "Su&chen..."
-
-#, c-format
-msgid "Defaults"
-msgstr "Vorgaben"
 
 #, c-format
 msgid "Patch Generator"
@@ -2150,66 +2247,6 @@ msgid "Export..."
 msgstr "Exportieren..."
 
 #, c-format
-msgid "Dialog"
-msgstr "Dialog"
-
-#, c-format
-msgid "Keywords:"
-msgstr "Schlüsselwörter:"
-
-#, c-format
-msgid "Function names:"
-msgstr "Funktionsnamen:"
-
-#, c-format
-msgid "Comments:"
-msgstr "Kommentare:"
-
-#, c-format
-msgid "Numbers:"
-msgstr "Nummern:"
-
-#, c-format
-msgid "Operators:"
-msgstr "Operatoren:"
-
-#, c-format
-msgid "Strings:"
-msgstr "Zeichenketten:"
-
-#, c-format
-msgid "Preprocessor:"
-msgstr "Präprozessor:"
-
-#, c-format
-msgid "User 1:"
-msgstr "Benutzer 1:"
-
-#, c-format
-msgid "User 2:"
-msgstr "Benutzer 2:"
-
-#, c-format
-msgid "Bold"
-msgstr "Fett"
-
-#, c-format
-msgid "Search Marker:"
-msgstr "Suchmarkierung:"
-
-#, c-format
-msgid "User Defined Marker1:"
-msgstr "Benutzerdefiniert 1:"
-
-#, c-format
-msgid "User Defined Marker2:"
-msgstr "Benutzerdefiniert 2:"
-
-#, c-format
-msgid "User Defined Marker3:"
-msgstr "Benutzerdefiniert 3:"
-
-#, c-format
 msgid "Folder Compare Report"
 msgstr "Ordnervergleichsbericht"
 
@@ -2394,22 +2431,6 @@ msgstr "&Zeilenumbrüche in Zitaten zulassen"
 
 msgid "&Quote character:"
 msgstr "&Anführungszeichen:"
-
-#, c-format
-msgid "&Use customized text colors"
-msgstr "&Benutzerdefinierte Textfarben verwenden"
-
-#, c-format
-msgid "Whitespace:"
-msgstr "Leerzeichen:"
-
-#, c-format
-msgid "Regular text:"
-msgstr "Normaler Text:"
-
-#, c-format
-msgid "Selection:"
-msgstr "Auswahl:"
 
 #, c-format
 msgid "Backup Files"
@@ -4630,6 +4651,24 @@ msgstr "Zeile"
 msgid "Character"
 msgstr "Zeichen"
 
+msgid "\nPrevious Difference (Alt+Up)\n(Right Button+Wheel Up)\n(Alt+Wheel Up)"
+msgstr ""
+
+msgid "\nNext Difference (Alt+Down)\n(Right Button+Wheel Down)\n(Alt+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Right (Alt+Right)\n(Right Button+Wheel Right)\n(Alt+Wheel Right)\n(Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left (Alt+Left)\n(Right Button+Wheel Left)\n(Alt+Wheel Left)\n(Alt+Shift+Wheel Up)"
+msgstr ""
+
+msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ctrl+Alt+Shift+Wheel Down)"
+msgstr ""
+
+msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Verschönerung"
 
@@ -4650,6 +4689,9 @@ msgstr "Dekompilierung"
 
 msgid "URL Handling"
 msgstr "URL-Handling"
+
+msgid "Decoding / Encoding"
+msgstr ""
 
 msgid "Make Uppercase"
 msgstr "Großbuchstaben erzeugen"
@@ -4767,6 +4809,9 @@ msgstr "Nativen Code disassemblieren"
 
 msgid "Convert Text with AI..."
 msgstr "Textumwandlung mit AI..."
+
+msgid "Unescape Java properties files"
+msgstr ""
 
 msgid "Make characters uppercase"
 msgstr "Großbuchstaben erzeugen"
@@ -4906,6 +4951,9 @@ msgstr "KI-unterstützte Textkonvertierungsfunktionen"
 
 msgid "Text converter using OpenAI API.\r\nUsage: AIConvertText PROMPT"
 msgstr "Textkonvertierung mithilfe von OpenAI API.\r\nAufruf: AIConvertText PROMPT"
+
+msgid "Unescape and display escaped Java properties files."
+msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "Plugin-Einstellungen für CompareMSExcelFiles"
