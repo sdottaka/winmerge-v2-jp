@@ -2040,14 +2040,14 @@ bool CMainFrame::DoFileNew(UINT nID, int nPanes,
 	String strDesc2[3];
 	if (nPanes == 2)
 	{
-		strDesc2[0] = _("Untitled left");
-		strDesc2[1] = _("Untitled right");
+		strDesc2[0] = _("Untitled Left");
+		strDesc2[1] = _("Untitled Right");
 	}
 	else
 	{
-		strDesc2[0] = _("Untitled left");
-		strDesc2[1] = _("Untitled middle");
-		strDesc2[2] = _("Untitled right");
+		strDesc2[0] = _("Untitled Left");
+		strDesc2[1] = _("Untitled Middle");
+		strDesc2[2] = _("Untitled Right");
 	}
 	for (int i = 0; i < nPanes; ++i)
 	{
@@ -2527,7 +2527,7 @@ void CMainFrame::OnActivateApp(BOOL bActive, DWORD dwThreadID)
 {
 	__super::OnActivateApp(bActive, dwThreadID);
 
-	if (GetOptionsMgr()->GetInt(OPT_AUTO_RELOAD_MODIFIED_FILES) == AUTO_RELOAD_MODIFIED_FILES_ONWINDOWACTIVATED)
+	if (bActive && GetOptionsMgr()->GetInt(OPT_AUTO_RELOAD_MODIFIED_FILES) == AUTO_RELOAD_MODIFIED_FILES_ONWINDOWACTIVATED)
 	{
 		if (IMergeDoc* pMergeDoc = GetActiveIMergeDoc())
 			PostMessage(WM_USER + 1);
@@ -3338,13 +3338,13 @@ void CMainFrame::OnUpdatePluginName(CCmdUI* pCmdUI)
 		String pluginNames;
 		const PackingInfo* infoUnpacker = pMergeDoc->GetUnpacker();
 		if (infoUnpacker && !infoUnpacker->GetPluginPipeline().empty())
-			pluginNames += infoUnpacker->GetPluginPipeline() + _T("&");
+			pluginNames += infoUnpacker->GetPluginPipeline() + _T("&&");
 		const PrediffingInfo* infoPrediffer = pMergeDoc->GetPrediffer();
 		if (infoPrediffer && !infoPrediffer->GetPluginPipeline().empty())
-			pluginNames += infoPrediffer->GetPluginPipeline() + _T("&");
+			pluginNames += infoPrediffer->GetPluginPipeline() + _T("&&");
 		const EditorScriptInfo* infoEditorScript = pMergeDoc->GetEditorScript();
 		if (infoEditorScript && !infoEditorScript->GetPluginPipeline().empty())
-			pluginNames += infoEditorScript->GetPluginPipeline() + _T("&");
+			pluginNames += infoEditorScript->GetPluginPipeline() + _T("&&");
 		pCmdUI->SetText(pluginNames.substr(0, pluginNames.length() - 1).c_str());
 	}
 	else
@@ -3538,7 +3538,7 @@ void CMainFrame::AppendPluginMenus(CMenu *pMenu, const String& filteredFilenames
 
 	if (!addAllMenu)
 	{
-		pMenu->AppendMenu(MF_STRING, ID_SUGGESTED_PLUGINS, _("Suggested plugins").c_str());
+		pMenu->AppendMenu(MF_STRING, ID_SUGGESTED_PLUGINS, _("Suggested Plugins").c_str());
 	}
 	else
 	{
@@ -3559,7 +3559,7 @@ void CMainFrame::AppendPluginMenus(CMenu *pMenu, const String& filteredFilenames
 	else
 	{
 		pMenu->AppendMenu(MF_SEPARATOR, 0);
-		pMenu->AppendMenu(MF_STRING, ID_NOT_SUGGESTED_PLUGINS, _("All plugins").c_str());
+		pMenu->AppendMenu(MF_STRING, ID_NOT_SUGGESTED_PLUGINS, _("All Plugins").c_str());
 	}
 
 	std::list<String> processTypes;

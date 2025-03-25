@@ -147,6 +147,7 @@ Name: French; MessagesFile: compiler:Languages\French.isl,..\..\Translations\Inn
 Name: Galician; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Galician.isl,..\..\Translations\InnoSetup\Galician.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Galician.txt
 Name: German; MessagesFile: compiler:Languages\German.isl,..\..\Translations\InnoSetup\German.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-German.txt
 Name: Greek; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Greek.isl,..\..\Translations\InnoSetup\Greek.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Greek.txt
+Name: Hebrew; MessagesFile: compiler:Languages\Hebrew.isl,..\..\Translations\InnoSetup\Hebrew.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Hebrew.txt
 Name: Hungarian; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Hungarian.isl,..\..\Translations\InnoSetup\Hungarian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Hungarian.txt
 Name: Italian; MessagesFile: compiler:Languages\Italian.isl,..\..\Translations\InnoSetup\Italian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Italian.txt
 Name: Japanese; MessagesFile: compiler:Languages\Japanese.isl,..\..\Translations\InnoSetup\Japanese.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Japanese.txt
@@ -237,6 +238,9 @@ Name: Languages\German; Description: {cm:GermanLanguage}; Flags: disablenouninst
 
 Name: Languages\Greek; Description: {cm:GreekLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Greek
 Name: Languages\Greek; Description: {cm:GreekLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Greek
+
+Name: Languages\Hebrew; Description: {cm:HebrewLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Hebrew
+Name: Languages\Hebrew; Description: {cm:HebrewLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Hebrew
 
 Name: Languages\Hungarian; Description: {cm:HungarianLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Hungarian
 Name: Languages\Hungarian; Description: {cm:HungarianLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Hungarian
@@ -420,6 +424,8 @@ Source: ..\..\Build\{#ARCH}\Release\WinMergeU.exe; DestDir: {app}; Flags: prompt
 ; Visual Elements
 Source: ..\..\Build\{#ARCH}\Release\WinMergeU.VisualElementsManifest.xml; DestDir: {app}; Flags: promptifolder; Components: Core
 Source: ..\..\Build\{#ARCH}\Release\LogoImages\*.png; DestDir: {app}\LogoImages; Flags: promptifolder; Components: Core
+; Resources
+Source: ..\..\Build\{#ARCH}\Release\Resources\*.png; DestDir: {app}\Resources; Flags: promptifolder; Components: Core
 ; 32Bit Plugin Proxy
 Source: ..\..\Plugins\WinMerge32BitPluginProxy\Release\WinMerge32BitPluginProxy.exe; DestDir: {app}; Flags: promptifolder; Components: Core
 
@@ -495,6 +501,10 @@ Source: ..\..\Translations\Docs\Readme\ReadMe-German.txt; DestDir: {app}\Docs; C
 Source: ..\..\Translations\WinMerge\Greek.po; DestDir: {app}\Languages; Components: Languages\Greek; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\ShellExtension\Greek.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Greek; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Greek.txt; DestDir: {app}\Docs; Components: Languages\Greek
+Source: ..\..\Translations\WinMerge\Hebrew.po; DestDir: {app}\Languages; Components: Languages\Hebrew; Flags: ignoreversion comparetimestamp
+Source: ..\..\Translations\ShellExtension\Hebrew.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Hebrew; Flags: ignoreversion comparetimestamp
+Source: ..\..\Translations\Docs\Readme\ReadMe-Hebrew.txt; DestDir: {app}\Docs; Components: Languages\Hebrew
+Source: ..\..\Build\Manual\htmlhelp\WinMergeHebrew.chm; DestDir: {app}\Docs; Components: Languages\Hebrew
 Source: ..\..\Translations\WinMerge\Hungarian.po; DestDir: {app}\Languages; Components: Languages\Hungarian; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\ShellExtension\Hungarian.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Hungarian; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\WinMerge\Italian.po; DestDir: {app}\Languages; Components: Languages\Italian; Flags: ignoreversion comparetimestamp
@@ -595,11 +605,15 @@ Source: ..\..\Build\{#ARCH}\Release\Frhed\Docs\Contributors.txt; DestDir: {app}\
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Docs\History.txt; DestDir: {app}\Frhed\Docs; Components: Core
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Docs\Links.txt; DestDir: {app}\Frhed\Docs; Components: Core
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Docs\Sample.tpl  ; DestDir: {app}\Frhed\Docs; Components: Core
-Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\de.po; DestDir: {app}\Frhed\Languages; Components: Core
-Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\fr.po; DestDir: {app}\Frhed\Languages; Components: Core
-Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\ja.po; DestDir: {app}\Frhed\Languages; Components: Core
-Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\nl.po; DestDir: {app}\Frhed\Languages; Components: Core
-Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\sl.po; DestDir: {app}\Frhed\Languages; Components: Core
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\de.po; DestDir: {app}\Frhed\Languages; Components: Languages\German
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\fr.po; DestDir: {app}\Frhed\Languages; Components: Languages\French
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\gl.po; DestDir: {app}\Frhed\Languages; Components: Languages\Galician
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\ja.po; DestDir: {app}\Frhed\Languages; Components: Languages\Japanese
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\nl.po; DestDir: {app}\Frhed\Languages; Components: Languages\Dutch
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\pl.po; DestDir: {app}\Frhed\Languages; Components: Languages\Polish
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\ru.po; DestDir: {app}\Frhed\Languages; Components: Languages\Russian
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\sk.po; DestDir: {app}\Frhed\Languages; Components: Languages\Slovak
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\sl.po; DestDir: {app}\Frhed\Languages; Components: Languages\Slovenian
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\heksedit.lng; DestDir: {app}\Frhed\Languages; Components: Core
 
 ;WinIMerge
@@ -662,10 +676,10 @@ Name: {autodesktop}\WinMerge; Filename: {app}\WinMergeU.exe; Tasks: desktopicon
 Name: {userappdata}\Microsoft\Internet Explorer\Quick Launch\WinMerge; Filename: {app}\WinMergeU.exe; Tasks: quicklaunchicon
 
 [Registry]
-Root: HKCU; Subkey: Software\Thingamahoochie; Flags: uninsdeletekeyifempty
-Root: HKCU; Subkey: Software\Thingamahoochie\WinMerge; Flags: uninsdeletekey
-Root: HKA;  Subkey: Software\Thingamahoochie; Flags: uninsdeletekeyifempty
-Root: HKA;  Subkey: Software\Thingamahoochie\WinMerge; Flags: uninsdeletekey
+Root: HKU; Subkey: {code:GetOriginalUserSID}\Software\Thingamahoochie; Flags: uninsdeletekeyifempty
+Root: HKU; Subkey: {code:GetOriginalUserSID}\Software\Thingamahoochie\WinMerge; Flags: uninsdeletekey
+Root: HKA; Subkey: Software\Thingamahoochie; Flags: uninsdeletekeyifempty
+Root: HKA; Subkey: Software\Thingamahoochie\WinMerge; Flags: uninsdeletekey
 
 ;Add Project file extension (.WinMerge) to known extensions and
 ;set WinMerge to open those files
@@ -698,7 +712,7 @@ Root: HKA;  SubKey: SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WinMerge
 
 ;Registry Keys for use by ShellExtension.dll
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge; ValueType: string; ValueName: Executable; ValueData: {app}\WinMergeU.exe
-Root: HKCU;  SubKey: Software\Thingamahoochie\WinMerge; ValueType: string; ValueName: Executable; ValueData: {app}\WinMergeU.exe
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\Thingamahoochie\WinMerge; ValueType: string; ValueName: Executable; ValueData: {app}\WinMergeU.exe
 
 ;Enables or disables the Context Menu preference based on what the user selects during install
 ;Initially the Context menu is explicitly disabled:
@@ -706,28 +720,28 @@ Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge; ValueType: dword; ValueNa
 
 ;If the user chose to use the context menu then we re-enable it.  This is necessary so it'll turn on and off not just on.
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge; ValueType: dword; ValueName: ContextMenuEnabled; ValueData: 1; Tasks: ShellExtension
-Root: HKCU; SubKey: Software\Thingamahoochie\WinMerge; ValueType: dword; ValueName: ContextMenuEnabled; ValueData: {code:ShellMenuEnabled}
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\Thingamahoochie\WinMerge; ValueType: dword; ValueName: ContextMenuEnabled; ValueData: {code:ShellMenuEnabled}
 
 ;If WinMerge.exe is installed then we'll automatically configure WinMerge as the differencing application
-Root: HKCU; SubKey: Software\TortoiseCVS; ValueType: string; ValueName: External Diff Application; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS; ValueType: dword; ValueName: DiffAsUnicode; ValueData: $00000001; Flags: uninsdeletevalue; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS\Prefs\External Diff Application; ValueType: string; ValueName: _; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS\Prefs\External Diff2 Params; ValueType: string; ValueName: _; ValueData: """%1"" ""%2"""; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS; ValueType: string; ValueName: External Diff Application; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS; ValueType: dword; ValueName: DiffAsUnicode; ValueData: $00000001; Flags: uninsdeletevalue; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS\Prefs\External Diff Application; ValueType: string; ValueName: _; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS\Prefs\External Diff2 Params; ValueType: string; ValueName: _; ValueData: """%1"" ""%2"""; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
 
 ;Tells TortoiseCVS to use WinMerge as its differencing application (this happens whether or not Tortoise is current installed, that way
 ;if it is installed at a later date this will automatically support it)
-Root: HKCU; SubKey: Software\TortoiseCVS; ValueType: string; ValueName: External Merge Application; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS; ValueType: dword; ValueName: MergeAsUnicode; ValueData: $00000001; Flags: uninsdeletevalue; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS\Prefs\External Merge Application; ValueType: string; ValueName: _; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
-Root: HKCU; SubKey: Software\TortoiseCVS\Prefs\External Merge2 Params; ValueType: string; ValueName: _; ValueData: """%mine"" ""%yours"""; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS; ValueType: string; ValueName: External Merge Application; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS; ValueType: dword; ValueName: MergeAsUnicode; ValueData: $00000001; Flags: uninsdeletevalue; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS\Prefs\External Merge Application; ValueType: string; ValueName: _; ValueData: {app}\WinMergeU.exe; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseCVS\Prefs\External Merge2 Params; ValueType: string; ValueName: _; ValueData: """%mine"" ""%yours"""; Flags: uninsdeletevalue dontcreatekey; Tasks: TortoiseCVS
 
 ;Set WinMerge as TortoiseGit diff tool
-Root: HKCU; SubKey: Software\TortoiseGit; ValueType: string; ValueName: Diff; ValueData: {app}\WinMergeU.exe -e -ub -dl %bname -dr %yname %base %mine; Flags: uninsdeletevalue; Tasks: TortoiseGit
-Root: HKCU; SubKey: Software\TortoiseGit; ValueType: string; ValueName: Merge; ValueData: {code:TortoiseSVNGitMergeToolCommandLine}; Flags: uninsdeletevalue; Check: UseAs3WayMergeTool; Tasks: TortoiseGit
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseGit; ValueType: string; ValueName: Diff; ValueData: {app}\WinMergeU.exe -e -ub -dl %bname -dr %yname %base %mine; Flags: uninsdeletevalue; Tasks: TortoiseGit
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseGit; ValueType: string; ValueName: Merge; ValueData: {code:TortoiseSVNGitMergeToolCommandLine}; Flags: uninsdeletevalue; Check: UseAs3WayMergeTool; Tasks: TortoiseGit
 
 ;Set WinMerge as TortoiseSVN diff tool
-Root: HKCU; SubKey: Software\TortoiseSVN; ValueType: string; ValueName: Diff; ValueData: {app}\WinMergeU.exe -e -ub -dl %bname -dr %yname %base %mine; Flags: uninsdeletevalue; Tasks: TortoiseSVN
-Root: HKCU; SubKey: Software\TortoiseSVN; ValueType: string; ValueName: Merge; ValueData: {code:TortoiseSVNGitMergeToolCommandLine}; Flags: uninsdeletevalue; Check: UseAs3WayMergeTool; Tasks: TortoiseSVN
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseSVN; ValueType: string; ValueName: Diff; ValueData: {app}\WinMergeU.exe -e -ub -dl %bname -dr %yname %base %mine; Flags: uninsdeletevalue; Tasks: TortoiseSVN
+Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseSVN; ValueType: string; ValueName: Merge; ValueData: {code:TortoiseSVNGitMergeToolCommandLine}; Flags: uninsdeletevalue; Check: UseAs3WayMergeTool; Tasks: TortoiseSVN
 
 ;Whatever the user chooses at the [Select Setup Language] dialog should also determine what language WinMerge will start up in
 ;(unless the user already has a startup language specified)
@@ -810,6 +824,8 @@ Var
     g_CheckListBox: TNewCheckListBox;
     g_IsExplorerRestartRequired: boolean;
 
+#include "originaluser.iss"
+    
 {Determines whether or not the user chose to create a start menu}
 Function GroupCreated(): boolean;
 Var

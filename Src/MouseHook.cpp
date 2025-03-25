@@ -1,6 +1,5 @@
 #include <StdAfx.h>
 #include "MouseHook.h"
-#include <chrono>
 
 #ifndef WM_MOUSEHWHEEL
 #  define WM_MOUSEHWHEEL 0x20e
@@ -100,7 +99,6 @@ LRESULT CALLBACK CMouseHook::MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 		// Hold mice right button for One-handed operation
 		if (m_bRButtonDown)
 		{
-			HWND hwndTarget = GetForegroundWindow();
 			if (zDelta > 0)
 			{
 				// RButton+ScrollUp as Alt+Up
@@ -124,7 +122,6 @@ LRESULT CALLBACK CMouseHook::MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 
 		if (GetAsyncKeyState(VK_MENU) & 0x8000)
 		{
-			HWND hwndTarget = GetForegroundWindow();
 			const auto bControlDown = GetAsyncKeyState(VK_CONTROL) & 0x8000;
 			// zDelta > 0 scrool right, < 0 scrool left
 			if (zDelta > 0)
@@ -162,7 +159,6 @@ LRESULT CALLBACK CMouseHook::MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 		// Hold mice right button for One-handed operation
 		if (m_bRButtonDown)
 		{
-			HWND hwndTarget = GetForegroundWindow();
 			if (zDelta > 0)
 			{
 				// RButton+ScrollRight as Alt+Right
