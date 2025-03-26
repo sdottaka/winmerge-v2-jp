@@ -4224,10 +4224,10 @@ msgstr "Предпросмотр Markdown. \r\nАргументы: Параме�
 msgid "PlantUML Previewer.\r\nArguments: plantuml.jar command line options."
 msgstr "Предпросмотр PlantUML. \r\nАргументы: Параметры командной строки, передаваемые команде plantuml.jar."
 
-msgid "CSV Querier (q).\r\nArguments: SQL statement/q options."
+msgid "CSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
 msgstr "CSV Querier с командой q. \r\nАргументы: Оператор SQL или параметры командной строки, передаваемые команде q."
 
-msgid "TSV Querier (q).\r\nArguments: SQL statement/q options."
+msgid "TSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
 msgstr "TSV Querier с командой q. \r\nАргументы: Оператор SQL или параметры командной строки, передаваемые команде q."
 
 msgid "JSON Querier (jq).\r\nArguments: jq filter/command line options."
