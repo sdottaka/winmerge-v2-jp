@@ -2,6 +2,51 @@
 title: 変更履歴
 ---
 
+### 2025/03/29 2.16.46-jp-2
+
+#### 一般
+
+- 不具合修正: `/inifile` コマンドラインオプションに指定したINIファイルがドライブ直下にある場合にそのINIファイルが無視されてしまう問題を修正した。 ([#2635](https://github.com/WinMerge/winmerge/issues/2635))  
+- 不具合修正: ウィンドウが非アクティブになるときにも「別のアプリケーションが更新しました」と表示される問題を修正した。 ([#2668](https://github.com/WinMerge/winmerge/issues/2668))  
+- タイトルバーのボタンやステータスバーのちらつきを軽減した。
+- メニュー、オプションウインドウ等の英語テキストの書き直しを行った。([PR #2682](https://github.com/WinMerge/winmerge/pull/2682))  (PRをいただきました。ありがとうございます。)
+
+#### ファイル比較
+
+- 不具合修正: 置換フィルターの正規表現内の `$` が「改行文字のの違いを無視する」オプション有効時に正しく動作しない問題を修正した。 ([#2640](https://github.com/WinMerge/winmerge/issues/2640))  
+- 不具合修正: Python の複数行文字列の構文強調が 1 行を超えると正しく動作しない問題を修正した。 ([#2643](https://github.com/WinMerge/winmerge/issues/2643))  
+- 不具合修正: 展開プラグインと比較前処理プラグインを両方使用すると、ステータスバーの `&` がアンダーラインとして表示される問題を修正した。
+- 不具合修正: オプションウインドウのコードページセクションのコードページリストとファイル比較ウィンドウでコードページリストが一致していない問題を修正した。 ([#2678](https://github.com/WinMerge/winmerge/issues/2678))  
+- C 言語の構文強調のキーワードリストを更新した。 ([PR #2669](https://github.com/WinMerge/winmerge/pull/2669))  (PRをいただきました。ありがとうございます。)
+
+#### 画像比較
+
+- オプションウインドウの[比較/画像]セクションのパターンに.jxl 拡張子を追加した。(jxlファイルを開くには、Windows に JPEG XL Image Extension がインストールされている必要があります。) ([PR #2682](https://github.com/WinMerge/winmerge/pull/2682))(PRをいただきました。ありがとうございます。)
+
+#### オプションダイアログ
+
+- 不具合修正: シェル統合オプションで「シェル拡張の登録を解除」ボタンをクリックした際に 32bit版の`ShellExtensionU.dll` が正しく登録解除されない問題を修正した。 ([#2419](https://github.com/WinMerge/winmerge/issues/2419))  
+- 不具合修正: オプションウインドウの[比較/画像]セクションのデフォルトボタンを押してもすべてリセットされない問題を修正した。([PR #2655](https://github.com/WinMerge/winmerge/pull/2655))  (PRをいただきました。ありがとうございます。)
+
+#### カラースキーム
+
+- VS Dark カラースキームを追加した。 ([PR #2634](https://github.com/WinMerge/winmerge/pull/2634))  (PRをいただきました。ありがとうございます。)
+- Twilight カラースキームを追加した。 ([PR #1430](https://github.com/WinMerge/winmerge/pull/1430))  (PRをいただきました。ありがとうございます。)
+
+#### インストーラー
+
+- 不具合修正: Windows 10 x64 で管理者権限なしのユーザーがインストールするとコンテキストメニューが表示されない問題を修正した。 ([#2638](https://github.com/WinMerge/winmerge/issues/2638)) ([PR #2639](https://github.com/WinMerge/winmerge/pull/2639))  
+
+#### マニュアル
+
+- ヘルプページ → 付録 A. ショートカットキーを更新した。 ([#2659](https://github.com/WinMerge/winmerge/issues/2659))  
+
+#### その他
+
+- 不具合修正: VS2022 17.13.0 でのビルドエラーを修正した。 ([PR #2645](https://github.com/WinMerge/winmerge/pull/2645))  (PRをいただきました。ありがとうございます。)
+- 不具合修正: `zopflipng` を使用して `splash.png` のサイズを削減した。 ([PR #2646](https://github.com/WinMerge/winmerge/pull/2646))  (PRをいただきました。ありがとうございます。)
+- `README` を更新した。([PR #2696](https://github.com/WinMerge/winmerge/pull/2696))  (PRをいただきました。ありがとうございます。)
+
 ### 2025/01/29 2.16.46-jp-1
 
 #### 全般
