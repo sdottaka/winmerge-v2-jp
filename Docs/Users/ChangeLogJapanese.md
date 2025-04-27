@@ -2,6 +2,44 @@
 title: 変更履歴
 ---
 
+### 2025/04/29 2.16.48-jp-1
+
+#### 全般
+
+- 不具合修正: ツールバーアイコンを「特大」に設定すると、設定を保存できなかった問題を修正した。（[#2748](https://github.com/WinMerge/winmerge/issues/2748)）
+- エラー等のログを表示するための出力ペインを追加した。 (PR #2663)
+- オプションダイアログを開くためのキーボードショートカット `Ctrl+,` を追加した。（[#2705](https://github.com/WinMerge/winmerge/issues/2705)）
+- Merge.rc を更新した。（[PR #2711](https://github.com/WinMerge/winmerge/pull/2711)）(PRをいただきました。ありがとうございます。)
+
+#### ファイル比較
+
+- 不具合修正: 同一のテキストブロックを貼り付けた際に、存在しない行が追加される問題を修正した。（[#2702](https://github.com/WinMerge/winmerge/issues/2702)）
+- 不具合修正: 検索ダイアログを開いたまま WinMerge を終了するとクラッシュする問題を修正した。
+- Pascal シンタックスハイライト: `initialization` と `finalization` を追加した。（[PR #2719](https://github.com/WinMerge/winmerge/pull/2719)）(PRをいただきました。ありがとうございます。)
+- Pascal シンタックスハイライト: 複数行文字列のサポートを追加した。（[PR #2720](https://github.com/WinMerge/winmerge/pull/2720)）(PRをいただきました。ありがとうございます。)
+
+#### フォルダー比較
+
+- 不具合修正: 「更新日時とサイズ」で比較する際に、mtime がゼロのファイルを比較できない問題を修正した。（[#2714](https://github.com/WinMerge/winmerge/issues/2714)）
+- 不具合修正: ファイル削除後にクラッシュすることがある問題を修正した。（[#2746](https://github.com/WinMerge/winmerge/issues/2746)）
+- 複数ファイルが選択されているときでも[左側/右側を開く]メニュー内のメニュー項目を使用できるようにした。（[PR #2749](https://github.com/WinMerge/winmerge/pull/2749) (PRをいただきました。ありがとうございます。)
+
+#### Webページ比較
+
+- 不具合修正: タブ文字が含まれると比較が失敗する問題を修正した。
+- 不具合修正: 特定の HTML 要素内で行の折り返しが正しく行われない問題を修正した。
+- 不具合修正: `<pre>` 要素内の差分が、本来別々の行で表示されるべきところを連結して表示されることがある問題を修正した。
+
+#### プラグイン
+
+- 不具合修正: ApacheTika, PlantUML プラグイン: 実行に失敗してもエラーメッセージが表示されない問題を修正した。（[#715](https://github.com/WinMerge/winmerge/issues/715)）
+- 不具合修正: ApacheTika プラグイン: ファイル名に英数字以外の文字が含まれていると実行に失敗する問題を修正した。(短いファイル名を使用するようにした。)（[#715](https://github.com/WinMerge/winmerge/issues/715)）
+- AIConvertText プラグイン: gpt-4.1、gpt-4.1-mini、gpt-4.1-nano モデルを追加した。
+
+#### インストーラー
+
+- インストーラのコピーライトをプロパティで見ると文字が切れて見えるため、短縮版に変更した。([#2750](https://github.com/WinMerge/winmerge/issues/2750)）
+
 ### 2025/03/29 2.16.46-jp-2
 
 #### 一般
