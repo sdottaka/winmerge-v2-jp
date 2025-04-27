@@ -351,8 +351,8 @@ msgstr "&Editare"
 msgid "&Paste\tCtrl+V"
 msgstr "Li&pește\tCtrl+V"
 
-msgid "&Options..."
-msgstr "&Opțiuni..."
+msgid "&Options...\tCtrl+,"
+msgstr "&Opțiuni...\tCtrl+,"
 
 msgid "&View"
 msgstr "&Vizualizare"
@@ -382,6 +382,9 @@ msgid "&Huge"
 msgstr "Uriaș"
 
 msgid "Men&u Bar"
+msgstr ""
+
+msgid "&Output Pane"
 msgstr ""
 
 msgid "&Status Bar"
@@ -764,6 +767,9 @@ msgstr "&Panoul cu diferențe"
 
 msgid "Lo&cation Pane"
 msgstr "Panoul cu lo&cația"
+
+msgid "Output Pane"
+msgstr ""
 
 msgid "Ne&xt Conflict\tAlt+Shift+Down"
 msgstr "Conflictul următor\tAlt+Shift+Down"
@@ -1208,6 +1214,9 @@ msgstr ""
 msgid "&Duplicate Plugin..."
 msgstr ""
 
+msgid "Clear &All"
+msgstr ""
+
 msgid "About WinMerge"
 msgstr "Despre WinMerge"
 
@@ -1282,6 +1291,9 @@ msgstr "Stare:"
 
 msgid "Help"
 msgstr "Ajutor"
+
+msgid "&Options..."
+msgstr "&Opțiuni..."
 
 msgid "General"
 msgstr "General"
@@ -2051,7 +2063,7 @@ msgstr "Caracterul de citare:"
 msgid "Backup Files"
 msgstr "Copii de siguranță"
 
-msgid "Create backup files in:"
+msgid "Create backup files for:"
 msgstr "Crează copii de siguranță pentru:"
 
 msgid "&Folder compare"
@@ -2060,7 +2072,7 @@ msgstr "Comparare &directoare"
 msgid "Fil&e compare"
 msgstr "Comparare fiși&ere"
 
-msgid "Create backup files into:"
+msgid "Create backup files in:"
 msgstr "Crează copii de siguranță în:"
 
 msgid "&Original file's folder"
@@ -2697,6 +2709,13 @@ msgstr "%1 diferențe găsite"
 
 msgid "1 Difference Found"
 msgstr "O diferență găsită"
+
+#, c-format
+msgid "%1 Errors Found"
+msgstr ""
+
+msgid "1 Error Found"
+msgstr ""
 
 #. Abbreviation from "Read Only"
 msgid "RO"
@@ -4398,6 +4417,49 @@ msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ct
 msgstr ""
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2 and %3"
+msgstr ""
+
+msgid "Comparison completed"
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2: "
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2 and %3: "
+msgstr ""
+
+msgid "File saved"
+msgstr ""
+
+msgid "Copying files..."
+msgstr ""
+
+msgid "Moving files..."
+msgstr ""
+
+msgid "Deleting files..."
+msgstr ""
+
+msgid "Recycle Bin"
+msgstr ""
+
+msgid "Permanently deleted"
+msgstr ""
+
+msgid "File operation completed successfully"
+msgstr ""
+
+msgid "File operation canceled"
 msgstr ""
 
 msgid "Prettification"

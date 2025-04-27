@@ -51,6 +51,7 @@ static const tchar_t * s_apszPascalKeywordList[] =
     _T ("external"),
     _T ("far"),
     _T ("file"),
+    _T ("finalization"),
     _T ("Finally"),
     _T ("for"),
     _T ("function"),
@@ -60,6 +61,7 @@ static const tchar_t * s_apszPascalKeywordList[] =
     _T ("In"),
     _T ("Index"),
     _T ("inherited"),
+    _T ("initialization"),
     _T ("inline"),
     _T ("interface"),
     _T ("Is"),
@@ -149,7 +151,7 @@ unsigned
 CrystalLineParser::ParseLinePascal (unsigned dwCookie, const tchar_t *pszChars, int nLength, TEXTBLOCK * pBuf, int &nActualItems)
 {
   if (nLength == 0)
-    return dwCookie & (COOKIE_EXT_COMMENT | COOKIE_EXT_COMMENT2);
+    return dwCookie & (COOKIE_EXT_COMMENT | COOKIE_EXT_COMMENT2 | COOKIE_RAWSTRING);
 
   bool bRedefineBlock = true;
   bool bDecIndex = false;
@@ -174,7 +176,7 @@ CrystalLineParser::ParseLinePascal (unsigned dwCookie, const tchar_t *pszChars, 
             {
               DEFINE_BLOCK (nPos, COLORINDEX_COMMENT);
             }
-          else if (dwCookie & (COOKIE_CHAR | COOKIE_STRING))
+          else if (dwCookie & (COOKIE_CHAR | COOKIE_STRING | COOKIE_RAWSTRING))
             {
               DEFINE_BLOCK (nPos, COLORINDEX_STRING);
             }
@@ -220,13 +222,83 @@ out:
           continue;
         }
 
-      //  Char constant '..'
-      if (dwCookie & COOKIE_CHAR)
+      //  Char constant '..' or inside a multiline string
+      if (dwCookie & COOKIE_CHAR || dwCookie & COOKIE_RAWSTRING)
         {
           if (pszChars[I] == '\'' && (I == 0 || I == 1 && pszChars[nPrevI] != '\\' || I >= 2 && (pszChars[nPrevI] != '\\' || *tc::tcharprev(pszChars, pszChars + nPrevI) == '\\')))
             {
-              dwCookie &= ~COOKIE_CHAR;
-              bRedefineBlock = true;
+              // Multiline string ('''...''')?
+              const bool isMultilineStartOrEnd = ((pszChars[nPrevI] == '\'') && (nLength >= I + 1) && (pszChars[I + 1] == '\''));
+              if ((isMultilineStartOrEnd && ((nLength < I + 2) || (pszChars[I + 2] != '\''))) || (dwCookie & COOKIE_RAWSTRING))
+                {
+                  // Inside a multiline string there is no other syntax highlighting
+                  if (!isMultilineStartOrEnd)
+                    continue;
+
+                  if (dwCookie & COOKIE_RAWSTRING)
+                    {
+                      // End of multiline string? Check if there is only space in front
+                      bool lineStartReached = true;
+                      for (int nLineStart = I - 2; nLineStart > 0; nLineStart--)
+                        {
+                          if (pszChars[nLineStart] == '\r' || pszChars[nLineStart] == '\n')
+                            {
+                              // line start found
+                              break;
+                            }
+                          // space or tab are valid before the end
+                          else if (pszChars[nLineStart] != ' ' && pszChars[nLineStart] != '\t')
+                            {
+                              lineStartReached = false;
+                              break;
+                            }
+                        }
+
+                      if (lineStartReached)
+                        {
+                          dwCookie &= ~COOKIE_RAWSTRING;
+                          bRedefineBlock = true;
+                          I++;
+                        }
+                    }
+                  else 
+                    {
+                      // Start of multiline string? Check if the rest of the line is "empty"
+                      bool lineEndReached = true;
+                      for (int nLineBreak = I+2; nLineBreak < nLength; nLineBreak++)
+                        {
+                          if (pszChars[nLineBreak] == '\r' || pszChars[nLineBreak] == '\n')
+                            {
+                              // line end found
+                              break;
+                            }
+                          // space or tab are valid behind the start
+                          else if (pszChars[nLineBreak] != ' ' && pszChars[nLineBreak] != '\t')
+                            {
+                              lineEndReached = false;
+                              break;
+                            }
+                        }
+
+                      if (lineEndReached)
+                        {
+                          dwCookie |= COOKIE_RAWSTRING;
+                          // Skip one
+                          I++;
+                        }
+                      else
+                        {
+                          dwCookie &= ~COOKIE_CHAR;
+                          bRedefineBlock = true;
+                        }
+                    }
+                }
+              else
+                {
+                  dwCookie &= ~COOKIE_CHAR;
+                  
+                  bRedefineBlock = true;
+                }
             }
           continue;
         }
@@ -278,7 +350,7 @@ out:
               continue;
             }
         }
-      if (I > 0 && pszChars[I] == '*' && pszChars[nPrevI] == '(')
+      if (I > 0 && pszChars[I] == '*' && pszChars[nPrevI] == '(') // (*
         {
           DEFINE_BLOCK (nPrevI, COLORINDEX_COMMENT);
           dwCookie |= COOKIE_EXT_COMMENT;
@@ -319,6 +391,6 @@ out:
     }
 
   if (pszChars[nLength - 1] != '\\' || IsMBSTrail(pszChars, nLength - 1))
-    dwCookie &= (COOKIE_EXT_COMMENT | COOKIE_EXT_COMMENT2);
+    dwCookie &= (COOKIE_EXT_COMMENT | COOKIE_EXT_COMMENT2 | COOKIE_RAWSTRING);
   return dwCookie;
 }

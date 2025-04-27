@@ -395,8 +395,8 @@ msgid "&Paste\tCtrl+V"
 msgstr "&Itsatsi\tCtrl+V"
 
 #, c-format
-msgid "&Options..."
-msgstr "&Aukerak..."
+msgid "&Options...\tCtrl+,"
+msgstr "&Aukerak...\tCtrl+,"
 
 #, c-format
 msgid "&View"
@@ -432,6 +432,9 @@ msgid "&Huge"
 msgstr ""
 
 msgid "Men&u Bar"
+msgstr ""
+
+msgid "&Output Pane"
 msgstr ""
 
 #, c-format
@@ -922,6 +925,9 @@ msgstr "Ezberd &Panela"
 #, c-format
 msgid "Lo&cation Pane"
 msgstr "Kokalek&u Panela"
+
+msgid "Output Pane"
+msgstr ""
 
 #, c-format
 msgid "Ne&xt Conflict\tAlt+Shift+Down"
@@ -1440,6 +1446,9 @@ msgstr ""
 msgid "&Duplicate Plugin..."
 msgstr ""
 
+msgid "Clear &All"
+msgstr ""
+
 #, c-format
 msgid "About WinMerge"
 msgstr "WinMergeri buruz"
@@ -1536,6 +1545,9 @@ msgstr "Egoera:"
 #, c-format
 msgid "Help"
 msgstr "Laguntza"
+
+msgid "&Options..."
+msgstr "&Aukerak..."
 
 #, c-format
 msgid "General"
@@ -2473,7 +2485,7 @@ msgid "Backup Files"
 msgstr "Babeskopia Agiriak"
 
 #, c-format
-msgid "Create backup files in:"
+msgid "Create backup files for:"
 msgstr "Sortu babeskopia agiriak hemen:"
 
 #, c-format
@@ -2485,7 +2497,7 @@ msgid "Fil&e compare"
 msgstr "A&giri alderaketa"
 
 #, c-format
-msgid "Create backup files into:"
+msgid "Create backup files in:"
 msgstr "Sortu babeskopia agiriak honen barnean:"
 
 #, c-format
@@ -3179,6 +3191,13 @@ msgstr "%1 Ezberdintasun Aurkiturik"
 #, c-format
 msgid "1 Difference Found"
 msgstr "1 Ezberdintasun Aurkituta"
+
+#, c-format
+msgid "%1 Errors Found"
+msgstr ""
+
+msgid "1 Error Found"
+msgstr ""
 
 #. Abbreviation from "Read Only"
 #, c-format
@@ -4909,6 +4928,49 @@ msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ct
 msgstr ""
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2 and %3"
+msgstr ""
+
+msgid "Comparison completed"
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2: "
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2 and %3: "
+msgstr ""
+
+msgid "File saved"
+msgstr ""
+
+msgid "Copying files..."
+msgstr ""
+
+msgid "Moving files..."
+msgstr ""
+
+msgid "Deleting files..."
+msgstr ""
+
+msgid "Recycle Bin"
+msgstr ""
+
+msgid "Permanently deleted"
+msgstr ""
+
+msgid "File operation completed successfully"
+msgstr ""
+
+msgid "File operation canceled"
 msgstr ""
 
 msgid "Prettification"

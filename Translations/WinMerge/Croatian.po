@@ -392,8 +392,8 @@ msgid "&Paste\tCtrl+V"
 msgstr "&Zalijepi\tCtrl+V"
 
 #, c-format
-msgid "&Options..."
-msgstr "Pos&tavke..."
+msgid "&Options...\tCtrl+,"
+msgstr "Pos&tavke...\tCtrl+,"
 
 #, c-format
 msgid "&View"
@@ -429,6 +429,9 @@ msgid "&Huge"
 msgstr ""
 
 msgid "Men&u Bar"
+msgstr ""
+
+msgid "&Output Pane"
 msgstr ""
 
 #, c-format
@@ -919,6 +922,9 @@ msgstr "Panel &razlika"
 #, c-format
 msgid "Lo&cation Pane"
 msgstr "Panel &položaja"
+
+msgid "Output Pane"
+msgstr ""
 
 #, c-format
 msgid "Ne&xt Conflict\tAlt+Shift+Down"
@@ -1437,6 +1443,9 @@ msgstr ""
 msgid "&Duplicate Plugin..."
 msgstr ""
 
+msgid "Clear &All"
+msgstr ""
+
 #, c-format
 msgid "About WinMerge"
 msgstr "O WinMerge"
@@ -1533,6 +1542,9 @@ msgstr "Status:"
 #, c-format
 msgid "Help"
 msgstr "Pomoć"
+
+msgid "&Options..."
+msgstr "Pos&tavke..."
 
 #, c-format
 msgid "General"
@@ -2471,7 +2483,7 @@ msgid "Backup Files"
 msgstr "Sigurnost"
 
 #, c-format
-msgid "Create backup files in:"
+msgid "Create backup files for:"
 msgstr "Pohrani rezervnu datoteku pri:"
 
 #, c-format
@@ -2483,7 +2495,7 @@ msgid "Fil&e compare"
 msgstr "Usporedbi &datoteka"
 
 #, c-format
-msgid "Create backup files into:"
+msgid "Create backup files in:"
 msgstr "Pohrani rezervnu datoteku u:"
 
 #, c-format
@@ -3177,6 +3189,13 @@ msgstr "Nađeno razlika:  %1"
 #, c-format
 msgid "1 Difference Found"
 msgstr "Nađeno razlika: 1"
+
+#, c-format
+msgid "%1 Errors Found"
+msgstr ""
+
+msgid "1 Error Found"
+msgstr ""
 
 #. Abbreviation from "Read Only"
 #, c-format
@@ -4908,6 +4927,49 @@ msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ct
 msgstr ""
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2 and %3"
+msgstr ""
+
+msgid "Comparison completed"
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2: "
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2 and %3: "
+msgstr ""
+
+msgid "File saved"
+msgstr ""
+
+msgid "Copying files..."
+msgstr ""
+
+msgid "Moving files..."
+msgstr ""
+
+msgid "Deleting files..."
+msgstr ""
+
+msgid "Recycle Bin"
+msgstr ""
+
+msgid "Permanently deleted"
+msgstr ""
+
+msgid "File operation completed successfully"
+msgstr ""
+
+msgid "File operation canceled"
 msgstr ""
 
 msgid "Prettification"

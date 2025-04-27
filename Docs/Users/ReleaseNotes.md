@@ -1,17 +1,70 @@
-# WinMerge 2.16.47 Beta Release Notes
+# WinMerge 2.16.48 Release Notes
 
 - [About This Release](#about-this-release)
+- [What Is New in 2.16.48](#what-is-new-in-21648)
 - [What Is New in 2.16.47 beta?](#what-is-new-in-21647-beta)
 - [Known issues](#known-issues)
 
-March 2025
+April 2025
 
 ## About This Release
 
-This is a WinMerge beta release which is meant for preview the current state of
-WinMerge development. This release is not recommended for the production.
+This is a WinMerge 2.16.48 stable release.
+This release replaces earlier WinMerge stable releases as a recommended release.
 
 Please submit bug reports to our bug-tracker.
+
+## What Is New in 2.16.48
+
+### General
+
+- BugFix: Setting the toolbar icons to "Extra Large" cannot save the settings.
+    (#2748)
+- FR: Add `Ctrl+,` keyboard shortcut to open Options dialog box (#2705)
+- Update Merge.rc (PR #2711)
+
+### File compare
+
+ - BugFix: [BUG} Phantom line added when identical blocks of text pasted
+     (#2702)
+ - BugFix: Fixed crash when quitting WinMerge while the search dialog is open
+ - Syntax/Pascal: Add initialization and finalization (PR #2719)
+ - Syntax/Pascal: Support multiline strings (PR #2720)
+
+### Folder compare
+
+- BugFix: Unable to compare files with zero mtime using
+    "Modified Date and Size" (#2714)
+- BugFix: Windows7 Winmerge v2.16.46.0 crash prone 
+    (#1 WinMerge crashes after successfully deleting files.) (#2746)
+
+### Webpage compare
+
+ - BugFix: Fixed an issue where comparisons could fail when tab characters
+     were present.
+ - BugFix: Fixed incorrect line wrapping in certain HTML elements.
+ - BugFix: Fixed an issue where differences within \<pre\> elements could appear
+     concatenated instead of on separate lines.
+
+### Plugins
+
+ - BugFix: ApacheTika and PlantUML plugins: Fixed issue where no error message
+     was displayed when execution failed (#715)
+ - BugFix: ApacheTika plugin: Fixed failure to run when the filename contained 
+     non-alphanumeric characters (now uses the short filename instead) (#715)
+ - AIConvertText plugin: Added models gpt-4.1, gpt-4.1-mini, and gpt-4.1-nano
+
+### Translations
+
+- Translation updates:
+  - Brazilian (PR #2706,#2715,#2726)
+  - Chinese Simplified (PR #2710,#2730)
+  - Corsican (PR #2722)
+  - French (PR #2716)
+  - Hungarian (PR #2703,#2713,#2724)
+  - Italian (PR #2704,#2723,#2737)
+  - Japanese
+  - Lithuanian (PR #2708)
 
 ## What Is New in 2.16.47 Beta
 
@@ -22,6 +75,7 @@ Please submit bug reports to our bug-tracker.
     (#2668)
 - Reduced flickering of title bar buttons and the status bar.
 - Rewrite English.pot, add JXL image extension (PR #2682)
+- Add Output Pane for Logs and Messages (PR #2663)
 
 ### File compare
 
@@ -49,7 +103,7 @@ Please submit bug reports to our bug-tracker.
 ### Color schemes
 
 - Add Visual Studio Dark color scheme (PR #2634)
-- Twilight - new dark theme (PR #1430)
+- Twilight - new dark theme (PR #2694)
 
 ### Installer
 
@@ -63,7 +117,8 @@ Please submit bug reports to our bug-tracker.
 ### Translations
 
 - Translation updates:
-  - Brazilian (PR #2675,#2688)
+  - Brazilian (PR #2675,#2688,#2697)
+  - Chinese Simplified (PR #2700) 
   - Corsican (PR #2632,#2676)
   - Hebrew (PR #2673)
   - Italian (PR #2689,#2689)

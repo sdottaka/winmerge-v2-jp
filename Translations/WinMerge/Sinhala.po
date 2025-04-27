@@ -392,8 +392,8 @@ msgid "&Paste\tCtrl+V"
 msgstr "ඇලවීම\tCtrl+V"
 
 #, c-format
-msgid "&Options..."
-msgstr "&විකල්පයන්..."
+msgid "&Options...\tCtrl+,"
+msgstr "&විකල්පයන්...\tCtrl+,"
 
 #, c-format
 msgid "&View"
@@ -429,6 +429,9 @@ msgid "&Huge"
 msgstr ""
 
 msgid "Men&u Bar"
+msgstr ""
+
+msgid "&Output Pane"
 msgstr ""
 
 #, c-format
@@ -919,6 +922,9 @@ msgstr "Diff &Pane"
 #, fuzzy, c-format
 msgid "Lo&cation Pane"
 msgstr "Lo&cation Pane"
+
+msgid "Output Pane"
+msgstr ""
 
 #, c-format
 msgid "Ne&xt Conflict\tAlt+Shift+Down"
@@ -1437,6 +1443,9 @@ msgstr ""
 msgid "&Duplicate Plugin..."
 msgstr ""
 
+msgid "Clear &All"
+msgstr ""
+
 #, c-format
 msgid "About WinMerge"
 msgstr "WinMerge ගැන"
@@ -1533,6 +1542,9 @@ msgstr "තත්වය:"
 #, c-format
 msgid "Help"
 msgstr "උදව් "
+
+msgid "&Options..."
+msgstr "&විකල්පයන්..."
 
 #, c-format
 msgid "General"
@@ -2469,7 +2481,7 @@ msgid "Backup Files"
 msgstr "රක්ෂිත ලිපි ගොනු"
 
 #, c-format
-msgid "Create backup files in:"
+msgid "Create backup files for:"
 msgstr "රක්ෂිත ලිපි ගොනු තුළ නිර්මාණය"
 
 #, c-format
@@ -2481,7 +2493,7 @@ msgid "Fil&e compare"
 msgstr "ගොනු සසෑදීම "
 
 #, c-format
-msgid "Create backup files into:"
+msgid "Create backup files in:"
 msgstr "රක්ෂිත ලිපි ගොනු තුළට නිර්මාණය"
 
 #, c-format
@@ -3172,6 +3184,13 @@ msgstr "%1 වෙනස්කම් සොයාගත්තා"
 #, c-format
 msgid "1 Difference Found"
 msgstr "1 වෙනස්කම සොයා ගත්තා"
+
+#, c-format
+msgid "%1 Errors Found"
+msgstr ""
+
+msgid "1 Error Found"
+msgstr ""
 
 #. Abbreviation from "Read Only"
 #, c-format
@@ -4909,6 +4928,49 @@ msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ct
 msgstr ""
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2 and %3"
+msgstr ""
+
+msgid "Comparison completed"
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2: "
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2 and %3: "
+msgstr ""
+
+msgid "File saved"
+msgstr ""
+
+msgid "Copying files..."
+msgstr ""
+
+msgid "Moving files..."
+msgstr ""
+
+msgid "Deleting files..."
+msgstr ""
+
+msgid "Recycle Bin"
+msgstr ""
+
+msgid "Permanently deleted"
+msgstr ""
+
+msgid "File operation completed successfully"
+msgstr ""
+
+msgid "File operation canceled"
 msgstr ""
 
 msgid "Prettification"

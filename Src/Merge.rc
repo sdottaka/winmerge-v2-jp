@@ -344,7 +344,7 @@ BEGIN
     BEGIN
         MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
         MENUITEM SEPARATOR
-        MENUITEM "&Options...",                 ID_OPTIONS
+        MENUITEM "&Options...\tCtrl+,",         ID_OPTIONS
     END
     POPUP "&View"
     BEGIN
@@ -362,6 +362,7 @@ BEGIN
             MENUITEM "&Huge",                       ID_TOOLBAR_HUGE
         END
         MENUITEM "Men&u Bar",                   ID_VIEW_MENU_BAR
+        MENUITEM "&Output Pane",                ID_VIEW_OUTPUT_BAR
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
     END
     POPUP "&Tools"
@@ -453,7 +454,7 @@ BEGIN
     BEGIN
         MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECT_ALL
         MENUITEM SEPARATOR
-        MENUITEM "&Options...",                 ID_OPTIONS
+        MENUITEM "&Options...\tCtrl+,",         ID_OPTIONS
     END
     POPUP "&View"
     BEGIN
@@ -510,6 +511,7 @@ BEGIN
             MENUITEM "&Huge",                       ID_TOOLBAR_HUGE
         END
         MENUITEM "Men&u Bar",                   ID_VIEW_MENU_BAR
+        MENUITEM "&Output Pane",                ID_VIEW_OUTPUT_BAR
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
         MENUITEM SEPARATOR
         MENUITEM "Com&pare Statistics...",      ID_VIEW_DIR_STATISTICS
@@ -688,7 +690,7 @@ BEGIN
         END
         MENUITEM "&Go to...\tCtrl+G",           ID_EDIT_WMGOTO
         MENUITEM SEPARATOR
-        MENUITEM "&Options...",                 ID_OPTIONS
+        MENUITEM "&Options...\tCtrl+,",         ID_OPTIONS
     END
     POPUP "&View"
     BEGIN
@@ -756,6 +758,7 @@ BEGIN
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
         MENUITEM "Diff &Pane",                  ID_VIEW_DETAIL_BAR
         MENUITEM "Lo&cation Pane",              ID_VIEW_LOCATION_BAR
+        MENUITEM "Output Pane",                 ID_VIEW_OUTPUT_BAR
         MENUITEM SEPARATOR
         MENUITEM "Refresh\tF5",                 ID_REFRESH
     END
@@ -1321,6 +1324,15 @@ BEGIN
     END
 END
 
+IDR_POPUP_OUTPUTVIEW MENU
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM "Clear &All",                  ID_EDIT_CLEAR_ALL
+    END
+END
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1372,6 +1384,7 @@ BEGIN
     "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
     "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
     "Z",            ID_EDIT_REDO,           VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_OEM_COMMA,   ID_OPTIONS,             VIRTKEY, CONTROL, NOINVERT
     VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
     VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
     VK_DOWN,        ID_NEXTDIFF,            VIRTKEY, ALT, NOINVERT
@@ -2317,10 +2330,10 @@ STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
 CAPTION "Backup Files"
 FONT 8, FONTNAME, 0, 0, 0x1
 BEGIN
-    LTEXT           "Create backup files in:",IDC_STATIC,7,6,269,10
+    LTEXT           "Create backup files for:",IDC_STATIC,7,6,269,10
     CONTROL         "&Folder compare",IDC_BACKUP_FOLDERCMP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,18,259,10
     CONTROL         "Fil&e compare",IDC_BACKUP_FILECMP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,30,259,10
-    LTEXT           "Create backup files into:",IDC_STATIC,7,42,269,10
+    LTEXT           "Create backup files in:",IDC_STATIC,7,42,269,10
     CONTROL         "&Original file's folder",IDC_BACKUP_ORIGFOLD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,17,54,259,10
     CONTROL         "&Global backup folder:",IDC_BACKUP_GLOBALFOLD,"Button",BS_AUTORADIOBUTTON,17,66,259,10
     EDITTEXT        IDC_BACKUP_FOLDER,29,78,195,14,ES_AUTOHSCROLL | WS_GROUP
@@ -3684,6 +3697,8 @@ BEGIN
     IDS_DIFF_NUMBER_STATUS_FMT "Difference %1 of %2"
     IDS_NO_DIFF_SEL_FMT     "%1 Differences Found"
     IDS_1_DIFF_FOUND        "1 Difference Found"
+    IDS_NO_ERR_SEL_FMT      "%1 Errors Found"
+    IDS_1_ERR_FOUND         "1 Error Found"
     IDS_STATUSBAR_READONLY  "RO" //#. Abbreviation from "Read Only"
 END
 
@@ -4179,6 +4194,7 @@ STRINGTABLE
 BEGIN
     IDS_LOCBAR_CAPTION      "Location Pane"
     IDS_DIFFBAR_CAPTION     "Diff Pane"
+    IDS_OUTPUTBAR_CAPTION   "Output Pane"
 END
 
 // CREATE PATCH
@@ -4622,6 +4638,23 @@ END
 STRINGTABLE
 BEGIN
     IDS_VIEW_MENU_BAR      "Men&u Bar"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_LOG_COMPARING_2     "Comparing %1 with %2"
+    IDS_LOG_COMPARING_3     "Comparing %1 with %2 and %3"
+    IDS_LOG_COMPARE_COMPLETED "Comparison completed"
+    IDS_LOG_COMPARE_ERROR_2 "Failed to compare %1 with %2: "
+    IDS_LOG_COMPARE_ERROR_3 "Failed to compare %1 with %2 and %3: "
+    IDS_LOG_FILE_SAVED      "File saved"
+    IDS_LOG_COPYING_FILES   "Copying files..."
+    IDS_LOG_MOVING_FILES    "Moving files..."
+    IDS_LOG_DELETING_FILES  "Deleting files..."
+    IDS_LOG_RECYCLEBIN      "Recycle Bin"
+    IDS_LOG_PERMANENTLY_DELETED "Permanently deleted"
+    IDS_LOG_FILEOPERATION_COMPLETED  "File operation completed successfully"
+    IDS_LOG_FILEOPERATION_CANCELED "File operation canceled"
 END
 
 #endif    // English (United States) resources

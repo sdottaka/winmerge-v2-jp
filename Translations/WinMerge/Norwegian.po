@@ -351,8 +351,8 @@ msgstr "&Rediger"
 msgid "&Paste\tCtrl+V"
 msgstr "&Lim inn\tCtrl+V"
 
-msgid "&Options..."
-msgstr "&Innstillinger..."
+msgid "&Options...\tCtrl+,"
+msgstr "&Innstillinger...\tCtrl+,"
 
 msgid "&View"
 msgstr "&Vis"
@@ -382,6 +382,9 @@ msgid "&Huge"
 msgstr ""
 
 msgid "Men&u Bar"
+msgstr ""
+
+msgid "&Output Pane"
 msgstr ""
 
 msgid "&Status Bar"
@@ -764,6 +767,9 @@ msgstr "&Forskjellspanel"
 
 msgid "Lo&cation Pane"
 msgstr "L&okaliseringspanel"
+
+msgid "Output Pane"
+msgstr ""
 
 msgid "Ne&xt Conflict\tAlt+Shift+Down"
 msgstr "Neste k&onflikt\tAlt+Shift+Down"
@@ -1208,6 +1214,9 @@ msgstr ""
 msgid "&Duplicate Plugin..."
 msgstr ""
 
+msgid "Clear &All"
+msgstr ""
+
 msgid "About WinMerge"
 msgstr "Om WinMerge"
 
@@ -1282,6 +1291,9 @@ msgstr "Status:"
 
 msgid "Help"
 msgstr "Hjelp"
+
+msgid "&Options..."
+msgstr "&Innstillinger..."
 
 msgid "General"
 msgstr "Generelt"
@@ -2043,7 +2055,7 @@ msgstr ""
 msgid "Backup Files"
 msgstr "Sikkerhetskopifiler"
 
-msgid "Create backup files in:"
+msgid "Create backup files for:"
 msgstr "Opprett sikkerhetskopifiler i:"
 
 msgid "&Folder compare"
@@ -2052,7 +2064,7 @@ msgstr "&Mappe-sammenligning"
 msgid "Fil&e compare"
 msgstr "&Fil-sammenligning"
 
-msgid "Create backup files into:"
+msgid "Create backup files in:"
 msgstr "Opprett sikkerhetskopifiler til:"
 
 msgid "&Original file's folder"
@@ -2678,6 +2690,13 @@ msgstr "%1 forskjeller funnet"
 
 msgid "1 Difference Found"
 msgstr "1 forskjell funnet"
+
+#, c-format
+msgid "%1 Errors Found"
+msgstr ""
+
+msgid "1 Error Found"
+msgstr ""
 
 #. Abbreviation from "Read Only"
 msgid "RO"
@@ -4319,6 +4338,49 @@ msgid "\nCopy to Right and Advance (Ctrl+Alt+Right)\n(Ctrl+Alt+Wheel Right)\n(Ct
 msgstr ""
 
 msgid "\nCopy to Left and Advance (Ctrl+Alt+Left)\n(Ctrl+Alt+Wheel Left)\n(Ctrl+Alt+Shift+Wheel Up)"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2"
+msgstr ""
+
+#, c-format
+msgid "Comparing %1 with %2 and %3"
+msgstr ""
+
+msgid "Comparison completed"
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2: "
+msgstr ""
+
+#, c-format
+msgid "Failed to compare %1 with %2 and %3: "
+msgstr ""
+
+msgid "File saved"
+msgstr ""
+
+msgid "Copying files..."
+msgstr ""
+
+msgid "Moving files..."
+msgstr ""
+
+msgid "Deleting files..."
+msgstr ""
+
+msgid "Recycle Bin"
+msgstr ""
+
+msgid "Permanently deleted"
+msgstr ""
+
+msgid "File operation completed successfully"
+msgstr ""
+
+msgid "File operation canceled"
 msgstr ""
 
 msgid "Prettification"
