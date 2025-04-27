@@ -63,7 +63,7 @@ AppPublisher=Thingamahoochie Software
 AppPublisherURL=https://winmergejp.bitbucket.io
 AppSupportURL=https://winmergejp.bitbucket.io
 AppUpdatesURL=https://winmergejp.bitbucket.io
-AppCopyright=Copyright (c) 1996-{#CurYear} Dean P. Grimm / Thingamahoochie Software
+AppCopyright=(c) 1996-{#CurYear} Dean P. Grimm / Thingamahoochie Software
 
 ; Installer executable's version resource info
 VersionInfoCompany=https://winmergejp.bitbucket.io
