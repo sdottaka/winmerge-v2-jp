@@ -58,7 +58,7 @@
 [Setup]
 AppName=WinMerge
 AppVersion={#AppVersion}
-AppVerName=WinMerge {#AppVersion} {#ARCH}
+AppVerName=WinMerge {#ARCH}
 AppPublisher=Thingamahoochie Software
 AppPublisherURL=https://winmergejp.bitbucket.io
 AppSupportURL=https://winmergejp.bitbucket.io
@@ -606,6 +606,7 @@ Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\pl.po; DestDir: {app}\Frhed\
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\ru.po; DestDir: {app}\Frhed\Languages; Components: Languages\Russian
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\sk.po; DestDir: {app}\Frhed\Languages; Components: Languages\Slovak
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\sl.po; DestDir: {app}\Frhed\Languages; Components: Languages\Slovenian
+Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\ta.po; DestDir: {app}\Frhed\Languages; Components: Languages\Tamil
 Source: ..\..\Build\{#ARCH}\Release\Frhed\Languages\heksedit.lng; DestDir: {app}\Frhed\Languages; Components: Core
 
 ;WinIMerge
