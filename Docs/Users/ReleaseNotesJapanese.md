@@ -1,123 +1,101 @@
-# WinMerge 2.16.48 リリースノート
+# WinMerge 2.16.50 リリースノート
 
 - [このリリースについて](#about-this-release)
-- [2.16.48 の新機能](#what-is-new-in-21648)
-- [2.16.47 beta の新機能](#what-is-new-in-21647-beta)
+- [2.16.50 の新機能](#what-is-new-in-21650)
+- [2.16.49 beta の新機能](#what-is-new-in-21649-beta)
 - [既知の問題](#known-issues)
 
-2025年4月
+2025年7月
 
 ## このリリースについて
 
-WinMerge の 2.16.48 安定版リリースです。
+WinMerge の 2.16.50 安定版リリースです。
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。
 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。
 
-## <a name="what-is-new-in-21648"></a>2.16.48 の新機能
+## <a name="what-is-new-in-21650"></a>2.16.50 の新機能
+
+### 一般
+
+- 最大化状態でタイトルバーの最上端をクリックした場合に、それをタブボタン内のクリックとして扱うようにした。（[PR #2828](https://github.com/WinMerge/winmerge/pull/2828)）(PRをいただきました。ありがとうございます。)
+
+### 翻訳
+
+* 不具合修正: 4つの「Disabled」をそれぞれ別々に翻訳できるようにし、All rights reserved も翻訳可能にした。（[#2852](https://github.com/WinMerge/winmerge/issues/2852)）
+* 翻訳の更新:
+
+  * Brazilian (PR #2849)
+  * Chinese Simplified (PR #2856)
+  * Hungarian (PR #2857,#2859)
+  * Italian (PR #2850,#2851,#2858)
+  * Japanese
+  * Swedish
+  * Russian (PR #2847)
+
+## <a name="what-is-new-in-21649-beta"></a>2.16.49 Beta の新機能
 
 ### 全般
 
-- 不具合修正: ツールバーアイコンを「特大」に設定すると、設定を保存できなかった問題を修正した。（[#2748](https://github.com/WinMerge/winmerge/issues/2748)）
-- オプションダイアログを開くためのキーボードショートカット `Ctrl+,` を追加した。（[#2705](https://github.com/WinMerge/winmerge/issues/2705)）
-- Merge.rc を更新した。（[PR #2711](https://github.com/WinMerge/winmerge/pull/2711)）(PRをいただきました。ありがとうございます。)
+- Shift+マウスホイールでタブが切り替えられるようにした。（[PR #2821](https://github.com/WinMerge/winmerge/pull/2821)）(PRをいただきました。ありがとうございます。)
+
+### 外観
+
+- テーマ付きサイズグリップを使用し、ツールバーのツールチップをコントロールバーの代わりに使用するようにした。（[PR #2769](https://github.com/WinMerge/winmerge/pull/2769)）(PRをいただきました。ありがとうございます。)
 
 ### ファイル比較
 
-- 不具合修正: 同一のテキストブロックを貼り付けた際に、存在しない行が追加される問題を修正した。（[#2702](https://github.com/WinMerge/winmerge/issues/2702)）
-- 不具合修正: 検索ダイアログを開いたまま WinMerge を終了するとクラッシュする問題を修正した。
-- Pascal シンタックスハイライト: `initialization` と `finalization` を追加した。（[PR #2719](https://github.com/WinMerge/winmerge/pull/2719)）(PRをいただきました。ありがとうございます。)
-- Pascal シンタックスハイライト: 複数行文字列のサポートを追加した。（[PR #2720](https://github.com/WinMerge/winmerge/pull/2720)）(PRをいただきました。ありがとうございます。)
+- 不具合修正：複数の差異ブロックをコピーする際にクラッシュすることがあるのを修正した。
+- シンタックスハイライト: Delphi のコンパイラディレクティブをサポートした。（[#2814](https://github.com/WinMerge/winmerge/issues/2814)）
+- ロケーションパネルをクリックしたときに自動的に該当行へ移動するかどうかを切り替えるオプションを追加した。（[PR #2827](https://github.com/WinMerge/winmerge/pull/2827)）(PRをいただきました。ありがとうございます。)
 
 ### フォルダー比較
 
-- 不具合修正: 「更新日時とサイズ」で比較する際に、mtime がゼロのファイルを比較できない問題を修正した。（[#2714](https://github.com/WinMerge/winmerge/issues/2714)）
-- 不具合修正: ファイル削除後にクラッシュすることがある問題を修正した。（[#2746](https://github.com/WinMerge/winmerge/issues/2746)）
-
-### Webページ比較
-
-- 不具合修正: タブ文字が含まれると比較が失敗する問題を修正した。
-- 不具合修正: 特定の HTML 要素内で行の折り返しが正しく行われない問題を修正した。
-- 不具合修正: `<pre>` 要素内の差分が、本来別々の行で表示されるべきところを連結して表示されることがある問題を修正した。
-
-### プラグイン
-
-- 不具合修正: ApacheTika, PlantUML プラグイン: 実行に失敗してもエラーメッセージが表示されない問題を修正した。（[#715](https://github.com/WinMerge/winmerge/issues/715)）
-- 不具合修正: ApacheTika プラグイン: ファイル名に英数字以外の文字が含まれていると実行に失敗する問題を修正した。(短いファイル名を使用するようにした。)（[#715](https://github.com/WinMerge/winmerge/issues/715)）
-- AIConvertText プラグイン: gpt-4.1、gpt-4.1-mini、gpt-4.1-nano モデルを追加した。
-
-### 翻訳
-
-- 翻訳の更新:
-  - Brazilian (PR #2706,#2715,#2726)
-  - Chinese Simplified (PR #2710,#2730)
-  - Corsican (PR #2722)
-  - French (PR #2716)
-  - Hungarian (PR #2703,#2713,#2724)
-  - Italian (PR #2704,#2723,#2737)
-  - Japanese
-  - Lithuanian (PR #2708)
-
-## <a name="what-is-new-in-21647"></a>2.16.47 Beta の新機能
-
-### 全般
-
-- 不具合修正: `/inifile` コマンドラインオプションに指定したINIファイルがドライブ直下にある場合にそのINIファイルが無視されてしまう問題を修正した。 ([#2635](https://github.com/WinMerge/winmerge/issues/2635))  
-- 不具合修正: ウィンドウが非アクティブになるときにも「別のアプリケーションが更新しました」と表示される問題を修正した。 ([#2668](https://github.com/WinMerge/winmerge/issues/2668))  
-- タイトルバーのボタンやステータスバーのちらつきを軽減した。
-- メニュー、オプションウインドウ等の英語テキストの書き直しを行った。([PR #2682](https://github.com/WinMerge/winmerge/pull/2682))  (PRをいただきました。ありがとうございます。)
-- エラー等のログを表示するための出力ペインを追加した。 (PR #2663)
-
-### ファイル比較
-
-- 不具合修正: 置換フィルターの正規表現内の `$` が「改行文字のの違いを無視する」オプション有効時に正しく動作しない問題を修正した。 ([#2640](https://github.com/WinMerge/winmerge/issues/2640))  
-- 不具合修正: Python の複数行文字列の構文強調が 1 行を超えると正しく動作しない問題を修正した。 ([#2643](https://github.com/WinMerge/winmerge/issues/2643))  
-- 不具合修正: 展開プラグインと比較前処理プラグインを両方使用すると、ステータスバーの `&` がアンダーラインとして表示される問題を修正した。
-- 不具合修正: オプションウインドウのコードページセクションのコードページリストとファイル比較ウィンドウでコードページリストが一致していない問題を修正した。 ([#2678](https://github.com/WinMerge/winmerge/issues/2678))  
-- C 言語の構文強調のキーワードリストを更新した。 ([PR #2669](https://github.com/WinMerge/winmerge/pull/2669))  (PRをいただきました。ありがとうございます。)
-
-### 画像比較
-
-- オプションウインドウの[比較/画像]セクションのパターンに.jxl 拡張子を追加した。(jxlファイルを開くには、Windows に JPEG XL Image Extension がインストールされている必要があります。) ([PR #2682](https://github.com/WinMerge/winmerge/pull/2682))(PRをいただきました。ありがとうございます。)
+- 不具合修正：存在しないファイルのタイムスタンプが表示される問題（[#2764](https://github.com/WinMerge/winmerge/issues/2764)）
+- 不具合修正：ファイルフィルターを使用している場合、フォルダーを選択しての[選択項目を最新に更新]を選択するとフォルダーの比較結果がランダムに失われる問題を修正した。（[#2792](https://github.com/WinMerge/winmerge/issues/2792)）
+- フォルダー比較ウィンドウで複数ファイルを一括で比較できる機能を追加した。（[#324](https://github.com/WinMerge/winmerge/issues/324), [PR #2825](https://github.com/WinMerge/winmerge/pull/2825)）(PRをいただきました。ありがとうございます。)
+- フィルターシステムの改善：式のサポートとUIの強化。(フィルター式の例:`*.cpp;*.h|fe:Size<10KB` ・・・拡張子cppとhのファイルでファイルサイズが10KBのファイルを比較) （[PR #2802](https://github.com/WinMerge/winmerge/pull/2802)）
 
 ### オプションダイアログ
 
-- 不具合修正: シェル統合オプションで「シェル拡張の登録を解除」ボタンをクリックした際に 32bit版の`ShellExtensionU.dll` が正しく登録解除されない問題を修正した。 ([#2419](https://github.com/WinMerge/winmerge/issues/2419))  
-- 不具合修正: オプションウインドウの[比較/画像]セクションのデフォルトボタンを押してもすべてリセットされない問題を修正した。([PR #2655](https://github.com/WinMerge/winmerge/pull/2655))  (PRをいただきました。ありがとうございます。)
+- 不具合修正：比較 > フォルダー ページの「～切替閾値」オプションが正しく有効/無効にならない問題を修正した。（[PR #2819](https://github.com/WinMerge/winmerge/pull/2819)）(PRをいただきました。ありがとうございます。)
 
-### カラースキーム
+### コマンドライン
 
-- VS Dark カラースキームを追加した。 ([PR #2634](https://github.com/WinMerge/winmerge/pull/2634))  (PRをいただきました。ありがとうございます。)
-- Twilight カラースキームを追加した。 ([PR #1430](https://github.com/WinMerge/winmerge/pull/1430))  (PRをいただきました。ありがとうございます。)
+- 不具合修正：異なるカレントディレクトリのWinMergeが実行中のまま、別のカレントディレクトリで`/s` オプションを指定して相対パスでファイルを比較するとファイル比較に失敗する問題を修正した。
+
+### アーカイブサポート
+
+- 7-Zip をバージョン25.00 に更新した。
 
 ### インストーラー
 
-- 不具合修正: Windows 10 x64 で管理者権限なしのユーザーがインストールするとコンテキストメニューが表示されない問題を修正した。 ([#2638](https://github.com/WinMerge/winmerge/issues/2638)) ([PR #2639](https://github.com/WinMerge/winmerge/pull/2639))  
-
-### マニュアル
-
-- ヘルプページ → 付録 A. ショートカットキーを更新した。 ([#2659](https://github.com/WinMerge/winmerge/issues/2659))  
+- インストーラー：Windowsの「プログラムと機能」に表示される名前にバージョン番号が含まれないようにした。（[#2798](https://github.com/WinMerge/winmerge/issues/2798)）
 
 ### 翻訳
 
 - 翻訳の更新:
-  - Brazilian (PR #2675,#2688,#2697)
-  - Chinese Simplified (PR #2700) 
-  - Corsican (PR #2632,#2676)
-  - Hebrew (PR #2673)
-  - Italian (PR #2689,#2689)
+  - Brazilian (PR #2829)
+  - Bulgarian (PR #2763)
+  - Chinese Simplified (PR #2831)
+  - Chinese Traditional (PR #2838)
+  - Corsican (PR #2844)
+  - French (PR #2754,#2761,#2762)
+  - Hungarian (PR #2836)
+  - Italian (PR #2832)
   - Japanese
-  - Polish (PR #2671)
-  - Portuguese (PR #2650,#2695)
-  - Swedish (PR #2679)
-  - Turkish (PR #2636)
+  - Korean (PR #2766,#2845)
+  - Lithuanian (PR #2799,#2805,#2826,#2830)
+  - Portuguese (PR #2768)
+  - Russian (PR #2760,#2840)
+  - Swedish
+  - Tamil (PR #2812,#2813)
+  - Turkish (PR #2782)
 
 ### その他
 
-- 不具合修正: VS2022 17.13.0 でのビルドエラーを修正した。 ([PR #2645](https://github.com/WinMerge/winmerge/pull/2645))  (PRをいただきました。ありがとうございます。)
-- 不具合修正: `zopflipng` を使用して `splash.png` のサイズを削減した。 ([PR #2646](https://github.com/WinMerge/winmerge/pull/2646))  (PRをいただきました。ありがとうございます。)
-- `README` を更新した。([PR #2696](https://github.com/WinMerge/winmerge/pull/2696))  (PRをいただきました。ありがとうございます。)
+- GetTranslationsStatus.py の文法警告を修正した。(PR #2751)（[PR #2751](https://github.com/WinMerge/winmerge/pull/2751)）(PRをいただきました。ありがとうございます。)
 
 ## <a name="known-issues"></a>既知の問題
 
