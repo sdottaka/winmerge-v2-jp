@@ -111,6 +111,8 @@ public:
 	bool GetAutoMaxWidth() const { return m_tabCtrl.GetAutoMaxWidth(); }
 	void SetAutoMaxWidth(bool bAutoMaxWidth) { m_tabCtrl.SetAutoMaxWidth(bAutoMaxWidth); }
 	int GetItemCount() const { return m_tabCtrl.GetItemCount(); }
+	int GetItemIndexFromPoint(CPoint point, bool bRelatively) const;
+	bool ForwardMouseEventToTabCtrlIfNeeded(CPoint& point, UINT message);
 
 	virtual void OnUpdateCmdUI(CFrameWnd* pTarget, BOOL bDisableIfNoHndler) {}
 	virtual CSize CalcFixedLayout(BOOL bStretch, BOOL bHorz);

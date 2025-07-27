@@ -755,6 +755,62 @@ BOOL CMDITabBar::Create(CMDIFrameWnd* pMainFrame)
 	return TRUE;
 }
 
+/**
+ * @brief Get tab item index from point
+ */
+int CMDITabBar::GetItemIndexFromPoint(CPoint point, bool bRelatively) const
+{
+	if (bRelatively)
+	{
+		CRect rcTabCtrl;
+		m_tabCtrl.GetClientRect(&rcTabCtrl);
+
+		m_tabCtrl.ScreenToClient(&point);
+		point.y = rcTabCtrl.Height() / 2;
+	}
+
+	TCHITTESTINFO hit;
+	hit.pt = point;
+	return m_tabCtrl.HitTest(&hit);
+}
+
+/**
+ * @brief Forward mouse events to the tab control if needed.
+ */
+bool CMDITabBar::ForwardMouseEventToTabCtrlIfNeeded(CPoint& point, UINT message)
+{
+	if (!(m_bOnTitleBar && m_titleBar.GetMaximized()))
+		return false;
+
+	int nItemHitTest = GetItemIndexFromPoint(point, true);
+	if (nItemHitTest == -1)
+		return false;
+
+	CRect rcHitItem;
+	m_tabCtrl.GetItemRect(nItemHitTest, &rcHitItem);
+	m_tabCtrl.ScreenToClient(&point);
+
+	if (point.y <= rcHitItem.top)
+		point.y = rcHitItem.top + 1;
+	else if (point.y >= rcHitItem.bottom)
+		point.y = rcHitItem.bottom - 1;
+
+	switch (message)
+	{
+	case WM_LBUTTONDOWN:
+	case WM_LBUTTONUP:
+		m_tabCtrl.SendMessage(message, MK_LBUTTON, MAKELPARAM(point.x, point.y));
+		break;
+	case WM_CONTEXTMENU:
+		m_tabCtrl.SendMessage(WM_CONTEXTMENU, (WPARAM)m_tabCtrl.m_hWnd, MAKELPARAM(point.x, point.y));
+		break;
+	default:
+		break;
+	}
+
+	return true;
+}
+
 /** 
  * @brief This method calculates the horizontal size of a control bar.
  */
@@ -802,11 +858,15 @@ void CMDITabBar::OnNcLButtonDblClk(UINT nHitTest, CPoint point)
 
 void CMDITabBar::OnNcLButtonDown(UINT nHitTest, CPoint point)
 {
+	if (ForwardMouseEventToTabCtrlIfNeeded(point, WM_LBUTTONDOWN))
+		return;
 	m_titleBar.OnNcLButtonDown(nHitTest, point);
 }
 
 void CMDITabBar::OnNcLButtonUp(UINT nHitTest, CPoint point)
 {
+	if (ForwardMouseEventToTabCtrlIfNeeded(point, WM_LBUTTONUP))
+		return;
 	m_titleBar.OnNcLButtonUp(nHitTest, point);
 }
 
@@ -817,6 +877,8 @@ void CMDITabBar::OnNcRButtonDown(UINT nHitTest, CPoint point)
 
 void CMDITabBar::OnNcRButtonUp(UINT nHitTest, CPoint point)
 {
+	if (ForwardMouseEventToTabCtrlIfNeeded(point, WM_CONTEXTMENU))
+		return;
 	m_titleBar.OnNcRButtonUp(nHitTest, point);
 }
 
