@@ -31,7 +31,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "UniFile.h"
 #include <algorithm>
 #include <cassert>
-#include <Windows.h>
+#include <windows.h>
 
 constexpr int MAX_PATH_FULL = 32767;
 
@@ -355,6 +355,12 @@ void COption::Reset()
 		break;
 	case varprop::VT_TIME:
 		m_value.SetTime(m_valueDef.GetTime());
+		break;
+	case varprop::VT_NULL:
+		// Do nothing for VT_NULL
+		break;
+	default:
+		// Do nothing for unknown types
 		break;
 	}
 }

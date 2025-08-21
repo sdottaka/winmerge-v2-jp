@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2025-04-17 09:05+0000\n"
-"PO-Revision-Date: 2025-07-24 12:56+0200\n"
+"PO-Revision-Date: 2025-08-17 08:28+0200\n"
 "Last-Translator: Lolo S. <slolo2000@hotmail.com>\n"
 "Language-Team: French <winmerge-translate@lists.sourceforge.net>\n"
 "Language: fr\n"
@@ -1792,8 +1792,14 @@ msgstr "Effacer"
 msgid "Colors"
 msgstr "Couleurs"
 
-msgid "Color Scheme:"
-msgstr "Schéma de couleur :"
+msgid "Color &mode:"
+msgstr "Mode de &couleur :"
+
+msgid "&Light mode scheme:"
+msgstr "&Schéma du mode clair :"
+
+msgid "&Dark mode scheme:"
+msgstr "&Schéma du mode sombre :"
 
 msgid "Background"
 msgstr "Arrière-plan"
@@ -2640,6 +2646,42 @@ msgstr "Extension de fichier &Script :"
 
 msgid "Script &body:"
 msgstr "&Corps du script :"
+
+msgid "Font"
+msgstr "Police"
+
+msgid "&Font:"
+msgstr "&Police :"
+
+msgid "Font st&yle:"
+msgstr "St&yle de police :"
+
+msgid "&Size:"
+msgstr "&Taille :"
+
+msgid "Effects"
+msgstr "Effets"
+
+msgid "Stri&keout"
+msgstr "Ba&rré"
+
+msgid "&Underline"
+msgstr "&Souligner"
+
+msgid "&Color:"
+msgstr "&Couleur :"
+
+msgid "Sample"
+msgstr "Exemple"
+
+msgid "AaBbYyZz"
+msgstr "AaBbYyZz"
+
+msgid "Sc&ript:"
+msgstr "Sc&ript :"
+
+msgid "<A>Show more fonts</A>"
+msgstr "<A>Afficher plus de polices</A>"
 
 msgid "EXT"
 msgstr "EXT"
@@ -4320,7 +4362,7 @@ msgstr ""
 "%1 disponible (vous avez %2). Télécharger maintenant ?"
 
 msgid " - All rights reserved."
-msgstr ""
+msgstr " - Tous droits réservés."
 
 msgid "Failed to download latest version information"
 msgstr "Échec du téléchargement des informations sur la plus récente version"
@@ -4340,7 +4382,7 @@ msgstr "Aller à la ligne déplacée\tCtrl+Maj+G"
 
 msgctxt "Options dialog|General|Open dialog Auto completion"
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "From file system"
 msgstr "A partir du système de fichier"
@@ -4439,7 +4481,7 @@ msgstr "DirectWrite symétrique naturel"
 
 msgctxt "Options dialog|General|Close windows with Esc"
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "MDI child window or main window"
 msgstr "Fenêtre enfant MDI ou fenêtre principale"
@@ -4581,7 +4623,7 @@ msgstr "Dossier d'installation"
 
 msgctxt "Options dialog|General|Single instance mode"
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "Allow only one instance to run"
 msgstr "Permettre une seule instance en exécution"
@@ -4591,7 +4633,7 @@ msgstr "Permettre une seule instance; attendre que l'instance se termine"
 
 msgctxt "Options dialog|General|Auto-reload modified files"
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivé"
 
 msgid "Only on window activated"
 msgstr "Seulement sur la fenêtre activée"
@@ -4950,6 +4992,15 @@ msgstr "Contient (regex)"
 
 msgid "Not Contains (regex)"
 msgstr "Ne contient pas (regex)"
+
+msgid "Light"
+msgstr "Clair"
+
+msgid "Dark"
+msgstr "Sombre"
+
+msgid "Follow system"
+msgstr "Suivre le système"
 
 msgid "Prettification"
 msgstr "Embellissement"

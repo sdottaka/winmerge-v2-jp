@@ -14,7 +14,9 @@
 #include "MainFrm.h"
 #include <vector>
 #include <afxinet.h>
+#if !defined(__cppcheck__)
 #include <boost/range/mfc.hpp>
+#endif
 #include "Constants.h"
 #include "Merge.h"
 #include "FileFilterHelper.h"
@@ -42,6 +44,7 @@
 #include "ConflictFileParser.h"
 #include "LineFiltersDlg.h"
 #include "SubstitutionFiltersDlg.h"
+#include "MyFontDialog.h"
 #include "paths.h"
 #include "Environment.h"
 #include "PatchTool.h"
@@ -76,6 +79,9 @@
 #include "Win_VersionHelper.h"
 #include "VersionInfo.h"
 #include "FrameWndHelper.h"
+#include "ColorSchemes.h"
+#include "OptionsSyntaxColors.h"
+#include "SysColorHook.h"
 #include <Poco/Logger.h>
 #include <Poco/AsyncChannel.h>
 #include <Poco/SimpleFileChannel.h>
@@ -237,6 +243,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	ON_WM_NCCALCSIZE()
 	ON_WM_SIZE()
 	ON_WM_SYSCOMMAND()
+	ON_WM_SETTINGCHANGE()
 	ON_UPDATE_COMMAND_UI_RANGE(CMenuBar::FIRST_MENUID, CMenuBar::FIRST_MENUID + 10, OnUpdateMenuBarMenuItem)
 	// [File] menu
 	ON_COMMAND(ID_FILE_NEW, (OnFileNew<2, ID_MERGE_COMPARE_TEXT>))
@@ -437,7 +444,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndMDIClient.SubclassWindow(m_hWndMDIClient);
 
 	if (IsWin10_OrGreater())
+	{
 		m_bTabsOnTitleBar = GetOptionsMgr()->GetBool(OPT_TABBAR_ON_TITLEBAR);
+		HWND hSelf = GetSafeHwnd();
+		if (hSelf != nullptr)
+			DarkMode::setDarkWndNotifySafe(hSelf, true);
+	}
 
 	m_wndTabBar.Update(m_bTabsOnTitleBar.value_or(false), false);
 
@@ -452,7 +464,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		TRACE0("Failed to create toolbar\n");
 		return -1;      // fail to create
 	}
-	
+
 	if (!m_bTabsOnTitleBar.value_or(false) && !m_wndTabBar.Create(this))
 	{
 		TRACE0("Failed to create tab bar\n");
@@ -1177,6 +1189,8 @@ void CMainFrame::OnHelpGnulicense()
  */
 void CMainFrame::OnOptions() 
 {
+	const DarkMode::DarkModeType dmType =
+		WinMergeDarkMode::GetDarkModeType(GetOptionsMgr()->GetInt(OPT_COLOR_MODE));
 	const bool sysColorHookEnabled = GetOptionsMgr()->GetBool(OPT_SYSCOLOR_HOOK_ENABLED);
 	const String sysColorsSerialized = GetOptionsMgr()->GetString(OPT_SYSCOLOR_HOOK_COLORS);
 	// Using singleton shared syntax colors
@@ -1227,11 +1241,19 @@ void CMainFrame::OnOptions()
 		for (auto pImgMergeFrame : GetAllImgMergeFrames())
 			pImgMergeFrame->RefreshOptions();
 
+		const DarkMode::DarkModeType dmTypeNew =
+			WinMergeDarkMode::GetDarkModeType(GetOptionsMgr()->GetInt(OPT_COLOR_MODE));
+		const bool colorModeChanged = dmType != dmTypeNew;
 		if (sysColorHookEnabled != GetOptionsMgr()->GetBool(OPT_SYSCOLOR_HOOK_ENABLED) ||
-		    sysColorsSerialized != GetOptionsMgr()->GetString(OPT_SYSCOLOR_HOOK_COLORS))
+		    sysColorsSerialized != GetOptionsMgr()->GetString(OPT_SYSCOLOR_HOOK_COLORS) ||
+			colorModeChanged)
 		{
+			DarkMode::setDarkModeConfig(static_cast<UINT>(dmTypeNew));
+			DarkMode::setDefaultColors(true);
+			DarkMode::setDarkTitleBarEx(m_hWnd, true);
 			theApp.ReloadCustomSysColors();
 			AfxGetMainWnd()->SendMessage(WM_SYSCOLORCHANGE);
+			AfxGetMainWnd()->SendMessage(WM_SETTINGCHANGE, 0, reinterpret_cast<LPARAM>(_T("ImmersiveColorSet")));
 			RedrawWindow(nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE | RDW_ALLCHILDREN);
 		}
 	}
@@ -1567,23 +1589,11 @@ void CMainFrame::UpdateFont(FRAMETYPE frame)
 void CMainFrame::OnViewSelectfont() 
 {
 	FRAMETYPE frame = GetFrameType(GetActiveFrame());
-	CHOOSEFONT cf = { sizeof CHOOSEFONT };
-	LOGFONT *lf = nullptr;
-	cf.Flags = CF_INITTOLOGFONTSTRUCT|CF_FORCEFONTEXIST|CF_SCREENFONTS;
-	if (frame == FRAME_FILE)
-		cf.Flags |= CF_FIXEDPITCHONLY; // Only fixed-width fonts for merge view
-
-	// CF_FIXEDPITCHONLY = 0x00004000L
-	// in case you are a developer and want to disable it to test with, eg, a Chinese capable font
-	if (frame == FRAME_FOLDER)
-		lf = &theApp.m_lfDir;
-	else
-		lf = &theApp.m_lfDiff;
-
-	cf.lpLogFont = lf;
-	cf.hwndOwner = m_hWnd;
-
-	if (ChooseFont(&cf))
+	LOGFONT* lf = (frame == FRAME_FOLDER) ? &theApp.m_lfDir : &theApp.m_lfDiff;
+	const DWORD dwFlags = CF_INITTOLOGFONTSTRUCT | CF_FORCEFONTEXIST | CF_SCREENFONTS |
+		((frame == FRAME_FILE) ? CF_FIXEDPITCHONLY : 0);
+	CMyFontDialog dlg(lf, dwFlags, nullptr, this);
+	if (dlg.DoModal() == IDOK)
 	{
 		Options::Font::Save(GetOptionsMgr(), frame == FRAME_FOLDER ? OPT_FONT_DIRCMP : OPT_FONT_FILECMP, lf, true);
 		UpdateFont(frame);
@@ -2692,7 +2702,9 @@ BOOL CMainFrame::CreateToolbar()
 	}
 
 	m_wndReBar.LoadStateFromString(GetOptionsMgr()->GetString(OPT_REBAR_STATE).c_str());
-
+	HWND hTip = m_wndToolBar.GetToolBarCtrl().GetToolTips()->GetSafeHwnd();
+	if (hTip != nullptr)
+		DarkMode::setDarkTooltips(hTip);
 	return TRUE;
 }
 
@@ -3975,4 +3987,51 @@ void CMainFrame::OnSysCommand(UINT nID, LPARAM lParam)
 		return;
 	}
 	__super::OnSysCommand(nID, lParam);
+}
+
+/**
+ * @brief Called when the system settings change.
+ */
+void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
+{
+	if (WinMergeDarkMode::IsImmersiveColorSet(lpszSection))
+	{
+		const DarkMode::DarkModeType dmTypeNew =
+			WinMergeDarkMode::GetDarkModeType(GetOptionsMgr()->GetInt(OPT_COLOR_MODE));
+		const DarkMode::DarkModeType dmTypeOld =
+			WinMergeDarkMode::GetDarkModeType(GetOptionsMgr()->GetInt(OPT_COLOR_MODE_EFFECTIVE));
+		if (dmTypeNew != dmTypeOld)
+		{
+			const String path = ColorSchemes::GetColorSchemePath(dmTypeNew == DarkMode::DarkModeType::dark ?
+				GetOptionsMgr()->GetString(OPT_COLOR_SCHEME_DARK) : GetOptionsMgr()->GetString(OPT_COLOR_SCHEME));
+			SysColorHook::Unhook(AfxGetInstanceHandle());
+			GetOptionsMgr()->ImportOptions(path);
+			GetOptionsMgr()->SaveOption(OPT_COLOR_MODE_EFFECTIVE, dmTypeNew == DarkMode::DarkModeType::dark ? 1 : 0);
+
+			Options::SyntaxColors::Load(GetOptionsMgr(), theApp.GetMainSyntaxColors());
+
+			DarkMode::setDarkModeConfig(static_cast<UINT>(dmTypeNew));
+			DarkMode::setDefaultColors(true);
+			DarkMode::setDarkTitleBarEx(m_hWnd, true);
+			theApp.ReloadCustomSysColors();
+
+			// Update all dirdoc settings
+			for (auto pMergeDoc : GetAllMergeDocs())
+				pMergeDoc->RefreshOptions();
+			for (auto pDirDoc : GetAllDirDocs())
+				pDirDoc->RefreshOptions();
+			for (auto pHexMergeDoc : GetAllHexMergeDocs())
+				pHexMergeDoc->RefreshOptions();
+			for (auto pImgMergeFrame : GetAllImgMergeFrames())
+				pImgMergeFrame->RefreshOptions();
+			for (auto pWebPageDiffFrame : GetAllWebPageDiffFrames())
+				pWebPageDiffFrame->RefreshOptions();
+			for (auto pOpenDoc : GetAllOpenDocs())
+				pOpenDoc->RefreshOptions();
+
+			AfxGetMainWnd()->SendMessage(WM_SYSCOLORCHANGE);
+			RedrawWindow(nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE | RDW_ALLCHILDREN);
+		}
+	}
+	__super::OnSettingChange(uFlags, lpszSection);
 }

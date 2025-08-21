@@ -17,6 +17,7 @@
 #include "Merge.h"
 #include "Constants.h"
 #include "Win_VersionHelper.h"
+#include "MergeDarkMode.h"
 
 #ifndef BCN_DROPDOWN
 #define BCN_DROPDOWN            (BCN_FIRST + 0x0002)
@@ -104,6 +105,10 @@ void PluginsListDlg::InitList()
 	// Show selection across entire row.
 	// Also enable infotips.
 	m_list.SetExtendedStyle(LVS_EX_CHECKBOXES | LVS_EX_FULLROWSELECT | LVS_EX_INFOTIP);
+
+	HWND hList = m_list.GetSafeHwnd();
+	if (hList != nullptr)
+		DarkMode::setDarkListViewCheckboxes(hList);
 
 	const int lpx = CClientDC(this).GetDeviceCaps(LOGPIXELSX);
 	auto pointToPixel = [lpx](int point) { return MulDiv(point, lpx, 72); };

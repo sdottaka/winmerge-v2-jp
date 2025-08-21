@@ -38,6 +38,7 @@
 #include "Win_VersionHelper.h"
 #include "OptionsProject.h"
 #include "Merge7zFormatMergePluginImpl.h"
+#include "MergeDarkMode.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -117,6 +118,7 @@ BEGIN_MESSAGE_MAP(COpenView, CFormView)
 	ON_MESSAGE(WM_USER + 1, OnUpdateStatus)
 	ON_WM_PAINT()
 	ON_WM_THEMECHANGED()
+	ON_WM_SETTINGCHANGE()
 	ON_WM_LBUTTONUP()
 	ON_WM_MOUSEMOVE()
 	ON_WM_WINDOWPOSCHANGING()
@@ -146,6 +148,7 @@ COpenView::COpenView()
 	, m_bIgnoreNumbers(false)
 	, m_bIgnoreCodepage(false)
 	, m_bFilterCommentsLines(false)
+	, m_bIgnoreMissingTrailingEol(false)
 	, m_nCompareMethod(0)
 	, m_hTheme(nullptr)
 {
@@ -211,6 +214,15 @@ void COpenView::OnInitialUpdate()
 		// FIXME: LoadImageFromResource() seems to fail when running on Wine 5.0.
 		m_image.Create(1, 1, 24, 0);
 	}
+	HWND hSelf = GetSafeHwnd();
+	if (hSelf != nullptr)
+	{
+		DarkMode::setWindowCtlColorSubclass(hSelf);
+		DarkMode::setChildCtrlsSubclassAndTheme(hSelf);
+	}
+
+	if (DarkMode::isExperimentalActive())
+		WinMergeDarkMode::InvertLightness(m_image);
 
 	__super::OnInitialUpdate();
 
@@ -387,7 +399,8 @@ void COpenView::OnPaint()
 	CRect rcImage(0, 0, size.cx * GetSystemMetrics(SM_CXSMICON) / 16, size.cy * GetSystemMetrics(SM_CYSMICON) / 16);
 	m_image.Draw(dc.m_hDC, rcImage, Gdiplus::InterpolationModeBicubic);
 	// And extend it to the Right boundary
-	dc.PatBlt(rcImage.Width(), 0, rc.Width() - rcImage.Width(), rcImage.Height(), PATCOPY);
+	if (!DarkMode::isExperimentalActive())
+		dc.PatBlt(rcImage.Width(), 0, rc.Width() - rcImage.Width(), rcImage.Height(), PATCOPY);
 
 	// Draw the resize gripper in the Lower Right corner.
 	CRect rcGrip = rc;
@@ -432,6 +445,34 @@ LRESULT COpenView::OnThemeChanged()
 		m_hTheme = OpenThemeData(m_hWnd, WC_SCROLLBAR);
 	}
 	return 0;
+}
+
+void COpenView::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
+{
+	if (WinMergeDarkMode::IsImmersiveColorSet(lpszSection))
+	{
+		m_image.Destroy();
+		if (!LoadImageFromResource(m_image, MAKEINTRESOURCE(IDR_LOGO), _T("IMAGE")))
+		{
+			// FIXME: LoadImageFromResource() seems to fail when running on Wine 5.0.
+			m_image.Create(1, 1, 24, 0);
+		}
+
+		HWND hSelf = GetSafeHwnd();
+		if (hSelf != nullptr)
+		{
+			DarkMode::setWindowCtlColorSubclass(hSelf);
+			DarkMode::setChildCtrlsSubclassAndTheme(hSelf);
+		}
+
+		if (DarkMode::isExperimentalActive())
+		{
+			WinMergeDarkMode::InvertLightness(m_image);
+		}
+
+		RedrawWindow(nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE | RDW_ALLCHILDREN);
+	}
+	__super::OnSettingChange(uFlags, lpszSection);
 }
 
 void COpenView::OnLButtonUp(UINT nFlags, CPoint point)

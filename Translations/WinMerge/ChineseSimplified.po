@@ -1791,8 +1791,14 @@ msgstr "清除"
 msgid "Colors"
 msgstr "颜色"
 
-msgid "Color Scheme:"
-msgstr "配色方案："
+msgid "Color &mode:"
+msgstr "色彩模式(&M)："
+
+msgid "&Light mode scheme:"
+msgstr "浅色模式方案(&L)："
+
+msgid "&Dark mode scheme:"
+msgstr "深色模式方案(&D)："
 
 msgid "Background"
 msgstr "背景"
@@ -2188,13 +2194,13 @@ msgid "Filter Condition"
 msgstr "过滤器条件"
 
 msgid "&Left-hand side:"
-msgstr "左手边：(&L)"
+msgstr "左手边(&L)："
 
 msgid "&Operator:"
-msgstr "操作：(&O)"
+msgstr "操作(&O)："
 
 msgid "&Right-hand side:"
-msgstr "右手边：(&R)"
+msgstr "右手边(&R)："
 
 msgid "Expression:"
 msgstr "表达式："
@@ -2640,6 +2646,42 @@ msgstr "脚本文件扩展名(&S)："
 
 msgid "Script &body:"
 msgstr "脚本体(&B)："
+
+msgid "Font"
+msgstr "字体"
+
+msgid "&Font:"
+msgstr "字体(&F)："
+
+msgid "Font st&yle:"
+msgstr "字体样式(&Y)："
+
+msgid "&Size:"
+msgstr "字号(&S)："
+
+msgid "Effects"
+msgstr "效果"
+
+msgid "Stri&keout"
+msgstr "删除线(&K)"
+
+msgid "&Underline"
+msgstr "上划线(&)"
+
+msgid "&Color:"
+msgstr "色彩(&C)："
+
+msgid "Sample"
+msgstr "示例"
+
+msgid "AaBbYyZz"
+msgstr "AaBbYyZz"
+
+msgid "Sc&ript:"
+msgstr "脚本(&R)："
+
+msgid "<A>Show more fonts</A>"
+msgstr "<A>显示更多字体</A>"
 
 msgid "EXT"
 msgstr "EXT"
@@ -4346,7 +4388,7 @@ msgstr ""
 "当前最新版本为 %1，而您当前使用的是 %2。是否要立即下载？"
 
 msgid " - All rights reserved."
-msgstr ""
+msgstr " - 保留所有权利。"
 
 msgid "Failed to download latest version information"
 msgstr "下载最新版本信息失败"
@@ -4366,7 +4408,7 @@ msgstr "转到被移动的行\tCtrl+Shift+G"
 
 msgctxt "Options dialog|General|Open dialog Auto completion"
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 msgid "From file system"
 msgstr "由文件系统提供"
@@ -4464,7 +4506,7 @@ msgstr "DirectWrite Natural Symmetric"
 
 msgctxt "Options dialog|General|Close windows with Esc"
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 msgid "MDI child window or main window"
 msgstr "MDI 子窗口或主窗口"
@@ -4606,7 +4648,7 @@ msgstr "安装文件夹"
 
 msgctxt "Options dialog|General|Single instance mode"
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 msgid "Allow only one instance to run"
 msgstr "只允许运行一个实例"
@@ -4616,7 +4658,7 @@ msgstr "只允许运行一个实例并等待该实例结束"
 
 msgctxt "Options dialog|General|Auto-reload modified files"
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 msgid "Only on window activated"
 msgstr "仅在窗口激活时"
@@ -4975,6 +5017,15 @@ msgstr "包含（正则表达式）"
 
 msgid "Not Contains (regex)"
 msgstr "未包含（正则表达式）"
+
+msgid "Light"
+msgstr "浅色"
+
+msgid "Dark"
+msgstr "深色"
+
+msgid "Follow system"
+msgstr "跟随系统"
 
 msgid "Prettification"
 msgstr "格式美化"

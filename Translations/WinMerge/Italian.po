@@ -10,10 +10,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WinMerge - Italian - 25.07.2025\n"
+"Project-Id-Version: WinMerge - Italian - 18.08.2025\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2025-04-17 09:05+0000\n"
-"PO-Revision-Date: 2025-07-26 12:23+0200\n"
+"PO-Revision-Date: 2025-08-18 15:07+0200\n"
 "Last-Translator: bovirus <bovirus@gmail.comn>\n"
 "Language-Team: bovirus (bovirus@gmail.com)\n"
 "Language: it\n"
@@ -1793,8 +1793,14 @@ msgstr "Azzera"
 msgid "Colors"
 msgstr "Colori"
 
-msgid "Color Scheme:"
-msgstr "Schema colore:"
+msgid "Color &mode:"
+msgstr "&Modo colore:"
+
+msgid "&Light mode scheme:"
+msgstr "Modo schema c&hiaro:"
+
+msgid "&Dark mode scheme:"
+msgstr "Mo&do schema scuro:"
 
 msgid "Background"
 msgstr "Sfondo"
@@ -2645,6 +2651,42 @@ msgstr "Estensione file &script:"
 
 msgid "Script &body:"
 msgstr "Corpo &script:"
+
+msgid "Font"
+msgstr "Font"
+
+msgid "&Font:"
+msgstr "&Font:"
+
+msgid "Font st&yle:"
+msgstr "St&ile font:"
+
+msgid "&Size:"
+msgstr "&Dimensione:"
+
+msgid "Effects"
+msgstr "Effetti"
+
+msgid "Stri&keout"
+msgstr "Ribatt&uto"
+
+msgid "&Underline"
+msgstr "&Sottolineato"
+
+msgid "&Color:"
+msgstr "&Colore:"
+
+msgid "Sample"
+msgstr "Esempio"
+
+msgid "AaBbYyZz"
+msgstr "AaBbYyZz"
+
+msgid "Sc&ript:"
+msgstr "Sc&ript:"
+
+msgid "<A>Show more fonts</A>"
+msgstr "<A>Visualizza altre font</A>"
 
 msgid "EXT"
 msgstr "EST"
@@ -5035,6 +5077,15 @@ msgstr "Contiene (regx)"
 
 msgid "Not Contains (regex)"
 msgstr "Non contiene (regex)"
+
+msgid "Light"
+msgstr "Chiaro"
+
+msgid "Dark"
+msgstr "Scuro"
+
+msgid "Follow system"
+msgstr "Sistema"
 
 msgid "Prettification"
 msgstr "Abbellimento"

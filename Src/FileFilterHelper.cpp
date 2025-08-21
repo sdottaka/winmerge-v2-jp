@@ -204,7 +204,7 @@ bool FileFilterHelper::includeFile(const DIFFITEM& di) const
 	int i = 0;
 	for (; i < nDirs; ++i)
 	{
-		if (!di.diffFileInfo[i].filename.get().empty())
+		if (di.diffcode.exists(i))
 			break;
 	}
 	std::string strFileNameUtf8Period;
@@ -292,7 +292,7 @@ bool FileFilterHelper::includeDir(const DIFFITEM& di) const
 	int i = 0;
 	for (; i < nDirs; ++i)
 	{
-		if (!di.diffFileInfo[i].filename.get().empty())
+		if (di.diffcode.exists(i))
 			break;
 	}
 	std::string strDirNameUtf8Period;
@@ -516,7 +516,7 @@ FileFilterHelper::ParseExtensions(const String &extensions) const
 					token = token.substr(1);
 				bool isdir = token.length() > 0 && token.back() == '\\';
 				if (isdir)
-					token = token.substr(0, token.size() - 1);
+					token.resize(token.size() - 1);
 				token = addPeriodIfNoExtension(token);
 				String strRegex = strutils::makelower(ConvertWildcardPatternToRegexp(token));
 				if (exclude)

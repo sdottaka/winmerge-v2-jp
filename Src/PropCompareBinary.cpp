@@ -11,6 +11,7 @@
 #include "OptionsMgr.h"
 #include "OptionsPanel.h"
 #include "heksedit.h"
+#include "MergeDarkMode.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -32,6 +33,10 @@ public:
 		wnd.Create(_T("heksedit"), nullptr, 0, CRect(), pwndParent, 1);
 		get_interface()->read_ini_data();
 		get_interface()->get_settings()->bSaveIni = true;
+		get_interface()->set_theme_callback([](HWND hwnd, IHexEditorWindow::WINDOW_TYPE windowType) {
+			if (windowType == IHexEditorWindow::WINDOW_DIALOG)
+				DarkMode::setDarkWndSafe(hwnd, true);
+		});
 	}
 
 	~Heksedit()

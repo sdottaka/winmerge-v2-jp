@@ -2,6 +2,7 @@
 #include "Merge.h"
 #include "TrDialogs.h"
 #include "Logger.h"
+#include "MergeDarkMode.h"
 
 IMPLEMENT_DYNAMIC(CTrDialog, CDialog)
 IMPLEMENT_DYNAMIC(CTrPropertyPage, CPropertyPage)
@@ -31,6 +32,7 @@ BOOL CTrDialog::OnInitDialog()
 {
 	theApp.TranslateDialog(m_hWnd);
 	__super::OnInitDialog();
+	DarkMode::setDarkWndSafe(GetSafeHwnd(), true);
 	return TRUE;
 }
 
@@ -50,6 +52,14 @@ BOOL CTrPropertyPage::OnInitDialog()
 {
 	theApp.TranslateDialog(m_hWnd);
 	__super::OnInitDialog();
+	HWND hSelf = GetSafeHwnd();
+	if (hSelf != nullptr)
+	{
+		DarkMode::setWindowCtlColorSubclass(hSelf);
+		DarkMode::setChildCtrlsSubclassAndTheme(hSelf);
+	}
+
+	DarkMode::setDarkWndSafe(*GetParent(), true);
 	return TRUE;
 }
 

@@ -12,21 +12,21 @@ set downloadsdir=%~dp0\build\WinMergeDownloadDeps
 set urls_destdirs=^
 https://github.com/WinMerge/winmerge/releases/download/winmerge_manual_another_build_tools_v2/winmerge_manual_another_build_tools_v2.zip!Docs\Manual\Tools ^
 https://github.com/WinMerge/winmerge/releases/download/ShellExtension-1.18.7.0/ShellExtension-1.18.7.0.zip!Build ^
-https://github.com/WinMerge/winmerge/releases/download/Merge7z2500.0/Merge7z2500.0-x86.zip!Build\x86\Release ^
-https://github.com/WinMerge/winmerge/releases/download/Merge7z2500.0/Merge7z2500.0-x64.zip!Build\X64\Release ^
-https://github.com/WinMerge/winmerge/releases/download/Merge7z2500.0/Merge7z2500.0-ARM.zip!Build\ARM64\Release ^
-https://github.com/WinMerge/winmerge/releases/download/Merge7z2500.0/Merge7z2500.0-ARM64.zip!Build\ARM64\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.17-x86.zip!Build\x86\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.17-x64.zip!Build\x64\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.17-ARM.zip!Build\ARM\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.17-ARM64.zip!Build\ARM64\Release ^
-https://github.com/WinMerge/winimerge/releases/download/v1.0.45/winimerge-1.0.45.0-x86.zip!Build\x86\Release ^
-https://github.com/WinMerge/winimerge/releases/download/v1.0.45/winimerge-1.0.45.0-x64.zip!Build\x64\Release ^
-https://github.com/WinMerge/winimerge/releases/download/v1.0.45/winimerge-1.0.45.0-ARM.zip!Build\ARM\Release ^
-https://github.com/WinMerge/winimerge/releases/download/v1.0.45/winimerge-1.0.45.0-ARM64.zip!Build\ARM64\Release ^
-https://github.com/WinMerge/winwebdiff/releases/download/v1.0.18/winwebdiff-1.0.18.0-x86.zip!Build\x86\Release ^
-https://github.com/WinMerge/winwebdiff/releases/download/v1.0.18/winwebdiff-1.0.18.0-x64.zip!Build\x64\Release ^
-https://github.com/WinMerge/winwebdiff/releases/download/v1.0.18/winwebdiff-1.0.18.0-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-x64.zip!Build\X64\Release ^
+https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-ARM.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-x64.zip!Build\x64\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-ARM.zip!Build\ARM\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-x64.zip!Build\x64\Release ^
+https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-ARM.zip!Build\ARM\Release ^
+https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-x64.zip!Build\x64\Release ^
+https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-ARM64.zip!Build\ARM64\Release ^
 https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-w32-mt-XP.zip!Build\tidy-html5 ^
 https://github.com/htacg/tidy-html5/archive/refs/tags/5.4.0.zip!Build\tidy-html5 ^
 https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-i386.exe!Build\jq ^
@@ -42,24 +42,24 @@ https://mirror.msys2.org/msys/i686/gcc-libs-13.3.0-1-i686.pkg.tar.zst!Build\msys
 http://www.magicnotes.com/steelbytes/SBAppLocale_ENG.zip!Docs\Manual\Tools
 
 pushd "%~dp0"
-mkdir %downloadsdir% 2> NUL
+mkdir "%downloadsdir%" 2> NUL
 
 for %%p in (%urls_destdirs%) do (
   for /F "tokens=1,2 delims=!" %%u in ("%%p") do (
-    if not exist %downloadsdir%\%%~nxu (
-      powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest %%u -Outfile %downloadsdir%\%%~nxu"
+    if not exist "%downloadsdir%\%%~nxu" (
+      powershell -command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest %%u -Outfile '%downloadsdir%\%%~nxu'"
     )
     if "%%~xu" == ".zip" (
-      7z x %downloadsdir%\%%~nxu -aoa -o%%v
+      7z x "%downloadsdir%\%%~nxu" -aoa -o%%v
     ) else (
       if "%%~xu" == ".xz" (
-        7z x %downloadsdir%\%%~nxu -so | 7z x -aoa -si -ttar -o%%v
+        7z x "%downloadsdir%\%%~nxu" -so | 7z x -aoa -si -ttar -o%%v
       ) else (
         mkdir %%v > NUL
         if "%%~xu" == ".zst" (
-          Build\zstd\zstd-v1.5.2-win64\zstd.exe -dc %downloadsdir%\%%~nxu | tar xf - -C %%v
+          Build\zstd\zstd-v1.5.2-win64\zstd.exe -dc "%downloadsdir%\%%~nxu" | tar xf - -C %%v
         ) else (
-          copy %downloadsdir%\%%~nxu %%v
+          copy "%downloadsdir%\%%~nxu" %%v
         )
       )
     )

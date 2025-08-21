@@ -9,6 +9,7 @@
 #include "IMDITab.h"
 #include "cecolor.h"
 #include "RoundedRectWithShadow.h"
+#include "MergeDarkMode.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -70,6 +71,14 @@ BOOL CMyTabCtrl::Create(CMDIFrameWnd* pMainFrame, CWnd* pParent)
 	m_pMainFrame = pMainFrame;
 	m_tooltips.Create(m_pMainFrame, TTS_NOPREFIX);
 	m_tooltips.AddTool(this, _T(""));
+	HWND hSelf = GetSafeHwnd();
+	if (hSelf != nullptr)
+		DarkMode::setTabCtrlUpDownSubclass(hSelf);
+
+	HWND hTip = m_tooltips.GetSafeHwnd();
+	if (hTip != nullptr)
+		DarkMode::setDarkTooltips(hTip);
+
 	return TRUE;
 }
 
