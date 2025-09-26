@@ -201,10 +201,6 @@ msgid "&Zoom"
 msgstr "Nagyítás"
 
 #, c-format
-msgid "25%"
-msgstr "25%"
-
-#, c-format
 msgid "Zoom &In\tCtrl++"
 msgstr "Nagyítás\tCtrl++"
 
@@ -1337,13 +1333,16 @@ msgstr "Megjegyzés különbségek mellőzése"
 msgid "Ignore &Missing Trailing EOL"
 msgstr "&Hiányzó sorvégzáró figyelmen kívül hagyása"
 
+msgid "Ignore Line &Breaks (Treat as Spaces)"
+msgstr "&Sortörések figyelmen kívül hagyása (szóközként kezelése)"
+
 #, c-format
 msgid "&Include Subfolders"
 msgstr "&Alkönyvtárakkal együtt"
 
 #, c-format
 msgid "&Compare Method"
-msgstr "Összehasonlító módszer:"
+msgstr "&Összehasonlító módszer:"
 
 #, c-format
 msgid "Full Contents"
@@ -2459,6 +2458,9 @@ msgstr "Megjegyzés különbségek mellőzése"
 
 msgid "Ignore &missing trailing EOL"
 msgstr "&Hiányzó sorvégzáró figyelmen kívül hagyása"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr "&Sortörések figyelmen kívül hagyása (szóközként kezelés)"
 
 #, c-format
 msgid "E&nable moved block detection"

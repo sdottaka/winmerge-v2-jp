@@ -13,7 +13,6 @@
 #include "DiffList.h"
 #include "MergeLineFlags.h"
 #include "MergeFrameCommon.h"
-#include "Logger.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -513,7 +512,7 @@ bool CMergeDoc::ListCopy(int srcPane, int dstPane, int nDiff /* = -1*/,
 
 		if (!bInSync)
 		{
-			LangMessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
+			I18n::MessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
 			return false; // abort copying
 		}
 
@@ -609,7 +608,7 @@ bool CMergeDoc::LineListCopy(int srcPane, int dstPane, int nDiff, int firstLine,
 
 	if (!bInSync)
 	{
-		LangMessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
+		I18n::MessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
 		return false; // abort copying
 	}
 
@@ -702,7 +701,7 @@ bool CMergeDoc::InlineDiffListCopy(int srcPane, int dstPane, int nDiff, int firs
 
 	if (!bInSync)
 	{
-		LangMessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
+		I18n::MessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
 		return false; // abort copying
 	}
 
@@ -1016,7 +1015,7 @@ bool CMergeDoc::CharacterListCopy(int srcPane, int dstPane, int activePane, int 
 
 	if (!bInSync)
 	{
-		LangMessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
+		I18n::MessageBox(IDS_VIEWS_OUTOFSYNC, MB_ICONSTOP);
 		return false; // abort copying
 	}
 

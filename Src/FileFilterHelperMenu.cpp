@@ -2,14 +2,13 @@
 #include "FileFilterHelper.h"
 #include "FileFilterHelperMenu.h"
 #include "FilterConditionDlg.h"
-#include "Merge.h"
 #include "resource.h"
 
 std::optional<String> CFileFilterHelperMenu::ShowMenu(const String& masks, int x, int y, CWnd* pParentWnd)
 {
 	std::optional<String> result;
 	VERIFY(LoadMenu(IDR_POPUP_FILTERMENU));
-	theApp.TranslateMenu(m_hMenu);
+	I18n::TranslateMenu(m_hMenu);
 	for (;;)
 	{
 		CMenu* pPopup = GetSubMenu(0);
@@ -53,7 +52,7 @@ std::optional<String> CFileFilterHelperMenu::ShowMenu(const String& masks, int x
 			else if (command == ID_FILTERMENU_FILE_BACKUP)
 			{
 				result = masks.empty() ? masks : masks + _T(";");
-				*result += _T("!*.bak;!*.old;!*.orig;!*.swp;!*.swo;!*.tmp;!*.temp;!*.save;*.backup;!*.*~");
+				*result += _T("!*.bak;!*.old;!*.orig;!*.swp;!*.swo;!*.tmp;!*.temp;!*.save;!*.backup;!*.*~");
 			}
 			else if (command == ID_FILTERMENU_FILE_BIN)
 			{

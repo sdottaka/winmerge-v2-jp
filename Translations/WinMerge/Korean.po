@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2022-01-22 21:51+0000\n"
-"PO-Revision-Date: 2025-08-25 20:34+0900\n"
+"PO-Revision-Date: 2025-09-22 01:59+0900\n"
 "Last-Translator: VenusGirl <https://github.com/VenusGirl>\n"
 "Language-Team: VenusGirl: https://venusgirls.tistory.com/\n"
 "Language: ko\n"
@@ -206,10 +206,6 @@ msgstr "수평으로 뒤집기(&O)"
 #, c-format
 msgid "&Zoom"
 msgstr "확대/축소(&Z)"
-
-#, c-format
-msgid "25%"
-msgstr "25%"
 
 #, c-format
 msgid "Zoom &In\tCtrl++"
@@ -1344,6 +1340,9 @@ msgstr "주석 차이 무시(&O)"
 msgid "Ignore &Missing Trailing EOL"
 msgstr "누락된 후행 EOL 무시(&M)"
 
+msgid "Ignore Line &Breaks (Treat as Spaces)"
+msgstr "줄 바꿈 무시 (공백으로 처리)(&B)"
+
 #, c-format
 msgid "&Include Subfolders"
 msgstr "하위 폴더 포함(&I)"
@@ -2466,6 +2465,9 @@ msgstr "주석 차이 무시(&O)"
 
 msgid "Ignore &missing trailing EOL"
 msgstr "누락된 후행 EOL 무시(&M)"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr "줄 바꿈 무시 (공백으로 처리)(&B)"
 
 #, c-format
 msgid "E&nable moved block detection"

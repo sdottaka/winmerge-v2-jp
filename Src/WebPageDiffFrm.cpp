@@ -10,7 +10,6 @@
 #include "FrameWndHelper.h"
 #include "Merge.h"
 #include "MainFrm.h"
-#include "BCMenu.h"
 #include "IDirDoc.h"
 #include "OptionsDef.h"
 #include "OptionsMgr.h"
@@ -29,7 +28,7 @@
 #include "Logger.h"
 #include <Poco/RegularExpression.h>
 #include <Poco/Exception.h>
-#include "MergeDarkMode.h"
+#include "DarkModeLib.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -497,7 +496,7 @@ BOOL CWebPageDiffFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 	// Merge frame has also a dockable bar at the very left
 	// This is not the client area, but we create it now because we want
 	// to use the CCreateContext
-	String sCaption = theApp.LoadString(IDS_LOCBAR_CAPTION);
+	String sCaption = I18n::LoadString(IDS_LOCBAR_CAPTION);
 	if (!m_wndLocationBar.Create(this, sCaption.c_str(), WS_CHILD | WS_VISIBLE, ID_VIEW_LOCATION_BAR))
 	{
 		TRACE0("Failed to create LocationBar\n");
@@ -523,7 +522,7 @@ BOOL CWebPageDiffFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 		{
 			DarkMode::setWindowCtlColorSubclass(hWnd);
 			DarkMode::setWindowNotifyCustomDrawSubclass(hWnd);
-			DarkMode::setChildCtrlsSubclassAndTheme(hWnd);
+			DarkMode::setChildCtrlsSubclassAndThemeEx(hWnd, true, true);
 			CWnd* pToolbar = FindWindowEx(hWnd, nullptr, TOOLBARCLASSNAME, nullptr);
 			if (pToolbar)
 				DarkMode::setWindowCtlColorSubclass(pToolbar->GetSafeHwnd());
@@ -534,14 +533,14 @@ BOOL CWebPageDiffFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 	{
 		DarkMode::setWindowCtlColorSubclass(hPane);
 		DarkMode::setWindowNotifyCustomDrawSubclass(hPane);
-		DarkMode::setChildCtrlsSubclassAndTheme(hPane);
+		DarkMode::setChildCtrlsSubclassAndThemeEx(hPane, true, true);
 	}
 	return TRUE;
 }
 
 void CWebPageDiffFrame::TranslateLocationPane(int id, const wchar_t *org, size_t dstbufsize, wchar_t *dst)
 {
-	swprintf_s(dst, dstbufsize, L"%s", tr(ucr::toUTF8(org)).c_str());
+	swprintf_s(dst, dstbufsize, L"%s", I18n::tr(ucr::toUTF8(org)).c_str());
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1069,7 +1068,7 @@ void CWebPageDiffFrame::OnUpdateStatusNum(CCmdUI* pCmdUI)
 	}
 	else if (compareState == IWebDiffWindow::COMPARING)
 	{
-		s = theApp.LoadString(IDS_WEBPAGE_COMPARING);
+		s = I18n::LoadString(IDS_WEBPAGE_COMPARING);
 	}
 	else
 	{
@@ -1660,7 +1659,7 @@ void CWebPageDiffFrame::OnToolsGenerateReport()
 
 	CWaitCursor waitstatus;
 	if (GenerateReport(s))
-		LangMessageBox(IDS_REPORT_SUCCESS, MB_OK | MB_ICONINFORMATION | MB_MODELESS);
+		I18n::MessageBox(IDS_REPORT_SUCCESS, MB_OK | MB_ICONINFORMATION | MB_MODELESS);
 }
 
 void CWebPageDiffFrame::OnRefresh()
@@ -1694,7 +1693,7 @@ void CWebPageDiffFrame::OnSetFocus(CWnd* pNewWnd)
  */
 void CWebPageDiffFrame::OnHelp()
 {
-	theApp.ShowHelp(WebPageDiffFrameHelpLocation);
+	CMergeApp::ShowHelp(WebPageDiffFrameHelpLocation);
 }
 
 /**
@@ -1711,7 +1710,7 @@ void CWebPageDiffFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 			{
 				DarkMode::setWindowCtlColorSubclass(hWnd);
 				DarkMode::setWindowNotifyCustomDrawSubclass(hWnd);
-				DarkMode::setChildCtrlsSubclassAndTheme(hWnd);
+				DarkMode::setChildCtrlsSubclassAndThemeEx(hWnd, true, true);
 				CWnd* pToolbar = FindWindowEx(hWnd, nullptr, TOOLBARCLASSNAME, nullptr);
 				if (pToolbar)
 					DarkMode::setWindowCtlColorSubclass(pToolbar->GetSafeHwnd());
@@ -1724,7 +1723,7 @@ void CWebPageDiffFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 		{
 			DarkMode::setWindowCtlColorSubclass(hPane);
 			DarkMode::setWindowNotifyCustomDrawSubclass(hPane);
-			DarkMode::setChildCtrlsSubclassAndTheme(hPane);
+			DarkMode::setChildCtrlsSubclassAndThemeEx(hPane, true, true);
 			::InvalidateRect(hPane, nullptr, TRUE);
 		}
 	}

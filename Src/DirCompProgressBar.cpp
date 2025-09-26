@@ -8,8 +8,7 @@
 #include "DirCompProgressBar.h"
 #include "CompareStats.h"
 #include "DiffContext.h"
-#include "paths.h"
-#include "MergeDarkMode.h"
+#include "DarkModeLib.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -87,7 +86,7 @@ BOOL DirCompProgressBar::Create(CWnd* pParentWnd)
 	if (HWND hSelf = GetSafeHwnd())
 	{
 		DarkMode::setWindowCtlColorSubclass(hSelf);
-		DarkMode::setChildCtrlsSubclassAndTheme(hSelf);
+		DarkMode::setChildCtrlsSubclassAndThemeEx(hSelf, true, true);
 	}
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE

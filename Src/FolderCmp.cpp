@@ -10,7 +10,6 @@
 #include "Wrap_DiffUtils.h"
 #include "ByteCompare.h"
 #include "paths.h"
-#include "FilterList.h"
 #include "DiffContext.h"
 #include "DiffList.h"
 #include "DiffWrapper.h"
@@ -22,7 +21,7 @@
 #include "FileFilterHelper.h"
 #include "PropertySystem.h"
 #include "Logger.h"
-#include "MergeApp.h"
+#include "I18n.h"
 #include "DebugNew.h"
 
 using CompareEngines::ByteCompare;

@@ -181,10 +181,6 @@ msgstr "左右反転(&O)"
 msgid "&Zoom"
 msgstr "拡大/縮小(&Z)"
 
-#, c-format
-msgid "25%"
-msgstr "25%"
-
 msgid "Zoom &In\tCtrl++"
 msgstr "拡大(&I)\tCtrl++"
 
@@ -1114,6 +1110,9 @@ msgstr "コメントの違いを無視する(&O)"
 
 msgid "Ignore &Missing Trailing EOL"
 msgstr "ファイル末尾の改行文字の有無を無視する(&E)"
+
+msgid "Ignore Line &Breaks (Treat as Spaces)"
+msgstr "改行を無視(空白として扱う)(&B)"
 
 msgid "&Include Subfolders"
 msgstr "サブフォルダーを含める(&I)"
@@ -2102,6 +2101,9 @@ msgstr "コメントの違いを無視する(&O)"
 
 msgid "Ignore &missing trailing EOL"
 msgstr "ファイル末尾の改行文字の有無を無視する(&E)"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr "改行を無視(空白として扱う)(&B)"
 
 msgid "E&nable moved block detection"
 msgstr "移動ブロック検出を有効にする(&N)"

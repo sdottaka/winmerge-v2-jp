@@ -140,7 +140,7 @@ int CHexMergeView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	m_pif->set_theme_callback([](HWND hwnd, IHexEditorWindow::WINDOW_TYPE windowType) {
 			if (windowType == IHexEditorWindow::WINDOW_DIALOG)
-				DarkMode::setDarkWndSafe(hwnd, true);
+				DarkMode::setDarkWndSafeEx(hwnd, true);
 		});
 	return 0;
 }
@@ -582,7 +582,7 @@ void CHexMergeView::OnPrevdiff()
 /** @brief Open help from mainframe when user presses F1*/
 void CHexMergeView::OnHelp()
 {
-	theApp.ShowHelp(HexMergeViewHelpLocation);
+	CMergeApp::ShowHelp(HexMergeViewHelpLocation);
 }
 
 void CHexMergeView::ZoomText(int amount)

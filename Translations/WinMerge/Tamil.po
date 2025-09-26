@@ -189,10 +189,6 @@ msgstr "கிடைமட்டமாக புரட்டு"
 msgid "&Zoom"
 msgstr "பெரிதாக்கு"
 
-#, c-format
-msgid "25%"
-msgstr "25%"
-
 msgid "Zoom &In\tCtrl++"
 msgstr "உள் பெரிதாக்க\tகட்டு++"
 
@@ -1123,6 +1119,9 @@ msgstr "கருத்து வேறுபாடுகளை புறக்�
 
 msgid "Ignore &Missing Trailing EOL"
 msgstr "புறக்கணி மற்றும் காணாமல் போன வரிமுடிவு"
+
+msgid "Ignore Line &Breaks (Treat as Spaces)"
+msgstr ""
 
 msgid "&Include Subfolders"
 msgstr "உள்கோப்புகளை சேர்"
@@ -2115,6 +2114,9 @@ msgstr "கருத்து வேறுபாடுகளை புறக்�
 
 msgid "Ignore &missing trailing EOL"
 msgstr "புறக்கணி மற்றும் காணாமல் போன வரிமுடிவு"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr ""
 
 msgid "E&nable moved block detection"
 msgstr "நகர்த்தப்பட்ட தொகுதி கண்டறிதலை செயல்படுத்து"

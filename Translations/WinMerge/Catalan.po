@@ -200,10 +200,6 @@ msgid "&Zoom"
 msgstr "&Zoom"
 
 #, c-format
-msgid "25%"
-msgstr "25%"
-
-#, c-format
 msgid "Zoom &In\tCtrl++"
 msgstr "A&propa\tControl++"
 
@@ -1336,6 +1332,9 @@ msgstr "Ingora les diferències en els comentaris"
 msgid "Ignore &Missing Trailing EOL"
 msgstr ""
 
+msgid "Ignore Line &Breaks (Treat as Spaces)"
+msgstr ""
+
 #, c-format
 msgid "&Include Subfolders"
 msgstr "&Inclou-hi les subcarpetes"
@@ -2457,6 +2456,9 @@ msgid "Ignore c&omment differences"
 msgstr "Ingora les diferències en els comentaris"
 
 msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
 msgstr ""
 
 #, c-format

@@ -185,10 +185,6 @@ msgstr "Voltear h&orizontalmente"
 msgid "&Zoom"
 msgstr "&Zoom"
 
-#, c-format
-msgid "25%"
-msgstr "25%"
-
 msgid "Zoom &In\tCtrl++"
 msgstr "&Aumentar\tCtrl++"
 
@@ -1117,6 +1113,9 @@ msgid "Ignore C&omment Differences"
 msgstr "Ignorar diferencias en c&omentarios"
 
 msgid "Ignore &Missing Trailing EOL"
+msgstr ""
+
+msgid "Ignore Line &Breaks (Treat as Spaces)"
 msgstr ""
 
 msgid "&Include Subfolders"
@@ -2101,6 +2100,9 @@ msgid "Ignore c&omment differences"
 msgstr "Ignorar diferencias en c&omentarios"
 
 msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
 msgstr ""
 
 msgid "E&nable moved block detection"

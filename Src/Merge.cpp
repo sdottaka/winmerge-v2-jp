@@ -313,16 +313,8 @@ BOOL CMergeApp::InitInstance()
 	ApplyCommandLineConfigOptions(cmdInfo);
 	if (cmdInfo.m_sErrorMessages.size() > 0)
 	{
-		if (AttachConsole(ATTACH_PARENT_PROCESS))
-		{
-			DWORD dwWritten;
-			for (auto& msg : cmdInfo.m_sErrorMessages)
-			{
-				String line = _T("WinMerge: ") + msg + _T("\n");
-				WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), line.c_str(), static_cast<DWORD>(line.length()), &dwWritten, nullptr);
-			}
-			FreeConsole();
-		}
+		for (auto& msg : cmdInfo.m_sErrorMessages)
+			OutputConsole(msg);
 	}
 
 	// Initialize temp folder
@@ -361,8 +353,10 @@ BOOL CMergeApp::InitInstance()
 	// Initialize i18n (multiple language) support
 	m_pLangDlg->InitializeLanguage((WORD)GetOptionsMgr()->GetInt(OPT_SELECTED_LANGUAGE));
 
-	if (WinMergeDarkMode::IsDarkModeAvailable())
+	if (IsWin10_OrGreater())
 	{
+		DarkMode::LoadDarkModeDll();
+
 		const DarkMode::DarkModeType dmTypeOld =
 			WinMergeDarkMode::GetDarkModeType(GetOptionsMgr()->GetInt(OPT_COLOR_MODE_EFFECTIVE));
 		const DarkMode::DarkModeType dmType =
@@ -375,7 +369,7 @@ BOOL CMergeApp::InitInstance()
 			GetOptionsMgr()->SaveOption(OPT_COLOR_MODE_EFFECTIVE, dmType == DarkMode::DarkModeType::dark ? 1 : 0);
 		}
 		DarkMode::initDarkMode();
-		DarkMode::setDarkModeConfig(static_cast<unsigned>(dmType));
+		DarkMode::setDarkModeConfigEx(static_cast<unsigned>(dmType));
 		DarkMode::setDefaultColors(true);
 	}
 
@@ -439,7 +433,7 @@ BOOL CMergeApp::InitInstance()
 	strdiff::Init(); // String diff init
 	strdiff::SetBreakChars(GetOptionsMgr()->GetString(OPT_BREAK_SEPARATORS).c_str());
 
-	if (IsWin11_OrGreater())
+	if (IsWin10_OrGreater())
 		BCMenu::DisableOwnerDraw();
 
 	m_bMergingMode = GetOptionsMgr()->GetBool(OPT_MERGE_MODE);
@@ -508,6 +502,17 @@ BOOL CMergeApp::InitInstance()
 #endif
 
 	return bContinue;
+}
+
+void CMergeApp::OutputConsole(const String& message)
+{
+	if (AttachConsole(ATTACH_PARENT_PROCESS))
+	{
+		DWORD dwWritten;
+		String line = _T("WinMerge: ") + message + _T("\n");
+		WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), line.c_str(), static_cast<DWORD>(line.length()), &dwWritten, nullptr);
+		FreeConsole();
+	}
 }
 
 CMultiDocTemplate* CMergeApp::GetOpenTemplate()
@@ -663,7 +668,7 @@ static String makeLogString(const tchar_t* lpszPrompt, int result)
 	return msg;
 }
 
-int CMergeApp::DoMessageBox(const tchar_t* lpszPrompt, UINT nType, UINT nIDPrompt)
+int CMergeApp::DoMessageBox(const tchar_t* lpszPrompt, UINT nType, UINT nIDPrompt, const tchar_t* lpszRegistryKey)
 {
 	// This is a convenient point for breakpointing !!!
 
@@ -685,19 +690,16 @@ int CMergeApp::DoMessageBox(const tchar_t* lpszPrompt, UINT nType, UINT nIDPromp
 
 	if (m_bNonInteractive)
 	{
-		if (AttachConsole(ATTACH_PARENT_PROCESS))
-		{
-			DWORD dwWritten;
-			String line = _T("WinMerge: ") + String(lpszPrompt) + _T("\n");
-			WriteConsole(GetStdHandle(STD_OUTPUT_HANDLE), line.c_str(), static_cast<DWORD>(line.length()), &dwWritten, nullptr);
-			FreeConsole();
-		}
+		String msg = lpszPrompt;
+		if ((nType & 0xf) != 0)
+			msg += _T(": Cancel");
+		OutputConsole(msg);
 		return IDCANCEL;
 	}
 
 	// Create the message box dialog.
 	CMessageBoxDialog dlgMessage(pParentWnd, lpszPrompt, _T(""), nType | MB_RIGHT_ALIGN,
-		nIDPrompt);
+		nIDPrompt, lpszRegistryKey);
 
 	if (m_pMainWnd->IsIconic())
 		m_pMainWnd->ShowWindow(SW_RESTORE);
@@ -710,6 +712,11 @@ int CMergeApp::DoMessageBox(const tchar_t* lpszPrompt, UINT nType, UINT nIDPromp
 	else
 		RootLogger::Info(msg);
 	return result;
+}
+
+int CMergeApp::DoMessageBox(const tchar_t* lpszPrompt, UINT nType, UINT nIDPrompt)
+{
+	return DoMessageBox(lpszPrompt, nType, nIDPrompt, nullptr);
 }
 
 bool CMergeApp::IsReallyIdle() const
@@ -808,7 +815,7 @@ bool CMergeApp::ShowCompareAsMenu(MergeCmdLineInfo& cmdInfo)
 {
 	CMenu menu;
 	VERIFY(menu.LoadMenu(IDR_POPUP_COMPARE));
-	theApp.TranslateMenu(menu.m_hMenu);
+	I18n::TranslateMenu(menu.m_hMenu);
 	CMenu* pPopup = menu.GetSubMenu(0);
 	if (!pPopup)
 		return false;
@@ -1080,7 +1087,7 @@ void CMergeApp::UpdateDefaultCodepage(int cpDefaultMode, int cpCustomCodepage)
 			break;
 		case 1:
 			tchar_t buff[32];
-			wLangId = GetLangId();
+			wLangId = I18n::GetLangId();
 			if (GetLocaleInfo(wLangId, LOCALE_IDEFAULTANSICODEPAGE, buff, sizeof(buff)/sizeof(buff[0])))
 				ucr::setDefaultCodepage(tc::ttol(buff));
 			else
@@ -1190,7 +1197,7 @@ FileFilterHelper* CMergeApp::GetGlobalFileFilter()
  */
 void CMergeApp::ShowHelp(const tchar_t* helpLocation /*= nullptr*/)
 {
-	String sPath = paths::ConcatPath(env::GetProgPath(), strutils::format(DocsPath, GetLangName()));
+	String sPath = paths::ConcatPath(env::GetProgPath(), strutils::format(DocsPath, I18n::GetLangName()));
 	if (paths::DoesPathExist(sPath) != paths::IS_EXISTING_FILE)
 		sPath = paths::ConcatPath(env::GetProgPath(), strutils::format(DocsPath, _T("")));
 	if (helpLocation == nullptr)
@@ -1438,7 +1445,7 @@ String CMergeApp::GetPackingErrorMessage(int pane, int paneCount, const String& 
  * @param [in] filepath Full path to file to check.
  * @return true if file is a projectfile.
  */
-bool CMergeApp::IsProjectFile(const String& filepath) const
+bool CMergeApp::IsProjectFile(const String& filepath)
 {
 	String ext;
 	paths::SplitFilename(filepath, nullptr, nullptr, &ext);
@@ -1622,75 +1629,6 @@ bool CMergeApp::LoadAndOpenProjectFile(const String& sProject, const String& sRe
 }
 
 /**
- * @brief Return windows language ID of current WinMerge GUI language
- */
-WORD CMergeApp::GetLangId() const
-{
-	return m_pLangDlg->GetLangId();
-}
-
-String CMergeApp::GetLangName() const
-{
-	String name, ext;
-	paths::SplitFilename(theApp.m_pLangDlg->GetFileName(theApp.GetLangId()), nullptr, &name, &ext);
-	return name;
-}
-
-/**
- * @brief Lang aware version of CStatusBar::SetIndicators()
- */
-void CMergeApp::SetIndicators(CStatusBar &sb, const UINT *rgid, int n) const
-{
-	m_pLangDlg->SetIndicators(sb, rgid, n);
-}
-
-/**
- * @brief Translate menu to current WinMerge GUI language
- */
-void CMergeApp::TranslateMenu(HMENU h) const
-{
-	m_pLangDlg->TranslateMenu(h);
-}
-
-/**
- * @brief Translate dialog to current WinMerge GUI language
- */
-void CMergeApp::TranslateDialog(HWND h) const
-{
-	CWnd *pWnd = CWnd::FromHandle(h);
-	pWnd->SetFont(const_cast<CFont *>(&m_fontGUI));
-	pWnd->SendMessageToDescendants(WM_SETFONT, (WPARAM)m_fontGUI.m_hObject, MAKELPARAM(FALSE, 0), TRUE);
-
-	m_pLangDlg->TranslateDialog(h);
-}
-
-/**
- * @brief Load string and translate to current WinMerge GUI language
- */
-String CMergeApp::LoadString(UINT id) const
-{
-	return m_pLangDlg->LoadString(id);
-}
-
-bool CMergeApp::TranslateString(const std::string& str, String& translated_str) const
-{
-	return m_pLangDlg->TranslateString(str, translated_str);
-}
-
-bool CMergeApp::TranslateString(const std::wstring& str, String& translated_str) const
-{
-	return m_pLangDlg->TranslateString(str, translated_str);
-}
-
-/**
- * @brief Load dialog caption and translate to current WinMerge GUI language
- */
-std::wstring CMergeApp::LoadDialogCaption(const tchar_t* lpDialogTemplateID) const
-{
-	return m_pLangDlg->LoadDialogCaption(lpDialogTemplateID);
-}
-
-/**
  * @brief Adds specified file to the recent projects list.
  * @param [in] sPathName Path to project file
  */
@@ -1748,7 +1686,7 @@ void CMergeApp::OnMergingMode()
 	bool bMergingMode = GetMergingMode();
 
 	if (!bMergingMode)
-		LangMessageBox(IDS_MERGE_MODE, MB_ICONINFORMATION | MB_DONT_DISPLAY_AGAIN, IDS_MERGE_MODE);
+		I18n::MessageBox(IDS_MERGE_MODE, MB_ICONINFORMATION | MB_DONT_DISPLAY_AGAIN, IDS_MERGE_MODE);
 	SetMergingMode(!bMergingMode);
 }
 
@@ -1766,7 +1704,7 @@ void CMergeApp::OnUpdateMergingMode(CCmdUI* pCmdUI)
  */
 void CMergeApp::OnUpdateMergingStatus(CCmdUI *pCmdUI)
 {
-	String text = theApp.LoadString(IDS_MERGEMODE_MERGING);
+	String text = I18n::LoadString(IDS_MERGEMODE_MERGING);
 	pCmdUI->SetText(text.c_str());
 	pCmdUI->Enable(GetMergingMode());
 }
@@ -1840,7 +1778,13 @@ void CMergeApp::ReloadCustomSysColors()
 	SysColorHook::Deserialize(GetOptionsMgr()->GetString(OPT_SYSCOLOR_HOOK_COLORS));
 	if (GetOptionsMgr()->GetBool(OPT_SYSCOLOR_HOOK_ENABLED))
 		SysColorHook::Hook(AfxGetInstanceHandle());
-	afxData.UpdateSysColors();
+	afxData.clrBtnFace = ::GetSysColor(COLOR_BTNFACE);
+	afxData.clrBtnShadow = ::GetSysColor(COLOR_BTNSHADOW);
+	afxData.clrBtnHilite = ::GetSysColor(COLOR_BTNHIGHLIGHT);
+	afxData.clrBtnText = ::GetSysColor(COLOR_BTNTEXT);
+	afxData.clrWindowFrame = ::GetSysColor(COLOR_WINDOWFRAME);
+	afxData.hbrBtnFace = ::GetSysColorBrush(COLOR_BTNFACE);
+	afxData.hbrWindowFrame = ::GetSysColorBrush(COLOR_WINDOWFRAME);
 	BCMenu::RecreateRadioDotBitmap();
 }
 

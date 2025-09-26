@@ -19,20 +19,17 @@
 #include <Poco/Mutex.h>
 #include <Poco/AutoPtr.h>
 #include <Poco/Stopwatch.h>
-#include <Poco/Format.h>
 #include "DiffThread.h"
 #include "UnicodeString.h"
 #include "DiffWrapper.h"
 #include "CompareStats.h"
 #include "FolderCmp.h"
 #include "FileFilterHelper.h"
-#include "IAbortable.h"
 #include "DirItem.h"
 #include "DirTravel.h"
 #include "paths.h"
 #include "Plugins.h"
 #include "MergeAppCOMClass.h"
-#include "MergeApp.h"
 #include "PathContext.h"
 #include "DebugNew.h"
 
@@ -164,7 +161,7 @@ int DirScan_GetItems(const PathContext &paths, const String subdir[],
 
 	DirItemArray dirs[3], aFiles[3];
 	for (int nIndex = 0; nIndex < nDirs; nIndex++)
-		LoadAndSortFiles(sDir[nIndex], &dirs[nIndex], &aFiles[nIndex], casesensitive);
+		DirTravel::LoadAndSortFiles(sDir[nIndex], &dirs[nIndex], &aFiles[nIndex], casesensitive);
 
 	// Allow user to abort scanning
 	if (pCtxt->ShouldAbort())

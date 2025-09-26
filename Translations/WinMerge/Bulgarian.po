@@ -179,10 +179,6 @@ msgstr "Завъртане по &вертикалната ос"
 msgid "&Zoom"
 msgstr "Маща&биране"
 
-#, c-format
-msgid "25%"
-msgstr "25%"
-
 msgid "Zoom &In\tCtrl++"
 msgstr "&Увеличаване\tCtrl++"
 
@@ -1111,6 +1107,9 @@ msgid "Ignore C&omment Differences"
 msgstr "Пренебрегване на различията в &коментари"
 
 msgid "Ignore &Missing Trailing EOL"
+msgstr ""
+
+msgid "Ignore Line &Breaks (Treat as Spaces)"
 msgstr ""
 
 msgid "&Include Subfolders"
@@ -2095,6 +2094,9 @@ msgid "Ignore c&omment differences"
 msgstr "Пренебрегване на различията в &коментари"
 
 msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
 msgstr ""
 
 msgid "E&nable moved block detection"

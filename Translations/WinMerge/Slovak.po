@@ -182,10 +182,6 @@ msgstr "Preklopiť h&orizontálne"
 msgid "&Zoom"
 msgstr "&Priblíženie"
 
-#, c-format
-msgid "25%"
-msgstr "25%"
-
 msgid "Zoom &In\tCtrl++"
 msgstr "&Priblížiť\tCtrl++"
 
@@ -1114,6 +1110,9 @@ msgid "Ignore C&omment Differences"
 msgstr "Ignorovať rozdielne &komentáre"
 
 msgid "Ignore &Missing Trailing EOL"
+msgstr ""
+
+msgid "Ignore Line &Breaks (Treat as Spaces)"
 msgstr ""
 
 msgid "&Include Subfolders"
@@ -2098,6 +2097,9 @@ msgid "Ignore c&omment differences"
 msgstr "Ignorovať rozdielne &komentáre"
 
 msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
 msgstr ""
 
 msgid "E&nable moved block detection"

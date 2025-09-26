@@ -18,8 +18,8 @@
 #include <shlobj.h>
 #pragma warning (pop)
 #include "paths.h"
-#include "MergeApp.h"
-#include "MergeDarkMode.h"
+#include "I18n.h"
+#include "DarkModeLib.h"
 
 static int CALLBACK BrowseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lParam,
 		LPARAM lpData);
@@ -172,7 +172,7 @@ static int CALLBACK BrowseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lParam,
 		else
 			SendMessage(hwnd, BFFM_SETSELECTION, TRUE, (LPARAM)LastSelectedFolder.c_str());
 
-		DarkMode::setDarkWndSafe(hwnd, false);
+		DarkMode::setDarkWndSafeEx(hwnd, false);
 	}
 	else if (uMsg == BFFM_VALIDATEFAILED)
 	{

@@ -16,10 +16,10 @@ https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501
 https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-x64.zip!Build\X64\Release ^
 https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-ARM.zip!Build\ARM64\Release ^
 https://github.com/WinMerge/winmerge/releases/download/Merge7z2501.0/Merge7z2501.0-ARM64.zip!Build\ARM64\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-x86.zip!Build\x86\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-x64.zip!Build\x64\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-ARM.zip!Build\ARM\Release ^
-https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.18-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.19-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.19-x64.zip!Build\x64\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.19-ARM.zip!Build\ARM\Release ^
+https://github.com/WinMerge/frhed/releases/download/0.10904.2017/frhed-0.10904.2017.19-ARM64.zip!Build\ARM64\Release ^
 https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-x86.zip!Build\x86\Release ^
 https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-x64.zip!Build\x64\Release ^
 https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47.0-ARM.zip!Build\ARM\Release ^
@@ -27,6 +27,9 @@ https://github.com/WinMerge/winimerge/releases/download/v1.0.47/winimerge-1.0.47
 https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-x86.zip!Build\x86\Release ^
 https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-x64.zip!Build\x64\Release ^
 https://github.com/WinMerge/winwebdiff/releases/download/v1.0.20/winwebdiff-1.0.20.0-ARM64.zip!Build\ARM64\Release ^
+https://github.com/WinMerge/darkmodelib/releases/download/v0.21.2/darkmodelib-0.21.2.0-x86.zip!Build\x86\Release ^
+https://github.com/WinMerge/darkmodelib/releases/download/v0.21.2/darkmodelib-0.21.2.0-x64.zip!Build\x64\Release ^
+https://github.com/WinMerge/darkmodelib/releases/download/v0.21.2/darkmodelib-0.21.2.0-ARM64.zip!Build\ARM64\Release ^
 https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-w32-mt-XP.zip!Build\tidy-html5 ^
 https://github.com/htacg/tidy-html5/archive/refs/tags/5.4.0.zip!Build\tidy-html5 ^
 https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-i386.exe!Build\jq ^
@@ -88,6 +91,7 @@ for %%i in (x86 x64 ARM ARM64) do (
     mkdir Build\%%i\%%j\WinIMerge 2> NUL
     mkdir Build\%%i\%%j\WinWebDiff 2> NUL
     mkdir Build\%%i\%%j\Frhed 2> NUL
+    mkdir Build\%%i\%%j\darkmodelib 2> NUL
     mkdir Build\%%i\%%j\Filters 2> NUL
     mkdir Build\%%i\%%j\ColorSchemes 2> NUL
     mkdir Build\%%i\%%j\MergePlugins 2> NUL
@@ -102,8 +106,9 @@ for %%i in (x86 x64 ARM ARM64) do (
       echo ** Frhed
       xcopy /s/y Build\%%i\Release\Frhed Build\%%i\%%j\Frhed\
       echo ** WinIMerge
-      copy Build\%%i\Release\WinIMerge\WinIMergeLib.dll Build\%%i\%%j\WinIMerge\
+      copy Build\%%i\Release\WinIMerge\WinIMergeLib.dll Build\%%i\%%j\WinIMerge\ 2> NUL
       copy Build\%%i\Release\WinWebDiff\WinWebDiffLib.dll Build\%%i\%%j\WinWebDiff\ 2> NUL
+      copy Build\%%i\Release\darkmodelib\darkmode.dll Build\%%i\%%j\darkmodelib\ 2> NUL
     )
     echo ** jq
     copy Build\jq\jq-windows-i386.exe Build\%%i\%%j\Commands\jq\jq.exe
