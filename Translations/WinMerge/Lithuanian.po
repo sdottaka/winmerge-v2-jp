@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
-"POT-Creation-Date: 2025-09-17 08:05+0000\n"
-"PO-Revision-Date: 2025-09-22 07:55+0200\n"
+"POT-Creation-Date: 2025-10-21 19:25+0000\n"
+"PO-Revision-Date: 2025-10-23 09:09+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../Src/\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -1139,6 +1139,9 @@ msgstr "Pakeista data ir dydis"
 msgid "Size"
 msgstr "Dydis"
 
+msgid "Existence"
+msgstr "Egzistavimas"
+
 msgid "&Load Project..."
 msgstr "Įke&lti projektą..."
 
@@ -1484,6 +1487,9 @@ msgstr "Mažiau nei 100000"
 msgid "100000 or more"
 msgstr "100000 ar daugiau"
 
+msgid "Additional &Properties..."
+msgstr "&Papildomos savybės..."
+
 msgid "Add F&older Condition"
 msgstr "Pridėti katal&ogo sąlygą"
 
@@ -1507,6 +1513,18 @@ msgstr "Lygu"
 
 msgid "Not Equal"
 msgstr "Nelygu"
+
+msgid "Less Than"
+msgstr "Mažiau nei"
+
+msgid "Less Than or Equal to"
+msgstr "Mažiau nei arba lygu"
+
+msgid "Greater Than"
+msgstr "Daugiau nei"
+
+msgid "Greater Than or Equal to"
+msgstr "Daugiau nei arba lygu"
 
 msgid "Less than 10B"
 msgstr "Mažiau nei 10B"
@@ -1558,6 +1576,24 @@ msgstr "Rezultatai: Kairėje ir &Viduryje"
 
 msgid "Target: Middle and &Right"
 msgstr "Rezultatai: Viduryje ir &Dešinėje"
+
+msgid "Target: &All"
+msgstr "Rezultatai: &Visi"
+
+msgid "&Clear conditions"
+msgstr "&Išvalyti sąlygas"
+
+msgid "Compare &Size"
+msgstr "Lyginti &dydį"
+
+msgid "Compare &Date"
+msgstr "Lyginti &datą"
+
+msgid "Compare &Attributes"
+msgstr "Lyginti &atributus"
+
+msgid "Compare C&ontents"
+msgstr "Lyginti t&urinį"
 
 msgid "About WinMerge"
 msgstr "Apie WinMerge"
@@ -2555,6 +2591,9 @@ msgstr "Persijungti į &spartųjį palyginimą kai dydis virš (MB):"
 
 msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Persijungti į &binarinį palyginimą kai dydis virš (MB):"
+
+msgid "Additional comparison condi&tions:"
+msgstr "Papildomos palyginimo sąlygos:"
 
 msgid "File patterns:"
 msgstr "Failų šablonai:"
@@ -3583,6 +3622,10 @@ msgid "Image files are different"
 msgstr "Paveikslėliai skiriasi"
 
 #, c-format
+msgid "Files are different (expr: %1)"
+msgstr "Failai skiriasi (išraiška: %1)"
+
+#, c-format
 msgid "Group%d"
 msgstr "Grupė%d"
 
@@ -4378,6 +4421,10 @@ msgid "Filter applied"
 msgstr "Pritaikytas filtras"
 
 #, c-format
+msgid "Compare %1"
+msgstr "Palyginti %1"
+
+#, c-format
 msgid "Clipboard at %s"
 msgstr "Mainų sritis %s"
 
@@ -4546,6 +4593,9 @@ msgstr "Dalyba iš nulio filtro išraiškoje"
 
 msgid "Unknown error"
 msgstr "Nežinoma klaida"
+
+msgid "Invalid property name"
+msgstr "Netinkamas ypatybės pavadinimas"
 
 msgid "Equals"
 msgstr "Lygu"

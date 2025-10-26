@@ -923,6 +923,15 @@ lines.</para>
 ファイルサイズのみを比較するため高速ですが、 内容を比較する方法よりも不正確です。</para>
           </listitem>
         </varlistentry>
+
+        <varlistentry>
+          <term>存在のみ</term>
+
+          <listitem>
+            <para>
+両側にファイルが存在するかどうかのみを比較します。ファイルが左側と右側の両方に存在する場合、内容、サイズ、タイムスタンプはチェックされず、同一とみなされます。</para>
+          </listitem>
+        </varlistentry>
       </variablelist>
     </section>
 
@@ -1163,6 +1172,20 @@ Number of threads which use to comparing. With a negative value WinMerge
 will use addition of the number of available CPU cores.</para>
     </section>
 
+    <section>
+      <title>
+追加比較条件<indexterm>
+          <primary>フィルタ式</primary>
+        </indexterm></title>
+
+      <para>
+フォルダ比較時に、フィルタ式と同様の構文で追加の比較条件を指定できます。たとえば、比較方法に「Full
+Contents」を選択している場合でも、<screen>allequal(Date)</screen> や <screen>LeftDate = RightDate</screen>
+を指定すると、ファイル内容が一致していても更新日時が異なるファイルは差異ありとみなされます。また、入力欄の右側にある
+<guilabel>=</guilabel> ボタンをクリックすると、<guilabel>サイズを比較</guilabel> や
+<guilabel>更新日時を比較</guilabel> などのメニューが表示されます。ここで <guilabel>更新日時を比較</guilabel>
+を選択すると、入力欄に <literal>allequal(Date)</literal> が自動的に挿入されます。</para>
+    </section>
   </section>
 
   <section id="Configuration_compare_table">

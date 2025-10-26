@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2023-04-15 08:40+0000\n"
-"PO-Revision-Date: 2025-09-21 00:00+0000\n"
+"PO-Revision-Date: 2025-10-16 00:00+0000\n"
 "Last-Translator: Dmitriy Rublev\n"
 "Language-Team: Russian <winmerge-translate@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1141,6 +1141,9 @@ msgstr "По дате изменения и размеру"
 msgid "Size"
 msgstr "По размеру"
 
+msgid "Existence"
+msgstr "По наличию"
+
 msgid "&Load Project..."
 msgstr "Загрузить проект..."
 
@@ -1486,6 +1489,9 @@ msgstr "Менее 100000"
 msgid "100000 or more"
 msgstr "100000 или более"
 
+msgid "Additional &Properties..."
+msgstr ""
+
 msgid "Add F&older Condition"
 msgstr "Добавить условие папки"
 
@@ -1509,6 +1515,18 @@ msgstr "Равно"
 
 msgid "Not Equal"
 msgstr "Не равно"
+
+msgid "Less Than"
+msgstr ""
+
+msgid "Less Than or Equal to"
+msgstr ""
+
+msgid "Greater Than"
+msgstr ""
+
+msgid "Greater Than or Equal to"
+msgstr ""
 
 msgid "Less than 10B"
 msgstr "Менее 10Б"
@@ -1560,6 +1578,24 @@ msgstr "Назначение: Слева и В центре"
 
 msgid "Target: Middle and &Right"
 msgstr "Назначение: В центре и Справа"
+
+msgid "Target: &All"
+msgstr ""
+
+msgid "&Clear conditions"
+msgstr ""
+
+msgid "Compare &Size"
+msgstr ""
+
+msgid "Compare &Date"
+msgstr ""
+
+msgid "Compare &Attributes"
+msgstr ""
+
+msgid "Compare C&ontents"
+msgstr ""
 
 msgid "About WinMerge"
 msgstr "О программе WinMerge"
@@ -2557,6 +2593,9 @@ msgstr "Порог для перехода к быстрому сравнени�
 
 msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Порог для перехода к двоичному сравнению (MB)"
+
+msgid "Additional comparison condi&tions:"
+msgstr ""
 
 msgid "File patterns:"
 msgstr "Шаблоны файлов:"
@@ -3585,6 +3624,10 @@ msgid "Image files are different"
 msgstr "Файлы изображений разные"
 
 #, c-format
+msgid "Files are different (expr: %1)"
+msgstr ""
+
+#, c-format
 msgid "Group%d"
 msgstr "Группа%d"
 
@@ -4380,6 +4423,10 @@ msgid "Filter applied"
 msgstr "Фильтр применен"
 
 #, c-format
+msgid "Compare %1"
+msgstr ""
+
+#, c-format
 msgid "Clipboard at %s"
 msgstr "Буфер обмена в %s"
 
@@ -4548,6 +4595,9 @@ msgstr "Деление на ноль в выражении фильтра"
 
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
+
+msgid "Invalid property name"
+msgstr "Неверное имя свойства"
 
 msgid "Equals"
 msgstr "Равно"

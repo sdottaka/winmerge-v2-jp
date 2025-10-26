@@ -1143,6 +1143,9 @@ msgstr "修改日期和文件大小"
 msgid "Size"
 msgstr "文件大小"
 
+msgid "Existence"
+msgstr "存在性"
+
 msgid "&Load Project..."
 msgstr "加载工程(&L)..."
 
@@ -1488,6 +1491,9 @@ msgstr "小于 100000"
 msgid "100000 or more"
 msgstr "至少 100000"
 
+msgid "Additional &Properties..."
+msgstr "附加属性(&)..."
+
 msgid "Add F&older Condition"
 msgstr "添加文件夹条件(&O)"
 
@@ -1511,6 +1517,18 @@ msgstr "相同"
 
 msgid "Not Equal"
 msgstr "不相同"
+
+msgid "Less Than"
+msgstr "小于"
+
+msgid "Less Than or Equal to"
+msgstr "小于等于"
+
+msgid "Greater Than"
+msgstr "大于"
+
+msgid "Greater Than or Equal to"
+msgstr "大于等于"
 
 msgid "Less than 10B"
 msgstr "小于 10 字节"
@@ -1562,6 +1580,24 @@ msgstr "目标：左和中(&M)"
 
 msgid "Target: Middle and &Right"
 msgstr "目标：中和右(&R)"
+
+msgid "Target: &All"
+msgstr "目标：全部(&A)"
+
+msgid "&Clear conditions"
+msgstr "清除条件(&C)"
+
+msgid "Compare &Size"
+msgstr "比较大小(&S)"
+
+msgid "Compare &Date"
+msgstr "比较日期(&D)"
+
+msgid "Compare &Attributes"
+msgstr "比较属性(&A)"
+
+msgid "Compare C&ontents"
+msgstr "比较内容(&O)"
 
 msgid "About WinMerge"
 msgstr "关于 WinMerge"
@@ -2573,6 +2609,9 @@ msgstr "切换到快速比较的最小值(&Q) (MB)："
 msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "切换到二进制比较的最小值(&B) (MB)："
 
+msgid "Additional comparison condi&tions:"
+msgstr "附加的比较条件(&T)："
+
 msgid "File patterns:"
 msgstr "文件模式："
 
@@ -3544,7 +3583,7 @@ msgid "Close the folder comparison window, which took a long time?"
 msgstr "关闭文件夹比较窗口，这需要很长时间？"
 
 msgid "The file or folder name is invalid."
-msgstr "文件或文件夹的名称不合法。"
+msgstr "文件或文件夹的名称无效。"
 
 #, c-format
 msgid "Failed to execute external editor: %1"
@@ -3826,6 +3865,10 @@ msgstr "图像文件相同"
 
 msgid "Image files are different"
 msgstr "图像文件有差异"
+
+#, c-format
+msgid "Files are different (expr: %1)"
+msgstr "文件不同（表达式：%1）"
 
 #, c-format
 msgid "Group%d"
@@ -4700,7 +4743,7 @@ msgstr "指定插件参数"
 
 #, c-format
 msgid "Plugin not found or invalid: %1"
-msgstr "插件不存在或非法：%1"
+msgstr "插件不存在或无效：%1"
 
 #, c-format
 msgid "'%1' is not an unpacker plugin"
@@ -4766,6 +4809,10 @@ msgstr "第二个和第三个"
 
 msgid "Filter applied"
 msgstr "过滤器已应用"
+
+#, c-format
+msgid "Compare %1"
+msgstr "比较 %1"
 
 #, c-format
 msgid "Clipboard at %s"
@@ -4973,16 +5020,16 @@ msgid "Failed to parse filter expression"
 msgstr "无法解析过滤器表达式"
 
 msgid "Invalid literal value"
-msgstr "非法的字面量值"
+msgstr "无效的字面量值"
 
 msgid "Invalid regular expression"
-msgstr "非法的正则表达式"
+msgstr "无效的正则表达式"
 
 msgid "Undefined identifier"
 msgstr "未定义的标识符"
 
 msgid "Invalid number of arguments"
-msgstr "非法的参数数量"
+msgstr "无效的参数数量"
 
 msgid "Filter name not found"
 msgstr "过滤器名称不存在"
@@ -4992,6 +5039,9 @@ msgstr "过滤器表达式存在除零错误"
 
 msgid "Unknown error"
 msgstr "未知错误"
+
+msgid "Invalid property name"
+msgstr "无效的属性名称"
 
 msgid "Equals"
 msgstr "等于"

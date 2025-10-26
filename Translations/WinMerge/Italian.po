@@ -10,17 +10,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WinMerge - Italian - 24.09.2025\n"
+"Project-Id-Version: WinMerge - Italian - 23.10.2025\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2025-04-17 09:05+0000\n"
-"PO-Revision-Date: 2025-09-24 08:43+0200\n"
+"PO-Revision-Date: 2025-10-23 12:32+0200\n"
 "Last-Translator: bovirus <bovirus@gmail.com>\n"
 "Language-Team: bovirus (bovirus@gmail.com)\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. LANGUAGE, SUBLANGUAGE
@@ -1140,6 +1140,9 @@ msgstr "Data ultima modifica e dimensioni"
 msgid "Size"
 msgstr "Dimensioni"
 
+msgid "Existence"
+msgstr "Esistenza"
+
 msgid "&Load Project..."
 msgstr "&Carica progetto..."
 
@@ -1485,6 +1488,9 @@ msgstr "Inferiori a 100.000"
 msgid "100000 or more"
 msgstr "100.000 o maggiore"
 
+msgid "Additional &Properties..."
+msgstr "&Proprietà aggiuntive..."
+
 msgid "Add F&older Condition"
 msgstr "Aggiungi c&ondizione cartella"
 
@@ -1508,6 +1514,18 @@ msgstr "Uguale"
 
 msgid "Not Equal"
 msgstr "Non uguale"
+
+msgid "Less Than"
+msgstr "Inferiore a"
+
+msgid "Less Than or Equal to"
+msgstr "Uguale o inferiore a"
+
+msgid "Greater Than"
+msgstr "Maggiore di"
+
+msgid "Greater Than or Equal to"
+msgstr "Uguale o maggiore di"
 
 msgid "Less than 10B"
 msgstr "Inferiore a 10B"
@@ -1559,6 +1577,24 @@ msgstr "Obiettivo: sinistra e &centrale"
 
 msgid "Target: Middle and &Right"
 msgstr "Obiettivo: centrale e &destra"
+
+msgid "Target: &All"
+msgstr "Obiettivo: &tutti"
+
+msgid "&Clear conditions"
+msgstr "Azzera &condizioni"
+
+msgid "Compare &Size"
+msgstr "Confronta dimen&sione"
+
+msgid "Compare &Date"
+msgstr "Confronta &data"
+
+msgid "Compare &Attributes"
+msgstr "Confronta &attributi"
+
+msgid "Compare C&ontents"
+msgstr "Confronta c&ontenuto"
 
 msgid "About WinMerge"
 msgstr "Info su WinMerge"
@@ -2577,6 +2613,9 @@ msgstr "Soglia per passare al confronto &rapido (MB):"
 
 msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Soglia per passare al confronto &binario (MB):"
+
+msgid "Additional comparison condi&tions:"
+msgstr "U&lteriori condizioni dii confronto:"
 
 msgid "File patterns:"
 msgstr "Pattern file:"
@@ -3857,6 +3896,10 @@ msgid "Image files are different"
 msgstr "Le immagini sono diverse"
 
 #, c-format
+msgid "Files are different (expr: %1)"
+msgstr "I file sono differenti (espr: %1)"
+
+#, c-format
 msgid "Group%d"
 msgstr "Gurppo%d"
 
@@ -4824,6 +4867,10 @@ msgid "Filter applied"
 msgstr "Filtro applicato"
 
 #, c-format
+msgid "Compare %1"
+msgstr "Confronta %1"
+
+#, c-format
 msgid "Clipboard at %s"
 msgstr "Appunti in %s"
 
@@ -5052,6 +5099,9 @@ msgstr "Divisione per zero nell'espressione filtro"
 
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
+
+msgid "Invalid property name"
+msgstr "Nome proprietà non valido"
 
 msgid "Equals"
 msgstr "Uguale"

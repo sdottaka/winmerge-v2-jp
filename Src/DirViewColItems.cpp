@@ -18,6 +18,7 @@
 #include "I18n.h"
 #include "FileTransform.h"
 #include "PropertySystem.h"
+#include "FilterEngine/FilterExpression.h"
 #include "DebugNew.h"
 
 using Poco::Timestamp;
@@ -406,7 +407,9 @@ static String ColStatusGet(const CDiffContext *pCtxt, const void *p, int)
 	}
 	else if (di.diffcode.isResultDiff()) // diff
 	{
-		if (di.diffcode.isText())
+		if (di.diffcode.isExprDiff())
+			s = strutils::format_string1(_("Files are different (expr: %1)"), ucr::toTString(pCtxt->m_pAdditionalCompareExpression->expression));
+		else if (di.diffcode.isText())
 			s = _("Text files are different");
 		else if (di.diffcode.isBin())
 			s = _("Binary files are different");
@@ -1338,24 +1341,15 @@ static int ColAllPropertySort(const CDiffContext *pCtxt, const void *p, const vo
 	const DIFFITEM &s = *static_cast<const DIFFITEM *>(q);
 	for (int i = 0; i < pCtxt->GetCompareDirs(); ++i)
 	{
-		if (r.diffcode.exists(i))
-		{
-			for (int j = 0; j < pCtxt->GetCompareDirs(); ++j)
-			{
-				if (s.diffcode.exists(j))
-				{
-					if (!r.diffFileInfo[i].m_pAdditionalProperties && s.diffFileInfo[j].m_pAdditionalProperties)
-						return -1;
-					if (r.diffFileInfo[i].m_pAdditionalProperties && !s.diffFileInfo[j].m_pAdditionalProperties)
-						return 1;
-					if (!r.diffFileInfo[i].m_pAdditionalProperties && !s.diffFileInfo[j].m_pAdditionalProperties)
-						return 0;
-					int result = PropertyValues::CompareValues(*r.diffFileInfo[i].m_pAdditionalProperties, *s.diffFileInfo[j].m_pAdditionalProperties, opt);
-					if (result != 0)
-						return result;
-				}
-			}
-		}
+		if (!r.diffFileInfo[i].m_pAdditionalProperties && s.diffFileInfo[i].m_pAdditionalProperties)
+			return -1;
+		if (r.diffFileInfo[i].m_pAdditionalProperties && !s.diffFileInfo[i].m_pAdditionalProperties)
+			return 1;
+		if (!r.diffFileInfo[i].m_pAdditionalProperties && !s.diffFileInfo[i].m_pAdditionalProperties)
+			return 0;
+		int result = PropertyValues::CompareValues(*r.diffFileInfo[i].m_pAdditionalProperties, *s.diffFileInfo[i].m_pAdditionalProperties, opt);
+		if (result != 0)
+			return result;
 	}
 	return 0;
 }
