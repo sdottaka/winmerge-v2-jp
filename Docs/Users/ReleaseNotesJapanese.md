@@ -1,101 +1,109 @@
-# WinMerge 2.16.50 リリースノート
+# WinMerge 2.16.52 リリースノート
 
 - [このリリースについて](#about-this-release)
-- [2.16.50 の新機能](#what-is-new-in-21650)
-- [2.16.49 beta の新機能](#what-is-new-in-21649-beta)
+- [2.16.52 の新機能](#what-is-new-in-21652)
+- [2.16.51 beta の新機能](#what-is-new-in-21651-beta)
 - [既知の問題](#known-issues)
 
-2025年7月
+2025年10月
 
 ## このリリースについて
 
-WinMerge の 2.16.50 安定版リリースです。
+WinMerge の 2.16.52 安定版リリースです。
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。
 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。
 
-## <a name="what-is-new-in-21650"></a>2.16.50 の新機能
+## <a name="what-is-new-in-21650"></a>2.16.52 の新機能
 
-### 一般
-
-- 最大化状態でタイトルバーの最上端をクリックした場合に、それをタブボタン内のクリックとして扱うようにした。（[PR #2828](https://github.com/WinMerge/winmerge/pull/2828)）(PRをいただきました。ありがとうございます。)
-
-### 翻訳
-
-* 不具合修正: 4つの「Disabled」をそれぞれ別々に翻訳できるようにし、All rights reserved も翻訳可能にした。（[#2852](https://github.com/WinMerge/winmerge/issues/2852)）
-* 翻訳の更新:
-
-  * Brazilian (PR #2849)
-  * Chinese Simplified (PR #2856)
-  * Hungarian (PR #2857,#2859)
-  * Italian (PR #2850,#2851,#2858)
-  * Japanese
-  * Swedish
-  * Russian (PR #2847)
-
-## <a name="what-is-new-in-21649-beta"></a>2.16.49 Beta の新機能
+## WinMerge 2.16.52 の更新内容
 
 ### 全般
 
-- Shift+マウスホイールでタブが切り替えられるようにした。（[PR #2821](https://github.com/WinMerge/winmerge/pull/2821)）(PRをいただきました。ありがとうございます。)
+* 不具合修正: 何らかの理由で残っていた WinMerge の一時フォルダが、次回のアプリケーション終了時に正しく削除されない問題を修正した。
+* [機能追加要望] タブ移動の代替ホットキーを追加 ([#2942](https://github.com/WinMerge/winmerge/issues/2942))
+* ARM64 ビルドでクラッシュ問題が解決できなかったため、darkmodelib を無効化した。
 
-### 外観
+### バイナリ比較
 
-- テーマ付きサイズグリップを使用し、ツールバーのツールチップをコントロールバーの代わりに使用するようにした。（[PR #2769](https://github.com/WinMerge/winmerge/pull/2769)）(PRをいただきました。ありがとうございます。)
+* 不具合修正: Hexビューで Ctrl+W を押した際にウィンドウを閉じる動作に関する問題を修正した。 ([#2294](https://github.com/WinMerge/winmerge/issues/2294))
 
-### ファイル比較
+### フォルダ比較
 
-- 不具合修正：複数の差異ブロックをコピーする際にクラッシュすることがあるのを修正した。
-- シンタックスハイライト: Delphi のコンパイラディレクティブをサポートした。（[#2814](https://github.com/WinMerge/winmerge/issues/2814)）
-- ロケーションパネルをクリックしたときに自動的に該当行へ移動するかどうかを切り替えるオプションを追加した。（[PR #2827](https://github.com/WinMerge/winmerge/pull/2827)）(PRをいただきました。ありがとうございます。)
-
-### フォルダー比較
-
-- 不具合修正：存在しないファイルのタイムスタンプが表示される問題（[#2764](https://github.com/WinMerge/winmerge/issues/2764)）
-- 不具合修正：ファイルフィルターを使用している場合、フォルダーを選択しての[選択項目を最新に更新]を選択するとフォルダーの比較結果がランダムに失われる問題を修正した。（[#2792](https://github.com/WinMerge/winmerge/issues/2792)）
-- フォルダー比較ウィンドウで複数ファイルを一括で比較できる機能を追加した。（[#324](https://github.com/WinMerge/winmerge/issues/324), [PR #2825](https://github.com/WinMerge/winmerge/pull/2825)）(PRをいただきました。ありがとうございます。)
-- フィルターシステムの改善：式のサポートとUIの強化。(フィルター式の例:`*.cpp;*.h|fe:Size<10KB` ・・・拡張子cppとhのファイルでファイルサイズが10KBのファイルを比較) （[PR #2802](https://github.com/WinMerge/winmerge/pull/2802)）
-
-### オプションダイアログ
-
-- 不具合修正：比較 > フォルダー ページの「～切替閾値」オプションが正しく有効/無効にならない問題を修正した。（[PR #2819](https://github.com/WinMerge/winmerge/pull/2819)）(PRをいただきました。ありがとうございます。)
-
-### コマンドライン
-
-- 不具合修正：異なるカレントディレクトリのWinMergeが実行中のまま、別のカレントディレクトリで`/s` オプションを指定して相対パスでファイルを比較するとファイル比較に失敗する問題を修正した。
-
-### アーカイブサポート
-
-- 7-Zip をバージョン25.00 に更新した。
-
-### インストーラー
-
-- インストーラー：Windowsの「プログラムと機能」に表示される名前にバージョン番号が含まれないようにした。（[#2798](https://github.com/WinMerge/winmerge/issues/2798)）
+* 不具合修正: フォルダ比較メソッドが「更新日時のみ」または「更新日時またはサイズ」の場合に更新日時が1秒差でも一致とみなすことがあったのを修正した。 ([#2973](https://github.com/WinMerge/winmerge/issues/2973))
+* toDateStr フィルタ関数を追加した。
+* 追加の比較条件を指定できるオプションを追加した。 ([PR #2963](https://github.com/WinMerge/winmerge/pull/2963))
+* フィルタ式で prop、leftprop、middleprop、rightprop 関数をサポートした。 ([PR #2974](https://github.com/WinMerge/winmerge/pull/2974))
+* 「Existence（存在）」フォルダ比較方法を追加した。 ([PR #2980](https://github.com/WinMerge/winmerge/pull/2980))
 
 ### 翻訳
 
-- 翻訳の更新:
-  - Brazilian (PR #2829)
-  - Bulgarian (PR #2763)
-  - Chinese Simplified (PR #2831)
-  - Chinese Traditional (PR #2838)
-  - Corsican (PR #2844)
-  - French (PR #2754,#2761,#2762)
-  - Hungarian (PR #2836)
-  - Italian (PR #2832)
-  - Japanese
-  - Korean (PR #2766,#2845)
-  - Lithuanian (PR #2799,#2805,#2826,#2830)
-  - Portuguese (PR #2768)
-  - Russian (PR #2760,#2840)
-  - Swedish
-  - Tamil (PR #2812,#2813)
-  - Turkish (PR #2782)
+* 翻訳更新:
+  * ブラジルポルトガル語 ([PR #2981](https://github.com/WinMerge/winmerge/pull/2981), [#2977](https://github.com/WinMerge/winmerge/pull/2977), [#2995](https://github.com/WinMerge/winmerge/pull/2995))
+  * 簡体字中国語 ([PR #2978](https://github.com/WinMerge/winmerge/pull/2978), [#2991](https://github.com/WinMerge/winmerge/pull/2991), [#2996](https://github.com/WinMerge/winmerge/pull/2996))
+  * コルシカ語 ([PR #2999](https://github.com/WinMerge/winmerge/pull/2999))
+  * イタリア語 ([PR #2976](https://github.com/WinMerge/winmerge/pull/2976), [#2982](https://github.com/WinMerge/winmerge/pull/2982), [#2998](https://github.com/WinMerge/winmerge/pull/2998))
+  * 日本語
+  * 韓国語 ([PR #2993](https://github.com/WinMerge/winmerge/pull/2993))
+  * リトアニア語 ([PR #2975](https://github.com/WinMerge/winmerge/pull/2975), [#2986](https://github.com/WinMerge/winmerge/pull/2986), [#2997](https://github.com/WinMerge/winmerge/pull/2997))
+  * ポルトガル語 ([PR #2971](https://github.com/WinMerge/winmerge/pull/2971))
+  * ポーランド語 ([PR #2972](https://github.com/WinMerge/winmerge/pull/2972), [#2979](https://github.com/WinMerge/winmerge/pull/2979), [#3003](https://github.com/WinMerge/winmerge/pull/3003), [#3005](https://github.com/WinMerge/winmerge/pull/3005))
+  * トルコ語 ([PR #2992](https://github.com/WinMerge/winmerge/pull/2992))
+  * ロシア語 ([PR #2983](https://github.com/WinMerge/winmerge/pull/2983))
 
-### その他
+## WinMerge 2.16.51 Beta の更新内容
 
-- GetTranslationsStatus.py の文法警告を修正した。(PR #2751)（[PR #2751](https://github.com/WinMerge/winmerge/pull/2751)）(PRをいただきました。ありがとうございます。)
+### 全般
+
+- 不具合修正: ウインドウ内で右クリックしながらウインドウの外にポインタを移動して右ボタンを離した後、マウスホイールで次または前の差異に移動してしまうようになる問題を修正した。([#2939](https://github.com/WinMerge/winmerge/issue/2939))
+
+### 外観
+
+* ダークモードに対応した。([PR #2834](https://github.com/WinMerge/winmerge/pull/2834))(PRをいただきました。ありがとうございます。)
+* ハンバーガーメニューのちらつきを減らした。
+
+### ファイル比較
+
+* "改行を無視(空白として扱う)"比較オプションを追加した。 ([PR #2945](https://github.com/WinMerge/winmerge/pull/2945))
+
+### フォルダー比較
+
+* 不具合修正: [除外ファイルを追加]→[エディターのバックアップファイル]メニューで追加された除外ファイルが正しくない問題を修正した。(ほとんどのファイルが除外されてしまう)
+
+### フィルターダイアログ
+
+- ウインドウサイズを変更できるようにした。（[PR #2907](https://github.com/WinMerge/winmerge/pull/2907)）
+
+### オプションダイアログ
+
+* 変更した色を新しいスキームとして保存できるように変更 ([#1180](https://github.com/WinMerge/winmerge/issues/1180), [PR #2908](https://github.com/WinMerge/winmerge/pull/2908))
+
+### 翻訳
+
+* 翻訳更新:
+
+  * ブラジルポルトガル語 ([#2886](https://github.com/WinMerge/winmerge/pull/2886), [#2910](https://github.com/WinMerge/winmerge/pull/2910), [#2951](https://github.com/WinMerge/winmerge/pull/2951))
+  * 簡体字中国語 ([PR #2889](https://github.com/WinMerge/winmerge/pull/2889), [#2916](https://github.com/WinMerge/winmerge/pull/2916), [#2952](https://github.com/WinMerge/winmerge/pull/2952))
+  * コルシカ語 ([PR #2915](https://github.com/WinMerge/winmerge/pull/2915))
+  * フランス語 ([PR #2887](https://github.com/WinMerge/winmerge/pull/2887), [#2938](https://github.com/WinMerge/winmerge/pull/2938), [#2969](https://github.com/WinMerge/winmerge/pull/2969))
+  * ハンガリー語 ([PR #2909](https://github.com/WinMerge/winmerge/pull/2909), [#2948](https://github.com/WinMerge/winmerge/pull/2948))
+  * イタリア語 ([PR #2892](https://github.com/WinMerge/winmerge/pull/2892), [#2911](https://github.com/WinMerge/winmerge/pull/2911), [#2956](https://github.com/WinMerge/winmerge/pull/2956))
+  * 日本語
+  * 韓国語 ([PR #2913](https://github.com/WinMerge/winmerge/pull/2913), [#2934](https://github.com/WinMerge/winmerge/pull/2934), [#2950](https://github.com/WinMerge/winmerge/pull/2950))
+  * リトアニア語 ([PR #2912](https://github.com/WinMerge/winmerge/pull/2912), [#2936](https://github.com/WinMerge/winmerge/pull/2936), [#2953](https://github.com/WinMerge/winmerge/pull/2953))
+  * ポルトガル語 ([PR #2928](https://github.com/WinMerge/winmerge/pull/2928))
+  * ポーランド語 ([PR #2929](https://github.com/WinMerge/winmerge/pull/2929), [#2930](https://github.com/WinMerge/winmerge/pull/2930), [#2931](https://github.com/WinMerge/winmerge/pull/2931))
+  * ロシア語 ([PR #2890](https://github.com/WinMerge/winmerge/pull/2890), [#2919](https://github.com/WinMerge/winmerge/pull/2919), [#2920](https://github.com/WinMerge/winmerge/pull/2920), [#2933](https://github.com/WinMerge/winmerge/pull/2933), [#2944](https://github.com/WinMerge/winmerge/pull/2944), [#2949](https://github.com/WinMerge/winmerge/pull/2949))
+  * スペイン語 ([PR #2961](https://github.com/WinMerge/winmerge/pull/2961))
+  * スウェーデン語
+  * トルコ語 ([PR #2906](https://github.com/WinMerge/winmerge/pull/2906), [#2914](https://github.com/WinMerge/winmerge/pull/2914), [#2957](https://github.com/WinMerge/winmerge/pull/2957))
+  * ウクライナ語 ([PR #2932](https://github.com/WinMerge/winmerge/pull/2932), [#2937](https://github.com/WinMerge/winmerge/pull/2937), [#2954](https://github.com/WinMerge/winmerge/pull/2954))
+
+### 内部処理
+
+* bindoption の使用にリファクタリング ([PR #2955](https://github.com/WinMerge/winmerge/pull/2955))
+
 
 ## <a name="known-issues"></a>既知の問題
 
