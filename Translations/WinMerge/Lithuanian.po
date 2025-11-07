@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
-"POT-Creation-Date: 2025-10-21 19:25+0000\n"
-"PO-Revision-Date: 2025-10-23 09:09+0200\n"
+"POT-Creation-Date: 2025-11-03 09:05+0000\n"
+"PO-Revision-Date: 2025-11-03 07:40+0200\n"
 "Last-Translator: Tichij <tichij@mail.com>\n"
 "Language-Team: Lithuanian <winmerge-translate@lists.sourceforge.net>\n"
 "Language: lt\n"
@@ -1002,7 +1002,7 @@ msgid "Copy &Filenames"
 msgstr "Kopijuoti &failų vardus"
 
 msgid "Copy Items to Clip&board"
-msgstr "Kopijuoti elementus į iš&karpinę"
+msgstr "Kopijuoti elementus į mainų &sritį"
 
 msgid "Copy All Di&splayed Columns"
 msgstr "Kopijuoti visus rodomu&s stulpelius"
@@ -1673,48 +1673,6 @@ msgstr "Pagalba"
 msgid "&Options..."
 msgstr "Nu&ostatos..."
 
-msgid "General"
-msgstr "Bendros"
-
-msgid "Automatically &scroll to first difference"
-msgstr "Automatiškai pa&slinkti prie pirmo skirtumo"
-
-msgid "Automatically s&croll to first inline difference"
-msgstr "Automatiškai pas&linkti prie pirmo skirtumo eilutėje"
-
-msgid "Cl&ose windows with 'Esc':"
-msgstr "Užverti langus „Esc“ klavišu:"
-
-msgid "&Automatically verify paths in Open dialog"
-msgstr "&Automatiškai tikrinti kelius „Atverti“ lange"
-
-msgid "Single instance mode:"
-msgstr "Vieno programos egzemplioriaus režimas:"
-
-msgid "As&k when closing multiple windows"
-msgstr "&Klausti patvirtinimo, kai uždaromi keli langai"
-
-msgid "&Preserve file time in file compare"
-msgstr "Lyginant failus ne&pakeisti failo keitimo laiko"
-
-msgid "Show \"Select Files or Folders\" dialog on startup"
-msgstr "Rodyti „Parinkite failus ar katalogus“ startuojant"
-
-msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
-msgstr "Užverti „Parinkite failus ar katalogus“ po „Lyginti“ paspaudimo"
-
-msgid "Op&en dialog Auto completion:"
-msgstr "Lango „Atv&erti“ automatinis užpildymas:"
-
-msgid "Auto-&reload modified files:"
-msgstr "Automatiškais &įkelti iš naujo pakeistus failus:"
-
-msgid "Language:"
-msgstr "Kalba:"
-
-msgid "Defaults"
-msgstr "Numat. reikšmės"
-
 msgid "Find"
 msgstr "Rasti"
 
@@ -1816,6 +1774,57 @@ msgstr "Pridėti"
 
 msgid "Clear"
 msgstr "Išvalyti"
+
+msgid "Options"
+msgstr "Nuostatos"
+
+msgid "Import..."
+msgstr "Importuoti..."
+
+msgid "Export..."
+msgstr "Eksportuoti..."
+
+msgid "General"
+msgstr "Bendros"
+
+msgid "Automatically &scroll to first difference"
+msgstr "Automatiškai pa&slinkti prie pirmo skirtumo"
+
+msgid "Automatically s&croll to first inline difference"
+msgstr "Automatiškai pas&linkti prie pirmo skirtumo eilutėje"
+
+msgid "Cl&ose windows with 'Esc':"
+msgstr "Užverti langus „Esc“ klavišu:"
+
+msgid "&Automatically verify paths in Open dialog"
+msgstr "&Automatiškai tikrinti kelius „Atverti“ lange"
+
+msgid "Single instance mode:"
+msgstr "Vieno programos egzemplioriaus režimas:"
+
+msgid "As&k when closing multiple windows"
+msgstr "&Klausti patvirtinimo, kai uždaromi keli langai"
+
+msgid "&Preserve file time in file compare"
+msgstr "Lyginant failus ne&pakeisti failo keitimo laiko"
+
+msgid "Show \"Select Files or Folders\" dialog on startup"
+msgstr "Rodyti „Parinkite failus ar katalogus“ startuojant"
+
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
+msgstr "Užverti „Parinkite failus ar katalogus“ po „Lyginti“ paspaudimo"
+
+msgid "Op&en dialog Auto completion:"
+msgstr "Lango „Atv&erti“ automatinis užpildymas:"
+
+msgid "Auto-&reload modified files:"
+msgstr "Automatiškai iš naujo &įkelti pakeistus failus:"
+
+msgid "Language:"
+msgstr "Kalba:"
+
+msgid "Defaults"
+msgstr "Numat. reikšmės"
 
 msgid "Colors"
 msgstr "Spalvų"
@@ -1976,6 +1985,111 @@ msgstr "P&asirinktinis katalogas:"
 msgid "Br&owse..."
 msgstr "Ra&sti..."
 
+msgid "Compare"
+msgstr "Lyginimo"
+
+msgid "Whitespaces"
+msgstr "Tarpai"
+
+msgid "&Compare"
+msgstr "&Lyginti"
+
+msgid "&Ignore change"
+msgstr "&Ignoruoti pokyčius"
+
+msgid "I&gnore all"
+msgstr "I&gnoruoti visus"
+
+msgid "Ignore blan&k lines"
+msgstr "Nepaisyti &tuščių eilučių"
+
+msgid "Ignore &case"
+msgstr "Nepaisyti raidžių &dydžio"
+
+msgid "Igno&re EOL differences (Windows/Unix/Mac)"
+msgstr "Igno&ruoti eil. pabaigų formato skirtumus (Windows/Unix/Mac)"
+
+msgid "Ignore num&bers"
+msgstr "Ignoruoti skai&čius"
+
+msgid "Ignore codepage &differences"
+msgstr "Nepaisyti ko&duočių skirtumų"
+
+msgid "Ignore c&omment differences"
+msgstr "Nepaisyti skirtumų k&omentaruose"
+
+msgid "Ignore &missing trailing EOL"
+msgstr "Nepaisyti trūksta&mų galinių EOL"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr "Nepaisyti eilutės &lūžių (laikyti tarpais)"
+
+msgid "E&nable moved block detection"
+msgstr "Įju&ngti perkeltų blokų aptikimą"
+
+msgid "Align &similar lines"
+msgstr "&Sutapdinti panašias eilutes"
+
+msgid "Diff &algorithm:"
+msgstr "Lyginimo &algoritmas:"
+
+msgid "Enable indent &heuristic"
+msgstr "Įgalinti &heuristinę įtrauką"
+
+msgid "Completely unhighlight the ignored differences"
+msgstr "Visiškai nuimti paryškinimą ignoruojamiems skirtumams"
+
+msgid "Editor"
+msgstr "Redaktoriaus"
+
+msgid "&Highlight syntax"
+msgstr "&Naudoti sintaksės paryškinimą"
+
+msgid "&Preserve original EOL"
+msgstr "Išsaugoti originalų eil. pabaigos formatą"
+
+msgid "Tabs"
+msgstr "TAB simboliai"
+
+msgid "&Tab size:"
+msgstr "&TAB simbolio dydis:"
+
+msgid "&Insert tabs"
+msgstr "Įterpt&i TAB simbolius"
+
+msgid "Insert &spaces"
+msgstr "Įterpti tarpu&s"
+
+msgid "&Rendering mode:"
+msgstr "Atvaizdavimo &režimas:"
+
+msgid "&Automatic rescan"
+msgstr "&Automatiškai perskanuoti"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "Kopijuoti pasirinktų skirtumų &granuliuotumą:"
+
+msgid "Line Difference Coloring"
+msgstr "Skirtumų eilutėse spalvinimas"
+
+msgid "View line differences"
+msgstr "Rodyti skirtumus eilutėse"
+
+msgid "&Character-level"
+msgstr "&Simbolio lygyje"
+
+msgid "&Word-level:"
+msgstr "Žo&džio lygyje:"
+
+msgid "W&ord break characters:"
+msgstr "Ž&odžių skirtukų simboliai:"
+
+msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
+msgstr "Naudotojas gali paslėpti kai kuriuos bendrus pranešimus. Paspauskite mygtuką „Atkurti“, kad visi pranešimai vėl būtų matomi."
+
+msgid "Reset"
+msgstr "Atkurti"
+
 msgid "Patch Generator"
 msgstr "Pataisos generatorius"
 
@@ -2099,111 +2213,6 @@ msgstr "&Skirtumą"
 msgid "&Go to"
 msgstr "&Pereiti į"
 
-msgid "Compare"
-msgstr "Lyginimo"
-
-msgid "Whitespaces"
-msgstr "Tarpai"
-
-msgid "&Compare"
-msgstr "&Lyginti"
-
-msgid "&Ignore change"
-msgstr "&Ignoruoti pokyčius"
-
-msgid "I&gnore all"
-msgstr "I&gnoruoti visus"
-
-msgid "Ignore blan&k lines"
-msgstr "Nepaisyti &tuščių eilučių"
-
-msgid "Ignore &case"
-msgstr "Nepaisyti raidžių &dydžio"
-
-msgid "Igno&re EOL differences (Windows/Unix/Mac)"
-msgstr "Igno&ruoti eil. pabaigų formato skirtumus (Windows/Unix/Mac)"
-
-msgid "Ignore num&bers"
-msgstr "Ignoruoti skai&čius"
-
-msgid "Ignore codepage &differences"
-msgstr "Nepaisyti ko&duočių skirtumų"
-
-msgid "Ignore c&omment differences"
-msgstr "Nepaisyti skirtumų k&omentaruose"
-
-msgid "Ignore &missing trailing EOL"
-msgstr "Nepaisyti trūksta&mų galinių EOL"
-
-msgid "Ignore line &breaks (treat as spaces)"
-msgstr "Nepaisyti eilutės &lūžių (laikyti tarpais)"
-
-msgid "E&nable moved block detection"
-msgstr "Įju&ngti perkeltų blokų aptikimą"
-
-msgid "Align &similar lines"
-msgstr "&Sutapdinti panašias eilutes"
-
-msgid "Diff &algorithm:"
-msgstr "Lyginimo &algoritmas:"
-
-msgid "Enable indent &heuristic"
-msgstr "Įgalinti &heuristinę įtrauką"
-
-msgid "Completely unhighlight the ignored differences"
-msgstr "Visiškai nuimti paryškinimą ignoruojamiems skirtumams"
-
-msgid "Editor"
-msgstr "Redaktoriaus"
-
-msgid "&Highlight syntax"
-msgstr "&Naudoti sintaksės paryškinimą"
-
-msgid "&Preserve original EOL"
-msgstr "Išsaugoti originalų eil. pabaigos formatą"
-
-msgid "Tabs"
-msgstr "TAB simboliai"
-
-msgid "&Tab size:"
-msgstr "&TAB simbolio dydis:"
-
-msgid "&Insert tabs"
-msgstr "Įterpt&i TAB simbolius"
-
-msgid "Insert &spaces"
-msgstr "Įterpti tarpu&s"
-
-msgid "&Rendering mode:"
-msgstr "Atvaizdavimo &režimas:"
-
-msgid "&Automatic rescan"
-msgstr "&Automatiškai perskanuoti"
-
-msgid "Copy &granularity for selected differences:"
-msgstr "Kopijuoti pasirinktų skirtumų &granuliuotumą:"
-
-msgid "Line Difference Coloring"
-msgstr "Skirtumų eilutėse spalvinimas"
-
-msgid "View line differences"
-msgstr "Rodyti skirtumus eilutėse"
-
-msgid "&Character-level"
-msgstr "&Simbolio lygyje"
-
-msgid "&Word-level:"
-msgstr "Žo&džio lygyje:"
-
-msgid "W&ord break characters:"
-msgstr "Ž&odžių skirtukų simboliai:"
-
-msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
-msgstr "Naudotojas gali paslėpti kai kuriuos bendrus pranešimus. Paspauskite mygtuką „Atkurti“, kad visi pranešimai vėl būtų matomi."
-
-msgid "Reset"
-msgstr "Atkurti"
-
 msgid "File Filters"
 msgstr "Failo filtrai"
 
@@ -2243,6 +2252,42 @@ msgstr "&Dešinėje:"
 msgid "Expression:"
 msgstr "Išraiška:"
 
+msgid "Codepage"
+msgstr "Koduotės"
+
+msgid "Default Codepage"
+msgstr "Numatytoji koduotė"
+
+msgid "Select the default codepage for non-Unicode files:"
+msgstr "Parinkite numatytąją koduotę ne Unicode failams:"
+
+msgid "System codepage"
+msgstr "Sistemos koduotė"
+
+msgid "According to WinMerge User Interface"
+msgstr "Pagal „WinMerge“ naudotojo sąsają"
+
+msgid "Custom codepage:"
+msgstr "Pasirinkt. koduotė:"
+
+msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
+msgstr "Aptikti šio tipo failų koduotę: .html, .rc, .xml\nReikės restartuoti sesiją."
+
+msgid "Detect codepage for files with mlang.dll\nRestart required."
+msgstr "Aptikti tekstinių failų koduotę „mlang.dll“ pagalba\nReikės restartuoti sesiją."
+
+msgid "Archive Support"
+msgstr "Archyvų palaikymo"
+
+msgid "&Enable archive file support"
+msgstr "Į&jungti archyvo failų palaikymą"
+
+msgid "&Detect archive type from file signature"
+msgstr "&Nustatyti archyvo tipą iš failo parašo"
+
+msgid "Items saved to or restored from the project file:"
+msgstr "Projekto faile išsaugoti ar iš jo atstatyti elementai:"
+
 msgid "Save Modified Files?"
 msgstr "Išsaugoti pakeistus failus?"
 
@@ -2276,39 +2321,6 @@ msgstr "At&mesti pakeitimus"
 msgid "Disca&rd All"
 msgstr "Atmes&ti viską"
 
-msgid "Codepage"
-msgstr "Koduotės"
-
-msgid "Default Codepage"
-msgstr "Numatytoji koduotė"
-
-msgid "Select the default codepage for non-Unicode files:"
-msgstr "Parinkite numatytąją koduotę ne Unicode failams:"
-
-msgid "System codepage"
-msgstr "Sistemos koduotė"
-
-msgid "According to WinMerge User Interface"
-msgstr "Pagal „WinMerge“ naudotojo sąsają"
-
-msgid "Custom codepage:"
-msgstr "Pasirinkt. koduotė:"
-
-msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
-msgstr "Aptikti šio tipo failų koduotę: .html, .rc, .xml\nReikės restartuoti sesiją."
-
-msgid "Detect codepage for files with mlang.dll\nRestart required."
-msgstr "Aptikti tekstinių failų koduotę „mlang.dll“ pagalba\nReikės restartuoti sesiją."
-
-msgid "Options"
-msgstr "Nuostatos"
-
-msgid "Import..."
-msgstr "Importuoti..."
-
-msgid "Export..."
-msgstr "Eksportuoti..."
-
 msgid "Folder Compare Report"
 msgstr "Katalogų lyginimo ataskaita"
 
@@ -2332,18 +2344,6 @@ msgstr "Bendrai naudojami filtrai (visiems naudotojams)"
 
 msgid "Private Filter (current user only)"
 msgstr "Asmeniniai filtrai (tik šiam naudotojui)"
-
-msgid "Archive Support"
-msgstr "Archyvų palaikymo"
-
-msgid "&Enable archive file support"
-msgstr "Į&jungti archyvo failų palaikymą"
-
-msgid "&Detect archive type from file signature"
-msgstr "&Nustatyti archyvo tipą iš failo parašo"
-
-msgid "Items saved to or restored from the project file:"
-msgstr "Projekto faile išsaugoti ar iš jo atstatyti elementai:"
 
 msgid "Compare Statistics"
 msgstr "Lyginimo statistika"
@@ -3038,14 +3038,14 @@ msgstr "Skirtumas %1 iš %2"
 
 #, c-format
 msgid "%1 Differences Found"
-msgstr "Rasta %1 skirtumų"
+msgstr "Rasti (-a) %1 skirtumai (-ų)"
 
 msgid "1 Difference Found"
 msgstr "Rastas 1 skirtumas"
 
 #, c-format
 msgid "%1 Errors Found"
-msgstr "Rasta %1 klaidų"
+msgstr "Rastos (-a) %1 klaidos (-ų)"
 
 msgid "1 Error Found"
 msgstr "Rasta 1 klaida"
@@ -4811,7 +4811,7 @@ msgid "Reverse lines"
 msgstr "Sukeisti eilutes"
 
 msgid "Replace text.\r\nUsage: Replace [-i] [-e] FIND REPLACE\r\n or: Replace -s\r\n FIND - text to find\r\n REPLACE - text to replace\r\n -i - ignore case (only for -e)\r\n -e - regex\r\n -s - use Substitution Filters"
-msgstr "Pakeisti tekstą.\r\nNaudojimas: Replace [-i] [-e] FIND REPLACE\r\n  or: Replace -s\r\n FIND - text to find\r\n REPLACE - text to replace\r\n -i - ignore case (only for -e)\r\n -e - regex\r\n -s - use Substitution Filters"
+msgstr "Pakeisti tekstą.\r\nNaudojimas: Replace [-i] [-e] FIND REPLACE\r\n arba: Replace -s\r\n FIND - text to find\r\n REPLACE - text to replace\r\n -i - ignore case (only for -e)\r\n -e - regex\r\n -s - use Substitution Filters"
 
 #, c-format
 msgid "Apply filter. \r\nUsage: ExecFilterCommand COMMAND\r\n COMMAND - command to execute. %1 = filename."
@@ -4824,10 +4824,10 @@ msgid "Trim spaces"
 msgstr "Apkirpti tarpus"
 
 msgid "Select columns.\r\nUsage: SelectColumns RANGES\r\n or: SelectColumns [-v] [-i] [-g] -e PATTERNS\r\n RANGES - column ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -g - enable global flag\r\n -e - use PATTERNS"
-msgstr "Pažymėti stulpelius.\r\nNaudojimas: SelectColumns RANGES\r\n or: SelectColumns [-v] [-i] [-g] -e PATTERNS\r\n RANGES - column ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -g - enable global flag\r\n -e - use PATTERNS"
+msgstr "Pažymėti stulpelius.\r\nNaudojimas: SelectColumns RANGES\r\n arba: SelectColumns [-v] [-i] [-g] -e PATTERNS\r\n RANGES - column ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -g - enable global flag\r\n -e - use PATTERNS"
 
 msgid "Select lines.\r\nUsage: SelectLines RANGES\r\n or: SelectLines [-v] [-i] -e PATTERNS\r\n RANGES - line ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -e - use PATTERNS"
-msgstr "Pažymėti eilutes.\r\nNaudojimas: SelectLines RANGES\r\n or: SelectLines [-v] [-i] -e PATTERNS\r\n RANGES - line ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -e - use PATTERNS"
+msgstr "Pažymėti eilutes.\r\nNaudojimas: SelectLines RANGES\r\n arba: SelectLines [-v] [-i] -e PATTERNS\r\n RANGES - line ranges (-3,5-10,30-)\r\n PATTERNS - regex\r\n -v - select non-matching\r\n -i - ignore case\r\n -e - use PATTERNS"
 
 msgid "HTML Prettier (tidy-html5).\r\nArguments: tidy command line options."
 msgstr "HTML tvarkytojas (tidy-html5).\r\nArgumentai: tidy command line options."

@@ -1923,57 +1923,6 @@ msgid "&Options..."
 msgstr "Επιλ&ογές..."
 
 #, c-format
-msgid "General"
-msgstr "Γενικά"
-
-#, c-format
-msgid "Automatically &scroll to first difference"
-msgstr "Αυτόματη &κύλιση στην πρώτη διαφορά"
-
-msgid "Automatically s&croll to first inline difference"
-msgstr ""
-
-msgid "Cl&ose windows with 'Esc':"
-msgstr "Κ&λείσιμο παραθύρων με 'Esc':"
-
-#, c-format
-msgid "&Automatically verify paths in Open dialog"
-msgstr "&Αυτόματη επαλήθευση διαδρομών στο διάλογο ανοίγματος"
-
-msgid "Single instance mode:"
-msgstr ""
-
-#, c-format
-msgid "As&k when closing multiple windows"
-msgstr "Ερώτηση πριν από το κλείσιμο πολλαπλών παραθύρων"
-
-#, c-format
-msgid "&Preserve file time in file compare"
-msgstr "Δια&τήρηση της ώρας τροποποιήσεως κατά τη σύγκριση αρχείων"
-
-#, c-format
-msgid "Show \"Select Files or Folders\" dialog on startup"
-msgstr ""
-
-msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
-msgstr ""
-
-#, c-format
-msgid "Op&en dialog Auto completion:"
-msgstr "Αυτόματη συμπλήρωση διαλόγου αν&οίγματος"
-
-msgid "Auto-&reload modified files:"
-msgstr ""
-
-#, c-format
-msgid "Language:"
-msgstr ""
-
-#, c-format
-msgid "Defaults"
-msgstr "&Αρχικές Ρυθμίσεις"
-
-#, c-format
 msgid "Find"
 msgstr "Αναζήτηση"
 
@@ -2101,6 +2050,69 @@ msgstr ""
 
 msgid "Clear"
 msgstr ""
+
+#, c-format
+msgid "Options"
+msgstr "Επιλογές"
+
+#, c-format
+msgid "Import..."
+msgstr "Εισαγωγή..."
+
+#, c-format
+msgid "Export..."
+msgstr "Εξαγωγή..."
+
+#, c-format
+msgid "General"
+msgstr "Γενικά"
+
+#, c-format
+msgid "Automatically &scroll to first difference"
+msgstr "Αυτόματη &κύλιση στην πρώτη διαφορά"
+
+msgid "Automatically s&croll to first inline difference"
+msgstr ""
+
+msgid "Cl&ose windows with 'Esc':"
+msgstr "Κ&λείσιμο παραθύρων με 'Esc':"
+
+#, c-format
+msgid "&Automatically verify paths in Open dialog"
+msgstr "&Αυτόματη επαλήθευση διαδρομών στο διάλογο ανοίγματος"
+
+msgid "Single instance mode:"
+msgstr ""
+
+#, c-format
+msgid "As&k when closing multiple windows"
+msgstr "Ερώτηση πριν από το κλείσιμο πολλαπλών παραθύρων"
+
+#, c-format
+msgid "&Preserve file time in file compare"
+msgstr "Δια&τήρηση της ώρας τροποποιήσεως κατά τη σύγκριση αρχείων"
+
+#, c-format
+msgid "Show \"Select Files or Folders\" dialog on startup"
+msgstr ""
+
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
+msgstr ""
+
+#, c-format
+msgid "Op&en dialog Auto completion:"
+msgstr "Αυτόματη συμπλήρωση διαλόγου αν&οίγματος"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
+
+#, c-format
+msgid "Language:"
+msgstr ""
+
+#, c-format
+msgid "Defaults"
+msgstr "&Αρχικές Ρυθμίσεις"
 
 #, c-format
 msgid "Colors"
@@ -2303,6 +2315,131 @@ msgid "Br&owse..."
 msgstr "Ανα&ζήτηση..."
 
 #, c-format
+msgid "Compare"
+msgstr "Σύγκριση"
+
+#, c-format
+msgid "Whitespaces"
+msgstr "Χαρακτήρες Διαστήματος"
+
+#, c-format
+msgid "&Compare"
+msgstr "&Σύγκριση"
+
+#, c-format
+msgid "&Ignore change"
+msgstr "Η μεταβολή να α&γνοείται"
+
+#, c-format
+msgid "I&gnore all"
+msgstr "Να αγνοούνται τα &πάντα"
+
+msgid "Ignore blan&k lines"
+msgstr "Οι &κενές γραμμές να αγνοούνται"
+
+msgid "Ignore &case"
+msgstr "Διάκριση μεταξύ Πεζών/&Κεφαλαίων ανενεργός"
+
+msgid "Igno&re EOL differences (Windows/Unix/Mac)"
+msgstr ""
+
+msgid "Ignore num&bers"
+msgstr ""
+
+msgid "Ignore codepage &differences"
+msgstr ""
+
+msgid "Ignore c&omment differences"
+msgstr ""
+
+msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr ""
+
+#, c-format
+msgid "E&nable moved block detection"
+msgstr "Ενεργοποίηση ανι&χνεύσεως μετακινηθέντων τμημάτων"
+
+msgid "Align &similar lines"
+msgstr ""
+
+msgid "Diff &algorithm:"
+msgstr ""
+
+msgid "Enable indent &heuristic"
+msgstr ""
+
+msgid "Completely unhighlight the ignored differences"
+msgstr ""
+
+#, c-format
+msgid "Editor"
+msgstr "Επεξεργασία Κειμένου"
+
+#, c-format
+msgid "&Highlight syntax"
+msgstr "&Χρωματισμός Κώδικα"
+
+#, c-format
+msgid "&Preserve original EOL"
+msgstr "Δια&τήρηση αρχικών χαρακτήρων τερματισμού"
+
+#, c-format
+msgid "Tabs"
+msgstr "Στηλοθέτες"
+
+#, c-format
+msgid "&Tab size:"
+msgstr "Πλάτος Στηλο&θετών"
+
+#, c-format
+msgid "&Insert tabs"
+msgstr "Ε&ισαγωγή Στηλοθετών"
+
+#, c-format
+msgid "Insert &spaces"
+msgstr "Εισαγωγή Κενών &Διαστημάτων"
+
+msgid "&Rendering mode:"
+msgstr ""
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "Α&υτόματη Επανεξέταση"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
+#, c-format
+msgid "Line Difference Coloring"
+msgstr "Χρωματισμός Διαφορών Γραμμών"
+
+#, c-format
+msgid "View line differences"
+msgstr "Εμφάνιση διαφορών γραμμών"
+
+#, c-format
+msgid "&Character-level"
+msgstr "Επίπεδο &Χαρακτήρων"
+
+#, c-format
+msgid "&Word-level:"
+msgstr "Επίπεδο &Λέξεων"
+
+#, c-format
+msgid "W&ord break characters:"
+msgstr ""
+
+msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
+msgstr "Το WinMerge επιτρέπει την απόκρυψη ορισμένων κοινών πλαισίων μηνυμάτων. Πατήστε το κουμπί Επαναφορά για να ξανακάνετε όλα τα μηνύματα ορατά."
+
+#, c-format
+msgid "Reset"
+msgstr "Επαναφορά"
+
+#, c-format
 msgid "Patch Generator"
 msgstr "Εφαρμογή Δημιουργίας Patch"
 
@@ -2451,131 +2588,6 @@ msgstr "&Διαφορά"
 msgid "&Go to"
 msgstr "Μετά&βαση"
 
-#, c-format
-msgid "Compare"
-msgstr "Σύγκριση"
-
-#, c-format
-msgid "Whitespaces"
-msgstr "Χαρακτήρες Διαστήματος"
-
-#, c-format
-msgid "&Compare"
-msgstr "&Σύγκριση"
-
-#, c-format
-msgid "&Ignore change"
-msgstr "Η μεταβολή να α&γνοείται"
-
-#, c-format
-msgid "I&gnore all"
-msgstr "Να αγνοούνται τα &πάντα"
-
-msgid "Ignore blan&k lines"
-msgstr "Οι &κενές γραμμές να αγνοούνται"
-
-msgid "Ignore &case"
-msgstr "Διάκριση μεταξύ Πεζών/&Κεφαλαίων ανενεργός"
-
-msgid "Igno&re EOL differences (Windows/Unix/Mac)"
-msgstr ""
-
-msgid "Ignore num&bers"
-msgstr ""
-
-msgid "Ignore codepage &differences"
-msgstr ""
-
-msgid "Ignore c&omment differences"
-msgstr ""
-
-msgid "Ignore &missing trailing EOL"
-msgstr ""
-
-msgid "Ignore line &breaks (treat as spaces)"
-msgstr ""
-
-#, c-format
-msgid "E&nable moved block detection"
-msgstr "Ενεργοποίηση ανι&χνεύσεως μετακινηθέντων τμημάτων"
-
-msgid "Align &similar lines"
-msgstr ""
-
-msgid "Diff &algorithm:"
-msgstr ""
-
-msgid "Enable indent &heuristic"
-msgstr ""
-
-msgid "Completely unhighlight the ignored differences"
-msgstr ""
-
-#, c-format
-msgid "Editor"
-msgstr "Επεξεργασία Κειμένου"
-
-#, c-format
-msgid "&Highlight syntax"
-msgstr "&Χρωματισμός Κώδικα"
-
-#, c-format
-msgid "&Preserve original EOL"
-msgstr "Δια&τήρηση αρχικών χαρακτήρων τερματισμού"
-
-#, c-format
-msgid "Tabs"
-msgstr "Στηλοθέτες"
-
-#, c-format
-msgid "&Tab size:"
-msgstr "Πλάτος Στηλο&θετών"
-
-#, c-format
-msgid "&Insert tabs"
-msgstr "Ε&ισαγωγή Στηλοθετών"
-
-#, c-format
-msgid "Insert &spaces"
-msgstr "Εισαγωγή Κενών &Διαστημάτων"
-
-msgid "&Rendering mode:"
-msgstr ""
-
-#, c-format
-msgid "&Automatic rescan"
-msgstr "Α&υτόματη Επανεξέταση"
-
-msgid "Copy &granularity for selected differences:"
-msgstr ""
-
-#, c-format
-msgid "Line Difference Coloring"
-msgstr "Χρωματισμός Διαφορών Γραμμών"
-
-#, c-format
-msgid "View line differences"
-msgstr "Εμφάνιση διαφορών γραμμών"
-
-#, c-format
-msgid "&Character-level"
-msgstr "Επίπεδο &Χαρακτήρων"
-
-#, c-format
-msgid "&Word-level:"
-msgstr "Επίπεδο &Λέξεων"
-
-#, c-format
-msgid "W&ord break characters:"
-msgstr ""
-
-msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
-msgstr "Το WinMerge επιτρέπει την απόκρυψη ορισμένων κοινών πλαισίων μηνυμάτων. Πατήστε το κουμπί Επαναφορά για να ξανακάνετε όλα τα μηνύματα ορατά."
-
-#, c-format
-msgid "Reset"
-msgstr "Επαναφορά"
-
 msgid "File Filters"
 msgstr ""
 
@@ -2617,6 +2629,51 @@ msgid "&Right-hand side:"
 msgstr ""
 
 msgid "Expression:"
+msgstr ""
+
+#, c-format
+msgid "Codepage"
+msgstr "Κωδικοσελίδα"
+
+#, c-format
+msgid "Default Codepage"
+msgstr "Προκαθορισμένη Κωδικοσελίδα"
+
+#, c-format
+msgid "Select the default codepage for non-Unicode files:"
+msgstr "Επιλέξατε την προκαθορισμένη κωδικοσελίδα νοουμένη κατά το άνοιγμα αρχείων χωρίς κωδικοποίηση Unicode"
+
+#, c-format
+msgid "System codepage"
+msgstr "Κωδικοσελίδα συστήματος"
+
+#, c-format
+msgid "According to WinMerge User Interface"
+msgstr "Σύμφωνα με το Περιβάλλον Εργασίας του WinMerge"
+
+#, c-format
+msgid "Custom codepage:"
+msgstr ""
+
+msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
+msgstr ""
+
+msgid "Detect codepage for files with mlang.dll\nRestart required."
+msgstr ""
+
+#, c-format
+msgid "Archive Support"
+msgstr "Υποστήριξη Συμπιεσμένων"
+
+#, c-format
+msgid "&Enable archive file support"
+msgstr "&Ενεργοποίηση υποστηρίξεως συμπιεσμένων αρχείων"
+
+#, c-format
+msgid "&Detect archive type from file signature"
+msgstr "Ανί&χνευση τύπου συμπιεσμένου αρχείου από την υπογραφή του"
+
+msgid "Items saved to or restored from the project file:"
 msgstr ""
 
 #, c-format
@@ -2664,48 +2721,6 @@ msgid "Disca&rd All"
 msgstr ""
 
 #, c-format
-msgid "Codepage"
-msgstr "Κωδικοσελίδα"
-
-#, c-format
-msgid "Default Codepage"
-msgstr "Προκαθορισμένη Κωδικοσελίδα"
-
-#, c-format
-msgid "Select the default codepage for non-Unicode files:"
-msgstr "Επιλέξατε την προκαθορισμένη κωδικοσελίδα νοουμένη κατά το άνοιγμα αρχείων χωρίς κωδικοποίηση Unicode"
-
-#, c-format
-msgid "System codepage"
-msgstr "Κωδικοσελίδα συστήματος"
-
-#, c-format
-msgid "According to WinMerge User Interface"
-msgstr "Σύμφωνα με το Περιβάλλον Εργασίας του WinMerge"
-
-#, c-format
-msgid "Custom codepage:"
-msgstr ""
-
-msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
-msgstr ""
-
-msgid "Detect codepage for files with mlang.dll\nRestart required."
-msgstr ""
-
-#, c-format
-msgid "Options"
-msgstr "Επιλογές"
-
-#, c-format
-msgid "Import..."
-msgstr "Εισαγωγή..."
-
-#, c-format
-msgid "Export..."
-msgstr "Εξαγωγή..."
-
-#, c-format
 msgid "Folder Compare Report"
 msgstr "Αναφορά Συγκρίσεως Φακέλων"
 
@@ -2736,21 +2751,6 @@ msgstr "Κοινό Φίλτρο (για όλους τους χρήστες αυ�
 #, c-format
 msgid "Private Filter (current user only)"
 msgstr "Ιδιωτικό Φίλτρο (μόνο για τον παρόντα χρήστη)"
-
-#, c-format
-msgid "Archive Support"
-msgstr "Υποστήριξη Συμπιεσμένων"
-
-#, c-format
-msgid "&Enable archive file support"
-msgstr "&Ενεργοποίηση υποστηρίξεως συμπιεσμένων αρχείων"
-
-#, c-format
-msgid "&Detect archive type from file signature"
-msgstr "Ανί&χνευση τύπου συμπιεσμένου αρχείου από την υπογραφή του"
-
-msgid "Items saved to or restored from the project file:"
-msgstr ""
 
 #, c-format
 msgid "Compare Statistics"

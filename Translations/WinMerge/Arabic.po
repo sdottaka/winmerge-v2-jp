@@ -1676,48 +1676,6 @@ msgstr "مساعدة"
 msgid "&Options..."
 msgstr "خ&يارات..."
 
-msgid "General"
-msgstr "عام"
-
-msgid "Automatically &scroll to first difference"
-msgstr "الانتقال إلى الا&ختلاف الأول تلقائيا"
-
-msgid "Automatically s&croll to first inline difference"
-msgstr ""
-
-msgid "Cl&ose windows with 'Esc':"
-msgstr "إغلاق النوافذ باستخدام زر 'Esc':"
-
-msgid "&Automatically verify paths in Open dialog"
-msgstr "&تحقق من المسارات في النافذة المفتوحة"
-
-msgid "Single instance mode:"
-msgstr ""
-
-msgid "As&k when closing multiple windows"
-msgstr "ال&سؤال قبل إغلاق نوافذ متعددة"
-
-msgid "&Preserve file time in file compare"
-msgstr "الحفاظ على وقت الملف في مقارنة الملفات"
-
-msgid "Show \"Select Files or Folders\" dialog on startup"
-msgstr "عرض نافذة \"اختيار الملفات أو المجلدات\" عند بدء التشغيل"
-
-msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
-msgstr ""
-
-msgid "Op&en dialog Auto completion:"
-msgstr "فتح نافذة الإكمال التلقائي:"
-
-msgid "Auto-&reload modified files:"
-msgstr ""
-
-msgid "Language:"
-msgstr "اللغة:"
-
-msgid "Defaults"
-msgstr "الإعدادات الافتراضية"
-
 msgid "Find"
 msgstr "البحث"
 
@@ -1819,6 +1777,57 @@ msgstr ""
 
 msgid "Clear"
 msgstr ""
+
+msgid "Options"
+msgstr "الخيارات"
+
+msgid "Import..."
+msgstr "استيراد..."
+
+msgid "Export..."
+msgstr "تصدير..."
+
+msgid "General"
+msgstr "عام"
+
+msgid "Automatically &scroll to first difference"
+msgstr "الانتقال إلى الا&ختلاف الأول تلقائيا"
+
+msgid "Automatically s&croll to first inline difference"
+msgstr ""
+
+msgid "Cl&ose windows with 'Esc':"
+msgstr "إغلاق النوافذ باستخدام زر 'Esc':"
+
+msgid "&Automatically verify paths in Open dialog"
+msgstr "&تحقق من المسارات في النافذة المفتوحة"
+
+msgid "Single instance mode:"
+msgstr ""
+
+msgid "As&k when closing multiple windows"
+msgstr "ال&سؤال قبل إغلاق نوافذ متعددة"
+
+msgid "&Preserve file time in file compare"
+msgstr "الحفاظ على وقت الملف في مقارنة الملفات"
+
+msgid "Show \"Select Files or Folders\" dialog on startup"
+msgstr "عرض نافذة \"اختيار الملفات أو المجلدات\" عند بدء التشغيل"
+
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
+msgstr ""
+
+msgid "Op&en dialog Auto completion:"
+msgstr "فتح نافذة الإكمال التلقائي:"
+
+msgid "Auto-&reload modified files:"
+msgstr ""
+
+msgid "Language:"
+msgstr "اللغة:"
+
+msgid "Defaults"
+msgstr "الإعدادات الافتراضية"
 
 msgid "Colors"
 msgstr "ألوان"
@@ -1979,6 +1988,113 @@ msgstr "م&جلد مخصص:"
 msgid "Br&owse..."
 msgstr "&بحث..."
 
+msgid "Compare"
+msgstr "مقارنة"
+
+msgid "Whitespaces"
+msgstr "مساحة بيضاء (خالية)"
+
+msgid "&Compare"
+msgstr "م&قارنة"
+
+msgid "&Ignore change"
+msgstr "تجاهل الت&غييرات"
+
+msgid "I&gnore all"
+msgstr "تجاهل ال&كل"
+
+msgid "Ignore blan&k lines"
+msgstr "تجاهل الأسطر الفارغة"
+
+msgid "Ignore &case"
+msgstr "تجاهل حالة الحرف (للغة الإنجليزية)"
+
+msgid "Igno&re EOL differences (Windows/Unix/Mac)"
+msgstr ""
+
+msgid "Ignore num&bers"
+msgstr ""
+
+msgid "Ignore codepage &differences"
+msgstr "تجاهل اختلافات ترميز الصفحة"
+
+msgid "Ignore c&omment differences"
+msgstr ""
+
+msgid "Ignore &missing trailing EOL"
+msgstr ""
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr ""
+
+msgid "E&nable moved block detection"
+msgstr "&تفعيل كشف المجموعات التي نقلها"
+
+msgid "Align &similar lines"
+msgstr ""
+
+msgid "Diff &algorithm:"
+msgstr "خوارزمية المقارنة:"
+
+msgid "Enable indent &heuristic"
+msgstr "تفعيل الم&سافة البادئة الإرشادية"
+
+msgid "Completely unhighlight the ignored differences"
+msgstr ""
+
+msgid "Editor"
+msgstr "المحرر"
+
+msgid "&Highlight syntax"
+msgstr "تضليل النص حسب نوع الملف"
+
+msgid "&Preserve original EOL"
+msgstr "الإحتفا&ظ برمز نهاية الملف (EOL) الأصلي"
+
+msgid "Tabs"
+msgstr "التبويات"
+
+msgid "&Tab size:"
+msgstr "حجم التبويب:"
+
+msgid "&Insert tabs"
+msgstr "إدرا&ج تبويبات"
+
+msgid "Insert &spaces"
+msgstr "إدراج م&ساحات"
+
+msgid "&Rendering mode:"
+msgstr ""
+
+msgid "&Automatic rescan"
+msgstr "إ&عادة الفحص التلقائي"
+
+msgid "Copy &granularity for selected differences:"
+msgstr ""
+
+msgid "Line Difference Coloring"
+msgstr "تلوين الاختلافات في الأسطر"
+
+msgid "View line differences"
+msgstr "عرض الاختلافات في الأسطر"
+
+msgid "&Character-level"
+msgstr "مس&توى الرمز"
+
+msgid "&Word-level:"
+msgstr "مستوى ال&كلمة:"
+
+msgid "W&ord break characters:"
+msgstr "رمو&ز الفصل للكلمات:"
+
+msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
+msgstr ""
+"يقوم WinMerge بإخفاء بعض الرسائل العامة. إضغط على زر إعادة التعيين لجعل كافة "
+"الرسائل ظاهرة مجددا."
+
+msgid "Reset"
+msgstr "إعادة تعيين"
+
 msgid "Patch Generator"
 msgstr "أداة توليد التصحيح"
 
@@ -2102,113 +2218,6 @@ msgstr "الا&ختلاف"
 msgid "&Go to"
 msgstr "الذها&ب إلى"
 
-msgid "Compare"
-msgstr "مقارنة"
-
-msgid "Whitespaces"
-msgstr "مساحة بيضاء (خالية)"
-
-msgid "&Compare"
-msgstr "م&قارنة"
-
-msgid "&Ignore change"
-msgstr "تجاهل الت&غييرات"
-
-msgid "I&gnore all"
-msgstr "تجاهل ال&كل"
-
-msgid "Ignore blan&k lines"
-msgstr "تجاهل الأسطر الفارغة"
-
-msgid "Ignore &case"
-msgstr "تجاهل حالة الحرف (للغة الإنجليزية)"
-
-msgid "Igno&re EOL differences (Windows/Unix/Mac)"
-msgstr ""
-
-msgid "Ignore num&bers"
-msgstr ""
-
-msgid "Ignore codepage &differences"
-msgstr "تجاهل اختلافات ترميز الصفحة"
-
-msgid "Ignore c&omment differences"
-msgstr ""
-
-msgid "Ignore &missing trailing EOL"
-msgstr ""
-
-msgid "Ignore line &breaks (treat as spaces)"
-msgstr ""
-
-msgid "E&nable moved block detection"
-msgstr "&تفعيل كشف المجموعات التي نقلها"
-
-msgid "Align &similar lines"
-msgstr ""
-
-msgid "Diff &algorithm:"
-msgstr "خوارزمية المقارنة:"
-
-msgid "Enable indent &heuristic"
-msgstr "تفعيل الم&سافة البادئة الإرشادية"
-
-msgid "Completely unhighlight the ignored differences"
-msgstr ""
-
-msgid "Editor"
-msgstr "المحرر"
-
-msgid "&Highlight syntax"
-msgstr "تضليل النص حسب نوع الملف"
-
-msgid "&Preserve original EOL"
-msgstr "الإحتفا&ظ برمز نهاية الملف (EOL) الأصلي"
-
-msgid "Tabs"
-msgstr "التبويات"
-
-msgid "&Tab size:"
-msgstr "حجم التبويب:"
-
-msgid "&Insert tabs"
-msgstr "إدرا&ج تبويبات"
-
-msgid "Insert &spaces"
-msgstr "إدراج م&ساحات"
-
-msgid "&Rendering mode:"
-msgstr ""
-
-msgid "&Automatic rescan"
-msgstr "إ&عادة الفحص التلقائي"
-
-msgid "Copy &granularity for selected differences:"
-msgstr ""
-
-msgid "Line Difference Coloring"
-msgstr "تلوين الاختلافات في الأسطر"
-
-msgid "View line differences"
-msgstr "عرض الاختلافات في الأسطر"
-
-msgid "&Character-level"
-msgstr "مس&توى الرمز"
-
-msgid "&Word-level:"
-msgstr "مستوى ال&كلمة:"
-
-msgid "W&ord break characters:"
-msgstr "رمو&ز الفصل للكلمات:"
-
-msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
-msgstr ""
-"يقوم WinMerge بإخفاء بعض الرسائل العامة. إضغط على زر إعادة التعيين لجعل كافة "
-"الرسائل ظاهرة مجددا."
-
-msgid "Reset"
-msgstr "إعادة تعيين"
-
 msgid "File Filters"
 msgstr ""
 
@@ -2248,6 +2257,46 @@ msgstr ""
 msgid "Expression:"
 msgstr ""
 
+msgid "Codepage"
+msgstr "صفحة  الترميز"
+
+msgid "Default Codepage"
+msgstr "صحفة الترميز الإفتراضي"
+
+msgid "Select the default codepage for non-Unicode files:"
+msgstr "تحديد صفحة الترميز الافتراضية عند تحميل ملفات دون ترميز يونيكود:"
+
+msgid "System codepage"
+msgstr "صحفة الترميز للنظام"
+
+msgid "According to WinMerge User Interface"
+msgstr "حسب واجهة المستخدم لبرنامج WinMerge"
+
+msgid "Custom codepage:"
+msgstr "صفحة ترميز مخصصة:"
+
+msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
+msgstr ""
+"التحقق من معلومات صفحة الترميز للملفات التالية: .html, .rc, .xml \n"
+"هذا الأمر يتطلب إعادة تشغيل الجلسة."
+
+msgid "Detect codepage for files with mlang.dll\nRestart required."
+msgstr ""
+"التحقق من ترميز الصفحة للملفات النصية باستخدام mlang.dll\n"
+"هذا الأمر يتطلب إعادة تشغيل الجلسة."
+
+msgid "Archive Support"
+msgstr "دعم الأرشفة"
+
+msgid "&Enable archive file support"
+msgstr "ت&فعيل دعم ملفات الأرشفة"
+
+msgid "&Detect archive type from file signature"
+msgstr "الت&حقق مكن نوع الإرشيف عبر فحص التوقيع"
+
+msgid "Items saved to or restored from the project file:"
+msgstr ""
+
 msgid "Save Modified Files?"
 msgstr "حفظ الملفات المعدلة؟"
 
@@ -2281,43 +2330,6 @@ msgstr "تجاهل التغييرات"
 msgid "Disca&rd All"
 msgstr "تجاهل الكل"
 
-msgid "Codepage"
-msgstr "صفحة  الترميز"
-
-msgid "Default Codepage"
-msgstr "صحفة الترميز الإفتراضي"
-
-msgid "Select the default codepage for non-Unicode files:"
-msgstr "تحديد صفحة الترميز الافتراضية عند تحميل ملفات دون ترميز يونيكود:"
-
-msgid "System codepage"
-msgstr "صحفة الترميز للنظام"
-
-msgid "According to WinMerge User Interface"
-msgstr "حسب واجهة المستخدم لبرنامج WinMerge"
-
-msgid "Custom codepage:"
-msgstr "صفحة ترميز مخصصة:"
-
-msgid "Detect codepage for: .html, .rc, .xml\nRestart required."
-msgstr ""
-"التحقق من معلومات صفحة الترميز للملفات التالية: .html, .rc, .xml \n"
-"هذا الأمر يتطلب إعادة تشغيل الجلسة."
-
-msgid "Detect codepage for files with mlang.dll\nRestart required."
-msgstr ""
-"التحقق من ترميز الصفحة للملفات النصية باستخدام mlang.dll\n"
-"هذا الأمر يتطلب إعادة تشغيل الجلسة."
-
-msgid "Options"
-msgstr "الخيارات"
-
-msgid "Import..."
-msgstr "استيراد..."
-
-msgid "Export..."
-msgstr "تصدير..."
-
 msgid "Folder Compare Report"
 msgstr "تقرير مقارنة المجلدات"
 
@@ -2341,18 +2353,6 @@ msgstr "مرشح مشترك (لكل المستخدمين في هذا الجها�
 
 msgid "Private Filter (current user only)"
 msgstr "مرشح خاص (للمستخدم الحالي فقط)"
-
-msgid "Archive Support"
-msgstr "دعم الأرشفة"
-
-msgid "&Enable archive file support"
-msgstr "ت&فعيل دعم ملفات الأرشفة"
-
-msgid "&Detect archive type from file signature"
-msgstr "الت&حقق مكن نوع الإرشيف عبر فحص التوقيع"
-
-msgid "Items saved to or restored from the project file:"
-msgstr ""
 
 msgid "Compare Statistics"
 msgstr "إحصائيات المقارنة"

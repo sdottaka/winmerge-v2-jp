@@ -1681,51 +1681,6 @@ msgstr "உதவி"
 msgid "&Options..."
 msgstr "விருப்பங்கள்..."
 
-msgid "General"
-msgstr "பொது"
-
-msgid "Automatically &scroll to first difference"
-msgstr "தானாக &முதல் வேறுபாட்டிற்கு உருள்"
-
-msgid "Automatically s&croll to first inline difference"
-msgstr "முதல் இன்லைன் வேறுபாட்டிற்கு தானாக s&croll"
-
-msgid "Cl&ose windows with 'Esc':"
-msgstr "'Esc' உடன் சாளரங்களை மூடவும்:"
-
-msgid "&Automatically verify paths in Open dialog"
-msgstr "திறந்த உரையாடலில் பாதைகளை தானாக சரிபார்க்கவும்"
-
-msgid "Single instance mode:"
-msgstr "ஒற்றை நிகழ்வு முறை:"
-
-msgid "As&k when closing multiple windows"
-msgstr "பல சாளரங்களை மூடும்போது As&k"
-
-msgid "&Preserve file time in file compare"
-msgstr "கோப்பு ஒப்பீட்டில் கோப்பு நேரத்தைப் பாதுகாக்கவும்"
-
-msgid "Show \"Select Files or Folders\" dialog on startup"
-msgstr ""
-"\"கோப்புகள் அல்லது கோப்புறைகளைத் தேர்ந்தெடு\" உரையாடலை தொடக்கத்தில் காட்டு"
-
-msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
-msgstr ""
-"\"கோப்புகள் அல்லது கோப்புறைகளைத் தேர்ந்தெடு\" உரையாடலை ஒப்பிடு பொத்தானைக் "
-"சொடுக்குவதன் மூலம் மூடவும்"
-
-msgid "Op&en dialog Auto completion:"
-msgstr "திற உரையாடல் தானியங்கு நிறைவு:"
-
-msgid "Auto-&reload modified files:"
-msgstr "மாற்றியமைக்கப்பட்ட கோப்புகளை தானாக மீண்டும் ஏற்றவும்:"
-
-msgid "Language:"
-msgstr "மொழி:"
-
-msgid "Defaults"
-msgstr "இயல்புநிலைகள்"
-
 msgid "Find"
 msgstr "கண்டுபிடி"
 
@@ -1832,6 +1787,60 @@ msgstr "சேர்"
 
 msgid "Clear"
 msgstr "அழி"
+
+msgid "Options"
+msgstr "விருப்பங்கள்"
+
+msgid "Import..."
+msgstr "இறக்குமதி..."
+
+msgid "Export..."
+msgstr "ஏற்றுமதி..."
+
+msgid "General"
+msgstr "பொது"
+
+msgid "Automatically &scroll to first difference"
+msgstr "தானாக &முதல் வேறுபாட்டிற்கு உருள்"
+
+msgid "Automatically s&croll to first inline difference"
+msgstr "முதல் இன்லைன் வேறுபாட்டிற்கு தானாக s&croll"
+
+msgid "Cl&ose windows with 'Esc':"
+msgstr "'Esc' உடன் சாளரங்களை மூடவும்:"
+
+msgid "&Automatically verify paths in Open dialog"
+msgstr "திறந்த உரையாடலில் பாதைகளை தானாக சரிபார்க்கவும்"
+
+msgid "Single instance mode:"
+msgstr "ஒற்றை நிகழ்வு முறை:"
+
+msgid "As&k when closing multiple windows"
+msgstr "பல சாளரங்களை மூடும்போது As&k"
+
+msgid "&Preserve file time in file compare"
+msgstr "கோப்பு ஒப்பீட்டில் கோப்பு நேரத்தைப் பாதுகாக்கவும்"
+
+msgid "Show \"Select Files or Folders\" dialog on startup"
+msgstr ""
+"\"கோப்புகள் அல்லது கோப்புறைகளைத் தேர்ந்தெடு\" உரையாடலை தொடக்கத்தில் காட்டு"
+
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
+msgstr ""
+"\"கோப்புகள் அல்லது கோப்புறைகளைத் தேர்ந்தெடு\" உரையாடலை ஒப்பிடு பொத்தானைக் "
+"சொடுக்குவதன் மூலம் மூடவும்"
+
+msgid "Op&en dialog Auto completion:"
+msgstr "திற உரையாடல் தானியங்கு நிறைவு:"
+
+msgid "Auto-&reload modified files:"
+msgstr "மாற்றியமைக்கப்பட்ட கோப்புகளை தானாக மீண்டும் ஏற்றவும்:"
+
+msgid "Language:"
+msgstr "மொழி:"
+
+msgid "Defaults"
+msgstr "இயல்புநிலைகள்"
 
 msgid "Colors"
 msgstr "நிறங்கள்"
@@ -1992,6 +2001,115 @@ msgstr "தனிப்பயன் கோப்புறை:"
 msgid "Br&owse..."
 msgstr "உலாவு..."
 
+msgid "Compare"
+msgstr "ஒப்பிடு"
+
+msgid "Whitespaces"
+msgstr "வெள்ளைவெளிகள்"
+
+msgid "&Compare"
+msgstr "ஒப்பிடு"
+
+msgid "&Ignore change"
+msgstr "மாற்றத்தை புறக்கணி"
+
+msgid "I&gnore all"
+msgstr "அனைத்தையும் புறக்கணி"
+
+msgid "Ignore blan&k lines"
+msgstr "வெற்று வரிகளை புறக்கணி"
+
+msgid "Ignore &case"
+msgstr "வழக்கு புறக்கணி"
+
+msgid "Igno&re EOL differences (Windows/Unix/Mac)"
+msgstr "வேறுபாடுகளை புறக்கணி (சாளரங்கள்/யுனிக்ச்/மேக்)"
+
+msgid "Ignore num&bers"
+msgstr "எண்களை புறக்கணி"
+
+msgid "Ignore codepage &differences"
+msgstr "குறியீட்டியல் மற்றும் வேறுபாடுகளை புறக்கணி"
+
+msgid "Ignore c&omment differences"
+msgstr "கருத்து வேறுபாடுகளை புறக்கணி"
+
+msgid "Ignore &missing trailing EOL"
+msgstr "புறக்கணி மற்றும் காணாமல் போன வரிமுடிவு"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr ""
+
+msgid "E&nable moved block detection"
+msgstr "நகர்த்தப்பட்ட தொகுதி கண்டறிதலை செயல்படுத்து"
+
+msgid "Align &similar lines"
+msgstr "ஒத்த வரிகளை சீரமை"
+
+msgid "Diff &algorithm:"
+msgstr "வேறுபாடு வழிமுறை:"
+
+msgid "Enable indent &heuristic"
+msgstr "உள்தள்ளல் நுண்மைத்தன்மை இயக்கு"
+
+msgid "Completely unhighlight the ignored differences"
+msgstr "புறக்கணிக்கப்பட்ட வேறுபாடுகளை முற்றிலுமாக வெளிப்படுத்து"
+
+msgid "Editor"
+msgstr "திருத்தி"
+
+msgid "&Highlight syntax"
+msgstr "தொடரியல் சிறப்பாக்கு"
+
+msgid "&Preserve original EOL"
+msgstr "உண்மையான வரிமுடிவு எழுத்துகளை பாதுகாக்கவும்"
+
+msgid "Tabs"
+msgstr "தாவல்கள்"
+
+msgid "&Tab size:"
+msgstr "தாவல் அளவு:"
+
+msgid "&Insert tabs"
+msgstr "செருகு தாவல்கள்"
+
+msgid "Insert &spaces"
+msgstr "இடைவெளிகளை செருகு"
+
+msgid "&Rendering mode:"
+msgstr "வழங்குதல் பயன்முறை:"
+
+msgid "&Automatic rescan"
+msgstr "தானியங்கு மறு ஆய்வு"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "தேர்ந்தெடுக்கப்பட்ட வேறுபாடுகளுக்கான நகல் மற்றும் நுண்மைத்தன்மை:"
+
+msgid "Line Difference Coloring"
+msgstr "வரி வேறுபாடு வண்ணம்"
+
+msgid "View line differences"
+msgstr "வரி வேறுபாடுகளைக் காண்க"
+
+msgid "&Character-level"
+msgstr "எழுத்து நிலை"
+
+msgid "&Word-level:"
+msgstr "சொல்-நிலை:"
+
+msgid "W&ord break characters:"
+msgstr "சொல் முறிவு எழுத்துகள்:"
+
+msgid ""
+"Some messages can be hidden by the user. Press Reset to make all messages "
+"visible again."
+msgstr ""
+"பயனரால் சில செய்திகளை மறைக்க முடியும். எல்லா செய்தி"
+"களையும் மீண்டும் காட்ட மீட்டமை பொத்தானை அழுத்தவும்."
+
+msgid "Reset"
+msgstr "மீட்டமை"
+
 msgid "Patch Generator"
 msgstr "ஒட்டு உருவாக்கி"
 
@@ -2115,115 +2233,6 @@ msgstr "வேறுபாடு"
 msgid "&Go to"
 msgstr "செல்"
 
-msgid "Compare"
-msgstr "ஒப்பிடு"
-
-msgid "Whitespaces"
-msgstr "வெள்ளைவெளிகள்"
-
-msgid "&Compare"
-msgstr "ஒப்பிடு"
-
-msgid "&Ignore change"
-msgstr "மாற்றத்தை புறக்கணி"
-
-msgid "I&gnore all"
-msgstr "அனைத்தையும் புறக்கணி"
-
-msgid "Ignore blan&k lines"
-msgstr "வெற்று வரிகளை புறக்கணி"
-
-msgid "Ignore &case"
-msgstr "வழக்கு புறக்கணி"
-
-msgid "Igno&re EOL differences (Windows/Unix/Mac)"
-msgstr "வேறுபாடுகளை புறக்கணி (சாளரங்கள்/யுனிக்ச்/மேக்)"
-
-msgid "Ignore num&bers"
-msgstr "எண்களை புறக்கணி"
-
-msgid "Ignore codepage &differences"
-msgstr "குறியீட்டியல் மற்றும் வேறுபாடுகளை புறக்கணி"
-
-msgid "Ignore c&omment differences"
-msgstr "கருத்து வேறுபாடுகளை புறக்கணி"
-
-msgid "Ignore &missing trailing EOL"
-msgstr "புறக்கணி மற்றும் காணாமல் போன வரிமுடிவு"
-
-msgid "Ignore line &breaks (treat as spaces)"
-msgstr ""
-
-msgid "E&nable moved block detection"
-msgstr "நகர்த்தப்பட்ட தொகுதி கண்டறிதலை செயல்படுத்து"
-
-msgid "Align &similar lines"
-msgstr "ஒத்த வரிகளை சீரமை"
-
-msgid "Diff &algorithm:"
-msgstr "வேறுபாடு வழிமுறை:"
-
-msgid "Enable indent &heuristic"
-msgstr "உள்தள்ளல் நுண்மைத்தன்மை இயக்கு"
-
-msgid "Completely unhighlight the ignored differences"
-msgstr "புறக்கணிக்கப்பட்ட வேறுபாடுகளை முற்றிலுமாக வெளிப்படுத்து"
-
-msgid "Editor"
-msgstr "திருத்தி"
-
-msgid "&Highlight syntax"
-msgstr "தொடரியல் சிறப்பாக்கு"
-
-msgid "&Preserve original EOL"
-msgstr "உண்மையான வரிமுடிவு எழுத்துகளை பாதுகாக்கவும்"
-
-msgid "Tabs"
-msgstr "தாவல்கள்"
-
-msgid "&Tab size:"
-msgstr "தாவல் அளவு:"
-
-msgid "&Insert tabs"
-msgstr "செருகு தாவல்கள்"
-
-msgid "Insert &spaces"
-msgstr "இடைவெளிகளை செருகு"
-
-msgid "&Rendering mode:"
-msgstr "வழங்குதல் பயன்முறை:"
-
-msgid "&Automatic rescan"
-msgstr "தானியங்கு மறு ஆய்வு"
-
-msgid "Copy &granularity for selected differences:"
-msgstr "தேர்ந்தெடுக்கப்பட்ட வேறுபாடுகளுக்கான நகல் மற்றும் நுண்மைத்தன்மை:"
-
-msgid "Line Difference Coloring"
-msgstr "வரி வேறுபாடு வண்ணம்"
-
-msgid "View line differences"
-msgstr "வரி வேறுபாடுகளைக் காண்க"
-
-msgid "&Character-level"
-msgstr "எழுத்து நிலை"
-
-msgid "&Word-level:"
-msgstr "சொல்-நிலை:"
-
-msgid "W&ord break characters:"
-msgstr "சொல் முறிவு எழுத்துகள்:"
-
-msgid ""
-"Some messages can be hidden by the user. Press Reset to make all messages "
-"visible again."
-msgstr ""
-"பயனரால் சில செய்திகளை மறைக்க முடியும். எல்லா செய்தி"
-"களையும் மீண்டும் காட்ட மீட்டமை பொத்தானை அழுத்தவும்."
-
-msgid "Reset"
-msgstr "மீட்டமை"
-
 msgid "File Filters"
 msgstr "கோப்பு வடிப்பான்கள்"
 
@@ -2263,39 +2272,6 @@ msgstr ""
 msgid "Expression:"
 msgstr ""
 
-msgid "Save Modified Files?"
-msgstr "மாற்றியமைக்கப்பட்ட கோப்புகளை சேமிக்கவா?"
-
-msgid "Left side file"
-msgstr "இடது பக்க கோப்பு"
-
-msgid "&Save changes"
-msgstr "சேமி மாற்றங்கள்"
-
-msgid "&Discard changes"
-msgstr "மாற்றங்களை நிராகரி"
-
-msgid "Middle side file"
-msgstr "நடு பக்க கோப்பு"
-
-msgid "Sa&ve changes"
-msgstr "மாற்றங்களைச் சேமி"
-
-msgid "Discard c&hanges"
-msgstr "மாற்றங்களை நிராகரி"
-
-msgid "Right side file"
-msgstr "வலது பக்க கோப்பு"
-
-msgid "S&ave changes"
-msgstr "மாற்றங்களை சேமி"
-
-msgid "Dis&card changes"
-msgstr "மாற்றங்களை நிராகரி"
-
-msgid "Disca&rd All"
-msgstr "அனைத்தையும் நிராகரி"
-
 msgid "Codepage"
 msgstr "குறியீடு பக்கம்"
 
@@ -2330,14 +2306,50 @@ msgstr ""
 "Mlang.dll\n"
 " மூலம் உரைக் கோப்புகளுக்கான குறியீட்டுப் பக்கத்தைக் கண்டறிகஅமர்வை மறுதொடக்கம் செய்ய வேண்டும்."
 
-msgid "Options"
-msgstr "விருப்பங்கள்"
+msgid "Archive Support"
+msgstr "காப்பக ஆதரவு"
 
-msgid "Import..."
-msgstr "இறக்குமதி..."
+msgid "&Enable archive file support"
+msgstr "காப்பக கோப்பு ஆதரவை இயக்கு"
 
-msgid "Export..."
-msgstr "ஏற்றுமதி..."
+msgid "&Detect archive type from file signature"
+msgstr "கோப்பு கையொப்பத்திலிருந்து காப்பக வகையைக் கண்டறிக"
+
+msgid "Items saved to or restored from the project file:"
+msgstr "திட்டக் கோப்பில் சேமிக்கப்பட்ட அல்லது மீட்டமைக்கப்பட்ட உருப்படிகள்:"
+
+msgid "Save Modified Files?"
+msgstr "மாற்றியமைக்கப்பட்ட கோப்புகளை சேமிக்கவா?"
+
+msgid "Left side file"
+msgstr "இடது பக்க கோப்பு"
+
+msgid "&Save changes"
+msgstr "சேமி மாற்றங்கள்"
+
+msgid "&Discard changes"
+msgstr "மாற்றங்களை நிராகரி"
+
+msgid "Middle side file"
+msgstr "நடு பக்க கோப்பு"
+
+msgid "Sa&ve changes"
+msgstr "மாற்றங்களைச் சேமி"
+
+msgid "Discard c&hanges"
+msgstr "மாற்றங்களை நிராகரி"
+
+msgid "Right side file"
+msgstr "வலது பக்க கோப்பு"
+
+msgid "S&ave changes"
+msgstr "மாற்றங்களை சேமி"
+
+msgid "Dis&card changes"
+msgstr "மாற்றங்களை நிராகரி"
+
+msgid "Disca&rd All"
+msgstr "அனைத்தையும் நிராகரி"
 
 msgid "Folder Compare Report"
 msgstr "கோப்புறை ஒப்பீட்டு அறிக்கை"
@@ -2362,18 +2374,6 @@ msgstr "பகிரப்பட்ட வடிகட்டி (இந்த �
 
 msgid "Private Filter (current user only)"
 msgstr "தனிப்பட்ட வடிகட்டி (தற்போதைய பயனருக்கு மட்டும்)"
-
-msgid "Archive Support"
-msgstr "காப்பக ஆதரவு"
-
-msgid "&Enable archive file support"
-msgstr "காப்பக கோப்பு ஆதரவை இயக்கு"
-
-msgid "&Detect archive type from file signature"
-msgstr "கோப்பு கையொப்பத்திலிருந்து காப்பக வகையைக் கண்டறிக"
-
-msgid "Items saved to or restored from the project file:"
-msgstr "திட்டக் கோப்பில் சேமிக்கப்பட்ட அல்லது மீட்டமைக்கப்பட்ட உருப்படிகள்:"
 
 msgid "Compare Statistics"
 msgstr "புள்ளிவிவரங்களை ஒப்பிடு"

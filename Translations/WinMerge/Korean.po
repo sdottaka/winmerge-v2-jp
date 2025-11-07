@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2022-01-22 21:51+0000\n"
-"PO-Revision-Date: 2025-10-19 22:31+0900\n"
+"PO-Revision-Date: 2025-10-27 21:57+0900\n"
 "Last-Translator: VenusGirl <venusgirl@outlook.com>\n"
 "Language-Team: VenusGirl: https://venusgirls.tistory.com/\n"
 "Language: ko\n"
@@ -1725,7 +1725,7 @@ msgid "100000 or more"
 msgstr "100000 이상"
 
 msgid "Additional &Properties..."
-msgstr ""
+msgstr "추가 속성(&P)..."
 
 msgid "Add F&older Condition"
 msgstr "폴더 조건 추가(&O)"
@@ -1752,16 +1752,16 @@ msgid "Not Equal"
 msgstr "같지 않음"
 
 msgid "Less Than"
-msgstr ""
+msgstr "보다 작음"
 
 msgid "Less Than or Equal to"
-msgstr ""
+msgstr "보다 작거나 같음"
 
 msgid "Greater Than"
-msgstr ""
+msgstr "보다 큼"
 
 msgid "Greater Than or Equal to"
-msgstr ""
+msgstr "보다 크거나 같음"
 
 msgid "Less than 10B"
 msgstr "10B 미만"
@@ -1815,22 +1815,22 @@ msgid "Target: Middle and &Right"
 msgstr "대상: 가운데 및 오른쪽(&R)"
 
 msgid "Target: &All"
-msgstr ""
+msgstr "대상: 모두(&A)"
 
 msgid "&Clear conditions"
-msgstr ""
+msgstr "조건 지우기(&C)"
 
 msgid "Compare &Size"
-msgstr ""
+msgstr "크기 비교(&S)"
 
 msgid "Compare &Date"
-msgstr ""
+msgstr "날짜 비교(&D)"
 
 msgid "Compare &Attributes"
-msgstr ""
+msgstr "속성 비교(&A)"
 
 msgid "Compare C&ontents"
-msgstr ""
+msgstr "내용 비교(&O)"
 
 #, c-format
 msgid "About WinMerge"
@@ -1931,57 +1931,6 @@ msgstr "도움말"
 
 msgid "&Options..."
 msgstr "옵션(&O)..."
-
-#, c-format
-msgid "General"
-msgstr "일반"
-
-#, c-format
-msgid "Automatically &scroll to first difference"
-msgstr "첫 번째 차이로 자동 스크롤(&S)"
-
-msgid "Automatically s&croll to first inline difference"
-msgstr "-> <NWY> 나란히 있는 첫 번째 차이로 자동 스크롤(&C)"
-
-msgid "Cl&ose windows with 'Esc':"
-msgstr "'Esc'로 창 닫기(&O):"
-
-#, c-format
-msgid "&Automatically verify paths in Open dialog"
-msgstr "열기 대화 상자에서 경로 자동 확인(&A)"
-
-msgid "Single instance mode:"
-msgstr "중복 실행 금지 모드:"
-
-#, c-format
-msgid "As&k when closing multiple windows"
-msgstr "여러 창을 닫을 때 물어보기(&K)"
-
-#, c-format
-msgid "&Preserve file time in file compare"
-msgstr "파일 비교시 파일 시간 보존(&P)"
-
-#, c-format
-msgid "Show \"Select Files or Folders\" dialog on startup"
-msgstr "시작 시 \"파일 또는 폴더 선택\" 대화 상자 표시"
-
-msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
-msgstr "비교 버튼 누를 때 \"파일 또는 폴더 선택\" 대화 상자 닫기"
-
-#, c-format
-msgid "Op&en dialog Auto completion:"
-msgstr "열기 대화 상자 자동 완성(&E):"
-
-msgid "Auto-&reload modified files:"
-msgstr "수정된 파일 자동 다시 불러오기(&R:"
-
-#, c-format
-msgid "Language:"
-msgstr "언어:"
-
-#, c-format
-msgid "Defaults"
-msgstr "기본값"
 
 #, c-format
 msgid "Find"
@@ -2111,6 +2060,69 @@ msgstr "추가"
 
 msgid "Clear"
 msgstr "지우기"
+
+#, c-format
+msgid "Options"
+msgstr "옵션"
+
+#, c-format
+msgid "Import..."
+msgstr "가져오기..."
+
+#, c-format
+msgid "Export..."
+msgstr "내보내기..."
+
+#, c-format
+msgid "General"
+msgstr "일반"
+
+#, c-format
+msgid "Automatically &scroll to first difference"
+msgstr "첫 번째 차이로 자동 스크롤(&S)"
+
+msgid "Automatically s&croll to first inline difference"
+msgstr "-> <NWY> 나란히 있는 첫 번째 차이로 자동 스크롤(&C)"
+
+msgid "Cl&ose windows with 'Esc':"
+msgstr "'Esc'로 창 닫기(&O):"
+
+#, c-format
+msgid "&Automatically verify paths in Open dialog"
+msgstr "열기 대화 상자에서 경로 자동 확인(&A)"
+
+msgid "Single instance mode:"
+msgstr "중복 실행 금지 모드:"
+
+#, c-format
+msgid "As&k when closing multiple windows"
+msgstr "여러 창을 닫을 때 물어보기(&K)"
+
+#, c-format
+msgid "&Preserve file time in file compare"
+msgstr "파일 비교시 파일 시간 보존(&P)"
+
+#, c-format
+msgid "Show \"Select Files or Folders\" dialog on startup"
+msgstr "시작 시 \"파일 또는 폴더 선택\" 대화 상자 표시"
+
+msgid "Close \"Select Files or Folders\" dialog on clicking Compare button"
+msgstr "비교 버튼 누를 때 \"파일 또는 폴더 선택\" 대화 상자 닫기"
+
+#, c-format
+msgid "Op&en dialog Auto completion:"
+msgstr "열기 대화 상자 자동 완성(&E):"
+
+msgid "Auto-&reload modified files:"
+msgstr "수정된 파일 자동 다시 불러오기(&R:"
+
+#, c-format
+msgid "Language:"
+msgstr "언어:"
+
+#, c-format
+msgid "Defaults"
+msgstr "기본값"
 
 #, c-format
 msgid "Colors"
@@ -2313,6 +2325,131 @@ msgid "Br&owse..."
 msgstr "찾아보기(&O)..."
 
 #, c-format
+msgid "Compare"
+msgstr "비교"
+
+#, c-format
+msgid "Whitespaces"
+msgstr "공백 문자"
+
+#, c-format
+msgid "&Compare"
+msgstr "비교(&C)"
+
+#, c-format
+msgid "&Ignore change"
+msgstr "변경사항 무시(&I)"
+
+#, c-format
+msgid "I&gnore all"
+msgstr "모두 무시(&G)"
+
+msgid "Ignore blan&k lines"
+msgstr "공백 줄 무시(&K)"
+
+msgid "Ignore &case"
+msgstr "대소문자 무시(&C)"
+
+msgid "Igno&re EOL differences (Windows/Unix/Mac)"
+msgstr "EOL 차이 무시 (Windows/Unix/Mac)"
+
+msgid "Ignore num&bers"
+msgstr "숫자 무시(&B)"
+
+msgid "Ignore codepage &differences"
+msgstr "코드페이지 차이 무시(&D)"
+
+msgid "Ignore c&omment differences"
+msgstr "주석 차이 무시(&O)"
+
+msgid "Ignore &missing trailing EOL"
+msgstr "누락된 후행 EOL 무시(&M)"
+
+msgid "Ignore line &breaks (treat as spaces)"
+msgstr "줄 바꿈 무시 (공백으로 처리)(&B)"
+
+#, c-format
+msgid "E&nable moved block detection"
+msgstr "이동된 블럭 감지 사용함(&N)"
+
+msgid "Align &similar lines"
+msgstr "유사한 줄 정렬(&S)"
+
+msgid "Diff &algorithm:"
+msgstr "비교 알고리즘(&A)"
+
+msgid "Enable indent &heuristic"
+msgstr "들여쓰기 휴리스틱 사용함(&H)"
+
+msgid "Completely unhighlight the ignored differences"
+msgstr "무시된 차이 강조하지 않음"
+
+#, c-format
+msgid "Editor"
+msgstr "편집기"
+
+#, c-format
+msgid "&Highlight syntax"
+msgstr "구문 강조 표시(&H)"
+
+#, c-format
+msgid "&Preserve original EOL"
+msgstr "원래 EOL 문자 유지(&P)"
+
+#, c-format
+msgid "Tabs"
+msgstr "탭"
+
+#, c-format
+msgid "&Tab size:"
+msgstr "탭 크기(&T):"
+
+#, c-format
+msgid "&Insert tabs"
+msgstr "탭 삽입(&I)"
+
+#, c-format
+msgid "Insert &spaces"
+msgstr "공백 삽입(&S)"
+
+msgid "&Rendering mode:"
+msgstr "렌더링 모드(&R)"
+
+#, c-format
+msgid "&Automatic rescan"
+msgstr "자동으로 다시 검색(&A)"
+
+msgid "Copy &granularity for selected differences:"
+msgstr "선택한 차이에 대한 세분화 복사(G):"
+
+#, c-format
+msgid "Line Difference Coloring"
+msgstr "줄 차이 채색"
+
+#, c-format
+msgid "View line differences"
+msgstr "줄 차이 보기"
+
+#, c-format
+msgid "&Character-level"
+msgstr "문자 단위(&C)"
+
+#, c-format
+msgid "&Word-level:"
+msgstr "단어 단위(&W):"
+
+#, c-format
+msgid "W&ord break characters:"
+msgstr "단어 분리 문자(&O):"
+
+msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
+msgstr "WinMerge를 사용하면 몇 가지 일반 메시지 상자를 숨길 수 있습니다. 모든 메시지 상자를 다시 표시하려면 재설정 버튼을 누릅니다."
+
+#, c-format
+msgid "Reset"
+msgstr "재설정"
+
+#, c-format
 msgid "Patch Generator"
 msgstr "패치 생성기"
 
@@ -2461,131 +2598,6 @@ msgstr "차이(&D)"
 msgid "&Go to"
 msgstr "이동(&G)"
 
-#, c-format
-msgid "Compare"
-msgstr "비교"
-
-#, c-format
-msgid "Whitespaces"
-msgstr "공백 문자"
-
-#, c-format
-msgid "&Compare"
-msgstr "비교(&C)"
-
-#, c-format
-msgid "&Ignore change"
-msgstr "변경사항 무시(&I)"
-
-#, c-format
-msgid "I&gnore all"
-msgstr "모두 무시(&G)"
-
-msgid "Ignore blan&k lines"
-msgstr "공백 줄 무시(&K)"
-
-msgid "Ignore &case"
-msgstr "대소문자 무시(&C)"
-
-msgid "Igno&re EOL differences (Windows/Unix/Mac)"
-msgstr "EOL 차이 무시 (Windows/Unix/Mac)"
-
-msgid "Ignore num&bers"
-msgstr "숫자 무시(&B)"
-
-msgid "Ignore codepage &differences"
-msgstr "코드페이지 차이 무시(&D)"
-
-msgid "Ignore c&omment differences"
-msgstr "주석 차이 무시(&O)"
-
-msgid "Ignore &missing trailing EOL"
-msgstr "누락된 후행 EOL 무시(&M)"
-
-msgid "Ignore line &breaks (treat as spaces)"
-msgstr "줄 바꿈 무시 (공백으로 처리)(&B)"
-
-#, c-format
-msgid "E&nable moved block detection"
-msgstr "이동된 블럭 감지 사용함(&N)"
-
-msgid "Align &similar lines"
-msgstr "유사한 줄 정렬(&S)"
-
-msgid "Diff &algorithm:"
-msgstr "비교 알고리즘(&A)"
-
-msgid "Enable indent &heuristic"
-msgstr "들여쓰기 휴리스틱 사용함(&H)"
-
-msgid "Completely unhighlight the ignored differences"
-msgstr "무시된 차이 강조하지 않음"
-
-#, c-format
-msgid "Editor"
-msgstr "편집기"
-
-#, c-format
-msgid "&Highlight syntax"
-msgstr "구문 강조 표시(&H)"
-
-#, c-format
-msgid "&Preserve original EOL"
-msgstr "원래 EOL 문자 유지(&P)"
-
-#, c-format
-msgid "Tabs"
-msgstr "탭"
-
-#, c-format
-msgid "&Tab size:"
-msgstr "탭 크기(&T):"
-
-#, c-format
-msgid "&Insert tabs"
-msgstr "탭 삽입(&I)"
-
-#, c-format
-msgid "Insert &spaces"
-msgstr "공백 삽입(&S)"
-
-msgid "&Rendering mode:"
-msgstr "렌더링 모드(&R)"
-
-#, c-format
-msgid "&Automatic rescan"
-msgstr "자동으로 다시 검색(&A)"
-
-msgid "Copy &granularity for selected differences:"
-msgstr "선택한 차이에 대한 세분화 복사(G):"
-
-#, c-format
-msgid "Line Difference Coloring"
-msgstr "줄 차이 채색"
-
-#, c-format
-msgid "View line differences"
-msgstr "줄 차이 보기"
-
-#, c-format
-msgid "&Character-level"
-msgstr "문자 단위(&C)"
-
-#, c-format
-msgid "&Word-level:"
-msgstr "단어 단위(&W):"
-
-#, c-format
-msgid "W&ord break characters:"
-msgstr "단어 분리 문자(&O):"
-
-msgid "Some messages can be hidden by the user. Press Reset to make all messages visible again."
-msgstr "WinMerge를 사용하면 몇 가지 일반 메시지 상자를 숨길 수 있습니다. 모든 메시지 상자를 다시 표시하려면 재설정 버튼을 누릅니다."
-
-#, c-format
-msgid "Reset"
-msgstr "재설정"
-
 msgid "File Filters"
 msgstr "파일 필터"
 
@@ -2628,6 +2640,59 @@ msgstr "오른쪽(&R)"
 
 msgid "Expression:"
 msgstr "표현식:"
+
+#, c-format
+msgid "Codepage"
+msgstr "코드페이지"
+
+#, c-format
+msgid "Default Codepage"
+msgstr "기본 코드페이지"
+
+#, c-format
+msgid "Select the default codepage for non-Unicode files:"
+msgstr "비유니코드 파일 열 때 사용할 기본 코드페이지:"
+
+#, c-format
+msgid "System codepage"
+msgstr "시스템 코드페이지"
+
+#, c-format
+msgid "According to WinMerge User Interface"
+msgstr "WinMerge 사용자 인터페이스를 따름"
+
+#, c-format
+msgid "Custom codepage:"
+msgstr "사용자 지정 코드페이지:"
+
+msgid ""
+"Detect codepage for: .html, .rc, .xml\n"
+"Restart required."
+msgstr ""
+"다음 파일 유형에 대한 코드페이지 정보 탐지: .html, .rc, .xml\n"
+"세션을 다시 시작해야 합니다."
+
+msgid ""
+"Detect codepage for files with mlang.dll\n"
+"Restart required."
+msgstr ""
+"Mlang.dll을 이용해 텍스트 파일의 코드페이지 감지\n"
+"세션을 다시 시작해야 합니다."
+
+#, c-format
+msgid "Archive Support"
+msgstr "압축 지원"
+
+#, c-format
+msgid "&Enable archive file support"
+msgstr "압축 파일 지원 사용함(&E)"
+
+#, c-format
+msgid "&Detect archive type from file signature"
+msgstr "파일 서명에서 압축 형식 감지(&D)"
+
+msgid "Items saved to or restored from the project file:"
+msgstr "프로젝트 파일에 저장되거나 복원된 항목:"
 
 #, c-format
 msgid "Save Modified Files?"
@@ -2674,56 +2739,6 @@ msgid "Disca&rd All"
 msgstr "모두 취소(&R)"
 
 #, c-format
-msgid "Codepage"
-msgstr "코드페이지"
-
-#, c-format
-msgid "Default Codepage"
-msgstr "기본 코드페이지"
-
-#, c-format
-msgid "Select the default codepage for non-Unicode files:"
-msgstr "비유니코드 파일 열 때 사용할 기본 코드페이지:"
-
-#, c-format
-msgid "System codepage"
-msgstr "시스템 코드페이지"
-
-#, c-format
-msgid "According to WinMerge User Interface"
-msgstr "WinMerge 사용자 인터페이스를 따름"
-
-#, c-format
-msgid "Custom codepage:"
-msgstr "사용자 지정 코드페이지:"
-
-msgid ""
-"Detect codepage for: .html, .rc, .xml\n"
-"Restart required."
-msgstr ""
-"다음 파일 유형에 대한 코드페이지 정보 탐지: .html, .rc, .xml\n"
-"세션을 다시 시작해야 합니다."
-
-msgid ""
-"Detect codepage for files with mlang.dll\n"
-"Restart required."
-msgstr ""
-"Mlang.dll을 이용해 텍스트 파일의 코드페이지 감지\n"
-"세션을 다시 시작해야 합니다."
-
-#, c-format
-msgid "Options"
-msgstr "옵션"
-
-#, c-format
-msgid "Import..."
-msgstr "가져오기..."
-
-#, c-format
-msgid "Export..."
-msgstr "내보내기..."
-
-#, c-format
 msgid "Folder Compare Report"
 msgstr "폴더 비교 보고서"
 
@@ -2754,21 +2769,6 @@ msgstr "공유 필터 (모든 사용자용)"
 #, c-format
 msgid "Private Filter (current user only)"
 msgstr "개인 필터 (현재 사용자만)"
-
-#, c-format
-msgid "Archive Support"
-msgstr "압축 지원"
-
-#, c-format
-msgid "&Enable archive file support"
-msgstr "압축 파일 지원 사용함(&E)"
-
-#, c-format
-msgid "&Detect archive type from file signature"
-msgstr "파일 서명에서 압축 형식 감지(&D)"
-
-msgid "Items saved to or restored from the project file:"
-msgstr "프로젝트 파일에 저장되거나 복원된 항목:"
 
 #, c-format
 msgid "Compare Statistics"
@@ -3074,7 +3074,7 @@ msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "바이너리 비교로 전환하기 위한 임계값 (MB)(&B):"
 
 msgid "Additional comparison condi&tions:"
-msgstr ""
+msgstr "추가 비교 조건(&T):"
 
 msgid "File patterns:"
 msgstr "파일 패턴:"
@@ -4468,7 +4468,7 @@ msgstr "이미지 파일이 다릅니다"
 
 #, c-format
 msgid "Files are different (expr: %1)"
-msgstr ""
+msgstr "추가 비교 조건: 파일이 다릅니다 (식: %1)"
 
 #, c-format
 msgid "Group%d"
@@ -5512,7 +5512,7 @@ msgstr "필터 적용됨"
 
 #, c-format
 msgid "Compare %1"
-msgstr ""
+msgstr "비교 %1"
 
 #, c-format
 msgid "Clipboard at %s"
