@@ -1,21 +1,73 @@
-# WinMerge 2.16.52 リリースノート
+# WinMerge 2.16.52.2 リリースノート
 
 - [このリリースについて](#about-this-release)
+- [2.16.52.2 の新機能](#what-is-new-in-216522)
 - [2.16.52 の新機能](#what-is-new-in-21652)
 - [2.16.51 beta の新機能](#what-is-new-in-21651-beta)
 - [既知の問題](#known-issues)
 
-2025年10月
+2025年11月
 
 ## このリリースについて
 
-WinMerge の 2.16.52 安定版リリースです。
+WinMerge の 2.16.52.2 安定版リリースです。
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は <a href="http://github.com/WinMerge/winmerge/issues">bug-tracker</a> で報告してください。
 日本語での報告は、<a href="https://sourceforge.net/p/winmerge-v2-jp/tickets/">こちら</a>でお願いします。
 
-## <a name="what-is-new-in-21650"></a>2.16.52 の新機能
+## 2.16.52.2 の更新内容
+
+### 外観
+
+* タイトルバーの文字色を、濃い色であれば白色にするように変更した。
+
+### ファイル比較
+
+* 不具合修正: タブ設定が「スペースを挿入」に変更されてしまう問題を修正した。
+  ([#3015](https://github.com/WinMerge/winmerge/issues/3015))
+* 不具合修正: タブ幅を「1」に設定し、「スペースを挿入」を有効にすると「ファイル比較」ウィンドウで再描画が失敗する問題を修正した。
+  ([#3047](https://github.com/WinMerge/winmerge/issues/3047))
+* matlab のシンタックスハイライトキーワードを更新した。
+  ([#3040](https://github.com/WinMerge/winmerge/issues/3040))
+
+### フォルダ比較
+
+* フォルダ比較時のデフォルトスレッド数を 4 に設定した。
+
+### フィルターダイアログ
+
+* 不具合修正: 新規追加またはインストールしたフィルタが、選択後に存在しないとみなされてしまう問題を修正した。
+
+### オプションダイアログ
+
+* 要望対応: テキストボックスとボタンのサイズの変更。
+  ([#3017](https://github.com/WinMerge/winmerge/issues/3017))
+
+### マニュアル
+
+* Help/FAQ の誤字修正
+  ([#3016](https://github.com/WinMerge/winmerge/issues/3016))
+* 文書: 翻訳への貢献方法をまとめた詳細ガイドを追加した。
+  ([PR #3023](https://github.com/WinMerge/winmerge/pull/3023))(PRをいただきました。ありがとうございます。)
+
+### 翻訳
+
+* 翻訳更新:
+
+  * ブルガリア語 ([PR #3006](https://github.com/WinMerge/winmerge/pull/3006))
+  * 中国語（簡体字） ([PR #3011](https://github.com/WinMerge/winmerge/pull/3011))
+  * 中国語（繁体字） ([PR #3008](https://github.com/WinMerge/winmerge/pull/3008))
+  * フランス語 ([PR #3024](https://github.com/WinMerge/winmerge/pull/3024))
+  * ドイツ語 ([PR #3018](https://github.com/WinMerge/winmerge/pull/3018))
+  * ハンガリー語 ([PR #3022](https://github.com/WinMerge/winmerge/pull/3022))
+  * 日本語
+  * 韓国語 ([PR #3007](https://github.com/WinMerge/winmerge/pull/3007))
+  * リトアニア語 ([PR #3019](https://github.com/WinMerge/winmerge/pull/3019))
+  * ポーランド語 ([PR #3014](https://github.com/WinMerge/winmerge/pull/3014))
+  * ポルトガル語 ([PR #3046](https://github.com/WinMerge/winmerge/pull/3046))
+  * トルコ語 ([PR #3020](https://github.com/WinMerge/winmerge/pull/3020))
+  * ロシア語 ([PR #3045](https://github.com/WinMerge/winmerge/pull/3045))
 
 ## WinMerge 2.16.52 の更新内容
 
