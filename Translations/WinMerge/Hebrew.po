@@ -448,6 +448,9 @@ msgstr "הערות גרסה"
 msgid "&Translations"
 msgstr "תרגומים"
 
+msgid "&Check For Updates"
+msgstr ""
+
 msgid "C&onfiguration"
 msgstr "תצורה"
 
