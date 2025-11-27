@@ -1,5 +1,54 @@
 # Change log
 
+## WinMerge 2.16.52.2 - 2025-11-27
+
+### Appearance
+
+* Match title bar text color to Windows using a 190 luminance threshold.
+
+### File compare
+
+* BugFix: [Bug] The configuration of tabulations is not working correctly
+    (#3015)
+* BugFix: Tab size set to '1' and 'insert spaces' causes redraw failures in
+    'File Compare' window. (#3047)
+* Update request: List of MATLAB specific keywords (#3040)
+
+### Folder compare
+
+* Set the default thread count for folder comparison to 4.
+
+### Filters dialog
+
+* BugFix: Newly added or installed filters were incorrectly flagged as missing
+    after selection.
+
+### Options dialog
+
+* Request to resize text boxes and button (#3017)
+
+### Manual
+
+* Typo in Help/FAQ (#3016)
+* Docs: Add comprehensive translation contribution guide (PR #3023)
+
+### Translations
+
+* Translation updates:
+  * Bulgarian (PR #3006)
+  * Chinese Simplified (PR #3011)
+  * Chinese Traditional (PR #3008)
+  * French (PR #3024)
+  * German (PR #3018)
+  * Hungarian (PR #3022)
+  * Japanese
+  * Korean (PR #3007)
+  * Lithuanian (PR #3019)
+  * Polish (PR #3014)
+  * Portuguese (PR #3046)
+  * Turkish (PR #3020)
+  * Russian (PR #3045)
+
 ## WinMerge 2.16.52 - 2025-10-27
 
 ### General
