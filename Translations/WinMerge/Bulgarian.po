@@ -3997,6 +3997,18 @@ msgstr "Един и същи файл е отворен и в двата пан�
 msgid "Selected files are identical."
 msgstr "Избраните файлове са еднакви."
 
+msgid "Selected files are identical (with current settings).\r\nChecking binary identity..."
+msgstr ""
+
+msgid "Selected files are identical (with current settings).\r\nBut binary comparison failed."
+msgstr ""
+
+msgid "Selected files are identical (binary match)."
+msgstr ""
+
+msgid "Selected files are identical (with current settings).\r\nBut differ at the binary level."
+msgstr ""
+
 msgid "An error occurred while comparing files."
 msgstr "Възникна грешка при сравнение на файловете."
 
