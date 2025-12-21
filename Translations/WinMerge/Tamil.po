@@ -1986,6 +1986,9 @@ msgstr "மறுசுழற்சி தொட்டியை பயன்ப�
 msgid "&External editor:"
 msgstr "வெளிப்புற திருத்தி:"
 
+msgid "&Store user data in:"
+msgstr ""
+
 msgid "&Filter folder:"
 msgstr "வடிகட்டி கோப்புறை:"
 
@@ -4746,11 +4749,14 @@ msgstr "வரிக்கு-வரி நிலை மற்றும் உ�
 msgid "Word-by-word position and text"
 msgstr "சொல்லுக்கு சொல் நிலை மற்றும் உரை"
 
-msgid "AppData folder"
-msgstr "பயன்தரவு கோப்புறை"
+msgid "AppData (Roaming) folder"
+msgstr ""
 
 msgid "Install folder"
 msgstr "நிறுவல் கோப்புறை"
+
+msgid "Documents folder"
+msgstr ""
 
 msgctxt "Options dialog|General|Single instance mode"
 msgid "Disabled"

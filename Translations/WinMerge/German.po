@@ -2306,6 +2306,9 @@ msgstr "&Gelöschte Dateien in den Papierkorb verschieben"
 msgid "&External editor:"
 msgstr "&Externer Editor:"
 
+msgid "&Store user data in:"
+msgstr ""
+
 #, c-format
 msgid "&Filter folder:"
 msgstr "&Filterordner:"
@@ -5415,11 +5418,14 @@ msgstr "Position und Text zeilenweise"
 msgid "Word-by-word position and text"
 msgstr "Position und Text wortweise"
 
-msgid "AppData folder"
-msgstr "AppData-Ordner"
+msgid "AppData (Roaming) folder"
+msgstr ""
 
 msgid "Install folder"
 msgstr "Installationsordner"
+
+msgid "Documents folder"
+msgstr ""
 
 msgctxt "Options dialog|General|Single instance mode"
 msgid "Disabled"

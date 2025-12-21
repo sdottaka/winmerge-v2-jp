@@ -1970,6 +1970,9 @@ msgstr "&Pošlji izbrisane datoteke v Koš"
 msgid "&External editor:"
 msgstr "Zu&nanji urejevalnik:"
 
+msgid "&Store user data in:"
+msgstr ""
+
 msgid "&Filter folder:"
 msgstr "Mapa &filtrov:"
 
@@ -4648,11 +4651,14 @@ msgstr "Položaj vrstico po vrstico in besedilo"
 msgid "Word-by-word position and text"
 msgstr "Položaj besedo po besedo in besedilo"
 
-msgid "AppData folder"
-msgstr "Mapa aplikacijskih podatkov"
+msgid "AppData (Roaming) folder"
+msgstr ""
 
 msgid "Install folder"
 msgstr "Namestitvena mapa"
+
+msgid "Documents folder"
+msgstr ""
 
 msgctxt "Options dialog|General|Single instance mode"
 msgid "Disabled"
