@@ -1051,6 +1051,9 @@ msgstr "Копировать имя файла"
 msgid "&Edit Caption"
 msgstr "&Изменить заголовок"
 
+msgid "Edit &Path\tCtrl+L"
+msgstr ""
+
 msgid "&Open..."
 msgstr "&Открыть..."
 

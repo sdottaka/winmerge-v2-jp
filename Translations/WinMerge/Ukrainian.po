@@ -1052,6 +1052,9 @@ msgstr "Скопіювати &ім'я файлу"
 msgid "&Edit Caption"
 msgstr ""
 
+msgid "Edit &Path\tCtrl+L"
+msgstr ""
+
 msgid "&Open..."
 msgstr ""
 

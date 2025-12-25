@@ -1255,6 +1255,9 @@ msgstr "Copia el nom del &fitxer"
 msgid "&Edit Caption"
 msgstr "&Edita la llegenda"
 
+msgid "Edit &Path\tCtrl+L"
+msgstr ""
+
 msgid "&Open..."
 msgstr "&Obre..."
 

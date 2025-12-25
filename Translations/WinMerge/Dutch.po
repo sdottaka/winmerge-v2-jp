@@ -1047,6 +1047,9 @@ msgstr "Bestandsnaam kopiëren"
 msgid "&Edit Caption"
 msgstr "Ondertitel bewerken"
 
+msgid "Edit &Path\tCtrl+L"
+msgstr ""
+
 msgid "&Open..."
 msgstr "Openen..."
 

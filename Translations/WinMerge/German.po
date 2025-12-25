@@ -1260,6 +1260,9 @@ msgstr "Dateinamen kopieren"
 msgid "&Edit Caption"
 msgstr "Titelzeile bearbeiten"
 
+msgid "Edit &Path\tCtrl+L"
+msgstr ""
+
 msgid "&Open..."
 msgstr "&Öffnen..."
 
