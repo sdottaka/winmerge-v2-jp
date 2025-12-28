@@ -50,7 +50,9 @@ vertical-align: middle;
 </ul>
 <h4 id="画像比較">画像比較</h4>
 <ul>
-<li>未サポートの画像ファイルを開いた場合に、エラーメッセージを表示して画像比較ウィンドウを自動的に閉じるようにした。</li>
+<li><p>未サポートの画像ファイルを開いた場合に、エラーメッセージを表示して画像比較ウィンドウを自動的に閉じるようにした。</p></li>
+<li><p>freeimage を<a href="https://github.com/danoli3/FreeImage">3.19.10</a>
+に更新した。</p></li>
 </ul>
 <h4 id="webページ比較">Webページ比較</h4>
 <ul>
@@ -66,6 +68,10 @@ Webページ比較のタブおよびヘッダーバーに表示されるファ�
 <ul>
 <li>ユーザーデータの保存場所として AppData または Documents
 を選択できるオプションを[システム]ページに追加した。 (<a href="https://github.com/WinMerge/winmerge/pull/3078">PR #3078</a>)</li>
+</ul>
+<h4 id="プラグイン">プラグイン</h4>
+<ul>
+<li>jq を 1.8.1 に更新した。</li>
 </ul>
 <h4 id="マニュアル">マニュアル</h4>
 <ul>
@@ -305,7 +311,7 @@ Webページ比較のタブおよびヘッダーバーに表示されるファ�
 <li>不具合修正: <code>&lt;pre&gt;</code>
 要素内の差分が、本来別々の行で表示されるべきところを連結して表示されることがある問題を修正した。</li>
 </ul>
-<h4 id="プラグイン">プラグイン</h4>
+<h4 id="プラグイン-1">プラグイン</h4>
 <ul>
 <li>不具合修正: ApacheTika, PlantUML プラグイン:
 実行に失敗してもエラーメッセージが表示されない問題を修正した。（<a href="https://github.com/WinMerge/winmerge/issues/715">#715</a>）</li>
@@ -408,7 +414,7 @@ Windowsのアニメーション効果が有効な状態でWinMergeを最大化�
 <li>フォルダー比較ウインドウで左側から右側または逆方向にコピーする際、選択された項目に同一ファイルやスキップされたファイルが含まれていた場合に差異のあるファイルのみをコピーするか確認するダイアログを表示するようにした。（<a href="https://github.com/WinMerge/winmerge/pull/2622">PR
 #2622</a>）。</li>
 </ul>
-<h4 id="プラグイン-1">プラグイン</h4>
+<h4 id="プラグイン-2">プラグイン</h4>
 <ul>
 <li>不具合修正: バージョン2.16.43以降、プラグイン -&gt;
 比較前処理プラグイン メニューが正しく表示されない問題を修正した。</li>
@@ -447,7 +453,7 @@ Windowsのアニメーション効果が有効な状態でWinMergeを最大化�
 フォルダー比較が完了する前にフォルダーアイコンに緑のチェックマークが付く問題を修正した。
 (<a href="https://github.com/WinMerge/winmerge/issues/2562">#2562</a>)</li>
 </ul>
-<h4 id="プラグイン-2">プラグイン</h4>
+<h4 id="プラグイン-3">プラグイン</h4>
 <ul>
 <li>不具合修正: CompareMSWordFiles プラグイン:
 RTFファイルを比較すると変換確認ウインドウが表示される問題を修正した。
@@ -518,7 +524,7 @@ Failed!&quot; エラーが発生することがある問題を修正した。(<a
 <li>不具合修正: &quot;ファイルまたはフォルダを選択&quot;
 ウィンドウで無効なファイルパスを指定するとクラッシュする場合があるのを修正した。</li>
 </ul>
-<h4 id="プラグイン-3">プラグイン</h4>
+<h4 id="プラグイン-4">プラグイン</h4>
 <ul>
 <li>Apache Tika プラグイン - Apache Tika を 3.0.0 にアップデート</li>
 </ul>
@@ -584,7 +590,7 @@ Failed!&quot; エラーが発生することがある問題を修正した。(<a
 <ul>
 <li>7-Zip バージョン 24.08に更新した。</li>
 </ul>
-<h4 id="プラグイン-4">プラグイン</h4>
+<h4 id="プラグイン-5">プラグイン</h4>
 <ul>
 <li>Java の properties ファイル比較用プラグイン
 CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://github.com/WinMerge/winmerge/pull/2455">PR
@@ -649,7 +655,7 @@ CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://githu
 <li>ステータスバーの右端が白く表示される問題を修正した。</li>
 <li>点滅間隔やオーバーレイアニメーション間隔を変更できるようにした。</li>
 </ul>
-<h4 id="プラグイン-5">プラグイン</h4>
+<h4 id="プラグイン-6">プラグイン</h4>
 <ul>
 <li>AIConvertTextプラグイン設定ウィンドウでgpt4-o-miniモデルを選択可能にした。</li>
 </ul>
@@ -707,7 +713,7 @@ CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://githu
 <li>不具合修正:
 ファイル名に#を含む画像の比較レポートで画像が表示されない問題を修正した。<a href="https://osdn.net/projects/winmerge-jp/ticket/78171">osdn#46082</a></li>
 </ul>
-<h4 id="プラグイン-6">プラグイン</h4>
+<h4 id="プラグイン-7">プラグイン</h4>
 <ul>
 <li>AIConvertText プラグインを追加した。 <a href="https://github.com/WinMerge/winmerge/pull/2258">(PR#2258)</a>
 (OpenAI API
@@ -749,7 +755,7 @@ CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://githu
 ボタンの位置を調整した。 <a href="https://github.com/WinMerge/winmerge/pull/2295">(PR
 #2295)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="プラグイン-7">プラグイン</h4>
+<h4 id="プラグイン-8">プラグイン</h4>
 <ul>
 <li>不具合修正: CompareMSExcelFiles.sct:
 &#39;ワークブックの情報を複数ファイルに展開する&#39;
@@ -810,7 +816,7 @@ CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://githu
 <li>不具合修正: ヘッダー バーに設定されたキャプションが HTML
 レポートに適用されない問題を修正した。</li>
 </ul>
-<h4 id="プラグイン-8">プラグイン</h4>
+<h4 id="プラグイン-9">プラグイン</h4>
 <ul>
 <li>不具合修正:
 展開プラグインでエラーが発生したとき、クラッシュする問題を修正した。</li>
@@ -848,7 +854,7 @@ CompareEscapedJavaPropertiesFiles.sct を追加した。 (<a href="https://githu
 <ul>
 <li>[列の表示]ダイアログのボタンの活性/非活性制御の改善。 <a href="https://github.com/WinMerge/winmerge/pull/2154">(PR#2154)</a>(PRをいただきました。ありがとうございます。)</li>
 </ul>
-<h4 id="プラグイン-9">プラグイン</h4>
+<h4 id="プラグイン-10">プラグイン</h4>
 <ul>
 <li><p>不具合修正: 以下のように二重引用符を文字列が
 <code>/unpacker</code>
