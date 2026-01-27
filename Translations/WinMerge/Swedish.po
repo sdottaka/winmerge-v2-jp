@@ -453,9 +453,6 @@ msgstr "Utgivningsnotis"
 msgid "&Translations"
 msgstr "Översättningar"
 
-msgid "&Check For Updates"
-msgstr ""
-
 msgid "C&onfiguration"
 msgstr "Konfiguration"
 
@@ -563,6 +560,9 @@ msgstr "Växla andra och tredje"
 
 msgid "Swap 1st | &3rd"
 msgstr "Växla första och tredje"
+
+msgid "Displa&y Filter Bar\tCtrl+Shift+L"
+msgstr ""
 
 msgid "Com&pare Statistics..."
 msgstr "Jämför statistik..."
@@ -894,6 +894,9 @@ msgstr "Dela"
 msgid "Comp&are"
 msgstr "Jämför"
 
+msgid "Compar&e with Renamed/Moved Items"
+msgstr ""
+
 msgid "Compare in New &Window"
 msgstr "Jämför i nytt fönster"
 
@@ -1049,8 +1052,8 @@ msgstr "Kopiera hela sökvägen"
 msgid "Copy &Filename"
 msgstr "Kopiera filnamn"
 
-msgid "&Edit Caption"
-msgstr "Redigera rubrik"
+msgid "&Edit Caption\tF2"
+msgstr "Redigera rubrik\tF2"
 
 msgid "Edit &Path\tCtrl+L"
 msgstr ""
@@ -1499,6 +1502,30 @@ msgstr ""
 msgid "Add F&older Condition"
 msgstr "Lägg till katalogkondition"
 
+msgid "&Files"
+msgstr ""
+
+msgid "0 files"
+msgstr ""
+
+msgid "1 file or more"
+msgstr ""
+
+msgid "&Items"
+msgstr ""
+
+msgid "0 items"
+msgstr ""
+
+msgid "1 item or more"
+msgstr ""
+
+msgid "&Total Size"
+msgstr ""
+
+msgid "&Recursive"
+msgstr ""
+
 msgid "Target: &Any (Left/Middle/Right)"
 msgstr "Mål: Alla (Vänster/Mitten/Höger)"
 
@@ -1599,6 +1626,63 @@ msgid "Compare &Attributes"
 msgstr ""
 
 msgid "Compare C&ontents"
+msgstr ""
+
+msgid "&Clear Keys"
+msgstr ""
+
+msgid "&Name"
+msgstr ""
+
+msgid "&Base name (without extension)"
+msgstr ""
+
+msgid "Normalized &Unicode Name"
+msgstr ""
+
+msgid "&Date"
+msgstr ""
+
+msgid "&Hash (MD5)"
+msgstr ""
+
+msgid "Insert &replace() Function"
+msgstr ""
+
+msgid "Insert rege&xReplace() Function"
+msgstr ""
+
+msgid "Text &Normalization"
+msgstr ""
+
+msgid "&Lowercase"
+msgstr ""
+
+msgid "&Uppercase"
+msgstr ""
+
+msgid "&Half-width"
+msgstr ""
+
+msgid "&Full-width"
+msgstr ""
+
+msgid "&Chinese Conversion"
+msgstr ""
+
+msgid "&Simplified Chinese"
+msgstr ""
+
+msgid "&Traditional Chinese"
+msgstr ""
+
+msgid "&Japanese Conversion"
+msgstr ""
+
+msgid "&Hiragana"
+msgstr ""
+
+msgid "&Katakana"
 msgstr ""
 
 msgid "About WinMerge"
@@ -2201,6 +2285,9 @@ msgstr "Objekt totalt:"
 msgid "Items compared:"
 msgstr "Jämförda objekt:"
 
+msgid "&Close"
+msgstr "Stäng"
+
 msgid "Go to"
 msgstr "Gå till"
 
@@ -2446,9 +2533,6 @@ msgstr "Resultat:"
 msgid "&Test"
 msgstr "Testa"
 
-msgid "&Close"
-msgstr "Stäng"
-
 msgid "Table"
 msgstr "Tabell"
 
@@ -2610,6 +2694,15 @@ msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Tröskelvärde för växling till binär jämförelse (MB):"
 
 msgid "Additional comparison condi&tions:"
+msgstr ""
+
+msgid "&Rename/move detection:"
+msgstr ""
+
+msgid "Rename/move detection &keys:"
+msgstr ""
+
+msgid "&Merge renamed items into a single item"
 msgstr ""
 
 msgid "File patterns:"
@@ -3861,6 +3954,33 @@ msgstr ""
 msgid "Group%d"
 msgstr "Grupp%d"
 
+msgctxt "Options dialog|Compare|Folder|Detect renames and moves"
+msgid "Disabled"
+msgstr ""
+
+msgid "Detect renames"
+msgstr ""
+
+msgid "Detect renames and moves"
+msgstr ""
+
+msgid "Renamed"
+msgstr ""
+
+msgid "Moved"
+msgstr ""
+
+msgid "Renamed/Moved"
+msgstr ""
+
+#, c-format
+msgid "(%1 items)"
+msgstr ""
+
+#, c-format
+msgid "%1 (set %2): "
+msgstr ""
+
 #, c-format
 msgid "Elapsed time: %ld ms"
 msgstr "Tidsförlopp: %ld ms"
@@ -5090,6 +5210,10 @@ msgstr "Mörk"
 msgid "Follow system"
 msgstr "Följ system"
 
+#, c-format
+msgid "e.g. %1"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Finputsning"
 
@@ -5556,6 +5680,9 @@ msgid ""
 msgstr ""
 "Kan inte hämta Makron.\r\n"
 "För att tillåta WinMerge att jämföra makron Tillåt tillgång till Visual Basic Project' i MS Office Macro Security."
+
+msgid "Replace line breaks in formulas with spaces"
+msgstr ""
 
 msgid "Compare VBA macros"
 msgstr "Jämför VBA-makron"
