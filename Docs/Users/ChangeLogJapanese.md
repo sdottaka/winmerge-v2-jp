@@ -2,6 +2,50 @@
 title: 変更履歴
 ---
 
+### 2026/01/29 2.16.54-jp-1
+
+#### 全般
+
+* 不具合修正: キリル文字のショートカットがメインメニューのキーボードショートカットで動作しない問題を修正
+
+* 不具合修正: 1つのプロジェクトファイルを開くとJumpListに2件登録されてしまう問題を修正 [(#2990)](https://github.com/WinMerge/winmerge/issues/2990)
+
+* expat をバージョン 2.7.3 に更新
+
+#### フォルダ比較
+
+* 不具合修正: 比較中にファイルを移動した際、予期せずファイルが閉じられる問題を修正した。[(PR #3088)](https://github.com/WinMerge/winmerge/issues/3088)
+
+* フォルダー比較に表示フィルターを追加 [(PR #3106)](https://github.com/WinMerge/winmerge/pull/3106)
+
+* フォルダー統計用のフィルター属性とヘルパーメニューを追加 [(PR #3111)](https://github.com/WinMerge/winmerge/pull/3111)
+
+* 範囲の包含／非包含を明示的に判定する isWithin() および inRange() を追加 [(PR #3124)](https://github.com/WinMerge/winmerge/pull/3124)
+
+* フィルター式に logInfo / logWarn / logError 関数を追加 ([(PR #3131)](https://github.com/WinMerge/winmerge/pull/3131)
+
+* 新しいフィルター式関数を追加 (if, ifEach, choose, chooseEach, andEach, orEach, notEach) [(PR #3132)](https://github.com/WinMerge/winmerge/pull/3132)
+
+* フィルターに BaseName / IsFolder および新しい文字列変換関数を追加 [(PR #3146)](https://github.com/WinMerge/winmerge/pull/3146)
+
+* フォルダー比較用の実験的なリネーム／移動検出のカスタマイズ機能を追加 [(PR #3126)](https://github.com/WinMerge/winmerge/pull/3126)
+
+#### オプションダイアログ
+
+* オプションダイアログの高さと「既定値」ボタンの位置を調整
+
+#### シェルエクステンション
+
+* 不具合修正: パスがバックスラッシュで終わる場合に Add-AppxPackage が失敗する問題を修正 [(#3145)](https://github.com/WinMerge/winmerge/pull/3145)
+
+#### インストーラー
+
+* インストーラーパッケージからビルド時ツール (lemon.exe, re2c.exe) を削除
+
+#### プラグイン
+
+* CompareMSExcelFiles: Excel 数式内の改行をスペースに置換 [(PR #3028)](https://github.com/WinMerge/winmerge/pull/3028)(PRをいただきました。ありがとうございます。)
+
 ### 2025/12/29 2.16.52-jp-6
 
 #### 全般
