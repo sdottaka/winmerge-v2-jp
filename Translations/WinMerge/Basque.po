@@ -520,9 +520,6 @@ msgstr ""
 msgid "&Translations"
 msgstr ""
 
-msgid "&Check For Updates"
-msgstr ""
-
 #, c-format
 msgid "C&onfiguration"
 msgstr "It&xurapena"
@@ -1261,9 +1258,6 @@ msgid "Copy &Filename"
 msgstr "Kopiatu &Agirizena"
 
 msgid "&Edit Caption\tF2"
-msgstr ""
-
-msgid "Edit &Path\tCtrl+L"
 msgstr ""
 
 msgid "Edit &Path\tCtrl+L"
