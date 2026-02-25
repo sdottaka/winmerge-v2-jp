@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
-"POT-Creation-Date: 2026-01-25 13:30+0000\n"
-"PO-Revision-Date: 2026-01-27 01:10+0000\n"
+"POT-Creation-Date: 2026-02-03 07:46+0000\n"
+"PO-Revision-Date: 2026-02-03 23:10+0000\n"
 "Last-Translator: Mirosław Żylewicz\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -206,7 +206,7 @@ msgid "Dragging &Mode"
 msgstr "Tryb przeciągania"
 
 msgid "&Move"
-msgstr "Przesuń"
+msgstr "Przenieś"
 
 msgid "&Adjust Offset"
 msgstr "Dostosuj przesunięcie"
@@ -1638,6 +1638,9 @@ msgstr "Nazwa podstawowa (bez rozszerzenia)"
 msgid "Normalized &Unicode Name"
 msgstr "Znormalizowana nazwa Unicode"
 
+msgid "&Relative Path"
+msgstr ""
+
 msgid "&Date"
 msgstr "Data"
 
@@ -1649,6 +1652,27 @@ msgstr "Wstaw funkcję zastąp()"
 
 msgid "Insert rege&xReplace() Function"
 msgstr "Wstaw funkcję zastąpWyrażenieRegularne()"
+
+msgid "Replace &Lists"
+msgstr ""
+
+msgid "&Create String Replace List and Insert..."
+msgstr ""
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr ""
+
+msgid "&String Replace Lists"
+msgstr ""
+
+msgid "Re&gex Replace Lists"
+msgstr ""
+
+msgid "Open String Replace Lists Folder..."
+msgstr ""
+
+msgid "Open Regex Replace Lists Folder..."
+msgstr ""
 
 msgid "Text &Normalization"
 msgstr "Normalizacja tekstu"
@@ -1682,6 +1706,9 @@ msgstr "Hiragana"
 
 msgid "&Katakana"
 msgstr "Katakana"
+
+msgid "Normalize &Unicode"
+msgstr ""
 
 msgid "About WinMerge"
 msgstr "O programie WinMerge"
@@ -2155,10 +2182,10 @@ msgid "&Rendering mode:"
 msgstr "&Tryb renderowania:"
 
 msgid "&Automatic rescan"
-msgstr "Automatyczne powtórz skanowanie"
+msgstr "Automatycznie powtórz skanowanie"
 
 msgid "Copy &granularity for selected differences:"
-msgstr ""
+msgstr "Dokładność kopiowania zaznaczonych różnic:"
 
 msgid "Line Difference Coloring"
 msgstr "Kolorowanie różniących się wierszy"
@@ -2684,7 +2711,7 @@ msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Próg przejścia na binarne porównywanie (MB):"
 
 msgid "Additional comparison condi&tions:"
-msgstr ""
+msgstr "Dodatkowe warunki porównywania:"
 
 msgid "&Rename/move detection:"
 msgstr "Wykrywanie zmiany nazwy/przeniesienia:"
@@ -2692,8 +2719,8 @@ msgstr "Wykrywanie zmiany nazwy/przeniesienia:"
 msgid "Rename/move detection &keys:"
 msgstr "Klucze wykrywania zmiany nazwy/przeniesienia:"
 
-msgid "&Merge renamed items into a single item"
-msgstr "Scal zmienione nazwy elementów w jeden element"
+msgid "M&erge renames and moves:"
+msgstr ""
 
 msgid "File patterns:"
 msgstr "Szablony pliku:"
@@ -2937,13 +2964,13 @@ msgid "From left:"
 msgstr "Z lewej:"
 
 msgid "To left:"
-msgstr "Na lewą:"
+msgstr "Do lewej:"
 
 msgid "From right:"
 msgstr "Z prawej:"
 
 msgid "To right:"
-msgstr "Na prawą:"
+msgstr "Do prawej:"
 
 msgid "From middle:"
 msgstr "Od środka:"
@@ -2954,9 +2981,6 @@ msgstr "Do środka:"
 #, c-format
 msgid "Version %1"
 msgstr "Wersja %1"
-
-msgid "X64"
-msgstr "X64"
 
 #, c-format
 msgid "Options (%1)"
@@ -2983,6 +3007,9 @@ msgstr "Pliki projektu WinMerge (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "Pliki ustawień (*.ini)|*.ini|Wszystkie pliki (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr ""
 
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
 msgstr "Pliki tekstowe (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|Wszystkie pliki (*.*)|*.*||"
@@ -3433,7 +3460,7 @@ msgid "Are you sure you want to move %d items?"
 msgstr "Czy na pewno chcesz przenieść %d elementów?"
 
 msgid "Confirm Move"
-msgstr "Potwierdzenie przenoszenia"
+msgstr "Potwierdź przenoszenie"
 
 msgid "Close the folder comparison window?"
 msgstr "Zamierzasz zamknąć okno porównujące foldery. Czy na pewno chcesz zamknąć okno?"
@@ -3712,6 +3739,9 @@ msgstr " (Lewy i prawy są identyczne)"
 msgid " (Left and middle are identical)"
 msgstr " (Lewy i środkowy są identyczne)"
 
+msgid " (paths differ)"
+msgstr ""
+
 msgid "Text files are different"
 msgstr "Pliki tekstowe są różne"
 
@@ -3739,6 +3769,12 @@ msgstr "Wykryj zmiany nazw"
 msgid "Detect renames and moves"
 msgstr "Wykryj zmiany nazw i przeniesienia"
 
+msgid "Merge renames"
+msgstr ""
+
+msgid "Merge renames and moves"
+msgstr ""
+
 msgid "Renamed"
 msgstr "Zmieniono nazwę"
 
@@ -3756,16 +3792,19 @@ msgstr "(%1 elementy(ów))"
 msgid "%1 (set %2): "
 msgstr ""
 
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
+msgstr ""
+
 #, c-format
 msgid "Elapsed time: %ld ms"
 msgstr "Upłynęło: %ld ms"
 
 msgid "1 item selected"
-msgstr "Wybrano 1 element"
+msgstr "Zaznaczono 1 element"
 
 #, c-format
 msgid "%1 items selected"
-msgstr "Wybrano %1 elementy(ów)"
+msgstr "Zaznaczono %1 elementy(ów)"
 
 msgid "Filename or folder name."
 msgstr "Nazwa pliku lub nazwa folderu."
@@ -4085,7 +4124,7 @@ msgid "Failed to write options to file."
 msgstr "Błąd podczas eksportu opcji do pliku."
 
 msgid "Close multiple compare windows?\n\nContinue?"
-msgstr "Zamierzasz zamknąć kilka okien porównania.\n\nCzy na pewno chcesz kontynuować?"
+msgstr "Zamierzasz zamknąć kilka okien porównywania.\n\nCzy na pewno chcesz kontynuować?"
 
 msgid "Mixed"
 msgstr "Mieszany"
@@ -4707,7 +4746,7 @@ msgid "Unknown character in filter expression"
 msgstr "Nieznany znak w wyrażeniu filtrującym"
 
 msgid "Unterminated string literal"
-msgstr ""
+msgstr "Niezakończony literał łańcuchowy"
 
 msgid "Syntax error in filter expression"
 msgstr "Błąd składni w wyrażeniu filtrującym"
@@ -4716,7 +4755,7 @@ msgid "Failed to parse filter expression"
 msgstr "Nie udało się przeanalizować wyrażenia filtrującego"
 
 msgid "Invalid literal value"
-msgstr ""
+msgstr "Nieprawidłowa wartość literału"
 
 msgid "Invalid regular expression"
 msgstr "Nieprawidłowe wyrażenie regularne"
@@ -4787,6 +4826,15 @@ msgstr "Systemowy"
 #, c-format
 msgid "e.g. %1"
 msgstr "np. %1"
+
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "WinMerge wykrył błąd krytyczny podczas ostatniej sesji. Prosimy o zgłoszenie tego faktu, jeśli to możliwe."
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr ""
 
 msgid "Prettification"
 msgstr "Upiększanie"
@@ -4893,6 +4941,9 @@ msgstr "Upiększ kod XML"
 msgid "Prettify YAML"
 msgstr "Upiększ kod YAML"
 
+msgid "Prettify PO"
+msgstr ""
+
 msgid "Preview Graphviz"
 msgstr "Podgląd Graphviz"
 
@@ -4916,6 +4967,9 @@ msgstr "Kwerenda danych YAML..."
 
 msgid "Validate HTML"
 msgstr "Walidacja HTML"
+
+msgid "Validate PO"
+msgstr ""
 
 msgid "Disassemble JVM Bytecode"
 msgstr "Dezasembluj kod bajtowy JVM"
@@ -4987,6 +5041,9 @@ msgstr "XML Prettier z tidy-html5. \r\nArgumenty: Opcje wiersza poleceń przekaz
 msgid "YAML Prettier (yq).\r\nArguments: yq filter/command line options."
 msgstr "YAML Prettier z poleceniem yq. \r\nArgumenty: Filtr lub opcje wiersza poleceń przekazywane do polecenia yq."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr ""
+
 msgid "Graphviz Previewer.\r\nArguments: dot command line options."
 msgstr "Przeglądarka Graphviz. \r\nArgumenty: Opcje wiersza poleceń przekazywane do polecenia dot."
 
@@ -4996,10 +5053,10 @@ msgstr "Przeglądarka Markdown. \r\nArgumenty: Opcje wiersza poleceń przekazywa
 msgid "PlantUML Previewer.\r\nArguments: plantuml.jar command line options."
 msgstr "Przeglądarka PlantUML. \r\nArgumenty: Opcje wiersza poleceń przekazywane do polecenia plantuml.jar."
 
-msgid "CSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "CSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr "CSV Querier z poleceniem q. \r\nArgumenty: Instrukcja SQL lub opcje wiersza poleceń przekazywane do polecenia q."
 
-msgid "TSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "TSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr "TSV Querier z poleceniem q. \r\nArgumenty: Instrukcja SQL lub opcje wiersza poleceń przekazywane do polecenia q."
 
 msgid "JSON Querier (jq).\r\nArguments: jq filter/command line options."
@@ -5010,6 +5067,9 @@ msgstr "YAML Querier z poleceniem yq. \r\nArgumenty: Filtr lub opcje wiersza pol
 
 msgid "HTML Validator (tidy-html5).\r\nArguments: tidy command line options."
 msgstr "Walidator HTML z tidy-html5. \r\nArgumenty: Opcje wiersza poleceń przekazywane do polecenia tidy."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr ""
 
 msgid "JVM bytecode disassembler (javap).\r\nArguments: javap command line options."
 msgstr "Disassembler kodu bajtowego JVM z javap. \r\nArgumenty: Opcje wiersza poleceń przekazywane do polecenia javap."

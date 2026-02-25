@@ -10,6 +10,8 @@
 #include "OptionsMgr.h"
 #include "paths.h"
 #include "Merge.h"
+#include "DiffContext.h"
+#include "DiffWrapper.h"
 #include "FileTransform.h"
 #include "FileLocation.h"
 #include "Logger.h"
@@ -22,6 +24,7 @@
 #include "IAbortable.h"
 #include "IAsyncTask.h"
 #include "EditorFilePathBar.h"
+#include "ShellContextMenu.h"
 #include <../src/mfc/afximpl.h>
 
 IMPLEMENT_DYNCREATE(CMergeFrameCommon, CMDIChildWnd)
@@ -61,17 +64,21 @@ public:
 	{
 		m_pCancelFlag = &cancelFlag;
 		DIFFITEM di;
+		PathContext paths;
 		for (int i = 0; i < m_paths.GetSize(); ++i)
 		{
-			di.diffFileInfo[i].SetFile(m_paths[i]);
+			paths.SetPath(i, paths::GetParentPath(m_paths[i]));
+			di.diffFileInfo[i].path = _T("");
+			di.diffFileInfo[i].filename = paths::FindFileName(m_paths[i]);
 			if (di.diffFileInfo[i].Update(m_paths[i]))
 				di.diffcode.setSideFlag(i);
 		}
 		if (m_paths.GetSize() == 3)
 			di.diffcode.diffcode |= DIFFCODE::THREEWAY;
-		CompareEngines::BinaryCompare binaryCompare;
-		binaryCompare.SetAbortable(this);
-		di.diffcode.diffcode |= binaryCompare.CompareFiles(m_paths, di);
+		CDiffContext ctxt(paths, CMP_BINARY_CONTENT);
+		ctxt.SetAbortable(this);
+		CompareEngines::BinaryCompare binaryCompare(ctxt);
+		binaryCompare.CompareFiles(di);
 		if (di.diffcode.isResultError())
 			return _("Selected files are identical (with current settings).\r\nBut binary comparison failed.");
 		return di.diffcode.isResultSame()
@@ -148,6 +155,28 @@ void CMergeFrameCommon::SetLastCompareResult(int nResult)
 	}
 
 	theApp.SetLastCompareResult(nResult);
+}
+
+void CMergeFrameCommon::ShowShellMenu(CWnd* pWnd, const String& path)
+{
+	CFrameWnd *pFrame = pWnd->GetTopLevelFrame();
+	ASSERT(pFrame != nullptr);
+	BOOL bAutoMenuEnableOld = pFrame->m_bAutoMenuEnable;
+	pFrame->m_bAutoMenuEnable = FALSE;
+
+	auto pContextMenu = std::make_unique<CShellContextMenu>(CShellContextMenu(0x9000, 0x9FFF));
+	pContextMenu->Initialize();
+	pContextMenu->AddItem(path);
+	pContextMenu->RequeryShellContextMenu();
+	CPoint point;
+	::GetCursorPos(&point);
+	HWND hWnd = pWnd->GetSafeHwnd();
+	BOOL nCmd = TrackPopupMenu(pContextMenu->GetHMENU(), TPM_LEFTALIGN | TPM_RIGHTBUTTON | TPM_RETURNCMD, point.x, point.y, 0, hWnd, nullptr);
+	if (nCmd)
+		pContextMenu->InvokeCommand(nCmd, hWnd);
+	pContextMenu->ReleaseShellContextMenu();
+
+	pFrame->m_bAutoMenuEnable = bAutoMenuEnableOld;
 }
 
 void CMergeFrameCommon::ShowIdenticalMessage(const PathContext& paths, bool bIdenticalAll, bool bExactCompareAsync)

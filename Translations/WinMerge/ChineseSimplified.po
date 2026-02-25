@@ -1641,6 +1641,9 @@ msgstr "基础名称（不含扩展名）(&B)"
 msgid "Normalized &Unicode Name"
 msgstr "规范化 Unicode 名称(&U)"
 
+msgid "&Relative Path"
+msgstr "相对路径(&R)"
+
 msgid "&Date"
 msgstr "日期(&D)"
 
@@ -1652,6 +1655,27 @@ msgstr "插入 replace() 函数(&R)"
 
 msgid "Insert rege&xReplace() Function"
 msgstr "插入 regexReplace() 函数(&X)"
+
+msgid "Replace &Lists"
+msgstr "替换列表(&L)"
+
+msgid "&Create String Replace List and Insert..."
+msgstr "创建字符串替换列表并插入(&C)..."
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr "创建正则式替换列表并插入(&R)..."
+
+msgid "&String Replace Lists"
+msgstr "字符串替换列表(&S)"
+
+msgid "Re&gex Replace Lists"
+msgstr "正则式替换列表(&G)"
+
+msgid "Open String Replace Lists Folder..."
+msgstr "打开字符串替换列表文件夹..."
+
+msgid "Open Regex Replace Lists Folder..."
+msgstr "打开正则式替换列表文件夹..."
 
 msgid "Text &Normalization"
 msgstr "文本规范化(&N)"
@@ -1685,6 +1709,9 @@ msgstr "平假名(&H)"
 
 msgid "&Katakana"
 msgstr "片假名(&K)"
+
+msgid "Normalize &Unicode"
+msgstr "规范化 Unicode(&U)"
 
 msgid "About WinMerge"
 msgstr "关于 WinMerge"
@@ -1854,9 +1881,7 @@ msgstr "删除"
 msgid "Substitution Filters"
 msgstr "置换过滤器"
 
-msgid ""
-"Changes to the listed pairs below will be ignored or marked as insignificant. Patches are "
-"unaffected."
+msgid "Changes to the listed pairs below will be ignored or marked as insignificant. Patches are unaffected."
 msgstr "面板中出现的下列变更组合将被忽略或视作无关紧要。补丁不受影响。"
 
 msgid "Enable"
@@ -2705,8 +2730,8 @@ msgstr "重命名/移动检测(&R)："
 msgid "Rename/move detection &keys:"
 msgstr "重命名/移动检测键(&K)："
 
-msgid "&Merge renamed items into a single item"
-msgstr "将重命名的条目合并到一个条目(&M)"
+msgid "M&erge renames and moves:"
+msgstr "合并重命名和被移动的文件(&E)："
 
 msgid "File patterns:"
 msgstr "文件模式："
@@ -2928,12 +2953,8 @@ msgstr ""
 "WinMerge.FolderCompare\n"
 "WinMerge 文件夹比较"
 
-msgid ""
-"WinMerge comes with ABSOLUTELY NO WARRANTY. It is free software and can be redistributed "
-"under the conditions of the GNU General Public License - see the Help menu for details."
-msgstr ""
-"WinMerge 无任何担保。这是一款自由软件，可根据 GNU 通用公共许可证的条件重新分发，详情请查看帮助"
-"菜单。"
+msgid "WinMerge comes with ABSOLUTELY NO WARRANTY. It is free software and can be redistributed under the conditions of the GNU General Public License - see the Help menu for details."
+msgstr "WinMerge 无任何担保。这是一款自由软件，可根据 GNU 通用公共许可证的条件重新分发，详情请查看帮助菜单。"
 
 msgid "&Abort"
 msgstr "中止(&A)"
@@ -3020,9 +3041,6 @@ msgstr "到中间："
 msgid "Version %1"
 msgstr "版本 %1"
 
-msgid "X64"
-msgstr "64位"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "选项 (%1)"
@@ -3051,6 +3069,9 @@ msgstr "WinMerge 工程文件 (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "配置文件 (*.ini)|*.ini|所有文件 (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr "制表符分隔值 (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
 
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
 msgstr "文本文件 (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|所有文件 (*.*)|*.*||"
@@ -3946,6 +3967,9 @@ msgstr " (左侧和右侧完全相同)"
 msgid " (Left and middle are identical)"
 msgstr " (左侧和中间完全相同)"
 
+msgid " (paths differ)"
+msgstr "（路径不同）"
+
 msgid "Text files are different"
 msgstr "文本文件不同"
 
@@ -3973,6 +3997,12 @@ msgstr "检测重命名"
 msgid "Detect renames and moves"
 msgstr "检测重命名和移动"
 
+msgid "Merge renames"
+msgstr "合并重命名的文件"
+
+msgid "Merge renames and moves"
+msgstr "合并重命名和被移动的文件"
+
 msgid "Renamed"
 msgstr "重命名的"
 
@@ -3989,6 +4019,15 @@ msgstr "(%1 条目)"
 #, c-format
 msgid "%1 (set %2): "
 msgstr "%1 (集合 %2)"
+
+msgid ""
+"Some moved items have been merged.\n"
+"In Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\n"
+"Switch to Flat Mode?"
+msgstr ""
+"一些被移动的条目已经合并。\n"
+"在树状模式下，这些条目可能出现在与实际文件夹结构不同的位置上并产生混淆。\n"
+"是否要切换到扁平模式？"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -5233,6 +5272,37 @@ msgstr "跟随系统"
 msgid "e.g. %1"
 msgstr "例：%1"
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "WinMerge 检测到之前发生过崩溃。如有可能，请提交此问题报告。"
+
+msgid ""
+"# Regex replacement list\r\n"
+"# Format: regex<TAB>replacement\r\n"
+"# Backreferences like $1, $2 are supported\r\n"
+"\r\n"
+"(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+"# 正则表达式替换列表\n"
+"# 格式：正则表达式<TAB>替换结果\n"
+"# 支持类似于 $1 和 $2 的反向引用\n"
+"\n"
+"(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\n"
+
+msgid ""
+"# Replacement list\r\n"
+"# Format: search<TAB>replacement\r\n"
+"# Lines starting with # are ignored\r\n"
+"\r\n"
+"from1\tto1\r\n"
+"from2\tto2\r\n"
+msgstr ""
+"# 替换列表\n"
+"# 格式：检索内容<TAB>替换结果\n"
+"# 以 # 开始的行将被忽略\n"
+"\n"
+"from1\tto1\n"
+"from2\tto2\n"
+
 msgid "Prettification"
 msgstr "格式美化"
 
@@ -5338,6 +5408,9 @@ msgstr "格式化 XML"
 msgid "Prettify YAML"
 msgstr "格式化 YAML"
 
+msgid "Prettify PO"
+msgstr "格式化 PO"
+
 msgid "Preview Graphviz"
 msgstr "预览 Graphviz"
 
@@ -5361,6 +5434,9 @@ msgstr "查询 YAML 数据..."
 
 msgid "Validate HTML"
 msgstr "验证 HTML"
+
+msgid "Validate PO"
+msgstr "验证 PO"
 
 msgid "Disassemble JVM Bytecode"
 msgstr "反汇编 JVM 字节码"
@@ -5486,29 +5562,36 @@ msgid ""
 "HTML Prettier (tidy-html5).\r\n"
 "Arguments: tidy command line options."
 msgstr ""
-"用 tidy-html5 来美化 HTML。 \r\n"
-"参数： 发送给 tidy 的命令选项。"
+"用 tidy-html5 格式化 HTML。 \r\n"
+"参数：发送给 tidy 的命令行选项。"
 
 msgid ""
 "JSON Prettier (jq).\r\n"
 "Arguments: jq filter/command line options."
 msgstr ""
-"用 jq 命令来美化 JSON。\r\n"
-"参数： 发送给 jq 的过滤器或命令选项。"
+"用 jq 命令格式化 JSON。\r\n"
+"参数：发送给 jq 的过滤器或命令行选项。"
 
 msgid ""
 "XML Prettier (tidy-html5).\r\n"
 "Arguments: tidy command line options."
 msgstr ""
-"用 tidy-html5 来美化 XML。 \r\n"
-"参数： 发送给 tidy 的命令选项。"
+"用 tidy-html5 格式化 XML。 \r\n"
+"参数：发送给 tidy 的命令行选项。"
 
 msgid ""
 "YAML Prettier (yq).\r\n"
 "Arguments: yq filter/command line options."
 msgstr ""
-"用 jq 命令来美化 YAML。\r\n"
-"参数： 发送给 jq 的过滤器或命令选项。"
+"用 jq 命令格式化 YAML。\r\n"
+"参数：发送给 jq 的过滤器或命令行选项。"
+
+msgid ""
+"PO Prettier (gettext msgcat).\r\n"
+"Arguments: msgcat command line options."
+msgstr ""
+"用 gettext msgcat 格式化 PO。\r\n"
+"参数：发送给 msgcat 的命令行选项。"
 
 msgid ""
 "Graphviz Previewer.\r\n"
@@ -5533,38 +5616,45 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "用 q 命令查询 CSV。\r\n"
-"参数： 发送给 q 命令的 SQL 语句或命令选项。"
+"参数：发送给 q 命令的 SQL 语句或命令行选项。"
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "用 q 命令查询 TSV。\r\n"
-"参数： 发送给 q 命令的 SQL 语句或命令选项。"
+"参数：发送给 q 命令的 SQL 语句或命令行选项。"
 
 msgid ""
 "JSON Querier (jq).\r\n"
 "Arguments: jq filter/command line options."
 msgstr ""
 "用 jq 命令查询 JSON。\r\n"
-"参数： 发送给 jq 命令的过滤器或命令选项。"
+"参数：发送给 jq 命令的过滤器或命令选项。"
 
 msgid ""
 "YAML Querier (yq).\r\n"
 "Arguments: yq filter/command line options."
 msgstr ""
 "用 yq 命令查询 YAML。\r\n"
-"参数： 发送给 yq 命令的过滤器或命令选项。"
+"参数：发送给 yq 命令的过滤器或命令行选项。"
 
 msgid ""
 "HTML Validator (tidy-html5).\r\n"
 "Arguments: tidy command line options."
 msgstr ""
-"用 tidy-html5 来验证 HTML。 \r\n"
-"参数： 发送给 tidy 的命令选项。"
+"用 tidy-html5 验证 HTML。 \r\n"
+"参数：发送给 tidy 的命令行选项。"
+
+msgid ""
+"PO Validator (gettext msgfmt).\r\n"
+"Arguments: msgfmt command line options."
+msgstr ""
+"用 gettext msgfmt 验证 PO。\r\n"
+"参数：发送给 msgfmt 的命令行选项。"
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"
@@ -5585,14 +5675,14 @@ msgid ""
 "Arguments: dumpbin command line options."
 msgstr ""
 "用 dumpbin 反汇编本地代码。 \r\n"
-"参数： 发送给 dumpbin 的命令选项。"
+"参数： 发送给 dumpbin 的命令行选项。"
 
 msgid ""
 "Content extractor (Apache Tika).\r\n"
 "Arguments: tika-app.jar command line options."
 msgstr ""
 "用 Apache Tika 解包常规文件内容。 \r\n"
-"参数： 发送给 tika-app.jar 的命令选项。"
+"参数： 发送给 tika-app.jar 的命令行选项。"
 
 msgid "Apply patch (GNU patch)"
 msgstr "使用 GNU patch 应用补丁"

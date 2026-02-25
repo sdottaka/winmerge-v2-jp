@@ -1637,6 +1637,9 @@ msgstr ""
 msgid "Normalized &Unicode Name"
 msgstr ""
 
+msgid "&Relative Path"
+msgstr ""
+
 msgid "&Date"
 msgstr ""
 
@@ -1647,6 +1650,27 @@ msgid "Insert &replace() Function"
 msgstr ""
 
 msgid "Insert rege&xReplace() Function"
+msgstr ""
+
+msgid "Replace &Lists"
+msgstr ""
+
+msgid "&Create String Replace List and Insert..."
+msgstr ""
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr ""
+
+msgid "&String Replace Lists"
+msgstr ""
+
+msgid "Re&gex Replace Lists"
+msgstr ""
+
+msgid "Open String Replace Lists Folder..."
+msgstr ""
+
+msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
 msgid "Text &Normalization"
@@ -1680,6 +1704,9 @@ msgid "&Hiragana"
 msgstr ""
 
 msgid "&Katakana"
+msgstr ""
+
+msgid "Normalize &Unicode"
 msgstr ""
 
 msgid "About WinMerge"
@@ -2706,7 +2733,7 @@ msgstr ""
 msgid "Rename/move detection &keys:"
 msgstr ""
 
-msgid "&Merge renamed items into a single item"
+msgid "M&erge renames and moves:"
 msgstr ""
 
 msgid "File patterns:"
@@ -3020,9 +3047,6 @@ msgstr "Keskelle:"
 msgid "Version %1"
 msgstr "Versio %1"
 
-msgid "X64"
-msgstr "X64"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "Asetukset (%1)"
@@ -3051,6 +3075,9 @@ msgstr "WinMerge projektitiedostot (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "Asetustiedostot (*.ini)|*.ini|Kaikki tiedostot (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr ""
 
 msgid ""
 "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|"
@@ -3925,6 +3952,9 @@ msgstr ""
 msgid " (Left and middle are identical)"
 msgstr ""
 
+msgid " (paths differ)"
+msgstr ""
+
 msgid "Text files are different"
 msgstr "Tekstitiedostot ovat erilaisia"
 
@@ -3952,6 +3982,12 @@ msgstr ""
 msgid "Detect renames and moves"
 msgstr ""
 
+msgid "Merge renames"
+msgstr ""
+
+msgid "Merge renames and moves"
+msgstr ""
+
 msgid "Renamed"
 msgstr ""
 
@@ -3967,6 +4003,9 @@ msgstr ""
 
 #, c-format
 msgid "%1 (set %2): "
+msgstr ""
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
 msgstr ""
 
 #, c-format
@@ -5122,6 +5161,15 @@ msgstr ""
 msgid "e.g. %1"
 msgstr ""
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr ""
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr ""
+
 msgid "Prettification"
 msgstr "Kaunistelu"
 
@@ -5227,6 +5275,9 @@ msgstr "Kaunistele XML"
 msgid "Prettify YAML"
 msgstr "Kaunistele YAML"
 
+msgid "Prettify PO"
+msgstr ""
+
 msgid "Preview Graphviz"
 msgstr ""
 
@@ -5250,6 +5301,9 @@ msgstr "YAML-tietojen kysely..."
 
 msgid "Validate HTML"
 msgstr "Validoi HTML"
+
+msgid "Validate PO"
+msgstr ""
 
 msgid "Disassemble JVM Bytecode"
 msgstr "Pura JVM:n bittikoodi"
@@ -5390,6 +5444,9 @@ msgstr ""
 "Argumentit: Suodattimen tai komentorivin vaihtoehdot, jotka välitetään yq-"
 "komennolle."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr ""
+
 msgid "Graphviz Previewer.\r\nArguments: dot command line options."
 msgstr ""
 
@@ -5401,7 +5458,7 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "CSV Querier q-komennolla\r\n"
 "Argumentit: SQL-lause tai komentorivin asetukset, jotka välitetään q-"
@@ -5409,7 +5466,7 @@ msgstr ""
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "TSV Querier q-komennolla\r\n"
 "Argumentit: SQL-lause tai komentorivin asetukset, jotka välitetään q-"
@@ -5437,6 +5494,9 @@ msgid ""
 msgstr ""
 "HTML-validoija tidy-html5:llä\r\n"
 "Argumentit: Komentorivin vaihtoehdot, jotka välitetään tidy-komennolle."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr ""
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"

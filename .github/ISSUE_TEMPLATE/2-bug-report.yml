@@ -1,0 +1,62 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in WinMerge.
+title: "[BUG] "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the problem clearly. Steps to reproduce are especially helpful.
+
+        If possible, please attach a minimal set of files to reproduce the issue,
+        or `WinMerge.txt` from **Help → Configuration**.
+        Please check for personal information and mask it if necessary.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open WinMerge
+        2. Compare ...
+        3. ...
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: WinMerge version
+      placeholder: "e.g. 2.16.54 or 2.16.55.0 (2026.03)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows x64
+        - Windows x86
+        - Windows ARM64
+        - Other / Unknown
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: Logs, screenshots, or anything else that may help.
+    validations:
+      required: false

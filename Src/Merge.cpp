@@ -71,6 +71,7 @@
 #include "SysColorHook.h"
 #include "Logger.h"
 #include "ColorSchemes.h"
+#include "CrashLogger.h"
 #include <../src/mfc/afximpl.h>
 
 #ifdef _DEBUG
@@ -379,6 +380,16 @@ BOOL CMergeApp::InitInstance()
 	charsets_init();
 	UpdateCodepageModule();
 
+	// Install crash logger
+#ifndef _M_ARM
+	CrashLogger::Install();
+#else
+// NOTE:
+// CrashLogger is disabled on ARM32.
+// Stack walking via DbgHelp/StackWalk64 is unreliable on ARM32
+// and may cause additional failures during exception handling.
+#endif
+
 	FileTransform::AutoUnpacking = GetOptionsMgr()->GetBool(OPT_PLUGINS_UNPACKER_MODE);
 	FileTransform::AutoPrediffing = GetOptionsMgr()->GetBool(OPT_PLUGINS_PREDIFFER_MODE);
 
@@ -601,6 +612,11 @@ void CMergeApp::OnAppAbout()
  */
 int CMergeApp::ExitInstance()
 {
+	// Disable crash logging before shutdown (to avoid logging shutdown crashes)
+#ifndef _M_ARM
+	CrashLogger::Disable();
+#endif
+
 	CMouseHook::UnhookMouseHook();
 
 	charsets_cleanup();
@@ -720,6 +736,14 @@ BOOL CMergeApp::OnIdle(LONG lCount)
 {
 	if (CWinApp::OnIdle(lCount))
 		return TRUE;
+
+	// Check for previous crash (only once, on first idle)
+	static bool s_bCrashChecked = false;
+	if (!s_bCrashChecked && CrashLogger::HasPreviousCrash())
+	{
+		s_bCrashChecked = true;
+		CrashLogger::CheckAndReportPreviousCrash();
+	}
 
 	// If anyone has requested notification when next idle occurs, send it
 	if (m_bNeedIdleTimer)

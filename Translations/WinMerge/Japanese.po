@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2020-12-05 22:07+0000\n"
-"PO-Revision-Date: 2026-01-18 20:12+0900\n"
+"PO-Revision-Date: 2026-02-08 11:13+0900\n"
 "Last-Translator: Takashi Sawanaka <sawanaka@d1.dion.ne.jp>\n"
 "Language-Team: Japanese <winmerge-translate@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -1636,6 +1636,9 @@ msgstr "拡張子を除いた名前(&B)"
 msgid "Normalized &Unicode Name"
 msgstr "Unicode正規化した名前(&U)"
 
+msgid "&Relative Path"
+msgstr "相対パス(&R)"
+
 msgid "&Date"
 msgstr "更新日時(&D)"
 
@@ -1647,6 +1650,27 @@ msgstr "replace()関数を挿入(&R)"
 
 msgid "Insert rege&xReplace() Function"
 msgstr "regexReplace() 関数を挿入(&X)"
+
+msgid "Replace &Lists"
+msgstr "置換リスト(&L)"
+
+msgid "&Create String Replace List and Insert..."
+msgstr "文字列置換リストを作成して挿入(&C)..."
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr "正規表現置換リストを作成して挿入(&R)..."
+
+msgid "&String Replace Lists"
+msgstr "文字列置換リスト(&S)"
+
+msgid "Re&gex Replace Lists"
+msgstr "正規表現置換リスト(&G)"
+
+msgid "Open String Replace Lists Folder..."
+msgstr "文字列置換リストのフォルダーを開く..."
+
+msgid "Open Regex Replace Lists Folder..."
+msgstr "正規表現置換リストのフォルダーを開く..."
 
 msgid "Text &Normalization"
 msgstr "テキストの正規化(&N)"
@@ -1680,6 +1704,9 @@ msgstr "カタカナをひらがなに変換(&H)"
 
 msgid "&Katakana"
 msgstr "ひらがなをカタカナに変換(&K)"
+
+msgid "Normalize &Unicode"
+msgstr "Unicode正規化(&U)"
 
 msgid "About WinMerge"
 msgstr "WinMerge について"
@@ -2702,8 +2729,8 @@ msgstr "名前変更/移動検出(&R)"
 msgid "Rename/move detection &keys:"
 msgstr "名前変更/移動検出用キー生成式(&K)"
 
-msgid "&Merge renamed items into a single item"
-msgstr "名前変更された項目を1つの項目にマージする(&M)"
+msgid "M&erge renames and moves:"
+msgstr "名前変更/移動項目のマージ(&E):"
 
 msgid "File patterns:"
 msgstr "ファイル パターン:"
@@ -3011,10 +3038,7 @@ msgstr "中央へ:"
 
 #, c-format
 msgid "Version %1"
-msgstr "Version %1 - Japanese"
-
-msgid "X64"
-msgstr "X64"
+msgstr "Version %1"
 
 #, c-format
 msgid "Options (%1)"
@@ -3044,6 +3068,9 @@ msgstr "WinMerge プロジェクト ファイル (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "設定ファイル (*.ini)|*.ini|すべてのファイル (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr "タブ区切り値 (*.tsv;*.txt)|*.tsv;*.txt|すべてのファイル (*.*)|*.*||"
 
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
 msgstr "テキスト ファイル (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|すべてのファイル (*.*)|*.*||"
@@ -3937,6 +3964,9 @@ msgstr " (左側と右側は同一です)"
 msgid " (Left and middle are identical)"
 msgstr " (左側と中央は同一です)"
 
+msgid " (paths differ)"
+msgstr "(パス不一致)"
+
 msgid "Text files are different"
 msgstr "テキスト ファイルは異なります"
 
@@ -3964,6 +3994,12 @@ msgstr "名前変更を検出"
 msgid "Detect renames and moves"
 msgstr "名前変更と移動を検出"
 
+msgid "Merge renames"
+msgstr "名前変更項目をマージ"
+
+msgid "Merge renames and moves"
+msgstr "名前変更と移動項目をマージ"
+
 msgid "Renamed"
 msgstr "名前変更"
 
@@ -3980,6 +4016,15 @@ msgstr "(%1 項目)"
 #, c-format
 msgid "%1 (set %2): "
 msgstr "%1 (グループ %2): "
+
+msgid ""
+"Some moved items have been merged.\n"
+"In Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\n"
+"Switch to Flat Mode?"
+msgstr ""
+"一部の移動された項目がマージされました。\n"
+"ツリー表示では、これらの項目は実際のフォルダー構造を反映しない位置に表示される場合があり、混乱を招く可能性があります。\n"
+"フラット表示に切り替えますか?"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -5228,6 +5273,15 @@ msgstr "システムに従う"
 msgid "e.g. %1"
 msgstr "例: %1"
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "以前の WinMerge のクラッシュを検出しました。可能であればご報告ください。"
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr "# 正規表現置換リスト\r\n# 書式: 正規表現<TAB>置換後文字列\r\n# $1, $2 などの後方参照が使用できます\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr "# 置換リスト\r\n# 書式: 検索文字列<TAB>置換後文字列\r\n# # で始まる行は無視されます\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+
 msgid "Prettification"
 msgstr "整形"
 
@@ -5333,6 +5387,9 @@ msgstr "XML整形"
 msgid "Prettify YAML"
 msgstr "YAML 整形"
 
+msgid "Prettify PO"
+msgstr "PO 整形"
+
 msgid "Preview Graphviz"
 msgstr "Graphvizプレビュー"
 
@@ -5356,6 +5413,9 @@ msgstr "YAML データの問い合わせ..."
 
 msgid "Validate HTML"
 msgstr "HTML 検証"
+
+msgid "Validate PO"
+msgstr "PO 検証"
 
 msgid "Disassemble JVM Bytecode"
 msgstr "JVM バイトコード逆アセンブル"
@@ -5505,6 +5565,10 @@ msgstr ""
 "yq コマンドを使用して YAML ファイルを整形します。\r\n"
 "引数: フィルターまたは yq コマンドに渡すコマンドライン オプション。"
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr "gettext msgcat コマンドを使用して PO ファイルを整形します。\r\n"
+"引数: msgcat コマンドに渡すコマンドライン オプション。"
+
 msgid ""
 "Graphviz Previewer.\r\n"
 "Arguments: dot command line options."
@@ -5528,14 +5592,14 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "q コマンドを使用して CSV ファイルからデータを抽出します。\r\n"
 "引数: SQL文または q コマンドに渡すコマンドライン オプション。"
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "q コマンドを使用して TSV ファイルからデータを抽出します。\r\n"
 "引数: SQL文または q コマンドに渡すコマンドライン オプション。"
@@ -5560,6 +5624,10 @@ msgid ""
 msgstr ""
 "tidy-html5 を使用して HTML ファイルを検証します。\r\n"
 "引数: tidy コマンドに渡すコマンドライン オプション。"
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr "gettext msgfmt コマンドを使用して PO ファイルを検証します。\r\n"
+"引数: msgfmt コマンドに渡すコマンドライン オプション。"
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"

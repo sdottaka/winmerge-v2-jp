@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2022-01-22 21:51+0000\n"
-"PO-Revision-Date: 2026-01-06 15:03+0900\n"
+"PO-Revision-Date: 2026-01-27 22:00+0900\n"
 "Last-Translator: VenusGirl <venusgirl@outlook.com>\n"
 "Language-Team: VenusGirl: https://venusgirls.tistory.com/\n"
 "Language: ko\n"
@@ -1082,7 +1082,7 @@ msgid "Comp&are"
 msgstr "비교(&A)"
 
 msgid "Compar&e with Renamed/Moved Items"
-msgstr ""
+msgstr "이름 바꾸기/이동된 항목과 비교(&E)"
 
 msgid "Compare in New &Window"
 msgstr "새 창에서 비교(&W)"
@@ -1863,60 +1863,87 @@ msgid "Compare C&ontents"
 msgstr "내용 비교(&O)"
 
 msgid "&Clear Keys"
-msgstr ""
+msgstr "키 지우기(&C)"
 
 msgid "&Name"
-msgstr ""
+msgstr "이름(&N)"
 
 msgid "&Base name (without extension)"
-msgstr ""
+msgstr "기본 이름 (확장자 없음)(&B)"
 
 msgid "Normalized &Unicode Name"
+msgstr "정규화된 유니코드 이름(&U)"
+
+msgid "&Relative Path"
 msgstr ""
 
 msgid "&Date"
-msgstr ""
+msgstr "날짜(&D)"
 
 msgid "&Hash (MD5)"
-msgstr ""
+msgstr "해시 (MD5)(&H)"
 
 msgid "Insert &replace() Function"
-msgstr ""
+msgstr "replace() 함수 삽입(&R)"
 
 msgid "Insert rege&xReplace() Function"
+msgstr "regexReplace() 함수 삽입(&X)"
+
+msgid "Replace &Lists"
+msgstr ""
+
+msgid "&Create String Replace List and Insert..."
+msgstr ""
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr ""
+
+msgid "&String Replace Lists"
+msgstr ""
+
+msgid "Re&gex Replace Lists"
+msgstr ""
+
+msgid "Open String Replace Lists Folder..."
+msgstr ""
+
+msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
 msgid "Text &Normalization"
-msgstr ""
+msgstr "텍스트 정규화(&N)"
 
 msgid "&Lowercase"
-msgstr ""
+msgstr "소문자(&L)"
 
 msgid "&Uppercase"
-msgstr ""
+msgstr "대문자(&U)"
 
 msgid "&Half-width"
-msgstr ""
+msgstr "반각 문자(&H)"
 
 msgid "&Full-width"
-msgstr ""
+msgstr "전각 문자(&F)"
 
 msgid "&Chinese Conversion"
-msgstr ""
+msgstr "중국어 변환(&C)"
 
 msgid "&Simplified Chinese"
-msgstr ""
+msgstr "중국어 간체(&S)"
 
 msgid "&Traditional Chinese"
-msgstr ""
+msgstr "중국어 번체(&T)"
 
 msgid "&Japanese Conversion"
-msgstr ""
+msgstr "일본어 변환(&J)"
 
 msgid "&Hiragana"
-msgstr ""
+msgstr "히나가나(&H)"
 
 msgid "&Katakana"
+msgstr "가타카나(&K)"
+
+msgid "Normalize &Unicode"
 msgstr ""
 
 #, c-format
@@ -3167,12 +3194,12 @@ msgid "Additional comparison condi&tions:"
 msgstr "추가 비교 조건(&T):"
 
 msgid "&Rename/move detection:"
-msgstr ""
+msgstr "이름 바꾸기/이동 감지(&R):"
 
 msgid "Rename/move detection &keys:"
-msgstr ""
+msgstr "감지 키 이름 바꾸기/이동(&K):"
 
-msgid "&Merge renamed items into a single item"
+msgid "M&erge renames and moves:"
 msgstr ""
 
 msgid "File patterns:"
@@ -3526,10 +3553,6 @@ msgid "Version %1"
 msgstr "버전 %1"
 
 #, c-format
-msgid "X64"
-msgstr "X64"
-
-#, c-format
 msgid "Options (%1)"
 msgstr "옵션 (%1)"
 
@@ -3563,6 +3586,9 @@ msgstr "WinMerge 프로젝트 파일 (*.WinMerge)|*.WinMerge||"
 #, c-format
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "옵션 파일 (*.ini)|*.ini|모든 파일 (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr ""
 
 #, c-format
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
@@ -4555,6 +4581,9 @@ msgstr " (왼쪽과 오른쪽은 동일합니다)"
 msgid " (Left and middle are identical)"
 msgstr " (왼쪽과 가운데는 동일합니다)"
 
+msgid " (paths differ)"
+msgstr ""
+
 #, c-format
 msgid "Text files are different"
 msgstr "텍스트 파일이 다릅니다"
@@ -4575,29 +4604,38 @@ msgstr "그룹%d"
 
 msgctxt "Options dialog|Compare|Folder|Detect renames and moves"
 msgid "Disabled"
-msgstr ""
+msgstr "사용 안 함"
 
 msgid "Detect renames"
-msgstr ""
+msgstr "이름 바꾸기 감지"
 
 msgid "Detect renames and moves"
+msgstr "이름 바꾸기 및 이동 감지"
+
+msgid "Merge renames"
+msgstr ""
+
+msgid "Merge renames and moves"
 msgstr ""
 
 msgid "Renamed"
-msgstr ""
+msgstr "이름 바뀜"
 
 msgid "Moved"
-msgstr ""
+msgstr "이동됨"
 
 msgid "Renamed/Moved"
-msgstr ""
+msgstr "이름 바뀜/이동됨"
 
 #, c-format
 msgid "(%1 items)"
-msgstr ""
+msgstr "(%1개 항목)"
 
 #, c-format
 msgid "%1 (set %2): "
+msgstr "%1 (세트 %2): "
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
 msgstr ""
 
 #, c-format
@@ -5943,6 +5981,15 @@ msgstr "시스템을 따름"
 
 #, c-format
 msgid "e.g. %1"
+msgstr "예: %1"
+
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr ""
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
 msgstr ""
 
 msgid "Prettification"
@@ -6050,6 +6097,9 @@ msgstr "XML 꾸미기"
 msgid "Prettify YAML"
 msgstr "YAML 꾸미기"
 
+msgid "Prettify PO"
+msgstr ""
+
 msgid "Preview Graphviz"
 msgstr "Graphviz 미리보기"
 
@@ -6073,6 +6123,9 @@ msgstr "YAML 데이터 쿼리..."
 
 msgid "Validate HTML"
 msgstr "HTML 유효성 검사"
+
+msgid "Validate PO"
+msgstr ""
 
 msgid "Disassemble JVM Bytecode"
 msgstr "JVM 바이트코드 분해"
@@ -6222,6 +6275,9 @@ msgstr ""
 "'yq command'를 사용하여 YAML 꾸미기입니다. \r\n"
 "인수: yq 명령에 전달된 필터 또는 명령줄 옵션입니다."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr ""
+
 msgid ""
 "Graphviz Previewer.\r\n"
 "Arguments: dot command line options."
@@ -6245,14 +6301,14 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "q 명령을 사용하는 CSV 쿼리어입니다. \r\n"
 "인수: q 명령에 전달된 SQL문 또는 명령줄 옵션입니다."
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "q 명령을 사용하는 TSV 쿼리어입니다. \n"
 "인수: q 명령에 전달된 SQL문 또는 명령줄 옵션입니다."
@@ -6277,6 +6333,9 @@ msgid ""
 msgstr ""
 "Tidy-html5를 사용하여 HTML 유효성 검사입니다. \r\n"
 "인수: tidy 명령에 전달된 명령줄 옵션입니다."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr ""
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"

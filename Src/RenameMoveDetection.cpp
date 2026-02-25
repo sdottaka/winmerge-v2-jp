@@ -67,6 +67,30 @@ static int CountSidesWithItems(const Container& items, int nDirs)
 }
 
 /**
+ * @brief Check if there is a candidate item for move/rename on a different side
+ */
+template<typename Container>
+bool HasCandidateForMove(const DIFFITEM& item, const Container& items)
+{
+	const int srcMask = item.diffcode.diffcode & DIFFCODE::SIDEFLAGS;
+
+	for (const auto& cand : items)
+	{
+		if (cand == &item)
+			continue;
+
+		const int candMask = cand->diffcode.diffcode & DIFFCODE::SIDEFLAGS;
+		if ((srcMask & candMask) != 0)
+			continue;
+
+		if ((srcMask | candMask) != srcMask)
+			return true;
+	}
+
+	return false;
+}
+
+/**
  * @brief Collect unmatched items and group them by detection keys
  * @param ctxt Diff context
  * @param diffpos Starting position for iteration
@@ -131,6 +155,8 @@ static void CreateGroupsFromMatchedItems(
 		int renameMoveGroupId = static_cast<int>(renameMoveItemGroups.size() - 1);
 		for (auto* di : items)
 		{
+			if (nDirs > 2 && !HasCandidateForMove(*di, items))
+				continue;
 			di->renameMoveGroupId = renameMoveGroupId;
 			renameMoveItemGroups[renameMoveGroupId].insert(di);
 		}
@@ -311,16 +337,29 @@ void RenameMoveDetection::Detect(CDiffContext& ctxt, bool doMoveDetection)
 		ctxt.m_pCompareStats->IncreaseTotalItems(totalItems - ctxt.m_pCompareStats->GetTotalItems());
 }
 
+static void MarkPathMismatchRecursively(DIFFITEM& di)
+{
+	di.diffcode.diffcode |= DIFFCODE::PATHMISMATCH;
+	if (di.HasChildren())
+	{
+		for (DIFFITEM* p = di.GetFirstChild(); p != nullptr; p = p->GetFwdSiblingLink())
+			MarkPathMismatchRecursively(*p);
+	}
+}
+
 /**
  * @brief Merge grouped items into single diff items where possible
  * @param ctxt Diff context
+ * @param doMergeMovedItems If true, also merge items that were moved to different directories
  *
  * After detection, items in the same group that are in the same directory
  * can be merged into a single DIFFITEM representing the same logical entity
  * on different sides. This simplifies the comparison tree.
  */
-void RenameMoveDetection::Merge(CDiffContext& ctxt)
+void RenameMoveDetection::Merge(CDiffContext& ctxt, bool doMergeMovedItems)
 {
+	m_mergedMovedItems = false;
+
 	if (m_renameMoveItemGroups.empty())
 		return;
 
@@ -354,9 +393,17 @@ void RenameMoveDetection::Merge(CDiffContext& ctxt)
 					continue;
 
 				auto* pdi2 = sideItems[i][0];
-				// Only merge items in same directory
+
 				if (di.GetParentLink() != pdi2->GetParentLink())
-					continue;
+				{
+					if (!doMergeMovedItems)
+					{
+						// Only merge items in same directory
+						continue;
+					}
+					m_mergedMovedItems = true;
+					MarkPathMismatchRecursively(di);
+				}
 
 				// Reparent children before deleting the merged item
 				if (pdi2->HasChildren())
@@ -367,6 +414,7 @@ void RenameMoveDetection::Merge(CDiffContext& ctxt)
 						DIFFITEM* nextChild = child->GetFwdSiblingLink();
 						child->DelinkFromSiblings();
 						di.AddChildToParent(child);
+						MarkPathMismatchRecursively(*child);
 						child = nextChild;
 					}
 				}
@@ -523,4 +571,17 @@ void RenameMoveDetection::RemoveItemFromGroup(DIFFITEM* pdi)
 	}
 	for (DIFFITEM* pdic = pdi->GetFirstChild(); pdic; pdic = pdic->GetFwdSiblingLink())
 		RemoveItemFromGroup(pdic);
+}
+
+/**
+ * @brief Remove all rename/move groups and clear group IDs from items
+ */
+void RenameMoveDetection::RemoveAllGroups()
+{
+	for (auto& group : m_renameMoveItemGroups)
+	{
+		for (auto* di : group)
+			di->renameMoveGroupId = -1;
+	}
+	m_renameMoveItemGroups.clear();
 }

@@ -1640,6 +1640,9 @@ msgstr ""
 msgid "Normalized &Unicode Name"
 msgstr ""
 
+msgid "&Relative Path"
+msgstr ""
+
 msgid "&Date"
 msgstr ""
 
@@ -1650,6 +1653,27 @@ msgid "Insert &replace() Function"
 msgstr ""
 
 msgid "Insert rege&xReplace() Function"
+msgstr ""
+
+msgid "Replace &Lists"
+msgstr ""
+
+msgid "&Create String Replace List and Insert..."
+msgstr ""
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr ""
+
+msgid "&String Replace Lists"
+msgstr ""
+
+msgid "Re&gex Replace Lists"
+msgstr ""
+
+msgid "Open String Replace Lists Folder..."
+msgstr ""
+
+msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
 msgid "Text &Normalization"
@@ -1683,6 +1707,9 @@ msgid "&Hiragana"
 msgstr ""
 
 msgid "&Katakana"
+msgstr ""
+
+msgid "Normalize &Unicode"
 msgstr ""
 
 msgid "About WinMerge"
@@ -2700,7 +2727,7 @@ msgstr ""
 msgid "Rename/move detection &keys:"
 msgstr ""
 
-msgid "&Merge renamed items into a single item"
+msgid "M&erge renames and moves:"
 msgstr ""
 
 msgid "File patterns:"
@@ -3014,9 +3041,6 @@ msgstr ""
 msgid "Version %1"
 msgstr "النسخة %1"
 
-msgid "X64"
-msgstr "X64"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "الخيارات (%1)"
@@ -3045,6 +3069,9 @@ msgstr "ملفات مشاريع WinMerge (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "ملفات الخيارات (*.ini)|*.ini|All Files (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr ""
 
 msgid ""
 "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|"
@@ -3898,6 +3925,9 @@ msgstr " (الجزء الأيسر والجزء الأيمن متطابقان)"
 msgid " (Left and middle are identical)"
 msgstr " (الجزء الأيسر والجزء الأوسط متطابقان)"
 
+msgid " (paths differ)"
+msgstr ""
+
 msgid "Text files are different"
 msgstr "الملفات النصية مختلفة"
 
@@ -3925,6 +3955,12 @@ msgstr ""
 msgid "Detect renames and moves"
 msgstr ""
 
+msgid "Merge renames"
+msgstr ""
+
+msgid "Merge renames and moves"
+msgstr ""
+
 msgid "Renamed"
 msgstr ""
 
@@ -3940,6 +3976,9 @@ msgstr ""
 
 #, c-format
 msgid "%1 (set %2): "
+msgstr ""
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
 msgstr ""
 
 #, c-format
@@ -5069,6 +5108,15 @@ msgstr ""
 msgid "e.g. %1"
 msgstr ""
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr ""
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr ""
+
 msgid "Prettification"
 msgstr ""
 
@@ -5174,6 +5222,9 @@ msgstr ""
 msgid "Prettify YAML"
 msgstr ""
 
+msgid "Prettify PO"
+msgstr ""
+
 msgid "Preview Graphviz"
 msgstr ""
 
@@ -5196,6 +5247,9 @@ msgid "Query YAML Data..."
 msgstr ""
 
 msgid "Validate HTML"
+msgstr ""
+
+msgid "Validate PO"
 msgstr ""
 
 msgid "Disassemble JVM Bytecode"
@@ -5268,6 +5322,9 @@ msgstr ""
 msgid "YAML Prettier (yq).\r\nArguments: yq filter/command line options."
 msgstr ""
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr ""
+
 msgid "Graphviz Previewer.\r\nArguments: dot command line options."
 msgstr ""
 
@@ -5277,10 +5334,10 @@ msgstr ""
 msgid "PlantUML Previewer.\r\nArguments: plantuml.jar command line options."
 msgstr ""
 
-msgid "CSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "CSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr ""
 
-msgid "TSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "TSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr ""
 
 msgid "JSON Querier (jq).\r\nArguments: jq filter/command line options."
@@ -5290,6 +5347,9 @@ msgid "YAML Querier (yq).\r\nArguments: yq filter/command line options."
 msgstr ""
 
 msgid "HTML Validator (tidy-html5).\r\nArguments: tidy command line options."
+msgstr ""
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
 msgstr ""
 
 msgid "JVM bytecode disassembler (javap).\r\nArguments: javap command line options."

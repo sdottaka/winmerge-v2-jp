@@ -10,10 +10,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WinMerge - Italian - 25.01.2026\n"
+"Project-Id-Version: WinMerge - Italian - 23.02.2026\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2025-04-17 09:05+0000\n"
-"PO-Revision-Date: 2026-01-25 10:42+0100\n"
+"PO-Revision-Date: 2026-02-23 21:58+0100\n"
 "Last-Translator: bovirus <bovirus@gmail.com>\n"
 "Language-Team: bovirus (bovirus@gmail.com)\n"
 "Language: it\n"
@@ -1638,6 +1638,9 @@ msgstr "Nome base (senza estensione)"
 msgid "Normalized &Unicode Name"
 msgstr "Nome &Unicode normalizzato"
 
+msgid "&Relative Path"
+msgstr "Percorso &relativo"
+
 msgid "&Date"
 msgstr "&Data"
 
@@ -1649,6 +1652,27 @@ msgstr "Inserisci funzione &replace()"
 
 msgid "Insert rege&xReplace() Function"
 msgstr "Inserisci funzione rege&xReplace()"
+
+msgid "Replace &Lists"
+msgstr "Sostituisci e&lenchi"
+
+msgid "&Create String Replace List and Insert..."
+msgstr "&Crea elenco sostituzione stringa ed inserisci..."
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr "Crea elenco sostituzione &Regex ed inserisci..."
+
+msgid "&String Replace Lists"
+msgstr "Crea elenchi sostituzione"
+
+msgid "Re&gex Replace Lists"
+msgstr "Elenchi sostituzione Re&gex"
+
+msgid "Open String Replace Lists Folder..."
+msgstr "Apri cartella elenchi sostituzione stringhe..."
+
+msgid "Open Regex Replace Lists Folder..."
+msgstr "Apri cartella elenchi sostituzione Regex..."
 
 msgid "Text &Normalization"
 msgstr "&Normalizzazione testo"
@@ -1682,6 +1706,9 @@ msgstr "&Hiragana"
 
 msgid "&Katakana"
 msgstr "&Katakana"
+
+msgid "Normalize &Unicode"
+msgstr "Normalizza &Unicode"
 
 msgid "About WinMerge"
 msgstr "Info su WinMerge"
@@ -2713,8 +2740,8 @@ msgstr "&Rilevamento rinomina/spostamenti:"
 msgid "Rename/move detection &keys:"
 msgstr "Rilevamento tasti nomina/spostamento:"
 
-msgid "&Merge renamed items into a single item"
-msgstr "Unisci elementi rino&minati in un unico elemento"
+msgid "M&erge renames and moves:"
+msgstr "Unisci rinomina &e sposta:"
 
 msgid "File patterns:"
 msgstr "Pattern file:"
@@ -3035,9 +3062,6 @@ msgstr "Al centro:"
 msgid "Version %1"
 msgstr "Versione %1"
 
-msgid "X64"
-msgstr "X64"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "Opzioni (%1)"
@@ -3066,6 +3090,9 @@ msgstr "File progetto WinMerge (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "File opzioni (*.ini)|*.ini|Tutti i file (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr "Valori separati da tabulazioni (*.tsv;*.txt)|*.tsv;*.txt|Tutti i file (*.*)|*.*||"
 
 msgid ""
 "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|"
@@ -3985,6 +4012,9 @@ msgstr " (sinistro e destro sono identici)"
 msgid " (Left and middle are identical)"
 msgstr " (sinistro e centrale sono identici)"
 
+msgid " (paths differ)"
+msgstr " (percorso differente)"
+
 msgid "Text files are different"
 msgstr "I file di testo sono diversi"
 
@@ -4012,6 +4042,12 @@ msgstr "Rileva rinomine"
 msgid "Detect renames and moves"
 msgstr "Rileva rinomine e spostamenti"
 
+msgid "Merge renames"
+msgstr "Unisci rinomina"
+
+msgid "Merge renames and moves"
+msgstr "Unisci rinomina e sposta"
+
 msgid "Renamed"
 msgstr "Rinominato"
 
@@ -4028,6 +4064,9 @@ msgstr "(%1 elementi)"
 #, c-format
 msgid "%1 (set %2): "
 msgstr "%1 (imposta %2): "
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
+msgstr "Alcuni elementi spostati sono stati uniti.\nIn modalità struttura, questi elementi potrebbero essere visualizzati in posizioni che non riflettono la struttura effettiva delle cartelle, il che può creare confusione.\nVuoi passare alla modalità semplice?"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -5293,6 +5332,15 @@ msgstr "Sistema"
 msgid "e.g. %1"
 msgstr "es. %1"
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "WinMerge ha rilevato un precedente arresto anomalo. Se possibile, segnalalo."
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr "# Elenco sostituzione Regex\r\n# Formato: regex<TAB>sostituzione\r\n# Sono supportati riferimenti all'indietro come $1, $2\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr "# Elenco sostituzioni\r\n# Formato: ricerca<TAB>sostituzione\r\n# Le righe che iniziano con # verranno ignorate\r\n\r\nda1\ta1\r\nda2\ta2\r\n"
+
 msgid "Prettification"
 msgstr "Abbellimento"
 
@@ -5398,6 +5446,9 @@ msgstr "Abbellisci XML"
 msgid "Prettify YAML"
 msgstr "Abbellisci YAML"
 
+msgid "Prettify PO"
+msgstr "Abbellisci PO"
+
 msgid "Preview Graphviz"
 msgstr "Anteprima Graphviz"
 
@@ -5420,7 +5471,10 @@ msgid "Query YAML Data..."
 msgstr "Interroga dati YAML..."
 
 msgid "Validate HTML"
-msgstr "Valida HTML"
+msgstr "Convalida HTML"
+
+msgid "Validate PO"
+msgstr "Convalida PO"
 
 msgid "Disassemble JVM Bytecode"
 msgstr "Disassembla bytecode JVM"
@@ -5572,6 +5626,9 @@ msgstr ""
 "YAML più carino con il comando yq.\r\n"
 "Argomenti: opzioni filtro o riga di comando passate al comando yq."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr "Abbellimento PO (gettext msgcat).\r\nArgomenti: opzioni riga di comando msgcat."
+
 msgid ""
 "Graphviz Previewer.\r\n"
 "Arguments: dot command line options."
@@ -5595,14 +5652,14 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "Interrogazione CSV con il comando q.\r\n"
 "Argomenti: istruzione SQL o opzioni riga di comando passate al comando q."
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "Interrogazione TSV con il comando q.\r\n"
 "Argomenti: istruzione SQL o opzioni riga di comando passate al comando q."
@@ -5627,6 +5684,9 @@ msgid ""
 msgstr ""
 "Validazione HTML con tidy-html5.\r\n"
 "Argomenti: opzioni riga di comando passate al comando tidy."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr "Convalida PO (gettext msgfmt).\r\nArgomenti: opzioni riga di comando msgfmt."
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"

@@ -6,13 +6,14 @@
 # * Leonardo Peixoto <ljpeixoto at gmail.com>
 # * Felipe Periard Lopes <felipefplzx at gmail.com>
 # * Marcello Oliveira <marcello.mco at gmail.com>
+# * Ricardo <RicardoPC1967>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2023-03-13 09:30-0300\n"
-"PO-Revision-Date: 2026-01-25 09:15-0300\n"
+"PO-Revision-Date: 2026-02-23 23:00-0300\n"
 "Last-Translator: Marcello <marcello.mco@gmail.com>\n"
 "Language-Team: Felipe\n"
 "Language: pt_BR\n"
@@ -365,7 +366,7 @@ msgid "&On Title Bar"
 msgstr "Na Barra de Títul&os"
 
 msgid "&Toolbar"
-msgstr "&Barra de ferramentas"
+msgstr "&Barra de Ferramentas"
 
 msgid "&Small"
 msgstr "&Pequena"
@@ -1054,7 +1055,7 @@ msgid "&Edit Caption\tF2"
 msgstr "&Editar Legenda\tF2"
 
 msgid "Edit &Path\tCtrl+L"
-msgstr "Editar Caminho\tCtrl+L"
+msgstr "E&ditar Caminho\tCtrl+L"
 
 msgid "&Open..."
 msgstr "&Abrir..."
@@ -1501,7 +1502,7 @@ msgid "Add F&older Condition"
 msgstr "Adicionar C&ondição de Pasta"
 
 msgid "&Files"
-msgstr "Arquivos"
+msgstr "&Arquivos"
 
 msgid "0 files"
 msgstr "0 arquivos"
@@ -1525,7 +1526,7 @@ msgid "&Recursive"
 msgstr "&Recursivo"
 
 msgid "Target: &Any (Left/Middle/Right)"
-msgstr "&Alvo: Qualquer (Esquerda/Meio/Direita)"
+msgstr "A&lvo: Qualquer (Esquerda/Meio/Direita)"
 
 msgid "Target: &Left"
 msgstr "Alvo: &Esquerda"
@@ -1633,10 +1634,13 @@ msgid "&Name"
 msgstr "&Nome"
 
 msgid "&Base name (without extension)"
-msgstr "Nome &Base (sem extensão)"
+msgstr "Nome &base (sem extensão)"
 
 msgid "Normalized &Unicode Name"
 msgstr "Nome &Unicode Normalizado"
+
+msgid "&Relative Path"
+msgstr "Caminho &Relativo"
 
 msgid "&Date"
 msgstr "&Data"
@@ -1650,20 +1654,41 @@ msgstr "Inserir Função &replace()"
 msgid "Insert rege&xReplace() Function"
 msgstr "Inserir Função rege&xReplace()"
 
+msgid "Replace &Lists"
+msgstr "Substituir &Listas"
+
+msgid "&Create String Replace List and Insert..."
+msgstr "&Criar Lista de Substituição de String e Adicionar..."
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr "Criar Lista de Substituição &Regex e Adicionar..."
+
+msgid "&String Replace Lists"
+msgstr "Listas de Substituição de &String"
+
+msgid "Re&gex Replace Lists"
+msgstr "Listas de Substituição de Re&gex"
+
+msgid "Open String Replace Lists Folder..."
+msgstr "Abrir Pasta de Listas de Substituição de String..."
+
+msgid "Open Regex Replace Lists Folder..."
+msgstr "Abrir Pasta de Listas de Substituição de Regex..."
+
 msgid "Text &Normalization"
 msgstr "&Normalização de Texto"
 
 msgid "&Lowercase"
-msgstr "Minúscu&los"
+msgstr "Minúscu&las"
 
 msgid "&Uppercase"
-msgstr "Maiúsc&ulos"
+msgstr "Maiúsc&ulas"
 
 msgid "&Half-width"
-msgstr "Meia-lar&gura"
+msgstr "Meia lar&gura"
 
 msgid "&Full-width"
-msgstr "Largura total"
+msgstr "L&argura total"
 
 msgid "&Chinese Conversion"
 msgstr "Conversão do &Chinês"
@@ -1682,6 +1707,9 @@ msgstr "&Hiragana"
 
 msgid "&Katakana"
 msgstr "&Katakana"
+
+msgid "Normalize &Unicode"
+msgstr "Normalizar &Unicode"
 
 msgid "About WinMerge"
 msgstr "Sobre o WinMerge"
@@ -1954,16 +1982,16 @@ msgid "Ignored Difference:"
 msgstr "Diferença Ignorada:"
 
 msgid "Moved:"
-msgstr "Movida:"
+msgstr "Movido:"
 
 msgid "Selected Moved:"
-msgstr "Movida Selecionada:"
+msgstr "Movido Selecionado:"
 
 msgid "Same As Next (3 panes):"
-msgstr "A Mesma que a Próxima (3 painéis):"
+msgstr "O Mesmo que o Próximo (3 painéis):"
 
 msgid "Same As Next (Selected):"
-msgstr "A Mesma que a Próxima (Selecionada):"
+msgstr "O Mesmo que o Próximo (Selecionado):"
 
 msgid "Word Difference:"
 msgstr "Diferença de Palavra:"
@@ -2125,7 +2153,7 @@ msgid "Diff &algorithm:"
 msgstr "Algoritmo da &diferenciação:"
 
 msgid "Enable indent &heuristic"
-msgstr "Habilitar &heurística de recuo"
+msgstr "H&abilitar heurística de recuo"
 
 msgid "Completely unhighlight the ignored differences"
 msgstr "Remover completamente o destaque das diferenças ignoradas"
@@ -2684,16 +2712,16 @@ msgid "Switch to &binary compare when size exceeds (MB):"
 msgstr "Trocar para comparação &binária quando o tamanho exceder (MB):"
 
 msgid "Additional comparison condi&tions:"
-msgstr "Co&ndições de comparação adicionais:"
+msgstr "Con&dições de comparação adicionais:"
 
 msgid "&Rename/move detection:"
-msgstr "Detecção de &renomear/mover"
+msgstr "Detecção de r&enomear/mover:"
 
 msgid "Rename/move detection &keys:"
-msgstr "Chaves para detecção de renomear/mover"
+msgstr "C&haves de detecção de renomear/mover:"
 
-msgid "&Merge renamed items into a single item"
-msgstr "Unir itens reno&meados em um único item"
+msgid "M&erge renames and moves:"
+msgstr "Unir renom&eados e movidos:"
 
 msgid "File patterns:"
 msgstr "Padrões de arquivo:"
@@ -2955,9 +2983,6 @@ msgstr "Para o meio:"
 msgid "Version %1"
 msgstr "Versão %1"
 
-msgid "X64"
-msgstr "X64"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "Opções (%1)"
@@ -2983,6 +3008,9 @@ msgstr "Arquivos de Projeto do WinMerge (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "Arquivos de Opções (*.ini)|*.ini|Todos os Arquivos (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr "Valores Separados por Tab (*.tsv;*.txt)|*.tsv;*.txt|Todos os Arquivos (*.*)|*.*||"
 
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
 msgstr "Arquivos de Texto (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|Todos os Arquivos (*.*)|*.*||"
@@ -3712,6 +3740,9 @@ msgstr " (O da esquerda e o da direita são idênticos)"
 msgid " (Left and middle are identical)"
 msgstr " (O da esquerda e o do meio são idênticos)"
 
+msgid " (paths differ)"
+msgstr " (diferenças nos caminhos)"
+
 msgid "Text files are different"
 msgstr "Os arquivos de texto são diferentes"
 
@@ -3731,13 +3762,19 @@ msgstr "Grupo%d"
 
 msgctxt "Options dialog|Compare|Folder|Detect renames and moves"
 msgid "Disabled"
-msgstr "Desabilitado"
+msgstr "Desabilitada"
 
 msgid "Detect renames"
-msgstr "Detectar renomeados"
+msgstr "Detectar renomeações"
 
 msgid "Detect renames and moves"
-msgstr "Detectar rnomeados e movidos"
+msgstr "Detectar renomeações e movimentações"
+
+msgid "Merge renames"
+msgstr "Unir renomeados"
+
+msgid "Merge renames and moves"
+msgstr "Unir renomeados e movidos"
 
 msgid "Renamed"
 msgstr "Renomeados"
@@ -3755,6 +3792,9 @@ msgstr "(%1 itens)"
 #, c-format
 msgid "%1 (set %2): "
 msgstr "%1 (conjunto %2): "
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
+msgstr "Alguns itens movidos foram unidos.\nNo Modo Árvore, estes itens podem aparecer em posições que não refletem a estrutura real da pasta, o que pode ser confuso.\nAlternar para Modo Normal?"
 
 #, c-format
 msgid "Elapsed time: %ld ms"
@@ -3918,10 +3958,10 @@ msgid "Selected files are identical (with current settings).\r\nBut binary compa
 msgstr "Os arquivos selecionados são idênticos (com as configurações atuais).\r\nMas a comparação binária falhou."
 
 msgid "Selected files are identical (binary match)."
-msgstr "Os arquivos selecionados são idênticos (comparação binária)."
+msgstr "Os arquivos selecionados são idênticos (correspondência binária)."
 
 msgid "Selected files are identical (with current settings).\r\nBut differ at the binary level."
-msgstr "Os arquivos selecionados são idênticos (com as configurações atuais).\r\nMas são diferentes na comparação binária."
+msgstr "Os arquivos selecionados são idênticos (com as configurações atuais).\r\nMas diferem no nível binário."
 
 msgid "An error occurred while comparing files."
 msgstr "Ocorreu um erro ao comparar os arquivos."
@@ -4789,6 +4829,15 @@ msgstr "Seguir o sistema"
 msgid "e.g. %1"
 msgstr "p.ex. %1"
 
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "O WinMerge detectou um travamento ocorrido. Por favor, relate-o, se possível."
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr "# Lista de substituição Regex\r\n# Formato: regex<TAB>substituto\r\n# Referências anteriores como $1, $2 são suportadas\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
+msgstr "# Lista de substuição\r\n# Formato: busca<TAB>substituto\r\n# Linhas começando com # são ignoradas\r\n\r\nde1\tpara1\r\nde2\tpara2\r\n"
+
 msgid "Prettification"
 msgstr "Embelezamento"
 
@@ -4894,6 +4943,9 @@ msgstr "Embelezar XML"
 msgid "Prettify YAML"
 msgstr "Embelezar YAML"
 
+msgid "Prettify PO"
+msgstr "Embelezar PO"
+
 msgid "Preview Graphviz"
 msgstr "Pré-visualizar Graphviz"
 
@@ -4917,6 +4969,9 @@ msgstr "Consultar Dados de YAML..."
 
 msgid "Validate HTML"
 msgstr "Validar HTML"
+
+msgid "Validate PO"
+msgstr "Validar PO"
 
 msgid "Disassemble JVM Bytecode"
 msgstr "Desmontar Bytecode da JVM"
@@ -4988,6 +5043,9 @@ msgstr "XML Mais Bonito (tidy-html5). \r\nArgumentos: opções da linha de coman
 msgid "YAML Prettier (yq).\r\nArguments: yq filter/command line options."
 msgstr "YAML Mais Bonito (yq).\r\nArgumentos: opções do filtro/linha de comando do yq."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr "PO Mais Bonito (gettext msgcat).\r\nArgumentos: opções da linha de comando do msgcat."
+
 msgid "Graphviz Previewer.\r\nArguments: dot command line options."
 msgstr "Pré-Visualizador Graphviz.\r\nArgumentos: opções da linha de comando do dot."
 
@@ -4997,10 +5055,10 @@ msgstr "Pré-Visualizador Markdown.\r\nArgumentos: opções da linha de comando 
 msgid "PlantUML Previewer.\r\nArguments: plantuml.jar command line options."
 msgstr "Pré-Visualizador PlantUML.\r\nArgumentos: opções da linha de comando do plantuml.jar."
 
-msgid "CSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "CSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr "Consultador de CSV (q).\r\nArgumentos: instrução SQL/opções da linha de comando do q."
 
-msgid "TSV Querier (q).\r\nArguments: SQL statement/q comannd line options."
+msgid "TSV Querier (q).\r\nArguments: SQL statement/q command line options."
 msgstr "Consultador de TSV (q).\r\nArgumentos: instrução SQL/opções da linha de comando do q."
 
 msgid "JSON Querier (jq).\r\nArguments: jq filter/command line options."
@@ -5011,6 +5069,9 @@ msgstr "Consultador de YAML (yq).\r\nArgumentos: opções do filtro/linha de com
 
 msgid "HTML Validator (tidy-html5).\r\nArguments: tidy command line options."
 msgstr "Validador de HTML (tidy-html5).\r\nArgumentos: opções da linha de comando do tidy."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr "Validador de PO (gettext msgfmt).\r\nArgumentos: opções da linha de comando do msgfmt."
 
 msgid "JVM bytecode disassembler (javap).\r\nArguments: javap command line options."
 msgstr "Desmontador de bytecode da JVM (javap).\r\nArgumentos: opções da linha de comando do javap."

@@ -6,6 +6,7 @@
 
 #include "pch.h"
 #include "ExistenceCompare.h"
+#include "DiffContext.h"
 #include "DiffItem.h"
 
 using Poco::Timestamp;
@@ -13,7 +14,8 @@ using Poco::Timestamp;
 namespace CompareEngines
 {
 
-ExistenceCompare::ExistenceCompare()
+ExistenceCompare::ExistenceCompare(CDiffContext& ctxt)
+	: m_nfiles(ctxt.GetCompareDirs())
 {
 }
 
@@ -21,20 +23,18 @@ ExistenceCompare::~ExistenceCompare() = default;
 
 /**
  * @brief Compare specified files by their existence
- * @param [in] compMethod Compare method used.
- * @param [in] di Diffitem info.
- * @return DIFFCODE
+ * @param [in,out] di Diffitem info. Results are written to di.diffcode.
  */
-int ExistenceCompare::CompareFiles(int compMethod, int nfiles, const DIFFITEM& di) const
+void ExistenceCompare::CompareFiles(DIFFITEM& di) const
 {
 	unsigned code = DIFFCODE::SAME;
 	if (di.diffcode.exists(0) != di.diffcode.exists(1) ||
-	    (nfiles > 2 && di.diffcode.exists(0) != di.diffcode.exists(2)))
+		(m_nfiles > 2 && di.diffcode.exists(0) != di.diffcode.exists(2)))
 	{
 		code = DIFFCODE::DIFF;
 	}
 
-	if (nfiles > 2 && (code & DIFFCODE::COMPAREFLAGS) == DIFFCODE::DIFF)
+	if (m_nfiles > 2 && (code & DIFFCODE::COMPAREFLAGS) == DIFFCODE::DIFF)
 	{
 		if (di.diffcode.exists(1) == di.diffcode.exists(2))
 			code |= DIFFCODE::DIFF1STONLY;
@@ -43,7 +43,9 @@ int ExistenceCompare::CompareFiles(int compMethod, int nfiles, const DIFFITEM& d
 		else if (di.diffcode.exists(0) == di.diffcode.exists(1))
 			code |= DIFFCODE::DIFF3RDONLY;
 	}
-	return code;
+
+	di.diffcode.diffcode &= ~(DIFFCODE::TEXTFLAGS | DIFFCODE::TYPEFLAGS | DIFFCODE::COMPAREFLAGS | DIFFCODE::COMPAREFLAGS3WAY);
+	di.diffcode.diffcode |= DIFFCODE::FILE | code;
 }
 
 } // namespace CompareEngines

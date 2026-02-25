@@ -17,17 +17,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
-"POT-Creation-Date: 2025-04-17 09:05+0000\n"
-"PO-Revision-Date: 2026-01-15 14:54+0100\n"
-"Last-Translator: Lolo S. <slolo2000@hotmail.com>\n"
+"POT-Creation-Date: 2026-02-03 07:46+0000\n"
+"PO-Revision-Date: 2026-02-07 22:55-0500\n"
+"Last-Translator: t3chnob0y <t3chnob0y at outlook.com>\n"
 "Language-Team: French <winmerge-translate@lists.sourceforge.net>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../Src\n"
-"X-Generator: Poedit 3.8\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -899,7 +899,7 @@ msgid "Comp&are"
 msgstr "Comp&arer"
 
 msgid "Compar&e with Renamed/Moved Items"
-msgstr ""
+msgstr "Compa&rer avec les éléments renommés/déplacés"
 
 msgid "Compare in New &Window"
 msgstr "Comparer dans une nouvelle &fenêtre"
@@ -1633,60 +1633,87 @@ msgid "Compare C&ontents"
 msgstr "Comparer les C&ontenus"
 
 msgid "&Clear Keys"
-msgstr ""
+msgstr "&Effacer les clés"
 
 msgid "&Name"
-msgstr ""
+msgstr "&Nom"
 
 msgid "&Base name (without extension)"
-msgstr ""
+msgstr "Nom de &base (sans extension)"
 
 msgid "Normalized &Unicode Name"
+msgstr "Nom &Unicode normalisé"
+
+msgid "&Relative Path"
 msgstr ""
 
 msgid "&Date"
-msgstr ""
+msgstr "&Date"
 
 msgid "&Hash (MD5)"
-msgstr ""
+msgstr "&Hachage (MD5)"
 
 msgid "Insert &replace() Function"
-msgstr ""
+msgstr "Insérer la fonction &replace()"
 
 msgid "Insert rege&xReplace() Function"
+msgstr "Insérer la fonction rege&xReplace()"
+
+msgid "Replace &Lists"
+msgstr ""
+
+msgid "&Create String Replace List and Insert..."
+msgstr ""
+
+msgid "Create &Regex Replace List and Insert..."
+msgstr ""
+
+msgid "&String Replace Lists"
+msgstr ""
+
+msgid "Re&gex Replace Lists"
+msgstr ""
+
+msgid "Open String Replace Lists Folder..."
+msgstr ""
+
+msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
 msgid "Text &Normalization"
-msgstr ""
+msgstr "&Normalisation du texte"
 
 msgid "&Lowercase"
-msgstr ""
+msgstr "Minuscu&le"
 
 msgid "&Uppercase"
-msgstr ""
+msgstr "Maj&uscule"
 
 msgid "&Half-width"
-msgstr ""
+msgstr "&Demi-largeur"
 
 msgid "&Full-width"
-msgstr ""
+msgstr "&Pleine largeur"
 
 msgid "&Chinese Conversion"
-msgstr ""
+msgstr "Conversion &chinoise"
 
 msgid "&Simplified Chinese"
-msgstr ""
+msgstr "Chinois &simplifié"
 
 msgid "&Traditional Chinese"
-msgstr ""
+msgstr "Chinois &traditionnel"
 
 msgid "&Japanese Conversion"
-msgstr ""
+msgstr "Conversion &japonaise"
 
 msgid "&Hiragana"
-msgstr ""
+msgstr "&Hiragana"
 
 msgid "&Katakana"
+msgstr "&Katakana"
+
+msgid "Normalize &Unicode"
 msgstr ""
 
 msgid "About WinMerge"
@@ -1930,7 +1957,7 @@ msgid "&Light mode scheme:"
 msgstr "&Schéma du mode clair :"
 
 msgid "&Dark mode scheme:"
-msgstr "&Schéma du mode sombre :"
+msgstr "&Schéma du mode foncé :"
 
 msgid "Your custom schemes"
 msgstr "Vos schémas personnalisés"
@@ -2703,12 +2730,12 @@ msgid "Additional comparison condi&tions:"
 msgstr "Conditions de comparaison supplémen&taires :"
 
 msgid "&Rename/move detection:"
-msgstr ""
+msgstr "Détection du renommage/déplacement :"
 
 msgid "Rename/move detection &keys:"
-msgstr ""
+msgstr "Clés de détection du renommage/déplacement :"
 
-msgid "&Merge renamed items into a single item"
+msgid "M&erge renames and moves:"
 msgstr ""
 
 msgid "File patterns:"
@@ -3019,9 +3046,6 @@ msgstr "Vers Milieu :"
 msgid "Version %1"
 msgstr "Version %1"
 
-msgid "X64"
-msgstr "X64"
-
 #, c-format
 msgid "Options (%1)"
 msgstr "Préférences (%1)"
@@ -3047,6 +3071,9 @@ msgstr "Fichiers de projet WinMerge (*.WinMerge)|*.WinMerge||"
 
 msgid "Options files (*.ini)|*.ini|All Files (*.*)|*.*||"
 msgstr "Fichiers de préférences (*.ini)|*.ini|Tous les fichiers (*.*)|*.*||"
+
+msgid "Tab-Separated Values (*.tsv;*.txt)|*.tsv;*.txt|All Files (*.*)|*.*||"
+msgstr ""
 
 msgid "Text Files (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|All Files (*.*)|*.*||"
 msgstr "Fichiers texte (*.csv;*.asc;*.rpt;*.txt)|*.csv;*.asc;*.rpt;*.txt|Tous les fichiers (*.*)|*.*||"
@@ -3936,6 +3963,9 @@ msgstr " (Gauche et Droite sont identiques)"
 msgid " (Left and middle are identical)"
 msgstr " (Gauche et Milieu sont identiques)"
 
+msgid " (paths differ)"
+msgstr ""
+
 msgid "Text files are different"
 msgstr "Les fichiers texte sont différents"
 
@@ -3955,29 +3985,38 @@ msgstr "Groupe%d"
 
 msgctxt "Options dialog|Compare|Folder|Detect renames and moves"
 msgid "Disabled"
-msgstr ""
+msgstr "Désactivée"
 
 msgid "Detect renames"
-msgstr ""
+msgstr "Détecter les renommages"
 
 msgid "Detect renames and moves"
+msgstr "Détecter les renommages et les déplacements"
+
+msgid "Merge renames"
+msgstr ""
+
+msgid "Merge renames and moves"
 msgstr ""
 
 msgid "Renamed"
-msgstr ""
+msgstr "Renommé"
 
 msgid "Moved"
-msgstr ""
+msgstr "Déplacé"
 
 msgid "Renamed/Moved"
-msgstr ""
+msgstr "Renommé/Déplacé"
 
 #, c-format
 msgid "(%1 items)"
-msgstr ""
+msgstr "(%1 éléments)"
 
 #, c-format
 msgid "%1 (set %2): "
+msgstr "%1 (ensemble %2) : "
+
+msgid "Some moved items have been merged.\nIn Tree Mode, these items may appear in positions that do not reflect the actual folder structure, which can be confusing.\nSwitch to Flat Mode?"
 msgstr ""
 
 #, c-format
@@ -4501,7 +4540,7 @@ msgid ""
 "Copy All to Left"
 msgstr ""
 "\n"
-"Tout copier vers la Droite"
+"Tout copier vers la Gauche"
 
 msgid ""
 "\n"
@@ -5211,13 +5250,22 @@ msgid "Light"
 msgstr "Clair"
 
 msgid "Dark"
-msgstr "Sombre"
+msgstr "Foncé"
 
 msgid "Follow system"
 msgstr "Suivre le système"
 
 #, c-format
 msgid "e.g. %1"
+msgstr "p. ex. %1"
+
+msgid "WinMerge detected a previous crash. Please report this if possible."
+msgstr "WinMerge a détecté un plantage précédent. Veuillez le signaler si possible."
+
+msgid "# Regex replacement list\r\n# Format: regex<TAB>replacement\r\n# Backreferences like $1, $2 are supported\r\n\r\n(\\d{4})-(\\d{2})-(\\d{2})\t$1_$2_$3\r\n"
+msgstr ""
+
+msgid "# Replacement list\r\n# Format: search<TAB>replacement\r\n# Lines starting with # are ignored\r\n\r\nfrom1\tto1\r\nfrom2\tto2\r\n"
 msgstr ""
 
 msgid "Prettification"
@@ -5325,6 +5373,9 @@ msgstr "Embellir XML"
 msgid "Prettify YAML"
 msgstr "Embellir YAML"
 
+msgid "Prettify PO"
+msgstr ""
+
 msgid "Preview Graphviz"
 msgstr "Aperçu Graphviz"
 
@@ -5348,6 +5399,9 @@ msgstr "Interroger les données YAML..."
 
 msgid "Validate HTML"
 msgstr "Valider le HTML"
+
+msgid "Validate PO"
+msgstr ""
 
 msgid "Disassemble JVM Bytecode"
 msgstr "Désassembler le bytecode JVM"
@@ -5497,6 +5551,9 @@ msgstr ""
 "Embelisseur YAML (yq).\r\n"
 "Arguments : options de filtre / ligne de commande pour yq."
 
+msgid "PO Prettier (gettext msgcat).\r\nArguments: msgcat command line options."
+msgstr ""
+
 msgid ""
 "Graphviz Previewer.\r\n"
 "Arguments: dot command line options."
@@ -5520,14 +5577,14 @@ msgstr ""
 
 msgid ""
 "CSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "Requêteur CSV (q).\r\n"
 "Arguments : instruction SQL / options de ligne de commande pour q."
 
 msgid ""
 "TSV Querier (q).\r\n"
-"Arguments: SQL statement/q comannd line options."
+"Arguments: SQL statement/q command line options."
 msgstr ""
 "Requêteur TSV (q).\r\n"
 "Arguments : instruction SQL / options de ligne de commande pour q."
@@ -5552,6 +5609,9 @@ msgid ""
 msgstr ""
 "Validateur XML (tidy-html5).\r\n"
 "Arguments : options de ligne de commande pour tidy-html5."
+
+msgid "PO Validator (gettext msgfmt).\r\nArguments: msgfmt command line options."
+msgstr ""
 
 msgid ""
 "JVM bytecode disassembler (javap).\r\n"
@@ -5688,7 +5748,7 @@ msgstr ""
 "Activez \"Accès approuvé au modèle d'objet du projet Visual Basic\" sous Options/Centre de gestion de la confidentialité/Paramètres des macros de MS Office."
 
 msgid "Replace line breaks in formulas with spaces"
-msgstr "Remplacez les sauts de ligne dans les formules par des espaces."
+msgstr "Remplacez les sauts de ligne dans les formules par des espaces"
 
 msgid "Compare VBA macros"
 msgstr "Comparer les macros VBA"

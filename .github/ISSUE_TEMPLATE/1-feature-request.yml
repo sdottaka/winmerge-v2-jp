@@ -1,0 +1,35 @@
+name: Feature Request
+description: Suggest a new feature or improvement for WinMerge.
+title: "[FEATURE] "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the feature or improvement you would like to see.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What would you like to improve or add? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references (optional)
+      description: Screenshots, mockups, or examples from other tools, if any.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other information that may help.
+    validations:
+      required: false
