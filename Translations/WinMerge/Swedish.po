@@ -1679,6 +1679,9 @@ msgstr ""
 msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
+msgid "Match &case"
+msgstr "Matcha VERSALER/gemener"
+
 msgid "Text &Normalization"
 msgstr ""
 
@@ -1801,9 +1804,6 @@ msgstr "Sök efter:"
 
 msgid "Match &whole word only"
 msgstr "Matcha endast hela ord"
-
-msgid "Match &case"
-msgstr "Matcha VERSALER/gemener"
 
 msgid "Regular &expression"
 msgstr "Reguljärt uttryck"
@@ -4975,6 +4975,12 @@ msgstr "Filter verkställt"
 msgid "Compare %1"
 msgstr ""
 
+msgid "&Filter by This Column"
+msgstr ""
+
+msgid "&Filter by This Column..."
+msgstr ""
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "Klippbordet vid %s"
@@ -5204,6 +5210,9 @@ msgstr "Okänt fel"
 msgid "Invalid property name"
 msgstr ""
 
+msgid "Invalid directive"
+msgstr ""
+
 msgid "Equals"
 msgstr "Lika med"
 
@@ -5239,6 +5248,18 @@ msgstr "Innehåller (RegExp)"
 
 msgid "Not Contains (regex)"
 msgstr "Innehåller inte (RegExp)"
+
+msgid "Match (wildcard)"
+msgstr ""
+
+msgid "Not match (wildcard)"
+msgstr ""
+
+msgid "Match (regex)"
+msgstr ""
+
+msgid "Not match (regex)"
+msgstr ""
 
 msgid "Light"
 msgstr "Ljus"
@@ -5411,6 +5432,9 @@ msgstr "Konvertera text med AI..."
 
 msgid "Unescape Java properties files"
 msgstr "Ofly Javaegenskapsfiler"
+
+msgid "Decompile Java (CFR)"
+msgstr ""
 
 msgid "Make characters uppercase"
 msgstr "Konvertera tecken till VERSALER"
@@ -5697,6 +5721,9 @@ msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "Ofly och visa flydda Javaegenskapsfiler."
+
+msgid "Java decompiler (CFR).\r\nDecompiles .class files into readable Java source code.\r\nArguments: CFR command line options."
+msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles.sct WinMerge Pluginalternativ"

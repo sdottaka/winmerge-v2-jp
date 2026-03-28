@@ -645,9 +645,19 @@ bool IsShowable(const CDiffContext& ctxt, const DIFFITEM &di, const DirViewFilte
 
 	if (di.diffcode.isResultFiltered())
 	{
+		if (!filter.show_skipped)
+			return false;
+
+		if (!filter.displayFilterHelper.IsEmpty())
+		{
+			return di.diffcode.isDirectory() ? 
+				filter.displayFilterHelper.includeDir(di) :
+				filter.displayFilterHelper.includeFile(di);
+		}
+
 		// Treat SKIPPED as a 'super'-flag. If item is skipped and user
 		// wants to see skipped items show item regardless of other flags
-		return filter.show_skipped;
+		return true;
 	}
 
 	if (di.diffcode.isDirectory())
@@ -679,6 +689,9 @@ bool IsShowable(const CDiffContext& ctxt, const DIFFITEM &di, const DirViewFilte
 
 			// result filters
 			if (di.diffcode.isResultError() && false/* !GetMainFrame()->m_bShowErrors FIXME:*/)
+				return false;
+
+			if (!filter.displayFilterHelper.IsEmpty() && !filter.displayFilterHelper.includeDir(di))
 				return false;
 		}
 		else // recursive mode (including tree-mode)
@@ -745,21 +758,38 @@ bool IsShowable(const CDiffContext& ctxt, const DIFFITEM &di, const DirViewFilte
 					else if (di.diffcode.isResultDiff() && !filter.show_different)
 						bShowable = false;
 				}
+				if (!filter.displayFilterHelper.IsEmpty() && !filter.displayFilterHelper.includeDir(di))
+					bShowable = false;
 				if (!bShowable)
 				{
 					DIFFITEM *diffpos = ctxt.GetFirstChildDiffPosition(&di);
 					while (diffpos != nullptr)
 					{
 						const DIFFITEM &dic = ctxt.GetNextSiblingDiffPosition(diffpos);
-						if (IsShowable(ctxt, dic, filter))
+						if (dic.diffcode.isDirectory() && IsShowable(ctxt, dic, filter))
+							return true;
+					}
+					return false;
+				}
+			}
+			else
+			{
+				bool bShowable = true;
+				if (!filter.displayFilterHelper.IsEmpty() && !filter.displayFilterHelper.includeDir(di))
+					bShowable = false;
+				if (!bShowable)
+				{
+					DIFFITEM *diffpos = ctxt.GetFirstChildDiffPosition(&di);
+					while (diffpos != nullptr)
+					{
+						const DIFFITEM &dic = ctxt.GetNextSiblingDiffPosition(diffpos);
+						if (dic.diffcode.isDirectory() && IsShowable(ctxt, dic, filter))
 							return true;
 					}
 					return false;
 				}
 			}
 		}
-		if (!filter.displayFilterHelper.IsEmpty() && !filter.displayFilterHelper.includeDir(di))
-			return false;
 	}
 	else
 	{

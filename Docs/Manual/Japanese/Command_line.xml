@@ -8,7 +8,7 @@
       <see>コマンドライン</see>
     </indexterm></title>
 
-  <para>WinMergeのコマンドラインは、比較するパスに加えいくつかのパラメーターを受け付けます。これらのパラメーターのほとんどは、外部比較ツールとして使用したり、バッチファイルから比較操作を開始できるようにすることを目的としています。</para>
+  <para>WinMerge のコマンドラインでは、比較対象のパスと各種オプションを指定できます。主に、外部ツール連携やバッチ・スクリプトからの実行に使用されます。</para>
 
   <para>WinMergeをコマンドラインから実行するには以下の書式のうちの1つを使用します:</para>
 
@@ -248,7 +248,7 @@ Devel</userinput>のようなファイルフィルターの名前です。スペ
       <term><option>/u</option></term>
       <listitem>
         <para>(または<option>/ub</option>)
-各々(左、右、中央)のパスが最近使用した項目(MRU)リストに追加されるのを防ぎます。外部アプリケーションは、ファイルまたはフォルダーの選択ダイアログのMRUリストにパスを追加するべきではありません。</para>
+各々(左側、右側、中央)のパスが最近使用した項目(MRU)リストに追加されるのを防ぎます。外部アプリケーションは、ファイルまたはフォルダーの選択ダイアログのMRUリストにパスを追加するべきではありません。</para>
       </listitem>
     </varlistentry>
 
@@ -627,7 +627,7 @@ c:\tmp\report.html</option></para>
 Diff コンテキスト → 0 行」と同等)。</para></listitem>
           <listitem><para><option>/cfg Settings/ViewLineNumbers=1</option> - 行番号を出力します（0 にすると非表示）。</para></listitem>
         </itemizedlist>
-        <para>フォルダ比較の場合:</para>
+        <para>フォルダー比較の場合:</para>
         <itemizedlist>
           <listitem><para><option>/cfg Settings/DirViewExpandSubdirs=1</option> - サブフォルダを自動的に展開します。</para></listitem>
           <listitem><para><option>/cfg ReportFiles/ReportType=2</option> - レポート形式: Simple HTML。</para></listitem>

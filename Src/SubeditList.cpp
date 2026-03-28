@@ -542,7 +542,7 @@ BOOL CInPlaceEdit::PreTranslateMessage(MSG* pMsg)
 		if(pMsg->wParam == VK_RETURN
 				|| pMsg->wParam == VK_DELETE
 				|| pMsg->wParam == VK_ESCAPE
-				|| GetKeyState( VK_CONTROL)
+				|| GetKeyState( VK_CONTROL) < 0
 				)
 		{
 			::TranslateMessage(pMsg);
@@ -672,7 +672,7 @@ BOOL CInPlaceComboBox::PreTranslateMessage(MSG* pMsg)
 		if(pMsg->wParam == VK_RETURN
 				|| pMsg->wParam == VK_DELETE
 				|| pMsg->wParam == VK_ESCAPE
-				|| GetKeyState( VK_CONTROL)
+				|| GetKeyState( VK_CONTROL) < 0
 				)
 		{
 			::TranslateMessage(pMsg);

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|ARM">
@@ -548,6 +548,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Common\locality.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
     <ClCompile Include="..\..\Src\Common\OptionsMgr.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -635,6 +640,10 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\Common\Environment.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\DirViewColItems.cpp">
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
@@ -814,6 +823,7 @@
     <ClInclude Include="..\..\Src\codepage_detect.h" />
     <ClInclude Include="..\..\Src\Common\cio.h" />
     <ClInclude Include="..\..\Src\Common\ExConverter.h" />
+    <ClInclude Include="..\..\Src\Common\locality.h" />
     <ClInclude Include="..\..\Src\Common\OptionsMgr.h" />
     <ClInclude Include="..\..\Src\Common\RegOptionsMgr.h" />
     <ClInclude Include="..\..\Src\Common\VersionInfo.h" />
@@ -832,6 +842,7 @@
     <ClInclude Include="..\..\Src\DirScan.h" />
     <ClInclude Include="..\..\Src\DirTravel.h" />
     <ClInclude Include="..\..\Src\Common\Environment.h" />
+    <ClInclude Include="..\..\Src\DirViewColItems.h" />
     <ClInclude Include="..\..\Src\FileFlags.h" />
     <ClInclude Include="..\..\Src\FileFilter.h" />
     <ClInclude Include="..\..\Src\FileFilterHelper.h" />

@@ -5,30 +5,30 @@
 
       <seealso>ファイルフィルター</seealso>
 
-      <seealso>file masks</seealso>
+      <seealso>ファイルマスク</seealso>
 
-      <seealso>line filters</seealso>
+      <seealso>行フィルター</seealso>
 
-      <seealso>substitution filters</seealso>
+      <seealso>置換フィルタ</seealso>
     </indexterm></title>
 
   <para>ファイルやフォルダー比較の際、比較範囲を限定するためにファイルフィルターを使用することができます。
-これは、比較結果から、あなたが興味のない差異を取り除きたい場合に便利です。 フィルターは、正規表現を元に規定します。 WinMerge は、ポピュラーな
-PCRE (Perl Compatible Regular Expressions) 正規表現エンジンを使用しています。<indexterm>
-      <primary>regular expressions</primary>
+これは、比較結果から、あなたが興味のない差異を取り除きたい場合に便利です。 フィルターは、正規表現を基づいて定義されます。 WinMerge
+は、一般的に広く使われている PCRE (Perl Compatible Regular Expressions)
+正規表現エンジンを使用しています。<indexterm>
+      <primary>正規表現</primary>
 
-      <secondary>supported engine</secondary>
+      <secondary>サポートされているエンジン</secondary>
     </indexterm><indexterm>
-      <primary>PCRE regular expression engine</primary>
+      <primary>PCRE正規表現エンジン</primary>
     </indexterm><indexterm>
-      <primary>regexp</primary>
+      <primary>正規表現</primary>
 
-      <see>regular expressions</see>
+      <see>正規表現</see>
     </indexterm></para>
 
-  <para>フィルターの基本機能はシンプルです。 通常比較されるであろう、それぞれのアイテム(フォルダー、ファイル、ファイル中の行)を評価し、
-対象のアイテムがフィルター式にマッチした場合、フィルターを適用します。
-フィルタータイプにより、アイテムは、比較に含められるか、除外されるかのどちらかです。</para>
+  <para>フィルターの基本機能はシンプルです。 比較対象となる各項目(フォルダー、ファイル、ファイル中の行)を評価し、
+対象の項目がフィルター式にマッチした場合、フィルターを適用します。 フィルタータイプにより、項目は、比較に含められるか、除外されるかのどちらかです。</para>
 
   <para>フォルダー比較用とファイル比較用の異なるWinMergeフィルターがあります。</para>
 
@@ -37,7 +37,7 @@ PCRE (Perl Compatible Regular Expressions) 正規表現エンジンを使用し�
       <term>フォルダー比較: ファイルマスクとファイルフィルター<indexterm>
           <primary>フォルダーの比較</primary>
 
-          <secondary>filtering</secondary>
+          <secondary>フィルタリング</secondary>
         </indexterm></term>
 
       <listitem>
@@ -52,7 +52,7 @@ PCRE (Perl Compatible Regular Expressions) 正規表現エンジンを使用し�
       <term>ファイル比較: 行フィルターと置換フィルター<indexterm>
           <primary>ファイルの比較</primary>
 
-          <secondary>filtering</secondary>
+          <secondary>フィルタリング</secondary>
         </indexterm></term>
 
       <listitem>
@@ -65,15 +65,15 @@ PCRE (Perl Compatible Regular Expressions) 正規表現エンジンを使用し�
 
   <section id="Filters_Mask">
     <title>ファイルマスクの使用<indexterm>
-        <primary>file masks</primary>
+        <primary>ファイルマスク</primary>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>file masks</secondary>
+        <secondary>ファイルマスク</secondary>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>in folder comparisons</secondary>
+        <secondary>フォルダー比較で</secondary>
       </indexterm></title>
 
     <para>フォルダー比較で含めるファイル拡張子を指定するために、1つ以上の<glossterm>ファイルマスク</glossterm>を使用できます。その他のファイルは選択対象から除外されます。</para>
@@ -103,17 +103,17 @@ PCRE (Perl Compatible Regular Expressions) 正規表現エンジンを使用し�
 
     <section id="Filters_MaskSyntax">
       <title>ファイルマスクの文法と例<indexterm>
-          <primary>rules</primary>
+          <primary>ルール</primary>
 
-          <secondary>file masks</secondary>
+          <secondary>ファイルマスク</secondary>
         </indexterm><indexterm>
           <primary>フィルター</primary>
 
-          <secondary>file masks</secondary>
+          <secondary>ファイルマスク</secondary>
         </indexterm><indexterm>
-          <primary>regular expressions</primary>
+          <primary>正規表現</primary>
 
-          <secondary>in file masks</secondary>
+          <secondary>ファイルマスク内</secondary>
         </indexterm></title>
 
       <para>ファイルマスクや拡張フィルターは以下の形式で指定できます:</para>
@@ -194,8 +194,8 @@ WinMerge
 
         <para>サポートされるリテラルの型は以下の通りです:</para>
         <itemizedlist>
-          <listitem><para><emphasis>Boolean</emphasis>: <literal>true</literal>,
-<literal>false</literal></para></listitem>
+          <listitem><para><emphasis>Boolean</emphasis>:
+<literal>true</literal>、<literal>false</literal></para></listitem>
           <listitem><para><emphasis>Integer</emphasis>: 64ビット符号付き整数 (例: <literal>1024</literal>,
 <literal>100KB</literal>, <literal>7days</literal> などの単位付きも可能)</para></listitem>
           <listitem><para><emphasis>Real (Double)</emphasis>: 小数点または指数部を任意に含む浮動小数点数 (例:
@@ -209,6 +209,112 @@ WinMerge
 Array, or <literal>undefined</literal>.</para>
       </section>
 
+      <section id="FilterExpression_Directives">
+        <title>ディレクティブ</title>
+
+        <para>
+フィルタ式は、式の評価方法を制御するディレクティブをサポートしています。ディレクティブは式の先頭に指定し、<literal>@</literal>
+を付けて記述し、式本体とは空白で区切ります。</para>
+
+        <section id="FilterExpression_CaseSensitivity">
+          <title>大文字小文字の区別に関するディレクティブ</title>
+
+          <para>
+デフォルトでは、すべての文字列比較演算子（<literal>=</literal>、<literal>!=</literal>、<literal>&lt;</literal>、<literal>&lt;=</literal>、<literal>&gt;</literal>、<literal>&gt;=</literal>、<literal>contains</literal>、<literal>recontains</literal>、<literal>like</literal>、<literal>matches</literal>）は大文字小文字を区別しません。この動作は次のディレクティブで制御できます。</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@cs</literal>, <literal>@casesensitive</literal></term>
+              <listitem>
+                <para>
+大文字小文字を区別する比較を有効にします。これらのディレクティブを指定すると、<literal>"ABC"</literal> と
+<literal>"abc"</literal> は異なるものとして扱われます。</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><literal>@ci</literal>, <literal>@caseinsensitive</literal></term>
+              <listitem>
+                <para>
+大文字小文字を区別しない比較を有効にします（デフォルトの動作）。これらのディレクティブを指定すると、<literal>"ABC"</literal> と
+<literal>"abc"</literal> は同一として扱われます。</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>大文字小文字の区別の例</title>
+<programlisting>@cs Name = "README.txt"           ## 大文字小文字を区別: "README.txt" のみ一致
+@ci Name = "readme.txt"           ## 大文字小文字を区別しない: "README.txt", "readme.txt", "ReadMe.TXT" などに一致
+@casesensitive Extension = "TXT"  ## 大文字小文字を区別: 拡張子 ".TXT" のファイルのみ一致
+@caseinsensitive Content contains "error"  ## 大文字小文字を区別しない: "Error", "ERROR", "error" などに一致</programlisting></example>
+        </section>
+
+        <section id="FilterExpression_Optimize">
+          <title>最適化ディレクティブ</title>
+
+          <para>
+デフォルトでは、フィルタ式はパフォーマンス向上のために最適化されます。この動作は次のディレクティブで制御できます。</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@optimize</literal>, <literal>@opt</literal></term>
+              <listitem>
+                <para>
+フィルタ式の最適化を有効にします（デフォルトの動作）。複雑な式の場合、パフォーマンスが向上する可能性があります。</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><literal>@nooptimize</literal>, <literal>@noopt</literal></term>
+              <listitem>
+                <para>
+フィルタ式の最適化を無効にします。デバッグ時や、最適化によって予期しない結果が発生する場合に役立ちます。</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>最適化の例</title>
+<programlisting>@optimize Size &gt; 10MB and Extension = "log"     ## 最適化を有効（デフォルト）
+@noopt Name matches "complex[0-9]+pattern"    ## デバッグのため最適化を無効
+@nooptimize Content contains "special-case"   ## 最適化を無効</programlisting></example>
+        </section>
+
+        <section id="FilterExpression_Name">
+          <title>Name ディレクティブ</title>
+
+          <para>
+<literal>@name</literal>
+ディレクティブを使用すると、フィルタ式に説明用の名前を付けることができます。この名前はエラーメッセージやログで使用され、どのフィルタ式が問題を引き起こしたかを識別するのに役立ちます。</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@name="Filter Name"</literal>, <literal>@name=FilterName</literal></term>
+              <listitem>
+                <para>
+フィルタ式に名前を付けます。名前に空白や特殊文字を含む場合は、二重引用符で囲む必要があります。空白を含まない名前は引用符なしで指定できます。</para>
+                <para>
+指定した名前は、エラーメッセージや診断出力でフィルタを識別するために使用されます。複数の複雑なフィルタ式を扱う場合に特に便利です。</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>Name ディレクティブの例</title>
+<programlisting>@name="Large Image Files" Size &gt; 10MB and Extension = "png"
+@name=SmallTextFiles Size &lt; 1KB and Extension = "txt"
+@name="Modified Today" Date &gt;= today()
+@name="Test Filter" @cs Name like "test_*.cpp"</programlisting></example>
+
+          <note>
+            <para>
+<literal>@name</literal>
+ディレクティブは他のディレクティブと組み合わせて使用できます。複数のディレクティブを使用する場合は、すべて式の先頭に記述し、空白で区切ります。</para>
+          </note>
+        </section>
+      </section>
+
       <section id="FilterExpression_Attributes">
         <title>Attributes</title>
 
@@ -220,61 +326,61 @@ Right, Middle）かを接頭辞で指定できます。</para>
           <title>コア属性</title>
           <variablelist>
             <varlistentry>
-              <term>Exists</term>
+              <term><varname>Exists</varname></term>
               <listitem><para>ファイルが存在する場合は <literal>true</literal> を返し、存在しない場合は <literal>false</literal>
 を返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Name</term>
+              <term><varname>Name</varname></term>
               <listitem><para>ファイル名</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>BaseName</term>
+              <term><varname>BaseName</varname></term>
               <listitem><para>拡張子を除いたファイル名を返します。たとえば、"document.txt" は "document" を返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Extension</term>
+              <term><varname>Extension</varname></term>
               <listitem><para>ファイル拡張子</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>IsFolder</term>
+              <term><varname>IsFolder</varname></term>
               <listitem><para>項目がフォルダー/ディレクトリの場合は true を返し、ファイルの場合は false を返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Folder</term>
+              <term><varname>Folder</varname></term>
               <listitem><para>ファイル名およびベースフォルダーを除いた相対パスを返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RelPath</term>
+              <term><varname>RelPath</varname></term>
               <listitem><para>比較ルートディレクトリからの相対パスを、フォルダーパスとファイル名を含めて返します。例えば、"C:\Project" を比較していて、ファイルが
 "C:\Project\src\main.cpp" にある場合、RelPath は "src\main.cpp" を返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>FullPath</term>
+              <term><varname>FullPath</varname></term>
               <listitem><para>ファイルのフルパスを返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Size</term>
+              <term><varname>Size</varname></term>
               <listitem><para>ファイルサイズ</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Date</term>
+              <term><varname>Date</varname></term>
               <listitem><para>最終更新のタイムスタンプ</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>DateStr</term>
+              <term><varname>DateStr</varname></term>
               <listitem><para><literal>yyyy-MM-dd</literal> 形式の最終更新日付の文字列を返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>CreationTime</term>
+              <term><varname>CreationTime</varname></term>
               <listitem><para>作成日時のタイムスタンプを返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Attributes</term>
+              <term><varname>Attributes</varname></term>
               <listitem><para>ファイル属性を整数値で返します。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>AttrStr</term>
+              <term><varname>AttrStr</varname></term>
               <listitem>
                 <para>ファイル属性の文字列を返します。例：<literal>"R"</literal> は読み取り専用、<literal>"H"</literal>
 は隠しファイル、<literal>"A"</literal> はアーカイブ、<literal>"S"</literal> はシステムファイルを示します。</para>
@@ -290,7 +396,7 @@ Right, Middle）かを接頭辞で指定できます。</para>
 
           <variablelist>
             <varlistentry>
-              <term>Content</term>
+              <term><varname>Content</varname></term>
               <listitem><para>ファイルの内容を表します。FileContent 型の値を返します。この型には <literal>contains</literal> および
 <literal>recontains</literal> のみ使用できます。</para></listitem>
             </varlistentry>
@@ -304,27 +410,27 @@ Right, Middle）かを接頭辞で指定できます。</para>
 
           <variablelist>
             <varlistentry>
-              <term>Files</term>
+              <term><varname>Files</varname></term>
               <listitem><para>フォルダーに直接含まれるファイル数。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveFiles</term>
+              <term><varname>RecursiveFiles</varname></term>
               <listitem><para>すべてのサブフォルダーを含めた、フォルダー内のファイル総数。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Items</term>
+              <term><varname>Items</varname></term>
               <listitem><para>フォルダーに直接含まれる項目（ファイルおよびサブフォルダー）の数。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveItems</term>
+              <term><varname>RecursiveItems</varname></term>
               <listitem><para>すべてのサブフォルダーを含めた、フォルダー内の項目（ファイルおよびサブフォルダー）の総数。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>TotalSize</term>
+              <term><varname>TotalSize</varname></term>
               <listitem><para>フォルダーに直接含まれるすべてのファイルの合計サイズ（バイト単位）。</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveTotalSize</term>
+              <term><varname>RecursiveTotalSize</varname></term>
               <listitem><para>すべてのサブフォルダーを含めた、フォルダー内のすべてのファイルの合計サイズ（バイト単位）。</para></listitem>
             </varlistentry>
           </variablelist>
@@ -354,7 +460,7 @@ Right, Middle）かを接頭辞で指定できます。</para>
 
           <variablelist>
             <varlistentry>
-              <term>Prop</term>
+              <term><varname>Prop</varname></term>
               <listitem>
                 <para>
 指定した正規プロパティ名に対応するプロパティ値の配列（Left、Middle、Right）を返します。例:
@@ -363,7 +469,7 @@ Right, Middle）かを接頭辞で指定できます。</para>
             </varlistentry>
 
             <varlistentry>
-              <term>LeftProp</term>
+              <term><varname>LeftProp</varname></term>
               <listitem>
                 <para>
 左側のファイルのプロパティ値を返します。例: <literal>leftprop("System.FileOwner")</literal></para>
@@ -371,14 +477,14 @@ Right, Middle）かを接頭辞で指定できます。</para>
             </varlistentry>
 
             <varlistentry>
-              <term>MiddleProp</term>
+              <term><varname>MiddleProp</varname></term>
               <listitem>
                 <para>中央のファイル（3-way 比較時）のプロパティ値を返します。</para>
               </listitem>
             </varlistentry>
 
             <varlistentry>
-              <term>RightProp</term>
+              <term><varname>RightProp</varname></term>
               <listitem>
                 <para>右側のファイルのプロパティ値を返します。</para>
               </listitem>
@@ -458,8 +564,8 @@ Right, Middle）かを接頭辞で指定できます。</para>
         <title>演算子</title>
 
         <para>
-<literal>=</literal>、<literal>!=</literal>、<literal>like</literal>、<literal>matches</literal>、<literal>contains</literal>、<literal>recontains</literal>
-などの文字列比較演算子は、現在すべて大文字小文字を区別しません。</para>
+デフォルトでは、すべての文字列比較演算子（<literal>=</literal>、<literal>!=</literal>、<literal>&lt;</literal>、<literal>&lt;=</literal>、<literal>&gt;</literal>、<literal>&gt;=</literal>、<literal>like</literal>、<literal>matches</literal>、<literal>contains</literal>、<literal>recontains</literal>）は大文字小文字を区別しません。この動作はディレクティブで制御できます（<xref
+linkend="FilterExpression_CaseSensitivity" /> を参照）。</para>
 
         <variablelist>
           <varlistentry>
@@ -525,13 +631,13 @@ Right, Middle）かを接頭辞で指定できます。</para>
 
         <variablelist>
           <varlistentry>
-            <term>lineCount(<replaceable>content</replaceable>)</term>
+            <term><function>lineCount</function>(<replaceable>content</replaceable>)</term>
             <listitem><para>ファイル内容またはファイル内容の配列の行数を <literal>Integer</literal>
 として返します。<replaceable>content</replaceable> が配列の場合、結果は整数の配列になります。例:
 <literal>lineCount(Content)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>sublines(<replaceable>content</replaceable>,
+            <term><function>sublines</function>(<replaceable>content</replaceable>,
 <replaceable>start</replaceable>, <replaceable>count</replaceable>)</term>
             <listitem>
               <para>
@@ -540,19 +646,19 @@ Right, Middle）かを接頭辞で指定できます。</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>strlen(<replaceable>source</replaceable>)</term>
+            <term><function>strlen</function>(<replaceable>source</replaceable>)</term>
             <listitem><para>文字列の長さを <literal>Integer</literal> として返します。<replaceable>source</replaceable>
 が文字列の配列である場合、結果は整数の配列になります。例: <literal>strlen(Name)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>substr(<replaceable>source</replaceable>, <replaceable>start</replaceable>,
-<replaceable>count</replaceable>)</term>
+            <term><function>substr</function>(<replaceable>source</replaceable>,
+<replaceable>start</replaceable>, <replaceable>count</replaceable>)</term>
             <listitem><para><emphasis>文字列または文字列の配列</emphasis> から指定範囲の文字列を <literal>String</literal>
 型で返します。<replaceable>source</replaceable> が文字列配列の場合、結果は文字列配列になります。例:
 <literal>substr(Name, 0, 3)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>replace(str, from, to)</term>
+            <term><function>replace</function>(str, from, to)</term>
             <listitem>
               <para>
 文字列内に含まれる部分文字列 'from' をすべて 'to'
@@ -561,7 +667,7 @@ replace(name, "_old", "_new")</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>regexReplace(str, pattern, replacement)</term>
+            <term><function>regexReplace</function>(str, pattern, replacement)</term>
             <listitem>
               <para>
 正規表現 pattern に一致するすべての部分を replacement 文字列で置換します。replacement 文字列では後方参照（$1、$2
@@ -570,7 +676,7 @@ regexReplace(name, "^(\w+)(\w+)$", "$2$1") は、アンダースコアで区切�
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>replaceWithList(str, filepath)</term>
+            <term><function>replaceWithList</function>(str, filepath)</term>
             <listitem>
               <para>
 タブ区切りファイルから読み込んだ置換ルールを使用して、<replaceable>str</replaceable>
@@ -592,7 +698,7 @@ old	new</screen>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>regexReplaceWithList(str, filepath)</term>
+            <term><function>regexReplaceWithList</function>(str, filepath)</term>
             <listitem>
               <para>
 タブ区切りファイルから読み込んだ正規表現パターンを使用して、<replaceable>str</replaceable>
@@ -614,7 +720,7 @@ old	new</screen>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>normalizeUnicode(str[, form])</term>
+            <term><function>normalizeUnicode</function>(str[, form])</term>
             <listitem>
               <para>
 Unicode 文字列を正規化します。省略可能な form パラメータで正規化形式を指定できます。指定可能な形式は "NFC" または
@@ -625,7 +731,7 @@ normalizeUnicode(name, "NFC")</para>
           </varlistentry>
           <varlistentry>
             <term>
-toLower(<replaceable>str</replaceable>)</term>
+<function>toLower</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 文字列内のすべての文字を小文字に変換します。<replaceable>str</replaceable>
@@ -635,7 +741,7 @@ toLower(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toUpper(<replaceable>str</replaceable>)</term>
+<function>toUpper</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 文字列内のすべての文字を大文字に変換します。<replaceable>str</replaceable>
@@ -645,7 +751,7 @@ toUpper(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toHalfWidth(<replaceable>str</replaceable>)</term>
+<function>toHalfWidth</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 全角文字を半角文字に変換します。主に全角の英数字やカタカナを半角に変換するために使用されます。<replaceable>str</replaceable>
@@ -654,7 +760,7 @@ toHalfWidth(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toFullWidth(<replaceable>str</replaceable>)</term>
+<function>toFullWidth</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 半角文字を全角文字に変換します。主に半角の英数字やカタカナを全角に変換するために使用されます。<replaceable>str</replaceable>
@@ -663,7 +769,7 @@ toFullWidth(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toKatakana(<replaceable>str</replaceable>)</term>
+<function>toKatakana</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 ひらがなをカタカナに変換します。ひらがな以外の文字は変更されません。<replaceable>str</replaceable>
@@ -672,7 +778,7 @@ toKatakana(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toHiragana(<replaceable>str</replaceable>)</term>
+<function>toHiragana</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 カタカナをひらがなに変換します。カタカナ以外の文字は変更されません。<replaceable>str</replaceable>
@@ -681,7 +787,7 @@ toHiragana(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toSimplifiedChinese(<replaceable>str</replaceable>)</term>
+<function>toSimplifiedChinese</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 繁体字中国語を簡体字中国語に変換します。簡体字が存在しない文字は変更されません。<replaceable>str</replaceable>
@@ -690,7 +796,7 @@ toSimplifiedChinese(<replaceable>str</replaceable>)</term>
           </varlistentry>
           <varlistentry>
             <term>
-toTraditionalChinese(<replaceable>str</replaceable>)</term>
+<function>toTraditionalChinese</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 簡体字中国語を繁体字中国語に変換します。繁体字が存在しない文字は変更されません。<replaceable>str</replaceable>
@@ -698,48 +804,48 @@ toTraditionalChinese(<replaceable>str</replaceable>)</term>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>now()</term>
+            <term><function>now</function>()</term>
             <listitem><para>現在の日時を <literal>Timestamp</literal> 型の値として返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>today()</term>
+            <term><function>today</function>()</term>
             <listitem><para>本日の日付を、日の始まりである <literal>00:00:00.000</literal> を表す
 <literal>Timestamp</literal> 型として返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfWeek(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfWeek</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>週の初日（日曜日）を返します。ロケールには依存しません。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfMonth(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfMonth</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>月の初日を返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfYear(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfYear</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>年の初日を返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>toDateStr(<replaceable>timestamp</replaceable>)</term>
+            <term><function>toDateStr</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>指定されたタイムスタンプを<literal>yyyy-MM-dd</literal>
 形式の文字列に変換して返します。<replaceable>timestamp</replaceable>がタイムスタンプ配列の場合、結果は文字列配列になります。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>abs(<replaceable>value</replaceable>)</term>
+            <term><function>abs</function>(<replaceable>value</replaceable>)</term>
             <listitem><para><emphasis>整数または整数の配列</emphasis> の絶対値を返します。<replaceable>value</replaceable>
 が整数配列である場合、結果は整数配列になります。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>allof(<replaceable>booleans</replaceable>)</term>
+            <term><function>allof</function>(<replaceable>booleans</replaceable>)</term>
             <listitem><para><emphasis>ブール値の配列</emphasis> のすべての要素が条件を満たす場合に <literal>true</literal>
 を返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>allequal(<replaceable>array</replaceable>)</term>
+            <term><function>allequal</function>(<replaceable>array</replaceable>)</term>
             <listitem><para>配列内のすべての値が等しい場合に <literal>true</literal> を返します。</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>isWithin(<replaceable>value</replaceable>, <replaceable>min</replaceable>,
-<replaceable>max</replaceable>)</term>
+            <term><function>isWithin</function>(<replaceable>value</replaceable>,
+<replaceable>min</replaceable>, <replaceable>max</replaceable>)</term>
             <listitem>
               <para>
 <replaceable>value</replaceable> が範囲 <literal>[min,
@@ -759,8 +865,8 @@ max]</literal>（両端を含む）内にある場合に <literal>true</literal>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>inRange(<replaceable>value</replaceable>, <replaceable>min</replaceable>,
-<replaceable>max</replaceable>)</term>
+            <term><function>inRange</function>(<replaceable>value</replaceable>,
+<replaceable>min</replaceable>, <replaceable>max</replaceable>)</term>
             <listitem>
               <para>
 <replaceable>value</replaceable> が範囲 <literal>[min,
@@ -778,10 +884,12 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>logError(<replaceable>値1</replaceable>, <replaceable>値2</replaceable>,
-...)、logWarn(<replaceable>値1</replaceable>, <replaceable>値2</replaceable>,
-...)、logInfo(<replaceable>値1</replaceable>, <replaceable>値2</replaceable>,
-...)</term>
+            <term><function>logError</function>(<replaceable>value1</replaceable>,
+<replaceable>value2</replaceable>, ...),
+<function>logWarn</function>(<replaceable>value1</replaceable>,
+<replaceable>value2</replaceable>, ...),
+<function>logInfo</function>(<replaceable>value1</replaceable>,
+<replaceable>value2</replaceable>, ...)</term>
             <listitem>
               <para>
 すべての引数の文字列表現を連結してログに出力します（それぞれエラー、警告、情報レベルで出力）。引数は空白で区切られ、最後の引数の値が関数の戻り値として返されます。これらの関数はフィルタ式のデバッグに便利です。</para>
@@ -797,7 +905,7 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>if(<replaceable>condition</replaceable>,
+            <term><function>if</function>(<replaceable>condition</replaceable>,
 <replaceable>trueValue</replaceable>, <replaceable>falseValue</replaceable>)</term>
             <listitem>
               <para>
@@ -816,7 +924,7 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>ifEach(<replaceable>conditionArray</replaceable>,
+            <term><function>ifEach</function>(<replaceable>conditionArray</replaceable>,
 <replaceable>trueValue</replaceable>, <replaceable>falseValue</replaceable>)</term>
             <listitem>
               <para>
@@ -837,8 +945,8 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>choose(<replaceable>index</replaceable>, <replaceable>value0</replaceable>,
-<replaceable>value1</replaceable>, ...)</term>
+            <term><function>choose</function>(<replaceable>index</replaceable>,
+<replaceable>value0</replaceable>, <replaceable>value1</replaceable>, ...)</term>
             <listitem>
               <para>
 <replaceable>index</replaceable>
@@ -849,13 +957,13 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
               <itemizedlist>
                 <listitem><para><literal>choose(0, "first", "second", "third")</literal> - "first" を返します</para></listitem>
                 <listitem><para><literal>choose(DiffCode % 3, "equal", "different", "unique")</literal> -
-差分コードをラベルに対応付けます</para></listitem>
+差異コードをラベルに対応付けます</para></listitem>
                 <listitem><para><literal>choose(5, "a", "b", "c")</literal> - "c" を返します（範囲外のため最後の値が返されます）</para></listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>chooseEach(<replaceable>indexArray</replaceable>,
+            <term><function>chooseEach</function>(<replaceable>indexArray</replaceable>,
 <replaceable>value0</replaceable>, <replaceable>value1</replaceable>, ...)</term>
             <listitem>
               <para>
@@ -874,11 +982,11 @@ max)</literal>（下限を含み、上限を含まない）内にある場合に
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>andEach(<replaceable>value1</replaceable>,
+            <term><function>andEach</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>),
-orEach(<replaceable>value1</replaceable>,
+<function>orEach</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>),
-notEach(<replaceable>value</replaceable>)</term>
+<function>notEach</function>(<replaceable>value</replaceable>)</term>
             <listitem>
               <para>
 要素ごとの論理演算を行います。これらの関数は、真偽値、真偽値配列、またはその組み合わせに対して動作します。</para>
@@ -946,7 +1054,7 @@ log ファイル</para></listitem>
           <listitem><para><literal>(Extension = "log" and Size > 10MB) or (Date &lt; today() -
 7days)</literal> - 大きなログファイルまたは1週間以上前のファイル</para></listitem>
           <listitem><para><literal>AttrStr not contains "H" and Name like "*.tmp"</literal> -
-Non-hidden temporary files</para></listitem>
+非表示でない一時ファイル</para></listitem>
           <listitem><para><literal>isWithin(Extension, "a", "m") and inRange(Size, 0, 1MB)</literal> -
 拡張子が「a」から「m」の範囲で、サイズが1MB未満のファイル</para></listitem>
           <listitem><para><literal>toLower(Name) = "readme.txt"</literal> - 大文字・小文字を区別しないファイル名の一致判定</para></listitem>
@@ -964,7 +1072,7 @@ Non-hidden temporary files</para></listitem>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>in folder comparisons</secondary>
+        <secondary>フォルダー比較で</secondary>
       </indexterm></title>
 
     <para><glossterm>ファイルフィルター</glossterm>は、拡張子 <filename>flt</filename>のテキストファイルです。
@@ -974,7 +1082,7 @@ Non-hidden temporary files</para></listitem>
     <para><indexterm>
         <primary>ファイルフィルター</primary>
 
-        <secondary>template</secondary>
+        <secondary>テンプレート</secondary>
       </indexterm>
 WinMergeは、たくさんの定義済ファイルフィルターをインストールします。
 もし、必要なフィルターが、これらのファイルフィルターで提供されていなかったら、 自分自身で作成することができます。
@@ -987,11 +1095,11 @@ linkend="Filters_dlg" />では、フィルターの追加、編集、管理方�
       <title>ファイルフィルターの場所<indexterm>
           <primary>フィルターフォルダー</primary>
 
-          <secondary>locations</secondary>
+          <secondary>場所</secondary>
         </indexterm><indexterm>
           <primary>ファイルフィルター</primary>
 
-          <secondary>locations</secondary>
+          <secondary>場所</secondary>
         </indexterm></title>
 
       <para>WinMergeは、次の場所のファイルフィルターを自動的に検出します:</para>
@@ -1087,7 +1195,7 @@ Files\WinMerge\Filters</filename>。 システム上のすべてのユーザー�
           <para><indexterm>
               <primary>コマンドライン</primary>
 
-              <secondary>applying file filters</secondary>
+              <secondary>ファイルフィルターの適用</secondary>
             </indexterm>WinMerge コマンドラインから、
 フォルダー比較起動時にファイルフィルターを指定するには、 <option>-f</option>フラグを使用してください。</para>
         </listitem>
@@ -1096,13 +1204,13 @@ Files\WinMerge\Filters</filename>。 システム上のすべてのユーザー�
 
     <section id="Filters_FileFilterSyntax">
       <title>ファイルフィルターの文法<indexterm>
-          <primary>rules</primary>
+          <primary>ルール</primary>
 
-          <secondary>file filter</secondary>
+          <secondary>ファイルフィルター</secondary>
         </indexterm><indexterm>
           <primary>ファイルフィルター</primary>
 
-          <secondary>syntax</secondary>
+          <secondary>構文</secondary>
         </indexterm></title>
 
       <para>このセクションは、WinMerge ファイルフィルターの文法と、記述のためのガイドラインの提供について説明します。</para>
@@ -1158,33 +1266,31 @@ WinMergeは、ルール中のほとんどの空白文字を無視します。
         </varlistentry>
       </variablelist>
 
-      <para>Next, your file should contain one or more filter rules. You can add as many
-rules as you like. There must be one rule per line, and each rule must be
-entirely on one line (no line breaks are allowed in a rule).  A rule begins
-with a type designator, followed by either a regular expression or a filter
-expression.  The supported type designators are:</para>
+      <para>次に、ファイルには 1 つ以上のフィルター ルールが含まれている必要があります。ルールは好きなだけ追加できます。 1 行に 1
+つのルールが必要であり、各ルールは完全に 1 行に収まる必要があります (ルール内で改行は許可されません)。
+ルールは型指定子で始まり、その後に正規表現またはフィルター式が続きます。  サポートされている型指定子は次のとおりです。</para>
 
       <variablelist>
-        <varlistentry><term>f: <replaceable>正規表現</replaceable></term><listitem><para>Match file names using regular expressions</para></listitem></varlistentry>
-        <varlistentry><term>f!: <replaceable>正規表現</replaceable></term><listitem><para>Exclude files matching regex (Available since 2.16.19)</para></listitem></varlistentry>
-        <varlistentry><term>d: <replaceable>正規表現</replaceable></term><listitem><para>Match folder names using regex</para></listitem></varlistentry>
-        <varlistentry><term>d!: <replaceable>正規表現</replaceable></term><listitem><para>Exclude folders matching regex (Available since 2.16.19)</para></listitem></varlistentry>
+        <varlistentry><term>f: <replaceable>正規表現</replaceable></term><listitem><para>正規表現を使用してファイル名を照合する</para></listitem></varlistentry>
+        <varlistentry><term>f!: <replaceable>正規表現</replaceable></term><listitem><para>正規表現に一致するファイルを除外する (2.16.19 以降で利用可能)</para></listitem></varlistentry>
+        <varlistentry><term>d: <replaceable>正規表現</replaceable></term><listitem><para>正規表現を使用してフォルダー名を一致させる</para></listitem></varlistentry>
+        <varlistentry><term>d!: <replaceable>正規表現</replaceable></term><listitem><para>正規表現に一致するフォルダーを除外する (2.16.19 以降で利用可能)</para></listitem></varlistentry>
         <varlistentry><term>fe: <replaceable>式</replaceable></term><listitem><para>ファイルに対するフィルター式（例: fe:Size &lt; 1KB）（2.16.49 以降で使用可能）</para></listitem></varlistentry>
         <varlistentry><term>fe!: <replaceable>式</replaceable></term><listitem><para>ファイルを除外するためのフィルター式（2.16.49 以降で使用可能）</para></listitem></varlistentry>
         <varlistentry><term>de: <replaceable>式</replaceable></term><listitem><para>フォルダーに対するフィルター式（2.16.49 以降で使用可能）</para></listitem></varlistentry>
         <varlistentry><term>de!: <replaceable>式</replaceable></term><listitem><para>フォルダーを除外するためのフィルター式（2.16.49 以降で使用可能）</para></listitem></varlistentry>
         <varlistentry><term>e: <replaceable>式</replaceable></term><listitem><para>ファイルとフォルダー両方に適用されるフィルター式（例: e:Name like "Common*.*"）（2.16.56 以降で使用可能）</para></listitem></varlistentry>
-        <varlistentry><term>e!: <replaceable>式</replaceable></term><listitem><para>ファイルとフォルダー両方を除外するためのフィルター式（2.16.56 以降で使用可能）</para></listitem></varlistentry>
+        <varlistentry><term>e!: <replaceable>expr</replaceable></term><listitem><para>ファイルとフォルダー両方を除外するためのフィルター式（2.16.56 以降で使用可能）</para></listitem></varlistentry>
       </variablelist>
 
       <para>多くの正規表現の特殊文字の中で、次の文字は、ファイルフィルターでは特に重要です: <indexterm>
-          <primary>regular expressions</primary>
+          <primary>正規表現</primary>
 
-          <secondary>special characters in filters</secondary>
+          <secondary>フィルタ内の特殊文字</secondary>
         </indexterm><indexterm>
-          <primary>regular expressions</primary>
+          <primary>正規表現</primary>
 
-          <secondary>in file filters</secondary>
+          <secondary>ファイルフィルター内</secondary>
         </indexterm></para>
 
       <variablelist>
@@ -1257,7 +1363,7 @@ expression.  The supported type designators are:</para>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>in file comparisons</secondary>
+        <secondary>ファイル比較で</secondary>
       </indexterm></title>
 
     <para>ファイル比較で単一行を無視するために、行フィルターを使用することができます。 例えば、コメント、生成されたコードの決まった型や、
@@ -1335,17 +1441,17 @@ expression.  The supported type designators are:</para>
 
     <section id="Filters_LineFilterSyntax">
       <title>行フィルターの文法<indexterm>
-          <primary>rules</primary>
+          <primary>ルール</primary>
 
-          <secondary>line filter</secondary>
+          <secondary>行フィルター</secondary>
         </indexterm><indexterm>
           <primary>フィルター</primary>
 
           <secondary>行</secondary>
         </indexterm><indexterm>
-          <primary>regular expressions</primary>
+          <primary>正規表現</primary>
 
-          <secondary>in line filters</secondary>
+          <secondary>インラインフィルター</secondary>
         </indexterm></title>
 
       <para>行フィルターは、行フィルタールールが有効化されている場合、 比較ファイル中の単一行の差異毎に評価されるルールです。
@@ -1438,14 +1544,14 @@ Pekka Himanen</screen></para>
   </section>
 
   <section id="Filters_SubstitutionFilter">
-    <title>Using substitution filters<indexterm>
+    <title>置換フィルタの使用<indexterm>
         <primary>フィルター</primary>
 
-        <secondary>substitution</secondary>
+        <secondary>置換</secondary>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>in file comparisons</secondary>
+        <secondary>ファイル比較で</secondary>
       </indexterm></title>
 
     <para>TBD</para>
@@ -1453,11 +1559,11 @@ Pekka Himanen</screen></para>
 
   <section id="Filters_dlg">
     <title>フィルターダイアログの使用<indexterm>
-        <primary>Filters dialog</primary>
+        <primary>「フィルタ」ダイアログ</primary>
       </indexterm><indexterm>
         <primary>フィルター</primary>
 
-        <secondary>managing and enabling</secondary>
+        <secondary>管理と有効化</secondary>
       </indexterm></title>
 
     <para>このセクションは、ファイルフィルターと行フィルターの作成・管理機能を提供する、 フィルターダイアログの説明をします。</para>
@@ -1489,7 +1595,7 @@ Pekka Himanen</screen></para>
       </varlistentry>
 
       <varlistentry>
-        <term>Line Filters</term>
+        <term>行フィルター</term>
 
         <listitem>
           <para>ファイル比較用の行フィルターを設定するには、こちらのタブを使用してください。</para>
@@ -1497,11 +1603,10 @@ Pekka Himanen</screen></para>
       </varlistentry>
 
       <varlistentry>
-        <term>Substitution Filters</term>
+        <term>置換フィルター</term>
 
         <listitem>
-          <para>Choose this tab to work with substitution filters for file compare
-operations.</para>
+          <para>ファイル比較操作の置換フィルターを使用するには、このタブを選択します。</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -1510,7 +1615,7 @@ operations.</para>
       <title>ファイルフィルタータブの使用<indexterm>
           <primary>ファイルフィルター</primary>
 
-          <secondary>enabling</secondary>
+          <secondary>有効にする</secondary>
         </indexterm></title>
 
       <para>このタブの主要部分は、フォルダー比較用に利用可能なファイルフィルターの一覧です。 このリストは、共有、個人、そして、 <xref
@@ -1677,7 +1782,7 @@ linkend="Filters_TestingDlg" />を参照してください。</para>
 
             <secondary>testing</secondary>
           </indexterm><indexterm>
-            <primary>testing file filters</primary>
+            <primary>ファイルフィルターのテスト</primary>
           </indexterm></title>
 
         <para>新しいルール作成や既存のルールの理解を補助するため、 サンプルデータに対し素早くファイルフィルターをテストするには、
@@ -1732,9 +1837,9 @@ linkend="Filters_TestingDlg" />を参照してください。</para>
 
     <section id="Filters_LineFiltersTab">
       <title>行フィルタータブの使用<indexterm>
-          <primary>line filters</primary>
+          <primary>行フィルター</primary>
 
-          <secondary>enabling</secondary>
+          <secondary>有効にする</secondary>
         </indexterm></title>
 
       <para>ファイル比較用の行フィルターの設定と有効化には、このタブを使用してください。
@@ -1783,9 +1888,9 @@ linkend="Filters_TestingDlg" />を参照してください。</para>
 
       <section id="Filters_LineFilterEnabling">
         <title>行フィルターの有効化と無効化<indexterm>
-            <primary>line filters</primary>
+            <primary>行フィルター</primary>
 
-            <secondary>list of available</secondary>
+            <secondary>利用可能なリスト</secondary>
           </indexterm></title>
 
         <orderedlist>
@@ -1810,26 +1915,26 @@ linkend="Filters_LineFilterApply" />を参照してください。</para>
     </section>
 
     <section id="Filters_SubstitutionFiltersTab">
-      <title>Using the Substitution Filters tab<indexterm>
-          <primary>substitution filters</primary>
+      <title>[置換フィルター] タブの使用<indexterm>
+          <primary>置換フィルタ</primary>
 
-          <secondary>enabling</secondary>
+          <secondary>有効にする</secondary>
         </indexterm></title>
 
         <para>TBD</para>
 
       <section id="Filters_SubstitutionFilterCfg">
-        <title>Configuring substitution filters</title>
+        <title>置換フィルターの構成</title>
 
         <para>TBD</para>
 
       </section>
 
       <section id="Filters_SubstitutionFilterEnabling">
-        <title>Enabling and disabling substitution filters<indexterm>
-            <primary>substitution filters</primary>
+        <title>置換フィルタの有効化と無効化<indexterm>
+            <primary>置換フィルタ</primary>
 
-            <secondary>list of available</secondary>
+            <secondary>利用可能なリスト</secondary>
           </indexterm></title>
 
         <para>TBD</para>
@@ -1839,9 +1944,9 @@ linkend="Filters_LineFilterApply" />を参照してください。</para>
 
   <section id="AboutFilters_regexp">
     <title>正規表現のヘルプ<indexterm>
-        <primary>regular expressions</primary>
+        <primary>正規表現</primary>
 
-        <secondary>getting help</secondary>
+        <secondary>助けてもらう</secondary>
       </indexterm></title>
 
     <para>正規表現は、非常に複雑になり得ます。幸い、WinMerge
@@ -1852,7 +1957,7 @@ WinMergeと共にインストールされるフィルターファイルは、多
 
     <variablelist>
       <varlistentry>
-        <term>Good site devoted to regexps:</term>
+        <term>正規表現に特化した優れたサイト:</term>
 
         <listitem>
           <simpara><ulink
@@ -1861,7 +1966,7 @@ url="https://www.regular-expressions.info/">https://www.regular-expressions.info
       </varlistentry>
 
       <varlistentry>
-        <term>Tutorial:</term>
+        <term>チュートリアル：</term>
 
         <listitem>
           <simpara><ulink
@@ -1870,7 +1975,7 @@ url="http://www.zvon.org/comp/r/tut-Regexp.html">http://www.zvon.org/comp/r/tut-
       </varlistentry>
 
       <varlistentry>
-        <term>PDF quick reference:</term>
+        <term>PDF クイックリファレンス:</term>
 
         <listitem>
           <simpara><ulink

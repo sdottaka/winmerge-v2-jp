@@ -222,10 +222,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Manual", "Manual", "{231348
 		Docs\Manual\build_htmlhelp_en.bat = Docs\Manual\build_htmlhelp_en.bat
 		Docs\Manual\build_htmlhelp_fr.bat = Docs\Manual\build_htmlhelp_fr.bat
 		Docs\Manual\build_htmlhelp_he.bat = Docs\Manual\build_htmlhelp_he.bat
+		Docs\Manual\build_htmlhelp_it.bat = Docs\Manual\build_htmlhelp_it.bat
 		Docs\Manual\build_htmlhelp_jp.bat = Docs\Manual\build_htmlhelp_jp.bat
 		Docs\Manual\build_html_en.bat = Docs\Manual\build_html_en.bat
 		Docs\Manual\build_html_fr.bat = Docs\Manual\build_html_fr.bat
 		Docs\Manual\build_html_he.bat = Docs\Manual\build_html_he.bat
+		Docs\Manual\build_html_it.bat = Docs\Manual\build_html_it.bat
 		Docs\Manual\build_html_jp.bat = Docs\Manual\build_html_jp.bat
 		Docs\Manual\configuration.bat = Docs\Manual\configuration.bat
 		Docs\Manual\Manual.cfg = Docs\Manual\Manual.cfg
@@ -446,7 +448,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Manual", "Manual", "{7DF65017-6089-4B89-B0E8-81B207B74869}"
 	ProjectSection(SolutionItems) = preProject
 		Translations\Docs\Manual\English.pot = Translations\Docs\Manual\English.pot
+		Translations\Docs\Manual\French.po = Translations\Docs\Manual\French.po
 		Translations\Docs\Manual\Hebrew.po = Translations\Docs\Manual\Hebrew.po
+		Translations\Docs\Manual\Italian.po = Translations\Docs\Manual\Italian.po
 		Translations\Docs\Manual\Japanese.po = Translations\Docs\Manual\Japanese.po
 	EndProjectSection
 EndProject

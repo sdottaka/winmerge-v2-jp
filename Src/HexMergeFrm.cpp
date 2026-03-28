@@ -130,12 +130,12 @@ BOOL CHexMergeFrame::OnCreateClient( LPCREATESTRUCT /*lpcs*/,
 	m_wndFilePathBar.SetOnSetFocusCallback([&](int pane) {
 		SetActivePane(pane);
 	});
-	m_wndFilePathBar.SetOnCaptionChangedCallback([&](int pane, const String& sText) {
+	m_wndFilePathBar.SetOnCaptionChangedCallback([this](int pane, const String& sText) {
 		m_pMergeDoc->SetDescription(pane ,sText);
 		m_pMergeDoc->UpdateHeaderPath(pane);
 		GetView(pane)->SetFocus();
 	});
-	m_wndFilePathBar.SetOnFileSelectedCallback([&](int pane, const String& sFilepath) {
+	m_wndFilePathBar.SetOnFileSelectedCallback([this](int pane, const String& sFilepath) {
 		m_pMergeDoc->ChangeFile(pane, sFilepath);
 		GetView(pane)->SetFocus();
 	});

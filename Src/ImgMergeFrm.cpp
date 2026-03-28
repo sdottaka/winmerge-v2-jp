@@ -560,11 +560,11 @@ int CImgMergeFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 
 	m_wndFilePathBar.SetPaneCount(m_pImgMergeWindow->GetPaneCount());
-	m_wndFilePathBar.SetOnSetFocusCallback([&](int pane) {
+	m_wndFilePathBar.SetOnSetFocusCallback([this](int pane) {
 		if (m_nActivePane != pane)
 			m_pImgMergeWindow->SetActivePane(pane);
 	});
-	m_wndFilePathBar.SetOnCaptionChangedCallback([&](int pane, const String& sText) {
+	m_wndFilePathBar.SetOnCaptionChangedCallback([this](int pane, const String& sText) {
 		if (m_strDesc[pane] != sText)
 		{
 			m_strDesc[pane] = sText;
@@ -574,7 +574,7 @@ int CImgMergeFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		}
 		m_pImgMergeWindow->SetActivePane(pane);
 	});
-	m_wndFilePathBar.SetOnFileSelectedCallback([&](int pane, const String& sFilepath) {
+	m_wndFilePathBar.SetOnFileSelectedCallback([this](int pane, const String& sFilepath) {
 		ChangeFile(pane, sFilepath);
 		m_pImgMergeWindow->SetActivePane(pane);
 	});
@@ -702,9 +702,22 @@ void CImgMergeFrame::OnMDIActivate(BOOL bActivate, CWnd* pActivateWnd, CWnd* pDe
 
 void CImgMergeFrame::OnClose() 
 {
+	// Prevent re-entry while dialog is showing
+	if (m_bInOnClose)
+		return;
+
+	struct OnCloseGuard
+	{
+		bool &m_flag;
+		explicit OnCloseGuard(bool &flag) : m_flag(flag) { m_flag = true; }
+		~OnCloseGuard() { m_flag = false; }
+	} guard(m_bInOnClose);
+
 	// Allow user to cancel closing
 	if (!PromptAndSaveIfNeeded(true))
+	{
 		return;
+	}
 
 	// clean up pointers.
 	CMergeFrameCommon::OnClose();
@@ -1210,71 +1223,27 @@ bool CImgMergeFrame::OpenImages()
  */
 bool CImgMergeFrame::PromptAndSaveIfNeeded(bool bAllowCancel)
 {
-	bool bLModified = false, bMModified = false, bRModified = false;
-	bool result = true;
-	bool bLSaveSuccess = false, bMSaveSuccess = false, bRSaveSuccess = false;
+	bool bModified[3] = { false, false, false };
+	String paths[3] = { };
 
-	if (m_pImgMergeWindow->GetPaneCount() == 3)
+	int nPaneCount = m_pImgMergeWindow->GetPaneCount();
+	for (int i = 0; i < nPaneCount; ++i)
 	{
-		bLModified = m_pImgMergeWindow->IsModified(0);
-		bMModified = m_pImgMergeWindow->IsModified(1);
-		bRModified = m_pImgMergeWindow->IsModified(2);
+		bModified[i] = m_pImgMergeWindow->IsModified(i);
+		paths[i] = m_filePaths.GetPath(i);
 	}
-	else
-	{
-		bLModified = m_pImgMergeWindow->IsModified(0);
-		bRModified = m_pImgMergeWindow->IsModified(1);
-	}
-	if (!bLModified && !bMModified && !bRModified)
+	if (!bModified[0] && !bModified[1] && !bModified[2])
 		 return true;
 
-	SaveClosingDlg dlg;
-	dlg.DoAskFor(bLModified, bMModified, bRModified);
-	if (!bAllowCancel)
-		dlg.m_bDisableCancel = true;
-	if (!m_filePaths.GetLeft().empty())
-		dlg.m_sLeftFile = m_strSaveAsPath.empty() ? m_filePaths.GetLeft() : m_strSaveAsPath;
-	else
-		dlg.m_sLeftFile = m_strSaveAsPath.empty() ?m_strDesc[0] : m_strSaveAsPath;
-	if (m_pImgMergeWindow->GetPaneCount() == 3)
-	{
-		if (!m_filePaths.GetMiddle().empty())
-			dlg.m_sMiddleFile = m_strSaveAsPath.empty() ? m_filePaths.GetMiddle() : m_strSaveAsPath;
-		else
-			dlg.m_sMiddleFile = m_strSaveAsPath.empty() ? m_strDesc[1] : m_strSaveAsPath;
-	}
-	if (!m_filePaths.GetRight().empty())
-		dlg.m_sRightFile = m_strSaveAsPath.empty() ? m_filePaths.GetRight() : m_strSaveAsPath;
-	else
-		dlg.m_sRightFile = m_strSaveAsPath.empty() ? m_strDesc[m_pImgMergeWindow->GetPaneCount() - 1] : m_strSaveAsPath;
-
-	if (dlg.DoModal() == IDOK)
-	{
-		if (bLModified && dlg.m_leftSave == SaveClosingDlg::SAVECLOSING_SAVE)
-		{
-			bLSaveSuccess = DoFileSave(0);
-			if (!bLSaveSuccess)
-				result = false;
-		}
-
-		if (bMModified && dlg.m_middleSave == SaveClosingDlg::SAVECLOSING_SAVE)
-		{
-			bMSaveSuccess = DoFileSave(1);
-			if (!bMSaveSuccess)
-				result = false;
-		}
-
-		if (bRModified && dlg.m_rightSave == SaveClosingDlg::SAVECLOSING_SAVE)
-		{
-			bRSaveSuccess = DoFileSave(m_pImgMergeWindow->GetPaneCount() - 1);
-			if (!bRSaveSuccess)
-				result = false;
-		}
-	}
-	else
-	{	
-		result = false;
-	}
+	bool result = SaveClosingDlg::ShowAndSave(
+		nPaneCount,
+		bModified,
+		paths,
+		m_strDesc,
+		m_strSaveAsPath,
+		bAllowCancel,
+		[this](int i) { return DoFileSave(i); }
+	);
 
 	return result;
 }
@@ -1333,11 +1302,11 @@ bool CImgMergeFrame::MergeModeKeyDown(MSG* pMsg)
 	bool bHandled = false;
 
 	// Allow default text selection when SHIFT pressed
-	if (::GetAsyncKeyState(VK_SHIFT))
+	if (::GetAsyncKeyState(VK_SHIFT) < 0)
 		return false;
 
 	// Allow default editor functions when CTRL pressed
-	if (::GetAsyncKeyState(VK_CONTROL))
+	if (::GetAsyncKeyState(VK_CONTROL) < 0)
 		return false;
 
 	// If we are in merging mode (merge with cursor keys)

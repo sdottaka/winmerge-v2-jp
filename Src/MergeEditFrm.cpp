@@ -120,13 +120,13 @@ BOOL CMergeEditFrame::OnCreateClient( LPCREATESTRUCT /*lpcs*/,
 		const int nGroup = m_pMergeDoc->GetActiveMergeView()->m_nThisGroup;
 		m_pMergeDoc->GetView(nGroup, pane)->SetActivePane();
 	});
-	m_wndFilePathBar.SetOnCaptionChangedCallback([&](int pane, const String& sText) {
+	m_wndFilePathBar.SetOnCaptionChangedCallback([this](int pane, const String& sText) {
 		const int nGroup = m_pMergeDoc->GetActiveMergeView()->m_nThisGroup;
 		m_pMergeDoc->SetDescription(pane, sText);
 		m_pMergeDoc->UpdateHeaderPath(pane);
 		m_pMergeDoc->GetView(nGroup, pane)->SetFocus();
 	});
-	m_wndFilePathBar.SetOnFileSelectedCallback([&](int pane, const String& sFilepath) {
+	m_wndFilePathBar.SetOnFileSelectedCallback([this](int pane, const String& sFilepath) {
 		const int nGroup = m_pMergeDoc->GetActiveMergeView()->m_nThisGroup;
 		m_pMergeDoc->ChangeFile(pane, sFilepath);
 		m_pMergeDoc->GetView(nGroup, pane)->SetFocus();

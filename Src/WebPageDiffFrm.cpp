@@ -563,11 +563,11 @@ int CWebPageDiffFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 
 	m_wndFilePathBar.SetPaneCount(m_pWebDiffWindow->GetPaneCount());
-	m_wndFilePathBar.SetOnSetFocusCallback([&](int pane) {
+	m_wndFilePathBar.SetOnSetFocusCallback([this](int pane) {
 		if (m_nActivePane != pane)
 			m_pWebDiffWindow->SetActivePane(pane);
 	});
-	m_wndFilePathBar.SetOnCaptionChangedCallback([&](int pane, const String& sText) {
+	m_wndFilePathBar.SetOnCaptionChangedCallback([this](int pane, const String& sText) {
 		if (m_strDesc[pane] != sText)
 		{
 			m_strDesc[pane] = sText;
@@ -971,11 +971,11 @@ bool CWebPageDiffFrame::MergeModeKeyDown(MSG* pMsg)
 	bool bHandled = false;
 
 	// Allow default text selection when SHIFT pressed
-	if (::GetAsyncKeyState(VK_SHIFT))
+	if (::GetAsyncKeyState(VK_SHIFT) < 0)
 		return false;
 
 	// Allow default editor functions when CTRL pressed
-	if (::GetAsyncKeyState(VK_CONTROL))
+	if (::GetAsyncKeyState(VK_CONTROL) < 0)
 		return false;
 
 	// If we are in merging mode (merge with cursor keys)

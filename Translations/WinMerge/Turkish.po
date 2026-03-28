@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2025-08-24 14:39+0000\n"
-"PO-Revision-Date: 2026-02-25 17:20+0300\n"
+"PO-Revision-Date: 2026-03-22 15:08+0300\n"
 "Last-Translator: Ahmet Murat Özhan <ozhanmurat@gmail.com>\n"
 "Language-Team: Turkish <winmerge-translate@lists.sourceforge.net>\n"
 "Language: tr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #. LANGUAGE, SUBLANGUAGE
 msgid "LANG_ENGLISH, SUBLANG_ENGLISH_US"
@@ -1654,7 +1654,7 @@ msgid "Insert &replace() Function"
 msgstr "&replace() İşlevini Ekle"
 
 msgid "Insert rege&xReplace() Function"
-msgstr "rege&xReplace() İşlevini Ekle"
+msgstr "rege&xReplace() işlevini ekle"
 
 msgid "Replace &Lists"
 msgstr "&Listeleri Değiştir"
@@ -1676,6 +1676,9 @@ msgstr "Dize Değiştirme Listeleri Klasörünü Aç…"
 
 msgid "Open Regex Replace Lists Folder..."
 msgstr "Regex Değiştirme Listeleri Klasörünü Aç…"
+
+msgid "Match &case"
+msgstr "BÜYÜK/küçük &harfler eşleştirilsin"
 
 msgid "Text &Normalization"
 msgstr "Metin &Normalleştirme"
@@ -1799,9 +1802,6 @@ msgstr "&Aranacak:"
 
 msgid "Match &whole word only"
 msgstr "Sözcükler &tam olarak eşleştirilsin"
-
-msgid "Match &case"
-msgstr "BÜYÜK/küçük &harfler eşleştirilsin"
 
 msgid "Regular &expression"
 msgstr "Kurallı ifad&e"
@@ -4997,6 +4997,12 @@ msgstr "Süzgeç uygulandı"
 msgid "Compare %1"
 msgstr "%1’i karşılaştır"
 
+msgid "&Filter by This Column"
+msgstr "Bu sütuna göre &filtrele"
+
+msgid "&Filter by This Column..."
+msgstr "Bu sütuna göre &filtrele..."
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "%s zamanındaki pano"
@@ -5226,6 +5232,9 @@ msgstr "Bilinmeyen hata"
 msgid "Invalid property name"
 msgstr "Geçersiz özellik adı"
 
+msgid "Invalid directive"
+msgstr "Geçersiz yönerge"
+
 msgid "Equals"
 msgstr "Eşittir"
 
@@ -5261,6 +5270,18 @@ msgstr "İçerir (regex)"
 
 msgid "Not Contains (regex)"
 msgstr "İçermez (regex)"
+
+msgid "Match (wildcard)"
+msgstr "Eşleştir (joker karakter)"
+
+msgid "Not match (wildcard)"
+msgstr "Eşleşmez (joker karakter)"
+
+msgid "Match (regex)"
+msgstr "Eşleştir (regex)"
+
+msgid "Not match (regex)"
+msgstr "Eşleşmez (regex)"
 
 msgid "Light"
 msgstr "Aydınlık"
@@ -5455,6 +5476,9 @@ msgstr "Metni yapay zeka ile dönüştür..."
 
 msgid "Unescape Java properties files"
 msgstr "Java özellikleri dosyalarından kaçınma"
+
+msgid "Decompile Java (CFR)"
+msgstr "Java’yı tersine derle (CFR)"
 
 msgid "Make characters uppercase"
 msgstr "Büyük harflere dönüştür"
@@ -5749,6 +5773,15 @@ msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "Kaçınılan Java özellikleri dosyalarından kaçınma ve görüntüle."
+
+msgid ""
+"Java decompiler (CFR).\r\n"
+"Decompiles .class files into readable Java source code.\r\n"
+"Arguments: CFR command line options."
+msgstr ""
+"Java tersine derleyici (CFR).\r\n"
+".class dosyalarını okunabilir Java kaynak koduna dönüştürür.\r\n"
+"Parametreler: CFR komut satırı seçenekleri."
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles.sct WinMerge eklentisi ayarları"

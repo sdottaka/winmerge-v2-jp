@@ -322,6 +322,84 @@
     <Xml Include="French\xsl\htmlhelp.xsl">
       <Filter>French\xsl</Filter>
     </Xml>
+    <Xml Include="Italian\_Copyrights.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\_VersionNumbers.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\About_Doc.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Command_line.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_bin.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_dirs.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_files.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_images.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_table.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Compare_webpages.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Configuration.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Faq.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Filters.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Index.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Install.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Intro_diffs.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Introduction.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Locales.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Open_paths.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Plugins.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Quick_start.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\select_unpacker.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Shortcut_keys.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\Version_control.xml">
+      <Filter>Italian</Filter>
+    </Xml>
+    <Xml Include="Italian\xsl\html.xsl">
+      <Filter>Italian\xsl</Filter>
+    </Xml>
+    <Xml Include="Italian\xsl\htmlhelp.xsl">
+      <Filter>Italian\xsl</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="English">
@@ -371,6 +449,15 @@
     </Filter>
     <Filter Include="French\xsl">
       <UniqueIdentifier>{f85085ca-19a5-4e48-bf1a-33ae1e264a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Italian">
+      <UniqueIdentifier>{df635993-1cd9-41a8-b056-86ed4c5ac766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Italian\screenshots">
+      <UniqueIdentifier>{7562f186-0ff6-43fb-ae60-dd8b267bc396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Italian\xsl">
+      <UniqueIdentifier>{a0c24b7d-0fce-4d19-b05b-0f4a3828bb39}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1330,6 +1417,249 @@
     </Image>
     <Image Include="French\screenshots\word-diff-nowhite.png">
       <Filter>French\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\aborted.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\allleft_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\allright_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\binary.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\binarydiff.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\char-diff-01.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\copyl_adv_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\copyl_button.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\copyr_adv_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\copyr_button.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\ctx_menu_advanced.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\ctx_menu_copy1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\ctx_menu_copy2.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\ctx_menu_simple.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\currentdiff_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\diff_inline_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\diff-blocks-01.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\equal.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\equaltextfile.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\error.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\file_headerbar1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp_context1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp_diffpane1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp_inlinediff.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp_margin1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp_margin2.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filecomp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\filemerged1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\fileskip.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\firstdiff_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldercmp_progress.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldercmp_unique1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldercmp_unique2.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldercomp_2same.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldercomp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\folderdiff.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\foldersame.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\folderskip.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\folderup.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\folderup_disable.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\hexcmp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\ignore-blank-lines.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\imgcmp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\lastdiff_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\lfile.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\lfolder.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\linediff.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\line-diff-punctuation.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\locpane_currentdiff.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\locpane_diffs.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\locpane_moved_diffs.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\locpane_viewbar.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\merge_menu.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\mfile.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\mfolder.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\missing_lines.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\moved-01.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\nav_uparrow_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\nextdiff_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\notequal.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\notequaltextfile.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\open_icon.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\OpenDlg1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\OpenDlg2.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\options_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\prevdiff_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\projfile_save.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\refresh_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\rfile.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\rfolder.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\simlines-diffs-off.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\simlines-diffs-on.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\tblcomp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\tfs_configure.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\treeview-01.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\undo_btn.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\webcmp1.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\wm_icon.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\word-diff-allwhite.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\word-diff-nochange.png">
+      <Filter>Italian\screenshots</Filter>
+    </Image>
+    <Image Include="Italian\screenshots\word-diff-nowhite.png">
+      <Filter>Italian\screenshots</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

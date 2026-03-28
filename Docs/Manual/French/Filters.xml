@@ -256,6 +256,131 @@ Réel, Horodatage, Chaîne, Contenu de fichier, Tableau (Array), ou
 <literal>undefined</literal>.</para>
       </section>
 
+      <section id="FilterExpression_Directives">
+        <title>Directives</title>
+
+        <para>
+Filter expressions support directives that control how the expression is
+evaluated.  Directives are specified at the beginning of the expression,
+prefixed with <literal>@</literal>, and separated from the expression by
+whitespace.</para>
+
+        <section id="FilterExpression_CaseSensitivity">
+          <title>Case Sensitivity Directives</title>
+
+          <para>
+By default, all string comparison operators (<literal>=</literal>,
+<literal>!=</literal>, <literal>&lt;</literal>, <literal>&lt;=</literal>,
+<literal>&gt;</literal>, <literal>&gt;=</literal>,
+<literal>contains</literal>, <literal>recontains</literal>,
+<literal>like</literal>, <literal>matches</literal>)  are
+case-insensitive. You can control this behavior using the following
+directives:</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@cs</literal>, <literal>@casesensitive</literal></term>
+              <listitem>
+                <para>
+Enable case-sensitive comparison. With these directives,
+<literal>"ABC"</literal> and <literal>"abc"</literal> are considered
+different.</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><literal>@ci</literal>, <literal>@caseinsensitive</literal></term>
+              <listitem>
+                <para>
+Enable case-insensitive comparison (default behavior). With these
+directives, <literal>"ABC"</literal> and <literal>"abc"</literal> are
+considered identical.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>Case Sensitivity Examples</title>
+<programlisting>@cs Name = "README.txt"           ## Case-sensitive: matches only "README.txt"
+@ci Name = "readme.txt"           ## Case-insensitive: matches "README.txt", "readme.txt", "ReadMe.TXT", etc.
+@casesensitive Extension = "TXT"  ## Case-sensitive: matches only files with ".TXT" extension
+@caseinsensitive Content contains "error"  ## Case-insensitive: matches "Error", "ERROR", "error", etc.</programlisting></example>
+        </section>
+
+        <section id="FilterExpression_Optimize">
+          <title>Optimization Directives</title>
+
+          <para>
+By default, filter expressions are optimized to improve performance. You can
+control this behavior using the following directives:</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@optimize</literal>, <literal>@opt</literal></term>
+              <listitem>
+                <para>
+Enable filter expression optimization (default behavior). This may improve
+performance for complex expressions.</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><literal>@nooptimize</literal>, <literal>@noopt</literal></term>
+              <listitem>
+                <para>
+Disable filter expression optimization. This is useful for debugging or when
+optimization causes unexpected results.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>Optimization Examples</title>
+<programlisting>@optimize Size &gt; 10MB and Extension = "log"     ## Enable optimization (default)
+@noopt Name matches "complex[0-9]+pattern"    ## Disable optimization for debugging
+@nooptimize Content contains "special-case"   ## Disable optimization</programlisting></example>
+        </section>
+
+        <section id="FilterExpression_Name">
+          <title>Name Directive</title>
+
+          <para>
+The <literal>@name</literal> directive allows you to assign a descriptive
+name to a filter expression.  This name is intended for use in error
+messages and logs to help identify which filter expression caused an issue.</para>
+
+          <variablelist>
+            <varlistentry>
+              <term><literal>@name="Filter Name"</literal>, <literal>@name=FilterName</literal></term>
+              <listitem>
+                <para>
+Assigns a name to the filter expression. If the name contains spaces or
+special characters, it must be enclosed in double quotes. Names without
+spaces can be specified without quotes.</para>
+                <para>
+The specified name will be used in error messages and diagnostic output to
+identify the filter.  This is particularly useful when working with multiple
+complex filter expressions.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+          <example>
+            <title>Name Directive Examples</title>
+<programlisting>@name="Large Image Files" Size &gt; 10MB and Extension = "png"
+@name=SmallTextFiles Size &lt; 1KB and Extension = "txt"
+@name="Modified Today" Date &gt;= today()
+@name="Test Filter" @cs Name like "test_*.cpp"</programlisting></example>
+
+          <note>
+            <para>
+The <literal>@name</literal> directive can be combined with other
+directives.  When multiple directives are used, they should all appear at
+the beginning of the expression, separated by whitespace.</para>
+          </note>
+        </section>
+      </section>
+
       <section id="FilterExpression_Attributes">
         <title>Attributs</title>
 
@@ -270,66 +395,67 @@ utilisant un préfixe.</para>
           <title>Attributs principaux</title>
           <variablelist>
             <varlistentry>
-              <term>Exists</term>
+              <term><varname>Exists</varname></term>
               <listitem><para>Retourne <literal>true</literal> si le fichier existe,
 <literal>false</literal> sinon</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Nom</term>
+              <term><varname>Name</varname></term>
               <listitem><para>Nom du fichier</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Nom de base (BaseName)</term>
+              <term><varname>BaseName</varname></term>
               <listitem><para>Retourne le nom du fichier sans l'extension. Par exemple, « document.txt »
 retourne « document ».</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Extension</term>
+              <term><varname>Extension</varname></term>
               <listitem><para>Extension du fichier</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>IsFolder</term>
+              <term><varname>IsFolder</varname></term>
               <listitem><para>Retourne true si l'élément est un dossier/répertoire, false si c'est un
 fichier.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Dossier</term>
+              <term><varname>Folder</varname></term>
               <listitem><para>Retourne le chemin relatif en excluant le nom de fichier et le dossier de
 base</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RelPath</term>
-              <listitem><para>Returns the relative path from the comparison root directory, including both
-folder path and filename. For example, if comparing "C:\Project" and the
-file is at "C:\Project\src\main.cpp", RelPath returns "src\main.cpp".</para></listitem>
+              <term><varname>RelPath</varname></term>
+              <listitem><para>Renvoie le chemin relatif à partir du répertoire racine de comparaison,
+incluant le chemin du dossier et le nom du fichier. Par exemple, si la
+comparaison porte sur « C:\Project » et que le fichier se trouve dans
+« C:\Project\src\main.cpp », RelPath renvoie « src\main.cpp ».</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>FullPath</term>
+              <term><varname>FullPath</varname></term>
               <listitem><para>Retourne le chemin complet du fichier</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Taille (Size)</term>
+              <term><varname>Size</varname></term>
               <listitem><para>Taille du fichier</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Date (Date)</term>
+              <term><varname>Date</varname></term>
               <listitem><para>Horodatage de dernière modification</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>DateStr</term>
+              <term><varname>DateStr</varname></term>
               <listitem><para>Chaîne de date de dernière modification au format
 <literal>yyyy-MM-dd</literal></para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>CreationTime</term>
+              <term><varname>CreationTime</varname></term>
               <listitem><para>Horodatage de la date de création</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Attributs</term>
+              <term><varname>Attributes</varname></term>
               <listitem><para>Retourne les attributs de fichier sous forme d'entier</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>AttrStr</term>
+              <term><varname>AttrStr</varname></term>
               <listitem>
                 <para>Retourne la chaîne des attributs de fichier. Exemples :
 <literal>"R"</literal> pour Lecture seule, <literal>"H"</literal> pour
@@ -349,7 +475,7 @@ comportement est indéfini.</para>
 
           <variablelist>
             <varlistentry>
-              <term>Content</term>
+              <term><varname>Content</varname></term>
               <listitem><para>Contenu du fichier. Retourne une valeur de type FileContent. Seuls
 <literal>contains</literal> et <literal>recontains</literal> peuvent être
 utilisés avec ce type.</para></listitem>
@@ -366,31 +492,31 @@ comportement est indéfini.</para>
 
           <variablelist>
             <varlistentry>
-              <term>Files</term>
+              <term><varname>Files</varname></term>
               <listitem><para>Nombre de fichiers directement contenus dans le dossier.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveFiles</term>
+              <term><varname>RecursiveFiles</varname></term>
               <listitem><para>Nombre de fichiers contenus dans le dossier, incluant tous les
 sous-dossiers.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>Éléments</term>
+              <term><varname>Items</varname></term>
               <listitem><para>Nombre d'éléments (fichiers et sous-dossiers) directement contenus dans le
 dossier.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveItems</term>
+              <term><varname>RecursiveItems</varname></term>
               <listitem><para>Nombre d'éléments (fichiers et sous-dossiers) contenus dans le dossier,
 incluant tous les sous-dossiers.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>TotalSize</term>
+              <term><varname>TotalSize</varname></term>
               <listitem><para>Taille totale de tous les fichiers directement contenus dans le dossier, en
 octets.</para></listitem>
             </varlistentry>
             <varlistentry>
-              <term>RecursiveTotalSize</term>
+              <term><varname>RecursiveTotalSize</varname></term>
               <listitem><para>Taille totale de tous les fichiers contenus dans le dossier, incluant tous
 les sous-dossiers, en octets.</para></listitem>
             </varlistentry>
@@ -426,7 +552,7 @@ propriétés Windows (par ex. <literal>System.Title</literal>,
 
           <variablelist>
             <varlistentry>
-              <term>Prop</term>
+              <term><varname>Prop</varname></term>
               <listitem>
                 <para>
 Renvoie un tableau de valeurs de propriété (Gauche, Milieu, Droite) pour le
@@ -436,7 +562,7 @@ nom de propriété canonique spécifié. Exemple :
             </varlistentry>
 
             <varlistentry>
-              <term>LeftProp</term>
+              <term><varname>LeftProp</varname></term>
               <listitem>
                 <para>
 Valeur de propriété du fichier du côté gauche. Exemple :
@@ -445,14 +571,14 @@ Valeur de propriété du fichier du côté gauche. Exemple :
             </varlistentry>
 
             <varlistentry>
-              <term>MiddleProp</term>
+              <term><varname>MiddleProp</varname></term>
               <listitem>
                 <para>Valeur de propriété du fichier du milieu (dans une comparaison à 3 voies).</para>
               </listitem>
             </varlistentry>
 
             <varlistentry>
-              <term>RightProp</term>
+              <term><varname>RightProp</varname></term>
               <listitem>
                 <para>Valeur de propriété du fichier du côté droit.</para>
               </listitem>
@@ -545,10 +671,13 @@ n'importe quel élément est <literal>true</literal>.</para>
         <title>Opérateurs</title>
 
         <para>
-Tous les opérateurs de comparaison de chaînes (tels que
-<literal>=</literal>, <literal>!=</literal>, <literal>like</literal>,
-<literal>matches</literal>, <literal>contains</literal> et
-<literal>recontains</literal>) sont actuellement insensibles à la casse.</para>
+By default, all string comparison operators (such as <literal>=</literal>,
+<literal>!=</literal>, <literal>&lt;</literal>, <literal>&lt;=</literal>,
+<literal>&gt;</literal>, <literal>&gt;=</literal>, <literal>like</literal>,
+<literal>matches</literal>, <literal>contains</literal>, and
+<literal>recontains</literal>)  are case-insensitive. You can control this
+behavior using directives (see <xref
+linkend="FilterExpression_CaseSensitivity" />).</para>
 
         <variablelist>
           <varlistentry>
@@ -619,14 +748,14 @@ garantir qu'aucune correspondance n'existe.</para>
 
         <variablelist>
           <varlistentry>
-            <term>lineCount(<replaceable>content</replaceable>)</term>
+            <term><function>lineCount</function>(<replaceable>content</replaceable>)</term>
             <listitem><para>Renvoie le nombre de lignes dans le contenu du fichier ou le tableau de
 contenu de fichier sous forme d'un <literal>Integer</literal>. Si
 <replaceable>content</replaceable> est un tableau, le résultat est un
 tableau d'entiers. Exemple : <literal>lineCount(Content)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>sublines(<replaceable>content</replaceable>,
+            <term><function>sublines</function>(<replaceable>content</replaceable>,
 <replaceable>start</replaceable>, <replaceable>count</replaceable>)</term>
             <listitem>
               <para>
@@ -638,22 +767,22 @@ tableau de chaînes.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>strlen(<replaceable>source</replaceable>)</term>
+            <term><function>strlen</function>(<replaceable>source</replaceable>)</term>
             <listitem><para>Renvoie la longueur de la chaîne sous forme d'un
 <literal>Integer</literal>. Si <replaceable>source</replaceable> est un
 tableau de chaînes, le résultat est un tableau d'entiers. Exemple :
 <literal>strlen(Name)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>substr(<replaceable>source</replaceable>, <replaceable>start</replaceable>,
-<replaceable>count</replaceable>)</term>
+            <term><function>substr</function>(<replaceable>source</replaceable>,
+<replaceable>start</replaceable>, <replaceable>count</replaceable>)</term>
             <listitem><para>Renvoie une plage de texte spécifique de la <emphasis>chaîne ou du tableau
 de chaînes</emphasis> sous forme d'une <literal>String</literal>. Si
 <replaceable>source</replaceable> est un tableau de chaînes, le résultat est
 un tableau de chaînes. Exemple : <literal>substr(Name, 0, 3)</literal></para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>replace(str, from, to)</term>
+            <term><function>replace</function>(str, from, to)</term>
             <listitem>
               <para>
 Remplace toutes les occurrences de la chaîne <replaceable>from</replaceable>
@@ -663,7 +792,7 @@ appliqués. Exemple : <literal>replace(name, ".bak", ".txt")</literal></para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>regexReplace(str, pattern, replacement)</term>
+            <term><function>regexReplace</function>(str, pattern, replacement)</term>
             <listitem>
               <para>
 Remplace toutes les correspondances du motif d'expression régulière par la
@@ -675,54 +804,59 @@ appliqués. Exemple : <literal>regexReplace(name, "^(\\w+)_(\\w+)$",
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>replaceWithList(str, filepath)</term>
+            <term><function>replaceWithList</function>(str, filepath)</term>
             <listitem>
               <para>
-Replaces multiple strings in <replaceable>str</replaceable> using
-replacement rules loaded from a tab-separated file.  The file format is one
-replacement rule per line:
-<literal>search_string&lt;TAB&gt;replacement_string</literal>.  Lines
-starting with <literal>#</literal> are treated as comments and ignored.
-Empty lines are also ignored.  If <replaceable>str</replaceable> is an
-array, the result is an array of strings with replacements applied.</para>
-              <para>File format example:</para>
-              <screen># Comment line
-apple	orange
-cat	dog
-old	new</screen>
+Remplace plusieurs chaînes de caractères dans
+`<replaceable>str</replaceable>` en utilisant des règles de remplacement
+chargées depuis un fichier séparé par des tabulations. Le format du fichier
+est le suivant : une règle de remplacement par ligne :
+`<literal>search_string&lt;TAB&gt;replacement_string</literal>`. Les lignes
+commençant par `<literal>#</literal>` sont considérées comme des
+commentaires et ignorées. Les lignes vides sont également ignorées. Si
+`<replaceable>str</replaceable>` est un tableau, le résultat est un tableau
+de chaînes de caractères avec les remplacements appliqués.</para>
+              <para>Exemple de format de fichier :</para>
+              <screen># Ligne de commentaires
+pomme	orange
+chat	chien
+ancien	nouveau</screen>
               <para>Exemples :</para>
               <itemizedlist>
                 <listitem><para><literal>replaceWithList(Name, "C:\Filters\replacements.txt")</literal> -
-applies replacements from file to file name</para></listitem>
+applique les remplacements du fichier au nom du fichier</para></listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>regexReplaceWithList(str, filepath)</term>
+            <term><function>regexReplaceWithList</function>(str, filepath)</term>
             <listitem>
               <para>
-Replaces strings in <replaceable>str</replaceable> using regular expression
-patterns loaded from a tab-separated file.  The file format is one pattern
-per line: <literal>regex_pattern&lt;TAB&gt;replacement_string</literal>.
-The replacement string can include backreferences ($1, $2, etc.) to captured
-groups.  Lines starting with <literal>#</literal> are treated as comments
-and ignored.  Empty lines are also ignored.  If
-<replaceable>str</replaceable> is an array, the result is an array of
-strings with replacements applied.</para>
-              <para>File format example:</para>
-              <screen># Comment line
-\d+	NUMBER
+Remplace les chaînes de caractères dans `<replaceable>str</replaceable>` à
+l'aide d'expressions régulières chargées depuis un fichier texte séparé par
+des tabulations. Le format du fichier est le suivant : une expression
+régulière par ligne :
+`<literal>regex_pattern&lt;TAB&gt;replacement_string</literal>`. La chaîne
+de remplacement peut inclure des références arrière ($1, $2, etc.) vers des
+groupes capturés. Les lignes commençant par `<literal>#</literal>` sont
+considérées comme des commentaires et ignorées. Les lignes vides sont
+également ignorées. Si `<replaceable>str</replaceable>` est un tableau, le
+résultat est un tableau de chaînes de caractères avec les remplacements
+appliqués.</para>
+              <para>Exemple de format de fichier :</para>
+              <screen># Ligne de commentaire
+\d+	NOMBRE
 (\d{4})-(\d{2})-(\d{2})	$1_$2_$3</screen>
               <para>Exemples :</para>
               <itemizedlist>
                 <listitem><para><literal>regexReplaceWithList(Name,
-"C:\Filters\regex_replacements.txt")</literal> - applies regex replacements
-to file name</para></listitem>
+"C:\Filters\regex_replacements.txt")</literal> - applique des remplacements
+d'expressions régulières au nom du fichier</para></listitem>
               </itemizedlist>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>normalizeUnicode(str[, form])</term>
+            <term><function>normalizeUnicode</function>(str[, form])</term>
             <listitem>
               <para>
 Normalise la chaîne Unicode. Le paramètre optionnel 'form' spécifie la forme
@@ -735,7 +869,7 @@ résultat est un tableau de chaînes normalisées. Exemple :
           </varlistentry>
           <varlistentry>
             <term>
-toLower(<replaceable>str</replaceable>)</term>
+<function>toLower</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit tous les caractères de la chaîne en minuscules. Si
@@ -746,7 +880,7 @@ renvoie <literal>"hello world"</literal></para>
           </varlistentry>
           <varlistentry>
             <term>
-toUpper(<replaceable>str</replaceable>)</term>
+<function>toUpper</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit tous les caractères de la chaîne en majuscules. Si
@@ -757,7 +891,7 @@ renvoie <literal>"HELLO WORLD"</literal></para>
           </varlistentry>
           <varlistentry>
             <term>
-toHalfWidth(<replaceable>str</replaceable>)</term>
+<function>toHalfWidth</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères de pleine chasse (full-width) en caractères de
@@ -769,7 +903,7 @@ chaînes converties.</para>
           </varlistentry>
           <varlistentry>
             <term>
-toFullWidth(<replaceable>str</replaceable>)</term>
+<function>toFullWidth</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères de demi-chasse en caractères de pleine
@@ -780,7 +914,7 @@ tableau, le résultat est un tableau de chaînes converties.</para>
           </varlistentry>
           <varlistentry>
             <term>
-toKatakana(<replaceable>str</replaceable>)</term>
+<function>toKatakana</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères hiragana en katakana. Les caractères non-hiragana
@@ -790,7 +924,7 @@ résultat est un tableau de chaînes converties.</para>
           </varlistentry>
           <varlistentry>
             <term>
-toHiragana(<replaceable>str</replaceable>)</term>
+<function>toHiragana</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères katakana en hiragana. Les caractères non-katakana
@@ -800,7 +934,7 @@ résultat est un tableau de chaînes converties.</para>
           </varlistentry>
           <varlistentry>
             <term>
-toSimplifiedChinese(<replaceable>str</replaceable>)</term>
+<function>toSimplifiedChinese</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères chinois traditionnels en caractères chinois
@@ -811,7 +945,7 @@ un tableau de chaînes converties.</para>
           </varlistentry>
           <varlistentry>
             <term>
-toTraditionalChinese(<replaceable>str</replaceable>)</term>
+<function>toTraditionalChinese</function>(<replaceable>str</replaceable>)</term>
             <listitem>
               <para>
 Convertit les caractères chinois simplifiés en caractères chinois
@@ -821,53 +955,53 @@ un tableau de chaînes converties.</para>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>now()</term>
+            <term><function>now</function>()</term>
             <listitem><para>Renvoie la date et l'heure actuelles sous forme d'une valeur
 <literal>Timestamp</literal>.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>today()</term>
+            <term><function>today</function>()</term>
             <listitem><para>Renvoie la date du jour sous forme d'une valeur <literal>Timestamp</literal>
 représentant <literal>00:00:00.000</literal> au début de la journée.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfWeek(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfWeek</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>Renvoie le premier jour de la semaine, qui est toujours le dimanche quel que
 soit le paramètre régional.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfMonth(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfMonth</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>Renvoie le premier jour du mois.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>startOfYear(<replaceable>timestamp</replaceable>)</term>
+            <term><function>startOfYear</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>Renvoie le premier jour de l'année.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>toDateStr(<replaceable>timestamp</replaceable>)</term>
+            <term><function>toDateStr</function>(<replaceable>timestamp</replaceable>)</term>
             <listitem><para>Convertit l'horodatage donné en une chaîne de date au format
 <literal>yyyy-MM-dd</literal>. Si <replaceable>timestamp</replaceable> est
 un tableau d'horodatages, le résultat est un tableau de chaînes.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>abs(<replaceable>value</replaceable>)</term>
+            <term><function>abs</function>(<replaceable>value</replaceable>)</term>
             <listitem><para>Renvoie la valeur absolue de l'<emphasis>entier ou du tableau
 d'entiers</emphasis>. Si <replaceable>value</replaceable> est un tableau
 d'entiers, le résultat est un tableau d'entiers.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>allof(<replaceable>booleans</replaceable>)</term>
+            <term><function>allof</function>(<replaceable>booleans</replaceable>)</term>
             <listitem><para>Renvoie <literal>true</literal> si tous les éléments du <emphasis>tableau de
 booléens</emphasis> satisfont à la condition.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>allequal(<replaceable>array</replaceable>)</term>
+            <term><function>allequal</function>(<replaceable>array</replaceable>)</term>
             <listitem><para>Renvoie <literal>true</literal> si toutes les valeurs du tableau sont
 égales.</para></listitem>
           </varlistentry>
           <varlistentry>
-            <term>isWithin(<replaceable>value</replaceable>, <replaceable>min</replaceable>,
-<replaceable>max</replaceable>)</term>
+            <term><function>isWithin</function>(<replaceable>value</replaceable>,
+<replaceable>min</replaceable>, <replaceable>max</replaceable>)</term>
             <listitem>
               <para>
 Renvoie <literal>true</literal> si <replaceable>value</replaceable> se situe
@@ -889,8 +1023,8 @@ tailles de fichiers sont comprises entre 1 Ko et 10 Mo</para></listitem>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>inRange(<replaceable>value</replaceable>, <replaceable>min</replaceable>,
-<replaceable>max</replaceable>)</term>
+            <term><function>inRange</function>(<replaceable>value</replaceable>,
+<replaceable>min</replaceable>, <replaceable>max</replaceable>)</term>
             <listitem>
               <para>
 Renvoie <literal>true</literal> si <replaceable>value</replaceable> se situe
@@ -911,11 +1045,11 @@ vérifie si un fichier a été modifié ce mois-ci (aujourd'hui exclu)</para></l
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>logError(<replaceable>value1</replaceable>,
+            <term><function>logError</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>, ...),
-logWarn(<replaceable>value1</replaceable>,
+<function>logWarn</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>, ...),
-logInfo(<replaceable>value1</replaceable>,
+<function>logInfo</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>, ...)</term>
             <listitem>
               <para>
@@ -936,7 +1070,7 @@ vérifie le nom</para></listitem>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>if(<replaceable>condition</replaceable>,
+            <term><function>if</function>(<replaceable>condition</replaceable>,
 <replaceable>trueValue</replaceable>, <replaceable>falseValue</replaceable>)</term>
             <listitem>
               <para>
@@ -957,7 +1091,7 @@ si le fichier n'existe pas</para></listitem>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>ifEach(<replaceable>conditionArray</replaceable>,
+            <term><function>ifEach</function>(<replaceable>conditionArray</replaceable>,
 <replaceable>trueValue</replaceable>, <replaceable>falseValue</replaceable>)</term>
             <listitem>
               <para>
@@ -980,8 +1114,8 @@ vérifie si l'un des fichiers est compris entre 100 Ko et 10 Mo</para></listitem
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>choose(<replaceable>index</replaceable>, <replaceable>value0</replaceable>,
-<replaceable>value1</replaceable>, ...)</term>
+            <term><function>choose</function>(<replaceable>index</replaceable>,
+<replaceable>value0</replaceable>, <replaceable>value1</replaceable>, ...)</term>
             <listitem>
               <para>
 Sélectionne une valeur parmi les arguments en fonction de
@@ -1000,7 +1134,7 @@ renvoie la dernière valeur)</para></listitem>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>chooseEach(<replaceable>indexArray</replaceable>,
+            <term><function>chooseEach</function>(<replaceable>indexArray</replaceable>,
 <replaceable>value0</replaceable>, <replaceable>value1</replaceable>, ...)</term>
             <listitem>
               <para>
@@ -1020,11 +1154,11 @@ renvoie <literal>array("third", "first", "second")</literal></para></listitem>
             </listitem>
           </varlistentry>
           <varlistentry>
-            <term>andEach(<replaceable>value1</replaceable>,
+            <term><function>andEach</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>),
-orEach(<replaceable>value1</replaceable>,
+<function>orEach</function>(<replaceable>value1</replaceable>,
 <replaceable>value2</replaceable>),
-notEach(<replaceable>value</replaceable>)</term>
+<function>notEach</function>(<replaceable>value</replaceable>)</term>
             <listitem>
               <para>
 Opérations logiques par élément. Ces fonctions opèrent sur des booléens, des
@@ -1364,10 +1498,10 @@ depuis 2.16.49)</para></listitem></varlistentry>
         <varlistentry><term>fe!: <replaceable>expr</replaceable></term><listitem><para>Expression de filtre pour exclure des fichiers (disponible depuis 2.16.49)</para></listitem></varlistentry>
         <varlistentry><term>de: <replaceable>expr</replaceable></term><listitem><para>Expression de filtre pour les dossiers (disponible depuis 2.16.49)</para></listitem></varlistentry>
         <varlistentry><term>de!: <replaceable>expr</replaceable></term><listitem><para>Expression de filtre pour exclure des dossiers (disponible depuis 2.16.49)</para></listitem></varlistentry>
-        <varlistentry><term>e: <replaceable>expr</replaceable></term><listitem><para>Filter expression applied to both files and folders (e.g. e:Name like
-"Common*.*") (Available since 2.16.56)</para></listitem></varlistentry>
-        <varlistentry><term>e!: <replaceable>expr</replaceable></term><listitem><para>Filter expression to exclude both files and folders (Available since
-2.16.56)</para></listitem></varlistentry>
+        <varlistentry><term>e: <replaceable>expr</replaceable></term><listitem><para>Expression de filtre appliquée aux fichiers et aux dossiers (par exemple :
+e:Name like "Common*.*") (Disponible depuis la version 2.16.56)</para></listitem></varlistentry>
+        <varlistentry><term>e!: <replaceable>expr</replaceable></term><listitem><para>Expression de filtre permettant d'exclure à la fois les fichiers et les
+dossiers (Disponible depuis la version 2.16.56)</para></listitem></varlistentry>
       </variablelist>
 
       <para>Parmi les nombreux caractères spéciaux de regex, les suivants sont

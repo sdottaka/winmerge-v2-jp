@@ -21,6 +21,7 @@ CFilterConditionDlg::CFilterConditionDlg(CWnd* pParent /*= nullptr*/)
 : CTrDialog(CFilterConditionDlg::IDD, pParent)
 , m_bDiff(false)
 , m_nSide(0)
+, m_bCaseSensitive(false)
 {
 }
 
@@ -35,6 +36,7 @@ CFilterConditionDlg::CFilterConditionDlg(bool diff, int side, const String& fiel
 , m_tmValue2(CTime::GetCurrentTime())
 , m_sLHS(transform)
 , m_bRecursive(recursive)
+, m_bCaseSensitive(false)
 {
 	//{{AFX_DATA_INIT(CFilterConditionDlg)
 		// NOTE: the ClassWizard will add member initialization here
@@ -51,6 +53,7 @@ void CFilterConditionDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CONDITION_VALUE2, m_ctlValue2);
 	DDX_DateTimeCtrl(pDX, IDC_CONDITION_VALUEDTP1, m_tmValue1);
 	DDX_DateTimeCtrl(pDX, IDC_CONDITION_VALUEDTP2, m_tmValue2);
+	DDX_Check(pDX, IDC_CONDITION_MATCHCASE, m_bCaseSensitive);
 	//}}AFX_DATA_MAP
 }
 
@@ -63,6 +66,7 @@ BEGIN_MESSAGE_MAP(CFilterConditionDlg, CTrDialog)
 	ON_CBN_SELCHANGE(IDC_CONDITION_VALUE2, OnCbnSelchangeValue)
 	ON_NOTIFY(DTN_DATETIMECHANGE, IDC_CONDITION_VALUEDTP1, OnDateTimeChange)
 	ON_NOTIFY(DTN_DATETIMECHANGE, IDC_CONDITION_VALUEDTP2, OnDateTimeChange)
+	ON_BN_CLICKED(IDC_CONDITION_MATCHCASE, OnCbnSelchangeOperator)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -137,6 +141,11 @@ String CFilterConditionDlg::GetExpression()
 		value2 = _T("\"") + value2 + _T("\"");
 		result = strutils::format_string3(expression, lhs, value1, value2);
 	}
+
+	// Add @cs directive prefix if Match Case is checked
+	if (m_bCaseSensitive)
+		result = _T("@cs ") + result;
+
 	return result;
 }
 
@@ -148,7 +157,7 @@ String CFilterConditionDlg::GetExpression()
  */
 BOOL CFilterConditionDlg::OnInitDialog()
 {
-	CTrDialog::OnInitDialog();
+	__super::OnInitDialog();
 
 	SetDlgItemText(IDC_CONDITION_LHS, GetLHS());
 
@@ -186,12 +195,16 @@ BOOL CFilterConditionDlg::OnInitDialog()
 				{ _("Not Contains (regex)"), L"%1 not recontains %2" },
 			}, m_sOperator);
 	} 
-	else if (m_vt == VT_LPWSTR || m_vt == (VT_VECTOR|VT_LPWSTR))
+	else if (m_sField == _T("Name") || m_sField == _T("Folder") || m_sField == _T("Extension") || m_vt == VT_LPWSTR || m_vt == (VT_VECTOR | VT_LPWSTR))
 	{
 		SetDlgItemComboBoxList(IDC_CONDITION_OPERATOR,
 			{
 				{ _("Equals"), L"%1 = %2" },
 				{ _("Does not equal"), L"%1 != %2" },
+				{ _("Match (wildcard)"), L"%1 like %2" },
+				{ _("Not match (wildcard)"), L"%1 not like %2" },
+				{ _("Match (regex)"), L"%1 matches %2" },
+				{ _("Not match (regex)"), L"%1 not matches %2" },
 				{ _("Contains"), L"%1 contains %2" },
 				{ _("Not Contains"), L"%1 not contains %2" },
 				{ _("Contains (regex)"), L"%1 recontains %2" },
@@ -236,9 +249,13 @@ BOOL CFilterConditionDlg::OnInitDialog()
 		m_sValue2 = _T("0");
 	}
 
-	OnCbnSelchangeOperator();
+	// Show Match Case checkbox only for string-based fields
+	const bool isStringField = (m_sField == _T("Content") || m_sField == _T("Name") || m_sField == _T("Folder") || m_sField == _T("Extension") || m_vt == VT_LPWSTR || m_vt == (VT_VECTOR | VT_LPWSTR));
+	ShowDlgItem(IDC_CONDITION_MATCHCASE, isStringField);
 
 	UpdateData(FALSE);
+
+	OnCbnSelchangeOperator();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
@@ -246,6 +263,7 @@ BOOL CFilterConditionDlg::OnInitDialog()
 
 void CFilterConditionDlg::OnCbnSelchangeOperator()
 {
+	UpdateData(TRUE);
 	auto expressionptr = (intptr_t)GetDlgItemDataCurSel(IDC_CONDITION_OPERATOR);
 	if (expressionptr == -1)
 		return;

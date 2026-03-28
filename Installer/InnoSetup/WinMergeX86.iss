@@ -528,6 +528,7 @@ Source: ..\..\Translations\ShellExtension\Hungarian.po; DestDir: {app}\Languages
 Source: ..\..\Translations\WinMerge\Italian.po; DestDir: {app}\Languages; Components: Languages\Italian; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\ShellExtension\Italian.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Italian; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Italian.txt; DestDir: {app}\Docs; Components: Languages\Italian
+Source: ..\..\Build\Manual\htmlhelp\WinMergeItalian.chm; DestDir: {app}\Docs; Components: Languages\Italian
 Source: ..\..\Translations\WinMerge\Japanese.po; DestDir: {app}\Languages; Components: Languages\Japanese; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\ShellExtension\Japanese.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Japanese; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Japanese.txt; DestDir: {app}\Docs; Components: Languages\Japanese
@@ -684,6 +685,11 @@ Source: ..\..\Plugins\Commands\ildasm\*.bat; DestDir: {app}\Commands\ildasm; Fla
 ; Java
 Source: ..\..\Plugins\Commands\Java\*.bat; DestDir: {app}\Commands\Java; Flags: recursesubdirs; Components: Plugins
 Source: ..\..\Plugins\Commands\Java\*.txt; DestDir: {app}\Commands\Java; Flags: recursesubdirs; Components: Plugins
+; CFR
+Source: ..\..\Plugins\Commands\CFR\*.bat; DestDir: {app}\Commands\CFR; Flags: recursesubdirs; Components: Plugins
+Source: ..\..\Plugins\Commands\CFR\*.txt; DestDir: {app}\Commands\CFR; Flags: recursesubdirs; Components: Plugins
+; gettext
+Source: ..\..\Plugins\Commands\gettext\*.bat; DestDir: {app}\Commands\gettext; Flags: recursesubdirs; Components: Plugins
 ; DownloadFiles.bat
 Source: ..\..\Plugins\Commands\DownloadFiles.bat; DestDir: {app}\Commands\; Flags: recursesubdirs; Components: Plugins
 

@@ -63,5 +63,10 @@ namespace I18n
 	{
 		return ucr::toTString(str);
 	}
+
+	String tr(const char* msgctxt, const std::string& str)
+	{
+		return ucr::toTString(str);
+	}
 }
 

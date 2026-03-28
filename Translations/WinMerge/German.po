@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-26 19:26+0100\n"
+"PO-Revision-Date: 2026-03-22 23:40+0100\n"
 "Last-Translator: René Nicolaus <translation at havoc.de>\n"
 "Language-Team: German <winmerge-translate@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -1912,6 +1912,10 @@ msgstr "Ordner für Zeichenketten-Ersetzungslisten öffnen..."
 msgid "Open Regex Replace Lists Folder..."
 msgstr "Ordner für Regex-Ersetzungslisten öffnen..."
 
+#, c-format
+msgid "Match &case"
+msgstr "&Groß-/Kleinschreibung beachten"
+
 msgid "Text &Normalization"
 msgstr "Text&normalisierung"
 
@@ -2059,10 +2063,6 @@ msgstr "&Suchen nach:"
 #, c-format
 msgid "Match &whole word only"
 msgstr "&Nur ganze Wörter"
-
-#, c-format
-msgid "Match &case"
-msgstr "&Groß-/Kleinschreibung beachten"
 
 #, c-format
 msgid "Regular &expression"
@@ -5721,6 +5721,12 @@ msgstr "Angewandter Filter"
 msgid "Compare %1"
 msgstr "Vergleiche %1"
 
+msgid "&Filter by This Column"
+msgstr "Nach dieser Spalte &filtern"
+
+msgid "&Filter by This Column..."
+msgstr "Nach dieser Spalte &filtern..."
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "Zwischenablage am %s"
@@ -5950,6 +5956,9 @@ msgstr "Unbekannter Fehler"
 msgid "Invalid property name"
 msgstr "Ungültiger Eigenschaftsname"
 
+msgid "Invalid directive"
+msgstr "Ungültige Anweisung"
+
 msgid "Equals"
 msgstr "Ist gleich"
 
@@ -5981,10 +5990,22 @@ msgid "Not Contains"
 msgstr "Enthält nicht"
 
 msgid "Contains (regex)"
-msgstr "Enthält (regulärer Ausdruck)"
+msgstr "Enthält (Regex)"
 
 msgid "Not Contains (regex)"
-msgstr "Enthält nicht (regulärer Ausdruck)"
+msgstr "Enthält nicht (Regex)"
+
+msgid "Match (wildcard)"
+msgstr "Entspricht (Platzhalter)"
+
+msgid "Not match (wildcard)"
+msgstr "Entspricht nicht (Platzhalter)"
+
+msgid "Match (regex)"
+msgstr "Entspricht (Regex)"
+
+msgid "Not match (regex)"
+msgstr "Entspricht nicht (Regex)"
 
 msgid "Light"
 msgstr "Hell"
@@ -6179,6 +6200,9 @@ msgstr "Textumwandlung mit AI..."
 
 msgid "Unescape Java properties files"
 msgstr "Java-Properties-Dateien unescapen"
+
+msgid "Decompile Java (CFR)"
+msgstr "Java dekompilieren (CFR)"
 
 msgid "Make characters uppercase"
 msgstr "Großbuchstaben erzeugen"
@@ -6473,6 +6497,15 @@ msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "Escape-Sequenzen in Java-Properties-Dateien auflösen und die Inhalte anzeigen."
+
+msgid ""
+"Java decompiler (CFR).\r\n"
+"Decompiles .class files into readable Java source code.\r\n"
+"Arguments: CFR command line options."
+msgstr ""
+"Java-Decompiler (CFR).\r\n"
+"Dekompiliert .class-Dateien in lesbaren Java-Quellcode.\r\n"
+"Argumente: Befehlszeilenoptionen für CFR."
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "Plugin-Einstellungen für CompareMSExcelFiles"

@@ -1675,6 +1675,9 @@ msgstr "文字列置換リストのフォルダーを開く..."
 msgid "Open Regex Replace Lists Folder..."
 msgstr "正規表現置換リストのフォルダーを開く..."
 
+msgid "Match &case"
+msgstr "大文字と小文字を区別する(&C)"
+
 msgid "Text &Normalization"
 msgstr "テキストの正規化(&N)"
 
@@ -1797,9 +1800,6 @@ msgstr "検索する文字列(&N):"
 
 msgid "Match &whole word only"
 msgstr "単語単位で探す(&W)"
-
-msgid "Match &case"
-msgstr "大文字と小文字を区別する(&C)"
 
 msgid "Regular &expression"
 msgstr "正規表現(&E)"
@@ -4995,6 +4995,12 @@ msgstr "フィルター適用"
 msgid "Compare %1"
 msgstr "%1 を比較"
 
+msgid "&Filter by This Column"
+msgstr "この列でフィルター(&F)"
+
+msgid "&Filter by This Column..."
+msgstr "この列でフィルター(&F)..."
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "クリップボード %s"
@@ -5224,6 +5230,9 @@ msgstr "不明なエラーです"
 msgid "Invalid property name"
 msgstr "無効なプロパティ名です"
 
+msgid "Invalid directive"
+msgstr "無効なディレクティブです"
+
 msgid "Equals"
 msgstr "等しい"
 
@@ -5259,6 +5268,18 @@ msgstr "含む(正規表現)"
 
 msgid "Not Contains (regex)"
 msgstr "含まない(正規表現)"
+
+msgid "Match (wildcard)"
+msgstr "一致(ワイルドカード)"
+
+msgid "Not match (wildcard)"
+msgstr "不一致(ワイルドカード)"
+
+msgid "Match (regex)"
+msgstr "一致(正規表現)"
+
+msgid "Not match (regex)"
+msgstr "不一致(正規表現)"
 
 msgid "Light"
 msgstr "ライト"
@@ -5431,6 +5452,9 @@ msgstr "AIテキスト変換..."
 
 msgid "Unescape Java properties files"
 msgstr "Java プロパティファイルをアンエスケープ"
+
+msgid "Decompile Java (CFR)"
+msgstr "Java クラスのデコンパイル (CFR)"
 
 msgid "Make characters uppercase"
 msgstr "テキストを大文字に変換します"
@@ -5719,6 +5743,11 @@ msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "エスケープされたJavaプロパティファイルをエスケープ解除して表示します。"
+
+msgid "Java decompiler (CFR).\r\nDecompiles .class files into readable Java source code.\r\nArguments: CFR command line options."
+msgstr "Java デコンパイラ (CFR)。\r\n."
+"class ファイルを読みやすい Java ソースコードにデコンパイルします。\r\n"
+"引数: CFR のコマンドラインオプション"
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles.sct WinMerge プラグインオプション"

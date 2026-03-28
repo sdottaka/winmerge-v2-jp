@@ -1679,6 +1679,9 @@ msgstr ""
 msgid "Open Regex Replace Lists Folder..."
 msgstr ""
 
+msgid "Match &case"
+msgstr "مطابقة مع مراعاة حالة الحرف (للغة الإنجليزية)"
+
 msgid "Text &Normalization"
 msgstr ""
 
@@ -1801,9 +1804,6 @@ msgstr "ال&بحث عن:"
 
 msgid "Match &whole word only"
 msgstr "إجراء &مطابقة للكلمة كاملة فقط"
-
-msgid "Match &case"
-msgstr "مطابقة مع مراعاة حالة الحرف (للغة الإنجليزية)"
 
 msgid "Regular &expression"
 msgstr "التعابير النمطية"
@@ -4886,6 +4886,12 @@ msgstr ""
 msgid "Compare %1"
 msgstr ""
 
+msgid "&Filter by This Column"
+msgstr ""
+
+msgid "&Filter by This Column..."
+msgstr ""
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr ""
@@ -5059,6 +5065,9 @@ msgstr ""
 msgid "Invalid property name"
 msgstr ""
 
+msgid "Invalid directive"
+msgstr ""
+
 msgid "Equals"
 msgstr ""
 
@@ -5093,6 +5102,18 @@ msgid "Contains (regex)"
 msgstr ""
 
 msgid "Not Contains (regex)"
+msgstr ""
+
+msgid "Match (wildcard)"
+msgstr ""
+
+msgid "Not match (wildcard)"
+msgstr ""
+
+msgid "Match (regex)"
+msgstr ""
+
+msgid "Not match (regex)"
 msgstr ""
 
 msgid "Light"
@@ -5267,6 +5288,9 @@ msgstr ""
 msgid "Unescape Java properties files"
 msgstr ""
 
+msgid "Decompile Java (CFR)"
+msgstr ""
+
 msgid "Make characters uppercase"
 msgstr ""
 
@@ -5413,6 +5437,9 @@ msgid "Text converter (OpenAI API).\r\nUsage: AIConvertText PROMPT"
 msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
+msgstr ""
+
+msgid "Java decompiler (CFR).\r\nDecompiles .class files into readable Java source code.\r\nArguments: CFR command line options."
 msgstr ""
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"

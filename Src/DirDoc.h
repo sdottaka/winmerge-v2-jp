@@ -65,6 +65,7 @@ public:
 	CString GetTooltipString() const;
 	protected:
 	virtual BOOL OnNewDocument();
+	virtual void OnCloseDocument();
 	virtual BOOL SaveModified();
 	//}}AFX_VIRTUAL
 

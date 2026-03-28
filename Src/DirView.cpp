@@ -50,6 +50,7 @@
 #include "DirTravel.h"
 #include "MouseHook.h"
 #include "RenameMoveDetection.h"
+#include "FileFilterHelper.h"
 #include <numeric>
 #include <functional>
 
@@ -224,6 +225,7 @@ BEGIN_MESSAGE_MAP(CDirView, CListView)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_L2R, ID_R2L, OnUpdateDirCopy)
 	ON_COMMAND(ID_MERGE_DELETE, OnDelete)
 	ON_UPDATE_COMMAND_UI(ID_MERGE_DELETE, OnUpdateDelete)
+	ON_COMMAND_RANGE(ID_FILTERMENU_FIRST, ID_FILTERMENU_LAST, OnFilterMenuCommand)
 	// [Tools] menu
 	ON_COMMAND(ID_TOOLS_CUSTOMIZECOLUMNS, OnCustomizeColumns)
 	ON_COMMAND(ID_TOOLS_GENERATEREPORT, OnToolsGenerateReport)
@@ -564,16 +566,20 @@ void CDirView::ReloadColumns()
 
 /**
  * @brief Redisplay items in subfolder
- * @param [in] diffpos First item position in subfolder.
+ * @param [in] parent Parent item (nullptr for root level).
  * @param [in] level Indent level
  * @param [in,out] index Index of the item to be inserted.
  * @param [in,out] alldiffs Number of different items
  * @return returns -1 if the comparison of some items was interrupted or an error occurred
  */
-int CDirView::RedisplayChildren(DIFFITEM *diffpos, int level, UINT &index, int &alldiffs)
+int CDirView::RedisplayChildren(DIFFITEM *parent, int level, UINT &index, int &alldiffs)
 {
 	int result = 0;
 	const CDiffContext &ctxt = GetDiffContext();
+
+	// Get first child of parent (or first root item if parent is nullptr)
+	DIFFITEM *diffpos = parent ? ctxt.GetFirstChildDiffPosition(parent) : ctxt.GetFirstDiffPosition();
+
 	while (diffpos != nullptr)
 	{
 		DIFFITEM *curdiffpos = diffpos;
@@ -595,7 +601,7 @@ int CDirView::RedisplayChildren(DIFFITEM *diffpos, int level, UINT &index, int &
 				{
 					if (di.customFlags & ViewCustomFlags::EXPANDED)
 					{
-						if (RedisplayChildren(ctxt.GetFirstChildDiffPosition(curdiffpos), level + 1, index, alldiffs) < 0)
+						if (RedisplayChildren(curdiffpos, level + 1, index, alldiffs) < 0)
 							result = -1;
 					}
 				}
@@ -609,7 +615,7 @@ int CDirView::RedisplayChildren(DIFFITEM *diffpos, int level, UINT &index, int &
 				}
 				if (di.HasChildren())
 				{
-					if (RedisplayChildren(ctxt.GetFirstChildDiffPosition(curdiffpos), level + 1, index, alldiffs) < 0)
+					if (RedisplayChildren(curdiffpos, level + 1, index, alldiffs) < 0)
 						result = -1;
 				}
 			}
@@ -649,8 +655,7 @@ void CDirView::Redisplay()
 
 	m_dirfilter.displayFilterHelper.SetDiffContext(&ctxt);
 	int alldiffs = 0;
-	DIFFITEM *diffpos = ctxt.GetFirstDiffPosition();
-	const int result = RedisplayChildren(diffpos, 0, cnt, alldiffs);
+	const int result = RedisplayChildren(nullptr, 0, cnt, alldiffs);
 	const unsigned int threadState = pDoc->m_diffThread.GetThreadState();
 	GetParentFrame()->SetLastCompareResult((threadState != CDiffThread::THREAD_COMPLETED || result < 0) ? -1 : alldiffs);
 	SortColumnsAppropriately();
@@ -685,10 +690,9 @@ void CDirView::OnContextMenu(CWnd*, CPoint point)
 	else
 	{
 		// Check if user right-clicked on header
-		// convert screen coordinates to client coordinates of listview
+		// convert screen coordinates to client coordinates of header control
 		CPoint insidePt = point;
-		GetListCtrl().ScreenToClient(&insidePt);
-		// TODO: correct for hscroll ?
+		GetListCtrl().GetHeaderCtrl()->ScreenToClient(&insidePt);
 		// Ask header control if click was on one of its header items
 		HDHITTESTINFO hhti = { 0 };
 		hhti.pt = insidePt;
@@ -828,7 +832,7 @@ void CDirView::ListContextMenu(CPoint point, int /*i*/)
 /**
  * @brief User right-clicked on specified logical column
  */
-void CDirView::HeaderContextMenu(CPoint point, int /*i*/)
+void CDirView::HeaderContextMenu(CPoint point, int i)
 {
 	BCMenu menu;
 	VERIFY(menu.LoadMenu(IDR_POPUP_DIRVIEW));
@@ -838,10 +842,31 @@ void CDirView::HeaderContextMenu(CPoint point, int /*i*/)
 	BCMenu* pPopup = static_cast<BCMenu *>(menu.GetSubMenu(1));
 	ASSERT(pPopup != nullptr);
 
+	const DirColInfo * col = m_pColItems->GetDirColInfo(i);
+	ASSERT(col != nullptr);
+	m_pFilterMenu = CFileFilterHelperMenu::AppendColumnFilterMenu(pPopup, col->regName);
+
 	// invoke context menu
 	// this will invoke all the OnUpdate methods to enable/disable the individual items
 	pPopup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON, point.x, point.y,
 			AfxGetMainWnd());
+}
+
+void CDirView::OnFilterMenuCommand(UINT nID)
+{
+	if (!m_pFilterMenu)
+		return;
+	String masks = m_dirfilter.displayFilterHelper.GetMaskOrExpression();
+	CDirFrame* pFrame = GetParentFrame();
+	auto* pFilterBar = pFrame->GetFilterBar();
+	if (pFilterBar)
+		pFilterBar->GetDlgItemText(IDC_FILTERFILE_MASK, masks);
+	auto newMasks = m_pFilterMenu->HandleMenuCommand(masks, nID, this);
+	if (!newMasks.has_value())
+		return;
+	m_dirfilter.displayFilterHelper.SetMaskOrExpression(*newMasks);
+	OnViewDisplayFilterBar();
+	OnViewDisplayFilterBarApply();
 }
 
 /**
@@ -1374,10 +1399,9 @@ void CDirView::ExpandSubdir(int sel, bool bRecursive)
 	if (bRecursive)
 		ExpandSubdirs(ctxt, dip);
 
-	DIFFITEM *diffpos = ctxt.GetFirstChildDiffPosition(GetItemKey(sel));
 	UINT indext = sel + 1;
 	int alldiffs;
-	RedisplayChildren(diffpos, dip.GetDepth() + 1, indext, alldiffs);
+	RedisplayChildren(GetItemKey(sel), dip.GetDepth() + 1, indext, alldiffs);
 
 	SortColumnsAppropriately();
 

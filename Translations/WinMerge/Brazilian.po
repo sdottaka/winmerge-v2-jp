@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: WinMerge\n"
 "Report-Msgid-Bugs-To: https://github.com/WinMerge/winmerge/issues/\n"
 "POT-Creation-Date: 2023-03-13 09:30-0300\n"
-"PO-Revision-Date: 2026-02-26 23:00-0300\n"
+"PO-Revision-Date: 2026-03-22 21:15-0300\n"
 "Last-Translator: Marcello <marcello.mco@gmail.com>\n"
 "Language-Team: Felipe\n"
 "Language: pt_BR\n"
@@ -1678,6 +1678,9 @@ msgstr "Abrir Pasta de Listas de Substituição de String..."
 msgid "Open Regex Replace Lists Folder..."
 msgstr "Abrir Pasta de Listas de Substituição de Regex..."
 
+msgid "Match &case"
+msgstr "&Corresponder maiúsculas/minúsculas"
+
 msgid "Text &Normalization"
 msgstr "&Normalização de Texto"
 
@@ -1800,9 +1803,6 @@ msgstr "E&ncontrar o quê:"
 
 msgid "Match &whole word only"
 msgstr "C&orresponder apenas palavras inteiras"
-
-msgid "Match &case"
-msgstr "&Corresponder maiúsculas/minúsculas"
 
 msgid "Regular &expression"
 msgstr "Expressão &regular"
@@ -4607,6 +4607,12 @@ msgstr "Filtro aplicado"
 msgid "Compare %1"
 msgstr "Comparar %1"
 
+msgid "&Filter by This Column"
+msgstr "&Filtrar por Esta Coluna"
+
+msgid "&Filter by This Column..."
+msgstr "&Filtrar por Esta Coluna..."
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "Área de transferência em %s"
@@ -4780,6 +4786,9 @@ msgstr "Erro desconhecido"
 msgid "Invalid property name"
 msgstr "Nome de propriedade inválido"
 
+msgid "Invalid directive"
+msgstr "Diretiva inválida"
+
 msgid "Equals"
 msgstr "Igual a"
 
@@ -4815,6 +4824,18 @@ msgstr "Contém (regex)"
 
 msgid "Not Contains (regex)"
 msgstr "Não Contém (regex)"
+
+msgid "Match (wildcard)"
+msgstr "Corresponde (coringa)"
+
+msgid "Not match (wildcard)"
+msgstr "Não corresponde (coringa)"
+
+msgid "Match (regex)"
+msgstr "Corresponde (regex)"
+
+msgid "Not match (regex)"
+msgstr "Não corresponde (regex)"
 
 msgid "Light"
 msgstr "Claro"
@@ -4988,6 +5009,9 @@ msgstr "Converter Texto com IA..."
 msgid "Unescape Java properties files"
 msgstr "Remover escape dos arquivos de propriedades Java"
 
+msgid "Decompile Java (CFR)"
+msgstr "Descompilar Java (CFR)"
+
 msgid "Make characters uppercase"
 msgstr "Converter caracteres para maiúsculos"
 
@@ -5135,6 +5159,9 @@ msgstr "Conversor de texto (API da OpenAI).\r\nUso: AIConvertText PROMPT"
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "Remover escape e exibir arquivos de propriedades Java com escape."
+
+msgid "Java decompiler (CFR).\r\nDecompiles .class files into readable Java source code.\r\nArguments: CFR command line options."
+msgstr "Descompilador Java (CFR).\r\nDescompila arquivos .class em código Java legível.\r\nArgumentos: Opções de linha de comando do CFR."
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "Opções do Plugin do WinMerge CompareMSExcelFiles.sct"

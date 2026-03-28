@@ -92,14 +92,6 @@ CDirDoc::CDirDoc()
  */
 CDirDoc::~CDirDoc()
 {
-	// Inform all of our merge docs that we're closing
-	for (auto pMergeDoc : m_MergeDocs)
-		pMergeDoc->DirDocClosing(this);
-	// Delete all temporary folders belonging to this document
-	while (m_pTempPathContext != nullptr)
-	{
-		m_pTempPathContext = m_pTempPathContext->DeleteHead();
-	}
 }
 
 /**
@@ -113,6 +105,31 @@ BOOL CDirDoc::OnNewDocument()
 	return TRUE;
 }
 
+/**
+ * @brief Called when dirdoc is closed.
+ */
+void CDirDoc::OnCloseDocument()
+{
+	if (m_pDirView)
+	{
+		if (CDirFrame* pf = m_pDirView->GetParentFrame())
+		{
+			if (auto* pHeaderBar = pf->GetHeaderInterface())
+			{
+				pHeaderBar->SetOnSetFocusCallback(nullptr);
+				pHeaderBar->SetOnCaptionChangedCallback(nullptr);
+				pHeaderBar->SetOnFolderSelectedCallback(nullptr);
+			}
+		}
+	}
+	// Inform all of our merge docs that we're closing
+	for (auto pMergeDoc : m_MergeDocs)
+		pMergeDoc->DirDocClosing(this);
+	// Delete all temporary folders belonging to this document
+	while (m_pTempPathContext != nullptr)
+		m_pTempPathContext = m_pTempPathContext->DeleteHead();
+	__super::OnCloseDocument();
+}
 
 BEGIN_MESSAGE_MAP(CDirDoc, CDocument)
 	//{{AFX_MSG_MAP(CDirDoc)
@@ -387,16 +404,18 @@ void CDirDoc::Rescan()
 
 	auto* pHeaderBar = pf->GetHeaderInterface();
 	pHeaderBar->SetPaneCount(m_nDirs);
-	pHeaderBar->SetOnSetFocusCallback([&](int pane) {
+	pHeaderBar->SetOnSetFocusCallback([this](int pane) {
 		m_pDirView->SetActivePane(pane);
 		GetOptionsMgr()->SaveOption(OPT_ACTIVE_PANE, pane);
 	});
-	pHeaderBar->SetOnCaptionChangedCallback([&](int pane, const String& sText) {
+	pHeaderBar->SetOnCaptionChangedCallback([this](int pane, const String& sText) {
 		m_strDesc[pane] = sText;
 		UpdateHeaderPath(pane);
 		m_pDirView->SetFocus();
 	});
-	pHeaderBar->SetOnFolderSelectedCallback([&](int pane, const String& sFolderpath) {
+	pHeaderBar->SetOnFolderSelectedCallback([this](int pane, const String& sFolderpath) {
+		if (m_diffThread.GetThreadState() == CDiffThread::THREAD_COMPARING)
+			return;
 		PathContext paths = m_pCtxt->GetNormalizedPaths();
 		paths.SetPath(pane, sFolderpath);
 		m_strDesc[pane].clear();

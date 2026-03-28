@@ -13,7 +13,7 @@
 
     <variablelist>
       <varlistentry>
-        <term>WinMergeウインドウから</term>
+        <term>WinMergeウィンドウから</term>
 
         <listitem>
           <para><menuchoice><guimenu>ファイル</guimenu><guimenuitem>開く</guimenuitem></menuchoice>をクリックしてください。ファイルまたはフォルダーの選択ダイアログを使用して、比較する1と2のフォルダーを指定してください。デフォルトでは、フォルダー中のすべてのファイルが比較対象に含まれ、サブフォルダーも比較対象に含まれます。これらのオプションの変更と、ファイルまたはフォルダーの選択ダイアログのより詳細な情報については、<xref
@@ -22,7 +22,7 @@ linkend="Open_paths" />を参照してください。</para>
       </varlistentry>
 
       <varlistentry>
-        <term>コマンドプロンプトウインドウから</term>
+        <term>コマンドプロンプトウィンドウから</term>
 
         <listitem>
           <para>WinMergeインストールディレクトリにある、<command>WinMergeU.exe</command>を起動してください。コマンド引数には、比較する1と2のフォルダーを含みます。デフォルトでは、フォルダー中のすべてのファイルが比較対象に含まれ、サブフォルダーは比較対象に含まれません。これらのオプションの変更と、その他のコマンドオプションの情報については、<xref
@@ -32,11 +32,11 @@ linkend="Command_line" />を参照してください。</para>
     </variablelist>
 
     <tip>
-      <title>Tips</title>
+      <title>ヒント</title>
 
       <variablelist>
         <varlistentry>
-          <term>Recursive mode<indexterm>
+          <term>再帰モード<indexterm>
               <primary>再帰フォルダー比較</primary>
             </indexterm></term>
 
@@ -49,19 +49,19 @@ linkend="Compare_dirs_treeview" />を有効にすることを考えてくださ�
         </varlistentry>
 
         <varlistentry>
-          <term>Quick Contents comparisons</term>
+          <term>クイックコンテンツ比較</term>
 
           <listitem>
             <para>ファイル比較のための<guilabel>クイックコンテンツ</guilabel>方式は、<xref linkend="Configuration"
 />で説明されています。これは、
-巨大なバイナリファイルを比較する時に便利です。そしてそれは、4MBを超えるファイル比較の場合、自動的に使用されます。起こりうる不都合としては、ラインフィルターが効かないことと、フォルダー比較ウィンドウに差異カウントが表示されません。しかし、これは、ほとんどのケースで取るに足らないことです。なぜなら、そのような巨大なファイルは、たいていバイナリだからです。</para>
+巨大なバイナリファイルを比較する時に便利です。そしてそれは、4MBを超えるファイル比較の場合、自動的に使用されます。起こりうる不都合としては、行フィルターが効かないことと、フォルダー比較ウィンドウに差異カウントが表示されません。しかし、これは、ほとんどのケースで取るに足らないことです。なぜなら、そのような巨大なファイルは、たいていバイナリだからです。</para>
 
             <para>この方式を使用するために、比較操作をする前に設定をしてください。WinMergeオプションの比較カテゴリで、<guilabel>ファイル比較方法</guilabel>のドロップダウンメニューをクリックし、<guimenuitem>クイックコンテンツ</guimenuitem>を選択してください。</para>
           </listitem>
         </varlistentry>
 
         <varlistentry>
-          <term>For advanced users</term>
+          <term>上級ユーザー向け</term>
 
           <listitem>
             <para>例えば、とても大きなテキストファイルがたくさんある場合など、<guilabel>クイックコンテンツ</guilabel>の境界ファイルサイズを4MBから変更することが可能です。その方法は、Windowsの<command>regedit</command>コマンドを起動し、<screen>HKEY_CURRENT_USER\Software\Thingamahoochie\WinMerge\Settings\QuickMethodLimit</screen>このキーワードを探し、値を変更してください。レジストリの編集は慎重に行ってください。</para>
@@ -100,23 +100,23 @@ I get the partial list, but no Abort indicator.-->
     <title>フォルダー比較ウィンドウ<indexterm>
         <primary>フォルダー比較ウィンドウ</primary>
 
-        <seealso>Compare window</seealso>
+        <seealso>比較ウィンドウ</seealso>
       </indexterm><indexterm>
-        <primary>Compare window</primary>
+        <primary>比較ウィンドウ</primary>
 
-        <secondary>Folder</secondary>
+        <secondary>フォルダー</secondary>
       </indexterm><indexterm>
-        <primary>subfolders</primary>
+        <primary>サブフォルダー</primary>
 
-        <secondary>in Folder Compare window</secondary>
+        <secondary>フォルダー比較ウィンドウ内</secondary>
       </indexterm></title>
 
     <para>フォルダー比較ウィンドウは、フォルダー比較の結果を表示します。二つの異なるビューが使用できます。</para>
 
     <variablelist>
       <varlistentry id="Compare_dirs_tabview">
-        <term>Tabular view<indexterm>
-            <primary>tabular view, Compare window</primary>
+        <term>表形式ビュー<indexterm>
+            <primary>表形式ビュー、比較ウィンドウ</primary>
           </indexterm></term>
 
         <listitem>
@@ -130,8 +130,8 @@ fileref="screenshots/foldercomp1.png" format="PNG" /> </imageobject></mediaobjec
       </varlistentry>
 
       <varlistentry id="Compare_dirs_treeview">
-        <term remap="" xreflabel="tree view">Tree view<indexterm>
-            <primary>tree view, Compare window</primary>
+        <term remap="" xreflabel="ツリービュー">ツリー ビュー<indexterm>
+            <primary>ツリービュー、比較ウィンドウ</primary>
           </indexterm></term>
 
         <listitem>
@@ -173,18 +173,18 @@ fileref="screenshots/treeview-01.png" format="PNG" /> </imageobject></mediaobjec
       <title>再帰的と非再帰的比較結果<indexterm>
           <primary>再帰フォルダー比較</primary>
 
-          <secondary>results view</secondary>
+          <secondary>結果ビュー</secondary>
         </indexterm><indexterm>
-          <primary>nonrecursive folder compare</primary>
+          <primary>非再帰的なフォルダー比較</primary>
 
-          <secondary>results view</secondary>
+          <secondary>結果ビュー</secondary>
         </indexterm></title>
 
       <para>フォルダー比較ウィンドウは、再帰比較モードと非再帰比較モードで、見た目と挙動が少しばかり異なります。</para>
 
       <variablelist>
         <varlistentry>
-          <term>Recursive folder compare</term>
+          <term>再帰的なフォルダー比較</term>
 
           <listitem>
             <para>比較結果は、すべてのサブフォルダーが含まれています。<guimenu>表示</guimenu>メニューのオプションによって、フォルダーに含まれる項目のうち、表示される項目のタイプをコントロールできます(例えば、<guimenuitem>同一項目の表示</guimenuitem>)。
@@ -193,7 +193,7 @@ fileref="screenshots/treeview-01.png" format="PNG" /> </imageobject></mediaobjec
         </varlistentry>
 
         <varlistentry>
-          <term>Nonrecursive folder compare</term>
+          <term>非再帰的なフォルダー比較</term>
 
           <listitem>
             <para>結果は、選択されたフォルダーのファイルと、最上位のサブフォルダーのみを含んでいます。しかしながら、いくつかのサブフォルダーを比較したいなら、それらをブラウズすることができます。</para>
@@ -254,7 +254,7 @@ format="PNG" /> </imageobject></inlinemediaobject> 中央のみに存在する�
 
         <member><inlinemediaobject>
 <imageobject> <imagedata contentwidth="16" fileref="screenshots/rfolder.png"
-format="PNG" /> </imageobject></inlinemediaobject> 右のみに存在するフォルダー</member>
+format="PNG" /> </imageobject></inlinemediaobject> 右側のみに存在するフォルダー</member>
 
         <member><inlinemediaobject>
 <imageobject> <imagedata contentwidth="16" fileref="screenshots/lfile.png"
@@ -266,7 +266,7 @@ format="PNG" /> </imageobject></inlinemediaobject> 中央のみに存在する�
 
         <member><inlinemediaobject>
 <imageobject> <imagedata contentwidth="16" fileref="screenshots/rfile.png"
-format="PNG" /> </imageobject></inlinemediaobject> 右のみに存在するファイル</member>
+format="PNG" /> </imageobject></inlinemediaobject> 右側のみに存在するファイル</member>
 
         <member><inlinemediaobject>
 <imageobject> <imagedata contentwidth="16"
@@ -292,9 +292,9 @@ format="PNG" /> </imageobject></inlinemediaobject>
       <title>フォルダー比較ウィンドウの操作</title>
 
       <indexterm>
-        <primary>navigation functions</primary>
+        <primary>ナビゲーション機能</primary>
 
-        <secondary>folder compare</secondary>
+        <secondary>フォルダー比較</secondary>
       </indexterm>
 
       <para><link
@@ -319,18 +319,18 @@ fileref="screenshots/nextdiff_btn.png" /> </imageobject><textobject>
 
   <section id="Compare_dirs_fileops">
     <title>フォルダー比較のファイル操作<indexterm>
-        <primary>file operations</primary>
+        <primary>ファイル操作</primary>
 
-        <secondary>in Folder Compare window</secondary>
+        <secondary>フォルダー比較ウィンドウ内</secondary>
       </indexterm><indexterm>
         <primary>フォルダー比較ウィンドウ</primary>
 
-        <secondary>file operations</secondary>
+        <secondary>ファイル操作</secondary>
       </indexterm></title>
 
     <para>フォルダー比較ウィンドウは、編集、コピー、削除、移動やリネームなど、ファイルに対する一般的な操作をサポートしています
 (移動は、コピーして削除するのと等価です)。 これらのファイル操作と、フォルダーコンテンツのマージなど、
-幾つかの特別なWinMergeの機能を使用することができます。 ファイルを、関連付られたプログラム、または、外部エディターで開くこともできます。</para>
+幾つかの特別なWinMergeの機能を使用することができます。 ファイルを、関連付けられたプログラム、または、外部エディターで開くこともできます。</para>
 
     <para>これらのタスクを実行するための最も手近な方法は、一つか複数の項目を右クリックして、すべてのファイル操作が有効なコンテキストメニューを使うことです。</para>
 
@@ -338,7 +338,7 @@ fileref="screenshots/nextdiff_btn.png" /> </imageobject><textobject>
       <title>ファイルのコピー<indexterm>
           <primary>ファイルのコピー</primary>
 
-          <secondary>in Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウ内</secondary>
         </indexterm></title>
 
       <para>フォルダー比較ウィンドウ中で最も一般的なファイル操作は、左右にファイルをコピーすることです。WinMergeのコピー機能には、幾つかの形があります。同一ファイルのコピーはマージにおいて使用しないので、異なるファイルのみをすべてコピーする。このコピー機能は、コンテキストメニュー、WinMergeメニュー、そしてツールバーで有効です。</para>
@@ -351,28 +351,28 @@ fileref="screenshots/nextdiff_btn.png" /> </imageobject><textobject>
         <mediaobject>
 <imageobject> <imagedata contentwidth="526"
 fileref="screenshots/ctx_menu_copy1.png" format="PNG" /> </imageobject><textobject>
-            <phrase>Folder Compare window Copy context menu</phrase>
+            <phrase>フォルダー比較ウィンドウ コピーコンテキストメニュー</phrase>
           </textobject>
         </mediaobject>
 
         <itemizedlist>
           <listitem>
-            <para><guimenuitem>左から右</guimenuitem>と<guimenuitem>右を左に</guimenuitem>は、一方から他方へ選択項目をコピーします。例の中で、後ろの<guilabel>(2
+            <para><guimenuitem>左側から右側</guimenuitem>と<guimenuitem>右側から左側</guimenuitem>は、一方から他方へ選択項目をコピーします。例の中で、後ろの<guilabel>(2
 of
 4)</guilabel>は、コピーされる項目の内、2ファイルに差異があるということを示しています(同一のファイルはコピーされません)。これらのショートカットは、差異のあるファイルを選択した場合にのみ有効です。ですので、同一のファイルだけを選択した場合、このショートカットは無効になっています。</para>
           </listitem>
 
           <listitem>
-            <para><guimenuitem>左を...</guimenuitem>と<guimenuitem>右を...</guimenuitem>で、比較フォルダーの代わりに、システム中のコピー先フォルダーを指定することができます。フォルダーダイアログが開くので、お使いのシステム中のフォルダーを選択(または、フォルダーを新規作成)し、<guibutton>OK</guibutton>をクリックしてください。</para>
+            <para><guimenuitem>左側を...</guimenuitem>と<guimenuitem>右側を...</guimenuitem>で、比較フォルダーの代わりに、システム中のコピー先フォルダーを指定することができます。フォルダーダイアログが開くので、お使いのシステム中のフォルダーを選択(または、フォルダーを新規作成)し、<guibutton>OK</guibutton>をクリックしてください。</para>
           </listitem>
         </itemizedlist>
-        <para>In the Folder Compare window with three folders, the
-<guimenuitem>Copy</guimenuitem> item has a submenu with nine shortcuts:</para>
+        <para>3 つのフォルダーがある [フォルダー比較] ウィンドウの <guimenuitem>Copy</guimenuitem> 項目には、9
+つ​​のショートカットを含むサブメニューがあります。</para>
 
         <mediaobject>
 <imageobject> <imagedata contentwidth="410"
 fileref="screenshots/ctx_menu_copy2.png" format="PNG" /> </imageobject><textobject>
-            <phrase>Folder Compare window Copy context menu</phrase>
+            <phrase>フォルダー比較ウィンドウ コピーコンテキストメニュー</phrase>
           </textobject>
         </mediaobject>
 
@@ -384,21 +384,21 @@ fileref="screenshots/ctx_menu_copy2.png" format="PNG" /> </imageobject><textobje
         <para>フォルダー比較ツールバーの、<inlinemediaobject>
 <imageobject> <imagedata contentwidth="17"
 fileref="screenshots/copyr_button.png" /> </imageobject><textobject>
-              <phrase>右へコピーボタン</phrase>
+              <phrase>右側へコピーボタン</phrase>
             </textobject>
           </inlinemediaobject>
-<guibutton>右へコピー</guibutton>と<inlinemediaobject>
+<guibutton>右側へコピー</guibutton>と<inlinemediaobject>
 <imageobject> <imagedata contentwidth="17"
 fileref="screenshots/copyl_button.png" /> </imageobject><textobject>
-              <phrase>左へコピーボタン</phrase>
+              <phrase>左側へコピーボタン</phrase>
             </textobject>
           </inlinemediaobject>
-<guibutton>左へコピー</guibutton>は、コンテキストメニューの<guimenuitem>左から右</guimenuitem>と<guimenuitem>右を左に</guimenuitem>と同じ働きをします。これは、they
+<guibutton>左側へコピー</guibutton>は、コンテキストメニューの<guimenuitem>左側から右側</guimenuitem>と<guimenuitem>右を左に</guimenuitem>と同じ働きをします。これは、they
 copy from side to side only files that are valid to
 copy.
 しかしながら、これらのコマンドは、コピーされるファイル数を直接表示しません。その代わり、コピー元とコピー先をチェックできる確認ダイアログを表示します。</para>
 
-        <para>WinMergeメニューの、<menuchoice><guimenu>マージ</guimenu><guimenuitem>右にコピー</guimenuitem></menuchoice>と<menuchoice><guimenu>マージ</guimenu><guimenuitem>左にコピー</guimenuitem></menuchoice>は、ツールバーのコピーコマンドと同じ動作をします。</para>
+        <para>WinMergeメニューの、<menuchoice><guimenu>マージ</guimenu><guimenuitem>右にコピー</guimenuitem></menuchoice>と<menuchoice><guimenu>マージ</guimenu><guimenuitem>左側にコピー</guimenuitem></menuchoice>は、ツールバーのコピーコマンドと同じ動作をします。</para>
       </section>
     </section>
 
@@ -406,7 +406,7 @@ copy.
       <title>ファイルの削除<indexterm>
           <primary>ファイルの削除</primary>
 
-          <secondary>in Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウ内</secondary>
         </indexterm></title>
 
       <para>コンテキストメニューの<guimenuitem>削除</guimenuitem>を使って、どちらか一方、または、両側の選択されたアイテムを削除できます。その他のファイル操作と同様に、<guimenuitem>削除</guimenuitem>は、<guimenuitem>左側</guimenuitem>、<guimenuitem>中央</guimenuitem>と<guimenuitem>右</guimenuitem>、そして<guimenuitem>両側</guimenuitem>というサブメニューを持っています。</para>
@@ -422,7 +422,7 @@ linkend="Configuration"
       <title>ファイル名の変更<indexterm>
           <primary>ファイル名の変更</primary>
 
-          <secondary>in Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウ内</secondary>
         </indexterm></title>
 
       <para>ファイル、または、フォルダーをリネームするには、コンテキストメニューの<guimenuitem>名前を変更</guimenuitem>、または、<keycap>F2</keycap>キーを押下してください。エディットボックス内で<keycap>Return</keycap>キーを押下すると、名前を変更します。また、<keycap>Esc</keycap>キーを押下するとキャンセルします。一つのファイル、または、フォルダーをリネームできます。リネームは、両側(または3つすべて)のアイテムを変更することに注意してください。現在、片側のアイテムだけのリネームはできません。</para>
@@ -432,14 +432,14 @@ linkend="Configuration"
       <title>ファイルを開く<indexterm>
           <primary>ファイルを開く</primary>
 
-          <secondary>in Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウ内</secondary>
         </indexterm></title>
 
       <para>コンテキストメニューの、<guimenuitem>左側を開く</guimenuitem>、<guimenuitem>中央を開く</guimenuitem>と<guimenuitem>右側を開く</guimenuitem>のどちらかを使用して、アイテムを操作することができます。それぞれの<guimenuitem>開く</guimenuitem>メニューは、いくつかのショートカットを含んだ、サブメニューを持っています。</para>
 
       <variablelist>
         <varlistentry>
-          <term>With Registered Application</term>
+          <term>登録されたアプリケーションで</term>
 
           <listitem>
             <para>Windowsで登録されているファイルタイプに対応したアプリケーションで、ファイルを開きます。</para>
@@ -452,7 +452,7 @@ linkend="Configuration"
         </varlistentry>
 
         <varlistentry>
-          <term>With External Editor</term>
+          <term>外部エディターで</term>
 
           <listitem>
             <para>外部エディターでファイルを開くデフォルトエディターはメモ帳ですが、WinMergeのオプションで、別のエディターを設定することがきます。</para>
@@ -460,7 +460,7 @@ linkend="Configuration"
         </varlistentry>
 
         <varlistentry>
-          <term>With...</term>
+          <term>プログラムの選択...</term>
 
           <listitem>
             <para><guilabel>Open With</guilabel>ダイアログを開き、指定したアプリケーションでファイルを開くことができます。</para>
@@ -471,13 +471,13 @@ linkend="Configuration"
 
     <section>
       <title>パス名やファイル名のコピー<indexterm>
-          <primary>pathnames</primary>
+          <primary>パス名</primary>
 
-          <secondary>copying from Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウからのコピー</secondary>
         </indexterm><indexterm>
-          <primary>file names</primary>
+          <primary>ファイル名</primary>
 
-          <secondary>copying from Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウからのコピー</secondary>
         </indexterm></title>
 
       <para>コンテキストメニュー<guimenuitem>パス名をコピー</guimenuitem>と<guimenuitem>ファイル名をコピー</guimenuitem>ショートカットは、選択されたアイテムのパス名、または、ファイル名をWindowsのクリップボードへコピーします。さらに、コピーされた情報を、ファイル、または、アプリケーションへ貼り付けることができます。例えば、変更されたファイルのリストの作成や、チェンジログなど。</para>
@@ -497,11 +497,11 @@ linkend="Configuration"
       <title>ファイルの保護<indexterm>
           <primary>フォルダー比較ウィンドウ</primary>
 
-          <secondary>protecting files in</secondary>
+          <secondary>ファイルを保護する</secondary>
         </indexterm><indexterm>
           <primary>ファイルの保護</primary>
         </indexterm><indexterm>
-          <primary>read-only files</primary>
+          <primary>読み取り専用ファイル</primary>
 
           <see>ファイルの保護</see>
         </indexterm></title>
@@ -525,7 +525,7 @@ linkend="Configuration"
 
     <section>
       <title>ビュー内の選択された項目を再比較する<indexterm>
-          <primary>refreshing view</primary>
+          <primary>表示更新</primary>
         </indexterm></title>
 
       <para>大きなフォルダーをフルリフレッシュするには長時間かかります。 WinMerge 2.2
@@ -538,9 +538,9 @@ linkend="Configuration"
 
     <section>
       <title>ファイルの圧縮<indexterm>
-          <primary>archiving files</primary>
+          <primary>ファイルのアーカイブ</primary>
 
-          <secondary>in Folder Compare window</secondary>
+          <secondary>フォルダー比較ウィンドウ内</secondary>
         </indexterm></title>
 
       <para>コンテキストメニューの<guimenu>圧縮</guimenu>を使って、 選択したアイテムを含んだ新しいアーカイブファイルを作成します。</para>
@@ -589,16 +589,14 @@ class="directory">Altered</filename>という名前の、別のサブフォル�
         </varlistentry>
 
         <varlistentry>
-          <term>All</term>
+          <term>全て</term>
 
           <listitem>
-            <para>Adds files and folders recursively from all sides to the archive
-file. Because the filenames are same, they are added to different
-subfolders, named <filename class="directory">Original</filename> and
-<filename class="directory">Altered</filename>, inside the archive:
-left-side files are put to <filename class="directory">Original</filename>,
-and right-side files are put into <filename
-class="directory">Altered</filename>.</para>
+            <para>ファイルとフォルダーをあらゆる面からアーカイブ ファイルに再帰的に追加します。ファイル名が同じであるため、ファイルはアーカイブ内の <filename
+class="directory">Original</filename> と <filename
+class="directory">Altered</filename> という名前の異なるサブフォルダに追加されます。左側のファイルは
+<filename class="directory">Original</filename> に配置され、右側のファイルは <filename
+class="directory">Altered</filename> に配置されます。</para>
           </listitem>
         </varlistentry>
 
@@ -643,9 +641,9 @@ class="directory">Altered</filename>を探し、これら2つのフォルダー�
 
   <section id="Compare_dirs_browsing">
     <title>ファイル比較ウィンドウでフォルダーをブラウズする<indexterm>
-        <primary>folders</primary>
+        <primary>フォルダー</primary>
 
-        <secondary>browsing in Folder Compare window</secondary>
+        <secondary>フォルダー比較ウィンドウでの参照</secondary>
       </indexterm></title>
 
     <para>このセクションでは、フォルダー比較ウィンドウに表示されている、 フォルダーをブラウズする方法について述べます。
@@ -662,7 +660,7 @@ class="directory">Altered</filename>を探し、これら2つのフォルダー�
 
       <variablelist>
         <varlistentry>
-          <term>Browsing the parent folder</term>
+          <term>親フォルダーを参照する</term>
 
           <listitem>
             <para>親フォルダーの比較は、(一番上にあるパス<guilabel>..</guilabel>)<inlinemediaobject>
@@ -720,7 +718,7 @@ linkend="CompareDirs_browse_unique" />を参照してください。</para>
             <mediaobject>
 <imageobject> <imagedata contentwidth="572"
 fileref="screenshots/foldercomp_2same.png" format="PNG" /> </imageobject><textobject>
-                <phrase>Folder Compare window, two folders selected</phrase>
+                <phrase>フォルダー比較ウィンドウ、2 つのフォルダが選択されている</phrase>
               </textobject>
             </mediaobject>
             <para></para>
@@ -741,9 +739,9 @@ fileref="screenshots/foldercomp_2same.png" format="PNG" /> </imageobject><textob
 
     <section id="CompareDirs_browse_unique">
       <title>ユニークフォルダーのブラウズ<indexterm>
-          <primary>unique folders</primary>
+          <primary>固有のフォルダー</primary>
 
-          <secondary>comparing</secondary>
+          <secondary>比較する</secondary>
         </indexterm></title>
 
       <para>WinMergeは、存在するフォルダーと存在しないフォルダーを比較できなかったため、 WinMerge
@@ -761,7 +759,7 @@ WinMergeで、ユニークなフォルダーから何かコピーするには、
           <mediaobject>
 <imageobject> <imagedata contentwidth="590"
 fileref="screenshots/foldercmp_unique1.png" format="PNG" /> </imageobject><textobject>
-              <phrase>Folder Compare window, comparing unique folder</phrase>
+              <phrase>フォルダー比較ウィンドウ、一意のフォルダーを比較</phrase>
             </textobject>
           </mediaobject>
 
@@ -777,7 +775,7 @@ fileref="screenshots/foldercmp_unique1.png" format="PNG" /> </imageobject><texto
           <mediaobject>
 <imageobject> <imagedata contentwidth="590"
 fileref="screenshots/foldercmp_unique2.png" format="PNG" /> </imageobject><textobject>
-              <phrase>Folder Compare window after browsing to unique and created folders</phrase>
+              <phrase>作成された固有のフォルダーを参照した後のフォルダー比較ウィンドウ</phrase>
             </textobject>
           </mediaobject>
 
@@ -792,7 +790,7 @@ fileref="screenshots/foldercmp_unique2.png" format="PNG" /> </imageobject><texto
     <title>フォルダー比較のカスタマイズ<indexterm>
         <primary>フォルダー比較ウィンドウ</primary>
 
-        <secondary>customizing</secondary>
+        <secondary>カスタマイズする</secondary>
       </indexterm></title>
 
     <para>このセクションでは、フォルダー比較ウィンドウの表示結果を制御する方法について説明します。
@@ -800,7 +798,7 @@ fileref="screenshots/foldercmp_unique2.png" format="PNG" /> </imageobject><texto
 
     <section>
       <title>ファイルの種類による表示/非表示<indexterm>
-          <primary>View menu</primary>
+          <primary>表示メニュー</primary>
 
           <secondary>フォルダー比較ウィンドウ</secondary>
         </indexterm></title>
@@ -895,9 +893,9 @@ fileref="screenshots/foldercmp_unique2.png" format="PNG" /> </imageobject><texto
       </orderedlist>
 
       <para><indexterm>
-          <primary>Display Columns dialog</primary>
-        </indexterm>The following columns in the Display
-Columns dialog are displayed by default in the Folder Compare window:</para>
+          <primary>「列の表示」ダイアログ</primary>
+        </indexterm>[列の表示] ダイアログの次の列が、デフォルトで [フォルダー比較]
+ウィンドウに表示されます。</para>
 
       <itemizedlist>
         <listitem>
@@ -1008,12 +1006,10 @@ types known to usually have a version resource.</para>
 
     <para>フォルダー比較ウィンドウ内で選択項目を右クリックし、 コンテキストメニューから直接Windowsのシェルコマンドを起動することができます。</para>
 
-    <para>If the selection occurs on both sides, you can choose either the
-<guimenu>Left Shell Menu</guimenu> or <guimenu>Right Shell Menu</guimenu>.
-If the selection occurs on all sides, you can choose the <guimenu>Left Shell
-Menu</guimenu>, <guimenu>Middle Shell Menu</guimenu> or <guimenu>Right Shell
-Menu</guimenu>. If the item occurs only on one side, only that side's shell
-menu is available.</para>
+    <para>両側で選択が行われる場合は、<guimenu>左シェル メニュー</guimenu> または <guimenu>右シェル メニュー</guimenu>
+のいずれかを選択できます。  すべての面で選択が行われる場合は、<guimenu>左シェル メニュー</guimenu>、<guimenu>中シェル
+メニュー</guimenu>、または <guimenu>右シェル メニュー</guimenu>を選択できます。項目が片側のみにある場合は、その側のシェル
+メニューのみが使用可能です。</para>
 
     <caution>
       <para>シェルメニューコマンドは、完全にWinMergeの外側で実行されることを、よく考えてください。

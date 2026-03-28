@@ -1680,6 +1680,9 @@ msgstr "打开字符串替换列表文件夹..."
 msgid "Open Regex Replace Lists Folder..."
 msgstr "打开正则式替换列表文件夹..."
 
+msgid "Match &case"
+msgstr "区分大小写(&C)"
+
 msgid "Text &Normalization"
 msgstr "文本规范化(&N)"
 
@@ -1802,9 +1805,6 @@ msgstr "查找内容(&N)："
 
 msgid "Match &whole word only"
 msgstr "全字匹配(&W)"
-
-msgid "Match &case"
-msgstr "区分大小写(&C)"
 
 msgid "Regular &expression"
 msgstr "正则表达式(&E)"
@@ -4994,6 +4994,12 @@ msgstr "过滤器已应用"
 msgid "Compare %1"
 msgstr "比较 %1"
 
+msgid "&Filter by This Column"
+msgstr ""
+
+msgid "&Filter by This Column..."
+msgstr ""
+
 #, c-format
 msgid "Clipboard at %s"
 msgstr "剪贴板位于 %s"
@@ -5223,6 +5229,9 @@ msgstr "未知错误"
 msgid "Invalid property name"
 msgstr "无效的属性名称"
 
+msgid "Invalid directive"
+msgstr ""
+
 msgid "Equals"
 msgstr "等于"
 
@@ -5258,6 +5267,18 @@ msgstr "包含（正则表达式）"
 
 msgid "Not Contains (regex)"
 msgstr "未包含（正则表达式）"
+
+msgid "Match (wildcard)"
+msgstr ""
+
+msgid "Not match (wildcard)"
+msgstr ""
+
+msgid "Match (regex)"
+msgstr ""
+
+msgid "Not match (regex)"
+msgstr ""
 
 msgid "Light"
 msgstr "浅色"
@@ -5452,6 +5473,9 @@ msgstr "用 AI 转换文本..."
 
 msgid "Unescape Java properties files"
 msgstr "去转义 Java 属性文件"
+
+msgid "Decompile Java (CFR)"
+msgstr "反编译 Java（CFR）"
 
 msgid "Make characters uppercase"
 msgstr "变大写"
@@ -5746,6 +5770,15 @@ msgstr ""
 
 msgid "Unescape and display escaped Java properties files."
 msgstr "去转义并显示转义的 Java 属性文件。"
+
+msgid ""
+"Java decompiler (CFR).\r\n"
+"Decompiles .class files into readable Java source code.\r\n"
+"Arguments: CFR command line options."
+msgstr ""
+"使用 CFR 的 Java 反编译器。\r\n"
+"将 .class 文件反编译为可读的 Java 源代码。\r\n"
+"参数：CFR 命令行选项。"
 
 msgid "CompareMSExcelFiles.sct WinMerge Plugin Options"
 msgstr "CompareMSExcelFiles 插件选项"
