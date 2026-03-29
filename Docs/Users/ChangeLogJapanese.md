@@ -22,7 +22,7 @@ title: 変更履歴
 
 * フィルター式で大文字小文字の違いを無視しない文字列比較を指示するディレクティブ @cs を追加した。(例: @cs Name = "file1.txt") [(PR #3253)](https://github.com/WinMerge/winmerge/pull/3253)
 
-* ヘッダー部のコンテキストメニューに[この列でフィルター]メニュー項目を追加した。[(PR #3268)](https://github.com/WinMerge/winmerge/pull/3268)
+* ヘッダー部のコンテキストメニューに[この列でフィルター]メニュー項目を追加した。[(PR #3268)](https://github.com/WinMerge/winmerge/pull/3268)[(PR #3284)](https://github.com/WinMerge/winmerge/pull/3284)
 
 #### プラグイン
 
