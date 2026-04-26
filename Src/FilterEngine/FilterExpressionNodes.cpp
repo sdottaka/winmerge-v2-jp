@@ -13,6 +13,7 @@
 #include "DiffItem.h"
 #include "paths.h"
 #include "unicoder.h"
+#include "FileTransform.h"
 #include <string>
 #include <variant>
 #include <Poco/RegularExpression.h>
@@ -910,6 +911,13 @@ static auto EncodingField(int index, const FilterExpression* ctxt, const DIFFITE
 	return ucr::toUTF8(di.diffFileInfo[index].encoding.GetName());
 }
 
+static auto HasBOMField(int index, const FilterExpression* ctxt, const DIFFITEM& di) -> ValueType
+{
+	if (!di.diffcode.exists(index))
+		return std::monostate{};
+	return di.diffFileInfo[index].encoding.m_bom;
+}
+
 static auto BinaryField(int index, const FilterExpression* ctxt, const DIFFITEM& di) -> ValueType
 {
 	if (!di.diffcode.exists(index))
@@ -971,6 +979,28 @@ static auto ContentField(int index, const FilterExpression* ctxt, const DIFFITEM
 	content->item.version = di.diffFileInfo[index].version;
 	content->item.encoding = di.diffFileInfo[index].encoding;
 	return content;
+}
+
+static auto UnpackerField(int index, const FilterExpression* ctxt, const DIFFITEM& di) -> ValueType
+{
+	if (di.diffcode.isDirectory())
+		return std::monostate{};
+	PackingInfo* pInfoUnpacker = nullptr;
+	PrediffingInfo* pInfoPrediffer = nullptr;
+	String filteredFilenames = ctxt->ctxt->GetFilteredFilenames(di);
+	const_cast<CDiffContext*>(ctxt->ctxt)->FetchPluginInfos(filteredFilenames, &pInfoUnpacker, &pInfoPrediffer);
+	return pInfoUnpacker ? ucr::toUTF8(pInfoUnpacker->GetPluginPipeline()) : std::string("");
+}
+
+static auto PredifferField(int index, const FilterExpression* ctxt, const DIFFITEM& di) -> ValueType
+{
+	if (di.diffcode.isDirectory())
+		return std::monostate{};
+	PackingInfo* pInfoUnpacker = nullptr;
+	PrediffingInfo* pInfoPrediffer = nullptr;
+	String filteredFilenames = ctxt->ctxt->GetFilteredFilenames(di);
+	const_cast<CDiffContext*>(ctxt->ctxt)->FetchPluginInfos(filteredFilenames, &pInfoUnpacker, &pInfoPrediffer);
+	return pInfoPrediffer ? ucr::toUTF8(pInfoPrediffer->GetPluginPipeline()) : std::string("");
 }
 
 FieldNode::FieldNode(const FilterExpression* ctxt, const std::string& v) : ctxt(ctxt), field(v)
@@ -1041,6 +1071,8 @@ FieldNode::FieldNode(const FilterExpression* ctxt, const std::string& v) : ctxt(
 		functmp = CodepageField;
 	else if (strcmp(p, "encoding") == 0)
 		functmp = EncodingField;
+	else if (strcmp(p, "hasbom") == 0)
+		functmp = HasBOMField;
 	else if (strcmp(p, "diffcode") == 0)
 	{
 		functmp = DiffCodeField;
@@ -1090,6 +1122,16 @@ FieldNode::FieldNode(const FilterExpression* ctxt, const std::string& v) : ctxt(
 	}
 	else if (strcmp(p, "content") == 0)
 		functmp = ContentField;
+	else if (strcmp(p, "unpacker") == 0)
+	{
+		functmp = UnpackerField;
+		side = -2;
+	}
+	else if (strcmp(p, "prediffer") == 0)
+	{
+		functmp = PredifferField;
+		side = -2;
+	}
 	else
 		throw std::runtime_error("Invalid field name: " + std::string(v.begin(), v.end()));
 	if (prefixlen > 0)

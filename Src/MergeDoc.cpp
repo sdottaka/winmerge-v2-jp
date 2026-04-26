@@ -95,7 +95,7 @@ BEGIN_MESSAGE_MAP(CMergeDoc, CDocument)
 	ON_UPDATE_COMMAND_UI(ID_MERGE_COMPARE_TEXT, OnUpdateFileRecompareAsText)
 	ON_COMMAND(ID_MERGE_COMPARE_TABLE, OnFileRecompareAsTable)
 	ON_UPDATE_COMMAND_UI(ID_MERGE_COMPARE_TABLE, OnUpdateFileRecompareAsTable)
-	ON_COMMAND_RANGE(ID_MERGE_COMPARE_HEX, ID_MERGE_COMPARE_WEBPAGE, OnFileRecompareAs)
+	ON_COMMAND_RANGE(ID_MERGE_COMPARE_HEX, ID_MERGE_COMPARE_FOLDER, OnFileRecompareAs)
 	ON_COMMAND_RANGE(ID_UNPACKERS_FIRST, ID_UNPACKERS_LAST, OnFileRecompareAs)
 	// [View] menu
 	ON_COMMAND_RANGE(ID_VIEW_DIFFCONTEXT_ALL, ID_VIEW_DIFFCONTEXT_INVERT, OnDiffContext)
@@ -2517,10 +2517,10 @@ void CMergeDoc::MoveOnLoad(int nPane, int nLineIndex, bool bRealLine, int nCharI
 	m_pView[0][nPane]->GotoLine(nLineIndex < 0 ? 0 : nLineIndex, bRealLine, nPane, true, nCharIndex);
 }
 
-void CMergeDoc::ChangeFile(int nBuffer, const String& path, int nLineIndex)
+bool CMergeDoc::ChangeFile(int nBuffer, const String& path, const String& description, int nLineIndex)
 {
 	if (!PromptAndSaveIfNeeded(true))
-		return;
+		return false;
 
 	FileLocation fileloc[3];
 	String strDesc[3];
@@ -2534,7 +2534,7 @@ void CMergeDoc::ChangeFile(int nBuffer, const String& path, int nLineIndex)
 	}
 	std::copy_n(m_strDesc, m_nBuffers, strDesc);
 
-	strDesc[nBuffer].clear();
+	strDesc[nBuffer] = description;
 	fileloc[nBuffer].setPath(path);
 	fileloc[nBuffer].encoding = codepage_detect::Guess(path, GetOptionsMgr()->GetInt(OPT_CP_DETECT));
 
@@ -2542,15 +2542,16 @@ void CMergeDoc::ChangeFile(int nBuffer, const String& path, int nLineIndex)
 	auto columnWidths = m_ptBuf[nBuffer]->GetColumnWidths();
 	int nActivePane = GetActiveMergeView()->m_nThisPane;
 	
-	if (OpenDocs(m_nBuffers, fileloc, bRO, strDesc))
+	if (!OpenDocs(m_nBuffers, fileloc, bRO, strDesc))
+		return false;
+	
+	// Restore column widths and active pane changed by OpenDocs to their previous state
+	if (!filenameChanged)
 	{
-		// Restore column widths and active pane changed by OpenDocs to their previous state
-		if (!filenameChanged)
-		{
-			m_ptBuf[nBuffer]->SetColumnWidths(columnWidths);
-		}
-		MoveOnLoad(nActivePane, nLineIndex);
+		m_ptBuf[nBuffer]->SetColumnWidths(columnWidths);
 	}
+	MoveOnLoad(nActivePane, nLineIndex);
+	return true;
 }
 
 /**
@@ -2822,7 +2823,7 @@ void CMergeDoc::OnOpenWithUnpacker()
 	nID = GetOptionsMgr()->GetBool(OPT_PLUGINS_OPEN_IN_SAME_FRAME_TYPE) ? nID : -nID;
 
 	if (GetMainFrame()->DoFileOrFolderOpen(&paths, dwFlags, strDesc, _T(""),
-		GetOptionsMgr()->GetBool(OPT_CMP_INCLUDE_SUBDIRS), nullptr, &infoUnpacker, nullptr, nID))
+		nullptr, &infoUnpacker, nullptr, nID))
 		GetParentFrame()->DestroyWindow();
 }
 
@@ -3079,7 +3080,7 @@ void CMergeDoc::OnFileRecompareAs(UINT nID)
 	}
 
 	if (GetMainFrame()->DoFileOrFolderOpen(&m_filePaths, dwFlags, strDesc, _T(""),
-	    GetOptionsMgr()->GetBool(OPT_CMP_INCLUDE_SUBDIRS), nullptr, &infoUnpacker, nullptr, nID))
+		nullptr, &infoUnpacker, nullptr, nID))
 		GetParentFrame()->DestroyWindow();
 }
 

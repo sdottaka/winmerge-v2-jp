@@ -22,7 +22,6 @@
 #include "UnicodeString.h"
 #include "CompareStats.h"
 #include "FilterList.h"
-#include "SubstitutionList.h"
 #include "DirView.h"
 #include "DirFrame.h"
 #include "MainFrm.h"
@@ -119,6 +118,8 @@ void CDirDoc::OnCloseDocument()
 				pHeaderBar->SetOnSetFocusCallback(nullptr);
 				pHeaderBar->SetOnCaptionChangedCallback(nullptr);
 				pHeaderBar->SetOnFolderSelectedCallback(nullptr);
+				pHeaderBar->SetOnGetRecentItemsCallback(nullptr);
+				pHeaderBar->SetOnGetClipboardHistoryCallback(nullptr);
 			}
 		}
 	}
@@ -419,10 +420,16 @@ void CDirDoc::Rescan()
 		PathContext paths = m_pCtxt->GetNormalizedPaths();
 		paths.SetPath(pane, sFolderpath);
 		m_strDesc[pane].clear();
+		if (m_pTempPathContext != nullptr)
+		{
+			m_pTempPathContext->m_strDisplayRoot[pane].clear();
+			m_pTempPathContext->m_strRoot[pane].clear();
+		}
 		m_pDirView->SetFocus();
 		InitCompare(paths, m_pCtxt->m_bRecursive, nullptr);
 		Rescan();
 	});
+	pHeaderBar->SetDefaultHistoryCallbacks();
 	for (int nIndex = 0; nIndex < m_nDirs; nIndex++)
 	{
 		UpdateHeaderPath(nIndex);
@@ -887,7 +894,8 @@ void CDirDoc::SetTitle(LPCTSTR lpszTitle)
 		{
 			String strPath = m_pCtxt->GetPath(index);
 			ApplyDisplayRoot(index, strPath);
-			sDirName[index] = paths::FindFileName(strPath);
+			const String& desc = m_strDesc[index];
+			sDirName[index] = desc.empty() ? paths::FindFileName(strPath) : desc;
 		}
 		if (std::count(&sDirName[0], &sDirName[0] + m_nDirs, sDirName[0]) == m_nDirs)
 			sTitle = sDirName[0] + strutils::format(_T(" x %d"), m_nDirs);
@@ -1174,10 +1182,20 @@ void CDirDoc::OnBnClickedComparisonContinue()
 void CDirDoc::OnCbnSelChangeCPUCores()
 {
 	auto* pCmpProgressBar = GetCompProgressBar();
-	if (pCmpProgressBar == nullptr)
+	if (pCmpProgressBar == nullptr || m_pCtxt == nullptr)
 		return;
-	m_pCtxt->m_pCompareStats->SetIdleCompareThreadCount(
-		m_pCtxt->m_pCompareStats->GetCompareThreadCount() - pCmpProgressBar->GetNumberOfCPUCoresToUse()
-	);
+
+	int requestedCores = pCmpProgressBar->GetNumberOfCPUCoresToUse();
+	int totalThreads = m_pCtxt->m_pCompareStats->GetCompareThreadCount();
+
+	if (totalThreads <= 0)
+		return;
+
+	// Clamp requested cores to valid range [1, totalThreads]
+	requestedCores = std::clamp(requestedCores, 1, totalThreads);
+
+	PauseCurrentScan();
+	m_pCtxt->m_pCompareStats->SetIdleCompareThreadCount(totalThreads - requestedCores);
+	ContinueCurrentScan();
 }
 

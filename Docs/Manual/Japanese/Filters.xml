@@ -597,6 +597,52 @@ DifferentMiddleRight</literal> と指定すると、左のみが中央と異な�
               </listitem>
             </varlistentry>
 
+            <varlistentry>
+              <term><varname>Unpacker</varname></term>
+              <listitem>
+                <para>
+ファイル比較に使用された展開プラグインの名前を返します。展開プラグインが使用されていない場合は空文字列を返します。これはグローバル属性であり（左右別のプレフィックスには対応していません）。例:
+<literal>Unpacker = "CompareMSExcelFiles"</literal> は Excel
+展開プラグインを使用して比較されたファイルを表示し、<literal>Unpacker != ""</literal>
+は展開プラグインが使用されたすべてのファイルを表示します。</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><varname>Prediffer</varname></term>
+              <listitem>
+                <para>
+ファイル比較に使用された比較前処理プラグインの名前を返します。比較前処理プラグインが使用されていない場合は空文字列を返します。これはグローバル属性であり（左右別のプレフィックスには対応していません）。例:
+<literal>Prediffer = "IgnoreColumns"</literal> は IgnoreColumns
+比較前処理プラグインを使用して比較されたファイルを表示し、<literal>Prediffer != ""</literal>
+は比較前処理プラグインが使用されたすべてのファイルを表示します。</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><varname>Codepage</varname></term>
+              <listitem>
+                <para>
+ファイルのコードページ（文字エンコーディング）を整数値で返します。この属性はサイド別プレフィックス（例:
+<literal>LeftCodepage</literal>、<literal>RightCodepage</literal>）に対応しています。例:
+<literal>Codepage = 65001</literal> と指定すると UTF-8
+のファイルを表示し、<literal>allof(Codepage = 65001)</literal> と指定するとすべての側で UTF-8
+のファイルを表示します。</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term><varname>HasBOM</varname></term>
+              <listitem>
+                <para>
+ファイルに Byte Order Mark（BOM）がある場合は <literal>true</literal>、それ以外の場合は
+<literal>false</literal> を返します。この属性はサイド別プレフィックス（例:
+<literal>LeftHasBOM</literal>、<literal>RightHasBOM</literal>）に対応しています。例:
+<literal>HasBOM</literal> と指定すると BOM のあるファイルを表示し、<literal>not
+HasBOM</literal> と指定すると BOM のないファイルを表示します。</para>
+              </listitem>
+            </varlistentry>
+
           </variablelist>
         </section>
 

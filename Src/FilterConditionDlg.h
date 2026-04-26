@@ -52,6 +52,8 @@ public:
 protected:
 	String GetExpression();
 	String GetLHS() const;
+	bool IsStringField(bool includeContent = true) const;
+	void UpdateCodepageValue();
 
 	// Generated message map functions
 	//{{AFX_MSG(CFilterConditionDlg)
