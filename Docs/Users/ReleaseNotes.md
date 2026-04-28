@@ -40,10 +40,10 @@ Please submit bug reports to our bug-tracker.
 
 * Translation updates:
   * Brazilian (PR #3328,#3341)
-  * Chinese Simplified (PR #3307,#3331)
+  * Chinese Simplified (PR #3307,#3331,#3344)
   * French (PR #3312)
   * German (PR #3329)
-  * Italian (PR #3335)
+  * Italian (PR #3335,#3342)
   * Korean (PR #3334)
   * Lithuanian (PR #3308)
   * Russian (PR #3309)
@@ -69,7 +69,7 @@ Please submit bug reports to our bug-tracker.
 
 * BugFix: Register self-compare in MRU and refactor command line parameter
     buil… (PR #3266)
-    
+
 * Refactor save confirmation logic using SaveClosingDlg::ShowAndSave
     (PR #3256)
 
@@ -142,14 +142,14 @@ Please submit bug reports to our bug-tracker.
   * Polish (PR #3233,#3273)
   * Russian (PR #3226,#3281)
   * Turkish (PR #3204,#3221,#3227,#3250,#3271,#3286,#3298)
-  * Ukrainian (PR #)
+
 
 ### Documentation
 
 * Added: Community standard files (like issue templates, pr template).
     (PR #3225)
 
-* Add context IDs to PO files & strip comments for releases (PR #3296)
+* Add context IDs to PO files \& strip comments for releases (PR #3296)
 
 ## Known issues
 
@@ -158,3 +158,4 @@ Please submit bug reports to our bug-tracker.
 * Crashes when comparing large files (#325)
 * Very slow to compare significantly different directories (#322)
 * Vertical scrollbar breaks after pasting text (#296)
+
