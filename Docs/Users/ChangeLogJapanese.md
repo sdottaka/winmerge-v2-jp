@@ -2,23 +2,45 @@
 title: 変更履歴
 ---
 
+### 2026/04/29 2.16.56-jp-1
+
+#### 全般
+
+* ヘッダーバーに無効なパスを入力した際にエラーメッセージを表示するようにした。[(PR #3322)](https://github.com/WinMerge/winmerge/pull/3322)
+
+* ヘッダーバーのメニューに最近使用した項目およびクリップボード履歴を追加した。[(PR #3330)](https://github.com/WinMerge/winmerge/pull/3330)
+
+#### フォルダー比較
+
+* [形式を指定して比較]メニューに[アーカイブ]を追加した。[(PR #3320)](https://github.com/WinMerge/winmerge/pull/3320)
+
+* リファクタリング：オープンパラメータを統一し、再帰処理を OpenFolderParams に移動した。[(PR #3326)](https://github.com/WinMerge/winmerge/pull/3326)
+
+* コードページフィルタ UI と HasBOM フィールド対応を追加した。[(PR #3318)](https://github.com/WinMerge/winmerge/pull/3318)
+
+#### アーカイブサポート
+
+* アーカイブ検出に 7-Zip IsArc API を使用し、フォーマット推定ロジックをリファクタリングした。[(PR #3323)](https://github.com/WinMerge/winmerge/pull/3323)
+
+* アーカイブ検出よりも明示的に選択されたプラグインを優先するよう変更した。[(PR #3324)](https://github.com/WinMerge/winmerge/pull/3324)
+
 ### 2026/03/29 2.16.54-jp-4
 
 #### ファイル比較
 
-* 不具合修正: Alt+マウスドラッグで矩形選択すると、メニューがアクティブになってしまう問題を修正した。[(PR #3254)](https://github.com/WinMerge/winmerge/issues/3254)
+* 不具合修正: Alt+マウスドラッグで矩形選択すると、メニューがアクティブになってしまう問題を修正した。[(PR #3254)](https://github.com/WinMerge/winmerge/pull/3254)
 
-* 不具合修正: 1つのファイルのみを指定する自己比較実行時、履歴に登録されない問題を修正した。[(PR #3266)](https://github.com/WinMerge/winmerge/issues/3266)
+* 不具合修正: 1つのファイルのみを指定する自己比較実行時、履歴に登録されない問題を修正した。[(PR #3266)](https://github.com/WinMerge/winmerge/pull/3266)
 
 #### 画像比較
 
-* 不具合修正: 画像比較ウインドウを閉じる際にクラッシュすることがある問題を修正した。 [(PR #3255)](https://github.com/WinMerge/winmerge/issues/3255)
+* 不具合修正: 画像比較ウインドウを閉じる際にクラッシュすることがある問題を修正した。 [(PR #3255)](https://github.com/WinMerge/winmerge/pull/3255)
 
 * ワイプ機能を高速化した。[(winimerge/PR #33)](https://github.com/WinMerge/winimerge/pull/33)(PRをいただきました。ありがとうございます。)
 
 #### フォルダー比較
 
-* 不具合修正: 表示フィルターでスキップされた項目を正しくフィルターできない問題を修正した。[(PR #3267)](https://github.com/WinMerge/winmerge/issues/3267)
+* 不具合修正: 表示フィルターでスキップされた項目を正しくフィルターできない問題を修正した。[(PR #3267)](https://github.com/WinMerge/winmerge/pull/3267)
 
 * フィルター式で大文字小文字の違いを無視しない文字列比較を指示するディレクティブ @cs を追加した。(例: @cs Name = "file1.txt") [(PR #3253)](https://github.com/WinMerge/winmerge/pull/3253)
 
