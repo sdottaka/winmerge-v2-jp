@@ -441,8 +441,6 @@ protected:
 	afx_msg BOOL OnToolTipText(UINT, NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnHelpReleasenotes();
 	afx_msg void OnHelpTranslations();
-	afx_msg void OnHelpCheckForUpdates();
-	afx_msg void OnUpdateHelpCheckForUpdates(CCmdUI* pCmdUI);
 	afx_msg void OnFileOpenConflict();
 	afx_msg void OnFileOpenClipboard();
 	afx_msg void OnPluginsList();

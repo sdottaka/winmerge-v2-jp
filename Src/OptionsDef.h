@@ -331,10 +331,6 @@ inline const String OPT_TABBAR_AUTO_MAXWIDTH {_T("Settings/TabBarAutoMaxWidth"s)
 // MRU
 inline const String OPT_MRU_MAX {_T("Settings/MRUMax"s)};
 
-// Check For Updates
-inline const String OPT_CURRENT_VERSION_URL {_T("CheckForUpdates/CurrentVersionURL"s)};
-inline const String OPT_DOWNLOAD_URL {_T("CheckForUpdates/DownloadURL"s)};
-
 // Experimentals
 inline const String OPT_MOUSE_HOOK_ENABLED {_T("Settings/MouseHookEnabled"s)};
 

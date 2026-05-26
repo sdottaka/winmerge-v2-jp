@@ -256,14 +256,6 @@ void Init(COptionsMgr *pOptions)
 
 	pOptions->InitOption(OPT_SYSCOLOR_HOOK_ENABLED, false);
 	pOptions->InitOption(OPT_SYSCOLOR_HOOK_COLORS, _T(""));
-	
-	pOptions->InitOption(OPT_CURRENT_VERSION_URL, CurrentVersionURL);
-	if (pOptions->GetString(OPT_CURRENT_VERSION_URL) == CurrentVersionURLOld)
-		pOptions->SaveOption(OPT_CURRENT_VERSION_URL, CurrentVersionURL);
-
-	pOptions->InitOption(OPT_DOWNLOAD_URL, DownloadUrl);
-	if (pOptions->GetString(OPT_DOWNLOAD_URL) == DownloadUrlOld)
-		pOptions->SaveOption(OPT_DOWNLOAD_URL, DownloadUrl);
 
 	pOptions->InitOption(OPT_MOUSE_HOOK_ENABLED, true);
 

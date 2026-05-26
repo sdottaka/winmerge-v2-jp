@@ -23,13 +23,6 @@ inline const tchar_t TranslationsUrl[] = _T("https://winmerge.org/translations/"
 /** @brief URL of the GPL license. */
 inline const tchar_t LicenceUrl[] = _T("http://www.gnu.org/licenses/gpl-2.0.html");
 
-/** @brief WinMerge download page URL. */
-const tchar_t DownloadUrl[] = _T("https://winmergejp.bitbucket.io/#downloads");
-const tchar_t DownloadUrlOld[] = _T("http://www.geocities.co.jp/SiliconValley-SanJose/8165/winmerge.html#downloads");
-
-const tchar_t CurrentVersionURL[] = _T("https://winmergejp.bitbucket.io/winmerge-jp_current_version.txt");
-const tchar_t CurrentVersionURLOld[] = _T("http://www.geocities.co.jp/SiliconValley-SanJose/8165/winmerge-jp_current_version.txt");
-
 /** @brief Relative (to WinMerge executable ) path to local help file. */
 inline const tchar_t DocsPath[] = _T("Docs/WinMerge%s.chm");
 

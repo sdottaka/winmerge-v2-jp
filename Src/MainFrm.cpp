@@ -81,7 +81,6 @@
 #include "locality.h"
 #include "DirWatcher.h"
 #include "Win_VersionHelper.h"
-#include "VersionInfo.h"
 #include "FrameWndHelper.h"
 #include "ColorSchemes.h"
 #include "OptionsSyntaxColors.h"
@@ -317,8 +316,6 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	ON_COMMAND(ID_HELP_GETCONFIG, OnSaveConfigData)
 	ON_COMMAND(ID_HELP_RELEASENOTES, OnHelpReleasenotes)
 	ON_COMMAND(ID_HELP_TRANSLATIONS, OnHelpTranslations)
-	ON_COMMAND(ID_HELP_CHECKFORUPDATES, OnHelpCheckForUpdates)
-	ON_UPDATE_COMMAND_UI(ID_HELP_CHECKFORUPDATES, OnUpdateHelpCheckForUpdates)
 	// Tool bar icon
 	ON_NOTIFY_EX_RANGE(TTN_NEEDTEXTW, 0, 0xFFFF, OnToolTipText)
 	ON_NOTIFY_EX_RANGE(TTN_NEEDTEXTA, 0, 0xFFFF, OnToolTipText)
@@ -3131,66 +3128,6 @@ void CMainFrame::OnHelpReleasenotes()
 void CMainFrame::OnHelpTranslations()
 {
 	shell::Open(TranslationsUrl);
-}
-
-void CMainFrame::OnHelpCheckForUpdates()
-{
-	CVersionInfo version(AfxGetResourceHandle());
-	CInternetSession session;
-	try
-	{
-		CHttpFile *file = (CHttpFile *)session.OpenURL(GetOptionsMgr()->GetString(OPT_CURRENT_VERSION_URL).c_str());
-		if (!file)
-			return;
-		char buf[256] = { 0 };
-		file->Read(buf, sizeof(buf));
-		file->Close();
-		String current_version = ucr::toTString(buf);
-		strutils::replace(current_version, _T("\r\n"), _T(""));
-		delete file;
-
-		int exe_vers[4] = { 0 }, cur_vers[4] = { 0 };
-		_stscanf_s(version.GetProductVersion().c_str(), _T("%d.%d.%d.%d"), &exe_vers[0], &exe_vers[1], &exe_vers[2], &exe_vers[3]);
-		_stscanf_s(current_version.c_str(),             _T("%d.%d.%d.%d"), &cur_vers[0], &cur_vers[1], &cur_vers[2], &cur_vers[3]);
-		String exe_version_hex = strutils::format(_T("%08x%08x%08x%08x"), exe_vers[0], exe_vers[1], exe_vers[2], exe_vers[3]);
-		String cur_version_hex = strutils::format(_T("%08x%08x%08x%08x"), cur_vers[0], cur_vers[1], cur_vers[2], cur_vers[3]);
-
-		switch (exe_version_hex.compare(cur_version_hex))
-		{
-		case 1:
-			if (cur_version_hex == _T("00000000000000000000000000000000"))
-			{
-				String msg = _("Failed to download latest version information");
-				AfxMessageBox(msg.c_str(), MB_ICONERROR);
-				break;
-			}
-			// pass through
-		case 0:
-		{
-			String msg = _("Your software is up to date.");
-			AfxMessageBox(msg.c_str(), MB_ICONINFORMATION);
-			break;
-		}
-		case -1:
-		{
-			String msg = strutils::format_string2(_("A new version of WinMerge is available.\n%1 is now available (you have %2). Would you like to download it now?"), current_version, version.GetProductVersion());
-			if (AfxMessageBox(msg.c_str(), MB_ICONINFORMATION | MB_YESNO) == IDYES)
-				ShellExecute(NULL, _T("open"), GetOptionsMgr()->GetString(OPT_DOWNLOAD_URL).c_str(), NULL, NULL, SW_SHOWNORMAL);
-			break;
-		}
-		}
-	}
-	catch (CException& e)
-	{
-		TCHAR msg[512];
-		e.GetErrorMessage(msg, sizeof(msg)/sizeof(msg[0]));
-		AfxMessageBox(msg, MB_ICONERROR);
-	}
-}
-
-void CMainFrame::OnUpdateHelpCheckForUpdates(CCmdUI* pCmdUI)
-{
-	pCmdUI->Enable(!GetOptionsMgr()->GetString(OPT_CURRENT_VERSION_URL).empty());
 }
 
 /**
