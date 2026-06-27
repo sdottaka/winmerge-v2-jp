@@ -147,6 +147,7 @@ public:
 	virtual void SetWordWrapping( bool bWordWrap ) override;
 	void UpdateStatusbar();
 	CMergeEditView *GetGroupView(int nPane) const;
+	int GetActiveGroup() const;
 
 	virtual void OnDisplayDiff(int nDiff=0);
 
