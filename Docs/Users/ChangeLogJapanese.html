@@ -31,19 +31,24 @@ vertical-align: middle;
 <h4 id="ファイル比較">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
-編集操作するとステータスバーの行番号、列番号が正しく表示されないことがある問題を修正した。</p></li>
+編集後にステータスバーの行番号・列番号が正しく表示されないことがある問題を修正した。</p></li>
 <li><p>不具合修正:
-再現できないが報告されたマージ操作でクラッシュする問題回避の修正。(<a href="https://github.com/WinMerge/winmerge/issues/3402">#3402</a>)</p></li>
+報告されたマージ操作時のクラッシュを回避する修正をした。（未再現）(<a href="https://github.com/WinMerge/winmerge/issues/3402">#3402</a>)</p></li>
 </ul>
 <h4 id="フォルダー比較">フォルダー比較</h4>
 <ul>
 <li>不具合修正:
-ファイル名変更中に[マージ]→[削除]メニューでファイルを削除するとクラッシュすることがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3411">#3411</a>)</li>
+ファイル名変更中に[マージ]→[削除]メニューを実行するとクラッシュすることがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3411">#3411</a>)</li>
 </ul>
 <h4 id="アーカイブサポート">アーカイブサポート</h4>
 <ul>
 <li>不具合修正:
-RAR4形式ファイルを比較するとエラーメッセージボックスが表示されてしまう問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3392">#3392</a>)</li>
+RAR4形式ファイルのファイル比較時に不要なエラーメッセージボックスが表示される問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3392">#3392</a>)</li>
+</ul>
+<h4 id="プロジェクトファイル">プロジェクトファイル</h4>
+<ul>
+<li>プラグイン引数を含む他所から提供されたプロジェクトファイルを開く際、外部コマンドが実行される可能性があるため、警告メッセージを表示するようにした。(<a href="https://github.com/WinMerge/winmerge/issues/3396">#3396</a>) (<a href="https://github.com/WinMerge/winmerge/issues/3397">PR
+#3397</a>)</li>
 </ul>
 <h4 id="クラッシュ検知">クラッシュ検知</h4>
 <ul>
