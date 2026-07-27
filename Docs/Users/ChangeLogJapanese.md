@@ -2,6 +2,52 @@
 title: 変更履歴
 ---
 
+### 2026/07/29 2.16.58-jp-1
+
+#### 全般
+
+* 不具合修正: ファイルマッピングに失敗した場合に、誤ってクラッシュとして扱われることがある問題を修正した。([#3412](https://github.com/WinMerge/winmerge/issues/3412))
+
+* クラッシュログのスタックトレースにモジュール相対オフセットを追加した。
+
+#### ファイル比較
+
+* 不具合修正: ファイルが一定のしきい値を超えて外部から変更された場合にクラッシュ (Access Violation) する問題を修正した。([#3456](https://github.com/WinMerge/winmerge/issues/3456))
+  ([PR #3457](https://github.com/WinMerge/winmerge/pull/3457))
+
+* 不具合修正: 3方向マージモードで変更をコピーした後、ペインの一部が黒い背景に黒い文字で表示されることがある問題を修正した。([#3468](https://github.com/WinMerge/winmerge/issues/3468), [#3469](https://github.com/WinMerge/winmerge/issues/3469))
+
+#### フォルダー比較
+
+* 不具合修正: アーカイブとフォルダーの比較で、誤った比較元が選択される問題を修正した。([#3449](https://github.com/WinMerge/winmerge/issues/3449))
+  ([PR #3458](https://github.com/WinMerge/winmerge/pull/3458))
+
+* 不具合修正: イメージリスト初期化時の HICON リソースリークを修正した。
+
+#### ファイルまたはフォルダーの選択ダイアログ
+
+* 不具合修正: 共通ファイルダイアログの作成時に発生した例外を適切に処理するようにした。([#3462](https://github.com/WinMerge/winmerge/issues/3462))
+  ([PR #3464](https://github.com/WinMerge/winmerge/pull/3464))
+
+* 不具合修正: 3方向比較で MRU (最近使用した項目) が正しく処理されない問題を修正した。([#3452](https://github.com/WinMerge/winmerge/issues/3452))
+
+#### ファイル比較レポート
+
+* 複数のファイル比較結果から 1 つの HTML レポートを生成できるようにした。([PR #3450](https://github.com/WinMerge/winmerge/pull/3450))
+
+#### パッチ生成
+
+* パッチ生成ダイアログに、チェックボックス付きのファイル一覧を追加した。([PR #3470](https://github.com/WinMerge/winmerge/pull/3470))
+
+#### アーカイブ生成
+
+* 比較結果をアーカイブとして作成できるようにした。([PR #3483](https://github.com/WinMerge/winmerge/pull/3483))
+
+#### コマンドライン
+
+* シングルインスタンスグループ用の `/g` コマンドラインオプションを追加した。([PR #3472](https://github.com/WinMerge/winmerge/pull/3472))
+
+
 ### 2026/06/29 2.16.56-jp-4
 
 #### ファイル比較
