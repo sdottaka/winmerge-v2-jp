@@ -365,9 +365,18 @@ void MergeCmdLineInfo::ParseWinMergeCmdLine(const tchar_t *q)
 				q = EatParam(q + 1, param);
 				m_nSingleInstance = tc::ttoi(param.c_str());
 			}
-				
 			else
 				m_nSingleInstance = 1;
+		}
+		else if (param == _T("g"))
+		{
+			// -g "groupname" - group name for instance grouping
+			String sGroupName;
+			q = EatParam(q, sGroupName);
+			if (sGroupName.size() == 0 || sGroupName.size() > 128 || sGroupName.find_first_of(_T("\\")) != String::npos)
+				m_sErrorMessages.emplace_back(_T("Invalid group name specified"));
+			else
+				m_sGroupName = sGroupName;
 		}
 		else if (param == _T("noninteractive"))
 		{
@@ -594,17 +603,6 @@ void MergeCmdLineInfo::ParseWinMergeCmdLine(const tchar_t *q)
 		else
 		{
 			m_sErrorMessages.emplace_back(_T("Unknown option '/") + param + _T("'"));
-		}
-	}
-	// If "compare file dir" make it "compare file dir\file".
-	if (m_Files.GetSize() >= 2)
-	{
-		paths::PATH_EXISTENCE p1 = paths::DoesPathExist(m_Files[0]);
-		paths::PATH_EXISTENCE p2 = paths::DoesPathExist(m_Files[1]);
-
-		if ((p1 == paths::IS_EXISTING_FILE) && (p2 == paths::IS_EXISTING_DIR))
-		{
-			m_Files[1] = paths::ConcatPath(m_Files[1], paths::FindFileName(m_Files[0]));
 		}
 	}
 	if (m_bShowUsage)

@@ -8,6 +8,7 @@
 #include <algorithm>
 #include "FileTransform.h"
 #include "FileFilterHelper.h"
+#include "7zCommon.h"
 
 class CDiffContext;
 class PathContext;
@@ -53,6 +54,8 @@ enum
 	DIFFIMG_TEXTSAME,
 	DIFFIMG_IMAGEDIFF,
 	DIFFIMG_IMAGESAME,
+	DIFFIMG_WEBPAGEDIFF,
+	DIFFIMG_WEBPAGESAME,
 };
 
 typedef enum {
@@ -598,6 +601,59 @@ struct DirActions
 	const CDiffContext& m_ctxt;
 	const bool *m_RO;
 };
+
+void AddZipItem(const CDiffContext& ctxt, const DIFFITEM& di, int index, bool bDiffsOnly, std::vector<CompressibleItem>& items);
+template<typename Iterator>
+std::vector<CompressibleItem> CreateZipItems(const CDiffContext& ctxt, Iterator first, Iterator last, int index, bool bDiffsOnly)
+{
+	std::vector<CompressibleItem> items;
+
+	for (; first != last; ++first)
+	{
+		const DIFFITEM* pdi = (*first).second;
+		if (pdi != nullptr)
+			AddZipItem(ctxt, *pdi, index, bDiffsOnly, items);
+	}
+
+	std::sort(items.begin(), items.end(),
+		[](const CompressibleItem& a, const CompressibleItem& b)
+		{
+			return a.name < b.name;
+		});
+
+	items.erase(
+		std::unique(items.begin(), items.end(),
+			[](const CompressibleItem& a, const CompressibleItem& b)
+			{
+				return a.name == b.name;
+			}),
+		items.end());
+
+	return items;
+}
+
+struct PatchItem
+{
+	String leftFile;
+	String rightFile;
+	String leftpatch;
+	String rightpatch;
+	int diffStatus = -1; /**< Icon index representing diff status (DIFFIMG_*) */
+};
+
+void AddPatchItem(const CDiffContext& ctxt, const DIFFITEM& di, bool bDiffsOnly, std::vector<PatchItem>& items);
+template<typename Iterator>
+std::vector<PatchItem> CreatePatchItems(const CDiffContext& ctxt, Iterator first, Iterator last, bool bDiffsOnly)
+{
+	std::vector<PatchItem> items;
+	for (; first != last; ++first)
+	{
+		DIFFITEM* pdi = &(*first);
+		if (pdi != nullptr)
+			AddPatchItem(ctxt, *pdi, bDiffsOnly, items);
+	}
+	return items;
+}
 
 struct Counts {
 	Counts() : count(0), total(0) {}

@@ -19,7 +19,8 @@
 #include "codepage_detect.h"
 #include "OptionsMgr.h"
 #include "OptionsDef.h"
-#include "ClipBoard.h"
+#include "Clipboard.h"
+#include "Shell.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -41,36 +42,42 @@ CPatchTool::~CPatchTool() = default;
  * @brief Adds files to list for patching.
  * @param [in] file1 First file to add.
  * @param [in] file2 Second file to add.
+ * @param [in] title Title for the patch item.
+ * @param [in] checked Whether the patch item is checked or not.
  */
-void CPatchTool::AddFiles(const String &file1, const String &file2)
+void CPatchTool::AddFiles(const String &file1, const String &file2, const String& title, bool checked)
 {
 	PATCHFILES tFiles;
 	tFiles.lfile = file1;
 	tFiles.rfile = file2;
+	tFiles.title = title;
+	tFiles.checked = checked;
 
 	// TODO: Read and add file's timestamps
 	m_fileList.push_back(tFiles);
 }
 
 /**
- * @brief Add files with alternative paths.
- * This function adds files with alternative paths. Alternative path is the
- * one that is added to the patch file. So while @p file1 and @p file2 are
- * paths in disk (can be temp file names), @p altPath1 and @p altPath2 are
- * "visible " paths printed to the patch file.
- * @param [in] file1 First path in disk.
- * @param [in] altPath1 First path as printed to the patch file.
- * @param [in] file2 Second path in disk.
- * @param [in] altPath2 Second path as printed to the patch file.
+ * @brief Add files with diff status information.
+ * @param [in] file1 Left file path.
+ * @param [in] altPath1 Left alternate path for patch.
+ * @param [in] file2 Right file path.
+ * @param [in] altPath2 Right alternate path for patch.
+ * @param [in] title Title for the patch item.
+ * @param [in] checked Whether item is checked.
+ * @param [in] diffStatus Icon index representing diff status (DIFFIMG_*).
  */
 void CPatchTool::AddFiles(const String &file1, const String &altPath1,
-		const String &file2, const String &altPath2)
+		const String &file2, const String &altPath2, const String& title, bool checked, int diffStatus)
 {
 	PATCHFILES tFiles;
 	tFiles.lfile = file1;
 	tFiles.rfile = file2;
 	tFiles.pathLeft = altPath1;
 	tFiles.pathRight = altPath2;
+	tFiles.title = title;
+	tFiles.checked = checked;
+	tFiles.diffStatus = diffStatus;
 
 	// TODO: Read and add file's timestamps
 	m_fileList.push_back(tFiles);
@@ -83,15 +90,14 @@ void CPatchTool::AddFiles(const String &file1, const String &altPath1,
  */
 int CPatchTool::CreatePatch()
 {
-	DIFFSTATUS status;
 	int retVal = 0;
 
 	CPatchDlg dlgPatch;
 
 	// If files already inserted, add them to dialog
-    for(std::vector<PATCHFILES>::iterator iter = m_fileList.begin(); iter != m_fileList.end(); ++iter)
-    {
-        dlgPatch.AddItem(*iter);
+	for(std::vector<PATCHFILES>::iterator iter = m_fileList.begin(); iter != m_fileList.end(); ++iter)
+	{
+		dlgPatch.AddItem(*iter);
 	}
 
 	if (ShowDialog(&dlgPatch))
@@ -115,6 +121,8 @@ int CPatchTool::CreatePatch()
 		for (size_t index = 0; index < fileCount; index++)
 		{
 			const PATCHFILES& tFiles = dlgPatch.GetItemAt(index);
+			if (!tFiles.checked)
+				continue;
 			if (paths::DoesPathExist(tFiles.lfile) == paths::IS_EXISTING_DIR && paths::DoesPathExist(tFiles.rfile) == paths::IS_EXISTING_DIR)
 			{
 				// Walk given folders recursively and adds found files into patch list
@@ -133,57 +141,28 @@ int CPatchTool::CreatePatch()
 			}
 		}
 		fileCount = fileList.size();
+		if (fileCount == 0)
+			return 0;
 
-		m_diffWrapper.WritePatchFileHeader(dlgPatch.m_outputStyle, dlgPatch.m_appendFile);
-		m_diffWrapper.SetAppendFiles(true);
-
-		bool bShowedBinaryMessage = false;
-		int writeFileCount = 0;
-
-		for (size_t index = 0; index < fileCount; index++)
+		const PatchWriteResult writeResult = WritePatchFile(
+			fileList, dlgPatch.m_outputStyle, dlgPatch.m_appendFile);
+		if (writeResult.diffFailed)
 		{
-			const PATCHFILES& tFiles = fileList[index];
-			String filename1 = tFiles.lfile.length() == 0 ? paths::NATIVE_NULL_DEVICE_NAME : tFiles.lfile;
-			String filename2 = tFiles.rfile.length() == 0 ? paths::NATIVE_NULL_DEVICE_NAME : tFiles.rfile;
-			
-			// Set up DiffWrapper
-			m_diffWrapper.SetPaths(PathContext(filename1, filename2), false);
-			m_diffWrapper.SetAlternativePaths(PathContext(tFiles.pathLeft, tFiles.pathRight));
-			m_diffWrapper.SetCompareFiles(PathContext(tFiles.lfile, tFiles.rfile));
-			bool bDiffSuccess = m_diffWrapper.RunFileDiff();
-			m_diffWrapper.GetDiffStatus(&status);
-
-			if (!bDiffSuccess)
-			{
-				I18n::MessageBox(IDS_FILEERROR, MB_ICONSTOP);
-				bResult = false;
-				break;
-			}
-			else if (status.bBinaries)
-			{
-				if (!bShowedBinaryMessage)
-				{
-					I18n::MessageBox(IDS_CANNOT_CREATE_BINARYPATCH, MB_ICONWARNING);
-					bShowedBinaryMessage = true;
-				}
-			}
-			else if (status.bPatchFileFailed)
-			{
-				String errMsg = strutils::format_string1(_("Could not write to file %1."), dlgPatch.m_fileResult);
-				AfxMessageBox(errMsg.c_str(), MB_ICONSTOP);
-				bResult = false;
-				break;
-			}
-			else
-			{
-				writeFileCount++;
-			}
-
+			I18n::MessageBox(IDS_FILEERROR, MB_ICONSTOP);
+			bResult = false;
 		}
-		
-		m_diffWrapper.WritePatchFileTerminator(dlgPatch.m_outputStyle);
+		else if (writeResult.patchFileFailed)
+		{
+			String errMsg = strutils::format_string1(_("Could not write to file %1."), dlgPatch.m_fileResult);
+			AfxMessageBox(errMsg.c_str(), MB_ICONSTOP);
+			bResult = false;
+		}
+		else if (writeResult.binaryFound)
+		{
+			I18n::MessageBox(IDS_CANNOT_CREATE_BINARYPATCH, MB_ICONWARNING);
+		}
 
-		if (bResult && writeFileCount > 0)
+		if (bResult && writeResult.writeFileCount > 0)
 		{
 			AfxMessageBox((_("Patch file written.") + _T("\n") + dlgPatch.m_fileResult).c_str(),
 				MB_ICONINFORMATION | MB_DONT_DISPLAY_AGAIN, IDS_DIFF_SUCCEEDED);
@@ -198,7 +177,12 @@ int CPatchTool::CreatePatch()
 	if (retVal)
 	{
 		if (m_bOpenToEditor)
-			CMergeApp::OpenFileToExternalEditor(m_sPatchFile);
+		{
+			if (dlgPatch.m_outputStyle == (enum output_style)OUTPUT_HTML)
+				shell::Open(m_sPatchFile.c_str());
+			else
+				CMergeApp::OpenFileToExternalEditor(m_sPatchFile);
+		}
 		if (m_bCopyToClipbard)
 		{
 			UniMemFile file;
@@ -214,11 +198,81 @@ int CPatchTool::CreatePatch()
 				String lines;
 				file.ReadStringAll(lines);
 				file.Close();
-				PutToClipboard(lines, AfxGetMainWnd()->m_hWnd);
+				if (dlgPatch.m_outputStyle == (enum output_style)OUTPUT_HTML)
+					ClipboardUtils::PutFileAndTextAndHTML(m_sPatchFile, lines, AfxGetMainWnd()->m_hWnd);
+				else
+					ClipboardUtils::PutFileAndText(m_sPatchFile, lines, AfxGetMainWnd()->m_hWnd);
 			}
 		}
 	}
 	return retVal;
+}
+
+bool CPatchTool::CreatePatchFile(const String& outputFile)
+{
+	if (outputFile.empty() || !paths::CreateIfNeeded(paths::GetPathOnly(outputFile)))
+		return false;
+
+	DIFFOPTIONS diffOptions = {0};
+	Options::DiffOptions::Load(GetOptionsMgr(), diffOptions);
+	PATCHOPTIONS patchOptions = {};
+	patchOptions.outputStyle = static_cast<enum output_style>(OUTPUT_UNIFIED);
+	patchOptions.nContext = GetOptionsMgr()->GetInt(OPT_PATCHCREATOR_CONTEXT_LINES);
+	patchOptions.bAddCommandline = false;
+
+	m_diffWrapper.SetCreatePatchFile(outputFile);
+	m_diffWrapper.SetAppendFiles(false);
+	m_diffWrapper.SetPrediffer(nullptr);
+	m_diffWrapper.SetPatchOptions(&patchOptions);
+	m_diffWrapper.SetOptions(&diffOptions);
+	std::vector<PATCHFILES> files;
+	for (const auto& item : m_fileList)
+	{
+		if (item.checked)
+			files.push_back(item);
+	}
+	const PatchWriteResult writeResult = WritePatchFile(
+		files, patchOptions.outputStyle, false);
+	return !writeResult.diffFailed && writeResult.writeFileCount > 0;
+}
+
+CPatchTool::PatchWriteResult CPatchTool::WritePatchFile(
+	const std::vector<PATCHFILES>& files, enum output_style outputStyle,
+	bool appendHeader)
+{
+	PatchWriteResult result;
+	m_diffWrapper.WritePatchFileHeader(outputStyle, appendHeader);
+	m_diffWrapper.SetAppendFiles(true);
+
+	for (const PATCHFILES& item : files)
+	{
+		const String filename1 = item.lfile.empty() ? paths::NATIVE_NULL_DEVICE_NAME : item.lfile;
+		const String filename2 = item.rfile.empty() ? paths::NATIVE_NULL_DEVICE_NAME : item.rfile;
+		m_diffWrapper.SetPaths(PathContext(filename1, filename2), false);
+		m_diffWrapper.SetAlternativePaths(PathContext(item.pathLeft, item.pathRight));
+		m_diffWrapper.SetCompareFiles(PathContext(item.lfile, item.rfile));
+
+		if (!m_diffWrapper.RunFileDiff())
+		{
+			result.diffFailed = true;
+			break;
+		}
+
+		DIFFSTATUS status;
+		m_diffWrapper.GetDiffStatus(&status);
+		if (status.bPatchFileFailed)
+		{
+			result.patchFileFailed = true;
+			break;
+		}
+		if (status.bBinaries)
+			result.binaryFound = true;
+		else
+			++result.writeFileCount;
+	}
+
+	m_diffWrapper.WritePatchFileTerminator(outputStyle);
+	return result;
 }
 
 /** 

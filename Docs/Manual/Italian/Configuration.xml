@@ -7,31 +7,32 @@ Opzioni e configurazione<indexterm>
 
   <para>
 La finestra di dialogo Opzioni consente di personalizzare molte funzionalità
-di WinMerge.Per impostare le opzioni WinMerge:</para>
+di WinMerge. Per impostare le opzioni WinMerge:</para>
 
   <orderedlist>
     <listitem>
       <para>
-Fai clic su <menuchoice> <guimenu >Modifica</guimenu > <guimenuitem
->Opzioni</guimenuitem > </menuchoice > nel menu o sul pulsante <inlinemediaobject>
+Seleziona <menuchoice> <guimenu>Modifica</guimenu>
+<guimenuitem>Opzioni</guimenuitem> </menuchoice> nel menu o sul pulsante
+<inlinemediaobject>
 <imageobject> <imagedata contentwidth="16"
 fileref="screenshots/options_btn.png" /> </imageobject><textobject>
             <phrase>Pulsante Opzioni WinMerge</phrase>
           </textobject>
-        </inlinemediaobject> <guibutton >Opzioni</guibutton > nella
-barra degli strumenti.</para>
+        </inlinemediaobject>
+<guibutton>Opzioni</guibutton> nella barra degli strumenti.</para>
 
       <para>
 La finestra di dialogo Opzioni contiene diverse pagine, ciascuna contenente
-un gruppo di opzioni correlate.Puoi aprire qualsiasi pagina facendo clic sul
-suo titolo nell'elenco <guilabel >Categorie</guilabel >, sul lato sinistro
+un gruppo di opzioni correlate. Puoi aprire qualsiasi pagina facendo clic
+sul suo titolo nell'elenco <guilabel>Categorie</guilabel>, sul lato sinistro
 della finestra di dialogo.</para>
     </listitem>
 
     <listitem>
       <para>
-Configura le opzioni che desideri modificare utilizzando uno o entrambi
-questi metodi:</para>
+Configura le opzioni che vuoi modificare usando uno o entrambi questi
+metodi:</para>
 
       <itemizedlist>
         <listitem>
@@ -41,21 +42,21 @@ questi metodi:</para>
         <listitem>
           <para>
 Importazione di un file di opzioni <filename>.ini</filename> esportato in
-precedenza (vedi <xref linkend="Configuration_importexport" /> per i
-dettagli).</para>
+precedenza (per i dettagli vedi <xref linkend="Configuration_importexport"
+/>).</para>
         </listitem>
       </itemizedlist>
     </listitem>
 
     <listitem>
       <para>
-Dopo aver impostato tutte le opzioni, fai clic su <guibutton >OK</guibutton
-> per salvarle e chiudere la finestra di dialogo.</para>
+Dopo aver impostato tutte le opzioni, seleziona <guibutton>OK</guibutton>
+per salvarle e chiudere la finestra di dialogo.</para>
     </listitem>
   </orderedlist>
 
   <para>
-Questo argomento descrive le opzioni in dettaglio.C'è una sezione per ogni
+Questo argomento descrive le opzioni in dettaglio. C'è una sezione per ogni
 pagina nella finestra di dialogo Opzioni.</para>
 
   <section id="Configuration_importexport">
@@ -68,11 +69,11 @@ Opzioni di importazione ed esportazione<indexterm>
 
     <para>
 Se modifichi frequentemente le opzioni per diversi scenari di confronto o
-unione o se desideri condividere le tue impostazioni con altri utenti
-WinMerge, valuta la possibilità di salvare le impostazioni esportandole in
-un file di opzioni.Quindi, ogni volta che desideri utilizzare tali
-impostazioni, puoi semplicemente importare il file delle opzioni invece di
-impostare le opzioni manualmente.</para>
+unione o se vuoi condividere le impostazioni con altri utenti WinMerge,
+valuta la possibilità di salvare le impostazioni esportandole in un file di
+opzioni. Quindi, ogni volta che vuoi usare tali impostazioni, puoi
+semplicemente importare il file delle opzioni invece di impostare le opzioni
+manualmente.</para>
 
     <variablelist>
       <varlistentry>
@@ -80,10 +81,10 @@ impostare le opzioni manualmente.</para>
 
         <listitem>
           <para>
-Quando vuoi riutilizzare le opzioni salvate, fai clic su <guibutton
->Importa</guibutton >.Nella finestra di dialogo Seleziona file per
-l'importazione, vai al file <filename>ini</filename> salvato e fai clic su
-<guibutton >Apri</guibutton >.</para>
+Quando vuoi riusare le opzioni salvate, seleziona
+<guibutton>Importa</guibutton>. Nella finestra di dialogo Seleziona file per
+l'importazione, vai al file <filename>ini</filename> salvato e seleziona
+<guibutton>Apri</guibutton>.</para>
 
           <para>
 I valori nel file delle opzioni importati sostituiscono tutte le
@@ -96,11 +97,11 @@ impostazioni esistenti.</para>
 
         <listitem>
           <para>
-Dopo aver impostato le opzioni nel modo desiderato, fai clic su <guibutton
->Esporta</guibutton >.Nella finestra di dialogo Seleziona file per
+Dopo aver impostato le opzioni nel modo desiderato, seleziona
+<guibutton>Esporta</guibutton>. Nella finestra di dialogo Seleziona file per
 l'esportazione, specifica un percorso e un nome per il tuo file di opzioni
 (il tipo <filename>ini</filename> verrà aggiunto automaticamente) e fai clic
-su <guibutton >Salva</guibutton >.</para>
+su <guibutton>Salva</guibutton>.</para>
 
           <para>
 Nel file di testo <filename>ini</filename> generato, ogni riga contiene una
@@ -176,19 +177,19 @@ righe di testo.</para>
     <section>
       <title>
 Chiudi Windows con '<keycap>Esc</keycap>'<indexterm>
-          <primary>chiudere le finestre utilizzando il tasto Esc</primary>
+          <primary>chiudere le finestre usando il tasto Esc</primary>
         </indexterm></title>
 
       <itemizedlist>
         <listitem>
           <para>
 <option>Finestra secondaria MDI o finestra principale</option> (impostazione
-predefinita): consente di utilizzare il tasto <keycap>Esc</keycap> per
-chiudere le finestre WinMerge.Premendo <keycap>Esc</keycap> una volta si
-chiude una finestra, quindi con una finestra di confronto file aperta, sono
-necessarie tre pressioni di tasti per chiudere WinMerge: prima la finestra
-di confronto file, quindi la finestra di confronto cartelle e infine la
-finestra WinMerge.</para>
+predefinita): consente di usare il tasto <keycap>Esc</keycap> per chiudere
+le finestre WinMerge. Premendo <keycap>Esc</keycap> una volta si chiude una
+finestra, quindi con una finestra di confronto file aperta, sono necessarie
+tre pressioni di tasti per chiudere WinMerge: prima la finestra di confronto
+file, quindi la finestra di confronto cartelle e infine la finestra
+WinMerge.</para>
 
           <para>
 Tieni presente che nella riga di comando di WinMerge, il parametro
@@ -227,18 +228,18 @@ alcuna finestra WinMerge.</para>
           <para>
 <option>Abilitato</option> (predefinito): la finestra di dialogo Seleziona
 file o cartelle controlla entrambi o tutti e tre i percorsi quando li
-inserisci.Il pulsante <guibutton >Confronta</guibutton > rimane disabilitato
-finché entrambi o tutti e tre i percorsi non vengono convalidati.Tieni
+inserisci. Il pulsante <guibutton>Confronta</guibutton> rimane disabilitato
+finché entrambi o tutti e tre i percorsi non vengono convalidati. Tieni
 presente che questo controllo può causare qualche ritardo.</para>
         </listitem>
 
         <listitem>
           <para>
-<option >Disabilitato</option >: il pulsante <guibutton
->Confronta</guibutton > nella finestra di dialogo Seleziona file o cartelle
-è sempre abilitato e tenta di aprire qualsiasi percorso specificato.Poiché
-non vi è alcun ritardo durante la convalida, ciò può accelerare la selezione
-dei percorsi.Tuttavia, se non è possibile aprire il percorso, viene
+<option>Disabilitato</option>: il pulsante <guibutton>Confronta</guibutton>
+nella finestra di dialogo Seleziona file o cartelle è sempre abilitato e
+tenta di aprire qualsiasi percorso specificato. Poiché non vi è alcun
+ritardo durante la convalida, ciò può accelerare la selezione dei
+percorsi. Tuttavia, se non è possibile aprire il percorso, viene
 visualizzata una finestra di dialogo di errore.</para>
         </listitem>
       </itemizedlist>
@@ -256,9 +257,9 @@ Modalità a istanza singola<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (impostazione predefinita): puoi eseguire più
-istanze WinMerge.Ad esempio, se WinMerge è attualmente in esecuzione e si fa
-clic sul collegamento WinMerge sul desktop, verrà aperta una nuova finestra
-WinMerge.</para>
+istanze WinMerge. Ad esempio, se WinMerge è attualmente in esecuzione e si
+fa clic sul collegamento WinMerge sul desktop, verrà aperta una nuova
+finestra WinMerge.</para>
         </listitem>
 
         <listitem>
@@ -271,7 +272,7 @@ programma WinMerge a un'istanza:</para>
               <para>
 Se WinMerge è attualmente in esecuzione e si tenta di avviare una nuova
 istanza, non viene aperta alcuna nuova finestra dell'applicazione: viene
-invece utilizzata la finestra WinMerge corrente.</para>
+invece usata la finestra WinMerge attuale.</para>
             </listitem>
 
             <listitem>
@@ -287,9 +288,9 @@ esistente.</para>
           <para>
 <option>Consenti solo un'istanza;attendi la terminazione</option>: simile
 all'opzione "Consenti l'esecuzione di una sola istanza", questa impostazione
-limita WinMerge a una singola finestra dell'applicazione.Tuttavia,
+limita WinMerge a una singola finestra dell'applicazione. Tuttavia,
 garantisce anche che il processo WinMerge non termini fino alla chiusura
-della finestra dell'applicazione.Ciò è utile per le situazioni in cui le
+della finestra dell'applicazione. Ciò è utile per le situazioni in cui le
 applicazioni esterne, come SourceTree, devono attendere il completamento di
 WinMerge prima di poter eliminare in sicurezza i file temporanei.</para>
         </listitem>
@@ -309,8 +310,8 @@ confermare se chiudere tutte le finestre.</para>
 
         <listitem>
           <para>
-<option >Abilitato</option >: se fai clic su <guibutton >Esci</guibutton > e
-non ci sono modifiche ai file in sospeso, WinMerge si chiude immediatamente.</para>
+<option>Abilitato</option>: se selezioni <guibutton>Esci</guibutton> e non
+ci sono modifiche ai file in sospeso, WinMerge si chiude immediatamente.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -351,9 +352,9 @@ all'avvio<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): la finestra WinMerge si apre
-quando avvii WinMerge.Devi quindi fare clic su <menuchoice> <guimenu
->File</guimenu > <guimenuitem >Apri</guimenuitem > </menuchoice > per aprire
-Seleziona file o cartelle.</para>
+quando avvii WinMerge. per aprire Seleziona file o cartelle devi quindi fare
+clic su <menuchoice> <guimenu>File</guimenu> <guimenuitem>Apri</guimenuitem>
+</menuchoice> .</para>
         </listitem>
 
         <listitem>
@@ -374,16 +375,16 @@ pulsante Confronta<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option >Disabilitato</option> (predefinito): quando fai clic sul pulsante
-<guibutton >Confronta</guibutton >, la finestra di dialogo Seleziona file o
+<option>Disabilitato</option> (predefinito): quando selezioni
+<guibutton>Confronta</guibutton>, la finestra di dialogo Seleziona file o
 cartelle rimarrà aperta invece di chiudersi.</para>
         </listitem>
 
         <listitem>
           <para>
-<option >Abilitato</option >: facendo clic sul pulsante <guibutton
->Confronta</guibutton > si chiude la finestra di dialogo Seleziona file o
-cartelle.</para>
+<option>Abilitato</option>: facendo clic sul pulsante
+<guibutton>Confronta</guibutton> si chiude la finestra di dialogo Seleziona
+file o cartelle.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -399,24 +400,24 @@ Apri la finestra di dialogo Completamento automatico<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Disabilitato</guilabel >: non viene eseguito alcun completamento
+<guilabel>Disabilitato</guilabel>: non viene eseguito alcun completamento
 automatico quando inserisci percorsi nella finestra di dialogo Seleziona
 file o cartelle.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Dal file system</guilabel> (predefinito): controlla i percorsi
-mentre scrivi.Tenta di individuare i percorsi nel file system che
+<guilabel>Dal file system</guilabel> (predefinito): controlla i percorsi
+mentre scrivi. Tenta di individuare i percorsi nel file system che
 corrispondono alle lettere digitate e, se viene trovato un percorso
 corrispondente, completa il percorso.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Dall'elenco degli usi più recenti</guilabel >: controlla i
-percorsi solo dall'elenco degli usi più recenti (MRU).Ciò è utile quando hai
-un insieme limitato di percorsi da confrontare.</para>
+<guilabel>Dall'elenco degli usi più recenti</guilabel>: controlla i percorsi
+solo dall'elenco degli usi più recenti (MRU). Ciò è utile quando hai un
+insieme limitato di percorsi da confrontare.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -432,26 +433,26 @@ Ricarica automaticamente i file modificati<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Disabilitato</guilabel >: disabilita il ricaricamento automatico.</para>
+<guilabel>Disabilitato</guilabel>: disabilita il ricaricamento automatico.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Solo su finestra attivata</guilabel> (predefinito): quando la
+<guilabel>Solo su finestra attivata</guilabel> (predefinito): quando la
 finestra WinMerge è attivata, se il file è stato modificato, ricaricherà il
-file.Tuttavia, in questo momento verrà visualizzata una finestra di
-messaggio che chiede se si desidera ricaricare il file.Se non vuoi vedere
-questa finestra di messaggio, seleziona "Non fare più questa domanda" e
-premi il pulsante Sì.</para>
+file. Tuttavia, in questo momento verrà visualizzata una finestra di
+messaggio che chiede se si desidera ricaricare il file. Se non vuoi
+visualizzare questa finestra del messaggio, seleziona "Non fare più questa
+domanda" e premi il pulsante Sì.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Immediatamente</guilabel >: ricarica immediatamente il file
-quando è stato modificato.Tuttavia, in questo momento verrà visualizzata una
-finestra di messaggio che chiede se si desidera ricaricare il file.Se non
-vuoi vedere questa finestra di messaggio, seleziona "Non fare più questa
-domanda" e premi il pulsante Sì.</para>
+<guilabel>Immediatamente</guilabel>: ricarica immediatamente il file quando
+è stato modificato. Tuttavia, in questo momento verrà visualizzata una
+finestra di messaggio che chiede se si desidera ricaricare il file. Se non
+vuoi visualizzare questa finestra di messaggio, seleziona "Non fare più
+questa domanda" e premi il pulsante Sì.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -481,16 +482,15 @@ e minuscole.</para>
       <para>
 La personalizzazione del rilevamento delle differenze può essere utile
 durante i confronti, quando potresti non essere interessato ad alcune
-differenze.Tuttavia, queste opzioni influiscono anche sulla fusione.Ad
+differenze. Tuttavia, queste opzioni influiscono anche sulla fusione. Ad
 esempio, se ignori le modifiche agli spazi bianchi, le modifiche al rientro
 nei file del codice sorgente non verranno conservate durante l'unione.</para>
 
       <para>
 Per questo motivo, prima di unire eventuali differenze, consigliamo
 vivamente di ripristinare le opzioni di questa pagina alle impostazioni
-predefinite, in particolare le opzioni di ignora.Per ripristinare tutte le
-opzioni in questa pagina, fai clic sul pulsante <guibutton
->Predefinite</guibutton >.</para>
+predefinite, in particolare le opzioni di ignora. Per ripristinare tutte le
+opzioni in questa pagina, seleziona <guibutton>Predefinite</guibutton>.</para>
     </important>
 
     <section>
@@ -501,7 +501,7 @@ Informazioni sulle opzioni di ignora<indexterm>
 
       <para>
 Numerose opzioni nella pagina Confronta (descritte più avanti in questa
-sezione) consentono di ignorare alcune differenze.Le differenze ignorate
+sezione) consentono di ignorare alcune differenze. Le differenze ignorate
 vengono trattate in modi speciali in WinMerge:</para>
 
       <itemizedlist>
@@ -534,13 +534,13 @@ Spazi bianchi<indexterm>
         </indexterm></title>
 
       <para>
-Lo spazio bianco è lo spazio tra parole e righe.È rappresentato nei file di
+Lo spazio bianco è lo spazio tra parole e righe. È rappresentato nei file di
 testo da caratteri speciali, non stampabili come spazi, tabulazioni e
-avanzamenti di riga.Il significato degli spazi bianchi dipende da come si
-desidera leggere o elaborare le differenze.Potrebbe essere importante
-rilevare tutte le modifiche negli spazi bianchi.Al contrario, potresti
+avanzamenti di riga. Il significato degli spazi bianchi dipende da come si
+desidera leggere o elaborare le differenze. Potrebbe essere importante
+rilevare tutte le modifiche negli spazi bianchi. Al contrario, potresti
 preferire trattare tutti gli spazi bianchi allo stesso modo: uno spazio, due
-spazi, un rientro o una tabulazione.E in alcuni documenti strutturati (come
+spazi, un rientro o una tabulazione. E in alcuni documenti strutturati (come
 gli elenchi separati da virgole), potresti voler ignorare tutti gli spazi
 bianchi.</para>
 
@@ -548,7 +548,7 @@ bianchi.</para>
         <para>
 Gli effetti degli spazi bianchi sulle modifiche all'interno delle righe sono
 visibili solo quando è abilitata <option>Visualizza differenze di
-riga</option>.Ciò è in contrasto con i blocchi differenza, che sono sempre
+riga</option>. Ciò è in contrasto con i blocchi differenza, che sono sempre
 evidenziati.</para>
       </note>
 
@@ -578,9 +578,9 @@ opzioni:</para>
 
           <listitem>
             <para>
-Tutti gli spazi bianchi vengono confrontati (impostazione predefinita).Se
+Tutti gli spazi bianchi vengono confrontati (impostazione predefinita). Se
 non sei sicuro di quale opzione richieda il tuo documento, questa è
-probabilmente la scelta più sicura.Nell'esempio, tutte le linee vengono
+probabilmente la scelta più sicura. Nell'esempio, tutte le linee vengono
 rilevate come diverse.</para>
           </listitem>
         </varlistentry>
@@ -590,10 +590,10 @@ rilevate come diverse.</para>
 
           <listitem>
             <para>
-Confronta le differenze negli spazi bianchi.Nell'esempio, le prime tre righe
-hanno spazi diversi, ma vengono rilevate come identiche: tabulazioni e
-multipli vengono trattati come se fossero spazi singoli.L'ultima riga non ha
-spazi, quindi la differenza <emphasis>non</emphasis> viene ignorata (in
+Confronta le differenze negli spazi bianchi. Nell'esempio, le prime tre
+righe hanno spazi diversi, ma vengono rilevate come identiche: tabulazioni e
+multipli vengono trattati come se fossero spazi singoli. L'ultima riga non
+ha spazi, quindi la differenza <emphasis>non</emphasis> viene ignorata (in
 effetti, le parole nelle ultime due righe sono diverse):</para>
           </listitem>
         </varlistentry>
@@ -604,7 +604,7 @@ effetti, le parole nelle ultime due righe sono diverse):</para>
           <listitem>
             <para>
 Ignora tutti i caratteri di spazio bianco, eccetto gli avanzamenti di riga
-(quindi le righe vengono rilevate e conservate in un'unione).Tutte le linee
+(quindi le righe vengono rilevate e conservate in un'unione). Tutte le linee
 nell'esempio vengono rilevate come identiche.</para>
           </listitem>
         </varlistentry>
@@ -619,9 +619,9 @@ sono descritti in <xref linkend="CompareFiles_linediff-highlight" />.</para>
 
         <para>
 La pagina Editor della finestra di dialogo Opzioni contiene opzioni
-correlate che controllano il modo in cui vengono utilizzati gli spazi
-bianchi per rilevare le interruzioni tra le parole.Vedi <xref
-linkend="Configuration_viewlinediffs" /> per i dettagli.</para>
+correlate che controllano il modo in cui vengono usati gli spazi bianchi per
+rilevare le interruzioni tra le parole. Per i dettagli vedi <xref
+linkend="Configuration_viewlinediffs" />.</para>
       </note>
     </section>
 
@@ -644,9 +644,9 @@ file come righe vuote con i colori della differenza eliminata.</para>
         <listitem>
           <para>
 <option>Abilitato</option>: le righe vuote nei file di origine vengono
-ignorate.Sono rappresentati nella finestra Confronto file come righe vuote
-con i colori della differenza ignorata.Tuttavia la differenza non può essere
-fusa.</para>
+ignorate. Sono rappresentati nella finestra Confronto file come righe vuote
+con i colori della differenza ignorata. Tuttavia la differenza non può
+essere fusa.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -661,7 +661,7 @@ Ignora maiuscole e minuscole<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): i confronti fanno distinzione
-tra maiuscole e minuscole.Ad esempio, <literal>LowerCase</literal>,
+tra maiuscole e minuscole. Ad esempio, <literal>LowerCase</literal>,
 <literal>LOWERCASE</literal> e <literal>lowercase</literal> sono tutti
 diversi.</para>
         </listitem>
@@ -686,9 +686,9 @@ Ignora le differenze di ritorno a capo (Windows/Unix/Mac)<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): vengono rilevate differenze di
-stile di fine riga (EOL).Ad esempio, se si confrontano due righe che hanno
+stile di fine riga (EOL). Ad esempio, se si confrontano due righe che hanno
 lo stesso contenuto ma terminazioni di riga diverse, le righe vengono
-considerate diverse.Quando ciò accade, WinMerge visualizza una finestra di
+considerate diverse. Quando ciò accade, WinMerge visualizza una finestra di
 dialogo che richiede di confermare se rilevare o ignorare la differenza.</para>
         </listitem>
 
@@ -733,7 +733,7 @@ Ignora le differenze nella tabella codici<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): vengono rilevate le differenze
-di codifica dei file.Inoltre, vengono rilevate differenze tra la presenza e
+di codifica dei file. Inoltre, vengono rilevate differenze tra la presenza e
 l'assenza della distinta base.</para>
         </listitem>
 
@@ -764,7 +764,7 @@ nel codice, insieme ad altri contenuti.</para>
           <para>
 <option>Abilitato</option>: questa opzione ottimizza i confronti rilevando i
 commenti in determinati tipi di file del linguaggio di programmazione (come
-C++ e Java) e ignorandoli.Il rilevamento si basa sull'evidenziazione della
+C++ e Java) e ignorandoli. Il rilevamento si basa sull'evidenziazione della
 sintassi, quindi non ha alcun effetto sui tipi di file non supportati da
 WinMerge.</para>
         </listitem>
@@ -812,7 +812,7 @@ Ignora le interruzioni di riga (considera come spazi)<indexterm>
         <listitem>
           <para>
 <option>Abilitato</option>: all'interno di un blocco differenziale, le
-interruzioni di riga vengono trattate come spazi.Ad esempio, la seguente
+interruzioni di riga vengono trattate come spazi. Ad esempio, la seguente
 differenza viene ignorata: <screen>A sinistra:
 abc def
 
@@ -843,13 +843,13 @@ differenze sono dovute allo spostamento delle linee.</para>
         <listitem>
           <para>
 <option>Abilitato</option>: WinMerge tenta di rilevare le righe che vengono
-spostate (in posizioni diverse in ciascun file).I blocchi spostati sono
-indicati dalla differenza di colori <guilabel >Spostato</guilabel > e
-<guilabel >Spostato selezionato </guilabel >.Se viene visualizzata la barra
+spostate (in posizioni diverse in ciascun file). I blocchi spostati sono
+indicati dalla differenza di colori <guilabel>Spostato</guilabel> e
+<guilabel>Spostato selezionato </guilabel>. Se viene visualizzata la barra
 della posizione, le posizioni differenti corrispondenti nelle barre della
-posizione sinistra e destra sono collegate con una linea.Mostrare i blocchi
-spostati può rendere più semplice la visualizzazione delle modifiche nei
-file, se non ce ne sono troppi.</para>
+posizione sinistra e destra sono collegate con una linea. Visualizza i
+blocchi spostati può rendere più semplice la visualizzazione delle modifiche
+nei file, se non ce ne sono troppi.</para>
 
           <para>
 Per un esempio, vedi la descrizione del riquadro Posizione in <xref
@@ -868,16 +868,16 @@ Allinea linee simili<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): le linee all'interno dei
-blocchi di differenza vengono mostrate così come si presentano nei file di
-origine.</para>
+blocchi di differenza vengonovisualizzate così come si presentano nei file
+di origine.</para>
         </listitem>
 
         <listitem>
           <para>
 <option>Abilitato</option>: WinMerge tenta di rilevare righe simili
 all'interno di blocchi di differenza e aggiunge righe vuote nei riquadri
-File per allinearle.Questa opzione è più efficace quando le linee sono
-abbastanza simili;meno efficace se le linee sono troppo diverse.</para>
+File per allinearle. Questa opzione è più efficace quando le linee sono
+abbastanza simili; meno efficace se le linee sono troppo diverse.</para>
 
           <para>
 Per un esempio, vedi la descrizione <citetitle>Righe simili</citetitle> in
@@ -934,8 +934,8 @@ Abilita l'euristica del rientro<indexterm>
         <listitem>
           <para>
 <option>Abilitato</option> (predefinito): abilita l'euristica che sposta i
-confini dei blocchi diff per rendere le differenze più facili da leggere.Non
-ha alcun effetto se l'algoritmo Diff è predefinito.</para>
+confini dei blocchi diff per rendere le differenze più facili da
+leggere. Non ha alcun effetto se l'algoritmo Diff è predefinito.</para>
         </listitem>
 
         <listitem>
@@ -982,7 +982,7 @@ Metodo di confronto<indexterm>
 
       <para>
 Questa opzione ti consente di determinare quanto sono completi i confronti
-dei file.Scegli una di queste cinque scelte:</para>
+dei file. Selezionai una di queste cinque scelte:</para>
 
       <variablelist>
         <varlistentry>
@@ -991,9 +991,9 @@ dei file.Scegli una di queste cinque scelte:</para>
           <listitem>
             <para>
 Impostazione predefinita: confronto completo dei file in base al contenuto,
-con tutti i fronzoli.Questo metodo richiama plugin e utilizza il motore
+con tutti i fronzoli. Questo metodo richiama plugin e usa il motore
 diffutils per una differenziazione completamente accurata e il rilevamento
-dei blocchi spostati.Questo è il metodo più completo e consigliato.</para>
+dei blocchi spostati. Questo è il metodo più completo e consigliato.</para>
           </listitem>
         </varlistentry>
 
@@ -1002,14 +1002,14 @@ dei blocchi spostati.Questo è il metodo più completo e consigliato.</para>
 
           <listitem>
             <para>
-Confronto ridotto dei file in base al contenuto.Questo metodo utilizza un
-codice di confronto file semplificato che ignora i plug-in e il rilevamento
-dei blocchi spostati.Questo metodo è più veloce del <guilabel> Contenuto
+Confronto ridotto dei file in base al contenuto. Questo metodo usa un codice
+di confronto file semplificato che ignora i plug-in e il rilevamento dei
+blocchi spostati. Questo metodo è più veloce del <guilabel> Contenuto
 completo </guilabel>, perché non carica i file.</para>
 
             <para>
 Lo svantaggio è che durante il confronto non vengono applicati i filtri di
-linea.Ad esempio, questo metodo considera il file come diverso anche se i
+linea. Ad esempio, questo metodo considera il file come diverso anche se i
 filtri di linea sono impostati per ignorare tutte le differenze nei file.</para>
           </listitem>
         </varlistentry>
@@ -1020,14 +1020,14 @@ filtri di linea sono impostati per ignorare tutte le differenze nei file.</para>
           <listitem>
             <para>
 Questo metodo è più veloce del metodo di confronto rapido dei
-contenuti.Tuttavia, non applica alcun plugin, filtro di linea, opzione
+contenuti. Tuttavia, non applica alcun plugin, filtro di linea, opzione
 'Ignora maiuscole e minuscole', ecc. Innanzitutto confronta le dimensioni
 del file e, se sono diverse, tratta i contenuti del file come diversi senza
-confrontarli.Se le dimensioni del file corrispondono, confronta
-semplicemente il contenuto del file in byte.Non viene eseguito alcun
+confrontarli. Se le dimensioni del file corrispondono, confronta
+semplicemente il contenuto del file in byte. Non viene eseguito alcun
 rilevamento della codifica file, rilevamento EOL o rilevamento file
-binario.Questo metodo di confronto è utile per confrontare i file con i file
-di cui è stato eseguito il backup.</para>
+binario. Questo metodo di confronto è utile per confrontare i file con i
+file di cui è stato eseguito il backup.</para>
           </listitem>
         </varlistentry>
 
@@ -1042,7 +1042,7 @@ Data di modifica<indexterm>
           <listitem>
             <para>
 Confronta solo le date di modifica sui file, quindi è molto più veloce di
-entrambi i metodi dei contenuti.Ma ovviamente, è accurato solo quanto lo
+entrambi i metodi dei contenuti. Ma ovviamente, è accurato solo quanto lo
 sono le date di modifica.</para>
           </listitem>
         </varlistentry>
@@ -1052,7 +1052,7 @@ sono le date di modifica.</para>
 
           <listitem>
             <para>
-Simile a <guilabel >Data modificata</guilabel >, ma controlla anche le
+Simile a <guilabel>Data modificata</guilabel>, ma controlla anche le
 dimensioni dei file quando le date sono identiche.</para>
           </listitem>
         </varlistentry>
@@ -1077,8 +1077,8 @@ i metodi dei contenuti.</para>
 
           <listitem>
             <para>
-Confronta solo se i file esistono su entrambi i lati.Se un file esiste sia a
-sinistra che a destra, vengono considerati identici, senza controllare
+Confronta solo se i file esistono su entrambi i lati. Se un file esiste sia
+a sinistra che a destra, vengono considerati identici, senza controllare
 contenuto, dimensione o timestamp.</para>
           </listitem>
         </varlistentry>
@@ -1099,7 +1099,7 @@ Interrompi dopo la prima differenza<indexterm>
 
       <para>
 Questa opzione è abilitata solo quando è selezionato il metodo di confronto
-<guilabel > Contenuti rapidi </guilabel >.</para>
+<guilabel> Contenuti rapidi </guilabel>.</para>
 
       <itemizedlist>
         <listitem>
@@ -1117,9 +1117,9 @@ scansionando invece sempre l'intero file.</para>
           <para>
 Lo svantaggio è che WinMerge potrebbe non essere in grado di identificare i
 file binari come binari.È probabile che ciò accada se la prima differenza è
-vicino all'inizio del file.Se sai che tipo di file stai confrontando (ad
+vicino all'inizio del file. Se sai che tipo di file stai confrontando (ad
 esempio, quali sono file binari), questa opzione può essere un buon modo per
-accelerare i confronti.Tuttavia, non abilitare questa opzione se non sei
+accelerare i confronti. Tuttavia, non abilitare questa opzione se non sei
 sicuro del tipo di file che stai confrontando.</para>
         </listitem>
       </itemizedlist>
@@ -1142,22 +1142,21 @@ vengono rilevati come diversi.</para>
 
         <listitem>
           <para>
-<option>Abilitato</option>: a volte (ad esempio, quando utilizzi le
-condivisioni di rete) piccole differenze nei timestamp non sono
-significative.Per ottenere risultati più significativi in ​​tali situazioni,
-questa opzione consente di ignorare le differenze orarie inferiori a tre
-secondi.</para>
+<option>Abilitato</option>: a volte (ad esempio, quando usi le condivisioni
+di rete) piccole differenze nei timestamp non sono significative. Per
+ottenere risultati più significativi in tali situazioni, questa opzione
+consente di ignorare le differenze orarie inferiori a tre secondi.</para>
 
           <para>
-Questa opzione funziona solo con i metodi di confronto <guimenuitem > Data
-di modifica </guimenuitem > e <guimenuitem > Data e dimensione di modifica
-</guimenuitem > (descritti in <xref linkend="Configuration_compmethod"
-/>).Non ha alcun effetto con altri metodi.</para>
+Questa opzione funziona solo con i metodi di confronto <guimenuitem> Data di
+modifica </guimenuitem> e <guimenuitem> Data e dimensione di modifica
+</guimenuitem> (descritti in <xref linkend="Configuration_compmethod"
+/>). Non ha alcun effetto con altri metodi.</para>
 
           <warning>
             <para>
 Questa opzione dovrebbe essere abilitata solo quando viene rilevata la
-differenza oraria.In caso contrario, potrebbero verificarsi risultati di
+differenza oraria. In caso contrario, potrebbero verificarsi risultati di
 confronto errati.</para>
           </warning>
         </listitem>
@@ -1233,8 +1232,8 @@ Includi contenuti univoci delle sottocartelle<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option>Abilitato</option> (impostazione predefinita): WinMerge mostra anche
-il contenuto di sottocartelle univoche.</para>
+<option>Abilitato</option> (impostazione predefinita): WinMergevisualizza
+anche il contenuto di sottocartelle univoche.</para>
         </listitem>
 
         <listitem>
@@ -1264,7 +1263,7 @@ normali.</para>
         <listitem>
           <para>
 <option>Abilitato</option>: ignora il contenuto delle cartelle che sono
-punti di analisi.Ad esempio, C:\Users\All Users è un collegamento simbolico
+punti di analisi. Ad esempio, C:\Users\All Users è un collegamento simbolico
 a C:\ProgramData e l'abilitazione di questa opzione salterà il confronto
 della cartella C:\Users\All Users.</para>
         </listitem>
@@ -1282,22 +1281,22 @@ Passa al confronto rapido quando la dimensione supera (MB)<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option >Disabilitato</option >: non è attivo a meno che il metodo di
+<option>Disabilitato</option>: non è attivo a meno che il metodo di
 confronto non sia impostato su un metodo diverso da <guilabel>Contenuto
-completo</guilabel >.</para>
+completo</guilabel>.</para>
         </listitem>
 
         <listitem>
           <para>
-<option >Abilitato</option >: è attivo quando il metodo di confronto è
-impostato sul metodo di confronto <guilabel >Contenuti completi</guilabel >.</para>
+<option>Abilitato</option>: è attivo quando il metodo di confronto è
+impostato sul metodo di confronto <guilabel>Contenuti completi</guilabel>.</para>
 
           <para>
-Dimensione soglia per passare al metodo di confronto <guilabel >Contenuti
-rapidi</guilabel >.Quando è selezionato il metodo di confronto <guilabel
->Contenuti completi</guilabel >, i file più grandi (in mega byte) di questo
-valore vengono confrontati usando il metodo di confronto <guilabel
->Contenuti rapidi</guilabel >.</para>
+Dimensione soglia per passare al metodo di confronto <guilabel>Contenuti
+rapidi</guilabel>. Quando è selezionato il metodo di confronto <guilabel
+>Contenuti completi</guilabel>, i file più grandi (in mega byte) di questo
+valore vengono confrontati usando il metodo di confronto <guilabel>Contenuti
+rapidi</guilabel>.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -1313,36 +1312,36 @@ Passa al confronto binario quando la dimensione supera (MB)<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option >Disabilitato</option >: non è attivo a meno che il metodo di
-confronto non sia impostato su un metodo diverso da <guilabel >Contenuti
-completi</guilabel > e <guilabel >Contenuti rapidi</guilabel >.</para>
+<option>Disabilitato</option>: non è attivo a meno che il metodo di
+confronto non sia impostato su un metodo diverso da <guilabel>Contenuti
+completi</guilabel> e <guilabel>Contenuti rapidi</guilabel>.</para>
         </listitem>
 
         <listitem>
           <para>
-<option >Abilitato</option >: è attivo quando il metodo di confronto è
-impostato sul metodo di confronto <guilabel >Contenuti completi</guilabel >
-o <guilabel >Contenuti rapidi</guilabel >.</para>
+<option>Abilitato</option>: è attivo quando il metodo di confronto è
+impostato sul metodo di confronto <guilabel>Contenuti completi</guilabel> o
+<guilabel>Contenuti rapidi</guilabel>.</para>
 
           <para>
 Dimensione soglia per il passaggio al metodo di confronto dei contenuti
-binari.Quando è selezionato il metodo di confronto <guilabel >Contenuti
-completi</guilabel > o <guilabel >Contenuti rapidi</guilabel >, i file più
+binari. Quando è selezionato il metodo di confronto <guilabel>Contenuti
+completi</guilabel> o <guilabel>Contenuti rapidi</guilabel>, i file più
 grandi (in mega byte) di questo valore vengono confrontati usando il metodo
-di confronto <guilabel >Contenuti binari</guilabel >.</para>
+di confronto <guilabel>Contenuti binari</guilabel>.</para>
         </listitem>
       </itemizedlist>
     </section>
 
     <section>
       <title>
-Core della CPU da utilizzare<indexterm>
+Core della CPU da usare<indexterm>
           <primary>confrontare i thread</primary>
         </indexterm></title>
 
       <para>
-Numero di thread utilizzati per il confronto.Con un valore negativo WinMerge
-utilizzerà l'aggiunta del numero di core CPU disponibili.</para>
+Numero di thread usati per il confronto. Con un valore negativo WinMerge
+userà l'aggiunta del numero di core CPU disponibili.</para>
     </section>
 
     <section>
@@ -1352,14 +1351,14 @@ Condizioni di confronto aggiuntive<indexterm>
         </indexterm></title>
 
       <para>
-Consente di specificare condizioni di confronto aggiuntive utilizzando
-espressioni di filtro durante il confronto delle cartelle.Ad esempio, anche
+Consente di specificare condizioni di confronto aggiuntive usando
+espressioni di filtro durante il confronto delle cartelle. Ad esempio, anche
 se i file sono considerati identici dal metodo di confronto selezionato
 (come Contenuto completo), puoi aggiungere condizioni come <screen>tuttiuguali(Data)</screen> o <screen>Data Sinistra = Data Destra</screen> per richiedere
-che anche le date di modifica del file corrispondano.Quando fai clic sul
-pulsante <guilabel >=</guilabel > a destra del campo di immissione, appare
-un menu con elementi come <guilabel >Confronta dimensioni</guilabel > e
-<guilabel >Confronta data</guilabel >.Selezionando <guilabel >Confronta
+che anche le date di modifica del file corrispondano. Quando fai clic sul
+pulsante <guilabel>=</guilabel> a destra del campo di immissione, appare un
+menu con elementi come <guilabel>Confronta dimensioni</guilabel> e
+<guilabel>Confronta data</guilabel>. Selezionando <guilabel>Confronta
 data</guilabel> si inserisce automaticamente
 <literal>allequal(Data)</literal> nel campo.</para>
     </section>
@@ -1406,18 +1405,18 @@ Rinomina/sposta le chiavi di rilevamento<indexterm>
         </indexterm></title>
 
       <para>
-Specifica l'espressione di filtro utilizzata per generare chiavi di
-rilevamento per la corrispondenza di file/cartelle su tutti i lati.Gli
-elementi con chiavi corrispondenti vengono raggruppati come elementi
-potenzialmente rinominati o spostati.Ad esempio, impostando la chiave su
+Specifica l'espressione di filtro usata per generare chiavi di rilevamento
+per la corrispondenza di file/cartelle su tutti i lati. Gli elementi con
+chiavi corrispondenti vengono raggruppati come elementi potenzialmente
+rinominati o spostati. Ad esempio, impostando la chiave su
 <literal>Size</literal> raggrupperà i file con la stessa dimensione, mentre
 <literal>Name</literal> raggrupperà i file con lo stesso nome (utile per
 rilevare gli spostamenti).</para>
 
       <para>
-Quando fai clic sul pulsante <guilabel>=</guilabel> a destra del campo di
-input, viene visualizzato un menu di supporto con le espressioni chiave di
-rilevamento comuni:</para>
+Quando selezioni <guilabel>=</guilabel> a destra del campo di input, viene
+visualizzato un menu di supporto con le espressioni chiave di rilevamento
+comuni:</para>
 
       <section>
         <title>Chiavi di rilevamento di base</title>
@@ -1435,7 +1434,7 @@ spostati in cartelle diverse ma hanno mantenuto lo stesso nome.</para>
             <term>Nome base (senza estensione)</term>
             <listitem>
               <para>
-Corrisponde ai file per nome senza estensione.Ad esempio, "file.txt" e
+Corrisponde ai file per nome senza estensione. Ad esempio, "file.txt" e
 "file.doc" corrisponderebbero.</para>
             </listitem>
           </varlistentry>
@@ -1445,7 +1444,7 @@ Corrisponde ai file per nome senza estensione.Ad esempio, "file.txt" e
             <listitem>
               <para>
 Inserisce <literal>normalizeUnicode(Name, "NFC")</literal> che corrisponde
-ai file in base al nome file Unicode normalizzato.Utile per rilevare file
+ai file in base al nome file Unicode normalizzato. Utile per rilevare file
 con nomi equivalenti ma diverse rappresentazioni Unicode (ad esempio,
 caratteri composti e scomposti).</para>
             </listitem>
@@ -1465,8 +1464,8 @@ mantengono la relativa struttura di cartella.</para>
             <term>Misurare</term>
             <listitem>
               <para>
-Corrisponde ai file in base alla dimensione.Utile per rilevare file che sono
-stati rinominati ma hanno la stessa dimensione.</para>
+Corrisponde ai file in base alla dimensione. Utile per rilevare file che
+sono stati rinominati ma hanno la stessa dimensione.</para>
             </listitem>
           </varlistentry>
 
@@ -1482,11 +1481,11 @@ Corrisponde ai file in base alla data/ora di modifica.</para>
             <term>Hash (MD5)</term>
             <listitem>
               <para>
-Inserisce <literal>if(IsFolder, Name, prop("Hash.MD5"))</literal>.Per le
-cartelle, corrisponde per nome.Per i file, corrisponde all'hash MD5 del
-contenuto.Questo è il metodo più accurato per rilevare i file rinominati, ma
-richiede il calcolo degli hash MD5 che può essere lento per i file di grandi
-dimensioni.</para>
+Inserisce <literal>if(IsFolder, Name, prop("Hash.MD5"))</literal>. Per le
+cartelle, corrisponde per nome. Per i file, corrisponde all'hash MD5 del
+contenuto. Questo è il metodo più accurato per rilevare i file rinominati,
+ma richiede il calcolo degli hash MD5 che può essere lento per i file di
+grandi dimensioni.</para>
             </listitem>
           </varlistentry>
 
@@ -1497,7 +1496,7 @@ dimensioni.</para>
 Apre un sottomenu che fornisce accesso alle proprietà dei file Windows come
 <literal>System.Author</literal>, <literal>System.Title</literal>,
 <literal>System.Keywords</literal>, ecc. Puoi usarli per abbinare i file in
-base ai loro metadati.L'espressione inserita sarà <literal>if(IsFolder,
+base ai loro metadati. L'espressione inserita sarà <literal>if(IsFolder,
 Name, prop("PropertyName"))</literal>.</para>
             </listitem>
           </varlistentry>
@@ -1508,8 +1507,8 @@ Name, prop("PropertyName"))</literal>.</para>
         <title>Funzioni di trasformazione delle stringhe</title>
         <para>
 Il menu include funzioni di trasformazione delle stringhe che possono essere
-applicate alle chiavi di rilevamento.Quando selezionate, queste funzioni
-racchiudono l'espressione corrente (o <literal>Nome</literal> se vuoto):</para>
+applicate alle chiavi di rilevamento. Quando selezionate, queste funzioni
+racchiudono l'espressione attuale (o <literal>Nome</literal> se vuoto):</para>
 
         <variablelist>
           <varlistentry>
@@ -1519,7 +1518,7 @@ racchiudono l'espressione corrente (o <literal>Nome</literal> se vuoto):</para>
 Inserisce <literal>replace(expression, "from", "to")</literal> per
 sostituire le stringhe di testo letterale nella chiave.È necessario
 modificare le stringhe segnaposto "da" e "a" per specificare quale testo
-cercare e con cosa sostituirlo.Esempio: <literal>replace(Name, ".backup",
+cercare e con cosa sostituirlo. Esempio: <literal>replace(Name, ".backup",
 "")</literal> rimuove ".backup" dai nomi dei file.</para>
             </listitem>
           </varlistentry>
@@ -1529,9 +1528,9 @@ cercare e con cosa sostituirlo.Esempio: <literal>replace(Name, ".backup",
             <listitem>
               <para>
 Inserisce <literal>regexReplace(expression, "pattern",
-"replacement")</literal> per sostituire il testo utilizzando le espressioni
-regolari.Supporta i riferimenti all'indietro ($1, $2, ecc.) nella stringa di
-sostituzione.Esempio: <literal>regexReplace(Name, "^(\d+)_(.+)$",
+"replacement")</literal> per sostituire il testo usando le espressioni
+regolari. Supporta i riferimenti all'indietro ($1, $2, ecc.) nella stringa
+di sostituzione. Esempio: <literal>regexReplace(Name, "^(\d+)_(.+)$",
 "$2")</literal> rimuove un numero iniziale e un carattere di sottolineatura
 dai nomi dei file.</para>
             </listitem>
@@ -1543,7 +1542,7 @@ dai nomi dei file.</para>
         <title>Sostituisci elenchi</title>
         <para>
 Il sottomenu Sostituisci elenchi fornisce l'accesso alla funzionalità di
-sostituzione delle stringhe batch utilizzando file esterni:</para>
+sostituzione delle stringhe batch usando file esterni:</para>
 
         <variablelist>
           <varlistentry>
@@ -1551,15 +1550,15 @@ sostituzione delle stringhe batch utilizzando file esterni:</para>
             <listitem>
               <para>
 Crea un nuovo file di valori separati da tabulazioni (TSV) con un modello
-per le sostituzioni di stringhe.Il file è archiviato in
+per le sostituzioni di stringhe. Il file è archiviato in
 <filename>%APPDATA%\WinMerge\ReplaceLists</filename> (o
 <filename>Documents\WinMerge\ReplaceLists</filename> a seconda delle
-impostazioni).Dopo la creazione, il file si apre nell'editor di testo
+impostazioni). Dopo la creazione, il file si apre nell'editor di testo
 predefinito e viene inserita la funzione
 <literal>replaceWithList(expression, "filepath")</literal>.</para>
               <para>
 Il formato del file è una sostituzione per riga:
-<literal>search_string&lt;TAB&gt;replacement_string</literal>.Le righe che
+<literal>search_string&lt;TAB&gt;replacement_string</literal>. Le righe che
 iniziano con <literal>#</literal> sono commenti.</para>
               <para>
 Contenuto del file di esempio: <screen># Sostituisci i numeri di versione nei nomi dei file
@@ -1573,9 +1572,9 @@ versione beta</screen></para>
             <listitem>
               <para>
 Simile a Crea elenco di sostituzione stringhe, ma per la sostituzione di
-espressioni regolari.Crea un file modello in
+espressioni regolari. Crea un file modello in
 <filename>%APPDATA%\WinMerge\RegexReplaceLists</filename> (o
-<filename>Documents\WinMerge\RegexReplaceLists</filename>).Inserisce
+<filename>Documents\WinMerge\RegexReplaceLists</filename>). Inserisce
 <literal>regexReplaceWithList(expression, "filepath")</literal>.</para>
               <para>
 Il formato del file è:
@@ -1593,10 +1592,10 @@ Contenuto del file di esempio: <screen># Normalizza i formati della data
             <listitem>
               <para>
 Questi sottomenu elencano tutti i file TSV trovati nelle rispettive cartelle
-replacelists.Selezionando un file dall'elenco si inserisce la corrispondente
-funzione <literal>replaceWithList()</literal> o
-<literal>regexReplaceWithList()</literal> con il percorso del file.Ciò
-consente di riutilizzare rapidamente gli elenchi di sostituzione creati in
+replacelists. Selezionando un file dall'elenco si inserisce la
+corrispondente funzione <literal>replaceWithList()</literal> o
+<literal>regexReplaceWithList()</literal> con il percorso del file. Ciò
+consente di riusare rapidamente gli elenchi di sostituzione creati in
 precedenza.</para>
             </listitem>
           </varlistentry>
@@ -1627,8 +1626,8 @@ testo per una corrispondenza più flessibile:</para>
               <para>
 Inserisce <literal>toLower(expression)</literal> o
 <literal>toUpper(expression)</literal> per convertire tutti i caratteri in
-minuscolo o maiuscolo.Utile per la corrispondenza senza distinzione tra
-maiuscole e minuscole.Esempio: <literal>toLower(Name)</literal> corrisponde
+minuscolo o maiuscolo. Utile per la corrispondenza senza distinzione tra
+maiuscole e minuscole. Esempio: <literal>toLower(Name)</literal> corrisponde
 a "File.txt", "FILE.TXT" e "file.txt" come identici.</para>
             </listitem>
           </varlistentry>
@@ -1638,9 +1637,9 @@ a "File.txt", "FILE.TXT" e "file.txt" come identici.</para>
             <listitem>
               <para>
 Inserisce <literal>toHalfWidth(expression)</literal> o
-<literal>toFullWidth(expression)</literal>.Converte tra caratteri a mezza
+<literal>toFullWidth(expression)</literal>. Converte tra caratteri a mezza
 larghezza e a larghezza intera (principalmente per il testo
-giapponese).Esempio: <literal>toHalfWidth(Name)</literal> converte "ファイル"
+giapponese). Esempio: <literal>toHalfWidth(Name)</literal> converte "ファイル"
 (katakana a larghezza intera) in "ﾌｧｲﾙ" (mezza larghezza).</para>
             </listitem>
           </varlistentry>
@@ -1650,8 +1649,8 @@ giapponese).Esempio: <literal>toHalfWidth(Name)</literal> converte "ファイル
             <listitem>
               <para>
 Fornisce le funzioni <literal>toSimplifiedChinese(expression)</literal> e
-<literal>toTraditionalChinese(expression)</literal>.Converte tra caratteri
-cinesi semplificati e tradizionali.Utile per abbinare file con nomi in
+<literal>toTraditionalChinese(expression)</literal>. Converte tra caratteri
+cinesi semplificati e tradizionali. Utile per abbinare file con nomi in
 diversi set di caratteri cinesi.</para>
             </listitem>
           </varlistentry>
@@ -1661,7 +1660,7 @@ diversi set di caratteri cinesi.</para>
             <listitem>
               <para>
 Fornisce le funzioni <literal>toHiragana(espressione)</literal> e
-<literal>toKatakana(espressione)</literal>.Converte tra i caratteri
+<literal>toKatakana(espressione)</literal>. Converte tra i caratteri
 giapponesi Hiragana e Katakana.</para>
             </listitem>
           </varlistentry>
@@ -1671,26 +1670,26 @@ giapponesi Hiragana e Katakana.</para>
             <listitem>
               <para>
 Inserisce <literal>normalizeUnicode(expression)</literal> che normalizza il
-testo Unicode nel formato NFC (Normalization Form Canonical Composition).Ciò
-è utile per abbinare file i cui nomi possono utilizzare codifiche Unicode
-diverse per gli stessi caratteri (ad esempio, un singolo carattere é contro
-e + che combina l'accento acuto).</para>
+testo Unicode nel formato NFC (Normalization Form Canonical
+Composition). Ciò è utile per abbinare file i cui nomi possono usare
+codifiche Unicode diverse per gli stessi caratteri (ad esempio, un singolo
+carattere é contro e + che combina l'accento acuto).</para>
             </listitem>
           </varlistentry>
         </variablelist>
       </section>
 
       <para>
-Puoi combinare più chiavi utilizzando l'operatore <literal>+</literal> con
-un separatore.Ad esempio, <literal>Nome + "|"+ Size</literal> creerà una
+Puoi combinare più chiavi usando l'operatore <literal>+</literal> con un
+separatore. Ad esempio, <literal>Nome + "|"+ Size</literal> creerà una
 chiave composita che combina nome file e dimensione.</para>
 
       <note>
         <para>
 L'espressione della chiave di rilevamento viene valutata per ciascun lato di
-un confronto file/cartella per produrre una chiave.Gli elementi vengono
-raggruppati quando le relative chiavi corrispondono.Ad esempio, con il tasto
-<literal>Size</literal>, verranno raggruppati un file di 1024 byte a
+un confronto file/cartella per produrre una chiave. Gli elementi vengono
+raggruppati quando le relative chiavi corrispondono. Ad esempio, con il
+tasto <literal>Size</literal>, verranno raggruppati un file di 1024 byte a
 sinistra e un file di 1024 byte a destra (anche con nomi diversi).</para>
       </note>
     </section>
@@ -1713,7 +1712,7 @@ uniti in singole voci nell'albero di confronto delle cartelle.</para>
           <para>
 <option>Disabilitato</option> (impostazione predefinita): gli elementi
 rinominati/spostati rimangono come voci separate nell'albero di confronto
-delle cartelle.Gli elementi sono raggruppati insieme (indicati da un ID di
+delle cartelle. Gli elementi sono raggruppati insieme (indicati da un ID di
 gruppo comune), ma il file/la cartella di ciascun lato viene visualizzato
 separatamente.</para>
         </listitem>
@@ -1722,8 +1721,8 @@ separatamente.</para>
           <para>
 <option>Unisci rinomina</option>: gli elementi che sono stati rilevati come
 rinominati ma che si trovano nella stessa cartella vengono uniti in un'unica
-voce.Ciò semplifica l'albero di confronto mostrando un singolo elemento che
-esiste su più lati con nomi diversi.Gli elementi in cartella diverse
+voce. Ciò semplifica l'albero di confrontovisualizzando un singolo elemento
+che esiste su più lati con nomi diversi. Gli elementi in cartella diverse
 (elementi spostati) non vengono uniti.</para>
         </listitem>
 
@@ -1731,7 +1730,7 @@ esiste su più lati con nomi diversi.Gli elementi in cartella diverse
           <para>
 <option>Unisci rinominazioni e spostamenti</option>: sia gli elementi
 rinominati (stessa cartella, nomi diversi) che gli elementi spostati
-(cartella diverse) vengono uniti in singole voci quando rilevati.Ciò
+(cartella diverse) vengono uniti in singole voci quando rilevati. Ciò
 fornisce la visualizzazione più compatta di file/cartelle rinominati e
 riposizionati.</para>
         </listitem>
@@ -1756,20 +1755,20 @@ Confronta &gt;Pagina della tabella<indexterm>
       <title>Modelli di file CSV</title>
       <para>
 Specifica il modello del nome file per i file con valori separati da virgole
-da aprire in formato tabella.Per specificare più elementi, separarli con un
-punto e virgola.Per impostazione predefinita, è specificato *.csv.Se non
-desideri aprire i file con estensione .csv in formato tabella.Elimina il
-file *.csv.</para>
+da aprire in formato tabella. Per specificare più elementi, separarli con un
+punto e virgola. Per impostazione predefinita, è specificato *.csv. Se non
+vuoi aprire i file con estensione .csv in formato tabella elimina il file
+*.csv.</para>
     </section>
 
     <section>
       <title>Modelli di file TSV</title>
       <para>
 Specifica il modello del nome file per i file con valori separati da
-tabulazioni da aprire in formato tabella.Per specificare più elementi,
-separarli con un punto e virgola.Per impostazione predefinita, è specificato
-*.tsv.Se non desideri aprire i file con estensione .tsv in formato
-tabella.Eliminare il file *.tsv.</para>
+tabulazioni da aprire in formato tabella. Per specificare più elementi,
+separarli con un punto e virgola. Per impostazione predefinita, è
+specificato *.tsv. Se non vuoi aprire i file con estensione .tsv in formato
+tabella eliminare il file *.tsv.</para>
     </section>
 
     <section>
@@ -1787,14 +1786,14 @@ modello e il delimitatore del nome file.</para>
           <para>
 <option>Abilitato</option> (predefinito): se c'è un carattere di nuova riga
 tra il carattere di virgoletta e il carattere di virgoletta successivo, il
-carattere di nuova riga viene trattato come parte di un valore.Abilita
-questa opzione se desideri elaborare file CSV/TSV che contengono più righe
-in un campo.</para>
+carattere di nuova riga viene trattato come parte di un valore. Se vuoi
+elaborare file CSV/TSV che contengono più righe in un campo abilita questa
+opzione .</para>
         </listitem>
 
         <listitem>
           <para>
-<option>Disabilitato</option>: disabilita quanto sopra.Disabilitare questa
+<option>Disabilitato</option>: disabilita quanto sopra. Disabilitare questa
 opzione quando si aprono file con virgolette errate.</para>
         </listitem>
       </itemizedlist>
@@ -1803,9 +1802,9 @@ opzione quando si aprono file con virgolette errate.</para>
     <section>
       <title>Carattere di citazione</title>
       <para>
-Specifica il carattere da considerare come virgolette.I delimitatori
+Specifica il carattere da considerare come virgolette. I delimitatori
 all'interno dell'intervallo di testo racchiuso dai caratteri qui specificati
-vengono trattati come parte di un valore.Questo campo può essere vuoto.Per
+vengono trattati come parte di un valore. Questo campo può essere vuoto. Per
 aprire file in cui le virgolette sono semplici valori, lasciarlo vuoto o
 specificare un carattere che non esiste nel file.</para>
     </section>
@@ -1820,9 +1819,9 @@ Modelli di file binari<indexterm>
         </indexterm></title>
       <para>
 Specifica i modelli di nome file per i file binari da aprire nella finestra
-di confronto binario.Per specificare più elementi, separarli con un punto e
-virgola.Per impostazione predefinita, è specificato *.bin.Se non desideri
-che i file con estensione .bin vengano aperti nella finestra di confronto
+di confronto binario. Per specificare più elementi, separarli con un punto e
+virgola. Per impostazione predefinita, è specificato *.bin. Se non vuoi che
+i file con estensione .bin vengano aperti nella finestra di confronto
 binario, rimuovi *.bin dall'elenco.</para>
     </section>
     <section>
@@ -1844,8 +1843,7 @@ Impostazioni Frhed<indexterm>
               <listitem>
                 <para>Se la casella "Regola automaticamente il numero di byte per riga" - è
 selezionata, il numero di byte visualizzati per riga esadecimale viene
-regolato in modo tale da utilizzare sempre l'intera larghezza della
-finestra.</para>
+regolato in modo tale da usare sempre l'intera larghezza della finestra.</para>
               </listitem>
               <listitem>
                 <para>Il numero di cifre per la lunghezza dell'offset (si applica solo se "Regola
@@ -1864,9 +1862,9 @@ con segno o senza segno</para>
 l'apertura dei file.</para>
               </listitem>
               <listitem>
-                <para>Il nome dell'editor di testo che verrà richiamato dal comando <menuchoice
-><guimenu >Modifica</guimenu ><guimenuitem >Apri nell'editor di testo
-</guimenuitem ></menuchoice >.</para>
+                <para>Il nome dell'editor di testo che verrà richiamato dal comando
+<menuchoice><guimenu>Modifica</guimenu><guimenuitem>Apri nell'editor di
+testo </guimenuitem></menuchoice>.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -1876,15 +1874,15 @@ l'apertura dei file.</para>
           <term>Modalità binaria...</term>
 
           <listitem>
-            <para>Che tipo di ordine dei byte utilizzare: Little-endian, come utilizzato nei
-computer Intel o Big-endian, utilizzato ad esempio nei computer con
-processore Motorola.La differenza tra queste modalità è quindi: Considera
-una parola lunga, che è lunga 4 byte (dai nomi da A a D).</para>
+            <para>Che tipo di ordine dei byte usare: Little-endian, come usato nei computer
+Intel o Big-endian, usato ad esempio nei computer con processore
+Motorola. La differenza tra queste modalità è quindi: Considera una parola
+lunga, che è lunga 4 byte (dai nomi da A a D).</para>
 
             <screen>Parola lunga nel registro del processore = ABCD.</screen>
 
-            <para>Il bit meno significativo, che ha il valore 1, si trova nel byte "D".In un
-registro del processore la longword è ordinata in questo modo.Se questo
+            <para>Il bit meno significativo, che ha il valore 1, si trova nel byte "D". In un
+registro del processore la longword è ordinata in questo modo. Se questo
 valore viene scritto in una posizione in memoria, per convenzione Intel la
 parola lunga viene scritta in questo modo, con gli offset crescenti a
 destra:</para>
@@ -1922,18 +1920,18 @@ Confronta &gt;Pagina immagine<indexterm>
       <title>Modelli di file di immagine</title>
       <para>
 Specifica i modelli di nome file per i file di immagine da aprire nella
-finestra di confronto delle immagini.Per specificare più elementi, separarli
-con un punto e virgola.Per impostazione predefinita, le estensioni .pdf,
-.svg, .wmf e .emf non sono nell'elenco.Aggiungili se desideri che i file con
-queste estensioni vengano visualizzati nella finestra di confronto delle
-immagini.</para>
+finestra di confronto delle immagini. Per specificare più elementi,
+separarli con un punto e virgola. Per impostazione predefinita, le
+estensioni .pdf, .svg, .wmf e .emf non sono nell'elenco. Aggiungili se vuoi
+che i file con queste estensioni vengano visualizzati nella finestra di
+confronto delle immagini.</para>
     </section>
 
     <section>
       <title>Abilita il confronto delle immagini nel confronto delle cartelle</title>
       <para>
 Quando questa opzione è abilitata, i confronti delle cartelle confronteranno
-i file che corrispondono ai modelli specificati come immagini.Le differenze
+i file che corrispondono ai modelli specificati come immagini. Le differenze
 nei metadati verranno ignorate e verrà applicata una soglia di distanza del
 colore per determinare le differenze visive tra le immagini.</para>
     </section>
@@ -1943,19 +1941,19 @@ colore per determinare le differenze visive tra le immagini.</para>
       <itemizedlist>
         <listitem>
           <para>
-<option>Solo testo</option> (impostazione predefinita): mostra solo il testo
-riconosciuto dall'immagine.</para>
+<option>Solo testo</option> (impostazione predefinita):visualizza solo il
+testo riconosciuto dall'immagine.</para>
         </listitem>
 
         <listitem>
           <para>
-<option>Posizione e testo riga per riga</option>: mostra il testo
+<option>Posizione e testo riga per riga</option>:visualizza il testo
 riconosciuto riga per riga con la sua posizione nell'immagine originale.</para>
         </listitem>
 
         <listitem>
           <para>
-<option>Posizione e testo parola per parola</option>: mostra il testo
+<option>Posizione e testo parola per parola</option>:visualizza il testo
 riconosciuto parola per parola con la sua posizione nell'immagine originale.</para>
         </listitem>
       </itemizedlist>
@@ -1975,7 +1973,7 @@ Pattern URL da includere (espressione regolare)<indexterm>
       <para>
 Inserisci un'espressione regolare in questo campo per specificare i percorsi
 dei file o gli URL che devono essere aperti nella finestra di confronto
-delle pagine web.Ad esempio, se inserisci l'espressione regolare
+delle pagine web. Ad esempio, se inserisci l'espressione regolare
 <code>.*\.html?|https?://.*</code>, i file con estensione .html o .htm e gli
 URL che iniziano con http:// o https:// verranno aperti nella finestra di
 confronto delle pagine web.</para>
@@ -1987,9 +1985,9 @@ Pattern URL da escludere (espressione regolare)<indexterm>
         </indexterm></title>
       <para>
 Inserisci un'espressione regolare per escludere determinati percorsi di file
-o URL dalla finestra Confronto pagine web.Questo vale per gli elementi che
-corrispondono al campo "Pattern URL da includere".Utilizzalo per escludere
-modelli specifici che non desideri includere.</para>
+o URL dalla finestra Confronto pagine web. Questo vale per gli elementi che
+corrispondono al campo "Pattern URL da includere". Usalo per escludere
+modelli specifici che non vuoi includere.</para>
     </section>
 
     <section>
@@ -2008,7 +2006,7 @@ cookie, cronologia di navigazione e dati della cache nella cartella
           <para>
 <option>Cartella di installazione</option>: salva i dati nella cartella di
 installazione di WinMerge, che in genere richiede autorizzazioni di
-amministratore per la scrittura.Questo generalmente non è raccomandato.</para>
+amministratore per la scrittura. Questo generalmente non è raccomandato.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -2032,25 +2030,25 @@ Pagina Caselle di messaggio<indexterm>
       <title>Reset</title>
 
       <para>
-WinMerge consente di eliminare alcune finestre di messaggio comuni.Ad
+WinMerge consente di eliminare alcune finestre di messaggio comuni. Ad
 esempio, quando vengono aperti due file identici, viene normalmente aperta
-la finestra di messaggio intitolata <guilabel >I file sono
-identici</guilabel >.Se non vuoi che questa casella venga più visualizzata,
+la finestra di messaggio intitolata <guilabel>I file sono
+identici</guilabel>. Se non vuoi che questa casella venga più visualizzata,
 puoi abilitare (selezionare) l'opzione in quella finestra di messaggio per
-non mostrare più il messaggio.</para>
+non visualizzare più il messaggio.</para>
 
       <para>
-Successivamente, potresti decidere di voler rivedere quei messaggi.In tal
-caso, fai clic sul pulsante <guibutton >Ripristina</guibutton > per
-visualizzare nuovamente le finestre di messaggio.</para>
+Successivamente, potresti decidere di voler rivedere quei messaggi. In tal
+caso, per visualizzare nuovamente le finestre dei messaggi seleziona
+<guibutton>Ripristina</guibutton> .</para>
 
       <note>
         <para>
 Ti consigliamo di non eliminare i messaggi durante l'aggiornamento di
-WinMerge a una versione più recente.Il programma di installazione ne abilita
-la visualizzazione automaticamente, ma se non usi il programma di
-installazione, ricordati di abilitare la visualizzazione dei messaggi
-utilizzando il pulsante <guibutton >Ripristina</guibutton >.</para>
+WinMerge a una versione più recente. Il programma di installazione ne
+abilita la visualizzazione automaticamente, ma se non usi il programma di
+installazione, ricordati di abilitare la visualizzazione dei messaggi usando
+il pulsante <guibutton>Ripristina</guibutton>.</para>
       </note>
     </section>
   </section>
@@ -2075,10 +2073,10 @@ Evidenzia la sintassi<indexterm>
         <listitem>
           <para>
 <option>Abilitato</option> (predefinito): WinMerge può evidenziare la
-sintassi di molti linguaggi di programmazione e formati web.Per vedere i
-formati supportati per impostazione predefinita, fai clic su <menuchoice>
-<guimenu >Visualizza</guimenu > <guimenuitem >Evidenziazione
-sintassi</guimenuitem > </menuchoice >.</para>
+sintassi di molti linguaggi di programmazione e formati web. Per
+visualizzare i formati supportati per impostazione predefinita, seleziona
+<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Evidenziazione
+sintassi</guimenuitem> </menuchoice>.</para>
         </listitem>
 
         <listitem>
@@ -2086,6 +2084,38 @@ sintassi</guimenuitem > </menuchoice >.</para>
 <option>Disabilitato</option>: l'evidenziazione della sintassi consuma una
 certa potenza di elaborazione, quindi se l'aggiornamento dello schermo di
 WinMerge sembra lento, disattivare questa opzione potrebbe essere d'aiuto.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+La <option>modalità evidenziazione</option> determina quale analizzatore
+sintassi viene usato per l'evidenziazione della sintassi.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>
+<option>Solo integrato</option>: usa solo l'analizzatore di sintassi
+integrato di WinMerge.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Integrato (preferenziale)</option>: usa preferenzialmente
+l'analizzatore della sintassi integrato. Se non supporta il tipo di file
+attuale, verrà usato Tree-sitter.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Tree-sitter (preferenziale)</option>: preferisci il Tree-sitter. Se
+Tree-sitter non supporta il tipo di file attuale, verrà usato l'analizzatore
+della sintassi integrato.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Solo Tree-sitter</option>: per l'evidenziazione della sintassi usa
+solo Tree-sitter.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -2106,11 +2136,11 @@ Conserva l'EOL originale<indexterm>
         <listitem>
           <para>
 <option>Disabilitato</option> (impostazione predefinita): presuppone che i
-file debbano essere file Windows.Se un file non utilizza la fine riga
-standard di Windows, WinMerge lo considera un errore.Cambia silenziosamente
-le terminazioni di riga nello stile Windows invece di rilevarle come
-differenze.Pertanto, la barra di stato della finestra Confronta file mostra
-lo stile EOL come <guilabel >Win</guilabel >.</para>
+file debbano essere file Windows. Se un file non usa la fine riga standard
+di Windows, WinMerge lo considera un errore. Cambia silenziosamente le
+terminazioni di riga nello stile Windows invece di rilevarle come
+differenze. Pertanto, la barra di stato della finestra Confronta
+filevisualizza lo stile EOL come <guilabel>Win</guilabel>.</para>
 
           <para>
 Nella maggior parte dei casi dovresti lasciare questa opzione disabilitata:
@@ -2122,16 +2152,16 @@ che hanno stili di fine riga diversi.</para>
           <para>
 <option>Abilitato</option>: impedisce a WinMerge di modificare
 automaticamente le terminazioni di riga, in modo che rilevi diversi stili
-EOL per ogni riga.Ciò potrebbe essere utile per gestire file da sistemi con
+EOL per ogni riga. Ciò potrebbe essere utile per gestire file da sistemi con
 stili EOL diversi (ad esempio, Windows e Unix).</para>
 
           <important>
             <para>
 Questa è un'opzione avanzata per gli utenti che hanno familiarità con i byte
 EOL e che desiderano confrontare file con stili EOL diversi all'interno di
-<emphasis>un</emphasis> file.Ti consigliamo di non abilitare questa opzione
-a meno che non ti serva questa funzionalità avanzata.Ricorda, questa opzione
-non è necessaria per confrontare due file con stili EOL diversi.</para>
+<emphasis>un</emphasis> file. Ti consigliamo di non abilitare questa opzione
+a meno che non ti serva questa funzionalità avanzata. Ricorda, questa
+opzione non è necessaria per confrontare due file con stili EOL diversi.</para>
           </important>
         </listitem>
       </itemizedlist>
@@ -2151,9 +2181,9 @@ Schede<indexterm>
 
           <listitem>
             <para>
-Larghezza di uno spazio di tabulazione.Specificare un valore
+Larghezza di uno spazio di tabulazione. Specifica un valore
 <replaceable>n</replaceable>: la larghezza risultante è equivalente a quella
-di <replaceable>n</replaceable> caratteri.Impostazione predefinita: 4. Il
+di <replaceable>n</replaceable> caratteri. Impostazione predefinita: 4. Il
 valore massimo è 64.</para>
           </listitem>
         </varlistentry>
@@ -2163,22 +2193,22 @@ valore massimo è 64.</para>
 
           <listitem>
             <para>
-Determina il tipo di carattere utilizzato quando si inserisce una
-tabulazione nel testo.È possibile abilitare solo una di queste opzioni:</para>
+Determina il tipo di carattere usato quando si inserisce una tabulazione nel
+testo.È possibile abilitare solo una di queste opzioni:</para>
 
             <itemizedlist>
               <listitem>
                 <para>
-<guilabel >Inserisci tabulazioni</guilabel> (predefinito): utilizza un
-singolo carattere di tabulazione.</para>
+<guilabel>Inserisci tabulazioni</guilabel> (predefinito): usa un singolo
+carattere di tabulazione.</para>
               </listitem>
 
               <listitem>
                 <para>
-<guilabel >Inserisci spazi</guilabel >: utilizza uno o più spazi
-(determinati dalla <option >dimensione della tabulazione</option >) invece
-del carattere di tabulazione.Ad esempio, con la dimensione di tabulazione
-predefinita, vengono inseriti quattro spazi.</para>
+<guilabel>Inserisci spazi</guilabel>: usa uno o più spazi (determinati dalla
+<option>dimensione della tabulazione</option>) invece del carattere di
+tabulazione. Ad esempio, con la dimensione di tabulazione predefinita,
+vengono inseriti quattro spazi.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -2195,18 +2225,18 @@ Modalità di rendering<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option>GDI</option> (predefinito): esegue il rendering del testo
-utilizzando la Graphics Device Interface (GDI).</para>
+<option>GDI</option> (predefinito): esegue il rendering del testo usando la
+Graphics Device Interface (GDI).</para>
         </listitem>
 
         <listitem>
           <para>
-<option>Modalità DirectWrite</option>: esegue il rendering del testo
-utilizzando varie modalità di rendering DirectWrite, incluso il supporto per
-emoji colorati su Windows 8.1 e versioni successive.Disponibile solo nella
-versione a 64 bit di WinMerge.Vedi <ulink
+<option>Modalità DirectWrite</option>: esegue il rendering del testo usando
+varie modalità di rendering DirectWrite, incluso il supporto per emoji
+colorati su Windows 8.1 e versioni successive. Disponibile solo nella
+versione a 64 bit di WinMerge. Per i dettagli vedi <ulink
 url="https://learn.microsoft.com/en-us/windows/win32/api/dwrite/ne-dwrite-dwrite_rendering_mode#constants">Modalità
-di rendering DirectWrite</ulink> per i dettagli.</para>
+di rendering DirectWrite</ulink>.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -2231,10 +2261,10 @@ Nuova scansione automatica<indexterm>
       <itemizedlist>
         <listitem>
           <para>
-<option >Disabilitato</option> (predefinito): WinMerge esegue nuovamente la
+<option>Disabilitato</option> (predefinito): WinMerge esegue nuovamente la
 scansione automaticamente quando unisci una differenza o se esegui
 nuovamente la scansione manualmente (ad esempio, facendo clic sul pulsante
-<guibutton >Ripeti scansione</guibutton >).</para>
+<guibutton>Ripeti scansione</guibutton>).</para>
         </listitem>
 
         <listitem>
@@ -2245,9 +2275,10 @@ evento di modifica (una modifica ai file, come la digitazione).</para>
           <note>
             <para>
 Per evitare di rallentare la modifica, WinMerge ritarda leggermente la
-scansione automatica: attende un secondo dopo ogni evento di modifica.Poiché
-ogni nuovo evento di modifica reimposta il timer, non vengono eseguite nuove
-scansioni finché non si mette in pausa o si interrompe la modifica.</para>
+scansione automatica: attende un secondo dopo ogni evento di
+modifica. Poiché ogni nuovo evento di modifica reimposta il timer, non
+vengono eseguite nuove scansioni finché non si mette in pausa o si
+interrompe la modifica.</para>
           </note>
         </listitem>
       </itemizedlist>
@@ -2261,7 +2292,7 @@ Granularità della copia per le differenze selezionate<indexterm>
 
       <para>
 Specifica la granularità della copia quando si copia in un altro pannello
-facendo clic sulla voce del menu <guimenuitem >Copia a destra</guimenuitem >
+facendo clic sulla voce del menu <guimenuitem>Copia a destra</guimenuitem>
 ecc. con il testo selezionato.</para>
 
       <itemizedlist>
@@ -2314,39 +2345,39 @@ blocchi di differenza):</para>
               <listitem>
                 <para>
 <option>Abilitato</option> (predefinito): WinMerge evidenzia le differenze
-all'interno delle righe.Abilita anche la voce di menu <menuchoice> <guimenu
->Visualizza</guimenu> <guimenuitem >Visualizza differenze di
-riga</guimenuitem > </menuchoice >.</para>
+all'interno delle righe. Abilita anche la voce di menu <menuchoice>
+<guimenu>Visualizza</guimenu> <guimenuitem>Visualizza differenze di
+riga</guimenuitem> </menuchoice>.</para>
 
                 <para>Scegli una di queste opzioni secondarie:</para>
 
                 <itemizedlist>
                   <listitem>
                     <para>
-<guilabel >Livello carattere</guilabel >: evidenzia i singoli caratteri che
-sono diversi.Questa opzione può essere utile se stai cercando modifiche
+<guilabel>Livello carattere</guilabel>: evidenzia i singoli caratteri che
+sono diversi. Questa opzione può essere utile se stai cercando modifiche
 all'interno delle parole o per formati di file che non presentano
 interruzioni di parola chiare.</para>
                   </listitem>
 
                   <listitem>
                     <para>
-<guilabel >A livello di parola</guilabel > (predefinito): evidenzia intere
+<guilabel>A livello di parola</guilabel> (predefinito): evidenzia intere
 parole che sono diverse.</para>
 
                     <itemizedlist>
                       <listitem>
                         <para>
-<guilabel >Interrompi nello spazio</guilabel> (predefinito): si presuppone
-che le parole siano separate da caratteri di spazio.Questo di solito
+<guilabel>Interrompi nello spazio</guilabel> (predefinito): si presuppone
+che le parole siano separate da caratteri di spazio. Questo di solito
 funziona per i tipici file di testo.</para>
                       </listitem>
 
                       <listitem>
                         <para>
-<guilabel >Interruzione negli spazi bianchi o nella punteggiatura</guilabel
->: considera sia gli spazi bianchi che i caratteri di punteggiatura come
-interruzioni di parola.Ciò può essere utile per gestire elenchi separati da
+<guilabel>Interruzione negli spazi bianchi o nella punteggiatura</guilabel>:
+considera sia gli spazi bianchi che i caratteri di punteggiatura come
+interruzioni di parola. Ciò può essere utile per gestire elenchi separati da
 punteggiatura (come elenchi separati da virgole).</para>
                       </listitem>
                     </itemizedlist>
@@ -2358,9 +2389,9 @@ punteggiatura (come elenchi separati da virgole).</para>
                 <para>
 <option>Disabilitato</option>: WinMerge non evidenzia le differenze di linea
 e tutte le impostazioni per le opzioni di livello e spazio bianco vengono
-ignorate.Disabilita anche la voce di menu <menuchoice> <guimenu
->Visualizza</guimenu> <guimenuitem >Visualizza differenze di
-riga</guimenuitem > </menuchoice >.</para>
+ignorate. Disabilita anche la voce di menu <menuchoice>
+<guimenu>Visualizza</guimenu> <guimenuitem>Visualizza differenze di
+riga</guimenuitem> </menuchoice>.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -2373,8 +2404,8 @@ riga</guimenuitem > </menuchoice >.</para>
 
           <listitem>
             <para>Specifica i simboli che vengono trattati come separatori di parole non spazi
-bianchi quando è selezionato <guilabel >Interrompi in corrispondenza di
-spazi bianchi o punteggiatura</guilabel>.</para>
+bianchi quando è selezionato <guilabel>Interrompi in corrispondenza di spazi
+bianchi o punteggiatura</guilabel>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -2404,7 +2435,7 @@ Da definire</para>
 
   <section id="Configuration_colors_colorschemes">
     <title>
-Colori >Pagina Combinazioni di colori<indexterm>
+Colori>Pagina Combinazioni di colori<indexterm>
         <primary>combinazioni di colori</primary>
 
         <secondary>opzioni</secondary>
@@ -2413,29 +2444,29 @@ Colori >Pagina Combinazioni di colori<indexterm>
     <para>
 La pagina Combinazioni colori consente di personalizzare l'aspetto cromatico
 generale di WinMerge, incluso il supporto per le modalità chiaro e
-scuro.Puoi selezionare e gestire combinazioni di colori per ciascuna
-modalità e salvare o eliminare le tue combinazioni personalizzate.</para>
+scuro. Puoi selezionare e gestire combinazioni di colori per ciascuna
+modalità e salvare o eliminare le combinazioni personalizzate.</para>
 
     <variablelist>
       <varlistentry>
         <term>Modalità colore</term>
         <listitem>
           <para>
-Seleziona la modalità colore per l'applicazione.Scegli tra:</para>
+Seleziona la modalità colore per l'applicazione. Scegli tra:</para>
           <itemizedlist>
             <listitem>
               <para>
-<option>Luce</option> (predefinito): utilizza lo schema di colori
-specificato per la modalità luce.Quando selezionato, l'aspetto delle
-finestre di dialogo, dei menu e degli altri elementi dell'interfaccia utente
-verrà mostrato in uno stile chiaro.</para>
+<option>Luce</option> (predefinito): usa lo schema di colori specificato per
+la modalità luce. Quando selezionato, l'aspetto delle finestre di dialogo,
+dei menu e degli altri elementi dell'interfaccia utente verràvisualizzato in
+uno stile chiaro.</para>
             </listitem>
             <listitem>
               <para>
-<option>Scuro</option>: utilizza la combinazione di colori specificata per
-la modalità oscura.Quando selezionato, l'aspetto delle finestre di dialogo,
-dei menu e degli altri elementi dell'interfaccia utente verrà mostrato in
-uno stile scuro.</para>
+<option>Scuro</option>: usa la combinazione di colori specificata per la
+modalità oscura. Quando selezionato, l'aspetto delle finestre di dialogo,
+dei menu e degli altri elementi dell'interfaccia utente verrà visualizzato
+in uno stile scuro.</para>
             </listitem>
             <listitem>
               <para>
@@ -2450,8 +2481,8 @@ chiara a quella scura in base alle impostazioni del tuo sistema operativo.</para
         <term>Schema della modalità luce</term>
         <listitem>
           <para>
-Seleziona lo schema di colori da utilizzare quando la <guilabel >Modalità
-colore</guilabel > è impostata su Luce.Gli schemi disponibili includono
+Seleziona lo schema di colori da usare quando la <guilabel>Modalità
+colore</guilabel> è impostata su Luce. Gli schemi disponibili includono
 <option>Default</option> (predefinito), <option>Modern</option> e qualsiasi
 schema definito dall'utente che hai salvato.</para>
         </listitem>
@@ -2461,30 +2492,30 @@ schema definito dall'utente che hai salvato.</para>
         <term>Schema della modalità oscura</term>
         <listitem>
           <para>
-Seleziona lo schema di colori da utilizzare quando la <guilabel >Modalità
-colore</guilabel > è impostata su Scuro.Gli schemi disponibili includono
+Seleziona lo schema di colori da usare quando la <guilabel>Modalità
+colore</guilabel> è impostata su Scuro. Gli schemi disponibili includono
 <option>VS Dark</option> (predefinito), <option>Solarized Dark</option> e
 qualsiasi schema definito dall'utente che hai salvato.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term>Salva lo schema corrente</term>
+        <term>Salva lo schema attuale</term>
         <listitem>
           <para>
-Salva le impostazioni colore correnti come nuovo schema.Lo schema viene
+Salva le impostazioni colore correnti come nuovo schema. Lo schema viene
 salvato come file INI.<emphasis>Solo gli schemi salvati nella cartella
 <filename>Documents/WinMerge/ColorSchemes</filename> appariranno negli
-elenchi <guilabel >Schema modalità luce</guilabel > e <guilabel >Schema
-modalità scura</guilabel >.</emphasis></para>
+elenchi <guilabel>Schema modalità luce</guilabel> e <guilabel>Schema
+modalità scura</guilabel>.</emphasis></para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term>Elimina lo schema corrente</term>
+        <term>Elimina lo schema attuale</term>
         <listitem>
           <para>
-Elimina la combinazione di colori attualmente selezionata.Questo pulsante è
+Elimina la combinazione di colori attualmente selezionata. Questo pulsante è
 abilitato solo per gli schemi definiti dall'utente (non per gli schemi
 integrati come Predefinito o VS Scuro).</para>
         </listitem>
@@ -2492,30 +2523,30 @@ integrati come Predefinito o VS Scuro).</para>
     </variablelist>
 
     <para>
-Utilizza queste opzioni per personalizzare l'interfaccia WinMerge in base
-alle tue preferenze o per adattarla al tema del tuo sistema.Le combinazioni
-di colori personalizzate semplificano la condivisione o il riutilizzo delle
-impostazioni di colore preferite.</para>
+Usa queste opzioni per personalizzare l'interfaccia WinMerge in base alle
+preferenze o per adattarla al tema del sistema. Le combinazioni di colori
+personalizzate semplificano la condivisione o il riuso delle impostazioni di
+colore preferite.</para>
   </section>
 
   <section id="Configuration_colors_differences">
     <title>
-Colori >Pagina delle differenze<indexterm>
+Colori>Pagina delle differenze<indexterm>
         <primary>colori diversi</primary>
 
         <secondary>opzioni</secondary>
       </indexterm></title>
 
     <para>
-Utilizza questa pagina se desideri modificare uno qualsiasi dei colori
-diversi utilizzati nella finestra Confronto file.È possibile impostare lo
-sfondo, l'eliminazione e il colore del testo.</para>
+Usa questa pagina se vuoi modificare uno qualsiasi dei colori diversi usati
+nella finestra Confronto file. È possibile impostare lo sfondo,
+l'eliminazione e il colore del testo.</para>
 
     <para>
-Per cambiare un colore, fare clic nella sua casella per aprire una finestra
-di dialogo standard per la scelta del colore.Scegli uno dei colori
-predefiniti o definisci il tuo colore personalizzato, quindi fai clic su
-<guibutton >OK</guibutton > per caricare il nuovo colore nella casella.</para>
+Per cambiare un colore, fai clic nella sua casella per aprire una finestra
+di dialogo standard per la scelta del colore. Scegli uno dei colori
+predefiniti o definisci il tuo colore personalizzato, quindi seleziona
+<guibutton>OK</guibutton> per caricare il nuovo colore nella casella.</para>
 
     <para>
 Per ripristinare i colori predefiniti di uno schema, scegli uno schema
@@ -2524,7 +2555,7 @@ diverso e torna allo schema modificato.</para>
 
   <section id="Configuration_colors_syntax">
     <title>
-Colori >Pagina di sintassi<indexterm>
+Colori>Pagina di sintassi<indexterm>
         <primary>evidenziazione della sintassi</primary>
 
         <secondary>opzioni di colore</secondary>
@@ -2533,7 +2564,7 @@ Colori >Pagina di sintassi<indexterm>
     <para>
 Per impostazione predefinita, la finestra Confronto file WinMerge
 contrassegna la sintassi di determinati tipi di codice sorgente, come
-descritto in <xref linkend="Configuration_syntaxhighlight" />.Questa pagina
+descritto in <xref linkend="Configuration_syntaxhighlight" />. Questa pagina
 elenca gli elementi di sintassi riconosciuti e consente di modificare il
 colore e lo spessore del testo.</para>
 
@@ -2544,24 +2575,24 @@ diverso e torna allo schema modificato.</para>
 
   <section id="Configuration_colors_text">
     <title>
-Colori >Pagina di testo<indexterm>
+Colori>Pagina di testo<indexterm>
         <primary>colori del testo</primary>
 
         <secondary>opzioni</secondary>
       </indexterm></title>
 
     <para>
-Utilizza questa pagina per modificare i colori utilizzati per il
-testo.Innanzitutto, seleziona l'opzione <guilabel >Utilizza colori testo
-personalizzati</guilabel >.Questo attiva le opzioni di testo.È disponibile
+Usa questa pagina per modificare i colori usati per il testo. Innanzitutto,
+seleziona l'opzione <guilabel>Usa colori testo
+personalizzati</guilabel>. Questo attiva le opzioni di testo. È disponibile
 un'opzione per tre tipi di testo: spazio bianco, testo normale e testo
-selezionato.Per ogni tipo di testo puoi scegliere un colore per lo sfondo e
+selezionato. Per ogni tipo di testo puoi scegliere un colore per lo sfondo e
 il testo.</para>
   </section>
 
   <section id="Configuration_colors_marker">
     <title>
-Colori >Pagina dei marcatori<indexterm>
+Colori>Pagina dei marcatori<indexterm>
         <primary>colori dei marcatori</primary>
 
         <secondary>opzioni</secondary>
@@ -2572,22 +2603,22 @@ Colori >Pagina dei marcatori<indexterm>
 
   <section id="Configuration_colors_foldercompare">
     <title>
-Colori >Pagina di confronto delle cartelle<indexterm>
+Colori>Pagina di confronto delle cartelle<indexterm>
         <primary>cartella confronta i colori</primary>
 
         <secondary>opzioni</secondary>
       </indexterm></title>
 
     <para>
-Per impostazione predefinita, la finestra Confronto cartelle di WinMerge
-utilizza i colori di sfondo per mostrare lo stato di un elemento (uguale,
+Per impostazione predefinita, la finestra Confronto cartelle di WinMerge usa
+i colori di sfondo per visualizzare lo stato di un elemento (uguale,
 diverso, non esiste su tutti i lati o filtrato).</para>
 
     <para>
-Per cambiare un colore, fare clic nella sua casella per aprire una finestra
-di dialogo standard per la scelta del colore.Scegli uno dei colori
-predefiniti o definisci il tuo colore personalizzato, quindi fai clic su
-<guibutton >OK</guibutton > per caricare il nuovo colore nella casella.</para>
+Per cambiare un colore, fai clic nella sua casella per aprire una finestra
+di dialogo standard per la scelta del colore. Scegli uno dei colori
+predefiniti o definisci il tuo colore personalizzato, quindi seleziona
+<guibutton>OK</guibutton> per caricare il nuovo colore nella casella.</para>
 
     <para>
 Per ripristinare i colori predefiniti di uno schema, scegli uno schema
@@ -2604,7 +2635,7 @@ Archivia la pagina di supporto<indexterm>
 
     <para>
 Questa pagina contiene le opzioni per configurare il supporto dell'archivio
-utilizzando 7-Zip.</para>
+usando 7-Zip.</para>
 
     <section>
       <title>
@@ -2649,11 +2680,11 @@ esempio, nel registro o tramite un'associazione di file).</para>
         <listitem>
           <para>
 <option>Abilitato</option>: WinMerge può riconoscere i file di archivio
-anche se la loro estensione non è nota.Per riconoscere un archivio, WinMerge
-cerca all'inizio del file i byte della firma dell'archivio.<tip>
+anche se la loro estensione non è nota. Per riconoscere un archivio,
+WinMerge cerca all'inizio del file i byte della firma dell'archivio.<tip>
               <para>
-È possibile utilizzare questa opzione per consentire a WinMerge di
-riconoscere i file Open Office.</para>
+È possibile usare questa opzione per consentire a WinMerge di riconoscere i
+file Open Office.</para>
             </tip>
           </para>
         </listitem>
@@ -2716,15 +2747,15 @@ Editor esterno<indexterm>
         </indexterm></title>
 
       <para>
-La finestra Confronta file WinMerge fornisce funzioni di modifica comuni.Se
-preferisci utilizzare il tuo editor preferito e completo, puoi configurare
+La finestra Confronta file WinMerge fornisce funzioni di modifica comuni. Se
+preferisci usare il tuo editor preferito e completo, puoi configurare
 WinMerge per aprire un editor esterno dal menu contestuale Confronto
 cartelle.</para>
 
       <para>
 L'installazione configura Blocco note come editor esterno predefinito,
-perché si trova su tutti i sistemi Windows.Per configurare un diverso editor
-esterno, inserisci il percorso completo del suo file eseguibile.</para>
+perché si trova su tutti i sistemi Windows. Per configurare un diverso
+editor esterno, inserisci il percorso completo del suo file eseguibile.</para>
 
       <tip>
         <para>
@@ -2738,10 +2769,10 @@ comando supportato dallo strumento esterno, in questo formato: <command>
       <para>
 Per usare l'editor esterno configurato, fai clic con il pulsante destro del
 mouse su un file nella finestra Confronta cartelle e scegli <menuchoice>
-<guimenuitem >Apri a sinistra</guimenuitem > <guimenuitem >Con editor
-esterno</guimenuitem > </menuchoice > o <menuchoice> <guimenuitem >Apri a
-destra</guimenuitem > <guimenuitem >Con editor esterno</guimenuitem >
-</menuchoice >.</para>
+<guimenuitem>Apri a sinistra</guimenuitem> <guimenuitem>Con editor
+esterno</guimenuitem> </menuchoice> o <menuchoice> <guimenuitem>Apri a
+destra</guimenuitem> <guimenuitem>Con editor esterno</guimenuitem>
+</menuchoice>.</para>
     </section>
 
     <section>
@@ -2758,16 +2789,15 @@ combinazioni di colori e registri di configurazione.</para>
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Cartella AppData (Roaming)</guilabel > (predefinita): memorizza i
+<guilabel>Cartella AppData (Roaming)</guilabel> (predefinita): memorizza i
 dati dell'utente nella cartella dei dati dell'applicazione in roaming del
 tuo profilo utente.</para>
         </listitem>
     
         <listitem>
           <para>
-<guilabel >Cartella Documenti</guilabel >: memorizza i dati dell'utente
-nella sottocartella <filename >WinMerge</filename > della cartella
-Documenti.</para>
+<guilabel>Cartella Documenti</guilabel>: memorizza i dati dell'utente nella
+sottocartella <filename>WinMerge</filename> della cartella Documenti.</para>
         </listitem>
       </itemizedlist>
     
@@ -2784,8 +2814,8 @@ Cartella filtro<indexterm>
         </indexterm></title>
 
       <para>
-Utilizza questo campo per specificare la tua cartella privata per i filtri
-di file. Per impostazione predefinita, questa cartella è la cartella del
+Usa questo campo per specificare la tua cartella privata per i filtri di
+file. Per impostazione predefinita, questa cartella è la cartella del
 profilo utente (ad esempio, <filename>Documents</filename> su Windows
 10). Quando crei un filtro file, questo viene automaticamente aggiunto a
 questa cartella.</para>
@@ -2794,7 +2824,7 @@ questa cartella.</para>
     <section>
       <title>
 Cartella dei file temporanei<indexterm>
-          <primary>file temporanei, cartella utilizzata</primary>
+          <primary>file temporanei, cartella usata</primary>
         </indexterm></title>
 
       <para>
@@ -2804,16 +2834,16 @@ disponibile una di queste opzioni:</para>
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Cartella temporanea del sistema</guilabel> (predefinita): ad
+<guilabel>Cartella temporanea del sistema</guilabel> (predefinita): ad
 esempio, potrebbe essere <filename>C:\Windows\Temp</filename> sul tuo
 sistema.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Cartella personalizzata</guilabel >: fai clic su <guibutton
->Sfoglia</guibutton > e seleziona una cartella diversa dove hai accesso in
-scrittura.</para>
+<guilabel>Cartella personalizzata</guilabel>: seleziona
+<guibutton>Sfoglia</guibutton> e seleziona una cartella diversa dove hai
+accesso in scrittura.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -2833,20 +2863,20 @@ backup.</para>
       <title>Crea file di backup per</title>
 
       <para>
-Specificare quando WinMerge deve creare i file di backup.Puoi abilitare o
+Specificare quando WinMerge deve creare i file di backup. Puoi abilitare o
 disabilitare ciascuna di queste opzioni in modo indipendente:</para>
 
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Confronto cartelle</guilabel > (disabilitato per impostazione
+<guilabel>Confronto cartelle</guilabel> (disabilitato per impostazione
 predefinita): i file di backup vengono creati ogni volta che i file vengono
 sovrascritti (copiati).</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Confronto file</guilabel > (abilitato per impostazione
+<guilabel>Confronto file</guilabel> (abilitato per impostazione
 predefinita): i file di backup vengono creati ogni volta che i file vengono
 salvati.</para>
         </listitem>
@@ -2863,20 +2893,20 @@ una di queste opzioni:</para>
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Cartella del file originale</guilabel > (abilitata per
-impostazione predefinita): i file di backup vengono creati nella stessa
-cartella del file sorgente.Di solito questa è una buona scelta.Lo svantaggio
-è che la pulizia dei file di backup in cartelle di grandi dimensioni può
-richiedere molto lavoro.</para>
+<guilabel>Cartella del file originale</guilabel> (abilitata per impostazione
+predefinita): i file di backup vengono creati nella stessa cartella del file
+sorgente. Di solito questa è una buona scelta. Lo svantaggio è che la
+pulizia dei file di backup in cartelle di grandi dimensioni può richiedere
+molto lavoro.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Cartella di backup globale</guilabel > (disabilitata per
+<guilabel>Cartella di backup globale</guilabel> (disabilitata per
 impostazione predefinita): tutti i file di backup vengono creati in una
-cartella globale.Questo li rende facili da pulire.Tuttavia, se sono presenti
-più file di origine con lo stesso nome file, il file di backup più recente
-sovrascrive quello precedente con lo stesso nome.</para>
+cartella globale. Questo li rende facili da pulire. Tuttavia, se sono
+presenti più file di origine con lo stesso nome file, il file di backup più
+recente sovrascrive quello precedente con lo stesso nome.</para>
         </listitem>
       </itemizedlist>
     </section>
@@ -2886,19 +2916,19 @@ sovrascrive quello precedente con lo stesso nome.</para>
 
       <para>
 Quando WinMerge crea un file di backup, aggiunge un'estensione al nome del
-file di origine.Puoi scegliere uno o entrambi questi schemi di estensione:</para>
+file di origine. Puoi scegliere uno o entrambi questi schemi di estensione:</para>
 
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Aggiungi estensione .bak</guilabel> (abilitato per impostazione
+<guilabel>Aggiungi estensione .bak</guilabel> (abilitato per impostazione
 predefinita): ad esempio, viene eseguito il backup di
 <filename>file.txt</filename> in <filename>file.txt.bak</filename>.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Aggiungi timestamp</guilabel > (abilitato per impostazione
+<guilabel>Aggiungi timestamp</guilabel> (abilitato per impostazione
 predefinita): i timestamp sono quasi sempre univoci, quindi questa opzione
 solitamente evita di duplicare i nomi dei file di backup quando i file di
 origine hanno gli stessi nomi.</para>
@@ -2906,7 +2936,7 @@ origine hanno gli stessi nomi.</para>
           <para>
 Inoltre, la memorizzazione di una copia di un file ogni volta che lo salvi
 fornisce un modo per tenere traccia delle modifiche apportate al
-file.Tuttavia, dovresti considerare che questa opzione può creare molti
+file. Tuttavia, dovresti considerare che questa opzione può creare molti
 file.</para>
         </listitem>
       </itemizedlist>
@@ -2924,21 +2954,21 @@ Pagina della tabella codici<indexterm>
     <para>
 WinMerge rileva la codifica dei file in modo trasparente e nella maggior
 parte dei casi non dovrebbe essere necessario modificare le impostazioni
-predefinite. Questa pagina consente di specificare le codepage di
+predefinite. Questa pagina consente di specificare le pagine codice di
 determinati formati di file, se necessario.</para>
 
     <note>
       <para>
-Una spiegazione completa della codifica del testo e delle codepage di
-Windows va oltre lo scopo della documentazione di WinMerge.Fortunatamente,
-su Internet si trovano molte informazioni su di loro.Ad esempio, ecco alcuni
-punti da cui iniziare:</para>
+Una spiegazione completa della codifica del testo e delle pagine codice di
+Windows va oltre lo scopo della documentazione di WinMerge. Fortunatamente,
+su Internet si trovano molte informazioni su di loro. Ad esempio, ecco
+alcuni punti da cui iniziare:</para>
 
       <itemizedlist>
         <listitem>
           <para>
-<ulink url="https://en.wikipedia.org/wiki/Code_pages"> Wikipedia: pagine di
-codici </ulink>, <ulink
+<ulink url="https://en.wikipedia.org/wiki/Code_pages"> Wikipedia: pagine
+codice </ulink>, <ulink
 url="https://en.wikipedia.org/wiki/Character_encoding"> Codifica dei
 caratteri </ulink></para>
         </listitem>
@@ -2956,29 +2986,29 @@ Microsoft: pagine codici supportate da Windows </ulink></para>
       <title>Tabella codici predefinita</title>
 
       <para>
-Scegli uno di questi pulsanti di opzione per impostare la codepage
-predefinita utilizzata da WinMerge durante la gestione dei file ANSI:</para>
+Scegli uno di questi pulsanti di opzione per impostare la pagian codice
+predefinita usata da WinMerge durante la gestione dei file ANSI:</para>
 
       <itemizedlist>
         <listitem>
           <para>
-<guilabel >Codice di sistema</guilabel> (predefinito): il codice utilizzato
-dal tuo sistema Windows.Questa impostazione predefinita è solitamente la
-scelta migliore.Tuttavia, se sai che stai confrontando file che non
-utilizzano la codepage di sistema, considera una delle altre opzioni.</para>
+<guilabel>Codice di sistema</guilabel> (predefinito): il codice usato dal
+tuo sistema Windows. Questa impostazione predefinita è solitamente la scelta
+migliore. Tuttavia, se sai che stai confrontando file che non usano la
+pagina codice di sistema, considera una delle altre opzioni.</para>
         </listitem>
 
         <listitem>
           <para>
 <!--This is just a guess - don't find any info on this option.-->
-<guilabel >Secondo l'interfaccia utente di WinMerge</guilabel >: la codifica
-utilizzata dalla tua installazione di WinMerge.</para>
+<guilabel>Secondo l'interfaccia utente di WinMerge</guilabel>: la codifica
+usata dalla tua installazione di WinMerge.</para>
         </listitem>
 
         <listitem>
           <para>
-<guilabel >Codice personalizzato</guilabel >: inserisci esplicitamente il
-numero della tabella codici.Ad esempio, <userinput>UTF-8</userinput> o
+<guilabel>Codice personalizzato</guilabel>: inserisci esplicitamente il
+numero della tabella codici. Ad esempio, <userinput>UTF-8</userinput> o
 <userinput>ISO-8851-1</userinput>.</para>
         </listitem>
       </itemizedlist>
@@ -2992,58 +3022,58 @@ numero della tabella codici.Ad esempio, <userinput>UTF-8</userinput> o
 <!--What option? The one in the Options page? If it should always be unchecked, 
 why is the option there? Also, should we mention WinMergeU.exe when we mention WinMerge.exe,
 or is this understood?-->
-Deseleziona questa opzione in <filename>WinMerge.exe</filename>.Le
+Deseleziona questa opzione in <filename>WinMerge.exe</filename>. Le
 conversioni dei caratteri possono comportare conversioni con perdita e il
 rischio è molto alto.<filename>WinMerge.exe</filename> può visualizzare solo
-file con la codepage corrente.</para>
+file con la pagina codice attuale.</para>
       </important>
 
       <itemizedlist>
         <listitem>
           <para>
 <option>Disabilitato</option> (predefinito): WinMerge non legge le
-informazioni sulla tabella codici dai file sorgente.Utilizza invece
+informazioni sulla tabella codici dai file sorgente. Usa invece
 l'impostazione della tabella codici predefinita.</para>
         </listitem>
 
         <listitem>
           <para>
-<option>Abilitato</option>: WinMerge rileva la codepage per queste
+<option>Abilitato</option>: WinMerge rileva la pagina coice per queste
 estensioni: <filename class="extension">html</filename>, <filename
-class="extension">rc</filename> (file di risorse per VC++) e <filename
-class="extension">xml</filename>.La codepage rilevata sovrascrive
-l'impostazione dell'opzione codepage predefinita.</para>
+class="extension">rc</filename> (file risorse per VC++) e <filename
+class="extension">xml</filename>. La pagina codice rilevata sovrascrive
+l'impostazione dell'opzione pagina codice predefinita.</para>
 
           <para>
-Questa opzione è interessante quando i tuoi documenti utilizzano una tabella
-codici diversa dalla tabella codici della configurazione di Windows.</para>
+Questa opzione è interessante quando i documenti usano una tabella codici
+diversa dalla tabella codici della configurazione di Windows.</para>
 
           <para>
 Ad esempio, potresti unire due file slovacchi o due giapponesi in un
-ambiente inglese.Con questa opzione abilitata (e con i caratteri richiesti),
-il tuo slovacco o giapponese, i file vengono visualizzati utilizzando i
-caratteri slovacchi o giapponesi.</para>
+ambiente inglese. Con questa opzione abilitata (e con i caratteri
+richiesti), il tuo slovacco o giapponese, i file vengono visualizzati usando
+i caratteri slovacchi o giapponesi.</para>
 
           <para>
-WinMerge rileva anche una differenza di codepage tra i file
-sinistro/destro.Per evitare conversioni con perdita di dati quando unisci,
+WinMerge rileva anche una differenza di pagina codice tra i file
+sinistro/destro. Per evitare conversioni con perdita di dati quando unisci,
 copi o incolli, ti suggeriamo di ignorare le informazioni sulla tabella
 codici.</para>
 
           <caution>
             <para>
 Quando copi o incolli testo su un'applicazione esterna, l'applicazione
-esterna deve utilizzare la stessa tabella codici di WinMerge.Fare
-riferimento alla documentazione dell'editor esterno.Per copiare su WinMerge,
-Internet Explorer offre la selezione della tabella codici.Se il tuo editor
-esterno non supporta le codepage personalizzate, disabilita questa opzione.</para>
+esterna deve usare la stessa tabella codici di WinMerge. Fai riferimento
+alla documentazione dell'editor esterno. Per copiare su WinMerge, Internet
+Explorer offre la selezione della tabella codici. Se il tuo editor esterno
+non supporta le pagine codice personalizzate, disabilita questa opzione.</para>
           </caution>
         </listitem>
       </itemizedlist>
     </section>
 
     <section>
-      <title>Rileva la tabella codici per i file di testo utilizzando mlang.dll</title>
+      <title>Rileva la tabella codici per i file di testo usando mlang.dll</title>
 
       <para>Da definire</para>
 
@@ -3064,8 +3094,8 @@ Esplora<indexterm>
       <para>
 L'opzione <option>Aggiungi al menu contestuale</option> ti consente di
 avviare WinMerge direttamente da Esplora risorse, confrontando gli elementi
-che hai selezionato lì.È abilitato o disabilitato per impostazione
-predefinita durante l'installazione di WinMerge.Se abilitato, puoi anche
+che hai selezionato lì. È abilitato o disabilitato per impostazione
+predefinita durante l'installazione di WinMerge. Se abilitato, puoi anche
 abilitare una o entrambe queste opzioni:</para>
 
       <variablelist>
@@ -3076,16 +3106,16 @@ abilitare una o entrambe queste opzioni:</para>
             <itemizedlist>
               <listitem>
                 <para>
-<option >Disabilitato</option> (predefinito): solo la scorciatoia
-<guimenuitem >WinMerge</guimenuitem > è inclusa nel menu contestuale di
+<option>Disabilitato</option> (predefinito): solo la scorciatoia
+<guimenuitem>WinMerge</guimenuitem> è inclusa nel menu contestuale di
 Esplora risorse.</para>
               </listitem>
 
               <listitem>
                 <para>
-<option >Abilitato</option >: sostituisce la scorciatoia <guimenuitem
->WinMerge</guimenuitem > nel menu contestuale di Explorer con le scorciatoie
-<guimenuitem >Confronta</guimenuitem >.</para>
+<option>Abilitato</option>: sostituisce la scorciatoia
+<guimenuitem>WinMerge</guimenuitem> nel menu contestuale di Explorer con le
+scorciatoie <guimenuitem>Confronta</guimenuitem>.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -3100,15 +3130,14 @@ Esplora risorse.</para>
             <itemizedlist>
               <listitem>
                 <para>
-<option >Disabilitato</option> (predefinito): rimuove la voce di menu
-<guimenuitem >Confronta come</guimenuitem > dal menu contestuale di
-Explorer.</para>
+<option>Disabilitato</option> (predefinito): rimuove la voce di menu
+<guimenuitem>Confronta come</guimenuitem> dal menu contestuale di Explorer.</para>
               </listitem>
 
               <listitem>
                 <para>
-<option >Abilitato</option >: aggiunge la voce di menu <guimenuitem
->Confronta come</guimenuitem > al menu contestuale di Explorer.</para>
+<option>Abilitato</option>: aggiunge la voce di menu <guimenuitem>Confronta
+come</guimenuitem> al menu contestuale di Explorer.</para>
               </listitem>
             </itemizedlist>
           </listitem>
@@ -3116,8 +3145,8 @@ Explorer.</para>
       </variablelist>
 
       <para>
-<xref linkend="OpenPaths_shell-integ" /> descrive come utilizzare le
-scorciatoie WinMerge e Confronta.</para>
+<xref linkend="OpenPaths_shell-integ" /> descrive come usare le scorciatoie
+WinMerge e Confronta.</para>
     </section>
   </section>
 </article>

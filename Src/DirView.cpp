@@ -14,7 +14,7 @@
 #include "DirView.h"
 #include "Constants.h"
 #include "Merge.h"
-#include "ClipBoard.h"
+#include "Clipboard.h"
 #include "DirActions.h"
 #include "DirViewColItems.h"
 #include "DirFrame.h"  // StatePane
@@ -28,10 +28,12 @@
 #include "paths.h"
 #include "7zCommon.h"
 #include "OptionsDef.h"
+#include "DiffImageListUtils.h"
 #include "OptionsMgr.h"
 #include "BCMenu.h"
 #include "DirCmpReportDlg.h"
 #include "DirCmpReport.h"
+#include "FileCmpReport.h"
 #include "CompareStatisticsDlg.h"
 #include "LoadSaveCodepageDlg.h"
 #include "ConfirmFolderCopyDlg.h"
@@ -347,12 +349,12 @@ BEGIN_MESSAGE_MAP(CDirView, CListView)
 	ON_UPDATE_COMMAND_UI(ID_DIR_COPY_PATHNAMES_BOTH, OnUpdateCtxtDirCopyBoth2)
 	ON_UPDATE_COMMAND_UI(ID_DIR_COPY_PATHNAMES_ALL, OnUpdateCtxtDirCopyBoth2)
 	// Context menu -> Zip
-	ON_COMMAND(ID_DIR_ZIP_LEFT, OnCtxtDirZip<DirItemEnumerator::Left>)
-	ON_COMMAND(ID_DIR_ZIP_MIDDLE, OnCtxtDirZip<DirItemEnumerator::Middle>)
-	ON_COMMAND(ID_DIR_ZIP_RIGHT, OnCtxtDirZip<DirItemEnumerator::Right>)
-	ON_COMMAND(ID_DIR_ZIP_BOTH, OnCtxtDirZip<DirItemEnumerator::Original | DirItemEnumerator::Altered | DirItemEnumerator::BalanceFolders>)
-	ON_COMMAND(ID_DIR_ZIP_ALL, OnCtxtDirZip<DirItemEnumerator::Original | DirItemEnumerator::Altered | DirItemEnumerator::BalanceFolders>)
-	ON_COMMAND(ID_DIR_ZIP_BOTH_DIFFS_ONLY, OnCtxtDirZip<DirItemEnumerator::Original | DirItemEnumerator::Altered | DirItemEnumerator::BalanceFolders | DirItemEnumerator::DiffsOnly>)
+	ON_COMMAND(ID_DIR_ZIP_LEFT, OnCtxtDirZip<DirViewZipFlags::Left>)
+	ON_COMMAND(ID_DIR_ZIP_MIDDLE, OnCtxtDirZip<DirViewZipFlags::Middle>)
+	ON_COMMAND(ID_DIR_ZIP_RIGHT, OnCtxtDirZip<DirViewZipFlags::Right>)
+	ON_COMMAND(ID_DIR_ZIP_BOTH, OnCtxtDirZip<DirViewZipFlags::Original | DirViewZipFlags::Altered>)
+	ON_COMMAND(ID_DIR_ZIP_ALL, OnCtxtDirZip<DirViewZipFlags::Original | DirViewZipFlags::Altered>)
+	ON_COMMAND(ID_DIR_ZIP_BOTH_DIFFS_ONLY, OnCtxtDirZip<DirViewZipFlags::Original | DirViewZipFlags::Altered | DirViewZipFlags::DiffsOnly>)
 	ON_UPDATE_COMMAND_UI(ID_DIR_ZIP_LEFT, OnUpdateCtxtDirCopyTo<SIDE_LEFT>)
 	ON_UPDATE_COMMAND_UI(ID_DIR_ZIP_MIDDLE, OnUpdateCtxtDirCopyTo<SIDE_MIDDLE>)
 	ON_UPDATE_COMMAND_UI(ID_DIR_ZIP_RIGHT, OnUpdateCtxtDirCopyTo<SIDE_RIGHT>)
@@ -449,33 +451,20 @@ void CDirView::OnInitialUpdate()
 	if (hWnd != nullptr)
 		m_ctlSortHeader.SubclassWindow(hWnd);
 
-	// Load the icons used for the list view (to reflect diff status)
-	// NOTE: these must be in the exactly the same order as in the `enum`
-	// definition in the DirActions.h file (ref: DIFFIMG_LUNIQUE)
-	VERIFY(m_imageList.Create(iconCX, iconCY, ILC_COLOR32 | ILC_MASK, 15, 1));
-	int icon_ids[] = {
-		IDI_LFILE, IDI_MFILE, IDI_RFILE,
-		IDI_MRFILE, IDI_LRFILE, IDI_LMFILE,
-		IDI_NOTEQUALFILE, IDI_EQUALFILE, IDI_FILE, 
-		IDI_EQUALBINARY, IDI_BINARYDIFF,
-		IDI_LFOLDER, IDI_MFOLDER, IDI_RFOLDER,
-		IDI_MRFOLDER, IDI_LRFOLDER, IDI_LMFOLDER,
-		IDI_FILESKIP, IDI_FOLDERSKIP,
-		IDI_NOTEQUALFOLDER, IDI_EQUALFOLDER, IDI_FOLDER,
-		IDI_COMPARE_ERROR,
-		IDI_FOLDERUP, IDI_FOLDERUP_DISABLE,
-		IDI_COMPARE_ABORTED,
-		IDI_NOTEQUALTEXTFILE, IDI_EQUALTEXTFILE,
-		IDI_NOTEQUALIMAGE, IDI_EQUALIMAGE, 
-	};
-	for (auto id : icon_ids)
-		VERIFY(-1 != m_imageList.Add((HICON)LoadImage(AfxGetInstanceHandle(), MAKEINTRESOURCE(id), IMAGE_ICON, iconCX, iconCY, 0)));
+	DiffImageListUtils::InitializeDiffImageList(m_imageList);
 	m_pList->SetImageList(&m_imageList, LVSIL_SMALL);
 
 	// Load the icons used for the list view (expanded/collapsed state icons)
 	VERIFY(m_imageState.Create(iconCX, iconCY, ILC_COLOR32 | ILC_MASK, 15, 1));
 	for (auto id : { IDI_TREE_STATE_COLLAPSED, IDI_TREE_STATE_EXPANDED })
-		VERIFY(-1 != m_imageState.Add((HICON)LoadImage(AfxGetInstanceHandle(), MAKEINTRESOURCE(id), IMAGE_ICON, iconCX, iconCY, 0)));
+	{
+		HICON hIcon = (HICON)LoadImage(AfxGetInstanceHandle(), MAKEINTRESOURCE(id), IMAGE_ICON, iconCX, iconCY, 0);
+		if (hIcon != nullptr)
+		{
+			VERIFY(-1 != m_imageState.Add(hIcon));
+			::DestroyIcon(hIcon);
+		}
+	}
 
 	// Restore column orders as they had them last time they ran
 	m_pColItems->LoadColumnOrders(
@@ -978,13 +967,28 @@ std::optional<bool> CDirView::PromptCopyOnlyDiffItems()
 	Counts counts = Count(&DirActions::IsItemIdenticalOrSkipped);
 	if (counts.count > 0)
 	{
-		int ans = AfxMessageBox(_("Some selected items are identical or skipped.\nCopy only items with differences?").c_str(),
-			MB_YESNOCANCEL | MB_ICONWARNING | MB_DONT_ASK_AGAIN, IDS_COPY_ONLYDIFFITEMS);
+		int ans = AfxMessageBox(_("Some selected items are identical or skipped.\nProcess only items with differences?").c_str(),
+			MB_YESNOCANCEL | MB_ICONWARNING | MB_DONT_ASK_AGAIN, IDS_ONLYDIFFITEMS_CONFIRM);
 		if (ans == IDCANCEL)
 			return std::nullopt;
 		copyOnlyDiffItems = (ans == IDYES);
 	}
 	return copyOnlyDiffItems;
+}
+
+std::optional<bool> CDirView::PromptPatchOnlyDiffItems()
+{
+	bool patchOnlyDiffItems = true;
+	Counts counts = Count(&DirActions::IsItemIdenticalOrSkipped);
+	if (counts.count > 0)
+	{
+		int ans = AfxMessageBox(_("Some selected items are identical or skipped.\nProcess only items with differences?").c_str(),
+			MB_YESNOCANCEL | MB_ICONWARNING | MB_DONT_ASK_AGAIN, IDS_ONLYDIFFITEMS_CONFIRM);
+		if (ans == IDCANCEL)
+			return std::nullopt;
+		patchOnlyDiffItems = (ans == IDYES);
+	}
+	return patchOnlyDiffItems;
 }
 
 /// User chose (context men) Copy from right to left
@@ -3310,7 +3314,7 @@ LRESULT CDirView::OnGenerateFileCmpReport(WPARAM wParam, LPARAM lParam)
 
 	if (IMergeDoc * pMergeDoc = GetMainFrame()->GetActiveIMergeDoc())
 	{
-		pMergeDoc->GenerateReport(pMsg->sReportPath);
+		CMainFrame::GenerateDocumentReport({ pMergeDoc }, pMsg->sReportPath);
 		pMergeDoc->CloseNow();
 	}
 	MSG msg;
@@ -3373,39 +3377,19 @@ void CDirView::OnToolsGeneratePatch()
 	CPatchTool patcher;
 	const CDiffContext& ctxt = GetDiffContext();
 
-	// Get selected items from folder compare
-	bool bValidFiles = true;
-	for (DirItemIterator it = SelBegin(); bValidFiles && it != SelEnd(); ++it)
+	// Prompt user about diff-only filtering
+	auto patchOnlyDiffItems = PromptPatchOnlyDiffItems();
+	if (!patchOnlyDiffItems.has_value())
+		return;
+
+	// Collect patch items using the new CreatePatchItems function
+	auto patchItems = CreatePatchItems(ctxt, SelBegin(), SelEnd(), patchOnlyDiffItems.value());
+
+	// Add items to patcher (binary files will be skipped during patch creation)
+	for (const auto& item : patchItems)
 	{
-		const DIFFITEM &item = *it;
-		if (item.diffcode.isBin())
-		{
-			I18n::MessageBox(IDS_CANNOT_CREATE_BINARYPATCH, MB_ICONWARNING |
-				MB_DONT_DISPLAY_AGAIN, IDS_CANNOT_CREATE_BINARYPATCH);
-			bValidFiles = false;
-		}
-
-		if (bValidFiles)
-		{
-			// Format full paths to files (leftFile/rightFile)
-			String leftFile = item.getFilepath(0, ctxt.GetNormalizedPath(0));
-			if (!leftFile.empty())
-				leftFile = paths::ConcatPath(leftFile, item.diffFileInfo[0].filename);
-			String rightFile = item.getFilepath(1, ctxt.GetNormalizedPath(1));
-			if (!rightFile.empty())
-				rightFile = paths::ConcatPath(rightFile, item.diffFileInfo[1].filename);
-
-			// Format relative paths to files in folder compare
-			String leftpatch = item.diffFileInfo[0].path;
-			if (!leftpatch.empty())
-				leftpatch += _T("/");
-			leftpatch += item.diffFileInfo[0].filename;
-			String rightpatch = item.diffFileInfo[1].path;
-			if (!rightpatch.empty())
-				rightpatch += _T("/");
-			rightpatch += item.diffFileInfo[1].filename;
-			patcher.AddFiles(leftFile, leftpatch, rightFile, rightpatch);
-		}
+		patcher.AddFiles(item.leftFile, item.leftpatch, item.rightFile, item.rightpatch, 
+				(!item.leftpatch.empty() ? item.leftpatch : item.rightpatch), true, item.diffStatus);
 	}
 
 	patcher.CreatePatch();
@@ -3456,10 +3440,49 @@ void CDirView::OnCtxtDirZip(int flag)
 		return;
 	}
 
-	DirItemEnumerator
-	(
-		this, LVNI_SELECTED | flag
-	).CompressArchive();
+	const bool bDiffsOnly = (flag & DirViewZipFlags::DiffsOnly) != 0;
+	const bool bBoth = (flag & DirViewZipFlags::Original) && (flag & DirViewZipFlags::Altered);
+	const int nDirs = GetDocument()->m_nDirs;
+	const CDiffContext & ctxt = GetDiffContext();
+	DirItemWithIndexIterator begin(m_pIList.get(), -1, true);
+	DirItemWithIndexIterator end;
+
+	std::vector<CompressibleItem> items;
+	if (bBoth)
+	{
+		String dirnames[3];
+		if (nDirs < 3)
+		{
+			dirnames[0] = _T("original\\");
+			dirnames[1] = _T("altered\\");
+		}
+		else
+		{
+			dirnames[0] = _T("1\\");
+			dirnames[1] = _T("2\\");
+			dirnames[2] = _T("3\\");
+		}
+		for (int i = 0; i < nDirs; ++i)
+		{
+			auto zipItems = CreateZipItems(ctxt, begin, end, i, bDiffsOnly);
+			for (auto& ci : zipItems)
+			{
+				ci.name.insert(0, dirnames[i].c_str());
+				items.push_back(std::move(ci));
+			}
+		}
+	}
+	else
+	{
+		int index;
+		if (nDirs < 3)
+			index = (flag & DirViewZipFlags::Right) ? 1 : 0;
+		else
+			index = (flag & DirViewZipFlags::Right) ? 2 : (flag & DirViewZipFlags::Middle) ? 1 : 0;
+		items = CreateZipItems(ctxt, begin, end, index, bDiffsOnly);
+	}
+
+	CompressibleItemEnumerator(std::move(items)).CompressArchive();
 }
 
 void CDirView::ShowShellContextMenu(UINT id)
@@ -3640,14 +3663,14 @@ void CDirView::OnCopyPathnames(SIDE_TYPE stype)
 {
 	std::list<String> list;
 	CopyPathnames(SelBegin(), SelEnd(), std::back_inserter(list), stype, GetDiffContext());
-	PutToClipboard(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::Put(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
 }
 
 void CDirView::OnCopyBothPathnames()
 {
 	std::list<String> list;
 	CopyBothPathnames(SelBegin(), SelEnd(), std::back_inserter(list), GetDiffContext());
-	PutToClipboard(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::Put(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
 }
 
 /**
@@ -3657,7 +3680,7 @@ void CDirView::OnCopyFilenames()
 {
 	std::list<String> list;
 	CopyFilenames(SelBegin(), SelEnd(), std::back_inserter(list));
-	PutToClipboard(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::Put(strutils::join(list.begin(), list.end(), _T("\r\n")), GetMainFrame()->GetSafeHwnd());
 }
 
 /**
@@ -3675,7 +3698,7 @@ void CDirView::OnCopyToClipboard(SIDE_TYPE stype)
 {
 	std::list<String> list;
 	CopyPathnames(SelBegin(), SelEnd(), std::back_inserter(list), stype, GetDiffContext());
-	PutFilesToClipboard(list, GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::PutFiles(list, GetMainFrame()->GetSafeHwnd());
 }
 
 /**
@@ -3685,7 +3708,7 @@ void CDirView::OnCopyBothToClipboard()
 {
 	std::list<String> list;
 	CopyBothPathnames(SelBegin(), SelEnd(), std::back_inserter(list), GetDiffContext());
-	PutFilesToClipboard(list, GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::PutFiles(list, GetMainFrame()->GetSafeHwnd());
 }
 
 /**
@@ -3711,7 +3734,7 @@ void CDirView::OnCopyAllDisplayedColumns()
 		text += _T("\r\n");
 	}
 
-	PutToClipboard(text, GetMainFrame()->GetSafeHwnd());
+	ClipboardUtils::Put(text, GetMainFrame()->GetSafeHwnd());
 }
 
 /**

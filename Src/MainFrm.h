@@ -50,6 +50,7 @@ class COutputDoc;
 class CTempPathContext;
 
 typedef std::shared_ptr<TempFile> TempFilePtr;
+typedef std::shared_ptr<TempFolder> TempFolderPtr;
 
 // typed lists (homogenous pointer lists)
 typedef CTypedPtrList<CPtrList, COpenDoc *> OpenDocList;
@@ -149,7 +150,6 @@ public:
 // Attributes
 public:	
 	bool m_bShowErrors; /**< Show folder compare error items? */
-	static const tchar_t szClassName[];
 
 // Operations
 public:
@@ -161,6 +161,8 @@ public:
 	HMENU NewOpenViewMenu();
 	HMENU NewDefaultMenu(int ID = 0);
 	void UpdatePrediffersMenu(CMenu* pPredifferMenu);
+
+	static void GenerateDocumentReport(const std::vector<IMergeDoc*>& docs, const String& sReportFile);
 
 	bool DoFileOrFolderOpen(const PathContext *pFiles = nullptr,
 		const fileopenflags_t dwFlags[] = nullptr, const String strDesc[] = nullptr,
@@ -245,6 +247,11 @@ public:
 	static void WaitAndDoMessageLoop(bool& completed, int ms);
 	void OutputLog(Logger::LogLevel level, const std::chrono::system_clock::time_point& tp, const String& msg, bool show);
 	void AddTempFile(const TempFilePtr& pTempFile) { m_tempFiles.push_back(pTempFile); }
+	void AddTempFolder(const TempFolderPtr& pTempFolder) { m_tempFolders.push_back(pTempFolder); }
+	MergeDocList &GetAllMergeDocs();
+	DirDocList &GetAllDirDocs();
+	std::vector<IMergeDoc*> GetAllMergeDocuments();
+	void OnToolsGenerateReport();
 
 // Overrides
 	virtual void GetMessageString(UINT nID, CString& rMessage) const;
@@ -409,6 +416,7 @@ protected:
 	afx_msg void OnHelpContents();
 	afx_msg void OnClose();
 	afx_msg void OnToolsGeneratePatch();
+	afx_msg void OnToolsGenerateArchive();
 	afx_msg void OnDropFiles(const std::vector<String>& files);
 	afx_msg void OnUpdatePluginUnpackMode(CCmdUI* pCmdUI);
 	afx_msg void OnPluginUnpackMode(UINT nID);
@@ -499,8 +507,6 @@ protected:
 
 private:
 	OpenDocList &GetAllOpenDocs();
-	MergeDocList &GetAllMergeDocs();
-	DirDocList &GetAllDirDocs();
 	HexMergeDocList &GetAllHexMergeDocs();
 	std::vector<CImgMergeFrame *> GetAllImgMergeFrames();
 	std::vector<CWebPageDiffFrame *> GetAllWebPageDiffFrames();

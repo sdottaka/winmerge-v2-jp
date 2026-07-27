@@ -73,6 +73,10 @@
 #include "ColorSchemes.h"
 #include "CrashLogger.h"
 #include "FileSaveHelper.h"
+#include "CrystalLineSyntaxParser.h"
+#include "TreeSitterParser.h"
+#include "SyntaxParserRegistry.h"
+#include "7zCommon.h"
 #include <../src/mfc/afximpl.h>
 
 #ifdef _DEBUG
@@ -151,24 +155,23 @@ static COptionsMgr *CreateOptionManager(const MergeCmdLineInfo& cmdInfo)
 	return new CRegOptionsMgr(_T("Thingamahoochie\\WinMerge\\"));
 }
 
-static HANDLE CreateMutexHandle()
+HANDLE CMergeApp::CreateMutexHandle() const
 {
 	// Create exclusion mutex name
 	tchar_t szDesktopName[MAX_PATH] = _T("Win9xDesktop");
 	DWORD dwLengthNeeded;
 	GetUserObjectInformation(GetThreadDesktop(GetCurrentThreadId()), UOI_NAME,
 		szDesktopName, sizeof(szDesktopName), &dwLengthNeeded);
-	tchar_t szMutexName[MAX_PATH + 40];
 	// Combine window class name and desktop name to form a unique mutex name.
 	// As the window class name is decorated to distinguish between ANSI and
 	// UNICODE build, so will be the mutex name.
-	wsprintf(szMutexName, _T("%s-%s"), CMainFrame::szClassName, szDesktopName);
-	return CreateMutex(nullptr, FALSE, szMutexName);
+	String sMutexName = strutils::format(_T("%s-%s"), GetWindowClassName(), szDesktopName);
+	return CreateMutex(nullptr, FALSE, sMutexName.c_str());
 }
 
 static HWND ActivatePreviousInstanceAndSendCommandline(tchar_t* cmdLine)
 {
-	HWND hWnd = FindWindow(CMainFrame::szClassName, nullptr);
+	HWND hWnd = FindWindow(theApp.GetWindowClassName(), nullptr);
 	if (hWnd == nullptr)
 		return nullptr;
 	if (IsIconic(hWnd))
@@ -199,6 +202,24 @@ static int ConvertLastCompareResultToExitCode(int nLastCompareResult)
 	else if (nLastCompareResult > 0)
 		return 1;
 	return 2;
+}
+
+const tchar_t* CMergeApp::GetWindowClassName() const
+{
+	if (!m_sWindowClassName.empty())
+		return m_sWindowClassName.c_str();
+	static const tchar_t szClassName[] = _T("WinMergeWindowClassW");
+	if (!m_sGroupName.empty())
+	{
+		// Create class name with group: "WinMergeWindowClassW-groupname"
+		m_sWindowClassName = String(szClassName) + _T("-") + m_sGroupName;
+	}
+	else
+	{
+		// Use default class name
+		m_sWindowClassName = szClassName;
+	}
+	return m_sWindowClassName.c_str();
 }
 
 std::vector<JumpList::Item> CMergeApp::CreateUserTasks(MergeCmdLineInfo::usertasksflags_t flags)
@@ -318,6 +339,10 @@ BOOL CMergeApp::InitInstance()
 			OutputConsole(msg);
 	}
 
+	// Store group name for later use by CMainFrame
+	if (!cmdInfo.m_sGroupName.empty())
+		SetGroupName(cmdInfo.m_sGroupName);
+
 	// Initialize temp folder
 	SetupTempPath();
 
@@ -413,6 +438,8 @@ BOOL CMergeApp::InitInstance()
 
 	CCrystalTextView::SetRenderingModeDefault(static_cast<CCrystalTextView::RENDERING_MODE>(GetOptionsMgr()->GetInt(OPT_RENDERING_MODE)));
 
+	InitSyntaxParserFactories();
+
 	if (m_pLineFilters != nullptr)
 		m_pLineFilters->Initialize(GetOptionsMgr());
 
@@ -493,6 +520,34 @@ BOOL CMergeApp::InitInstance()
 #endif
 
 	return bContinue;
+}
+
+void CMergeApp::InitSyntaxParserFactories()
+{
+	using namespace LangServices;
+
+	auto& registry = SyntaxParserRegistry::GetInstance();
+
+	auto& crystal = CrystalLineSyntaxParserFactory::GetInstance();
+	auto& treeSitter = TreeSitterSyntaxParserFactory::GetInstance();
+
+	const std::array<ISyntaxParserFactory*, 2> allFactories{ &crystal, &treeSitter };
+	for (auto* factory : allFactories)
+		registry.UnregisterFactory(factory);
+
+	static const std::array<std::vector<ISyntaxParserFactory*>, 4> modes{
+		std::vector<ISyntaxParserFactory*>{ &crystal },                 // Built-in only
+		std::vector<ISyntaxParserFactory*>{ &crystal,& treeSitter },    // Built-in first
+		std::vector<ISyntaxParserFactory*>{ &treeSitter,& crystal },    // Tree-sitter first
+		std::vector<ISyntaxParserFactory*>{ &treeSitter }               // Tree-sitter only
+	};
+
+	int mode = GetOptionsMgr()->GetInt(OPT_SYNTAX_HIGHLIGHT_MODE);
+	if (mode < 0 || mode >= static_cast<int>(modes.size()))
+		mode = 3;
+
+	for (auto* factory : modes[mode])
+		registry.RegisterFactory(factory);
 }
 
 void CMergeApp::OutputConsole(const String& message)
@@ -660,7 +715,8 @@ static String makeLogString(const tchar_t* lpszPrompt, int result)
 		_("Try Again"),
 		_("Continue"),
 	};
-	String msg = String(lpszPrompt) + _T(": ") + Answers[result];
+	String ans = (result < 0 || result >= static_cast<int>(Answers.size())) ? _T("Unknown") : Answers[result];
+	String msg = String(lpszPrompt) + _T(": ") + ans;
 	return msg;
 }
 
@@ -888,6 +944,29 @@ void CMergeApp::ShowDialog(MergeCmdLineInfo::DialogType type)
 	}
 }
 
+/**
+ * @brief Adjust file and folder paths for comparison.
+ */
+static PathContext AdjustFileFolderPaths(const PathContext& paths)
+{
+	PathContext pathsAdjusted = paths;
+	if (paths.GetSize() < 2)
+		return pathsAdjusted;
+	paths::PATH_EXISTENCE p1 = paths::DoesPathExist(paths[0]);
+	paths::PATH_EXISTENCE p2 = paths::DoesPathExist(paths[1]);
+	if ((p1 == paths::IS_EXISTING_FILE) && (p2 == paths::IS_EXISTING_DIR) && !IsArchiveFile(paths[0]))
+	{
+		pathsAdjusted[1] = paths::ConcatPath(paths[1], paths::FindFileName(paths[0]));
+		if (paths.GetSize() > 2)
+		{
+			paths::PATH_EXISTENCE p3 = paths::DoesPathExist(paths[2]);
+			if (p3 == paths::IS_EXISTING_DIR)
+				pathsAdjusted[2] = paths::ConcatPath(paths[2], paths::FindFileName(paths[0]));
+		}
+	}
+	return pathsAdjusted;
+}
+
 /** @brief Read command line arguments and open files for comparison.
  *
  * The name of the function is a legacy code from the time that this function
@@ -1004,18 +1083,17 @@ bool CMergeApp::ParseArgsAndDoOpen(MergeCmdLineInfo& cmdInfo, CMainFrame* pMainF
 		}
 		if (cmdInfo.m_Files.GetSize() > 2)
 		{
-			cmdInfo.m_dwLeftFlags |= FFILEOPEN_CMDLINE;
-			cmdInfo.m_dwMiddleFlags |= FFILEOPEN_CMDLINE;
-			cmdInfo.m_dwRightFlags |= FFILEOPEN_CMDLINE;
+			PathContext paths = AdjustFileFolderPaths(cmdInfo.m_Files);
 			fileopenflags_t dwFlags[3] = {cmdInfo.m_dwLeftFlags, cmdInfo.m_dwMiddleFlags, cmdInfo.m_dwRightFlags};
-			bCompared = pMainFrame->DoFileOrFolderOpen(&cmdInfo.m_Files,
+			bCompared = pMainFrame->DoFileOrFolderOpen(&paths,
 				dwFlags, strDesc, cmdInfo.m_sReportFile, nullptr,
 				infoUnpacker.get(), infoPrediffer.get(), nID, pOpenParams.get());
 		}
 		else if (cmdInfo.m_Files.GetSize() > 1)
 		{
+			PathContext paths = AdjustFileFolderPaths(cmdInfo.m_Files);
 			fileopenflags_t dwFlags[3] = {cmdInfo.m_dwLeftFlags, cmdInfo.m_dwRightFlags, FFILEOPEN_NONE};
-			bCompared = pMainFrame->DoFileOrFolderOpen(&cmdInfo.m_Files,
+			bCompared = pMainFrame->DoFileOrFolderOpen(&paths,
 				dwFlags, strDesc, cmdInfo.m_sReportFile, nullptr,
 				infoUnpacker.get(), infoPrediffer.get(), nID, pOpenParams.get());
 		}
@@ -1473,7 +1551,7 @@ bool CMergeApp::LoadAndOpenProjectFile(const String& sProject, const String& sRe
 		for (int i = 0; i < tFiles.GetSize(); ++i)
 		{
 			tFiles[i] = env::ExpandEnvironmentVariables(tFiles[i]);
-			if (!paths::IsPathAbsolute(tFiles[i]) && !paths::IsURL(tFiles[i]))
+			if (!paths::IsPathAbsolute(tFiles[i]) && !paths::IsURL(tFiles[i]) && !tFiles[i].empty())
 			{
 				String sProjectDir = paths::GetParentPath(sProject);
 				if (tFiles[i].substr(0, 1) == _T("\\"))

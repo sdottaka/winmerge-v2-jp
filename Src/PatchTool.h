@@ -19,13 +19,16 @@ class CPatchDlg;
  */
 struct PATCHFILES
 {
+	String title; /**< Title of the patch item */
 	String lfile; /**< Left file */
 	String pathLeft; /**< Left path added to patch file */
 	String rfile; /**< Right file */
 	String pathRight; /**< Right path added to patch file */
 	time_t ltime; /**< Left time */
 	time_t rtime; /**< Right time */
-	PATCHFILES() : ltime(0), rtime(0) {};
+	bool checked; /**< Is this item checked to be included in patch? */
+	int diffStatus; /**< Icon index representing diff status (DIFFIMG_*) */
+	PATCHFILES() : ltime(0), rtime(0), checked(true), diffStatus(-1) {};
 	/**
 	 * @brief Swap diff sides.
 	 */
@@ -49,15 +52,27 @@ public:
 	CPatchTool();
 	~CPatchTool();
 
-	void AddFiles(const String &file1, const String &file2);
+	void AddFiles(const String &file1, const String &file2, const String& title, bool checked);
 	void AddFiles(const String &file1, const String &altPath1,
-		const String &file2, const String &altPath2);
+		const String &file2, const String &altPath2, const String& title, bool checked, int diffStatus);
 	int CreatePatch();
+	bool CreatePatchFile(const String& outputFile);
+	const std::vector<PATCHFILES>& GetFileList() const { return m_fileList; }
 
 protected:
 	bool ShowDialog(CPatchDlg *pDlgPatch);
 
 private:
+	struct PatchWriteResult
+	{
+		int writeFileCount = 0;
+		bool diffFailed = false;
+		bool patchFileFailed = false;
+		bool binaryFound = false;
+	};
+
+	PatchWriteResult WritePatchFile(const std::vector<PATCHFILES>& files,
+		enum output_style outputStyle, bool appendHeader);
 	void AddFilesToList(const String& sDir1, const String& sDir2, const DirItem* ent1, const DirItem* ent2, std::vector<PATCHFILES>* fileList);
 	int GetItemsForPatchList(const PathContext& paths, const String subdir[], std::vector<PATCHFILES>* fileList);
 

@@ -69,6 +69,7 @@ void Init(COptionsMgr *pOptions)
 	pOptions->InitOption(OPT_RESIZE_PANES, false);
 
 	pOptions->InitOption(OPT_SYNTAX_HIGHLIGHT, true);
+	pOptions->InitOption(OPT_SYNTAX_HIGHLIGHT_MODE, 1);
 	pOptions->InitOption(OPT_WORDWRAP, false);
 	pOptions->InitOption(OPT_WORDWRAP_TABLE, false);
 	pOptions->InitOption(OPT_VIEW_LINENUMBERS, false);
@@ -114,7 +115,14 @@ void Init(COptionsMgr *pOptions)
 
 	pOptions->InitOption(OPT_REPORTFILES_REPORTTYPE, 0, 0, 3);
 	pOptions->InitOption(OPT_REPORTFILES_COPYTOCLIPBOARD, false);
+	pOptions->InitOption(OPT_REPORTFILES_OPENREPORTFILE, false);
 	pOptions->InitOption(OPT_REPORTFILES_INCLUDEFILECMPREPORT, false);
+	pOptions->InitOption(OPT_REPORTFILES_INCLUDEALLIMAGEPAGES, true);
+
+	pOptions->InitOption(OPT_ARCHIVE_INCLUDEREPORT, false);
+	pOptions->InitOption(OPT_ARCHIVE_INCLUDEPATCH, false);
+	pOptions->InitOption(OPT_ARCHIVE_INCLUDEPROJECT, false);
+	pOptions->InitOption(OPT_ARCHIVE_COPYTOCLIPBOARD, false);
 
 	pOptions->InitOption(OPT_AUTOMATIC_RESCAN, false);
 	pOptions->InitOption(OPT_ALLOW_MIXED_EOL, false);

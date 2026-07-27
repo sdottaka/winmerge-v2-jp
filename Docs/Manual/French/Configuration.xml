@@ -443,7 +443,7 @@ Recharger automatiquement les fichiers modifiés<indexterm>
 
         <listitem>
           <para>
-<guilabel>Seulement à l'activation de la fenêtre</guilabel> (par défaut) :
+<guilabel>Uniquement à l'activation de la fenêtre</guilabel> (par défaut) :
 lorsque la fenêtre WinMerge est activée, si le fichier a été modifié, il
 sera rechargé. Cependant, une boîte de message demandant si vous souhaitez
 recharger le fichier s'affichera. Si vous ne voulez plus voir ce message,
@@ -1120,8 +1120,8 @@ différences dans les fichiers.</para>
 
         <listitem>
           <para>
-<option>Activé</option> : cette option optimise les comparaisons en
-examinant les fichiers seulement jusqu'à ce que la première différence soit
+<option>Activé</option> : Cette option optimise les comparaisons en
+examinant les fichiers uniquement jusqu'à ce que la première différence soit
 trouvée, au lieu de toujours parcourir l'intégralité des fichiers.</para>
 
           <para>
@@ -2110,6 +2110,38 @@ syntaxique</guimenuitem> </menuchoice>.</para>
 <option>Désactivé</option> : la coloration syntaxique consomme de la
 puissance de calcul ; si la mise à jour de l'écran de WinMerge semble lente,
 désactiver cette option peut aider.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+<option>Mode de surbrillance</option> détermine quel analyseur syntaxique
+est utilisé pour la coloration syntaxique.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>
+<option>Intégré uniquement</option> : Utiliser uniquement l’analyseur
+syntaxique intégré de WinMerge.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Intégré en premier</option> : Privilégier l'analyseur syntaxique
+intégré. S'il ne prend pas en charge le type de fichier actuel, Tree-sitter
+sera utilisé.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Tree-sitter en premier</option> : Privilégier Tree-sitter. Si
+Tree-sitter ne prend pas en charge le type de fichier actuel, l’analyseur
+syntaxique intégré est utilisé.</para>
+        </listitem>
+
+        <listitem>
+          <para>
+<option>Tree-sitter uniquement</option> : Utiliser uniquement Tree-sitter
+pour la coloration syntaxique.</para>
         </listitem>
       </itemizedlist>
     </section>

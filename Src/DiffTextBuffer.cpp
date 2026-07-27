@@ -21,6 +21,7 @@
 #include "FileTextEncoding.h"
 #include "codepage_detect.h"
 #include "TFile.h"
+#include "TextDefinition.h"
 #include <Poco/Exception.h>
 
 using Poco::Exception;
@@ -158,7 +159,7 @@ void CDiffTextBuffer::prepareForRescan()
 	for (int ct = GetLineCount() - 1; ct >= 0; --ct)
 	{
 		SetLineFlag(ct, 
-			LF_INVISIBLE | LF_DIFF | LF_TRIVIAL | LF_MOVED | LF_SNP,
+			LF_INVISIBLE | LF_DIFF | LF_TRIVIAL | LF_MOVED | LF_SNP | LF_DIFF_1STONLY | LF_DIFF_2NDONLY | LF_DIFF_3RDONLY,
 			false, false, false);
 	}
 }
@@ -178,6 +179,9 @@ OnNotifyLineHasBeenEdited(int nLine)
 	SetLineFlag(nLine, LF_TRIVIAL, false, false, false);
 	SetLineFlag(nLine, LF_MOVED, false, false, false);
 	SetLineFlag(nLine, LF_SNP, false, false, false);
+	SetLineFlag(nLine, LF_DIFF_1STONLY, false, false, false);
+	SetLineFlag(nLine, LF_DIFF_2NDONLY, false, false, false);
+	SetLineFlag(nLine, LF_DIFF_3RDONLY, false, false, false);
 	CGhostTextBuffer::OnNotifyLineHasBeenEdited(nLine);
 }
 
@@ -221,8 +225,8 @@ int CDiffTextBuffer::LoadFromFile(const tchar_t* pszFileNameInit,
 
 	// Set encoding based on extension, if we know one
 	paths::SplitFilename(pszFileName, nullptr, nullptr, &sExt);
-	CrystalLineParser::TextDefinition *def = 
-		CrystalLineParser::GetTextType(sExt.c_str());
+	LangServices::TextDefinition *def = 
+		LangServices::GetTextType(sExt.c_str());
 	if (def && def->encoding != -1)
 		m_nSourceEncoding = def->encoding;
 	

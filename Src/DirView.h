@@ -23,6 +23,7 @@
 #include "DirActions.h"
 #include "IListCtrlImpl.h"
 #include "FileOpenFlags.h"
+#include "7zCommon.h"
 
 class FileActionScript;
 
@@ -46,6 +47,24 @@ struct IListCtrl;
 class CFileFilterHelperMenu;
 
 /**
+ * @brief Flags controlling CDirView::OnCtxtDirZip() / CreateZipItems() behavior.
+ *        (Moved out of the Merge7z adapter class, since that class no longer
+ *        knows anything about WinMerge's directory-compare domain.)
+ */
+namespace DirViewZipFlags
+{
+	enum
+	{
+		Left = 0x0000,
+		Right = 0x0001,
+		Middle = 0x0002,
+		Original = 0x0004,
+		Altered = 0x0008,
+		DiffsOnly = 0x0020,
+	};
+}
+
+/**
  * @brief Position value for special items (..) in directory compare view.
  */
 const uintptr_t SPECIAL_ITEM_POS = (uintptr_t)(reinterpret_cast<DIFFITEM *>( - 1L));
@@ -67,7 +86,6 @@ constexpr int DefColumnWidth = 111;
 class CDirView : public CListView
 {
 	friend struct FileCmpReport;
-	friend DirItemEnumerator;
 protected:
 	CDirView();           // protected constructor used by dynamic creation
 	DECLARE_DYNCREATE(CDirView)
@@ -241,6 +259,7 @@ protected:
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg void OnDirCopy(UINT id);
 	afx_msg std::optional<bool> PromptCopyOnlyDiffItems();
+	afx_msg std::optional<bool> PromptPatchOnlyDiffItems();
 	template<SIDE_TYPE srctype, SIDE_TYPE dsttype>
 	afx_msg void OnCtxtDirCopy();
 	afx_msg void OnUpdateDirCopy(CCmdUI* pCmdUI);

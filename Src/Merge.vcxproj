@@ -197,6 +197,7 @@
     <Import Project="..\Externals\poco\Foundation\Foundation.vcxitems" Label="Shared" />
     <Import Project="..\Externals\poco\XML\XML.vcxitems" Label="Shared" />
     <Import Project="CrashLogger\CrashLogger.vcxitems" Label="Shared" />
+    <Import Project="..\Externals\tree-sitter\tree-sitter.vcxitems" Label="Shared" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -919,6 +920,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileCmpReport.cpp" />
+    <ClCompile Include="FileCmpReportDlg.cpp" />
+    <ClCompile Include="SyntaxParserHelper.cpp">
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
     <ClCompile Include="7zCommon.cpp" />
     <ClCompile Include="AboutDlg.cpp" />
     <ClCompile Include="ClipboardHistoryMenu.cpp" />
@@ -998,9 +1005,14 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="ArchiveDlg.cpp" />
+    <ClCompile Include="ArchiveTool.cpp" />
+    <ClCompile Include="DiffImageListUtils.cpp" />
     <ClInclude Include="ClipboardHistoryMenu.h" />
     <ClInclude Include="Common\ScopeExit.h" />
     <ClInclude Include="Common\ValidatingEdit.h" />
+    <ClInclude Include="FileCmpReport.h" />
+    <ClInclude Include="FileCmpReportDlg.h" />
     <ClInclude Include="FileFilterHelperMenu.h" />
     <ClInclude Include="DirFilterBar.h" />
     <ClInclude Include="ComparisonResultFilterDlg.h" />
@@ -1044,7 +1056,7 @@
     </ClCompile>
     <ClCompile Include="MergeFrameCommon.cpp" />
     <ClCompile Include="MergeEditFrm.cpp" />
-    <ClCompile Include="Common\ClipBoard.cpp">
+    <ClCompile Include="Common\Clipboard.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
@@ -1503,8 +1515,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="TreeSitterParser.cpp">
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
     <ClCompile Include="WebPageDiffFrm.cpp" />
     <ClCompile Include="WildcardDropList.cpp" />
+    <ClCompile Include="WindowListCtrl.cpp" />
     <ClCompile Include="WindowsManager.cpp" />
     <ClCompile Include="WindowsManagerDialog.cpp" />
     <ClCompile Include="WinRtLoader.cpp" />
@@ -1517,6 +1534,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClInclude Include="ArchiveDlg.h" />
+    <ClInclude Include="ArchiveTool.h" />
+    <ClInclude Include="DiffImageListUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Externals\boost\boost\config.hpp" />
@@ -1569,7 +1589,7 @@
     <ClInclude Include="SubstitutionFiltersList.h" />
     <ClInclude Include="MergeFrameCommon.h" />
     <ClInclude Include="MergeEditFrm.h" />
-    <ClInclude Include="Common\ClipBoard.h" />
+    <ClInclude Include="Common\Clipboard.h" />
     <ClInclude Include="Common\CMoveConstraint.h" />
     <ClInclude Include="codepage_detect.h" />
     <ClInclude Include="Common\ColorButton.h" />
@@ -1736,6 +1756,7 @@
     <ClInclude Include="stringdiffs.h" />
     <ClInclude Include="stringdiffsi.h" />
     <ClInclude Include="Common\SuperComboBox.h" />
+    <ClInclude Include="SyntaxParserHelper.h" />
     <ClInclude Include="TempFile.h" />
     <ClInclude Include="TestMain.h" />
     <ClInclude Include="TestFilterDlg.h" />
@@ -1746,8 +1767,10 @@
     <ClInclude Include="TrDialogs.h" />
     <ClInclude Include="Common\varprop.h" />
     <ClInclude Include="Common\VersionInfo.h" />
+    <ClInclude Include="TreeSitterParser.h" />
     <ClInclude Include="WebPageDiffFrm.h" />
     <ClInclude Include="WildcardDropList.h" />
+    <ClInclude Include="WindowListCtrl.h" />
     <ClInclude Include="WindowsManager.h" />
     <ClInclude Include="WindowsManagerDialog.h" />
     <ClInclude Include="WinMergePluginBase.h" />
@@ -1801,6 +1824,7 @@
   <ItemGroup>
     <Image Include="res\aborted.ico" />
     <Image Include="res\all.bmp" />
+    <Image Include="res\archive.bmp" />
     <Image Include="res\binarydiff12.ico" />
     <Image Include="res\binarydiff13.ico" />
     <Image Include="res\binarydiff23.ico" />

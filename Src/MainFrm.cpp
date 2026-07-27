@@ -38,6 +38,7 @@
 #include "HexMergeView.h"
 #include "ImgMergeFrm.h"
 #include "WebPageDiffFrm.h"
+#include "FileCmpReport.h"
 #include "OutputDoc.h"
 #include "OutputBar.h"
 #include "OutputView.h"
@@ -51,6 +52,7 @@
 #include "paths.h"
 #include "Environment.h"
 #include "PatchTool.h"
+#include "DirActions.h"
 #include "Plugins.h"
 #include "ConfigLog.h"
 #include "7zCommon.h"
@@ -85,6 +87,10 @@
 #include "ColorSchemes.h"
 #include "OptionsSyntaxColors.h"
 #include "SysColorHook.h"
+#include "FileCmpReportDlg.h"
+#include "MergeFrameCommon.h"
+#include "ArchiveTool.h"
+#include "DiffImageListUtils.h"
 #include <Poco/Logger.h>
 #include <Poco/AsyncChannel.h>
 #include <Poco/SimpleFileChannel.h>
@@ -143,6 +149,7 @@ const CMainFrame::MENUITEM_ICON CMainFrame::m_MenuIcons[] = {
 	{ ID_PLUGINS_LIST,				IDB_PLUGINS_LIST,				CMainFrame::MENU_ALL },
 	{ ID_FILE_PRINT,				IDB_FILE_PRINT,					CMainFrame::MENU_FILECMP },
 	{ ID_TOOLS_GENERATEREPORT,		IDB_TOOLS_GENERATEREPORT,		CMainFrame::MENU_FILECMP },
+	{ ID_TOOLS_GENERATEARCHIVE,		IDB_TOOLS_GENERATEARCHIVE,		CMainFrame::MENU_FILECMP },
 	{ ID_EDIT_TOGGLE_BOOKMARK,		IDB_EDIT_TOGGLE_BOOKMARK,		CMainFrame::MENU_FILECMP },
 	{ ID_EDIT_GOTO_NEXT_BOOKMARK,	IDB_EDIT_GOTO_NEXT_BOOKMARK,	CMainFrame::MENU_FILECMP },
 	{ ID_EDIT_GOTO_PREV_BOOKMARK,	IDB_EDIT_GOTO_PREV_BOOKMARK,	CMainFrame::MENU_FILECMP },
@@ -304,7 +311,9 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
 	ON_COMMAND(ID_RELOAD_PLUGINS, OnReloadPlugins)
 	// [Tools] menu
 	ON_COMMAND(ID_TOOLS_FILTERS, OnToolsFilters)
+	ON_COMMAND(ID_TOOLS_GENERATEREPORT, OnToolsGenerateReport)
 	ON_COMMAND(ID_TOOLS_GENERATEPATCH, OnToolsGeneratePatch)
+	ON_COMMAND(ID_TOOLS_GENERATEARCHIVE, OnToolsGenerateArchive)
 	// [Window] menu
 	ON_COMMAND(ID_WINDOW_CLOSEALL, OnWindowCloseAll)
 	ON_UPDATE_COMMAND_UI(ID_WINDOW_CLOSEALL, OnUpdateWindowCloseAll)
@@ -410,8 +419,6 @@ CMainFrame::~CMainFrame()
 	strdiff::Close();
 }
 
-const tchar_t CMainFrame::szClassName[] = _T("WinMergeWindowClassW");
-
 /**
  * @brief Change MainFrame window class name
  *        see http://support.microsoft.com/kb/403825/ja
@@ -421,6 +428,8 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	WNDCLASS wndcls;
 	BOOL bRes = __super::PreCreateWindow(cs);
 	HINSTANCE hInst = AfxGetInstanceHandle();
+	const tchar_t* szClassName = theApp.GetWindowClassName();
+
 	// see if the class already exists
 	if (!::GetClassInfo(hInst, szClassName, &wndcls))
 	{
@@ -968,6 +977,28 @@ int GetActivePaneFromFlags(int nFiles, const fileopenflags_t dwFlags[])
 	return nActivePane;
 }
 
+static void SetReportOptions(CFileCmpReport::Options& options)
+{
+	options.includeAllImagePages = GetOptionsMgr()->GetBool(OPT_REPORTFILES_INCLUDEALLIMAGEPAGES);
+	options.darkMode = DarkMode::isEnabled();
+	CDC dc;
+	dc.CreateDC(_T("DISPLAY"), nullptr, nullptr, nullptr);
+	options.fontSize = -theApp.m_lfDiff.lfHeight * 72.0 / dc.GetDeviceCaps(LOGPIXELSY);
+}
+
+ void CMainFrame::GenerateDocumentReport(const std::vector<IMergeDoc*>& docs, const String& sReportFile)
+{
+	if (sReportFile.empty())
+		return;
+	CDC dc;
+	dc.CreateDC(_T("DISPLAY"), nullptr, nullptr, nullptr);
+	String sError;
+	CFileCmpReport::Options options;
+	SetReportOptions(options);
+	if (!CFileCmpReport::GenerateDocumentReport(docs, sReportFile, options, sError))
+		RootLogger::Error(sError);
+}
+
 /**
  * @brief Creates new MergeDoc instance and shows documents.
  * @param [in] pDirDoc Dir compare document to create a new Merge document for.
@@ -1073,7 +1104,7 @@ bool CMainFrame::ShowTextOrTableMergeDoc(std::optional<bool> table, IDirDoc * pD
 		pMergeDoc->SetSaveAsPath(pOpenParams->m_strSaveAsPath);
 
 	if (!sReportFile.empty())
-		pMergeDoc->GenerateReport(sReportFile);
+		GenerateDocumentReport({ pMergeDoc }, sReportFile);
 
 	return true;
 }
@@ -1119,7 +1150,7 @@ bool CMainFrame::ShowHexMergeDoc(IDirDoc * pDirDoc, int nFiles, const FileLocati
 		pHexMergeDoc->SetSaveAsPath(pOpenParams->m_strSaveAsPath);
 
 	if (!sReportFile.empty())
-		pHexMergeDoc->GenerateReport(sReportFile);
+		GenerateDocumentReport({ pHexMergeDoc }, sReportFile);
 
 	return true;
 }
@@ -1155,7 +1186,7 @@ bool CMainFrame::ShowImgMergeDoc(IDirDoc * pDirDoc, int nFiles, const FileLocati
 		pImgMergeFrame->SetSaveAsPath(pOpenParams->m_strSaveAsPath);
 
 	if (!sReportFile.empty())
-		pImgMergeFrame->GenerateReport(sReportFile);
+		GenerateDocumentReport({ pImgMergeFrame }, sReportFile);
 
 	return true;
 }
@@ -1186,11 +1217,7 @@ bool CMainFrame::ShowWebDiffDoc(IDirDoc * pDirDoc, int nFiles, const FileLocatio
 	pWebPageMergeFrame->MoveOnLoad(GetActivePaneFromFlags(nFiles, dwFlags));
 
 	if (!sReportFile.empty())
-	{
-		completed = false;
-		if (pWebPageMergeFrame->GenerateReport(sReportFile, [&result, &completed](bool res) { result = res; completed = true; }))
-			WaitAndDoMessageLoop(completed, 0);
-	}
+		GenerateDocumentReport({ pWebPageMergeFrame }, sReportFile);
 
 	return true;
 }
@@ -1356,6 +1383,8 @@ void CMainFrame::OnOptions()
 
 			UpdateResources();
 		}
+
+		CMergeApp::InitSyntaxParserFactories();
 
 		// Set new temporary path
 		theApp.SetupTempPath();
@@ -1628,6 +1657,11 @@ bool CMainFrame::DoFileOrFolderOpen(const PathContext * pFiles /*= nullptr*/,
 		if (infoUnpacker)
 			pOpenDoc->m_strUnpackerPipeline = infoUnpacker->GetPluginPipeline();
 		CFrameWnd *pFrame = pOpenTemplate->CreateNewFrame(pOpenDoc, nullptr);
+		if (!pFrame)
+		{
+			delete pOpenDoc;
+			return false;
+		}
 		pOpenTemplate->InitialUpdateFrame(pFrame, pOpenDoc);
 		return true;
 	}
@@ -1650,8 +1684,16 @@ bool CMainFrame::DoFileOrFolderOpen(const PathContext * pFiles /*= nullptr*/,
 			MruHelper::addToMru(0, tFiles[0]);
 		if (!(dwFlags[1] & FFILEOPEN_NOMRU))
 			MruHelper::addToMru(1, tFiles[1]);
-		if (tFiles.GetSize() == 3 && !(dwFlags[2] & FFILEOPEN_NOMRU))
-			MruHelper::addToMru(2, tFiles[2]);
+		if (tFiles.GetSize() == 3)
+		{
+			if (!(dwFlags[2] & FFILEOPEN_NOMRU))
+				MruHelper::addToMru(2, tFiles[2]);
+		}
+		else
+		{
+			if (!(dwFlags[0] & FFILEOPEN_NOMRU) || !(dwFlags[1] & FFILEOPEN_NOMRU))
+				MruHelper::addToMru(2, _T(""));
+		}
 	}
 
 	CTempPathContext *pTempPathContext = nullptr;
@@ -2032,6 +2074,107 @@ std::vector<CWebPageDiffFrame *> CMainFrame::GetAllWebPageDiffFrames()
 }
 
 /**
+ * @brief Get all IMergeDoc instances (text, binary, image, webpage comparisons)
+ * @return Vector of IMergeDoc pointers from all open comparison windows
+ */
+std::vector<IMergeDoc*> CMainFrame::GetAllMergeDocuments()
+{
+	std::vector<IMergeDoc*> allDocs;
+	for (auto* doc : GetAllMergeDocs())
+		allDocs.push_back(doc);
+	for (auto* doc : GetAllHexMergeDocs())
+		allDocs.push_back(doc);
+	for (auto* doc : GetAllImgMergeFrames())
+		allDocs.push_back(doc);
+	for (auto* doc : GetAllWebPageDiffFrames())
+		allDocs.push_back(doc);
+	return allDocs;
+}
+
+CFrameWnd* GetFrameWndByDocument(IMergeDoc* pDoc)
+{
+	CDocument* pDocBase = dynamic_cast<CDocument*>(pDoc);
+	if (pDocBase)
+	{
+		POSITION pos = pDocBase->GetFirstViewPosition();
+		if (pos == nullptr)
+			return nullptr;
+		auto* pView = pDocBase->GetNextView(pos);
+		return pView ? pView->GetParentFrame() : nullptr;
+	}
+	return dynamic_cast<CFrameWnd*>(pDoc);
+}
+
+/**
+ * @brief Unified handler for generating reports from any comparison window type.
+ * Called from CMergeDoc, CImgMergeFrame, and CWebPageDiffFrame OnToolsGenerateReport().
+ * Displays file dialog and decides between single or multi-document report.
+ */
+void CMainFrame::OnToolsGenerateReport()
+{
+	FileCmpReportDlg dlg;
+	IMergeDoc* pMergeDoc = GetActiveIMergeDoc();
+	std::vector<FileCmpReportDlg::Item> windowInfoList;
+
+	for (auto* pDoc : GetAllMergeDocuments())
+	{
+		if (pDoc == nullptr || pDoc->GetDocumentType() == IMergeDoc::DocumentType::Unknown)
+			continue;
+		CFrameWnd* pFrame = GetFrameWndByDocument(pDoc);
+		if (pFrame == nullptr)
+			continue;
+
+		FileCmpReportDlg::Item item;
+		item.title = CMergeFrameCommon::GetTitleString(*pDoc);
+		item.data = reinterpret_cast<uintptr_t>(pDoc);
+		item.checked = (pDoc == pMergeDoc);
+		item.iImage = DiffImageListUtils::GetDiffImageIndex(pDoc);
+		windowInfoList.push_back(item);
+	}
+	dlg.SetItems(windowInfoList);
+
+	INT_PTR ans = dlg.DoModal();
+	if (ans == IDCANCEL)
+		return;
+
+	String s = dlg.GetOptions().reportFile;
+	std::vector<IMergeDoc*> docs;
+	for (const auto data : dlg.GetOptions().selectedData)
+		docs.push_back(reinterpret_cast<IMergeDoc*>(data));
+
+	if (docs.empty())
+		return;
+
+	if (s.empty())
+	{
+		auto wTemp = std::make_shared<TempFile>();
+		wTemp->Create(_T(""), _T(".html"));
+		s = wTemp->GetPath();
+		m_tempFiles.push_back(wTemp);
+	}
+
+	CWaitCursor waitStatus;
+
+	String sError;
+	CFileCmpReport::Options options;
+	SetReportOptions(options);
+	bool bSuccess = CFileCmpReport::GenerateDocumentReport(docs, s, options, sError);
+	if (bSuccess && dlg.GetOptions().copyToClipboard)
+		bSuccess = CFileCmpReport::CopyToClipboard(s, sError);
+	if (bSuccess)
+	{
+		I18n::MessageBox(IDS_REPORT_SUCCESS, MB_OK | MB_ICONINFORMATION);
+
+		if (dlg.GetOptions().openReportFile)
+			shell::Open(s.c_str());
+	}
+	else
+	{
+		AfxMessageBox(sError.c_str(), MB_OK | MB_ICONSTOP);
+	}
+}
+
+/**
  * @brief Obtain a merge doc to display a difference in files.
  * @return Pointer to CMergeDoc to use. 
  */
@@ -2059,7 +2202,47 @@ DocClass * GetMergeDocForDiff(CMultiDocTemplate *pTemplate, IDirDoc *pDirDoc, in
 void CMainFrame::OnToolsGeneratePatch()
 {
 	CPatchTool patcher;
+	bool modified = false;
+	for (auto* doc : GetAllMergeDocs())
+	{
+		// If there are changes in files, tell user to save them first
+		if (doc->IsModified())
+			modified = true;
+
+		bool checked = (doc == dynamic_cast<CMergeDoc*>(GetActiveIMergeDoc()));
+		String title = doc->GetTitle();
+
+		// Determine diff status based on diff count
+		int diffStatus = (doc->GetDiffCount() == 0) ? DIFFIMG_TEXTSAME : DIFFIMG_TEXTDIFF;
+
+		patcher.AddFiles(doc->GetPath(0), _T(""), doc->GetPath(1), _T(""),
+			title, checked, diffStatus);
+	}
+
+	if (modified)
+	{
+		I18n::MessageBox(IDS_SAVEFILES_FORPATCH, MB_ICONSTOP);
+		return;
+	}
+
 	patcher.CreatePatch();
+}
+
+void CMainFrame::OnToolsGenerateArchive()
+{
+	ArchiveTool packager;
+	for (auto* pDoc : GetAllMergeDocuments())
+	{
+		if (pDoc == nullptr)
+			continue;
+		const bool checked = pDoc == GetActiveIMergeDoc();
+		int diffStatus = DiffImageListUtils::GetDiffImageIndex(pDoc);
+		packager.AddDocument(pDoc, checked, diffStatus);
+	}
+	CFileCmpReport::Options options;
+	SetReportOptions(options);
+	packager.SetReportOptions(options);
+	packager.CreateArchive();
 }
 
 void CMainFrame::OnDropFiles(const std::vector<String>& dropped_files)

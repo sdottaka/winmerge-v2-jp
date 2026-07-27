@@ -41,6 +41,7 @@ inline const String OPT_TOOLBAR_SIZE {_T("Settings/ToolbarSize"s)};
 inline const String OPT_RESIZE_PANES {_T("Settings/AutoResizePanes"s)};
 
 inline const String OPT_SYNTAX_HIGHLIGHT {_T("Settings/HiliteSyntax"s)};
+inline const String OPT_SYNTAX_HIGHLIGHT_MODE {_T("Settings/HiliteSyntaxMode"s)};
 inline const String OPT_VIEW_WHITESPACE {_T("Settings/ViewWhitespace"s)};
 inline const String OPT_VIEW_EOL {_T("Settings/ViewEOL"s)};
 inline const String OPT_SCROLL_TO_FIRST {_T("Settings/ScrollToFirst"s)};
@@ -77,10 +78,18 @@ inline const String OPT_ACTIVE_FRAME_MAX {_T("Settings/ActiveFrameMax"s)};
 inline const String OPT_ACTIVE_PANE {_T("Settings/ActivePane"s)};
 inline const String OPT_LOCBAR_MOVECURSOR_ONCLICK {_T("Settings/LocBarMoveCursorOnClick"s)};
 
-// Folder Compare Report
+// Folder/File Compare Report
 inline const String OPT_REPORTFILES_REPORTTYPE {_T("ReportFiles/ReportType"s)};
 inline const String OPT_REPORTFILES_COPYTOCLIPBOARD {_T("ReportFiles/CopyToClipboard"s)};
+inline const String OPT_REPORTFILES_OPENREPORTFILE {_T("ReportFiles/OpenReportFile"s)};
 inline const String OPT_REPORTFILES_INCLUDEFILECMPREPORT {_T("ReportFiles/IncludeFileCmpReport"s)};
+inline const String OPT_REPORTFILES_INCLUDEALLIMAGEPAGES {_T("ReportFiles/IncludeAllImagePages"s)};
+
+// archive
+inline const String OPT_ARCHIVE_INCLUDEREPORT {_T("Archives/IncludeReport"s)};
+inline const String OPT_ARCHIVE_INCLUDEPATCH {_T("Archives/IncludePatch"s)};
+inline const String OPT_ARCHIVE_INCLUDEPROJECT {_T("Archives/IncludeProject"s)};
+inline const String OPT_ARCHIVE_COPYTOCLIPBOARD {_T("Archives/CopyToClipboard"s)};
 
 // File compare
 inline const String OPT_AUTOMATIC_RESCAN {_T("Settings/AutomaticRescan"s)};

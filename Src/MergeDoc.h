@@ -27,6 +27,8 @@
 #include <optional>
 
 class CLineFilterHelperMenu;
+class CMainFrame;
+typedef CTypedPtrList<CPtrList, CMergeDoc*> MergeDocList;
 
 /**
  * @brief Additional action codes for WinMerge.
@@ -260,6 +262,11 @@ public:
 		for (int nBuffer = 0; nBuffer < m_nBuffers; ++nBuffer)
 			func(m_pView[nGroup][nBuffer]);
 	}
+	template <typename Function>
+	void ForEachGroupView(int nGroup, Function func) {
+		for (int nBuffer = 0; nBuffer < m_nBuffers; ++nBuffer)
+			func(m_pView[nGroup][nBuffer]);
+	}
 	CMergeEditFrame * GetParentFrame();
 
 	void AddSyncPoint();
@@ -337,7 +344,8 @@ public:
 	virtual ~CMergeDoc();
 	void SetDetectMovedBlocks(bool bDetectMovedBlocks);
 	bool IsMixedEOL(int nBuffer) const;
-	bool GenerateReport(const String& sFileName) const override;
+	bool GenerateReport(ReportContext& reportContext) const override;
+	IMergeDoc::DocumentType GetDocumentType() const override;
 	void SetAutoMerged(bool bAutoMerged) { m_bAutoMerged = bAutoMerged; }
 	bool GetAutoMerged() const { return m_bAutoMerged; };
 	bool IsModified() const
@@ -452,7 +460,6 @@ protected:
 	afx_msg void OnUpdateStatusRO(CCmdUI* pCmdUI);
 	afx_msg void OnDiffContext(UINT nID);
 	afx_msg void OnUpdateDiffContext(CCmdUI* pCmdUI);
-	afx_msg void OnToolsGenerateReport();
 	afx_msg void OnToolsGeneratePatch();
 	afx_msg void OnOpenWithUnpacker();
 	afx_msg void OnApplyPrediffer();

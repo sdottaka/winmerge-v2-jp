@@ -6,6 +6,17 @@ struct IDirDoc;
 class PackingInfo;
 class PrediffingInfo;
 class EditorScriptInfo;
+class UniStdioFile;
+
+struct ReportContext
+{
+	ReportContext(UniStdioFile& file, bool includeAllImagePages, const String& outputDirectory)
+		: file(file), includeAllImagePages(includeAllImagePages), outputDirectory(outputDirectory) {}
+	UniStdioFile& file;
+	int index = 0;
+	bool includeAllImagePages = false;
+	String outputDirectory;
+};
 
 struct IMergeDoc
 {
@@ -16,10 +27,23 @@ struct IMergeDoc
 		Removed,
 	};
 
+	enum DocumentType // = WindowType
+	{
+		Automatic,
+		Text,         // CMergeDoc
+		Table,        // CMergeDoc
+		Binary,       // CHexMergeDoc
+		Image,        // CImgMergeFrame
+		WebPage,      // CWebPageDiffFrame
+		Folder,       // CDirFrame
+		Unknown
+	};
+
 	virtual IDirDoc* GetDirDoc() const = 0;
 	virtual void SetDirDoc(IDirDoc *pDirDoc) = 0;
 	virtual bool CloseNow(void) = 0;
-	virtual bool GenerateReport(const String &path) const = 0;
+	virtual bool GenerateReport(ReportContext& reportContext) const = 0;
+	virtual DocumentType GetDocumentType() const = 0;
 	virtual void DirDocClosing(IDirDoc * pDirDoc) = 0;
 	virtual void CheckFileChanged() = 0;
 	virtual const PackingInfo *GetUnpacker() const = 0;
@@ -32,5 +56,6 @@ struct IMergeDoc
 	virtual bool GetReadOnly(int pane) const = 0;
 	virtual int GetDiffCount() const = 0;
 	virtual int GetTrivialCount() const = 0;
+	virtual bool IsModified() const = 0;
 };
 
