@@ -43,6 +43,10 @@ title: 変更履歴
 
 * 比較結果をアーカイブとして作成できるようにした。([PR #3483](https://github.com/WinMerge/winmerge/pull/3483))
 
+#### アーカイブサポート
+
+* 7-Zip を 26.02 に更新した。
+
 #### コマンドライン
 
 * シングルインスタンスグループ用の `/g` コマンドラインオプションを追加した。([PR #3472](https://github.com/WinMerge/winmerge/pull/3472))
