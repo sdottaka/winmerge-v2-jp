@@ -77,6 +77,7 @@
 #include "TreeSitterParser.h"
 #include "SyntaxParserRegistry.h"
 #include "7zCommon.h"
+#include "PluginMenu.h"
 #include <../src/mfc/afximpl.h>
 
 #ifdef _DEBUG
@@ -92,9 +93,6 @@ BEGIN_MESSAGE_MAP(CMergeApp, CWinApp)
 	ON_COMMAND(ID_HELP, OnHelp)
 	ON_COMMAND_EX_RANGE(ID_FILE_PROJECT_MRU_FIRST, ID_FILE_PROJECT_MRU_LAST, OnOpenRecentFile)
 	ON_UPDATE_COMMAND_UI(ID_FILE_PROJECT_MRU_FIRST, CWinApp::OnUpdateRecentFileMenu)
-	ON_COMMAND(ID_FILE_MERGINGMODE, OnMergingMode)
-	ON_UPDATE_COMMAND_UI(ID_FILE_MERGINGMODE, OnUpdateMergingMode)
-	ON_UPDATE_COMMAND_UI(ID_STATUS_MERGINGMODE, OnUpdateMergingStatus)
 	ON_COMMAND(ID_FILE_PRINT_SETUP, CWinApp::OnFilePrintSetup)
 	//}}AFX_MSG_MAP
 	// Standard file based document commands
@@ -875,7 +873,8 @@ bool CMergeApp::ShowCompareAsMenu(MergeCmdLineInfo& cmdInfo)
 	if (!pPopup)
 		return false;
 	String filteredFilenames = strutils::join(cmdInfo.m_Files.begin(), cmdInfo.m_Files.end(), _T("|"));
-	CMainFrame::AppendPluginMenus(pPopup, filteredFilenames, FileTransform::UnpackerEventNames, true, ID_UNPACKERS_FIRST);
+	PluginMenu::AppendPluginMenus(pPopup, nullptr, filteredFilenames, FileTransform::UnpackerEventNames,
+		PluginMenu::AddAllMenu|PluginMenu::AddSelectMenu, ID_UNPACKERS_FIRST);
 
 	CPoint point;
 	GetCursorPos(&point);
@@ -913,7 +912,7 @@ bool CMergeApp::ShowCompareAsMenu(MergeCmdLineInfo& cmdInfo)
 		}
 		else if(nID >= ID_UNPACKERS_FIRST && nID <= ID_UNPACKERS_LAST)
 		{
-			cmdInfo.m_sUnpacker = CMainFrame::GetPluginPipelineByMenuId(nID, FileTransform::UnpackerEventNames, ID_UNPACKERS_FIRST);
+			cmdInfo.m_sUnpacker = PluginMenu::GetPluginPipelineByMenuId(nullptr, nID, FileTransform::UnpackerEventNames, ID_UNPACKERS_FIRST);
 		}
 		else
 		{
@@ -1449,9 +1448,10 @@ static bool ContainsPluginArguments(const String& pluginPipeline)
 {
 	String errorMessage;
 	auto plugins = PluginForFile::ParsePluginPipeline(pluginPipeline, errorMessage);
-	for (const auto& plugin : plugins)
+	for (const auto& pipelineItem : plugins)
 	{
-		if (!plugin.args.empty())
+		const auto* pPluginItem = PluginForFile::GetPluginPipelineItemPtr(pipelineItem);
+		if (pPluginItem && !pPluginItem->args.empty())
 			return true;
 	}
 	return false;
@@ -1703,44 +1703,12 @@ bool CMergeApp::GetMergingMode() const
 }
 
 /**
- * @brief Set doc to Merging/Editing mode
+ * @brief Set Merging/Editing mode
  */
 void CMergeApp::SetMergingMode(bool bMergingMode)
 {
 	m_bMergingMode = bMergingMode;
 	GetOptionsMgr()->SaveOption(OPT_MERGE_MODE, m_bMergingMode);
-}
-
-/**
- * @brief Switch Merging/Editing mode and update
- * buffer read-only states accordingly
- */
-void CMergeApp::OnMergingMode()
-{
-	bool bMergingMode = GetMergingMode();
-
-	if (!bMergingMode)
-		I18n::MessageBox(IDS_MERGE_MODE, MB_ICONINFORMATION | MB_DONT_DISPLAY_AGAIN, IDS_MERGE_MODE);
-	SetMergingMode(!bMergingMode);
-}
-
-/**
- * @brief Update Menuitem for Merging Mode
- */
-void CMergeApp::OnUpdateMergingMode(CCmdUI* pCmdUI)
-{
-	pCmdUI->Enable(true);
-	pCmdUI->SetCheck(GetMergingMode());
-}
-
-/**
- * @brief Update MergingMode UI in statusbar
- */
-void CMergeApp::OnUpdateMergingStatus(CCmdUI *pCmdUI)
-{
-	String text = I18n::LoadString(IDS_MERGEMODE_MERGING);
-	pCmdUI->SetText(text.c_str());
-	pCmdUI->Enable(GetMergingMode());
 }
 
 UINT CMergeApp::GetProfileInt(const tchar_t* lpszSection, const tchar_t* lpszEntry, int nDefault)

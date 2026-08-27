@@ -233,9 +233,6 @@ public:
 	static FRAMETYPE GetFrameType(const CFrameWnd * pFrame);
 	static void UpdateDocTitle();
 	static void ReloadMenu();
-	static void AppendPluginMenus(CMenu* pMenu, const String& filteredFilenames,
-		const std::vector<std::wstring>& events, bool addAllMenu, unsigned baseId);
-	static String GetPluginPipelineByMenuId(unsigned idSearch, const std::vector<std::wstring>& events, unsigned baseId);
 	DropHandler *GetDropHandler() const { return m_pDropHandler; }
 	CWindowsManager& GetWindowsManager() { return m_wndManager; }
 	IMergeDoc* GetActiveIMergeDoc();
@@ -491,17 +488,18 @@ protected:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnDestroy();
 	afx_msg void OnAccelQuit();
-	afx_msg LRESULT OnChildFrameAdded(WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnChildFrameRemoved(WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnChildFrameActivate(WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnChildFrameActivated(WPARAM wParam, LPARAM lParam);
 	afx_msg void OnUpdateMenuBarMenuItem(CCmdUI* pCmdUI);
 	afx_msg void OnViewMenuBar();
 	afx_msg void OnUpdateViewMenuBar(CCmdUI* pCmdUI);
 	afx_msg void OnViewOutputBar();
 	afx_msg void OnUpdateViewOutputBar(CCmdUI* pCmdUI);
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
-    afx_msg void OnSettingChange(UINT uFlags, LPCTSTR lpszSection);
+	afx_msg void OnSettingChange(UINT uFlags, LPCTSTR lpszSection);
+	afx_msg void OnMergingMode();
+	afx_msg void OnUpdateMergingMode(CCmdUI* pCmdUI);
+	afx_msg void OnUpdateMergingStatus(CCmdUI* pCmdUI);
+	afx_msg void OnStatusBarClick(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg LRESULT OnMDIButtonContextMenu(WPARAM wParam, LPARAM lParam);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
@@ -522,4 +520,5 @@ private:
 	void ProcessLog();
 	std::unique_ptr<WCHAR[]> m_upszLongTextW;
 	std::unique_ptr<CHAR[]> m_upszLongTextA;
+	HICON m_hIconPlugin;
 };

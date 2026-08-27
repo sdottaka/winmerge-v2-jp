@@ -7,5 +7,6 @@
 #pragma once
 
 #include <atlimage.h>
+class CImageList;
 
-HBITMAP LoadBitmapAndConvertTo32bit(HINSTANCE hInstance, int nIDResource, int nNewWidth, int nNewHeight, bool bGrayscale, COLORREF clrMask);
+bool LoadPngResourceToImageList(HINSTANCE hInstance, int nIDResource, int nIconCount, int nNewWidth, int nNewHeight, CImageList& imageList, CImageList* pGrayscaleImageList);

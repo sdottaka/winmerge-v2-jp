@@ -53,6 +53,8 @@
 #include "MouseHook.h"
 #include "RenameMoveDetection.h"
 #include "FileFilterHelper.h"
+#include "MergeLogger.h"
+#include "PluginMenu.h"
 #include <numeric>
 #include <functional>
 
@@ -1322,16 +1324,18 @@ void CDirView::OnColumnClick(NMHDR *pNMHDR, LRESULT *pResult)
 
 void CDirView::SortColumnsAppropriately()
 {
-	// Do not sort while comparing.
-	// Compare-result columns are updated asynchronously and may
-	// violate strict weak ordering required by std::sort.
-	if (GetDocument()->m_diffThread.GetThreadState() == CDiffThread::THREAD_COMPARING)
-		return;
-	
 	int sortCol = GetOptionsMgr()->GetInt((GetDocument()->m_nDirs < 3) ? OPT_DIRVIEW_SORT_COLUMN : OPT_DIRVIEW_SORT_COLUMN3);
 	if (sortCol < 0 || sortCol >= m_pColItems->GetColCount())
 		return;
 
+	const bool comparing =
+		GetDocument()->m_diffThread.GetThreadState() == CDiffThread::THREAD_COMPARING;
+
+	// Do not sort by columns whose values are updated asynchronously,
+	// as this may violate the strict weak ordering required by std::stable_sort.
+	if (comparing && !m_pColItems->IsColSortableWhileComparing(sortCol))
+		return;
+	
 	bool bSortAscending = GetOptionsMgr()->GetBool(OPT_DIRVIEW_SORT_ASCENDING);
 	m_ctlSortHeader.SetSortImage(m_pColItems->ColLogToPhys(sortCol), bSortAscending);
 	//sort using static CompareFunc comparison function
@@ -1880,7 +1884,7 @@ void CDirView::OpenSelectionAs(int sel1, int sel2, int sel3, UINT id)
 	if (ID_UNPACKERS_FIRST <= id && id <= ID_UNPACKERS_LAST)
 	{
 		PackingInfo infoUnpackerAlt(
-				CMainFrame::GetPluginPipelineByMenuId(id, FileTransform::UnpackerEventNames, ID_UNPACKERS_FIRST));
+				PluginMenu::GetPluginPipelineByMenuId(nullptr, id, FileTransform::UnpackerEventNames, ID_UNPACKERS_FIRST));
 		CMainFrame::OpenFolderParams openFolderParams(ctxt.m_bRecursive);
 		GetMainFrame()->DoFileOrFolderOpen(&paths, dwFlags, strDesc, _T(""),
 			nullptr, &infoUnpackerAlt, infoPrediffer, 0, &openFolderParams);
@@ -2921,7 +2925,7 @@ LRESULT CDirView::OnUpdateUIMessage(WPARAM wParam, LPARAM lParam)
 		if (m_elapsed > TimeToSignalCompare * CLOCKS_PER_SEC)
 			MessageBeep(IDOK);
 		GetMainFrame()->StartFlashing();
-		CMergeFrameCommon::LogComparisonCompleted(*ctxt.m_pCompareStats);
+		MergeLogger::LogComparisonCompleted(*ctxt.m_pCompareStats);
 
 		if (m_bTreeMode && ctxt.m_pRenameMoveDetection && ctxt.m_pRenameMoveDetection->HasMergedMovedItems())
 		{
@@ -4667,8 +4671,8 @@ void CDirView::OnUpdateNoUnpacker(CCmdUI *pCmdUI)
 		return;
 
 	String filteredFilenames = GetDiffContext().GetFilteredFilenames(*GetItemKey(sel));
-	CMainFrame::AppendPluginMenus(pCmdUI->m_pMenu, filteredFilenames,
-		FileTransform::UnpackerEventNames, true, ID_UNPACKERS_FIRST);
+	PluginMenu::AppendPluginMenus(pCmdUI->m_pMenu, nullptr, filteredFilenames,
+		FileTransform::UnpackerEventNames, PluginMenu::AddAllMenu|PluginMenu::AddSelectMenu, ID_UNPACKERS_FIRST);
 }
 
 void CDirView::OnViewCompareStatistics()
@@ -4977,8 +4981,9 @@ void CDirView::OnBeginDrag(NMHDR* pNMHDR, LRESULT* pResult)
 void CDirView::OnStatusBarClick(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	*pResult = 0;
-	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
-	switch (pNMItemActivate->iItem)
+	LPNMMOUSE pNMMouse = reinterpret_cast<LPNMMOUSE>(pNMHDR);
+	int index = static_cast<int>(pNMMouse->dwItemSpec);
+	switch (index)
 	{
 	case 0:
 		break;
@@ -5010,8 +5015,8 @@ void CDirView::OnStatusBarClick(NMHDR* pNMHDR, LRESULT* pResult)
 	case 4:
 	case 5:
 	{
-		const int index = std::clamp(pNMItemActivate->iItem - 3, 0, GetDocument()->m_nDirs - 1);
-		GetDocument()->SetReadOnly(index, !GetDocument()->GetReadOnly(index));
+		const int idx = std::clamp(index - 3, 0, GetDocument()->m_nDirs - 1);
+		GetDocument()->SetReadOnly(idx, !GetDocument()->GetReadOnly(idx));
 		break;
 	}
 	default:

@@ -102,12 +102,14 @@ BOOL CMainFrame::LoadToolBar()
 	CToolBarCtrl& toolbarCtrl = m_wndToolBar.GetToolBarCtrl();
 	const int cx = MulDiv(16, GetSystemMetrics(SM_CXSMICON), 16);
 	const int cy = MulDiv(15, GetSystemMetrics(SM_CYSMICON), 16);
-	m_imgListToolBar.Detach();
-	m_imgListToolBar.Create(cx, cy, ILC_COLOR32, ICON_COUNT, 0);
-	CBitmap bm;
-	bm.Attach(LoadBitmapAndConvertTo32bit(AfxGetInstanceHandle(), IDR_MAINFRAME, cx * ICON_COUNT, cy, false, RGB(0xc0, 0xc0, 0xc0)));
-	m_imgListToolBar.Add(&bm, nullptr);
+	if (!LoadPngResourceToImageList(AfxGetInstanceHandle(), IDR_TOOLBAR_PNG, ICON_COUNT, cx, cy, m_imgListToolBar, &m_imgListToolBarDisabled))
+	{
+		TRACE(_T("LoadToolBar: failed to load IDR_TOOLBAR_PNG\n"));
+		return FALSE;
+	}
 	if (CImageList* pImgList = toolbarCtrl.SetImageList(&m_imgListToolBar))
+		pImgList->DeleteImageList();
+	if (CImageList* pImgList = toolbarCtrl.SetDisabledImageList(&m_imgListToolBarDisabled))
 		pImgList->DeleteImageList();
 	toolbarCtrl.SetButtonSize({ cx + 8, cy + 8 });
 	return TRUE;

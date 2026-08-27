@@ -44,6 +44,8 @@
 #include "DirViewColItems.h"
 #include "RenameMoveDetection.h"
 #include "Shell.h"
+#include "MergeLogger.h"
+#include "MergeTextFormatter.h"
 #include <Poco/Semaphore.h>
 #include <set>
 
@@ -202,7 +204,7 @@ void CDirDoc::InitCompare(const PathContext & paths, bool bRecursive, CTempPathC
 			m_pTempPathContext->m_strRoot[nIndex] = m_pCtxt->GetNormalizedPath(nIndex);
 	}
 
-	CMergeFrameCommon::LogComparisonStart(paths, m_strDesc, nullptr, nullptr);
+	MergeLogger::LogComparisonStart(paths, m_strDesc, nullptr, nullptr);
 }
 
 
@@ -269,6 +271,7 @@ void CDirDoc::InitDiffContext(CDiffContext *pCtxt)
 	pCtxt->m_bIgnoreCodepage = pOptions->GetBool(OPT_CMP_IGNORE_CODEPAGE);
 	pCtxt->m_bEnableImageCompare = pOptions->GetBool(OPT_CMP_ENABLE_IMGCMP_IN_DIRCMP);
 	pCtxt->m_dColorDistanceThreshold = pOptions->GetInt(OPT_CMP_IMG_THRESHOLD) / 1000.0;
+	pCtxt->m_bPreferWICDecoder = pOptions->GetBool(OPT_CMP_IMG_PREFER_WIC_DECODER);
 
 	m_imgfileFilter.SetMaskOrExpression(pOptions->GetString(OPT_CMP_IMG_FILEPATTERNS));
 	pCtxt->m_pImgfileFilter = &m_imgfileFilter;
@@ -320,14 +323,6 @@ void CDirDoc::InitDiffContext(CDiffContext *pCtxt)
 	pCtxt->m_piPluginInfos = pOptions->GetBool(OPT_PLUGINS_ENABLED) ? &m_pluginman : nullptr;
 
 	CheckFilter();
-	FilterExpression::SetLogger([](int level, const std::string& msg) {
-		if (level == 0)
-			RootLogger::Error(msg);
-		else if (level == 1)
-			RootLogger::Warn(msg);
-		else
-			RootLogger::Info(msg);
-		});
 }
 
 void CDirDoc::CheckFilter()
@@ -921,7 +916,7 @@ void CDirDoc::SetTitle(LPCTSTR lpszTitle)
  */
 CString CDirDoc::GetTooltipString() const
 {
-	return CMergeFrameCommon::GetTooltipString(m_pCtxt->GetNormalizedPaths(), m_strDesc, nullptr, nullptr).c_str();
+	return MergeTextFormatter::GetTooltipString(m_pCtxt->GetNormalizedPaths(), m_strDesc, nullptr, nullptr).c_str();
 }
 
 /**

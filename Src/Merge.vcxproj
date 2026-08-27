@@ -922,6 +922,15 @@
   <ItemGroup>
     <ClCompile Include="FileCmpReport.cpp" />
     <ClCompile Include="FileCmpReportDlg.cpp" />
+    <ClCompile Include="MergeLogger.cpp">
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="MergeTextFormatter.cpp">
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="PluginMenu.cpp" />
     <ClCompile Include="SyntaxParserHelper.cpp">
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
@@ -1026,6 +1035,8 @@
     <ClInclude Include="LineFilterBar.h" />
     <ClInclude Include="LineFilterHelper.h" />
     <ClInclude Include="LineFilterHelperMenu.h" />
+    <ClInclude Include="MergeLogger.h" />
+    <ClInclude Include="MergeTextFormatter.h" />
     <ClInclude Include="MruHelper.h" />
     <ClInclude Include="I18n.h" />
     <ClInclude Include="I18nGUI.h" />
@@ -1480,6 +1491,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="TableProps.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)2.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
     <ClCompile Include="TempFile.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -1572,6 +1588,7 @@
     <ClInclude Include="HashCalc.h" />
     <ClInclude Include="IDirDoc.h" />
     <ClInclude Include="InternalPlugins.h" />
+    <ClInclude Include="PluginMenu.h" />
     <ClInclude Include="RenameMoveDetection.h" />
     <ClInclude Include="MyColorDialog.h" />
     <ClInclude Include="MyFontDialog.h" />
@@ -1757,6 +1774,7 @@
     <ClInclude Include="stringdiffsi.h" />
     <ClInclude Include="Common\SuperComboBox.h" />
     <ClInclude Include="SyntaxParserHelper.h" />
+    <ClInclude Include="TableProps.h" />
     <ClInclude Include="TempFile.h" />
     <ClInclude Include="TestMain.h" />
     <ClInclude Include="TestFilterDlg.h" />

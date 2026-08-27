@@ -112,6 +112,7 @@
 #define IDI_ROTATE2                     302
 #define IDR_LOGO                        307
 #define IDR_MARGIN_ICONS_PNG            310
+#define IDR_TOOLBAR_ENABLED32_PNG       312
 #define IDB_EDIT_COPY                   316
 #define IDB_EDIT_CUT                    317
 #define IDB_EDIT_PASTE                  318
@@ -163,7 +164,6 @@
 #define IDB_MOVE_LEFT_TO_BROWSE         367
 #define IDB_MOVE_MIDDLE_TO_BROWSE       368
 #define IDB_MOVE_RIGHT_TO_BROWSE        369
-#define IDB_TOOLBAR_ENABLED32           370
 #define IDB_VIEW_ZOOMIN                 371
 #define IDB_VIEW_ZOOMOUT                372
 #define IDB_FILE_NEW3                   373
@@ -176,7 +176,6 @@
 #define IDB_MERGE_COMPARE_LEFT2_RIGHT1  380
 #define IDB_COPY_FROM_LEFT              381
 #define IDB_COPY_FROM_RIGHT             382
-#define IDB_TOOLBAR_ENABLED             383
 #define IDB_FILE_NEW_TABLE              384
 #define IDB_FILE_NEW_HEX                385
 #define IDB_FILE_NEW_IMAGE              386
@@ -231,6 +230,7 @@
 #define IDI_TREE_STATE_COLLAPSED        535
 #define IDI_TREE_STATE_EXPANDED         536
 #define IDI_FILE                        537
+#define IDI_PLUGINS                     538
 #define IDC_PATH0_BUTTON                1001
 #define IDC_PATH1_BUTTON                1002
 #define IDC_PATH2_BUTTON                1003
@@ -553,10 +553,11 @@
 #define IDC_SYNTAX_LIST                 1393
 #define IDC_COMPAREIMAGE_PATTERNS       1394
 #define IDC_COMPAREIMAGE_OCR_RESULT_TYPE 1396
-#define IDC_COMPAREBINARY_PATTERNS      1397
-#define IDC_COMPAREBINARY_VIEWSETTINGS  1398
-#define IDC_COMPAREBINARY_BINARYMODE    1399
-#define IDC_COMPAREBINARY_CHARACTERSET  1400
+#define IDC_COMPAREIMAGE_PREFER_WIC_DECODER 1397
+#define IDC_COMPAREBINARY_PATTERNS      1400
+#define IDC_COMPAREBINARY_VIEWSETTINGS  1401
+#define IDC_COMPAREBINARY_BINARYMODE    1402
+#define IDC_COMPAREBINARY_CHARACTERSET  1403
 #define IDC_ARCHIVE_LIST                1430
 #define IDC_ARCHIVE_FILE                1431
 #define IDC_ARCHIVE_BROWSE              1432
@@ -1269,6 +1270,10 @@
 #define ID_LASTFILE                     34185
 #define ID_USE_FIRST_LINE_AS_HEADERS    34190
 #define ID_AUTO_FIT_ALL_COLUMNS         34191
+#define ID_IGNORE_COLUMN_IN_COMPARISON  34192
+#define ID_IGNORE_COLUMN_IN_COMPARISON_THIS_PANE_ONLY 34193
+#define ID_IGNORE_COLUMN_IN_COMPARISON_RESET 34194
+#define ID_IGNORE_COLUMN_IN_COMPARISON_CTRL_CLICK_TO_ADD_HINT 34195
 #define ID_UNPACKERS_FIRST              35001
 #define ID_UNPACKERS_LAST               35200
 #define ID_PREDIFFERS_FIRST             35201
@@ -1745,7 +1750,6 @@
 #define IDS_LINE_STATUS_INFO_EOL        40832
 #define IDS_EMPTY_LINE_STATUS_INFO      40833
 #define IDS_LINE_STATUS_INFO            40834
-#define IDS_MERGEMODE_MERGING           40835
 #define IDS_DIFF_NUMBER_STATUS_FMT      40836
 #define IDS_NO_DIFF_SEL_FMT             40837
 #define IDS_1_DIFF_FOUND                40838
@@ -1777,16 +1781,16 @@
 #define IDS_NOT_CONFLICT_FILE           41223
 #define IDS_SAVE_AS_TITLE               41232
 #define IDS_SAVE_FMT                    41233
-#define IDS_SAVEREADONLY_FMT            41234
+#define IDS_SAVEREADONLY_FMT            41234 // Persistent key for "Don't ask again"
 #define IDS_ERROR_BACKUP                41236
-#define IDS_BACKUP_FAILED_PROMPT        41237
+#define IDS_BACKUP_FAILED_PROMPT        41237 // Persistent key for "Don't ask again"
 #define IDS_FILESAVE_FAILED             41238
 #define IDS_FILEPACK_FAILED_LEFT        41239
 #define IDS_FILEPACK_FAILED_MIDDLE      41240
 #define IDS_FILEPACK_FAILED_RIGHT       41241
 #define IDS_FILECHANGED_ONDISK          41242
-#define IDS_SAVEREADONLY_MULTI          41243
-#define IDS_FILECHANGED_RESCAN          41244
+#define IDS_SAVEREADONLY_MULTI          41243 // Persistent key for "Don't ask again"
+#define IDS_FILECHANGED_RESCAN          41244 // Persistent key for "Don't ask again"
 #define IDS_SAVE_LEFT_AS                41245
 #define IDS_SAVE_MIDDLE_AS              41246
 #define IDS_SAVE_RIGHT_AS               41247
@@ -1838,7 +1842,7 @@
 #define IDS_FILES_AFFECTED_FMT          41690
 #define IDS_FILES_AFFECTED_FMT2         41691
 #define IDS_CONFIRM_DELETE_SINGLE       41692
-#define IDS_CONFIRM_SINGLE_COPY         41693
+#define IDS_CONFIRM_SINGLE_COPY         41693 // Persistent key for "Don't ask again"
 #define IDS_CONFIRM_MULTIPLE_COPY       41694
 #define IDS_DIRCMP_NOTSYNC              41695
 #define IDS_CONFIRM_SINGLE_MOVE         41696
@@ -1846,11 +1850,11 @@
 #define IDS_CONFIRM_COPY_CAPTION        41698
 #define IDS_CONFIRM_MOVE_CAPTION        41699
 #define IDS_CONFIRM_CLOSE_WINDOW_COMPARING 41700
-#define IDS_CONFIRM_CLOSE_WINDOW_LONG_COMPARISON 41701
+#define IDS_CONFIRM_CLOSE_WINDOW_LONG_COMPARISON 41701 // Persistent key for "Don't ask again"
 #define IDS_ERROR_INVALID_DIR_FILE_NAME 41702
 #define IDS_ERROR_EXECUTE_FILE          41719
 #define IDS_UNKNOWN_ARCHIVE_FORMAT      41731
-#define IDS_FAILED_EXTRACT_ARCHIVE_FILES 41732
+#define IDS_FAILED_EXTRACT_ARCHIVE_FILES 41732 // Persistent key for "Don't ask again"
 #define IDS_COLHDR_FILENAME             41751
 #define IDS_COLHDR_DIR                  41752
 #define IDS_COLHDR_RESULT               41753
@@ -1992,28 +1996,28 @@
 #define IDS_REPORT_TABLIST              41991
 #define IDS_REPORT_SIMPLEHTML           41992
 #define IDS_REPORT_SIMPLEXML            41993
-#define IDS_REPORT_FILEOVERWRITE        41994
+#define IDS_REPORT_FILEOVERWRITE        41994 // Persistent key for "Don't ask again"
 #define IDS_REPORT_ERROR                41995
 #define IDS_REPORT_SUCCESS              41996
 #define IDS_SYNCPOINT_LASTBLOCK         42000
-#define IDS_FILE_TO_ITSELF              42100
-#define IDS_FILESSAME                   42101
+#define IDS_FILE_TO_ITSELF              42100 // Persistent key for "Don't ask again"
+#define IDS_FILESSAME                   42101 // Persistent key for "Don't ask again"
 #define IDS_FILESSAME_CURCFG            42102
 #define IDS_FILESSAME_BINERROR          42103
 #define IDS_FILESSAME_BINSAME           42104
 #define IDS_FILESSAME_BINDIFF           42105
 #define IDS_FILEERROR                   42107
 #define IDS_TEMP_FILEERROR              42108
-#define IDS_SUGGEST_IGNOREEOL           42109
+#define IDS_SUGGEST_IGNOREEOL           42109 // Persistent key for "Don't ask again"
 #define IDS_INVALID_DIRECTORY           42110
 #define IDS_CANNOT_OPEN_BINARYFILE      42111
-#define IDS_CREATE_PAIR_FOLDER          42112
-#define IDS_MOVE_TO_NEXTFILE            42113
-#define IDS_MOVE_TO_PREVFILE            42114
-#define IDS_MOVE_TO_NEXTPAGE            42115
-#define IDS_MOVE_TO_PREVPAGE            42116
-#define IDS_MOVE_TO_FIRSTFILE           42117
-#define IDS_MOVE_TO_LASTFILE            42118
+#define IDS_CREATE_PAIR_FOLDER          42112 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_NEXTFILE            42113 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_PREVFILE            42114 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_NEXTPAGE            42115 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_PREVPAGE            42116 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_FIRSTFILE           42117 // Persistent key for "Don't ask again"
+#define IDS_MOVE_TO_LASTFILE            42118 // Persistent key for "Don't ask again"
 #define IDS_SUGGEST_IGNORECODEPAGE      42131
 #define IDS_LOSSY_TRANSCODING_FIRST     42132
 #define IDS_LOSSY_TRANSCODING_SECOND    42133
@@ -2021,16 +2025,16 @@
 #define IDS_LOSSY_TRANSCODING_BOTH      42135
 #define IDS_LINEDIFF_NODIFF             42151
 #define IDS_LINEDIFF_NODIFF_CAPTION     42152
-#define IDS_NUM_REPLACED                42161
+#define IDS_NUM_REPLACED                42161 // Persistent key for "Don't ask again"
 #define IDS_EDIT_TEXT_NOT_FOUND         42162
-#define IDS_MERGE_MODE                  42181
+#define IDS_MERGE_MODE                  42181 // Persistent key for "Don't ask again"
 #define IDS_LOCBAR_CAPTION              42201
 #define IDS_DIFFBAR_CAPTION             42202
 #define IDS_OUTPUTBAR_CAPTION           42203
 #define IDS_ARCHIVE_SUCCEEDED           42300
 #define IDS_ARCHIVE_SAVEFILES           42301
-#define IDS_DIFF_SUCCEEDED              42400
-#define IDS_DIFF_FILEOVERWRITE          42403
+#define IDS_DIFF_SUCCEEDED              42400 // Persistent key for "Don't ask again"
+#define IDS_DIFF_FILEOVERWRITE          42403 // Persistent key for "Don't ask again"
 #define IDS_DIFF_SELECTEDFILES          42404
 #define IDS_DIFF_NORMAL                 42405
 #define IDS_DIFF_CONTEXT                42406
@@ -2039,7 +2043,7 @@
 #define IDS_FILEWRITE_ERROR             42409
 #define IDS_PATH_NOT_ABSOLUTE           42410
 #define IDS_MUST_SPECIFY_OUTPUT         42411
-#define IDS_CANNOT_CREATE_BINARYPATCH   42412
+#define IDS_CANNOT_CREATE_BINARYPATCH   42412 // Persistent key for "Don't ask again"
 #define IDS_SAVEFILES_FORPATCH          42414
 #define IDS_FOLDER_NOTEXIST             42415
 #define IDS_RENAME_MOVE_DETECTION_DISALBED     42420
@@ -2052,7 +2056,7 @@
 #define IDS_RENAMED_MOVED               42427
 #define IDS_RENAMED_MOVED_ITEMS         42428
 #define IDS_RENAMED_MOVED_RESULT        42429
-#define IDS_SWITCH_FLAT_MODE            42430
+#define IDS_SWITCH_FLAT_MODE            42430 // Persistent key for "Don't ask again"
 #define IDS_NO_ZIP_SUPPORT              42449
 #define IDS_OPT_EXPORT_CAPTION          42452
 #define IDS_OPT_IMPORT_CAPTION          42453
@@ -2067,7 +2071,7 @@
 #define IDS_UNK_ERROR_SAVING_PROJECT    42511
 #define IDS_PROJFILE_LOAD_SUCCESS       42513
 #define IDS_PROJFILE_SAVE_SUCCESS       42514
-#define IDS_PROJFILE_CONTAIN_PLUGIN_ARGS 42515
+#define IDS_PROJFILE_CONTAIN_PLUGIN_ARGS 42515 // Persistent key for "Don't ask again"
 #define IDS_TEXT_REPORT_FILES           42540
 #define IDS_HTML_REPORT_FILES           42541
 #define IDS_XML_REPORT_FILES            42542
@@ -2180,7 +2184,7 @@
 #define IDS_IMGCMP_STATUS_FLIPPED_FMT   44154
 #define IDS_IMGCMP_STATUS_ROTATED_FMT   44155
 #define IDS_IMGCMP_REPORT_ALLPAGES      44156
-#define IDS_COMPARE_LARGE_FILES         44165
+#define IDS_COMPARE_LARGE_FILES         44165 // Persistent key for "Don't ask again"
 #define IDS_OCRRESULT_TEXTONLY          44166
 #define IDS_OCRRESULT_POS_LINE          44167
 #define IDS_OCRRESULT_POS_WORD          44168
@@ -2226,6 +2230,7 @@
 #define IDS_PLUGIN_TARGETS_1ST_2ND      44504
 #define IDS_PLUGIN_TARGETS_1ST_3RD      44505
 #define IDS_PLUGIN_TARGETS_2ND_3RD      44506
+#define IDS_PLUGIN_CTRL_CLICK           44507
 #define IDS_L2M                         44600
 #define IDS_R2M                         44601
 #define IDS_COPY_FROM_MIDDLE_R          44602
@@ -2240,7 +2245,7 @@
 #define IDS_CLIPBOARDHISTORY_NOT_SUPPORTED2 44613
 #define IDS_WEBVIEW2_RUNTIME_NOT_INSTALLED 44614
 #define IDS_PROJECT_ITEM_HIDDEN_ITEMS   44615
-#define IDS_CONFIRM_COPY_ALL_DIFFS      44616
+#define IDS_CONFIRM_COPY_ALL_DIFFS      44616 // Persistent key for "Don't ask again"
 #define IDS_JUMPLIST_NEW_TEXT_COMPARE   44617
 #define IDS_JUMPLIST_NEW_TABLE_COMPARE  44618
 #define IDS_JUMPLIST_NEW_BINARY_COMPARE 44619
@@ -2268,7 +2273,7 @@
 #define IDS_COPY_GRANULARITY_LINE       44643
 #define IDS_COPY_GRANULARITY_Character  44644
 #define IDS_VIEW_MENU_BAR               44645
-#define IDS_ONLYDIFFITEMS_CONFIRM       44646
+#define IDS_ONLYDIFFITEMS_CONFIRM       44646 // Persistent key for "Don't ask again"
 #define IDS_LOG_COMPARING_2             44650
 #define IDS_LOG_COMPARING_3             44651
 #define IDS_LOG_COMPARE_COMPLETED       44652
@@ -2297,6 +2302,7 @@
 #define IDS_FILTER_ERROR_UNKNOWN_ERROR  44675
 #define IDS_FILTER_ERROR_INVALID_PROPERTY_NAME 44676
 #define IDS_FILTER_ERROR_INVALID_DIRECTIVE 44677
+#define IDS_FILTER_ERROR_INVALID_ARGUMENT 44678
 #define IDS_FILTER_OP_EQUALS            44680
 #define IDS_FILTER_OP_NOT_EQUALS        44681
 #define IDS_FILTER_OP_LESS_THAN         44682
@@ -2324,6 +2330,9 @@
 #define IDS_HILITE_SYNTAX_MODE_BUILT_IN_FIRST 44725
 #define IDS_HILITE_SYNTAX_MODE_TREE_SITTER_FIRST 44726
 #define IDS_HILITE_SYNTAX_MODE_TREE_SITTER_ONLY 44727
+#define IDS_MDIBUTTONS_AUTOHIDE         44730
+#define IDS_MDIBUTTONS_ALWAYSSHOW       44731
+#define IDS_MDIBUTTONS_ALWAYSHIDE       44732
 
 // Next default values for new objects
 // 
@@ -2331,7 +2340,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        290
-#define _APS_NEXT_COMMAND_VALUE         34194
+#define _APS_NEXT_COMMAND_VALUE         38931
 #define _APS_NEXT_CONTROL_VALUE         1696
 #define _APS_NEXT_SYMED_VALUE           134
 #endif
