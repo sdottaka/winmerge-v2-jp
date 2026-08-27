@@ -2,6 +2,50 @@
 title: 変更履歴
 ---
 
+### 2026/08/29 2.16.58-jp-3
+
+#### 外観
+
+* 不具合修正: 高 DPI 時のツールバーアイコン間隔が狭すぎる問題を修正した。
+
+* ツールバーおよびマージンのアイコンを BMP から PNG に変更した。([PR #3510](https://github.com/WinMerge/winmerge/pull/3510))
+
+* メニューバーにMDI ウィンドウのコントロール(最小化／最大化／閉じる)を常に表示するか常に非表示にするコンテキストメニューを追加した。([#3511](https://github.com/WinMerge/winmerge/issues/3511))
+
+#### ファイル比較
+
+* 不具合修正: 表示行フィルタ適用時、単語単位の差異表示が正しく行われないことがある問題を修正した。([#3535](https://github.com/WinMerge/winmerge/issues/3535))
+
+* 不具合修正: 単語選択後のShift+Ctrl+左/右の選択ができないことがある問題を修正した。([#3521](https://github.com/WinMerge/winmerge/issues/3521))
+
+* 表示行フィルタ適用時の表示速度を改善した。([PR #3517](https://github.com/WinMerge/winmerge/pull/3517))
+
+* 画像比較時の画像読み込みで WIC デコーダーを優先するオプションを追加した。([PR #3537](https://github.com/WinMerge/winmerge/pull/3537))
+
+### フォルダー比較
+
+* 不具合修正: 比較中にソートしても安全な列であれば比較中にソートできるようにした。([#3579](https://github.com/WinMerge/winmerge/issues/3579))([PR #3581](https://github.com/WinMerge/winmerge/pull/3581))
+
+#### フィルター式
+
+* 不具合修正: `none`と`+` での文字列連結で結果が`none`にならないようにした。([#3550](https://github.com/WinMerge/winmerge/issues/3550))
+
+#### マージモード
+
+* マージモードインジケーターをクリック可能にし、幅を縮小した。([PR #3529](https://github.com/WinMerge/winmerge/pull/3529))
+
+#### プラグイン
+
+* 不具合修正: `BUFFER_PACK_UNPACK` プラグインの出力で最後のバイトが失われるオフバイワンバグを修正した。
+
+* ステータスバーにプラグイン選択ボタンを追加した。([PR #3518](https://github.com/WinMerge/winmerge/pull/3518))
+
+* メニューからパイプラインにプラグインを追加できるようにした。([PR #3523](https://github.com/WinMerge/winmerge/pull/3523))
+
+* プラグインパイプラインにフィルター式を追加した。([PR #3530](https://github.com/WinMerge/winmerge/pull/3530))([PR #3540](https://github.com/WinMerge/winmerge/pull/3540))
+
+* AI プラグインに MiniMax プロバイダーのサポートを追加した。([PR #3499](https://github.com/WinMerge/winmerge/pull/3499))
+
 ### 2026/07/29 2.16.58-jp-1
 
 #### 全般

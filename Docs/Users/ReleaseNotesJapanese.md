@@ -1,19 +1,66 @@
-# WinMerge 2.16.58 リリースノート
+# WinMerge 2.16.58.2 リリースノート
 
 - [このリリースについて](#about-this-release)
+- [2.16.58.2 の更新内容](#what-is-new-in-216582)
 - [2.16.58 の更新内容](#what-is-new-in-21658)
 - [2.16.57 beta の更新内容](#what-is-new-in-21657-beta)
 - [既知の問題](#known-issues)
 
-2026年7月
+2026年8月
 
 ## このリリースについて
 
-WinMerge の 2.16.58 安定版リリースです。  
+WinMerge の 2.16.58.2 安定版リリースです。  
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は https://github.com/WinMerge/winmerge/issues で報告してください。  
 日本語での報告は、https://sourceforge.net/p/winmerge-v2-jp/tickets/ でお願いします。
+
+## 2.16.58.2 の更新内容
+
+### 外観
+
+* 不具合修正: 高 DPI 時のツールバーアイコン間隔が狭すぎる問題を修正した。
+
+### ファイル比較
+
+* 不具合修正: 表示行フィルタ適用時、単語単位の差異表示が正しく行われないことがある問題を修正した。([#3535](https://github.com/WinMerge/winmerge/issues/3535))
+
+* 不具合修正: 単語選択後のShift+Ctrl+左/右の選択ができないことがある問題を修正した。([#3521](https://github.com/WinMerge/winmerge/issues/3521))
+
+* 表示行フィルタ適用時の表示速度を改善した。([PR #3517](https://github.com/WinMerge/winmerge/pull/3517))
+
+### フォルダー比較
+
+* 不具合修正: 比較中にソートしても安全な列であれば比較中にソートできるようにした。([#3579](https://github.com/WinMerge/winmerge/issues/3579))([PR #3581](https://github.com/WinMerge/winmerge/pull/3581))
+
+### フィルター式
+
+* 不具合修正: `none`と`+` での文字列連結で結果が`none`にならないようにした。([#3550](https://github.com/WinMerge/winmerge/issues/3550))
+
+### アーカイブ生成
+
+* 不具合修正: 片方にしかないファイルを含められるように修正した。
+
+### プラグイン
+
+* 不具合修正: `BUFFER_PACK_UNPACK` プラグインの出力で最後のバイトが失われるオフバイワンバグを修正した。
+
+### 翻訳
+
+* 翻訳の更新:
+
+  * Brazilian (PR #3508)
+  * Chinese Simplified (PR #3493)
+  * Chinese Traditional (PR #3505)
+  * Hungarian (PR #3502)
+  * Polish (PR #3501)
+  * Russian (PR #3494)
+  * Turkish (PR #3506)
+
+### マニュアル
+
+* 不具合修正: スペイン語の"Filters" ページの文法エラーを修正した。
 
 ## 2.16.58 の更新内容
 
