@@ -22,7 +22,7 @@ title: 変更履歴
 
 * 画像比較時の画像読み込みで WIC デコーダーを優先するオプションを追加した。([PR #3537](https://github.com/WinMerge/winmerge/pull/3537))
 
-### フォルダー比較
+#### フォルダー比較
 
 * 不具合修正: 比較中にソートしても安全な列であれば比較中にソートできるようにした。([#3579](https://github.com/WinMerge/winmerge/issues/3579))([PR #3581](https://github.com/WinMerge/winmerge/pull/3581))
 
@@ -36,7 +36,7 @@ title: 変更履歴
 
 * マージモードインジケーターをクリック可能にし、幅を縮小した。([PR #3529](https://github.com/WinMerge/winmerge/pull/3529))
 
-### アーカイブサポート
+#### アーカイブサポート
 
 * 不具合修正: ZIPファイル内のフォルダーが比較できない問題を修正した。(#3588)
 
