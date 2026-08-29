@@ -56,12 +56,19 @@ vertical-align: middle;
 </ul>
 <h4 id="フィルター式">フィルター式</h4>
 <ul>
-<li>不具合修正: <code>none</code>と<code>+</code>
-での文字列連結で結果が<code>none</code>にならないようにした。(<a href="https://github.com/WinMerge/winmerge/issues/3550">#3550</a>)</li>
+<li><p>不具合修正: <code>none</code>と<code>+</code>
+での文字列連結で結果が<code>none</code>にならないようにした。(<a href="https://github.com/WinMerge/winmerge/issues/3550">#3550</a>)</p></li>
+<li><p>不具合修正: contains
+演算子で大文字小文字のみの違いがある文字列を検索できないことがある問題を修正した。(#3586)</p></li>
 </ul>
 <h4 id="マージモード">マージモード</h4>
 <ul>
 <li>マージモードインジケーターをクリック可能にし、幅を縮小した。(<a href="https://github.com/WinMerge/winmerge/pull/3529">PR #3529</a>)</li>
+</ul>
+<h3 id="アーカイブサポート">アーカイブサポート</h3>
+<ul>
+<li>不具合修正:
+ZIPファイル内のフォルダーが比較できない問題を修正した。(#3588)</li>
 </ul>
 <h4 id="プラグイン">プラグイン</h4>
 <ul>
@@ -75,6 +82,8 @@ vertical-align: middle;
 #3540</a>)</p></li>
 <li><p>AI プラグインに MiniMax プロバイダーのサポートを追加した。(<a href="https://github.com/WinMerge/winmerge/pull/3499">PR
 #3499</a>)</p></li>
+<li><p>AI プラグイ: ローカル LLM
+とOpenAI互換APIサポートを追加(#3589)</p></li>
 </ul>
 <h3 id="20260729-21658-jp-1">2026/07/29 2.16.58-jp-1</h3>
 <h4 id="全般">全般</h4>
@@ -121,7 +130,7 @@ vertical-align: middle;
 <ul>
 <li>比較結果をアーカイブとして作成できるようにした。(<a href="https://github.com/WinMerge/winmerge/pull/3483">PR #3483</a>)</li>
 </ul>
-<h4 id="アーカイブサポート">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-1">アーカイブサポート</h4>
 <ul>
 <li>7-Zip を 26.02 に更新した。</li>
 </ul>
@@ -143,7 +152,7 @@ vertical-align: middle;
 <li>不具合修正:
 ファイル名変更中に[マージ]→[削除]メニューを実行するとクラッシュすることがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3411">#3411</a>)</li>
 </ul>
-<h4 id="アーカイブサポート-1">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-2">アーカイブサポート</h4>
 <ul>
 <li>不具合修正:
 RAR4形式ファイルのファイル比較時に不要なエラーメッセージボックスが表示される問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3392">#3392</a>)</li>
@@ -207,7 +216,7 @@ WebP形式等のファイルが開けなくなった問題を修正した。</p>
 <li><p>clip:// URLハンドラーを追加した。<a href="https://github.com/WinMerge/winmerge/pull/3352">(PR
 #3352)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-2">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-3">アーカイブサポート</h4>
 <ul>
 <li>7-Zip を 26.01 に更新した。</li>
 </ul>
@@ -229,7 +238,7 @@ OpenFolderParams に移動した。<a href="https://github.com/WinMerge/winmerge
 <li><p>コードページフィルタ UI と HasBOM フィールド対応を追加した。<a href="https://github.com/WinMerge/winmerge/pull/3318">(PR
 #3318)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-3">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-4">アーカイブサポート</h4>
 <ul>
 <li><p>アーカイブ検出に 7-Zip IsArc API
 を使用し、フォーマット推定ロジックをリファクタリングした。<a href="https://github.com/WinMerge/winmerge/pull/3323">(PR
@@ -340,7 +349,7 @@ DecompileJVM を追加した。<a href="https://github.com/WinMerge/winmerge/pul
 <li><p>CompareMSExcelFiles プラグイン:
 設定ウィンドウに「ファイル名にシート番号を含める」を追加し、チェックを外した場合はファイル名の先頭にシート番号を挿入しないようにした（「ワークブックの情報を複数ファイルに展開する」が有効な場合）。<a href="https://github.com/WinMerge/winmerge/issues/3212">(#3212)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-4">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-5">アーカイブサポート</h4>
 <ul>
 <li>7-Zip をバージョン 26.00 に更新した。</li>
 </ul>

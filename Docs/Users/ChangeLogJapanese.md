@@ -30,9 +30,15 @@ title: 変更履歴
 
 * 不具合修正: `none`と`+` での文字列連結で結果が`none`にならないようにした。([#3550](https://github.com/WinMerge/winmerge/issues/3550))
 
+* 不具合修正: contains 演算子で大文字小文字のみの違いがある文字列を検索できないことがある問題を修正した。(#3586)
+
 #### マージモード
 
 * マージモードインジケーターをクリック可能にし、幅を縮小した。([PR #3529](https://github.com/WinMerge/winmerge/pull/3529))
+
+### アーカイブサポート
+
+* 不具合修正: ZIPファイル内のフォルダーが比較できない問題を修正した。(#3588)
 
 #### プラグイン
 
@@ -45,6 +51,8 @@ title: 変更履歴
 * プラグインパイプラインにフィルター式を追加した。([PR #3530](https://github.com/WinMerge/winmerge/pull/3530))([PR #3540](https://github.com/WinMerge/winmerge/pull/3540))
 
 * AI プラグインに MiniMax プロバイダーのサポートを追加した。([PR #3499](https://github.com/WinMerge/winmerge/pull/3499))
+
+* AI プラグイ: ローカル LLM とOpenAI互換APIサポートを追加(#3589)
 
 ### 2026/07/29 2.16.58-jp-1
 
