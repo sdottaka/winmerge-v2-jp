@@ -24,6 +24,7 @@ ShellExtension32bit=Extensão do Shell de 32 bits do WinMerge
 ;Localization Components
 Languages=Idiomas
 ArabicLanguage=Menus e diálogos em Árabe
+AzerbaijaniLanguage=Menus e diálogos em Azerbaijano
 BasqueLanguage=Menus e diálogos em Basco
 BulgarianLanguage=Menus e diálogos em Búlgaro
 CatalanLanguage=Menus e diálogos em Catalão
@@ -42,6 +43,7 @@ GreekLanguage=Menus e diálogos em Grego
 HebrewLanguage=Menus e diálogos em Hebreu
 HungarianLanguage=Menus e diálogos em Húngaro
 ItalianLanguage=Menus e diálogos em Italiano
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=Menus e diálogos em Japonês
 KoreanLanguage=Menus e diálogos em Coreano
 LithuanianLanguage=Menus e diálogos em Lituano

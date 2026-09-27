@@ -24,6 +24,7 @@ ShellExtension32bit=32-bitowe rozszerzenie powłoki WinMerge
 ;Localization Components
 Languages=Języki
 ArabicLanguage=Arabski
+AzerbaijaniLanguage=Azerbaidżański
 BasqueLanguage=Baskijski
 BulgarianLanguage=Bułgarski
 CatalanLanguage=Kataloński
@@ -42,6 +43,7 @@ GreekLanguage=Grecki
 HebrewLanguage=Hebrajski
 HungarianLanguage=Węgierski
 ItalianLanguage=Włoski
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=Japoński
 KoreanLanguage=Koreański
 LithuanianLanguage=Litewski

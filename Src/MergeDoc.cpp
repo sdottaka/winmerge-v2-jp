@@ -160,10 +160,12 @@ CMergeDoc::CMergeDoc()
 , m_bAutomaticRescan(false)
 , m_bChangedSchemeManually(false)
 , m_editorScriptInfo(_T(""))
+, m_nBuffers(m_nBuffersTemp)
+, m_documentType(m_documentTypeTemp)
+, curUndo(0)
 {
 	DIFFOPTIONS options = {0};
 
-	m_nBuffers = m_nBuffersTemp;
 	m_filePaths.SetSize(m_nBuffers);
 
 	for (int nBuffer = 0; nBuffer < m_nBuffers; nBuffer++)
@@ -178,8 +180,6 @@ CMergeDoc::CMergeDoc()
 	m_bEnableRescan = true;
 	m_bAutomaticRescan = GetOptionsMgr()->GetBool(OPT_AUTOMATIC_RESCAN);
 
-	// COleDateTime m_LastRescan
-	curUndo = undoTgt.begin();
 	m_nDiffContext = GetOptionsMgr()->GetInt(OPT_DIFF_CONTEXT);
 	m_bInvertDiffContext = GetOptionsMgr()->GetBool(OPT_INVERT_DIFF_CONTEXT);
 
@@ -2393,6 +2393,7 @@ void CMergeDoc::SetTableProperties()
 		}
 		m_diffWrapper.SetTableProps(nBuffer, GetCurrentTableProperties(nBuffer));
 	}
+	m_documentType = m_ptBuf[0]->GetTableEditing() ? IMergeDoc::DocumentType::Table : IMergeDoc::DocumentType::Text;
 }
 
 void CMergeDoc::SetTextType(int textType)
@@ -2444,7 +2445,7 @@ bool CMergeDoc::OpenDocs(int nFiles, const FileLocation ifileloc[],
 
 	// clear undo stack
 	undoTgt.clear();
-	curUndo = undoTgt.begin();
+	curUndo = 0;
 
 	// Prevent displaying views during LoadFile
 	// Note : attach buffer again only if both loads succeed
@@ -2923,7 +2924,6 @@ void CMergeDoc::SwapFiles(int nFromIndex, int nToIndex)
 			m_pView[nGroup][nToIndex]->SetDlgCtrlID(nLeftViewId);
 		}
 
-
 		// Swap buffers and so on
 		std::swap(m_ptBuf[nFromIndex], m_ptBuf[nToIndex]);
 		for (int nGroup = 0; nGroup < m_nGroups; ++nGroup)
@@ -2933,6 +2933,14 @@ void CMergeDoc::SwapFiles(int nFromIndex, int nToIndex)
 		std::swap(m_nBufferType[nFromIndex], m_nBufferType[nToIndex]);
 		std::swap(m_bEditAfterRescan[nFromIndex], m_bEditAfterRescan[nToIndex]);
 		std::swap(m_strDesc[nFromIndex], m_strDesc[nToIndex]);
+
+		for (size_t i = 0; i < undoTgt.size(); ++i)
+		{
+			if (undoTgt[i] == nFromIndex)
+				undoTgt[i] = nToIndex;
+			else if (undoTgt[i] == nToIndex)
+				undoTgt[i] = nFromIndex;
+		}
 
 		m_filePaths.Swap(nFromIndex, nToIndex);
 		m_diffList.Swap(nFromIndex, nToIndex);
@@ -3414,13 +3422,6 @@ bool CMergeDoc::GenerateReport(ReportContext& reportContext) const
 	}
 
 	return true;
-}
-
-IMergeDoc::DocumentType CMergeDoc::GetDocumentType() const
-{
-	if (m_ptBuf[0]->GetTableEditing())
-		return IMergeDoc::DocumentType::Table;
-	return IMergeDoc::DocumentType::Text;
 }
 
 /**

@@ -220,6 +220,7 @@ popd
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Translations\ShellExtension\Arabic.po" />
+    <None Include="..\Translations\ShellExtension\Azerbaijani.po" />
     <None Include="..\Translations\ShellExtension\Basque.po" />
     <None Include="..\Translations\ShellExtension\Brazilian.po" />
     <None Include="..\Translations\ShellExtension\Bulgarian.po" />
@@ -240,6 +241,7 @@ popd
     <None Include="..\Translations\ShellExtension\Greek.po" />
     <None Include="..\Translations\ShellExtension\Hebrew.po" />
     <None Include="..\Translations\ShellExtension\Hungarian.po" />
+    <None Include="..\Translations\ShellExtension\Indonesian.po" />
     <None Include="..\Translations\ShellExtension\Italian.po" />
     <None Include="..\Translations\ShellExtension\Japanese.po" />
     <None Include="..\Translations\ShellExtension\Korean.po" />
@@ -263,6 +265,7 @@ popd
     <None Include="..\Translations\ShellExtension\UpdatePoFilesFromPotFile.ps1" />
     <None Include="..\Translations\StripPoComments.ps1" />
     <None Include="..\Translations\WinMerge\Arabic.po" />
+    <None Include="..\Translations\WinMerge\Azerbaijani.po" />
     <None Include="..\Translations\WinMerge\Basque.po" />
     <None Include="..\Translations\WinMerge\Brazilian.po" />
     <None Include="..\Translations\WinMerge\Bulgarian.po" />
@@ -283,6 +286,7 @@ popd
     <None Include="..\Translations\WinMerge\Greek.po" />
     <None Include="..\Translations\WinMerge\Hebrew.po" />
     <None Include="..\Translations\WinMerge\Hungarian.po" />
+    <None Include="..\Translations\WinMerge\Indonesian.po" />
     <None Include="..\Translations\WinMerge\Italian.po" />
     <None Include="..\Translations\WinMerge\Japanese.po" />
     <None Include="..\Translations\WinMerge\Korean.po" />

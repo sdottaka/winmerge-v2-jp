@@ -24,6 +24,7 @@ ShellExtension32bit=32비트 WinMerge 쉘 확장
 ;현지화 구성 요소
 Languages=언어
 ArabicLanguage=아랍어 메뉴 및 대화 상자
+AzerbaijaniLanguage=아제르바이잔 메뉴 및 대화 상자
 BasqueLanguage=바스크 메뉴 및 대화 상자
 BulgarianLanguage=불가리아어 메뉴 및 대화상자
 CatalanLanguage=카탈루냐어 메뉴 및 대화상자
@@ -42,6 +43,7 @@ GreekLanguage=그리스어 메뉴 및 대화 상자
 HebrewLanguage=히브리어 메뉴 및 대화 상자
 HungarianLanguage=헝가리어 메뉴 및 대화 상자
 ItalianLanguage=이탈리아어 메뉴 및 대화 상자
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=일본어 메뉴 및 대화 상자
 KoreanLanguage=한국어 메뉴 및 대화상자
 LithuanianLanguage=리투아니아어 메뉴 및 대화 상자

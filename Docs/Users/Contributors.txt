@@ -29,6 +29,9 @@ Localization:
 * Arabic:
   Downzen team <https://downzen.com>
 
+* Azerbaijani
+  Jamal Ali
+
 * Basque:
   Xabier Aramendi <Azpidatziak@gmail.com>
 
@@ -116,6 +119,9 @@ Localization:
   Mihalicza József <jmihalicza@gmail.com>
   Egyed Ferenc <efi99 at freemail.hu>
   boglarkla
+
+* Indonesian:
+  Yoruxyv
 
 * Italian:
   Andrea Decorte <deco1985@hotmail.com>
@@ -315,6 +321,7 @@ Other Contributors (code, ideas, testing..):
 * ozone10 (darkmodelib)
 * Anthony Lee Stark
 * Gaurav Pasi
+* Ikkoru
 
 WinMerge includes code from:
 * Jared Breland <jbreland@legroom.net> (Installer's modpath script)

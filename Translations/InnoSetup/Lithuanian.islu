@@ -24,6 +24,7 @@ ShellExtension32bit=32-bitų „WinMerge ShellExtension“
 ;Localization Components
 Languages=Kalbos
 ArabicLanguage=Arabų meniu ir dialogai
+AzerbaijaniLanguage=Azerbaidžaniškų meniu ir dialogai
 BasqueLanguage=Baskų meniu ir dialogai
 BulgarianLanguage=Bulgarų meniu ir dialogai
 CatalanLanguage=Katalonų meniu ir dialogai
@@ -42,6 +43,7 @@ GreekLanguage=Graikų meniu ir dialogai
 HebrewLanguage=Hebrajų meniu ir dialogai
 HungarianLanguage=Vengrų meniu ir dialogai
 ItalianLanguage=Italų meniu ir dialogai
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=Japonų meniu ir dialogai
 KoreanLanguage=Korėjiečių meniu ir dialogai
 LithuanianLanguage=Lietuvių meniu ir dialogai

@@ -2893,6 +2893,28 @@ de 10 éléments</para></listitem>
     </itemizedlist>
   </section>
 
+  <section id="Filters_LineFilterPluginPipeline">
+    <title>Using filter expressions in plugin pipelines</title>
+
+    <para>À partir de la version 2.16.59, les expressions de filtre peuvent être
+utilisées comme éléments dans les pipelines de plug-ins en les préfixant par
+<literal>le:</literal>. Par exemple :</para>
+
+    <synopsis>le:toUpper(Ligne)|SortAscending</synopsis>
+
+    <para>Consultez <xref linkend="FilterExpression_Syntax" /> pour connaître les
+fonctions et opérateurs d'expression de filtre disponibles.</para>
+
+    <para>Lorsque des expressions de filtre sont utilisées dans des pipelines de
+plug-ins, elles opèrent sur une seule ligne à la fois (une valeur scalaire),
+contrairement aux filtres de lignes d'affichage. Dans ces derniers, des
+attributs tels que <literal>Line</literal> représentent des paires de
+valeurs (les côtés gauche et droit étant comparés), généralement exprimées
+sous forme de tableaux comme <literal>[Left, Right]</literal>. Dans les
+pipelines de plug-ins, ces mêmes attributs, comme <literal>Line</literal>,
+sont des valeurs scalaires représentant la ligne en cours de traitement.</para>
+  </section>
+
   <section id="Filters_SubstitutionFilter">
     <title>Utilisation des filtres de substitution<indexterm>
         <primary>filtres</primary>

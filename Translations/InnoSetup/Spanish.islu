@@ -1,4 +1,4 @@
-[Messages]
+﻿[Messages]
 
 WizardInfoBefore=Acuerdo de licencia
 InfoBeforeLabel=GNU General Public License
@@ -24,6 +24,7 @@ ShellExtension32bit=Extensión del Explorador de 32-bit para WinMerge
 ;Localization Components
 Languages=Idiomas
 ArabicLanguage=Menús y diálogos en árabe
+AzerbaijaniLanguage=Menús y diálogos en azerbaiyano
 BasqueLanguage=Menús y diálogos en vasco
 BulgarianLanguage=Menús y diálogos en búlgaro
 CatalanLanguage=Menús y diálogos en catalán
@@ -42,6 +43,7 @@ GreekLanguage=Menús y diálogos en griego
 HebrewLanguage=Menús y diálogos en hebreo
 HungarianLanguage=Menús y diálogos en húngaro
 ItalianLanguage=Menús y diálogos en italiano
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=Menús y diálogos en japonés
 KoreanLanguage=Menús y diálogos en coreano
 LithuanianLanguage=Menús y diálogos en lituano

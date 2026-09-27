@@ -114,7 +114,6 @@ public:
 	void GetSelectedDiffs(int & firstDiff, int & lastDiff);
 	std::map<int, std::vector<int>> GetColumnSelectedWordDiffIndice();
 	CString GetSelectedText();
-	std::pair<int, int> GetSelectedLineAndCharacterCount();
 	CString GetLineText(int idx);
 	CMergeDoc* GetDocument();
 	const CMergeDoc *GetDocument() const { return const_cast<CMergeEditView *>(this)->GetDocument(); }
@@ -332,6 +331,7 @@ protected:
 	afx_msg void OnVScroll (UINT nSBCode, UINT nPos, CScrollBar * pScrollBar);
 	afx_msg void OnEditCopyLineNumbers();
 	afx_msg void OnUpdateEditCopyLinenumbers(CCmdUI* pCmdUI);
+	afx_msg void OnEditToggleBookmark();
 	afx_msg void OnViewLineDiffs();
 	afx_msg void OnUpdateViewLineDiffs(CCmdUI* pCmdUI);
 	afx_msg void OnViewLineNumbers();

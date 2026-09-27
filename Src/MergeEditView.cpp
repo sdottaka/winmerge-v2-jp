@@ -36,6 +36,7 @@
 #include "MouseHook.h"
 #include "TreeSitterParser.h"
 #include "PluginMenu.h"
+#include "SplitterPositions.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -113,6 +114,7 @@ BEGIN_MESSAGE_MAP(CMergeEditView, CGhostTextView)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_GOTO_DEFINITION, OnUpdateGotoDefinition)
 	ON_COMMAND(ID_EDIT_COPY_LINENUMBERS, OnEditCopyLineNumbers)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_COPY_LINENUMBERS, OnUpdateEditCopyLinenumbers)
+	ON_COMMAND(ID_EDIT_TOGGLE_BOOKMARK, OnEditToggleBookmark)
 	// [View] menu
 	ON_COMMAND(ID_SELECTLINEDIFF, OnSelectLineDiff<false>)
 	ON_UPDATE_COMMAND_UI(ID_SELECTLINEDIFF, OnUpdateSelectLineDiff)
@@ -337,35 +339,6 @@ CString CMergeEditView::GetSelectedText()
 /**
  * @brief Return number of selected characters
  */
-std::pair<int, int> CMergeEditView::GetSelectedLineAndCharacterCount()
-{
-	auto [ptStart, ptEnd] = GetSelection();
-	int nCharsOrColumns =0;
-	int nSelectedLines = 0;
-	for (int nLine = ptStart.y; nLine <= ptEnd.y; ++nLine)
-	{
-		if ((GetLineFlags(nLine) & (LF_GHOST | LF_INVISIBLE)) == 0)
-		{
-			int nLineLength = GetLineLength(nLine);
-			if (nLineLength < GetFullLineLength(nLine))
-				nLineLength++; // Add 1 for the EOL char
-			nCharsOrColumns += (nLine == ptEnd.y) ? ptEnd.x : nLineLength;
-			if (nLine == ptStart.y)
-				nCharsOrColumns -= ptStart.x;
-			if (nLine < ptEnd.y || (ptStart != ptEnd && ptEnd.x > 0))
-				++nSelectedLines;
-		}
-	}
-	if (m_bRectangularSelection)
-	{
-		int nStartLeft, nStartRight, nEndLeft, nEndRight;
-		GetColumnSelection(ptStart.y, nStartLeft, nStartRight);
-		GetColumnSelection(ptEnd.y, nEndLeft, nEndRight);
-		nCharsOrColumns = (std::max)(nStartRight, nEndRight) - (std::min)(nStartLeft, nEndLeft);
-	}
-	return { nSelectedLines, nCharsOrColumns };
-}
-
 /**
  * @brief Get diffs inside selection.
  * @param [out] firstDiff First diff inside selection
@@ -1306,7 +1279,7 @@ void CMergeEditView::OnEditUndo()
 {
 	CWaitCursor waitstatus;
 	CMergeDoc* pDoc = GetDocument();
-	CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, *(pDoc->curUndo-1));
+	CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, pDoc->undoTgt[pDoc->curUndo-1]);
 	if(tgt==this)
 	{
 		if (!QueryEditable())
@@ -1342,9 +1315,9 @@ void CMergeEditView::OnEditUndo()
 void CMergeEditView::OnUpdateEditUndo(CCmdUI* pCmdUI)
 {
 	CMergeDoc* pDoc = GetDocument();
-	if (pDoc->curUndo!=pDoc->undoTgt.begin())
+	if (pDoc->curUndo != 0)
 	{
-		CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, *(pDoc->curUndo-1));
+		CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, pDoc->undoTgt[pDoc->curUndo-1]);
 		pCmdUI->Enable( !IsReadOnly(tgt->m_nThisPane));
 	}
 	else
@@ -2459,7 +2432,7 @@ void CMergeEditView::OnEditRedo()
 {
 	CWaitCursor waitstatus;
 	CMergeDoc* pDoc = GetDocument();
-	CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, *(pDoc->curUndo));
+	CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, pDoc->undoTgt[pDoc->curUndo]);
 	if(tgt==this)
 	{
 		if (!QueryEditable())
@@ -2487,9 +2460,9 @@ void CMergeEditView::OnEditRedo()
 void CMergeEditView::OnUpdateEditRedo(CCmdUI* pCmdUI)
 {
 	CMergeDoc* pDoc = GetDocument();
-	if (pDoc->curUndo!=pDoc->undoTgt.end())
+	if (pDoc->curUndo!=pDoc->undoTgt.size())
 	{
-		CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, *(pDoc->curUndo));
+		CMergeEditView *tgt = pDoc->GetView(m_nThisGroup, pDoc->undoTgt[pDoc->curUndo]);
 		pCmdUI->Enable( !IsReadOnly(tgt->m_nThisPane));
 	}
 	else
@@ -2732,7 +2705,10 @@ void CMergeEditView::UpdateStatusbar()
  */
 void CMergeEditView::OnUpdateCaret()
 {
-	if (m_bCursorHidden || m_piMergeEditStatus == nullptr || !IsTextBufferInitialized() || m_nThisGroup != GetActiveGroup())
+	if (m_bCursorHidden || m_piMergeEditStatus == nullptr || !IsTextBufferInitialized())
+		return;
+
+	if (m_nThisGroup != GetActiveGroup() && m_piMergeEditStatus->HasLineInfo())
 		return;
 
 	CEPoint cursorPos = GetCursorPos();
@@ -3720,6 +3696,13 @@ void CMergeEditView::OnUpdateEditCopyLinenumbers(CCmdUI* pCmdUI)
 	CCrystalEditView::OnUpdateEditCopy(pCmdUI);
 }
 
+void CMergeEditView::OnEditToggleBookmark()
+{
+	if (!GetSelectionMargin())
+		GetDocument()->ForEachView([](auto& pView) { pView->SetSelectionMargin(true); });
+	CCrystalEditView::OnToggleBookmark();
+}
+
 /**
  * @brief Open active file with associated application.
  *
@@ -4572,20 +4555,7 @@ BOOL CMergeEditView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 
 	if (nFlags == MK_SHIFT)
 	{
-		SCROLLINFO si = { sizeof SCROLLINFO };
-		si.fMask = SIF_PAGE | SIF_POS | SIF_RANGE;
-
-		VERIFY(GetScrollInfo(SB_HORZ, &si));
-
-		// new horz pos
-		si.nPos -= zDelta / 40;
-		if (si.nPos > si.nMax) si.nPos = si.nMax;
-		if (si.nPos < si.nMin) si.nPos = si.nMin;
-
-		SetScrollInfo(SB_HORZ, &si);
-
-		// for update
-		SendMessage(WM_HSCROLL, MAKEWPARAM(SB_THUMBPOSITION, si.nPos) , NULL );
+		HandleHorizontalScrollWheel(-zDelta);
 
 		// no default CCrystalTextView
 		return CView::OnMouseWheel(nFlags, zDelta, pt);
@@ -4599,20 +4569,7 @@ BOOL CMergeEditView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
  */
 void CMergeEditView::OnMouseHWheel(UINT nFlags, short zDelta, CPoint pt)
 {
-	SCROLLINFO si = { sizeof SCROLLINFO };
-	si.fMask = SIF_PAGE | SIF_POS | SIF_RANGE;
-
-	VERIFY(GetScrollInfo(SB_HORZ, &si));
-
-	// new horz pos
-	si.nPos += zDelta / 40;
-	if (si.nPos > si.nMax) si.nPos = si.nMax;
-	if (si.nPos < si.nMin) si.nPos = si.nMin;
-
-	SetScrollInfo(SB_HORZ, &si);
-
-	// for update
-	SendMessage(WM_HSCROLL, MAKEWPARAM(SB_THUMBPOSITION, si.nPos) , NULL );
+	HandleHorizontalScrollWheel(zDelta);
 
 	// no default CCrystalTextView
 	CView::OnMouseHWheel(nFlags, zDelta, pt);
@@ -4826,14 +4783,22 @@ void CMergeEditView::OnDropFiles(const std::vector<String>& tFiles)
 
 void CMergeEditView::OnWindowSplit()
 {
-
-	auto& wndSplitter = dynamic_cast<CMergeEditFrame *>(GetParentFrame())->GetSplitter();
+	CMergeEditFrame* pFrame = dynamic_cast<CMergeEditFrame*>(GetParentFrame());
+	auto& wndSplitter = pFrame->GetSplitter();
 	CMergeDoc *pDoc = GetDocument();
 	int nBuffer = m_nThisPane;
 	if (pDoc->m_nGroups <= 2)
 	{
 		wndSplitter.SplitRow(1);
-		wndSplitter.EqualizeRows();
+		auto& splitterWnd = static_cast<CMergeEditSplitterView*>(wndSplitter.GetPane(1, 0))->m_wndSplitter;
+		const bool horizontal = splitterWnd.GetColumnCount() != 1;
+		const String& optname = pDoc->GetDocumentType() == IMergeDoc::DocumentType::Table ? OPT_CMP_TBL_SPLITTER_RATIOS : OPT_CMP_TEXT_SPLITTER_RATIOS;
+		SplitterPositions::LoadPaneRatio(optname, 1, pDoc->m_nBuffers,
+			[this, horizontal, &splitterWnd](const double* positions, int count) {
+				splitterWnd.SetSplitterRatios(positions, count, horizontal);
+			});
+		const double ratio = SplitterPositions::LoadRowRatio(optname);
+		wndSplitter.SetSplitterRatios(&ratio, 1, false);
 	}
 	else
 	{

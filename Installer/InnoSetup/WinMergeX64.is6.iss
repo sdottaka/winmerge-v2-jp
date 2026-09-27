@@ -135,6 +135,7 @@ Name: English; MessagesFile: compiler:Default.isl,..\..\Translations\InnoSetup\E
 
 ;Localizations:
 Name: Arabic; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Arabic.isl,..\..\Translations\InnoSetup\Arabic.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Arabic.txt
+Name: Azerbaijani; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Azerbaijani.isl,..\..\Translations\InnoSetup\Azerbaijani.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Azerbaijani.txt
 Name: Basque; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Basque.isl,..\..\Translations\InnoSetup\Basque.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Basque.txt
 Name: Bulgarian; MessagesFile: compiler:Languages\Bulgarian.isl,..\..\Translations\InnoSetup\Bulgarian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Bulgarian.txt
 Name: Catalan; MessagesFile: compiler:Languages\Catalan.isl,..\..\Translations\InnoSetup\Catalan.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Catalan.txt
@@ -153,6 +154,7 @@ Name: Greek; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Greek.isl,
 Name: Hebrew; MessagesFile: compiler:Languages\Hebrew.isl,..\..\Translations\InnoSetup\Hebrew.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Hebrew.txt
 Name: Hungarian; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Hungarian.isl,..\..\Translations\InnoSetup\Hungarian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Hungarian.txt
 Name: Italian; MessagesFile: compiler:Languages\Italian.isl,..\..\Translations\InnoSetup\Italian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Italian.txt
+Name: Indonesian; MessagesFile: ..\\..\\Translations\\InnoSetup\\Unbundled.is6\\Indonesian.isl,..\\..\\Translations\\InnoSetup\\Indonesian.islu; InfoAfterFile: ..\\..\\Translations\\Docs\\Readme\\ReadMe-Indonesian.txt
 Name: Japanese; MessagesFile: compiler:Languages\Japanese.isl,..\..\Translations\InnoSetup\Japanese.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Japanese.txt
 Name: Korean; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Korean.isl,..\..\Translations\InnoSetup\Korean.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Korean.txt
 Name: Lithuanian; MessagesFile: ..\..\Translations\InnoSetup\Unbundled.is6\Lithuanian.isl,..\..\Translations\InnoSetup\Lithuanian.islu; InfoAfterFile: ..\..\Translations\Docs\Readme\ReadMe-Lithuanian.txt
@@ -197,6 +199,9 @@ Name: Plugins; Description: {cm:Plugins}; Flags: disablenouninstallwarning; Type
 Name: Languages; Description: {cm:Languages}; Flags: disablenouninstallwarning
 Name: Languages\Arabic; Description: {cm:ArabicLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Arabic
 Name: Languages\Arabic; Description: {cm:ArabicLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Arabic
+
+Name: Languages\Azerbaijani; Description: {cm:AzerbaijaniLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Azerbaijani
+Name: Languages\Azerbaijani; Description: {cm:AzerbaijaniLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Azerbaijani
 
 Name: Languages\Basque; Description: {cm:BasqueLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Basque
 Name: Languages\Basque; Description: {cm:BasqueLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Basque
@@ -251,6 +256,9 @@ Name: Languages\Hungarian; Description: {cm:HungarianLanguage}; Flags: disableno
 
 Name: Languages\Italian; Description: {cm:ItalianLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Italian
 Name: Languages\Italian; Description: {cm:ItalianLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Italian
+
+Name: Languages\Indonesian; Description: {cm:IndonesianLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Indonesian
+Name: Languages\Indonesian; Description: {cm:IndonesianLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Indonesian
 
 Name: Languages\Japanese; Description: {cm:JapaneseLanguage}; Flags: disablenouninstallwarning; Types: full; Languages: not Japanese
 Name: Languages\Japanese; Description: {cm:JapaneseLanguage}; Flags: disablenouninstallwarning; Types: full typical compact; Languages: Japanese
@@ -464,6 +472,10 @@ Source: ..\..\Build\{#ARCH}\Release\Merge7z\Lang\*.txt; DestDir: {app}\Merge7z\L
 ; Language files
 Source: {#TranslationsDir}\WinMerge\Arabic.po; DestDir: {app}\Languages; Components: Languages\Arabic; Flags: ignoreversion comparetimestamp
 Source: {#TranslationsDir}\ShellExtension\Arabic.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Arabic; Flags: ignoreversion comparetimestamp
+Source: ..\..\Translations\Docs\Readme\ReadMe-Arabic.txt; DestDir: {app}\Docs; Components: Languages\Arabic
+Source: {#TranslationsDir}\WinMerge\Azerbaijani.po; DestDir: {app}\Languages; Components: Languages\Azerbaijani; Flags: ignoreversion comparetimestamp
+Source: {#TranslationsDir}\ShellExtension\Azerbaijani.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Azerbaijani; Flags: ignoreversion comparetimestamp
+Source: ..\..\Translations\Docs\Readme\ReadMe-Azerbaijani.txt; DestDir: {app}\Docs; Components: Languages\Azerbaijani
 Source: {#TranslationsDir}\WinMerge\Basque.po; DestDir: {app}\Languages; Components: Languages\Basque; Flags: ignoreversion comparetimestamp
 Source: {#TranslationsDir}\ShellExtension\Basque.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Basque; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Basque.txt; DestDir: {app}\Docs; Components: Languages\Basque
@@ -521,6 +533,9 @@ Source: {#TranslationsDir}\WinMerge\Italian.po; DestDir: {app}\Languages; Compon
 Source: {#TranslationsDir}\ShellExtension\Italian.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Italian; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Italian.txt; DestDir: {app}\Docs; Components: Languages\Italian
 Source: ..\..\Build\Manual\htmlhelp\WinMergeItalian.chm; DestDir: {app}\Docs; Components: Languages\Italian
+Source: {#TranslationsDir}\WinMerge\Indonesian.po; DestDir: {app}\Languages; Components: Languages\Indonesian; Flags: ignoreversion comparetimestamp
+Source: {#TranslationsDir}\ShellExtension\Indonesian.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Indonesian; Flags: ignoreversion comparetimestamp
+Source: ..\..\Translations\Docs\Readme\ReadMe-Indonesian.txt; DestDir: {app}\Docs; Components: Languages\Indonesian
 Source: {#TranslationsDir}\WinMerge\Japanese.po; DestDir: {app}\Languages; Components: Languages\Japanese; Flags: ignoreversion comparetimestamp
 Source: {#TranslationsDir}\ShellExtension\Japanese.po; DestDir: {app}\Languages\ShellExtension; Components: Languages\Japanese; Flags: ignoreversion comparetimestamp
 Source: ..\..\Translations\Docs\Readme\ReadMe-Japanese.txt; DestDir: {app}\Docs; Components: Languages\Japanese
@@ -775,6 +790,7 @@ Root: HKU; SubKey: {code:GetOriginalUserSID}\Software\TortoiseSVN; ValueType: st
 ;Whatever the user chooses at the [Select Setup Language] dialog should also determine what language WinMerge will start up in
 ;(unless the user already has a startup language specified)
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge\Locale; ValueType: dword; ValueName: LanguageId; ValueData: $00001401; Flags: deletevalue; Languages: Arabic
+Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge\Locale; ValueType: dword; ValueName: LanguageId; ValueData: $00001401; Flags: deletevalue; Languages: Azerbaijani
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge\Locale; ValueType: dword; ValueName: LanguageId; ValueData: $0000042d; Flags: deletevalue; Languages: Basque
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge\Locale; ValueType: dword; ValueName: LanguageId; ValueData: $00000402; Flags: deletevalue; Languages: Bulgarian
 Root: HKA;  SubKey: Software\Thingamahoochie\WinMerge\Locale; ValueType: dword; ValueName: LanguageId; ValueData: $00000403; Flags: deletevalue; Languages: Catalan

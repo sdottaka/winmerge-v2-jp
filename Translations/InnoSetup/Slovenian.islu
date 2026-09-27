@@ -24,6 +24,7 @@ ShellExtension32bit=32-bitna razširitev lupine WinMerge
 ;Localization Components
 Languages=Jeziki
 ArabicLanguage=Arabski meniji in pogovorna okna
+AzerbaijaniLanguage=Azerbajdžanski meniji in pogovorna okna
 BasqueLanguage=Baskijski meniji in pogovorna okna
 BulgarianLanguage=Bolgarski meniji in pogovorna okna
 CatalanLanguage=Katalonski meniji in pogovorna okna
@@ -42,6 +43,7 @@ GreekLanguage=Grški meniji in pogovorna okna
 HebrewLanguage=Hebrew menus and dialogs
 HungarianLanguage=Madžarski meniji in pogovorna okna
 ItalianLanguage=Italijanski meniji in pogovorna okna
+IndonesianLanguage=Indonesian menus and dialogs
 JapaneseLanguage=Japonski meniji in pogovorna okna
 KoreanLanguage=Korejski meniji in pogovorna okna
 LithuanianLanguage=Litovski meniji in pogovorna okna

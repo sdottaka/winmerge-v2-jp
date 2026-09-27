@@ -24,6 +24,7 @@ ShellExtension32bit=32 位 WinMerge 外壳扩展
 ;Localization Components
 Languages=语言包（菜单和对话框）
 ArabicLanguage=阿拉伯语
+AzerbaijaniLanguage=阿塞拜疆语
 BasqueLanguage=巴斯克语
 BulgarianLanguage=保加利亚语
 CatalanLanguage=加泰罗尼亚语
@@ -39,9 +40,10 @@ FrenchLanguage=法语
 GalicianLanguage=加利西亚语
 GermanLanguage=德语
 GreekLanguage=希腊语
-HebrewLanguage=Hebrew menus and dialogs
+HebrewLanguage=希伯来语
 HungarianLanguage=匈牙利语
 ItalianLanguage=意大利语
+IndonesianLanguage=印度尼西亚语
 JapaneseLanguage=日语
 KoreanLanguage=韩语
 LithuanianLanguage=立陶宛语
@@ -58,10 +60,10 @@ SlovakLanguage=斯洛伐克语
 SlovenianLanguage=斯洛文尼亚语
 SpanishLanguage=西班牙语
 SwedishLanguage=瑞典语
-TamilLanguage=Tamil menus and dialogs
+TamilLanguage=泰米尔语
 TurkishLanguage=土耳其语
 UkrainianLanguage=乌克兰语
-VietnameseLanguage=Vietnamese menus and dialogs
+VietnameseLanguage=越南语
 
 ;Tasks
 ExplorerContextMenu=集成到资源管理器右键菜单(&E)
