@@ -2,6 +2,42 @@
 title: 変更履歴
 ---
 
+### 2026/09/29 2.16.58-jp-4
+
+#### 全般
+
+* テキスト、画像、Web ページ、バイナリ比較ウインドウのスプリッターの位置を記憶して復元するオプションを追加した。([ウインドウ]→[スプリッターの位置を保持]メニュー)([PR #3611](https://github.com/WinMerge/winmerge/pull/3611))
+
+#### 外観
+
+* アクティブなウィンドウに応じてツールバーの内容を変えるようにした。([PR #3631](https://github.com/WinMerge/winmerge/pull/3631))
+
+#### ファイル比較
+
+* 不具合修正: 表示フィルターによってできた隙間をまたぐカーソル移動とスクロールを修正した。([#3601](https://github.com/WinMerge/winmerge/issues/3601), [PR #3622](https://github.com/WinMerge/winmerge/pull/3622))
+
+* 不具合修正: ファイル比較のステータスバーが初期表示されない問題を修正した。([PR #3644](https://github.com/WinMerge/winmerge/pull/3644))
+
+* 不具合修正: 3 方向ファイル比較のコンテキストメニューの「右にコピー」のキーボードショートカット表示が正しくないのを修正した。([#3645](https://github.com/WinMerge/winmerge/issues/3645))
+
+* 不具合修正: アンドゥ操作でクラッシュする可能性があるのを修正した。([PR #3646](https://github.com/WinMerge/winmerge/pull/3646))
+
+* 不具合修正: 3 方向ファイル比較でペインを入れ替えた後にアンドゥ操作ができない問題を修正した。([PR #3647](https://github.com/WinMerge/winmerge/pull/3647))
+
+#### 画像比較
+
+* 画像比較ウインドウのスプリッターの位置を記憶できるようにした。([PR #3593](https://github.com/WinMerge/winmerge/pull/3593))
+
+#### アーカイブサポート
+
+* 不具合修正: 一時的なアーカイブ設定の復元後にアーカイブ形式が誤って判定される問題を修正した。([#3633](https://github.com/WinMerge/winmerge/issues/3633))
+
+* 7-Zip を 26.03 に更新した。([PR #3613](https://github.com/WinMerge/winmerge/pull/3613))
+
+#### プラグイン
+
+* SelectLines プラグインに、`-F` オプションによる文字列のリテラル検索を追加した。([#3500](https://github.com/WinMerge/winmerge/issues/3500), [PR #3598](https://github.com/WinMerge/winmerge/pull/3598))
+
 ### 2026/08/29 2.16.58-jp-3
 
 #### 外観

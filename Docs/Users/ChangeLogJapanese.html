@@ -27,8 +27,51 @@ vertical-align: middle;
 <header id="title-block-header">
 <h1 class="title">変更履歴</h1>
 </header>
-<h3 id="20260829-21658-jp-3">2026/08/29 2.16.58-jp-3</h3>
+<h3 id="20260929-21658-jp-4">2026/09/29 2.16.58-jp-4</h3>
+<h4 id="全般">全般</h4>
+<ul>
+<li>テキスト、画像、Web
+ページ、バイナリ比較ウインドウのスプリッターの位置を記憶して復元するオプションを追加した。([ウインドウ]→[スプリッターの位置を保持]メニュー)(<a href="https://github.com/WinMerge/winmerge/pull/3611">PR #3611</a>)</li>
+</ul>
 <h4 id="外観">外観</h4>
+<ul>
+<li>アクティブなウィンドウに応じてツールバーの内容を変えるようにした。(<a href="https://github.com/WinMerge/winmerge/pull/3631">PR #3631</a>)</li>
+</ul>
+<h4 id="ファイル比較">ファイル比較</h4>
+<ul>
+<li><p>不具合修正:
+表示フィルターによってできた隙間をまたぐカーソル移動とスクロールを修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3601">#3601</a>, <a href="https://github.com/WinMerge/winmerge/pull/3622">PR
+#3622</a>)</p></li>
+<li><p>不具合修正:
+ファイル比較のステータスバーが初期表示されない問題を修正した。(<a href="https://github.com/WinMerge/winmerge/pull/3644">PR
+#3644</a>)</p></li>
+<li><p>不具合修正: 3
+方向ファイル比較のコンテキストメニューの「右にコピー」のキーボードショートカット表示が正しくないのを修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3645">#3645</a>)</p></li>
+<li><p>不具合修正:
+アンドゥ操作でクラッシュする可能性があるのを修正した。(<a href="https://github.com/WinMerge/winmerge/pull/3646">PR
+#3646</a>)</p></li>
+<li><p>不具合修正: 3
+方向ファイル比較でペインを入れ替えた後にアンドゥ操作ができない問題を修正した。(<a href="https://github.com/WinMerge/winmerge/pull/3647">PR
+#3647</a>)</p></li>
+</ul>
+<h4 id="画像比較">画像比較</h4>
+<ul>
+<li>画像比較ウインドウのスプリッターの位置を記憶できるようにした。(<a href="https://github.com/WinMerge/winmerge/pull/3593">PR #3593</a>)</li>
+</ul>
+<h4 id="アーカイブサポート">アーカイブサポート</h4>
+<ul>
+<li><p>不具合修正:
+一時的なアーカイブ設定の復元後にアーカイブ形式が誤って判定される問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3633">#3633</a>)</p></li>
+<li><p>7-Zip を 26.03 に更新した。(<a href="https://github.com/WinMerge/winmerge/pull/3613">PR
+#3613</a>)</p></li>
+</ul>
+<h4 id="プラグイン">プラグイン</h4>
+<ul>
+<li>SelectLines プラグインに、<code>-F</code>
+オプションによる文字列のリテラル検索を追加した。(<a href="https://github.com/WinMerge/winmerge/issues/3500">#3500</a>, <a href="https://github.com/WinMerge/winmerge/pull/3598">PR #3598</a>)</li>
+</ul>
+<h3 id="20260829-21658-jp-3">2026/08/29 2.16.58-jp-3</h3>
+<h4 id="外観-1">外観</h4>
 <ul>
 <li><p>不具合修正: 高 DPI
 時のツールバーアイコン間隔が狭すぎる問題を修正した。</p></li>
@@ -37,7 +80,7 @@ vertical-align: middle;
 <li><p>メニューバーにMDI
 ウィンドウのコントロール(最小化／最大化／閉じる)を常に表示するか常に非表示にするコンテキストメニューを追加した。(<a href="https://github.com/WinMerge/winmerge/issues/3511">#3511</a>)</p></li>
 </ul>
-<h4 id="ファイル比較">ファイル比較</h4>
+<h4 id="ファイル比較-1">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
 表示行フィルタ適用時、単語単位の差異表示が正しく行われないことがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3535">#3535</a>)</p></li>
@@ -65,12 +108,12 @@ vertical-align: middle;
 <ul>
 <li>マージモードインジケーターをクリック可能にし、幅を縮小した。(<a href="https://github.com/WinMerge/winmerge/pull/3529">PR #3529</a>)</li>
 </ul>
-<h4 id="アーカイブサポート">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-1">アーカイブサポート</h4>
 <ul>
 <li>不具合修正:
 ZIPファイル内のフォルダーが比較できない問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3588">#3588</a>)</li>
 </ul>
-<h4 id="プラグイン">プラグイン</h4>
+<h4 id="プラグイン-1">プラグイン</h4>
 <ul>
 <li><p>不具合修正: <code>BUFFER_PACK_UNPACK</code>
 プラグインの出力で最後のバイトが失われるオフバイワンバグを修正した。</p></li>
@@ -86,13 +129,13 @@ ZIPファイル内のフォルダーが比較できない問題を修正した�
 とOpenAI互換APIサポートを追加(#3589)</p></li>
 </ul>
 <h3 id="20260729-21658-jp-1">2026/07/29 2.16.58-jp-1</h3>
-<h4 id="全般">全般</h4>
+<h4 id="全般-1">全般</h4>
 <ul>
 <li><p>不具合修正:
 ファイルマッピングに失敗した場合に、誤ってクラッシュとして扱われることがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3412">#3412</a>)</p></li>
 <li><p>クラッシュログのスタックトレースにモジュール相対オフセットを追加した。</p></li>
 </ul>
-<h4 id="ファイル比較-1">ファイル比較</h4>
+<h4 id="ファイル比較-2">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
 ファイルが一定のしきい値を超えて外部から変更された場合にクラッシュ
@@ -130,7 +173,7 @@ ZIPファイル内のフォルダーが比較できない問題を修正した�
 <ul>
 <li>比較結果をアーカイブとして作成できるようにした。(<a href="https://github.com/WinMerge/winmerge/pull/3483">PR #3483</a>)</li>
 </ul>
-<h4 id="アーカイブサポート-1">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-2">アーカイブサポート</h4>
 <ul>
 <li>7-Zip を 26.02 に更新した。</li>
 </ul>
@@ -140,7 +183,7 @@ ZIPファイル内のフォルダーが比較できない問題を修正した�
 コマンドラインオプションを追加した。(<a href="https://github.com/WinMerge/winmerge/pull/3472">PR #3472</a>)</li>
 </ul>
 <h3 id="20260629-21656-jp-4">2026/06/29 2.16.56-jp-4</h3>
-<h4 id="ファイル比較-2">ファイル比較</h4>
+<h4 id="ファイル比較-3">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
 編集後にステータスバーの行番号・列番号が正しく表示されないことがある問題を修正した。</p></li>
@@ -152,7 +195,7 @@ ZIPファイル内のフォルダーが比較できない問題を修正した�
 <li>不具合修正:
 ファイル名変更中に[マージ]→[削除]メニューを実行するとクラッシュすることがある問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3411">#3411</a>)</li>
 </ul>
-<h4 id="アーカイブサポート-2">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-3">アーカイブサポート</h4>
 <ul>
 <li>不具合修正:
 RAR4形式ファイルのファイル比較時に不要なエラーメッセージボックスが表示される問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3392">#3392</a>)</li>
@@ -169,7 +212,7 @@ RAR4形式ファイルのファイル比較時に不要なエラーメッセー�
 <li><p>クラッシュログのスタックトレースを解析しやすいようにモジュール内相対アドレスも出力するようにした。</p></li>
 </ul>
 <h3 id="20260529-21656-jp-3">2026/05/29 2.16.56-jp-3</h3>
-<h4 id="ファイル比較-3">ファイル比較</h4>
+<h4 id="ファイル比較-4">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
 選択範囲が単語差分の途中で終わる場合にコピーが正しく行われない問題を修正した。<a href="https://github.com/WinMerge/winmerge/pull/3358">(PR
@@ -197,7 +240,7 @@ RAR4形式ファイルのファイル比較時に不要なエラーメッセー�
 <li><p>不具合修正:
 左側または右側のみのファイルを表示する際に「右側のみのファイル」が表示されない問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3378">#3378</a>)</p></li>
 </ul>
-<h4 id="画像比較">画像比較</h4>
+<h4 id="画像比較-1">画像比較</h4>
 <ul>
 <li><p>不具合修正:
 画像比較でセッション間に「点滅」切り替えの状態が記憶されない問題を修正した。(<a href="https://github.com/WinMerge/winmerge/issues/3368">#3368</a>)</p></li>
@@ -209,19 +252,19 @@ WebP形式等のファイルが開けなくなった問題を修正した。</p>
 <li>参照ボタンのドロップダウンメニューでクリップボード履歴を選択できるようにした。<a href="https://github.com/WinMerge/winmerge/pull/3352">(PR
 #3352)</a></li>
 </ul>
-<h4 id="プラグイン-1">プラグイン</h4>
+<h4 id="プラグイン-2">プラグイン</h4>
 <ul>
 <li><p>不具合修正:
 プラグインの編集ダイアログで「展開後のファイル拡張子」の値が表示されない問題を修正した。</p></li>
 <li><p>clip:// URLハンドラーを追加した。<a href="https://github.com/WinMerge/winmerge/pull/3352">(PR
 #3352)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-3">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-4">アーカイブサポート</h4>
 <ul>
 <li>7-Zip を 26.01 に更新した。</li>
 </ul>
 <h3 id="20260429-21656-jp-1">2026/04/29 2.16.56-jp-1</h3>
-<h4 id="全般-1">全般</h4>
+<h4 id="全般-2">全般</h4>
 <ul>
 <li><p>ヘッダーバーに無効なパスを入力した際にエラーメッセージを表示するようにした。<a href="https://github.com/WinMerge/winmerge/pull/3322">(PR
 #3322)</a></p></li>
@@ -238,7 +281,7 @@ OpenFolderParams に移動した。<a href="https://github.com/WinMerge/winmerge
 <li><p>コードページフィルタ UI と HasBOM フィールド対応を追加した。<a href="https://github.com/WinMerge/winmerge/pull/3318">(PR
 #3318)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-4">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-5">アーカイブサポート</h4>
 <ul>
 <li><p>アーカイブ検出に 7-Zip IsArc API
 を使用し、フォーマット推定ロジックをリファクタリングした。<a href="https://github.com/WinMerge/winmerge/pull/3323">(PR
@@ -247,7 +290,7 @@ OpenFolderParams に移動した。<a href="https://github.com/WinMerge/winmerge
 #3324)</a></p></li>
 </ul>
 <h3 id="20260329-21654-jp-4">2026/03/29 2.16.54-jp-4</h3>
-<h4 id="ファイル比較-4">ファイル比較</h4>
+<h4 id="ファイル比較-5">ファイル比較</h4>
 <ul>
 <li><p>不具合修正:
 Alt+マウスドラッグで矩形選択すると、メニューがアクティブになってしまう問題を修正した。<a href="https://github.com/WinMerge/winmerge/pull/3254">(PR
@@ -256,7 +299,7 @@ Alt+マウスドラッグで矩形選択すると、メニューがアクティ�
 1つのファイルのみを指定する自己比較実行時、履歴に登録されない問題を修正した。<a href="https://github.com/WinMerge/winmerge/pull/3266">(PR
 #3266)</a></p></li>
 </ul>
-<h4 id="画像比較-1">画像比較</h4>
+<h4 id="画像比較-2">画像比較</h4>
 <ul>
 <li><p>不具合修正:
 画像比較ウインドウを閉じる際にクラッシュすることがある問題を修正した。
@@ -276,7 +319,7 @@ Alt+マウスドラッグで矩形選択すると、メニューがアクティ�
 <li><p>ヘッダー部のコンテキストメニューに[この列でフィルター]メニュー項目を追加した。<a href="https://github.com/WinMerge/winmerge/pull/3268">(PR #3268)</a><a href="https://github.com/WinMerge/winmerge/pull/3284">(PR
 #3284)</a></p></li>
 </ul>
-<h4 id="プラグイン-2">プラグイン</h4>
+<h4 id="プラグイン-3">プラグイン</h4>
 <ul>
 <li>.class ファイルを Javaのソースコードにデコンパイルするプラグイン
 DecompileJVM を追加した。<a href="https://github.com/WinMerge/winmerge/pull/3167">(PR #3167)</a>
@@ -288,12 +331,12 @@ DecompileJVM を追加した。<a href="https://github.com/WinMerge/winmerge/pul
 <li>クラッシュ発生時、次回起動時にその旨を出力ペインで通知するようにした。<a href="https://github.com/WinMerge/winmerge/issues/3167">(PR
 #3167)</a></li>
 </ul>
-<h4 id="外観-1">外観</h4>
+<h4 id="外観-2">外観</h4>
 <ul>
 <li>不具合修正: ダークモード時に WinMerge
 起動直後、背景が一瞬白く表示される問題を修正した。<a href="https://github.com/WinMerge/winmerge/issues/3210">(#3210)</a></li>
 </ul>
-<h4 id="ファイル比較-5">ファイル比較</h4>
+<h4 id="ファイル比較-6">ファイル比較</h4>
 <ul>
 <li>IME 再変換機能に対応した。<a href="https://github.com/WinMerge/winmerge/pull/3214">(PR
 #3214)</a></li>
@@ -337,7 +380,7 @@ DecompileJVM を追加した。<a href="https://github.com/WinMerge/winmerge/pul
 つの項目にマージする」機能を、移動項目にも適用できるようにした。<a href="https://github.com/WinMerge/winmerge/pull/3181">(PR
 #3181)</a></p></li>
 </ul>
-<h4 id="プラグイン-3">プラグイン</h4>
+<h4 id="プラグイン-4">プラグイン</h4>
 <ul>
 <li><p>不具合修正: Replace
 プラグインで、置換後の文字列に空文字列を指定できない問題を修正した。</p></li>
@@ -349,12 +392,12 @@ DecompileJVM を追加した。<a href="https://github.com/WinMerge/winmerge/pul
 <li><p>CompareMSExcelFiles プラグイン:
 設定ウィンドウに「ファイル名にシート番号を含める」を追加し、チェックを外した場合はファイル名の先頭にシート番号を挿入しないようにした（「ワークブックの情報を複数ファイルに展開する」が有効な場合）。<a href="https://github.com/WinMerge/winmerge/issues/3212">(#3212)</a></p></li>
 </ul>
-<h4 id="アーカイブサポート-5">アーカイブサポート</h4>
+<h4 id="アーカイブサポート-6">アーカイブサポート</h4>
 <ul>
 <li>7-Zip をバージョン 26.00 に更新した。</li>
 </ul>
 <h3 id="20260129-21654-jp-1">2026/01/29 2.16.54-jp-1</h3>
-<h4 id="全般-2">全般</h4>
+<h4 id="全般-3">全般</h4>
 <ul>
 <li><p>不具合修正:
 キリル文字のショートカットがメインメニューのキーボードショートカットで動作しない問題を修正</p></li>
@@ -401,7 +444,7 @@ andEach, orEach, notEach) <a href="https://github.com/WinMerge/winmerge/pull/313
 <li>インストーラーパッケージからビルド時ツール (lemon.exe, re2c.exe)
 を削除</li>
 </ul>
-<h4 id="プラグイン-4">プラグイン</h4>
+<h4 id="プラグイン-5">プラグイン</h4>
 <ul>
 <li>CompareMSExcelFiles: Excel 数式内の改行をスペースに置換 <a href="https://github.com/WinMerge/winmerge/pull/3028">(PR
 #3028)</a>(PRをいただきました。ありがとうございます。)</li>
