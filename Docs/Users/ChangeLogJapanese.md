@@ -14,15 +14,19 @@ title: 変更履歴
 
 #### ファイル比較
 
-* 不具合修正: 表示フィルターによってできた隙間をまたぐカーソル移動とスクロールを修正した。([#3601](https://github.com/WinMerge/winmerge/issues/3601), [PR #3622](https://github.com/WinMerge/winmerge/pull/3622))
+* 不具合修正: 表示フィルターによってできた隙間をまたぐカーソル移動を改善した。([#3601](https://github.com/WinMerge/winmerge/issues/3601), [PR #3622](https://github.com/WinMerge/winmerge/pull/3622))
 
-* 不具合修正: ファイル比較のステータスバーが初期表示されない問題を修正した。([PR #3644](https://github.com/WinMerge/winmerge/pull/3644))
+* 不具合修正: ファイル比較のステータスバーが初期表示されないことがある問題を修正した。([PR #3644](https://github.com/WinMerge/winmerge/pull/3644))
 
-* 不具合修正: 3 方向ファイル比較のコンテキストメニューの「右にコピー」のキーボードショートカット表示が正しくないのを修正した。([#3645](https://github.com/WinMerge/winmerge/issues/3645))
+* 不具合修正: 3方向ファイル比較のコンテキストメニューの「右にコピー」のキーボードショートカット表示が正しくないのを修正した。([#3645](https://github.com/WinMerge/winmerge/issues/3645))
 
 * 不具合修正: アンドゥ操作でクラッシュする可能性があるのを修正した。([PR #3646](https://github.com/WinMerge/winmerge/pull/3646))
 
-* 不具合修正: 3 方向ファイル比較でペインを入れ替えた後にアンドゥ操作ができない問題を修正した。([PR #3647](https://github.com/WinMerge/winmerge/pull/3647))
+* 不具合修正: 3方向ファイル比較でペインを入れ替えた後にアンドゥ操作ができない問題を修正した。([PR #3647](https://github.com/WinMerge/winmerge/pull/3647))
+
+* 不具合修正: 「コメントの違いを無視する」と「空行を無視する」オプションが有効の場合、改行なしの1文字同士の比較で差異があるにもかかわらず一致と表示されてしまう問題を修正した。([PR #3651](https://github.com/WinMerge/winmerge/pull/3651))
+
+* ブックマークを設置したとき、ブックマークアイコンが見えるようにマージンを自動表示するようにした。
 
 #### 画像比較
 
