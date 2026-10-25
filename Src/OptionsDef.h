@@ -316,6 +316,9 @@ inline const String OPT_FILTER_USERPATH {_T("Settings/UserFilterPath"s)};
 inline const String OPT_FILEFILTER_SHARED {_T("Settings/Filters/Shared"s)};
 inline const String OPT_USERDATA_LOCATION {_T("Settings/UserDataLocation"s)};
 
+// Merge Result Pane
+inline const String OPT_MERGE_RESULT_PANE_ENABLED {_T("Settings/MergeResultPaneEnabled"s)};
+
 /// Substitution Filters
 inline const String OPT_SUBSTITUTION_FILTERS_ENABLED {_T("Settings/SubstitutionFiltersEnabled"s)};
 
@@ -348,6 +351,8 @@ inline const String OPT_TABBAR_AUTO_MAXWIDTH {_T("Settings/TabBarAutoMaxWidth"s)
 
 // MRU
 inline const String OPT_MRU_MAX {_T("Settings/MRUMax"s)};
+// Open view: the recent comparison list is expanded (collapsed by default)
+inline const String OPT_SHOW_RECENT_COMPARES {_T("Settings/ShowRecentCompares"s)};
 
 // Experimentals
 inline const String OPT_MOUSE_HOOK_ENABLED {_T("Settings/MouseHookEnabled"s)};
