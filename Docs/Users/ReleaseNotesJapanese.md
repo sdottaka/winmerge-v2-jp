@@ -1,34 +1,159 @@
-# WinMerge 2.16.58.2 リリースノート
+# WinMerge 2.16.60 リリースノート
 
 - [このリリースについて](#about-this-release)
-- [2.16.58.2 の更新内容](#what-is-new-in-216582)
-- [2.16.58 の更新内容](#what-is-new-in-21658)
-- [2.16.57 beta の更新内容](#what-is-new-in-21657-beta)
+- [2.16.60 の更新内容](#what-is-new-in-21660)
+- [2.16.59 Beta の更新内容](#what-is-new-in-21659-beta)
 - [既知の問題](#known-issues)
 
-2026年8月
+2026年10月
 
 ## このリリースについて
 
-WinMerge の 2.16.58.2 安定版リリースです。  
+WinMerge の 2.16.60 安定版リリースです。  
 このリリースは、以前の WinMerge 安定版リリースに代わる推奨リリースです。
 
 不具合は https://github.com/WinMerge/winmerge/issues で報告してください。  
 日本語での報告は、https://sourceforge.net/p/winmerge-v2-jp/tickets/ でお願いします。
 
-## 2.16.58.2 の更新内容
+## 2.16.60 の更新内容
 
-### 外観
+### 全般
 
-* 不具合修正: 高 DPI 時のツールバーアイコン間隔が狭すぎる問題を修正した。
+* 最近比較したファイルまたはフォルダーの履歴はWindowsの設定が無効にされていた場合に独自に保持するようにした。([PR #3663](https://github.com/WinMerge/winmerge/pull/3663))
+
+* darkmodelib を 0.77.1 に更新し、ARM64 に対応した。
 
 ### ファイル比較
 
-* 不具合修正: 表示行フィルタ適用時、単語単位の差異表示が正しく行われないことがある問題を修正した。([#3535](https://github.com/WinMerge/winmerge/issues/3535))
+* 不具合修正: 移動行を含む差異で、行フィルターが適用されない問題を修正した。([#3680](https://github.com/WinMerge/winmerge/issues/3680), [PR #3681](https://github.com/WinMerge/winmerge/pull/3681))
 
-* 不具合修正: 単語選択後のShift+Ctrl+左/右の選択ができないことがある問題を修正した。([#3521](https://github.com/WinMerge/winmerge/issues/3521))
+* 不具合修正: 3 方向マージに関する 2 件の問題を修正した。([PR #3671](https://github.com/WinMerge/winmerge/pull/3671))
 
-* 表示行フィルタ適用時の表示速度を改善した。([PR #3517](https://github.com/WinMerge/winmerge/pull/3517))
+* 不具合修正: AutoIt の識別子と入れ子になったコメントの構文強調表示を修正した。([PR #3685](https://github.com/WinMerge/winmerge/pull/3685))
+
+* 不具合修正: 出力ペインの高さを変更するとクラッシュする問題を修正した。([#3733](https://github.com/WinMerge/winmerge/issues/3733))
+
+* RTF の構文強調表示に対応した。([PR #3686](https://github.com/WinMerge/winmerge/pull/3686))
+
+* 不具合修正: Markdown の見出しの強調表示が正しく行われないことがある問題を修正した。([PR #3718](https://github.com/WinMerge/winmerge/pull/3718))
+
+* 出力ペインに表示するマージ時のコピー通知を翻訳可能にした。([#2927](https://github.com/WinMerge/winmerge/issues/2927), [PR #3701](https://github.com/WinMerge/winmerge/pull/3701))
+
+### 画像比較
+
+* 不具合修正: 外部 FreeImage プラグインが存在しているとクラッシュするため読み込みを無効にした。([winimerge/#43](https://github.com/WinMerge/winimerge/issues/43))
+
+* 不具合修正: 画像の貼り付けと元に戻す操作を修正した。([winimerge/#41](https://github.com/WinMerge/winimerge/issues/41))
+
+* FreeImage を 3.19.25 に更新した。
+
+* 画像の差異をコピーする際に、コピー先のキャンバスを拡張するようにした。([winimerge/#42](https://github.com/WinMerge/winimerge/issues/42))
+
+### ステータスバー
+
+* 不具合修正: ステータスバーの差異数が正しくない問題を修正した。([#3649](https://github.com/WinMerge/winmerge/issues/3649), [PR #3707](https://github.com/WinMerge/winmerge/pull/3707))
+
+* ステータスバーがちらつくのを修正した。
+
+### ファイルまたはフォルダーの選択ダイアログ
+
+* 最近比較した項目の一覧を折りたたみ可能にした。([PR #3673](https://github.com/WinMerge/winmerge/pull/3673))
+
+* フォルダー比較ビューに、左右それぞれのファイル名、フォルダー名、拡張子の列を追加した。([PR #3682](https://github.com/WinMerge/winmerge/pull/3682))
+
+### フォルダー比較
+
+* フォルダー比較ビューに、左右それぞれのファイル名、フォルダー名、拡張子の列を追加した。([PR #3682](https://github.com/WinMerge/winmerge/pull/3682))
+
+### アーカイブサポート
+
+* 7-Zip を 26.05 に更新した。
+
+### プラグイン
+
+* MiniMax の既定のプリセットを M3.1 Flash にした。([PR #3709](https://github.com/WinMerge/winmerge/pull/3709))
+
+### インストーラー
+
+* 不具合修正: Inno Setup 5 の翻訳を統一し、インドネシア語版インストーラーのパスを修正した。([#3737](https://github.com/WinMerge/winmerge/issues/3737))
+
+### 翻訳
+
+* 翻訳を更新した:
+
+  * Brazilian (PR #3665, PR #3687, PR #3672, PR #3697, PR #3708, PR #3717)
+  * Chinese Simplified (PR #3660, PR #3691, PR #3694, PR #3712, PR #3721)
+  * Chinese Traditional (PR #3738)
+  * Corsican (PR #3676)
+  * French (PR #3670, PR #3693, PR #3705, PR #3722)
+  * German (PR #3659, PR #3679, PR #3689, PR #3695, PR #3713, PR #3720)
+  * Hungarian (PR #3669)
+  * Italian (PR #3666, PR #3688, PR #3698, PR #3711, PR #3728)
+  * Korean (PR #3703, PR #3704, PR #3734)
+  * Lithuanian (PR #3667, PR #3690, PR #3710, PR #3715)
+  * Polish (PR #3661, PR #3684, PR #3692, PR #3723, PR #3727, PR #3730, PR #3731, PR #3735)
+  * Spanish (PR #3699, PR #3700)
+  * Turkish (PR #3719)
+
+### マニュアル
+
+* 未翻訳の ReadMe ファイルを更新し、サポートへのリンクを更新した。([PR #3723](https://github.com/WinMerge/winmerge/pull/3723), [PR #3725](https://github.com/WinMerge/winmerge/pull/3725))
+
+* 翻訳状況スクリプト内の ReadMe テンプレートのパスを修正した。([PR #3724](https://github.com/WinMerge/winmerge/pull/3724))
+
+* Git の更新日と Inno Setup の翻訳状況を表示するようにした。([PR #3739](https://github.com/WinMerge/winmerge/pull/3739))
+
+## 2.16.59 Beta の更新内容
+
+### 全般
+
+* 不具合修正: MDI ウィンドウのコントロール（最小化／最大化／閉じる）が、ホバーするまで完全に隠れる問題を修正した。([#3511](https://github.com/WinMerge/winmerge/issues/3511), [PR #3552](https://github.com/WinMerge/winmerge/pull/3552))
+
+* テキスト、画像、Web ページ、バイナリ比較ウインドウのスプリッターの位置を記憶して復元するオプションを追加した。([ウインドウ]→[スプリッターの位置を保持]メニュー)([PR #3611](https://github.com/WinMerge/winmerge/pull/3611))
+
+### 外観
+
+* 不具合修正: 高 DPI 時のツールバーアイコンの間隔が狭すぎる問題を修正した。
+
+* ツールバーとマージンのアイコンを BMP から PNG に変更した。([PR #3510](https://github.com/WinMerge/winmerge/pull/3510))
+
+* アクティブなウィンドウに応じてツールバーの内容を変えるようにした。([PR #3631](https://github.com/WinMerge/winmerge/pull/3631))
+
+### ファイル比較
+
+* 2 方向の競合および 3 方向マージの確認と解決に使用する「マージ結果」ペインを追加した。([PR #3515](https://github.com/WinMerge/winmerge/pull/3515))
+
+* 不具合修正: Shift+Insert でフィルターバーではなくファイルに貼り付けられる問題を修正した。([#3585](https://github.com/WinMerge/winmerge/issues/3585))
+
+* 不具合修正: 表示フィルターによってできた隙間をまたぐカーソル移動を改善した。([#3601](https://github.com/WinMerge/winmerge/issues/3601), [PR #3622](https://github.com/WinMerge/winmerge/pull/3622))
+
+* 不具合修正: ファイル比較のステータスバーが初期表示されないことがある問題を修正した。([PR #3644](https://github.com/WinMerge/winmerge/pull/3644))
+
+* 不具合修正: 3方向ファイル比較のコンテキストメニューの「右にコピー」のキーボードショートカット表示が正しくないのを修正した。([#3645](https://github.com/WinMerge/winmerge/issues/3645))
+
+* 不具合修正: 3方向ファイル比較でペインを入れ替えた後にアンドゥ操作ができない問題を修正した。([PR #3647](https://github.com/WinMerge/winmerge/pull/3647))
+
+* 不具合修正: テキスト削除に失敗した場合に、元に戻す操作のグループを確定するようにした。
+
+* 不具合修正: 「コメントの違いを無視する」と「空行を無視する」オプションが有効の場合、改行なしの1文字同士の比較で差異があるにもかかわらず一致と表示されてしまう問題を修正した。([PR #3651](https://github.com/WinMerge/winmerge/pull/3651))
+
+* 不具合修正: ファイル末尾に改行がない場合に、無視対象の差異範囲が正しく処理されない問題を修正した。([#3653](https://github.com/WinMerge/winmerge/issues/3653), [PR #3657](https://github.com/WinMerge/winmerge/pull/3657))
+
+* ブックマークを設置したとき、ブックマークアイコンが見えるようにマージンを自動表示するようにした。
+
+* ファイルパスバーのコンテキストメニューに保存コマンドを追加した。([PR #3654](https://github.com/WinMerge/winmerge/pull/3654))
+
+* Tree-sitter の PHP および F# 文法を更新した。([PR #3656](https://github.com/WinMerge/winmerge/pull/3656))
+
+### テーブル比較
+
+* 列範囲フィルターと、比較対象から列を無視する機能を追加した。([PR #3565](https://github.com/WinMerge/winmerge/pull/3565))
+
+### 画像比較
+
+* 画像比較ウインドウのスプリッターの位置を記憶できるようにした。([PR #3593](https://github.com/WinMerge/winmerge/pull/3593))
+
+* 画像比較時の画像読み込みで WIC デコーダーを優先するオプションを追加した。([PR #3537](https://github.com/WinMerge/winmerge/pull/3537))
 
 ### フォルダー比較
 
@@ -36,157 +161,53 @@ WinMerge の 2.16.58.2 安定版リリースです。
 
 ### フィルター式
 
-* 不具合修正: `none`と`+` での文字列連結で結果が`none`にならないようにした。([#3550](https://github.com/WinMerge/winmerge/issues/3550))
+* プラグインパイプラインにフィルター式を追加した。([PR #3530](https://github.com/WinMerge/winmerge/pull/3530))([PR #3540](https://github.com/WinMerge/winmerge/pull/3540))
 
-### アーカイブ生成
+* 不具合修正: contains 演算子で大文字小文字のみの違いがある文字列を検索できないことがある問題を修正した。([#3586](https://github.com/WinMerge/winmerge/issues/3586))
 
-* 不具合修正: 片方にしかないファイルを含められるように修正した。
+### ステータスバー
+
+* マージモードインジケーターをクリック可能にし、幅を縮小した。([PR #3529](https://github.com/WinMerge/winmerge/pull/3529))
+
+### アーカイブサポート
+
+* 不具合修正: ZIPファイル内のフォルダーが比較できない問題を修正した。([#3588](https://github.com/WinMerge/winmerge/issues/3588))
+
+* 不具合修正: 一時的なアーカイブ設定の復元後にアーカイブ形式が誤って判定される問題を修正した。([#3633](https://github.com/WinMerge/winmerge/issues/3633))
+
+* 7-Zip を 26.03 に更新した。([PR #3613](https://github.com/WinMerge/winmerge/pull/3613))
 
 ### プラグイン
 
 * 不具合修正: `BUFFER_PACK_UNPACK` プラグインの出力で最後のバイトが失われるオフバイワンバグを修正した。
 
+* 不具合修正: 特殊な UTF-8 文字が正しく比較されない問題を修正した。([#3071](https://github.com/WinMerge/winmerge/issues/3071), [PR #3568](https://github.com/WinMerge/winmerge/pull/3568))
+
+* ステータスバーにプラグイン選択ボタンを追加した。([PR #3518](https://github.com/WinMerge/winmerge/pull/3518))
+
+* メニューからパイプラインにプラグインを追加できるようにした。([PR #3523](https://github.com/WinMerge/winmerge/pull/3523))
+
+* プラグインパイプラインでフィルター式を使用できるようにした。([PR #3540](https://github.com/WinMerge/winmerge/pull/3540))
+
+* AI プラグインに MiniMax プロバイダーのサポートを追加した。([PR #3499](https://github.com/WinMerge/winmerge/pull/3499))
+
+* AI プラグイン: ローカル LLM とOpenAI互換APIサポートを追加([PR #3589](https://github.com/WinMerge/winmerge/pull/3589))
+
+* プラグインパイプラインのフィルター式を検証するようにした。([PR #3578](https://github.com/WinMerge/winmerge/pull/3578))
+
+* SelectLines プラグインに、`-F` オプションによる文字列のリテラル検索を追加した。([#3500](https://github.com/WinMerge/winmerge/issues/3500), [PR #3598](https://github.com/WinMerge/winmerge/pull/3598))
+
 ### 翻訳
 
-* 翻訳の更新:
+* アゼルバイジャン語とインドネシア語の翻訳を追加した。([PR #3624](https://github.com/WinMerge/winmerge/pull/3624), [PR #3636](https://github.com/WinMerge/winmerge/pull/3636))
 
-  * Brazilian (PR #3508)
-  * Chinese Simplified (PR #3493)
-  * Chinese Traditional (PR #3505)
-  * Hungarian (PR #3502)
-  * Polish (PR #3501)
-  * Russian (PR #3494)
-  * Turkish (PR #3506)
+* Brazilian、Chinese Simplified、Chinese Traditional、French、German、Hungarian、Korean、Italian、Lithuanian、Polish、Spanish、Russian、Turkish の翻訳を更新した。
 
 ### マニュアル
 
-* 不具合修正: スペイン語の"Filters" ページの文法エラーを修正した。
+* 不具合修正: スペイン語のヘルプがフランス語になっている問題を修正した。([#3658](https://github.com/WinMerge/winmerge/issues/3658))
 
-## 2.16.58 の更新内容
-
-### ファイル比較
-
-* 不具合修正: ファイルが一定のしきい値を超えて外部から変更された場合にクラッシュ (Access Violation) する問題を修正した。([#3456](https://github.com/WinMerge/winmerge/issues/3456))
-  ([PR #3457](https://github.com/WinMerge/winmerge/pull/3457))
-
-* 不具合修正: 3方向マージモードで変更をコピーした後、ペインの一部が黒い背景に黒い文字で表示されることがある問題を修正した。([#3468](https://github.com/WinMerge/winmerge/issues/3468), [#3469](https://github.com/WinMerge/winmerge/issues/3469))
-
-### フォルダー比較
-
-* 不具合修正: アーカイブとフォルダーの比較で、誤った比較元が選択される問題を修正した。([#3449](https://github.com/WinMerge/winmerge/issues/3449))
-  ([PR #3458](https://github.com/WinMerge/winmerge/pull/3458))
-
-* 不具合修正: イメージリスト初期化時の HICON リソースリークを修正した。
-
-### ファイルまたはフォルダーの選択ダイアログ
-
-* 不具合修正: 共通ファイルダイアログの作成時に発生した例外を適切に処理するようにした。([#3462](https://github.com/WinMerge/winmerge/issues/3462))
-  ([PR #3464](https://github.com/WinMerge/winmerge/pull/3464))
-
-* 不具合修正: 3方向比較で MRU (最近使用した項目) が正しく処理されない問題を修正した。([#3452](https://github.com/WinMerge/winmerge/issues/3452))
-
-### ファイル比較レポート
-
-* 複数のファイル比較結果から 1 つの HTML レポートを生成できるようにした。([PR #3450](https://github.com/WinMerge/winmerge/pull/3450))
-
-### パッチ生成
-
-* パッチ生成ダイアログに、チェックボックス付きのファイル一覧を追加した。([PR #3470](https://github.com/WinMerge/winmerge/pull/3470))
-
-### アーカイブ生成
-
-* 比較結果をアーカイブとして作成できるようにした。([PR #3483](https://github.com/WinMerge/winmerge/pull/3483))
-
-### コマンドライン
-
-* シングルインスタンスグループ用の `/g` コマンドラインオプションを追加した。([PR #3472](https://github.com/WinMerge/winmerge/pull/3472))
-
-### 翻訳
-
-* 翻訳の更新:
-
-  * Brazilian (PR #3459, PR #3476, PR #3489)
-  * Chinese Simplified (PR #3460, PR #3479)
-  * French (PR #3478, PR #3491)
-  * German (PR #3480, PR #3486)
-  * Italian (PR #3455, PR #3473, PR #3477, PR #3488)
-  * Japanese
-  * Korean (PR #3447, PR #3481, PR #3487)
-  * Lithuanian (PR #3461, PR #3471, PR #3492)
-  * Polish (PR #3463, PR #3490)
-  * Turkish (PR #3465, PR #3474)
-  * Russian (PR #3448, PR #3484)
-
-## 2.16.57 Beta の更新内容
-
-### 全般
-
-* 不具合修正: ファイルマッピングに失敗した場合に、誤ってクラッシュとして扱われることがある問題を修正した。([#3412](https://github.com/WinMerge/winmerge/issues/3412))
-
-* クラッシュログのスタックトレースにモジュール相対オフセットを追加した。
-
-### ファイル比較
-
-* 不具合修正: 報告されたマージ操作時のクラッシュを回避する修正をした。（未再現）([#3402](https://github.com/WinMerge/winmerge/issues/3402))
-
-* 不具合修正: 編集後にステータスバーの行番号・列番号が正しく表示されないことがある問題を修正した。
-
-* 不具合修正: 同期ポイント設置後、別ファイルをドラッグして再比較すると、左右の表示位置がずれることがある問題を修正した。
-
-* 不具合修正: ペイン内のすべての行を削除した際に、空のバッファへアクセスしてアサーションに失敗する問題を修正した。
-
-* ファイル比較ウインドウにも表示フィルターを追加した。(Ctrl+Shift+Lで表示できます) [(PR #3374)](https://github.com/WinMerge/winmerge/pull/3374)
-
-* Tree-sitter の統合により、複数のプログラミング言語に対するシンタックスハイライトを改善した。([PR #3306](https://github.com/WinMerge/winmerge/pull/3306), [PR #3337](https://github.com/WinMerge/winmerge/pull/3337), [PR #3338](https://github.com/WinMerge/winmerge/pull/3338), [PR #3350](https://github.com/WinMerge/winmerge/pull/3350), [PR #3415](https://github.com/WinMerge/winmerge/pull/3415), [PR #3427](https://github.com/WinMerge/winmerge/pull/3427), [PR #3440](https://github.com/WinMerge/winmerge/pull/3440))
-
-* ISyntaxParser インターフェースを導入し、シンタックス解析処理をリファクタリングした。([PR #3415](https://github.com/WinMerge/winmerge/pull/3415))
-
-### フォルダー比較
-
-* 不具合修正: ファイル名変更中に[マージ]→[削除]メニューを実行するとクラッシュすることがある問題を修正した。([#3411](https://github.com/WinMerge/winmerge/issues/3411))
-
-* 不具合修正: ZIP エクスポート時に、サブフォルダー内の変更されていないファイルまで含まれてしまう問題を修正した。([#3444](https://github.com/WinMerge/winmerge/issues/3444))
-  ([PR #3445](https://github.com/WinMerge/winmerge/pull/3445))
-
-* EvalContext を導入し、フィルター評価処理をリファクタリングしてコードの保守性を向上した。([PR #3353](https://github.com/WinMerge/winmerge/pull/3353))
-
-### アーカイブサポート
-
-* 不具合修正: RAR4形式ファイルのファイル比較時に不要なエラーメッセージボックスが表示される問題を修正した。([#3392](https://github.com/WinMerge/winmerge/issues/3392))
-
-* 7-Zip 26.02 に更新した。
-
-### ファイルまたはフォルダーの選択ダイアログ
-
-* 参照ボタンのドロップダウンメニューでクリップボード履歴を選択できるようにした。[(PR #3352)](https://github.com/WinMerge/winmerge/pull/3352)
-
-### プラグイン
-
-* clip:// URLハンドラーを追加した。[(PR #3352)](https://github.com/WinMerge/winmerge/pull/3352)
-
-### プロジェクトファイル
-
-* プラグイン引数を含む他所から提供されたプロジェクトファイルを開く際、外部コマンドが実行される可能性があるため、警告メッセージを表示するようにした。([#3396](https://github.com/WinMerge/winmerge/issues/3396))
- ([PR #3397](https://github.com/WinMerge/winmerge/issues/3397))
-
-### 翻訳
-
-* 翻訳の更新:
-
-  * Brazilian (PR #3431)
-  * Chinese Simplified (PR #3429, PR #3438)
-  * Chinese Traditional (PR #3426)
-  * Corsican (PR #3420)
-  * French (PR #3393, PR #3406, PR #3408, PR #3435)
-  * German (PR #3432)
-  * Italian (PR #3399, PR #3434, PR #3446)
-  * Korean (PR #3422, PR #3433)
-  * Lithuanian (PR #3405, PR #3439)
-  * Polish (PR #3418, PR #3430)
-  * Portuguese (PR #3391, PR #3414)
-  * Russian (PR #3395, PR #3428)
-  * Spanish (PR #3421, PR #3423, PR #3424, PR #3425)
-  * Turkish (PR #3403, PR #3436)
+* フランス語、イタリア語、スペイン語のマニュアルにローカライズ設定を追加した。([PR #3617](https://github.com/WinMerge/winmerge/pull/3617))
 
 ## <a name="known-issues"></a>既知の問題
 

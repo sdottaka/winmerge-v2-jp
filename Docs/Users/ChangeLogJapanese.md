@@ -2,6 +2,68 @@
 title: 変更履歴
 ---
 
+### 2026/10/27 2.16.60
+
+#### 全般
+
+* 最近比較したファイルまたはフォルダーの履歴はWindowsの設定が無効にされていた場合に独自に保持するようにした。([PR #3663](https://github.com/WinMerge/winmerge/pull/3663))
+
+* darkmodelib を 0.77.1 に更新し、ARM64 に対応した。
+
+#### ファイル比較
+
+* 不具合修正: 移動行を含む差異で、行フィルターが適用されない問題を修正した。([#3680](https://github.com/WinMerge/winmerge/issues/3680), [PR #3681](https://github.com/WinMerge/winmerge/pull/3681))
+
+* 不具合修正: 3 方向マージに関する 2 件の問題を修正した。([PR #3671](https://github.com/WinMerge/winmerge/pull/3671))
+
+* 不具合修正: AutoIt の識別子と入れ子になったコメントの構文強調表示を修正した。([PR #3685](https://github.com/WinMerge/winmerge/pull/3685))
+
+* 不具合修正: 出力ペインの高さを変更するとクラッシュする問題を修正した。([#3733](https://github.com/WinMerge/winmerge/issues/3733))
+
+* RTF の構文強調表示に対応した。([PR #3686](https://github.com/WinMerge/winmerge/pull/3686))
+
+* 不具合修正: Markdown の見出しの強調表示が正しく行われないことがある問題を修正した。([PR #3718](https://github.com/WinMerge/winmerge/pull/3718))
+
+* 出力ペインに表示するマージ時のコピー通知を翻訳可能にした。([#2927](https://github.com/WinMerge/winmerge/issues/2927), [PR #3701](https://github.com/WinMerge/winmerge/pull/3701))
+
+#### 画像比較
+
+* 不具合修正: 外部 FreeImage プラグインが存在しているとクラッシュするため読み込みを無効にした。([winimerge/#43](https://github.com/WinMerge/winimerge/issues/43))
+
+* 不具合修正: 画像の貼り付けと元に戻す操作を修正した。([winimerge/#41](https://github.com/WinMerge/winimerge/issues/41))
+
+* FreeImage を 3.19.25 に更新した。
+
+* 画像の差異をコピーする際に、コピー先のキャンバスを拡張するようにした。([winimerge/#42](https://github.com/WinMerge/winimerge/issues/42))
+
+#### ステータスバー
+
+* 不具合修正: ステータスバーの差異数が正しくない問題を修正した。([#3649](https://github.com/WinMerge/winmerge/issues/3649), [PR #3707](https://github.com/WinMerge/winmerge/pull/3707))
+
+* ステータスバーがちらつくのを修正した。
+
+#### ファイルまたはフォルダーの選択ダイアログ
+
+* 最近比較した項目の一覧を折りたたみ可能にした。([PR #3673](https://github.com/WinMerge/winmerge/pull/3673))
+
+* フォルダー比較ビューに、左右それぞれのファイル名、フォルダー名、拡張子の列を追加した。([PR #3682](https://github.com/WinMerge/winmerge/pull/3682))
+
+#### フォルダー比較
+
+* フォルダー比較ビューに、左右それぞれのファイル名、フォルダー名、拡張子の列を追加した。([PR #3682](https://github.com/WinMerge/winmerge/pull/3682))
+
+#### アーカイブサポート
+
+* 7-Zip を 26.05 に更新した。
+
+#### プラグイン
+
+* MiniMax の既定のプリセットを M3.1 Flash にした。([PR #3709](https://github.com/WinMerge/winmerge/pull/3709))
+
+#### インストーラー
+
+* 不具合修正: Inno Setup 5 の翻訳を統一し、インドネシア語版インストーラーのパスを修正した。([#3737](https://github.com/WinMerge/winmerge/issues/3737))
+
 ### 2026/09/29 2.16.58-jp-4
 
 #### 全般
@@ -92,7 +154,7 @@ title: 変更履歴
 
 * AI プラグインに MiniMax プロバイダーのサポートを追加した。([PR #3499](https://github.com/WinMerge/winmerge/pull/3499))
 
-* AI プラグイ: ローカル LLM とOpenAI互換APIサポートを追加(#3589)
+* AI プラグイン: ローカル LLM とOpenAI互換APIサポートを追加([PR #3589](https://github.com/WinMerge/winmerge/pull/3589))
 
 ### 2026/07/29 2.16.58-jp-1
 
