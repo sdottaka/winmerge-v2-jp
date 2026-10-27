@@ -18,7 +18,8 @@ Please submit bug reports to our bug-tracker.
 
 ### General
 
-* Keep an own recent comparison list (PR #3663)
+* Keep an internal recent-comparison list when the Windows jump list has no
+  history. (PR #3663)
 
 * Update darkmodelib to 0.77.1 and enable ARM64 support
 
@@ -43,9 +44,17 @@ Please submit bug reports to our bug-tracker.
 
 * BugFix: WinIMerge x86 crashes with FreeImage plugins (winimerge/#43)
 
+* BugFix: Fix image paste and undo handling (winimerge/#41)
+
+* Update FreeImage to 3.19.25
+
+* Extend destination canvas when copying image differences (winimerge/#42)
+
 ### Status bar
 
 * BugFix: Fix difference count in the status bar (#3649, PR #3707)
+
+* Fix status bar flickering by suppressing background erasure
 
 ### Select files or folders dialog
 
@@ -54,21 +63,10 @@ Please submit bug reports to our bug-tracker.
 * Add side-specific filename, folder, and extension columns to folder
   comparison views. (PR #3682)
 
-* Keep an internal recent-comparison list when the Windows jump list has no
-  history. (PR #3663)
-
 ### Folder compare
 
 * Add side-specific filename, folder, and extension columns to folder
   comparison views. (PR #3682)
-
-### Image compare
-
-* BugFix: Fix image paste and undo handling (winimerge/#41)
-
-* Update FreeImage to 3.19.25
-
-* Extend destination canvas when copying image differences (winimerge/#42)
 
 ### Archive support
 
